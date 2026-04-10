@@ -32,10 +32,8 @@ function loadEnrichedData() {
 }
 
 function generateNarration(article) {
-  const title = article.title.length > 50
-    ? article.title.slice(0, 47) + "..."
-    : article.title;
-  return `第${article.rank}位。${title}。${article.source}より。`;
+  // Single topic narration for coffee knowledge
+  return `今日のコーヒー豆知識。${article.title}。${article.description}`;
 }
 
 async function main() {
@@ -85,8 +83,8 @@ async function main() {
   }
 
   const data = {
-    openingNarration: "今日のコーヒートレンド。注目のニューストップ5を紹介します。",
-    endingNarration: "以上、今日のコーヒートレンドでした。フォローといいねで、毎日のコーヒー情報をチェックしましょう。",
+    openingNarration: "今日のコーヒー豆知識をお届けします。",
+    endingNarration: "以上、今日のコーヒー豆知識でした。フォローといいねで、毎日のコーヒー情報をチェックしましょう。",
     projects,
   };
 
