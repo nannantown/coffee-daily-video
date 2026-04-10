@@ -1,0 +1,67 @@
+name: Daily Coffee Video
+
+on:
+  schedule:
+    # 23:00 UTC = 08:00 JST
+    # 23:30 UTC = 08:30 JST (30min after AI Trend Daily)
+    - cron: "30 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+          fc-cache -fv
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run pipeline
+        run: node scripts/pipeline.mjs
+        env:
+          TZ: Asia/Tokyo
+          SNS_POST_ENABLED: ${{ secrets.SNS_POST_ENABLED }}
+          # YouTube
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          # Instagram
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          # GitHub (auto-provided, used for Release creation)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit performance history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/performance-history.json
+          git diff --staged --quiet || git commit -m "Update performance history [skip ci]"
+          git push || echo "Push failed (non-blocking)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coffee-video-${{ github.run_number }}
+          path: output/coffee-*.mp4
+          retention-days: 30
