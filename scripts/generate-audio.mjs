@@ -30,11 +30,19 @@ const voiceName =
 const defaultNarrations = [
   {
     filename: "opening",
-    text: "今日のコーヒー豆知識をお届けします。",
+    text: "OPEN GROUND Coffee。今日のコーヒー豆知識をお届けします。",
   },
   {
     filename: "project-1",
-    text: "今日のコーヒー豆知識。イルガチェフェ。エチオピア産の華やかなフレーバーが特徴のコーヒーです。フローラルでフルーティーな風味を、浅煎りでお楽しみください。",
+    text: "今日のコーヒー豆知識。エチオピア、イルガチェフェ。コーヒー発祥の地エチオピアを代表する銘柄。フローラルで紅茶のような華やかな香りが特徴です。",
+  },
+  {
+    filename: "project-2",
+    text: "標高1800メートルから2200メートルの高地で栽培され、ウォッシュド精製が主流。ジャスミンやベルガモットのような花の香り、レモンやピーチのような果実味が楽しめます。浅煎りでその個性が最も引き立ちます。",
+  },
+  {
+    filename: "project-3",
+    text: "この豆のキーワードは、アフリカ、フローラル、浅煎り向き。ぜひ試してみてください。",
   },
   {
     filename: "ending",
@@ -71,7 +79,7 @@ async function synthesize(text, outputPath) {
     try {
       const comm = new Communicate(text, {
         voice: voiceName,
-        rate: "+30%",
+        rate: "+15%",
         pitch: "+0Hz",
       });
 

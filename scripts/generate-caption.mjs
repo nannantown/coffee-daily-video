@@ -77,18 +77,18 @@ function generateHashtags(projects, hints) {
 
 function generateTitle(data, dateStr, hints) {
   const template = hints?.recommendedTitleTemplate || "standard";
-  const topProject = data.projects[0];
+  const topicTitle = data.topicTitle || data.projects[0]?.name || "コーヒー";
 
   switch (template) {
     case "highlight":
-      return `${topProject.name}｜今日のコーヒー豆知識｜${dateStr.full} #Shorts`;
+      return `${topicTitle}｜今日のコーヒー豆知識｜${dateStr.full} #Shorts`;
 
     case "emoji":
-      return `Coffee Daily｜${dateStr.full} #Shorts`;
+      return `Coffee Daily｜${topicTitle}｜${dateStr.full} #Shorts`;
 
     case "standard":
     default:
-      return `【コーヒー豆知識】${topProject.name}｜${dateStr.full} #Shorts`;
+      return `【コーヒー豆知識】${topicTitle}｜${dateStr.full} #Shorts`;
   }
 }
 
