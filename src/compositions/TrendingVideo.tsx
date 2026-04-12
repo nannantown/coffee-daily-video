@@ -46,7 +46,7 @@ export const TrendingVideo: React.FC<Props> = ({
           <Audio src={staticFile("audio/opening.mp3")} volume={1} />
         </Series.Sequence>
 
-        {projects.slice(0, 5).map((project, i) => (
+        {projects.map((project, i) => (
           <Series.Sequence
             key={project.rank}
             durationInFrames={frames.projects[i] || frames.projects[0]}
