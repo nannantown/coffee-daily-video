@@ -31,32 +31,36 @@ function loadEnrichedData() {
   }
 }
 
-function generateSections(article) {
-  // Split one topic into multiple narration sections for a ~50s deep-dive video
-  // Target: ~120-130 words total, 4 sections
+function generateSections(article, enriched) {
+  // If Claude-enriched narration sections exist, use them
+  const ns = enriched?.narration_sections;
+
   const sections = [
     {
       key: "hook",
       name: `${article.title}`,
-      description: article.description,
+      description: enriched?.description || article.description,
       detail: "",
-      narration: `今日のコーヒー豆知識。${article.title}。${article.description}`,
+      narration: ns?.hook
+        || `今日のコーヒー豆知識。${article.title}。${article.description}`,
     },
     {
       key: "origin",
       name: "産地と特徴",
       description: `${article.title}の産地と栽培環境`,
-      detail: article.detail,
-      narration: article.detail,
+      detail: enriched?.detail || article.detail,
+      narration: ns?.origin
+        || enriched?.detail || article.detail,
     },
     {
       key: "recommend",
       name: "おすすめポイント",
       description: `${article.title}の楽しみ方`,
       detail: article.tags ? `キーワード: ${article.tags.join("、")}` : "",
-      narration: article.tags
-        ? `この豆のキーワードは、${article.tags.join("、")}。ぜひ試してみてください。`
-        : `ぜひ一度試してみてください。`,
+      narration: ns?.recommend
+        || (article.tags
+          ? `この豆のキーワードは、${article.tags.join("、")}。ぜひ試してみてください。`
+          : `ぜひ一度試してみてください。`),
     },
   ];
   return sections;
@@ -81,8 +85,11 @@ async function main() {
     : article;
 
   console.log(`  Topic: ${source.title} [${source.source || source.category}]`);
+  if (enriched?.narration_sections) {
+    console.log(`  Using Claude-enriched narration sections!`);
+  }
 
-  const sections = generateSections(source);
+  const sections = generateSections(source, enriched);
   const projects = sections.map((s, i) => ({
     rank: i + 1,
     name: s.name,
