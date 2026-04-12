@@ -267,8 +267,8 @@ async function main() {
 
     // Build recommended hashtags: base set + boosted - dropped
     const baseHashtags = [
-      "GitHubTrending", "GitHub", "プログラミング", "エンジニア",
-      "Tech", "開発", "OSS", "オープンソース", "Shorts",
+      "コーヒー", "Coffee", "コーヒー豆知識", "スペシャルティコーヒー",
+      "カフェ", "珈琲", "CoffeeLovers", "コーヒー好き", "Shorts",
     ];
     const recommended = baseHashtags.filter(
       (h) => !hashtagResult.dropped.includes(h)
