@@ -41,11 +41,11 @@ function generateHashtags(projects, hints) {
     );
     console.log(`  Using optimized hashtags (${base.length} tags)`);
   } else {
-    // Default hashtags
+    // Default hashtags for coffee content
     base = [
       "#コーヒー",
       "#Coffee",
-      "#CoffeeTrends",
+      "#コーヒー豆知識",
       "#スペシャルティコーヒー",
       "#カフェ",
       "#珈琲",
@@ -81,14 +81,14 @@ function generateTitle(data, dateStr, hints) {
 
   switch (template) {
     case "highlight":
-      return `${topProject.name}｜今日のコーヒートレンド TOP5｜${dateStr.full} #Shorts`;
+      return `${topProject.name}｜今日のコーヒー豆知識｜${dateStr.full} #Shorts`;
 
     case "emoji":
-      return `Coffee Trends TOP5｜${dateStr.full} #Shorts`;
+      return `Coffee Daily｜${dateStr.full} #Shorts`;
 
     case "standard":
     default:
-      return `【コーヒートレンド】今日の注目ニュース TOP5｜${dateStr.full} #Shorts`;
+      return `【コーヒー豆知識】${topProject.name}｜${dateStr.full} #Shorts`;
   }
 }
 
@@ -100,23 +100,22 @@ function generateYouTubeCaption(data, dateStr, hints) {
 
   // Description
   const lines = [
-    `${dateStr.full} の GitHub Trending 上位5リポジトリを紹介します。`,
+    `${dateStr.full} のコーヒー豆知識をお届けします。`,
     "",
-    "--- 本日のランキング ---",
+    "--- 今日のトピック ---",
     "",
   ];
 
   for (const p of projects) {
-    lines.push(`${p.rank}. ${p.fullName}`);
-    lines.push(`   ${p.description}`);
-    lines.push(`   ${p.stars.toLocaleString()} stars (+${p.todayStars.toLocaleString()} today)`);
-    lines.push(`   ${p.url}`);
+    lines.push(`${p.name}`);
+    lines.push(`  ${p.description}`);
+    if (p.detail) lines.push(`  ${p.detail}`);
     lines.push("");
   }
 
   lines.push("---");
   lines.push("");
-  lines.push("毎朝 GitHub Trending をチェックして、最新のトレンドをキャッチしよう。");
+  lines.push("毎日コーヒーの豆知識をお届けします。");
   lines.push("チャンネル登録 & いいね お願いします。");
   lines.push("");
   lines.push(hashtags.join(" "));
@@ -126,7 +125,7 @@ function generateYouTubeCaption(data, dateStr, hints) {
     titleTemplate,
     description: lines.join("\n"),
     tags: hashtags.map((h) => h.replace("#", "")),
-    categoryId: "28", // Science & Technology
+    categoryId: "26", // Howto & Style
   };
 }
 
@@ -135,23 +134,18 @@ function generateInstagramCaption(data, dateStr, hints) {
   const hashtags = generateHashtags(projects, hints);
 
   const lines = [
-    `${dateStr.full} GitHub Trending TOP5`,
+    `${dateStr.full} コーヒー豆知識`,
     "",
   ];
 
   for (const p of projects) {
-    const starsK =
-      p.stars >= 10000
-        ? `${(p.stars / 1000).toFixed(1)}k`
-        : p.stars >= 1000
-          ? `${(p.stars / 1000).toFixed(1)}k`
-          : `${p.stars}`;
-    lines.push(`${p.rank}. ${p.fullName} (${starsK} stars)`);
+    lines.push(`${p.name}`);
+    lines.push(`${p.description}`);
   }
 
   lines.push("");
-  lines.push("毎朝 GitHub Trending をお届けします。");
-  lines.push("フォロー & いいね で最新トレンドをチェック!");
+  lines.push("毎日コーヒーの豆知識をお届けします。");
+  lines.push("フォロー & いいね でチェック!");
   lines.push("");
   lines.push(hashtags.join(" "));
 
