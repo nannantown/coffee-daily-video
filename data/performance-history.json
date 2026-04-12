@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "Iu7e7UHn5Jg",
-      "videoUrl": "https://youtube.com/shorts/Iu7e7UHn5Jg",
+      "videoId": "GXZswq_e1mw",
+      "videoUrl": "https://youtube.com/shorts/GXZswq_e1mw",
       "date": "2026-04-12",
       "title": "【コーヒー豆知識】アラビカ種とロブスタ種｜2026/04/12 #Shorts",
       "titleTemplate": "standard",
@@ -23,9 +23,11 @@
         "品種"
       ],
       "projects": [
+        "品種",
+        "品種",
         "品種"
       ],
-      "durationSeconds": 19,
+      "durationSeconds": 68,
       "stats": {
         "views": 0,
         "likes": 0,
@@ -39,6 +41,13 @@
       "date": "2026-04-12",
       "changes": [
         "Day performance: Sun=47"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-12",
+      "changes": [
+        "Day performance: Sun=0"
       ],
       "recommendedTemplate": "standard"
     }
