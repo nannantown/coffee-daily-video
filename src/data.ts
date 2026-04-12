@@ -14,13 +14,38 @@ export interface Project {
 export const defaultProjects: Project[] = [
   {
     rank: 1,
-    name: "イルガチェフェ",
+    name: "エチオピア イルガチェフェ",
     fullName: "産地",
-    description: "エチオピア産の華やかなフレーバー",
-    detail:
-      "エチオピアのイルガチェフェ地方で栽培されるコーヒー豆。フローラルでフルーティーな風味が特徴で、ジャスミンやベルガモットのようなアロマが楽しめます。浅煎りで淹れると、紅茶のようなエレガントな一杯に。",
+    description: "コーヒー発祥の地エチオピアを代表する銘柄",
+    detail: "",
     narration:
-      "今日のコーヒー豆知識。イルガチェフェ。エチオピア産の華やかなフレーバーが特徴のコーヒーです。フローラルでフルーティーな風味を、浅煎りでお楽しみください。",
+      "今日のコーヒー豆知識。エチオピア、イルガチェフェ。コーヒー発祥の地エチオピアを代表する銘柄。フローラルで紅茶のような華やかな香りが特徴です。",
+    stars: 0,
+    todayStars: 0,
+    language: "産地",
+    url: "",
+  },
+  {
+    rank: 2,
+    name: "産地と特徴",
+    fullName: "産地",
+    description: "イルガチェフェの産地と栽培環境",
+    detail: "",
+    narration:
+      "標高1800メートルから2200メートルの高地で栽培され、ウォッシュド精製が主流。ジャスミンやベルガモットのような花の香り、レモンやピーチのような果実味が楽しめます。浅煎りでその個性が最も引き立ちます。",
+    stars: 0,
+    todayStars: 0,
+    language: "産地",
+    url: "",
+  },
+  {
+    rank: 3,
+    name: "おすすめポイント",
+    fullName: "産地",
+    description: "イルガチェフェの楽しみ方",
+    detail: "",
+    narration:
+      "この豆のキーワードは、アフリカ、フローラル、浅煎り向き。ぜひ試してみてください。",
     stars: 0,
     todayStars: 0,
     language: "産地",
@@ -58,11 +83,13 @@ export interface AudioDurations {
   [key: string]: number;
 }
 
-// Default durations for local dev / Remotion Studio (1 project = coffee knowledge)
+// Default durations for local dev (3 sections: hook, origin, recommend)
 export const defaultDurations: AudioDurations = {
-  opening: 5.0,
-  "project-1": 12.5,
-  ending: 6.5,
+  opening: 4.0,
+  "project-1": 12.0,
+  "project-2": 18.0,
+  "project-3": 8.0,
+  ending: 6.0,
 };
 
 const FPS = 30;

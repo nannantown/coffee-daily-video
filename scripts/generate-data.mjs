@@ -31,9 +31,35 @@ function loadEnrichedData() {
   }
 }
 
-function generateNarration(article) {
-  // Single topic narration for coffee knowledge
-  return `今日のコーヒー豆知識。${article.title}。${article.description}`;
+function generateSections(article) {
+  // Split one topic into multiple narration sections for a ~50s deep-dive video
+  // Target: ~120-130 words total, 4 sections
+  const sections = [
+    {
+      key: "hook",
+      name: `${article.title}`,
+      description: article.description,
+      detail: "",
+      narration: `今日のコーヒー豆知識。${article.title}。${article.description}`,
+    },
+    {
+      key: "origin",
+      name: "産地と特徴",
+      description: `${article.title}の産地と栽培環境`,
+      detail: article.detail,
+      narration: article.detail,
+    },
+    {
+      key: "recommend",
+      name: "おすすめポイント",
+      description: `${article.title}の楽しみ方`,
+      detail: article.tags ? `キーワード: ${article.tags.join("、")}` : "",
+      narration: article.tags
+        ? `この豆のキーワードは、${article.tags.join("、")}。ぜひ試してみてください。`
+        : `ぜひ一度試してみてください。`,
+    },
+  ];
+  return sections;
 }
 
 async function main() {
@@ -47,45 +73,34 @@ async function main() {
     console.log("Using raw article data.\n");
   }
 
-  const projects = [];
-  for (const article of raw) {
-    const enriched = enrichedMap?.[article.rank];
+  const article = raw[0]; // Single topic per day
+  const enriched = enrichedMap?.[article.rank];
 
-    if (enriched) {
-      console.log(`  #${article.rank}: using enriched data`);
-      projects.push({
-        rank: article.rank,
-        name: enriched.title || article.title,
-        fullName: article.source,
-        description: enriched.description || article.title,
-        detail: enriched.detail || article.description,
-        narration: enriched.narration || generateNarration(article),
-        language: article.source,
-        stars: 0,
-        todayStars: 0,
-        url: article.link,
-      });
-    } else {
-      console.log(`  #${article.rank}: ${article.title}`);
-      projects.push({
-        rank: article.rank,
-        name: article.title,
-        fullName: article.source,
-        description: article.title,
-        detail: article.description || article.title,
-        narration: generateNarration(article),
-        language: article.source,
-        stars: 0,
-        todayStars: 0,
-        url: article.link,
-      });
-    }
-  }
+  const source = enriched
+    ? { ...article, ...enriched, title: enriched.title || article.title }
+    : article;
+
+  console.log(`  Topic: ${source.title} [${source.source || source.category}]`);
+
+  const sections = generateSections(source);
+  const projects = sections.map((s, i) => ({
+    rank: i + 1,
+    name: s.name,
+    fullName: source.source || source.category || "",
+    description: s.description,
+    detail: s.detail,
+    narration: s.narration,
+    language: source.source || source.category || "",
+    stars: 0,
+    todayStars: 0,
+    url: source.link || "",
+  }));
 
   const data = {
-    openingNarration: "今日のコーヒー豆知識をお届けします。",
+    openingNarration: `OPEN GROUND Coffee。今日のコーヒー豆知識をお届けします。`,
     endingNarration: "以上、今日のコーヒー豆知識でした。フォローといいねで、毎日のコーヒー情報をチェックしましょう。",
     projects,
+    topicTitle: source.title,
   };
 
   const outputPath = join(outputDir, "trending-data.json");
