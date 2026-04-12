@@ -30,6 +30,7 @@ export const TrendingVideo: React.FC<Props> = ({
   subtitles,
 }) => {
   const frames = calculateFrameDurations(audioDurations || defaultDurations);
+  const totalSections = projects.length;
 
   const sub = (key: string): SubtitleData | undefined =>
     subtitles?.[key] as SubtitleData | undefined;
@@ -51,7 +52,7 @@ export const TrendingVideo: React.FC<Props> = ({
             key={project.rank}
             durationInFrames={frames.projects[i] || frames.projects[0]}
           >
-            <ProjectCardWrapper project={project} />
+            <ProjectCardWrapper project={project} totalSections={totalSections} />
             <SubtitleWrapper data={sub(`project-${i + 1}`)} />
             <Audio
               src={staticFile(`audio/project-${i + 1}.mp3`)}
@@ -70,9 +71,9 @@ export const TrendingVideo: React.FC<Props> = ({
   );
 };
 
-const ProjectCardWrapper: React.FC<{ project: Project }> = ({ project }) => {
+const ProjectCardWrapper: React.FC<{ project: Project; totalSections: number }> = ({ project, totalSections }) => {
   const localFrame = useCurrentFrame();
-  return <ProjectCard project={project} localFrame={localFrame} />;
+  return <ProjectCard project={project} localFrame={localFrame} totalSections={totalSections} />;
 };
 
 const SubtitleWrapper: React.FC<{ data?: SubtitleData }> = ({ data }) => {

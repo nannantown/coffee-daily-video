@@ -97,9 +97,7 @@ async function main() {
     description: s.description,
     detail: s.detail,
     narration: s.narration,
-    language: source.source || source.category || "",
-    stars: 0,
-    todayStars: 0,
+    category: source.source || source.category || "",
     url: source.link || "",
   }));
 

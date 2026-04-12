@@ -62,7 +62,7 @@ async function createGitHubRelease(videoPath) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
   const tag = `v${dateStr}`;
-  const title = `GitHub Trending ${dateStr}`;
+  const title = `Coffee Daily ${dateStr}`;
   const fileName = basename(videoPath);
 
   console.log(`\nCreating GitHub Release: ${tag}`);
