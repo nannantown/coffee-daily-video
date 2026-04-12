@@ -25,7 +25,7 @@ export const Opening: React.FC = () => {
     to: 0,
   });
 
-  // GitHub icon + title (frame 10-30)
+  // Brand title (frame 10-30)
   const titleOpacity = interpolate(frame, [10, 30], [0, 1], {
     extrapolateRight: "clamp",
   });
@@ -181,7 +181,7 @@ export const Opening: React.FC = () => {
           letterSpacing: "2px",
         }}
       >
-        今日のコーヒートレンド
+        今日のコーヒー豆知識
       </div>
 
     </AbsoluteFill>

@@ -5,9 +5,7 @@ export interface Project {
   description: string;
   detail: string;
   narration: string;
-  stars: number;
-  todayStars: number;
-  language?: string;
+  category?: string;
   url: string;
 }
 
@@ -20,9 +18,7 @@ export const defaultProjects: Project[] = [
     detail: "",
     narration:
       "今日のコーヒー豆知識。エチオピア、イルガチェフェ。コーヒー発祥の地エチオピアを代表する銘柄。フローラルで紅茶のような華やかな香りが特徴です。",
-    stars: 0,
-    todayStars: 0,
-    language: "産地",
+    category: "産地",
     url: "",
   },
   {
@@ -33,9 +29,7 @@ export const defaultProjects: Project[] = [
     detail: "",
     narration:
       "標高1800メートルから2200メートルの高地で栽培され、ウォッシュド精製が主流。ジャスミンやベルガモットのような花の香り、レモンやピーチのような果実味が楽しめます。浅煎りでその個性が最も引き立ちます。",
-    stars: 0,
-    todayStars: 0,
-    language: "産地",
+    category: "産地",
     url: "",
   },
   {
@@ -46,9 +40,7 @@ export const defaultProjects: Project[] = [
     detail: "",
     narration:
       "この豆のキーワードは、アフリカ、フローラル、浅煎り向き。ぜひ試してみてください。",
-    stars: 0,
-    todayStars: 0,
-    language: "産地",
+    category: "産地",
     url: "",
   },
 ];
