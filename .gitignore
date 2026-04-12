@@ -4,3 +4,4 @@ output/
 *.aiff
 public/audio/
 youtube-refresh-token.txt
+.claude/
