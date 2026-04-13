@@ -110,6 +110,13 @@
         "Day performance: Sun=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-13",
+      "changes": [
+        "Day performance: Sun=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ]
 }
