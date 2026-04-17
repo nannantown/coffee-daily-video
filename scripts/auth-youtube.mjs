@@ -1,41 +1,69 @@
 /**
- * One-time YouTube OAuth 2.0 authorization helper.
+ * One-time YouTube OAuth 2.0 authorization helper (loopback redirect flow).
  *
- * Run this locally to obtain a refresh token:
+ * Run locally to obtain a refresh token:
  *   node scripts/auth-youtube.mjs
  *
  * Prerequisites:
- *   1. Create a Google Cloud project with YouTube Data API v3 enabled
- *   2. Create OAuth 2.0 credentials (Desktop application type)
- *   3. Set environment variables:
+ *   1. Google Cloud project with YouTube Data API v3 enabled
+ *   2. OAuth 2.0 credentials (Desktop application type)
+ *   3. Environment variables:
  *      export YOUTUBE_CLIENT_ID=your-client-id
  *      export YOUTUBE_CLIENT_SECRET=your-client-secret
  *
- * This script will:
- *   1. Open a browser for Google sign-in
- *   2. Ask you to paste the authorization code
- *   3. Exchange it for tokens and print the refresh token
- *   4. Save the refresh token to output/youtube-refresh-token.txt
- *
- * Then add YOUTUBE_REFRESH_TOKEN to your GitHub Secrets.
+ * Starts a local HTTP server on an ephemeral port and captures the auth
+ * code via redirect. OOB flow was deprecated by Google in 2022, so new
+ * Desktop clients must use this loopback redirect flow.
  */
 
 import { google } from "googleapis";
-import { createInterface } from "readline";
+import { createServer } from "http";
 import { writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { exec } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
 
-function prompt(question) {
-  const rl = createInterface({ input: process.stdin, output: process.stdout });
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      rl.close();
-      resolve(answer.trim());
+function openBrowser(url) {
+  const cmd =
+    process.platform === "darwin"
+      ? `open "${url}"`
+      : process.platform === "win32"
+        ? `start "" "${url}"`
+        : `xdg-open "${url}"`;
+  exec(cmd, (err) => {
+    if (err) console.log(`(Could not auto-open browser: ${err.message})`);
+  });
+}
+
+function waitForAuthCode(port) {
+  return new Promise((resolve, reject) => {
+    const server = createServer((req, res) => {
+      const u = new URL(req.url, `http://127.0.0.1:${port}`);
+      const code = u.searchParams.get("code");
+      const error = u.searchParams.get("error");
+
+      if (error) {
+        res.writeHead(400, { "Content-Type": "text/html; charset=utf-8" });
+        res.end(`<h1>認証エラー</h1><pre>${error}</pre>`);
+        server.close();
+        return reject(new Error(`OAuth error: ${error}`));
+      }
+      if (code) {
+        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        res.end(
+          `<!doctype html><meta charset="utf-8"><style>body{font-family:sans-serif;padding:40px;max-width:600px;margin:auto}</style><h1>認証成功</h1><p>このタブは閉じてターミナルに戻ってください。</p>`
+        );
+        server.close();
+        return resolve(code);
+      }
+      res.writeHead(404);
+      res.end();
     });
+    server.listen(port, "127.0.0.1");
+    server.on("error", reject);
   });
 }
 
@@ -44,69 +72,71 @@ async function main() {
   const clientSecret = process.env.YOUTUBE_CLIENT_SECRET;
 
   if (!clientId || !clientSecret) {
-    console.error("Error: Set YOUTUBE_CLIENT_ID and YOUTUBE_CLIENT_SECRET environment variables first.");
-    console.error("");
-    console.error("  export YOUTUBE_CLIENT_ID=your-client-id");
-    console.error("  export YOUTUBE_CLIENT_SECRET=your-client-secret");
+    console.error(
+      "Error: Set YOUTUBE_CLIENT_ID and YOUTUBE_CLIENT_SECRET first.\n" +
+        "  export YOUTUBE_CLIENT_ID=your-client-id\n" +
+        "  export YOUTUBE_CLIENT_SECRET=your-client-secret"
+    );
     process.exit(1);
   }
 
-  const oauth2 = new google.auth.OAuth2(
-    clientId,
-    clientSecret,
-    "urn:ietf:wg:oauth:2.0:oob"
-  );
+  // Pick an ephemeral port, then close and reuse it for the real server
+  const port = await new Promise((resolve, reject) => {
+    const s = createServer();
+    s.listen(0, "127.0.0.1", () => {
+      const p = s.address().port;
+      s.close(() => resolve(p));
+    });
+    s.on("error", reject);
+  });
 
-  // Generate authorization URL
+  const redirectUri = `http://127.0.0.1:${port}`;
+  console.log(`Redirect URI: ${redirectUri}`);
+
+  const oauth2 = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
+
   const authUrl = oauth2.generateAuthUrl({
     access_type: "offline",
+    prompt: "consent",
     scope: [
       "https://www.googleapis.com/auth/youtube.upload",
       "https://www.googleapis.com/auth/youtube.readonly",
     ],
-    prompt: "consent", // Force consent to get refresh token
   });
 
-  console.log("=== YouTube OAuth 2.0 Authorization ===\n");
-  console.log("1. Open this URL in your browser:\n");
-  console.log(`   ${authUrl}\n`);
-  console.log("2. Sign in with your Google account and authorize the app.");
-  console.log("3. Copy the authorization code and paste it below.\n");
+  console.log("\n=== YouTube OAuth 2.0 Authorization ===");
+  console.log("Opening browser. If it doesn't open, visit this URL manually:\n");
+  console.log(authUrl);
+  console.log("");
 
-  const code = await prompt("Authorization code: ");
+  const codePromise = waitForAuthCode(port);
+  openBrowser(authUrl);
 
-  if (!code) {
-    console.error("No code provided. Aborting.");
-    process.exit(1);
-  }
+  console.log("Waiting for authorization in browser...\n");
+  const code = await codePromise;
 
-  // Exchange code for tokens
-  console.log("\nExchanging code for tokens...");
+  console.log("Exchanging code for tokens...");
   const { tokens } = await oauth2.getToken(code);
 
   if (!tokens.refresh_token) {
-    console.error("Error: No refresh token received.");
-    console.error("Make sure you haven't already authorized this app.");
-    console.error("Try revoking access at https://myaccount.google.com/permissions");
+    console.error(
+      "Error: No refresh token received. Revoke access at\n" +
+        "  https://myaccount.google.com/permissions\nand try again."
+    );
     process.exit(1);
   }
 
-  console.log("\n=== Success! ===\n");
+  console.log("\n=== Success! ===");
   console.log(`Refresh Token: ${tokens.refresh_token}\n`);
 
-  // Save to file
   mkdirSync(outputDir, { recursive: true });
   const tokenPath = join(outputDir, "youtube-refresh-token.txt");
   writeFileSync(tokenPath, tokens.refresh_token);
   console.log(`Saved to: ${tokenPath}`);
-  console.log("(This file is gitignored - do not commit it)\n");
+  console.log("(gitignored — do not commit)\n");
 
-  console.log("Next steps:");
-  console.log("  1. Add this refresh token as a GitHub Secret:");
-  console.log("     gh secret set YOUTUBE_REFRESH_TOKEN");
-  console.log("  2. Also add your client credentials:");
-  console.log("     gh secret set YOUTUBE_CLIENT_ID");
-  console.log("     gh secret set YOUTUBE_CLIENT_SECRET");
+  console.log("Next:");
+  console.log(`  gh secret set YOUTUBE_REFRESH_TOKEN --body "${tokens.refresh_token}"`);
 }
 
 main().catch((err) => {
