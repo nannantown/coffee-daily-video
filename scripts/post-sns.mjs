@@ -127,23 +127,23 @@ async function uploadYouTube(videoPath) {
   }
 }
 
-async function uploadInstagram(videoUrl) {
-  const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID } = process.env;
+async function uploadInstagram(videoPath) {
+  const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID } =
+    process.env;
 
-  if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
+  if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID || !FACEBOOK_PAGE_ID) {
     console.log("\nInstagram: credentials not configured, skipping.");
     return null;
   }
 
-  if (!videoUrl) {
-    console.log("\nInstagram: no public video URL available, skipping.");
-    console.log("  (Instagram requires a public URL - set up GitHub Release or provide VIDEO_PUBLIC_URL)");
+  if (!videoPath) {
+    console.log("\nInstagram: no video file provided, skipping.");
     return null;
   }
 
   console.log("\n=== Instagram Reels Upload ===");
   try {
-    run(`node scripts/upload-instagram.mjs --url="${videoUrl}"`, {
+    run(`node scripts/upload-instagram.mjs --file="${videoPath}"`, {
       stdio: "inherit",
     });
     return true;
@@ -165,7 +165,9 @@ async function main() {
   console.log("\n=== Generating Captions ===");
   run("node scripts/generate-caption.mjs", { stdio: "inherit" });
 
-  // Step 2: Create GitHub Release (provides public URL for Instagram)
+  // Step 2: Create GitHub Release (archival; no longer required for IG since
+  // we now use resumable upload, but kept for audit trail and as a source
+  // when re-testing downstream SNS integrations).
   const videoPublicUrl = await createGitHubRelease(videoPath);
   if (videoPublicUrl) {
     process.env.VIDEO_PUBLIC_URL = videoPublicUrl;
@@ -174,7 +176,7 @@ async function main() {
   // Step 3: Upload to platforms (YouTube can run independently)
   const results = {
     youtube: await uploadYouTube(videoPath),
-    instagram: await uploadInstagram(videoPublicUrl),
+    instagram: await uploadInstagram(videoPath),
   };
 
   // Summary
