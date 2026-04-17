@@ -1,0 +1,40 @@
+name: Test Instagram Upload (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_url:
+        description: "Public URL of the video to upload"
+        required: true
+        default: "https://github.com/nannantown/coffee-daily-video/releases/download/v20260417/coffee-20260417.mp4"
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Scrape + generate captions only
+        run: |
+          node scripts/scrape-coffee-news.mjs
+          node scripts/generate-data.mjs
+          node scripts/generate-caption.mjs
+        env:
+          TZ: Asia/Tokyo
+
+      - name: Upload to Instagram
+        run: node scripts/upload-instagram.mjs --url="${{ inputs.video_url }}"
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
