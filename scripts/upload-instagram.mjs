@@ -4,11 +4,14 @@
  * Required environment variables:
  *   INSTAGRAM_ACCESS_TOKEN  - Long-lived User Access Token
  *   INSTAGRAM_USER_ID       - Instagram Business/Creator Account ID
- *   VIDEO_PUBLIC_URL         - Publicly accessible URL of the video
- *                              (set by post-sns.mjs after creating GitHub Release)
- *
- * The Instagram Content Publishing API requires a publicly accessible video URL.
- * This script expects the URL to be provided via environment variable or --url argument.
+ *   FACEBOOK_PAGE_ID        - Facebook Page ID linked to the IG Business Account.
+ *                             We derive a Page Access Token from the user token
+ *                             at runtime and use it for /media and /media_publish,
+ *                             because IG content publishing through a Business
+ *                             Portfolio-owned Page returns (#10) Missing Permission
+ *                             when called with a plain User token.
+ *   VIDEO_PUBLIC_URL        - Publicly accessible URL of the video
+ *                             (set by post-sns.mjs after creating GitHub Release)
  *
  * Usage:
  *   node scripts/upload-instagram.mjs --url=https://example.com/video.mp4
@@ -98,12 +101,33 @@ async function waitForMediaReady(igUserId, containerId, accessToken) {
   throw new Error("Media processing timed out after 5 minutes");
 }
 
-async function main() {
-  const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID } = process.env;
+async function derivePageAccessToken(pageId, userToken) {
+  const data = await graphGet(`/${pageId}`, {
+    fields: "access_token",
+    access_token: userToken,
+  });
+  if (!data.access_token) {
+    throw new Error(
+      `Could not derive Page Access Token for page ${pageId}. ` +
+        `Ensure the user token has pages_show_list, pages_read_engagement, ` +
+        `and business_management scopes.`
+    );
+  }
+  return data.access_token;
+}
 
-  if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
+async function main() {
+  const {
+    INSTAGRAM_ACCESS_TOKEN,
+    INSTAGRAM_USER_ID,
+    FACEBOOK_PAGE_ID,
+  } = process.env;
+
+  if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID || !FACEBOOK_PAGE_ID) {
     console.log("Instagram: credentials not configured, skipping upload.");
-    console.log("  Set INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID");
+    console.log(
+      "  Set INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID"
+    );
     return { skipped: true };
   }
 
@@ -124,6 +148,15 @@ async function main() {
   const caption = captions.instagram;
   console.log(`  Caption: ${caption.substring(0, 80)}...`);
 
+  // Derive a Page Access Token from the long-lived user token.
+  // Required because the IG Business Account is owned by a Business Portfolio,
+  // and /media + /media_publish only accept the Page token for that path.
+  console.log("  Deriving Page Access Token...");
+  const pageToken = await derivePageAccessToken(
+    FACEBOOK_PAGE_ID,
+    INSTAGRAM_ACCESS_TOKEN
+  );
+
   // Step 1: Create media container
   console.log("  Creating media container...");
   const container = await graphPost(`/${INSTAGRAM_USER_ID}/media`, {
@@ -131,20 +164,20 @@ async function main() {
     video_url: videoUrl,
     caption,
     share_to_feed: true,
-    access_token: INSTAGRAM_ACCESS_TOKEN,
+    access_token: pageToken,
   });
 
   const containerId = container.id;
   console.log(`  Container ID: ${containerId}`);
 
   // Step 2: Wait for processing
-  await waitForMediaReady(INSTAGRAM_USER_ID, containerId, INSTAGRAM_ACCESS_TOKEN);
+  await waitForMediaReady(INSTAGRAM_USER_ID, containerId, pageToken);
 
   // Step 3: Publish
   console.log("  Publishing...");
   const published = await graphPost(`/${INSTAGRAM_USER_ID}/media_publish`, {
     creation_id: containerId,
-    access_token: INSTAGRAM_ACCESS_TOKEN,
+    access_token: pageToken,
   });
 
   const mediaId = published.id;
