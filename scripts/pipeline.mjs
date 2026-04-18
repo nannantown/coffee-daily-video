@@ -70,10 +70,33 @@ function main() {
   writeFileSync(propsPath, JSON.stringify(inputProps));
   console.log(`Input props → ${propsPath}`);
 
-  // Step 5: Render video
+  // Step 5: Render video (to intermediate file — Remotion emits yuvj420p
+  //         despite Config.setPixelFormat("yuv420p"); Instagram Reels rejects
+  //         yuvj420p with ProcessingFailedError during media processing.
+  //         Step 5b re-encodes to yuv420p as a guaranteed normalization pass.)
+  const rawFile = `output/coffee-${dateStr}.raw.mp4`;
   const outputFile = `output/coffee-${dateStr}.mp4`;
-  console.log(`\n=== Step 5: Render Video → ${outputFile} ===`);
-  run(`npx remotion render CoffeeVideo "${outputFile}" --props="${propsPath}"`);
+  console.log(`\n=== Step 5: Render Video → ${rawFile} ===`);
+  run(`npx remotion render CoffeeVideo "${rawFile}" --props="${propsPath}"`);
+
+  console.log(`\n=== Step 5b: Normalize to yuv420p → ${outputFile} ===`);
+  run(
+    `ffmpeg -y -i "${rawFile}" -c:v libx264 -pix_fmt yuv420p -profile:v high -level 4.0 -crf 20 -preset fast -c:a copy -movflags +faststart "${outputFile}"`
+  );
+  run(`rm -f "${rawFile}"`);
+
+  // Step 5c: Render cover image (frame 60 = ~2s into opening, all fade-ins
+  //          complete: date + brand title + divider + subtitle all visible).
+  //          Uploaded to GitHub Release and passed as cover_url to IG so the
+  //          profile-grid thumbnail shows branded content, not a black frame.
+  //          Non-blocking: if still render fails, pipeline continues and IG
+  //          falls back to thumb_offset=7000ms.
+  const coverFile = `output/coffee-${dateStr}-cover.jpg`;
+  console.log(`\n=== Step 5c: Render Cover Image → ${coverFile} ===`);
+  runSafe(
+    `npx remotion still CoffeeVideo "${coverFile}" --frame=60 --props="${propsPath}"`,
+    "render-cover"
+  );
 
   // Step 6: Post to SNS (optional - skips if credentials not configured)
   const snsEnabled = process.env.SNS_POST_ENABLED === "true";

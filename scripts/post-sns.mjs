@@ -35,14 +35,14 @@ function getVideoPath() {
     if (existsSync(p)) return p;
   }
 
-  // Auto-detect: find latest trending-YYYYMMDD.mp4
+  // Auto-detect: find latest coffee-YYYYMMDD.mp4
   const today = new Date();
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
-  const p = join(outputDir, `trending-${dateStr}.mp4`);
+  const p = join(outputDir, `coffee-${dateStr}.mp4`);
   if (existsSync(p)) return p;
 
-  // Fallback: find any trending-*.mp4
-  const files = execSync(`ls -t ${outputDir}/trending-*.mp4 2>/dev/null || true`, {
+  // Fallback: find any coffee-*.mp4
+  const files = execSync(`ls -t ${outputDir}/coffee-*.mp4 2>/dev/null || true`, {
     encoding: "utf-8",
   }).trim();
   if (files) return files.split("\n")[0];
@@ -50,7 +50,7 @@ function getVideoPath() {
   return null;
 }
 
-async function createGitHubRelease(videoPath) {
+async function createGitHubRelease(videoPath, coverPath) {
   const token = process.env.GITHUB_TOKEN;
   const repo = process.env.GITHUB_REPOSITORY;
 
@@ -63,46 +63,41 @@ async function createGitHubRelease(videoPath) {
   const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
   const tag = `v${dateStr}`;
   const title = `Coffee Daily ${dateStr}`;
-  const fileName = basename(videoPath);
+  const videoFileName = basename(videoPath);
+  const coverFileName = coverPath ? basename(coverPath) : null;
+  const coverArg = coverPath && existsSync(coverPath) ? ` "${coverPath}"` : "";
 
   console.log(`\nCreating GitHub Release: ${tag}`);
 
+  const videoUrl = `https://github.com/${repo}/releases/download/${tag}/${videoFileName}`;
+  const coverUrl = coverFileName
+    ? `https://github.com/${repo}/releases/download/${tag}/${coverFileName}`
+    : null;
+
   try {
-    // Create release and upload asset
+    // Create release and upload both video + cover image
     run(
-      `gh release create "${tag}" "${videoPath}" --title "${title}" --notes "Auto-generated trending video for ${dateStr}" --latest`,
+      `gh release create "${tag}" "${videoPath}"${coverArg} --title "${title}" --notes "Auto-generated coffee video for ${dateStr}" --latest`,
       { env: { ...process.env, GH_TOKEN: token } }
     );
-
-    // Get the download URL for the asset
-    const releaseJson = run(
-      `gh release view "${tag}" --json assets --jq '.assets[] | select(.name=="${fileName}") | .url'`,
-      { env: { ...process.env, GH_TOKEN: token } }
-    );
-
-    const assetUrl = releaseJson.trim();
-    if (assetUrl) {
-      console.log(`  Release asset URL: ${assetUrl}`);
-      return assetUrl;
-    }
-
-    // Fallback: construct URL manually
-    const fallbackUrl = `https://github.com/${repo}/releases/download/${tag}/${fileName}`;
-    console.log(`  Release URL (constructed): ${fallbackUrl}`);
-    return fallbackUrl;
+    console.log(`  Video URL:  ${videoUrl}`);
+    if (coverUrl) console.log(`  Cover URL:  ${coverUrl}`);
+    return { videoUrl, coverUrl };
   } catch (err) {
     console.error(`GitHub Release failed: ${err.message}`);
-    // If tag already exists, try to get existing release URL
+    // Tag already exists — upload assets onto existing release (clobber).
     try {
-      const existingUrl = run(
-        `gh release view "${tag}" --json assets --jq '.assets[0].url'`,
+      run(
+        `gh release upload "${tag}" "${videoPath}"${coverArg} --clobber`,
         { env: { ...process.env, GH_TOKEN: token } }
-      ).trim();
-      if (existingUrl) return existingUrl;
-    } catch {
-      // ignore
+      );
+      console.log(`  Video URL:  ${videoUrl}`);
+      if (coverUrl) console.log(`  Cover URL:  ${coverUrl}`);
+      return { videoUrl, coverUrl };
+    } catch (uploadErr) {
+      console.error(`Upload to existing release failed: ${uploadErr.message}`);
+      return null;
     }
-    return null;
   }
 }
 
@@ -127,12 +122,13 @@ async function uploadYouTube(videoPath) {
   }
 }
 
-async function uploadInstagram(videoPath) {
+async function uploadInstagram(videoPath, coverUrl) {
   const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID } =
     process.env;
 
   if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID || !FACEBOOK_PAGE_ID) {
     console.log("\nInstagram: credentials not configured, skipping.");
+    console.log("  (Requires INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID)");
     return null;
   }
 
@@ -143,7 +139,10 @@ async function uploadInstagram(videoPath) {
 
   console.log("\n=== Instagram Reels Upload ===");
   try {
-    run(`node scripts/upload-instagram.mjs --file="${videoPath}"`, {
+    // Resumable upload (binary POST) — avoids the unreliable URL fetcher
+    // that returns (#2207076) on GitHub Release assets.
+    const coverArg = coverUrl ? ` --cover="${coverUrl}"` : "";
+    run(`node scripts/upload-instagram.mjs --file="${videoPath}"${coverArg}`, {
       stdio: "inherit",
     });
     return true;
@@ -165,18 +164,21 @@ async function main() {
   console.log("\n=== Generating Captions ===");
   run("node scripts/generate-caption.mjs", { stdio: "inherit" });
 
-  // Step 2: Create GitHub Release (archival; no longer required for IG since
-  // we now use resumable upload, but kept for audit trail and as a source
-  // when re-testing downstream SNS integrations).
-  const videoPublicUrl = await createGitHubRelease(videoPath);
-  if (videoPublicUrl) {
-    process.env.VIDEO_PUBLIC_URL = videoPublicUrl;
+  // Step 2: Create GitHub Release (provides public URL for Instagram)
+  //         Also uploads the cover image so IG can fetch it as cover_url.
+  const coverPath = videoPath.replace(/\.mp4$/, "-cover.jpg");
+  const hasCover = existsSync(coverPath);
+  const urls = await createGitHubRelease(videoPath, hasCover ? coverPath : null);
+  if (urls?.videoUrl) {
+    process.env.VIDEO_PUBLIC_URL = urls.videoUrl;
   }
 
-  // Step 3: Upload to platforms (YouTube can run independently)
+  // Step 3: Upload to platforms. Instagram takes the local file and uses
+  // resumable upload directly; the GitHub Release above is kept as an
+  // archival copy and a fallback source for manual re-posting.
   const results = {
     youtube: await uploadYouTube(videoPath),
-    instagram: await uploadInstagram(videoPath),
+    instagram: await uploadInstagram(videoPath, urls?.coverUrl),
   };
 
   // Summary
