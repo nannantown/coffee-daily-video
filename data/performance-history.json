@@ -31,6 +31,37 @@
         "comments": 0,
         "updatedAt": "2026-04-12T23:59:08.102Z"
       }
+    },
+    {
+      "videoId": "-hnqXuNR8Ic",
+      "videoUrl": "https://youtube.com/shorts/-hnqXuNR8Ic",
+      "date": "2026-04-18",
+      "title": "【コーヒー豆知識】カフェインの科学｜2026/04/18 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "コーヒー好き",
+        "CoffeeLovers",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 52,
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      }
     }
   ],
   "optimizationLog": [
@@ -141,6 +172,13 @@
     },
     {
       "date": "2026-04-17",
+      "changes": [
+        "Day performance: Sun=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-18",
       "changes": [
         "Day performance: Sun=0"
       ],
