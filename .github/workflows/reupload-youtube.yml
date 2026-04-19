@@ -1,0 +1,85 @@
+name: Re-upload YouTube Video (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      old_video_id:
+        description: "Existing YouTube video ID to delete"
+        required: true
+      release_tag:
+        description: "Release tag holding the replacement mp4"
+        required: true
+        default: "v20260419"
+      asset_name:
+        description: "mp4 asset filename"
+        required: true
+        default: "coffee-20260419.mp4"
+
+permissions:
+  contents: read
+
+jobs:
+  reupload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Download replacement mp4
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p output
+          gh release download "${{ inputs.release_tag }}" \
+            --pattern "${{ inputs.asset_name }}" \
+            --output "output/${{ inputs.asset_name }}"
+          ls -la "output/${{ inputs.asset_name }}"
+
+      - name: Regenerate captions for upload
+        env:
+          TZ: Asia/Tokyo
+        run: |
+          node scripts/scrape-coffee-news.mjs
+          node scripts/generate-data.mjs
+          node scripts/generate-caption.mjs
+          cat output/captions.json | head -20
+
+      - name: Delete old YouTube video
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          OLD_VIDEO_ID: ${{ inputs.old_video_id }}
+        run: |
+          node -e '
+          import("googleapis").then(async ({ google }) => {
+            const oauth2 = new google.auth.OAuth2(
+              process.env.YOUTUBE_CLIENT_ID,
+              process.env.YOUTUBE_CLIENT_SECRET,
+              "urn:ietf:wg:oauth:2.0:oob"
+            );
+            oauth2.setCredentials({ refresh_token: process.env.YOUTUBE_REFRESH_TOKEN });
+            const youtube = google.youtube({ version: "v3", auth: oauth2 });
+            try {
+              await youtube.videos.delete({ id: process.env.OLD_VIDEO_ID });
+              console.log("Deleted video:", process.env.OLD_VIDEO_ID);
+            } catch (err) {
+              console.error("Delete failed:", err.message);
+              process.exit(1);
+            }
+          });
+          '
+
+      - name: Upload replacement video
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node scripts/upload-youtube.mjs --video="output/${{ inputs.asset_name }}"
