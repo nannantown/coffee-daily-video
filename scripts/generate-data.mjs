@@ -35,27 +35,34 @@ function generateSections(article, enriched) {
   // If Claude-enriched narration sections exist, use them
   const ns = enriched?.narration_sections;
 
+  // Slide titles & subtitles are topic-specific. Prefer enriched-provided
+  // values; fall back to topic-agnostic defaults (the previous coffee-origin
+  // hard-coded strings broke every non-origin topic, e.g. brewing method,
+  // science, seasonal, etc.).
+  const st = enriched?.section_titles || {};
+  const sd = enriched?.section_descriptions || {};
+
   const sections = [
     {
       key: "hook",
-      name: `${article.title}`,
-      description: enriched?.description || article.description,
+      name: st.hook || `${article.title}`,
+      description: sd.hook || enriched?.description || article.description,
       detail: "",
       narration: ns?.hook
         || `今日のコーヒー豆知識。${article.title}。${article.description}`,
     },
     {
       key: "origin",
-      name: "産地と特徴",
-      description: `${article.title}の産地と栽培環境`,
+      name: st.origin || "詳しく",
+      description: sd.origin || enriched?.description || article.description,
       detail: enriched?.detail || article.detail,
       narration: ns?.origin
         || enriched?.detail || article.detail,
     },
     {
       key: "recommend",
-      name: "おすすめポイント",
-      description: `${article.title}の楽しみ方`,
+      name: st.recommend || "おすすめ",
+      description: sd.recommend || "今日試してみよう",
       detail: article.tags ? `キーワード: ${article.tags.join("、")}` : "",
       narration: ns?.recommend
         || (article.tags
