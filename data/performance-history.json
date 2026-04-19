@@ -57,6 +57,37 @@
       ],
       "durationSeconds": 52,
       "stats": {
+        "views": 67,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-19T02:56:03.888Z"
+      }
+    },
+    {
+      "videoId": "4gtEp1IvI-g",
+      "videoUrl": "https://youtube.com/shorts/4gtEp1IvI-g",
+      "date": "2026-04-19",
+      "title": "【コーヒー豆知識】日本式アイスコーヒー(フラッシュブリュー)｜2026/04/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "コーヒー好き",
+        "CoffeeLovers",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 68,
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -181,6 +212,13 @@
       "date": "2026-04-18",
       "changes": [
         "Day performance: Sun=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-19",
+      "changes": [
+        "Day performance: Sat=67, Sun=0"
       ],
       "recommendedTemplate": "standard"
     }
