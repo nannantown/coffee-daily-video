@@ -51,7 +51,8 @@ jobs:
           node scripts/generate-caption.mjs
           cat output/captions.json | head -20
 
-      - name: Delete old YouTube video
+      - name: Attempt to delete old YouTube video (non-blocking)
+        continue-on-error: true
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -71,8 +72,7 @@ jobs:
               await youtube.videos.delete({ id: process.env.OLD_VIDEO_ID });
               console.log("Deleted video:", process.env.OLD_VIDEO_ID);
             } catch (err) {
-              console.error("Delete failed:", err.message);
-              process.exit(1);
+              console.error("Delete failed (non-blocking, delete manually in YT Studio):", err.message);
             }
           });
           '
