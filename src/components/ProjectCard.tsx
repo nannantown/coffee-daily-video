@@ -101,7 +101,12 @@ export const ProjectCard: React.FC<Props> = ({ project, localFrame, totalSection
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "'Noto Sans JP', 'Noto Sans CJK JP', 'Hiragino Sans', sans-serif",
-        padding: "0 56px",
+        // Safe area: YT Shorts action buttons occupy ~140px on the right,
+        // title/channel UI occupies ~300px on the bottom. IG Reels is
+        // slightly less strict. Using 120px symmetric horizontal padding
+        // keeps the card visually centered while clearing both platforms'
+        // UI overlays.
+        padding: "0 120px",
       }}
     >
       {/* Background accent glow */}
