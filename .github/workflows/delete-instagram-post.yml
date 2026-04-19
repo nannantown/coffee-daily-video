@@ -1,0 +1,35 @@
+name: Delete Instagram Post (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      media_id:
+        description: "IG media ID to delete"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Delete via Graph API
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          MEDIA_ID: ${{ inputs.media_id }}
+        run: |
+          set -eu
+          # Derive Page Access Token (IG content ops require Page token, not user token)
+          PAGE_TOKEN=$(curl -sG "https://graph.facebook.com/v22.0/${FACEBOOK_PAGE_ID}" \
+            --data-urlencode "fields=access_token" \
+            --data-urlencode "access_token=${INSTAGRAM_ACCESS_TOKEN}" \
+            | python3 -c "import sys, json; print(json.load(sys.stdin)['access_token'])")
+          echo "Page token derived"
+
+          RESP=$(curl -sX DELETE "https://graph.facebook.com/v22.0/${MEDIA_ID}" \
+            --data-urlencode "access_token=${PAGE_TOKEN}")
+          echo "Response: $RESP"
+          echo "$RESP" | python3 -c "import sys, json; d=json.load(sys.stdin); sys.exit(0 if d.get('success') else 1)"
