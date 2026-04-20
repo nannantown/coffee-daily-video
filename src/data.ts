@@ -68,16 +68,19 @@ export interface SubtitleMap {
 }
 
 // Audio durations (seconds per audio file)
-// Keys: "opening", "project-1" .. "project-N", "ending"
+// Keys: "project-1" .. "project-N", "ending". "opening" is optional —
+// coffee-daily-video skips the brand intro entirely to reduce drop-off
+// on IG Reels / YT Shorts (viewers bounce during the title call).
 export interface AudioDurations {
-  opening: number;
+  opening?: number;
   ending: number;
-  [key: string]: number;
+  [key: string]: number | undefined;
 }
 
-// Default durations for local dev (3 sections: hook, origin, recommend)
+// Default durations for local dev (3 sections: hook, origin, recommend).
+// opening is 0 — the video starts straight with the main content.
 export const defaultDurations: AudioDurations = {
-  opening: 4.0,
+  opening: 0,
   "project-1": 12.0,
   "project-2": 18.0,
   "project-3": 8.0,
@@ -95,12 +98,14 @@ export function getProjectCount(d: AudioDurations): number {
 }
 
 export function calculateFrameDurations(d: AudioDurations) {
-  const opening = Math.ceil(d.opening * FPS) + PADDING;
+  // Opening is optional: 0 duration (or missing) → skipped entirely.
+  const openingSec = d.opening ?? 0;
+  const opening = openingSec > 0 ? Math.ceil(openingSec * FPS) + PADDING : 0;
   const count = getProjectCount(d);
   const projects: number[] = [];
   for (let i = 1; i <= count; i++) {
     const dur = d[`project-${i}`];
-    projects.push(Math.ceil((dur || 10) * FPS) + PADDING);
+    projects.push(Math.ceil(((dur as number) || 10) * FPS) + PADDING);
   }
   const ending = Math.ceil(d.ending * FPS) + ENDING_EXTRA;
   const total = opening + projects.reduce((a, b) => a + b, 0) + ending;
