@@ -180,36 +180,14 @@ export const ProjectCard: React.FC<Props> = ({ project, localFrame, totalSection
           </div>
         </div>
 
-        {/* Category tag */}
-        {category && category !== "default" && (
-          <div
-            style={{
-              opacity: tagOpacity,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 24,
-            }}
-          >
-            <div
-              style={{
-                width: 18,
-                height: 18,
-                borderRadius: "50%",
-                background: catColor,
-              }}
-            />
-            <span
-              style={{
-                fontSize: 24,
-                color: "rgba(255,255,255,0.55)",
-                fontWeight: 500,
-              }}
-            >
-              {category}
-            </span>
-          </div>
-        )}
+        {/* Category tag intentionally removed.
+            The tag was sourced from data/coffee-knowledge.json's static
+            `category` field (e.g. "産地"), which no longer matches what
+            the Claude routine actually picks for today's topic (now
+            decided freely each morning via PDCA). Keeping the tag made
+            water-science posts show up with a "産地" label, etc.
+            catColor is still used for the background glow + progress
+            dots via the "default" fallback. */}
 
         {/* Short description */}
         <div
