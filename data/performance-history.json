@@ -57,10 +57,10 @@
       ],
       "durationSeconds": 52,
       "stats": {
-        "views": 67,
+        "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-19T02:56:03.888Z"
+        "updatedAt": "2026-04-20T00:00:29.858Z"
       }
     },
     {
@@ -87,6 +87,37 @@
         "知識"
       ],
       "durationSeconds": 68,
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      }
+    },
+    {
+      "videoId": "ARPMDjxh--o",
+      "videoUrl": "https://youtube.com/shorts/ARPMDjxh--o",
+      "date": "2026-04-20",
+      "title": "【コーヒー豆知識】コーヒーと水の科学(軟水がおいしい理由)｜2026/04/20 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "コーヒー好き",
+        "CoffeeLovers",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 56,
       "stats": {
         "views": 0,
         "likes": 0,
@@ -219,6 +250,13 @@
       "date": "2026-04-19",
       "changes": [
         "Day performance: Sat=67, Sun=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-20",
+      "changes": [
+        "Day performance: Sat=72, Sun=0"
       ],
       "recommendedTemplate": "standard"
     }
