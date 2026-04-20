@@ -41,11 +41,13 @@ export const TrendingVideo: React.FC<Props> = ({
       <Audio src={staticFile("audio/bgm.wav")} volume={0.12} />
 
       <Series>
-        <Series.Sequence durationInFrames={frames.opening}>
-          <Opening />
-          <SubtitleWrapper data={sub("opening")} />
-          <Audio src={staticFile("audio/opening.mp3")} volume={1} />
-        </Series.Sequence>
+        {frames.opening > 0 && (
+          <Series.Sequence durationInFrames={frames.opening}>
+            <Opening />
+            <SubtitleWrapper data={sub("opening")} />
+            <Audio src={staticFile("audio/opening.mp3")} volume={1} />
+          </Series.Sequence>
+        )}
 
         {projects.map((project, i) => (
           <Series.Sequence

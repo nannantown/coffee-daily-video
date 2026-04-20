@@ -57,9 +57,10 @@ function loadNarrations() {
   const dataPath = dataArg.split("=")[1];
   const data = JSON.parse(readFileSync(dataPath, "utf-8"));
 
-  const narrations = [
-    { filename: "opening", text: data.openingNarration },
-  ];
+  const narrations = [];
+  if (data.openingNarration && data.openingNarration.trim()) {
+    narrations.push({ filename: "opening", text: data.openingNarration });
+  }
   data.projects.forEach((p, i) => {
     narrations.push({ filename: `project-${i + 1}`, text: p.narration });
   });

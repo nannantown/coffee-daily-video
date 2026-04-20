@@ -109,7 +109,11 @@ async function main() {
   }));
 
   const data = {
-    openingNarration: `OPEN GROUND Coffee。今日のコーヒー豆知識をお届けします。`,
+    // Intentionally no openingNarration: the brand-intro title call was
+    // hurting IG Reels / YT Shorts retention. Viewers bounce during the
+    // "OPEN GROUND Coffee" sting, so the video now opens straight into
+    // the hook narration (project-1). The downstream audio pipeline and
+    // composition both treat a missing opening as a skipped segment.
     endingNarration: "以上、今日のコーヒー豆知識でした。フォローといいねで、毎日のコーヒー情報をチェックしましょう。",
     projects,
     topicTitle: source.title,
