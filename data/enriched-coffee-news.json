@@ -1,38 +1,39 @@
 {
-  "date": "2026-04-22",
+  "date": "2026-04-23",
   "discovery": {
-    "method": "news-en",
-    "description": "英語の業界メディアで今週の市況ニュースを横断検索。Global Coffee Report、Ecofin、StockPil を比較し出典裏取り",
+    "method": "official-src",
+    "description": "コロンビア全国コーヒー生産者連合(FNC)の月次生産統計を、複数英語メディア経由でクロスチェック。今週の comunicaffe 市況分析でも現役引用されている活性ニュース",
     "sources": [
-      "https://www.gcrmag.com/arabica-coffee-futures-fall-following-bumper-brazil-crop-estimate",
-      "https://www.ecofinagency.com/news-agriculture/0502-52611-arabica-coffee-prices-hit-four-month-low-on-large-brazil-harvest-forecast",
-      "https://stockpil.com/record-brazil-coffee-crop-prices-fall/"
+      "https://colombiaone.com/2026/04/10/rains-reduce-coffee-production-in-colombia/",
+      "https://www.tridge.com/news/coffee-production-in-colombia-falls-by-335-i-whgfzbcv",
+      "https://www.vietnam.vn/en/san-luong-ca-phe-colombia-thang-3-2026-giam-29-xuong-con-754-000-bao",
+      "https://www.comunicaffe.com/coffee-futures-fell-on-news-of-the-reopening-of-the-strait-of-hormuz-but-the-optimism-was-short-lived"
     ],
-    "query": "arabica coffee price drop April 2026 Brazil bumper crop StoneX",
-    "freshness_hours": 48
+    "query": "Colombia coffee production Q1 2026 Bahamon FNC rain flowering",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカ先物が4か月ぶり安値(ブラジル豊作予想)",
-      "description": "ブラジル2026/27豊作予想でアラビカ先物が4か月ぶりの安値に急落。",
-      "detail": "穀物調査会社StoneXはブラジルの2026/27年産予想を7530万袋に上方修正(11月時点は7070万袋)。うちアラビカ種は5020万袋で前年比プラス37%の記録的豊作。ICEニューヨークのアラビカ先物は今週最大3.2%下落し、4か月ぶりの安値水準。Rabobankは来季の世界需給で700〜1000万袋の余剰を見込み、年末の先物は1ポンド2.5〜3ドルで落ち着くと予想しています。",
-      "narration": "今朝のコーヒーニュース。アラビカ豆の先物価格が4か月ぶりの安値に急落。ブラジルの来季収穫が過去最大との予想が引き金です。",
-      "tags": ["市況ニュース", "アラビカ先物", "ブラジル豊作"],
+      "title": "コロンビアのコーヒー生産が前年比マイナス33%(長雨で開花崩壊)",
+      "description": "コロンビア1〜3月のコーヒー生産が前年比マイナス33.5%。長雨が開花と実入りを同時に崩したためです。",
+      "detail": "コロンビア全国コーヒー生産者連合(FNC)の統計によると、1〜3月の同国コーヒー生産量は251万袋(60kg換算)で、前年同期の378万袋から127万袋の減少、マイナス33.5%の急落。3月単月も75万袋で前年比マイナス29%です。輸出量も累計256万袋と、前年359万袋から3割以上減少。FNC総裁ヘルマン・バアモンは、長雨による開花期と実入り期の同時崩壊に加え、価格低迷と高コストが重なる厳しい年になると警告しました。",
+      "narration": "今朝のコーヒーニュース。コロンビア産コーヒーの生産量が激減。今年1〜3月で前年比マイナス33%という深刻な大不作です。",
+      "tags": ["コロンビア", "ハーベスト2026", "FNC統計"],
       "narration_sections": {
-        "hook": "今朝のコーヒーニュース。アラビカ豆の先物価格が4か月ぶりの安値に急落。ブラジルの来季収穫が過去最大との予想が引き金です。",
-        "origin": "アメリカの穀物調査会社ストーンXが、ブラジルの2026/27年産予想を7530万袋に上方修正。アラビカ種だけで5020万袋、前年比プラス37%の記録的豊作です。ラボバンクは市場に700〜1000万袋の余剰が出ると分析しています。",
-        "recommend": "ただし安いのはコモディティ相場の話。スペシャルティの高品質ロットは別枠で、品質重視の買い付けは続きます。焙煎所の入荷情報をお待ちください。"
+        "hook": "今朝のコーヒーニュース。コロンビア産コーヒーの生産量が激減。今年1〜3月で前年比マイナス33%という深刻な大不作です。",
+        "origin": "現地のコーヒー生産者連合FNCによると、1〜3月の生産は251万袋。前年の378万袋から127万袋の減少です。3月単月も75万袋でマイナス29%。輸出も256万袋と3割減です。長雨が続き、開花期と実入り期が同時に崩れました。",
+        "recommend": "コロンビアはナッツと柑橘の余韻が魅力の定番産地。高品質ロットは相場を超えて値上がりしそうです。お気に入りの豆があるうちに楽しんでください。"
       },
       "section_titles": {
-        "hook": "アラビカ先物急落",
-        "origin": "ブラジル豊作37%増",
-        "recommend": "スペシャルティ影響"
+        "hook": "コロンビア大不作",
+        "origin": "1-3月33%減の衝撃",
+        "recommend": "高品質ロット注意"
       },
       "section_descriptions": {
-        "hook": "ブラジル豊作予想で先物が4か月ぶりの安値に",
-        "origin": "ストーンX予想7530万袋、アラビカ+37%の記録水準",
-        "recommend": "スペシャルティ品質ロットは別枠、入荷情報待ち"
+        "hook": "コロンビア産コーヒーが1〜3月で前年比マイナス33%",
+        "origin": "FNC集計で251万袋、輸出も3割減。原因は長雨",
+        "recommend": "バランス型定番、好きな豆は大切に味わう時期"
       }
     }
   ]
