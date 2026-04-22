@@ -298,6 +298,13 @@
         "Day performance: Sat=75, Mon=2, Sun=0"
       ],
       "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-21",
+      "changes": [
+        "Day performance: Sat=75, Mon=2, Sun=0, Tue=0"
+      ],
+      "recommendedTemplate": "standard"
     }
   ]
 }
