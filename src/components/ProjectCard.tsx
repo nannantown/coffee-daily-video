@@ -36,6 +36,11 @@ export const ProjectCard: React.FC<Props> = ({ project, localFrame, totalSection
     to: 1,
   });
 
+  // Date caption (hook only) — fades in before the rank badge pops
+  const dateOpacity = interpolate(localFrame, [0, 10], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+
   // Card slide up
   const cardY = spring({
     frame: Math.max(0, localFrame - 8),
@@ -123,6 +128,23 @@ export const ProjectCard: React.FC<Props> = ({ project, localFrame, totalSection
           opacity: glowOpacity,
         }}
       />
+
+      {/* Date caption (hook only) */}
+      {project.date && project.rank === 1 && (
+        <div
+          style={{
+            opacity: dateOpacity,
+            marginBottom: 20,
+            fontSize: 28,
+            fontWeight: 600,
+            letterSpacing: "4px",
+            color: "rgba(255,255,255,0.7)",
+            fontFamily: "'Noto Sans JP', 'Noto Sans CJK JP', 'Hiragino Sans', sans-serif",
+          }}
+        >
+          {project.date}
+        </div>
+      )}
 
       {/* Section indicator */}
       <div
