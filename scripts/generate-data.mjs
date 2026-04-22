@@ -31,7 +31,7 @@ function loadEnrichedData() {
   }
 }
 
-function generateSections(article, enriched) {
+function generateSections(article, enriched, dateJpSpoken) {
   // If Claude-enriched narration sections exist, use them
   const ns = enriched?.narration_sections;
 
@@ -42,14 +42,16 @@ function generateSections(article, enriched) {
   const st = enriched?.section_titles || {};
   const sd = enriched?.section_descriptions || {};
 
+  const hookBase = ns?.hook
+    || `今日のコーヒー豆知識。${article.title}。${article.description}`;
+
   const sections = [
     {
       key: "hook",
       name: st.hook || `${article.title}`,
       description: sd.hook || enriched?.description || article.description,
       detail: "",
-      narration: ns?.hook
-        || `今日のコーヒー豆知識。${article.title}。${article.description}`,
+      narration: `${dateJpSpoken}、${hookBase}`,
     },
     {
       key: "origin",
@@ -96,7 +98,11 @@ async function main() {
     console.log(`  Using Claude-enriched narration sections!`);
   }
 
-  const sections = generateSections(source, enriched);
+  const now = new Date();
+  const dateDisplay = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, "0")}.${String(now.getDate()).padStart(2, "0")}`;
+  const dateJpSpoken = `${now.getMonth() + 1}月${now.getDate()}日`;
+
+  const sections = generateSections(source, enriched, dateJpSpoken);
   const projects = sections.map((s, i) => ({
     rank: i + 1,
     name: s.name,
@@ -106,6 +112,7 @@ async function main() {
     narration: s.narration,
     category: source.source || source.category || "",
     url: source.link || "",
+    ...(i === 0 ? { date: dateDisplay } : {}),
   }));
 
   const data = {

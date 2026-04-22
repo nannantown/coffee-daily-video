@@ -7,6 +7,7 @@ export interface Project {
   narration: string;
   category?: string;
   url: string;
+  date?: string;
 }
 
 export const defaultProjects: Project[] = [
