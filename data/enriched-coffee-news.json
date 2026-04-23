@@ -1,39 +1,39 @@
 {
-  "date": "2026-04-23",
+  "date": "2026-04-24",
   "discovery": {
-    "method": "official-src",
-    "description": "コロンビア全国コーヒー生産者連合(FNC)の月次生産統計を、複数英語メディア経由でクロスチェック。今週の comunicaffe 市況分析でも現役引用されている活性ニュース",
+    "method": "news-en",
+    "description": "Perfect Daily Grind と Daily Coffee News の今週トップ記事から、JDE Peet's+Airbus 主導の Coffee Canopy Partnership(業界初の衛星産地マッピング)を抽出。Global Coffee Report と ESG News で内容をクロスチェック",
     "sources": [
-      "https://colombiaone.com/2026/04/10/rains-reduce-coffee-production-in-colombia/",
-      "https://www.tridge.com/news/coffee-production-in-colombia-falls-by-335-i-whgfzbcv",
-      "https://www.vietnam.vn/en/san-luong-ca-phe-colombia-thang-3-2026-giam-29-xuong-con-754-000-bao",
-      "https://www.comunicaffe.com/coffee-futures-fell-on-news-of-the-reopening-of-the-strait-of-hormuz-but-the-optimism-was-short-lived"
+      "https://dailycoffeenews.com/2026/04/22/major-coffee-companies-join-pre-competitive-initiative-to-map-worlds-coffee-lands/",
+      "https://www.airbus.com/en/newsroom/press-releases/2026-04-airbus-and-jde-peets-team-up-for-worldwide-coffee-plantation-mapping-with-satellites",
+      "https://www.gcrmag.com/jde-peets-coffee-leaders-create-industry-first-mapping-initiative",
+      "https://esgnews.com/coffee-supply-chains-turn-to-satellite-monitoring-as-eu-deforestation-rules-tighten/"
     ],
-    "query": "Colombia coffee production Q1 2026 Bahamon FNC rain flowering",
-    "freshness_hours": 144
+    "query": "Coffee Canopy Partnership JDE Peet's Airbus satellite EUDR April 2026",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コロンビアのコーヒー生産が前年比マイナス33%(長雨で開花崩壊)",
-      "description": "コロンビア1〜3月のコーヒー生産が前年比マイナス33.5%。長雨が開花と実入りを同時に崩したためです。",
-      "detail": "コロンビア全国コーヒー生産者連合(FNC)の統計によると、1〜3月の同国コーヒー生産量は251万袋(60kg換算)で、前年同期の378万袋から127万袋の減少、マイナス33.5%の急落。3月単月も75万袋で前年比マイナス29%です。輸出量も累計256万袋と、前年359万袋から3割以上減少。FNC総裁ヘルマン・バアモンは、長雨による開花期と実入り期の同時崩壊に加え、価格低迷と高コストが重なる厳しい年になると警告しました。",
-      "narration": "今朝のコーヒーニュース。コロンビア産コーヒーの生産量が激減。今年1〜3月で前年比マイナス33%という深刻な大不作です。",
-      "tags": ["コロンビア", "ハーベスト2026", "FNC統計"],
+      "title": "コーヒー業界がエアバス衛星で世界の産地を地図化",
+      "description": "欧米大手ロースター7社とエアバスが業界初のプロジェクトを発表。衛星で世界のコーヒー産地を丸ごと地図化します。",
+      "detail": "プロジェクト名は Coffee Canopy Partnership。JDE Peet's 主導で Louis Dreyfus、Sucden、Neumann Kaffee Gruppe、Touton、Sucafina、Tchibo が連合。エアバスの Pléiades / Pléiades Neo 衛星(30 センチ解像度)と AI を使い、まずエチオピア、タンザニア、ケニア、ウガンダ、ブルンジ、ルワンダの東アフリカ 6 カ国・120 万平方キロを撮影。2020-21 年ベースライン(EU 森林破壊規制 EUDR の基準年)と 2024-25 年更新の 2 データセットを作成。2027 年までに世界全産地に拡大予定。EUDR は大企業向けに 2026 年 12 月 30 日から発効し、小規模農家の誤認・排除が懸念されていました。",
+      "narration": "今日のコーヒーニュース。世界の大手コーヒー企業とエアバスが、産地を衛星で丸ごと地図化する業界初の取り組みを22日に発表しました。",
+      "tags": ["CoffeeCanopy", "EU森林破壊規制", "衛星マッピング2026"],
       "narration_sections": {
-        "hook": "今朝のコーヒーニュース。コロンビア産コーヒーの生産量が激減。今年1〜3月で前年比マイナス33%という深刻な大不作です。",
-        "origin": "現地のコーヒー生産者連合FNCによると、1〜3月の生産は251万袋。前年の378万袋から127万袋の減少です。3月単月も75万袋でマイナス29%。輸出も256万袋と3割減です。長雨が続き、開花期と実入り期が同時に崩れました。",
-        "recommend": "コロンビアはナッツと柑橘の余韻が魅力の定番産地。高品質ロットは相場を超えて値上がりしそうです。お気に入りの豆があるうちに楽しんでください。"
+        "hook": "今日のコーヒーニュース。世界の大手コーヒー企業とエアバスが、産地を衛星で丸ごと地図化する業界初の取り組みを22日に発表しました。",
+        "origin": "プロジェクト名は『コーヒーキャノピー』。欧米大手ロースター7社とエアバスが連合し、30センチ解像度の衛星でアフリカ6カ国・計120万平方キロの産地を丸ごと地図化します。12月発効のEU森林破壊規制で小規模農家が誤認されるのを防ぐ狙いです。",
+        "recommend": "追跡可能性が上がれば、一杯の豆の出所がより明確になります。ECは現在準備中、信頼できる焙煎所をフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "コロンビア大不作",
-        "origin": "1-3月33%減の衝撃",
-        "recommend": "高品質ロット注意"
+        "hook": "衛星で産地マップ",
+        "origin": "大手7社×エアバス",
+        "recommend": "一杯の出所が明確に"
       },
       "section_descriptions": {
-        "hook": "コロンビア産コーヒーが1〜3月で前年比マイナス33%",
-        "origin": "FNC集計で251万袋、輸出も3割減。原因は長雨",
-        "recommend": "バランス型定番、好きな豆は大切に味わう時期"
+        "hook": "世界の産地を衛星で丸ごと地図化する業界初プロジェクト",
+        "origin": "欧米大手7社、アフリカ6カ国120万平方キロを衛星撮影",
+        "recommend": "追跡可能性が上がり、豆の出所がより明確になります"
       }
     }
   ]
