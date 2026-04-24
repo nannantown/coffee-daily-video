@@ -1,0 +1,17 @@
+name: Check IG Token Scopes (manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug token scopes
+        env:
+          TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          APP_ID: ${{ secrets.FACEBOOK_APP_ID }}
+          APP_SECRET: ${{ secrets.FACEBOOK_APP_SECRET }}
+        run: |
+          curl -s "https://graph.facebook.com/debug_token?input_token=${TOKEN}&access_token=${APP_ID}|${APP_SECRET}" \
+            | python3 -c "import json,sys; d=json.load(sys.stdin)['data']; print('type:', d.get('type')); print('expires_at:', d.get('expires_at')); print('scopes:'); [print('  -', s) for s in sorted(d.get('scopes', []))]"
