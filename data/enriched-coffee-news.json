@@ -1,39 +1,38 @@
 {
-  "date": "2026-04-24",
+  "date": "2026-04-25",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind と Daily Coffee News の今週トップ記事から、JDE Peet's+Airbus 主導の Coffee Canopy Partnership(業界初の衛星産地マッピング)を抽出。Global Coffee Report と ESG News で内容をクロスチェック",
+    "method": "expert-blog",
+    "description": "Scott Rao の roasting blog と James Hoffmann の体系的な焙煎知識を参照。週末エバーグリーン枠で pillar ④焙煎士の一次情報 初投入。Brazil 気候変動で最大75%のアラビカ産地が消失しうるという PDG Coffee News Recap 24 Apr を背景フックに接続",
     "sources": [
-      "https://dailycoffeenews.com/2026/04/22/major-coffee-companies-join-pre-competitive-initiative-to-map-worlds-coffee-lands/",
-      "https://www.airbus.com/en/newsroom/press-releases/2026-04-airbus-and-jde-peets-team-up-for-worldwide-coffee-plantation-mapping-with-satellites",
-      "https://www.gcrmag.com/jde-peets-coffee-leaders-create-industry-first-mapping-initiative",
-      "https://esgnews.com/coffee-supply-chains-turn-to-satellite-monitoring-as-eu-deforestation-rules-tighten/"
+      "https://www.scottrao.com/blog",
+      "https://www.jameshoffmann.co.uk/jimseven",
+      "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/"
     ],
-    "query": "Coffee Canopy Partnership JDE Peet's Airbus satellite EUDR April 2026",
-    "freshness_hours": 48
+    "query": "coffee roast level flavor development scott rao, brazil arabica climate 75% unviable 2100",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コーヒー業界がエアバス衛星で世界の産地を地図化",
-      "description": "欧米大手ロースター7社とエアバスが業界初のプロジェクトを発表。衛星で世界のコーヒー産地を丸ごと地図化します。",
-      "detail": "プロジェクト名は Coffee Canopy Partnership。JDE Peet's 主導で Louis Dreyfus、Sucden、Neumann Kaffee Gruppe、Touton、Sucafina、Tchibo が連合。エアバスの Pléiades / Pléiades Neo 衛星(30 センチ解像度)と AI を使い、まずエチオピア、タンザニア、ケニア、ウガンダ、ブルンジ、ルワンダの東アフリカ 6 カ国・120 万平方キロを撮影。2020-21 年ベースライン(EU 森林破壊規制 EUDR の基準年)と 2024-25 年更新の 2 データセットを作成。2027 年までに世界全産地に拡大予定。EUDR は大企業向けに 2026 年 12 月 30 日から発効し、小規模農家の誤認・排除が懸念されていました。",
-      "narration": "今日のコーヒーニュース。世界の大手コーヒー企業とエアバスが、産地を衛星で丸ごと地図化する業界初の取り組みを22日に発表しました。",
-      "tags": ["CoffeeCanopy", "EU森林破壊規制", "衛星マッピング2026"],
+      "title": "焙煎度で味が激変する話",
+      "description": "同じ豆でも焙煎度で全く別の味に化けます。浅煎りから深煎りまでの違いを、焙煎士目線で解説します。",
+      "detail": "浅煎りは豆本来の酸味と果実感、華やかな香りが主役。中煎りはバランスと甘みが前に出て、多くの人が親しみやすい味に。深煎りは苦味とコクが主役で、ミルクとの相性が抜群。同じエチオピアの豆でも浅煎りは紅茶や柑橘のような香り、中煎りは黒糖やナッツ、深煎りはチョコレートやカカオの方向に寄っていきます。焙煎士が釜の温度・時間・風量を細かく調整して、豆一つひとつの性格を引き出しています。PDG の 24 Apr ニュースによれば、気候変動でブラジルのアラビカ栽培地は 2100 年までに最大 75% が不適化する可能性があるとされ、残る豆を最大限に活かす焙煎技術の価値はこれから一層上がっていきます。",
+      "narration": "同じ豆でも焙煎度で全く別の味になるって、知っていましたか?今日は浅煎りから深煎りまで、焙煎士目線で違いを一気に解説します。",
+      "tags": ["焙煎度", "浅煎り", "深煎り"],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。世界の大手コーヒー企業とエアバスが、産地を衛星で丸ごと地図化する業界初の取り組みを22日に発表しました。",
-        "origin": "プロジェクト名は『コーヒーキャノピー』。欧米大手ロースター7社とエアバスが連合し、30センチ解像度の衛星でアフリカ6カ国・計120万平方キロの産地を丸ごと地図化します。12月発効のEU森林破壊規制で小規模農家が誤認されるのを防ぐ狙いです。",
-        "recommend": "追跡可能性が上がれば、一杯の豆の出所がより明確になります。ECは現在準備中、信頼できる焙煎所をフォローしてお待ちください。"
+        "hook": "同じ豆でも焙煎度で全く別の味になるって、知っていましたか?今日は浅煎りから深煎りまで、焙煎士目線で違いを一気に解説します。",
+        "origin": "浅煎りは豆本来の酸味と果実感が際立ち、中煎りはバランスと甘みが前に出ます。深煎りは苦味とコクが主役でミルクとも好相性。同じエチオピア豆でも浅煎りは紅茶のような香り、深煎りはチョコレートに寄ります。気候変動で産地が減る時代、焙煎技術の価値は上がります。",
+        "recommend": "家で飲むとき、同じ豆を2種類の焙煎度で試すと面白いです。EC準備中、焙煎士の違いをぜひフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "衛星で産地マップ",
-        "origin": "大手7社×エアバス",
-        "recommend": "一杯の出所が明確に"
+        "hook": "焙煎度で別物の味に",
+        "origin": "浅煎り・中煎り・深煎り",
+        "recommend": "家で試す二杯飲み比べ"
       },
       "section_descriptions": {
-        "hook": "世界の産地を衛星で丸ごと地図化する業界初プロジェクト",
-        "origin": "欧米大手7社、アフリカ6カ国120万平方キロを衛星撮影",
-        "recommend": "追跡可能性が上がり、豆の出所がより明確になります"
+        "hook": "同じ豆でも焙煎度次第で全く別の味に化けます",
+        "origin": "浅煎りから深煎りまで、味の違いを一気に解説",
+        "recommend": "家で2種類の焙煎度を飲み比べてみてください"
       }
     }
   ]
