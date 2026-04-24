@@ -60,7 +60,7 @@
         "views": 75,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-22T02:20:23.112Z"
+        "updatedAt": "2026-04-24T00:07:25.154Z"
       }
     },
     {
@@ -122,7 +122,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-22T02:20:23.112Z"
+        "updatedAt": "2026-04-24T00:07:25.154Z"
       }
     },
     {
@@ -151,10 +151,10 @@
       "durationSeconds": 45,
       "discovery": null,
       "stats": {
-        "views": 43,
+        "views": 58,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-22T02:20:23.112Z"
+        "updatedAt": "2026-04-24T00:07:25.154Z"
       }
     },
     {
@@ -182,6 +182,49 @@
       ],
       "durationSeconds": 42,
       "discovery": null,
+      "stats": {
+        "views": 159,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-24T00:07:25.154Z"
+      }
+    },
+    {
+      "videoId": "keKBhayzTGo",
+      "videoUrl": "https://youtube.com/shorts/keKBhayzTGo",
+      "date": "2026-04-24",
+      "title": "【コーヒー豆知識】コーヒー業界がエアバス衛星で世界の産地を地図化｜2026/04/24 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "コーヒー好き",
+        "CoffeeLovers",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind と Daily Coffee News の今週トップ記事から、JDE Peet's+Airbus 主導の Coffee Canopy Partnership(業界初の衛星産地マッピング)を抽出。Global Coffee Report と ESG News で内容をクロスチェック",
+        "sources": [
+          "https://dailycoffeenews.com/2026/04/22/major-coffee-companies-join-pre-competitive-initiative-to-map-worlds-coffee-lands/",
+          "https://www.airbus.com/en/newsroom/press-releases/2026-04-airbus-and-jde-peets-team-up-for-worldwide-coffee-plantation-mapping-with-satellites",
+          "https://www.gcrmag.com/jde-peets-coffee-leaders-create-industry-first-mapping-initiative",
+          "https://esgnews.com/coffee-supply-chains-turn-to-satellite-monitoring-as-eu-deforestation-rules-tighten/"
+        ],
+        "query": "Coffee Canopy Partnership JDE Peet's Airbus satellite EUDR April 2026",
+        "freshness_hours": 48
+      },
       "stats": {
         "views": 0,
         "likes": 0,
@@ -342,6 +385,13 @@
       "date": "2026-04-22",
       "changes": [
         "Day performance: Sat=75, Tue=43, Mon=3, Sun=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-24",
+      "changes": [
+        "Day performance: Wed=159, Sat=75, Tue=58, Mon=3, Sun=0"
       ],
       "recommendedTemplate": "standard"
     }
