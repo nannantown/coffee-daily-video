@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       old_video_id:
-        description: "Existing YouTube video ID to delete"
-        required: true
+        description: "Existing YouTube video ID to delete (leave empty if first upload failed)"
+        required: false
+        default: ""
       release_tag:
         description: "Release tag holding the replacement mp4"
         required: true
@@ -52,6 +53,7 @@ jobs:
           cat output/captions.json | head -20
 
       - name: Attempt to delete old YouTube video (non-blocking)
+        if: inputs.old_video_id != ''
         continue-on-error: true
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
