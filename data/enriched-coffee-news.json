@@ -1,38 +1,39 @@
 {
-  "date": "2026-04-25",
+  "date": "2026-04-26",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Scott Rao の roasting blog と James Hoffmann の体系的な焙煎知識を参照。週末エバーグリーン枠で pillar ④焙煎士の一次情報 初投入。Brazil 気候変動で最大75%のアラビカ産地が消失しうるという PDG Coffee News Recap 24 Apr を背景フックに接続",
+    "method": "market-data",
+    "description": "TradingEconomics と Barchart の Coffee C / Arabica futures チャートで4月24日終値1ポンド279.45ドル(3月以来安値、前日比-1.81%)を確認。背景として Comunicaffe / Global Coffee Report が2月に報じた Conab 2026/27 ブラジル過去最高6620万袋(前年比+17%、アラビカ単体+23%)豊作予想とクロスチェック。日曜マーケット wrap-up 形式の連載化を企図",
     "sources": [
-      "https://www.scottrao.com/blog",
-      "https://www.jameshoffmann.co.uk/jimseven",
-      "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/"
+      "https://tradingeconomics.com/commodity/coffee",
+      "https://www.barchart.com/futures/quotes/kc*0/futures-prices",
+      "https://www.comunicaffe.com/brazil-brazil-conab-forecasts-a-record-harvest-of-66-2-million-17-for-the-2026-27-season/",
+      "https://www.gcrmag.com/conab-shares-2026-brazilian-coffee-production-estimates/"
     ],
-    "query": "coffee roast level flavor development scott rao, brazil arabica climate 75% unviable 2100",
-    "freshness_hours": 24
+    "query": "arabica coffee futures price April 2026 weekly close ICE; Conab Brazil coffee 2026/27 first crop forecast",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "焙煎度で味が激変する話",
-      "description": "同じ豆でも焙煎度で全く別の味に化けます。浅煎りから深煎りまでの違いを、焙煎士目線で解説します。",
-      "detail": "浅煎りは豆本来の酸味と果実感、華やかな香りが主役。中煎りはバランスと甘みが前に出て、多くの人が親しみやすい味に。深煎りは苦味とコクが主役で、ミルクとの相性が抜群。同じエチオピアの豆でも浅煎りは紅茶や柑橘のような香り、中煎りは黒糖やナッツ、深煎りはチョコレートやカカオの方向に寄っていきます。焙煎士が釜の温度・時間・風量を細かく調整して、豆一つひとつの性格を引き出しています。PDG の 24 Apr ニュースによれば、気候変動でブラジルのアラビカ栽培地は 2100 年までに最大 75% が不適化する可能性があるとされ、残る豆を最大限に活かす焙煎技術の価値はこれから一層上がっていきます。",
-      "narration": "同じ豆でも焙煎度で全く別の味になるって、知っていましたか?今日は浅煎りから深煎りまで、焙煎士目線で違いを一気に解説します。",
-      "tags": ["焙煎度", "浅煎り", "深煎り"],
+      "title": "アラビカ先物が3月以来の安値",
+      "description": "今週アラビカ先物が3月以来の安値に。背景にはブラジルの過去最高豊作予想。家庭購入層が知っておくべき市況ポイントを解説します。",
+      "detail": "4月24日のアラビカ先物終値は1ポンド279.45ドル、前日比-1.81%で3月以来の安値水準。背景は2月にブラジル国家機関 Conab が公表した2026/27シーズン予想で、過去最高となる6620万袋、前年比17%増の豊作見通しが出ています。アラビカ単体では4410万袋・前年比23%増、ロブスタ(コニロン)も2210万袋で過去最高。需給緩和の見方が今週の市場を主導しました。家庭で淹れる層にとっては、夏に向けて豆価格が落ち着く可能性があり、新しい産地や焙煎度を試す好機です。豊作=安いとは限らないため、信頼できる焙煎所選びが今後ますます重要になります。",
+      "narration": "今週、アラビカ先物が3月以来の安値、1ポンド279ドル台まで下落しました。市況を読むカギは、実は1つのキーワードにあります。",
+      "tags": ["市況", "アラビカ先物", "ブラジル豊作"],
       "narration_sections": {
-        "hook": "同じ豆でも焙煎度で全く別の味になるって、知っていましたか?今日は浅煎りから深煎りまで、焙煎士目線で違いを一気に解説します。",
-        "origin": "浅煎りは豆本来の酸味と果実感が際立ち、中煎りはバランスと甘みが前に出ます。深煎りは苦味とコクが主役でミルクとも好相性。同じエチオピア豆でも浅煎りは紅茶のような香り、深煎りはチョコレートに寄ります。気候変動で産地が減る時代、焙煎技術の価値は上がります。",
-        "recommend": "家で飲むとき、同じ豆を2種類の焙煎度で試すと面白いです。EC準備中、焙煎士の違いをぜひフォローしてお待ちください。"
+        "hook": "今週、アラビカ先物が3月以来の安値、1ポンド279ドル台まで下落しました。市況を読むカギは、実は1つのキーワードにあります。",
+        "origin": "4月24日の終値は前日比1.81%安。背景はブラジル国家機関Conabの予想で、2026/27シーズン過去最高6620万袋、前年比17%増の豊作見通しです。アラビカ単体でも23%増の4410万袋。供給増の見方が価格を押し下げています。",
+        "recommend": "価格が落ち着くこの夏は、新しい産地や焙煎度を試す好機です。EC準備中、信頼できる焙煎所をフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "焙煎度で別物の味に",
-        "origin": "浅煎り・中煎り・深煎り",
-        "recommend": "家で試す二杯飲み比べ"
+        "hook": "アラビカ先物が下落",
+        "origin": "ブラジル豊作の見通し",
+        "recommend": "夏は新しい豆を試す好機"
       },
       "section_descriptions": {
-        "hook": "同じ豆でも焙煎度次第で全く別の味に化けます",
-        "origin": "浅煎りから深煎りまで、味の違いを一気に解説",
-        "recommend": "家で2種類の焙煎度を飲み比べてみてください"
+        "hook": "1ポンド279ドル台、3月以来の安値となりました",
+        "origin": "Conab最新予想で過去最高6620万袋の見通し",
+        "recommend": "価格が落ち着く夏は産地や焙煎度を試したい時期"
       }
     }
   ]
