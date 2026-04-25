@@ -4,13 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: "GitHub Release tag containing the video asset"
+        description: "GitHub Release tag containing the video asset (e.g., v20260425)"
         required: true
-        default: "v20260417"
       asset_name:
-        description: "Asset filename in the release"
+        description: "Asset filename in the release (e.g., coffee-20260425.mp4)"
         required: true
-        default: "coffee-20260417.mp4"
 
 permissions:
   contents: read
@@ -33,8 +31,8 @@ jobs:
         run: |
           mkdir -p output
           gh release download "${{ inputs.release_tag }}" \
-            --pattern "${{ inputs.asset_name }}" \
-            --output "output/${{ inputs.asset_name }}"
+            -p "${{ inputs.asset_name }}" \
+            -D output/
           ls -la "output/${{ inputs.asset_name }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

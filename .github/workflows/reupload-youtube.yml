@@ -8,13 +8,11 @@ on:
         required: false
         default: ""
       release_tag:
-        description: "Release tag holding the replacement mp4"
+        description: "Release tag holding the replacement mp4 (e.g., v20260425)"
         required: true
-        default: "v20260419"
       asset_name:
-        description: "mp4 asset filename"
+        description: "mp4 asset filename (e.g., coffee-20260425.mp4)"
         required: true
-        default: "coffee-20260419.mp4"
 
 permissions:
   contents: read
@@ -39,8 +37,8 @@ jobs:
         run: |
           mkdir -p output
           gh release download "${{ inputs.release_tag }}" \
-            --pattern "${{ inputs.asset_name }}" \
-            --output "output/${{ inputs.asset_name }}"
+            -p "${{ inputs.asset_name }}" \
+            -D output/
           ls -la "output/${{ inputs.asset_name }}"
 
       - name: Regenerate captions for upload
@@ -53,7 +51,7 @@ jobs:
           cat output/captions.json | head -20
 
       - name: Attempt to delete old YouTube video (non-blocking)
-        if: inputs.old_video_id != ''
+        if: inputs.old_video_id
         continue-on-error: true
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
