@@ -1,39 +1,40 @@
 {
-  "date": "2026-04-26",
+  "date": "2026-04-27",
   "discovery": {
-    "method": "market-data",
-    "description": "TradingEconomics と Barchart の Coffee C / Arabica futures チャートで4月24日終値1ポンド279.45ドル(3月以来安値、前日比-1.81%)を確認。背景として Comunicaffe / Global Coffee Report が2月に報じた Conab 2026/27 ブラジル過去最高6620万袋(前年比+17%、アラビカ単体+23%)豊作予想とクロスチェック。日曜マーケット wrap-up 形式の連載化を企図",
+    "method": "news-en",
+    "description": "Perfect Daily Grind / Daily Coffee News / Helena Coffee Vietnam / Bloomberg を WebSearch で横断し、ベトナム 2025/26 ロブスタの収量損失と ICE Robusta 在庫 16 か月ぶり低水準のニュースをクロスチェック。前日 04-26 のブラジル豊作=供給増ストーリーの裏面として、月曜=ニュース起点で Robusta 供給逼迫を取り上げる。Pillar ②産地ハーベスト 強化を兼ねる",
     "sources": [
-      "https://tradingeconomics.com/commodity/coffee",
-      "https://www.barchart.com/futures/quotes/kc*0/futures-prices",
-      "https://www.comunicaffe.com/brazil-brazil-conab-forecasts-a-record-harvest-of-66-2-million-17-for-the-2026-27-season/",
-      "https://www.gcrmag.com/conab-shares-2026-brazilian-coffee-production-estimates/"
+      "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/",
+      "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
+      "https://www.gcrmag.com/vietnams-coffee-harvest-headache/",
+      "https://dailycoffeenews.com/2025/12/10/vietnam-coffee-report-record-high-prices-drive-robusta-production/",
+      "https://www.bloomberg.com/news/articles/2025-11-20/vietnam-coffee-heavy-rain-threatens-robusta-output-in-dak-lak"
     ],
-    "query": "arabica coffee futures price April 2026 weekly close ICE; Conab Brazil coffee 2026/27 first crop forecast",
-    "freshness_hours": 48
+    "query": "Vietnam coffee Robusta 2025/26 crop loss Dak Lak drought saltwater intrusion April 2026; ICE Robusta inventory 16-month low",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカ先物が3月以来の安値",
-      "description": "今週アラビカ先物が3月以来の安値に。背景にはブラジルの過去最高豊作予想。家庭購入層が知っておくべき市況ポイントを解説します。",
-      "detail": "4月24日のアラビカ先物終値は1ポンド279.45ドル、前日比-1.81%で3月以来の安値水準。背景は2月にブラジル国家機関 Conab が公表した2026/27シーズン予想で、過去最高となる6620万袋、前年比17%増の豊作見通しが出ています。アラビカ単体では4410万袋・前年比23%増、ロブスタ(コニロン)も2210万袋で過去最高。需給緩和の見方が今週の市場を主導しました。家庭で淹れる層にとっては、夏に向けて豆価格が落ち着く可能性があり、新しい産地や焙煎度を試す好機です。豊作=安いとは限らないため、信頼できる焙煎所選びが今後ますます重要になります。",
-      "narration": "今週、アラビカ先物が3月以来の安値、1ポンド279ドル台まで下落しました。市況を読むカギは、実は1つのキーワードにあります。",
-      "tags": ["市況", "アラビカ先物", "ブラジル豊作"],
+      "title": "ベトナム不作でロブスタ在庫が16か月ぶり低水準",
+      "description": "ロンドンのロブスタ在庫が16か月ぶり低水準に。世界最大のロブスタ産地ベトナムで台風・干ばつ・塩害が連鎖し、収穫の15-20%が品質劣化と報告されています。",
+      "detail": "ICEロンドン市場のロブスタ在庫は4月22日時点で3,755ロットと、過去16か月で最低水準まで急減しました。背景はベトナム2025/26シーズンの大不作。世界最大のロブスタ産地ベトナムは、2025年11月の大型台風(Kalmaegi、Fengshen)で主要産地が水浸しになり、年明けからは深刻な干ばつとメコンデルタの塩害が直撃しています。ロブスタ生産の40%を占める中部高原ダクラックでは、収穫の15から20%がカビや黒豆として品質劣化したと報告。USDAは当初2025/26を3,080万袋と予想していましたが、現地分析では実際の輸出可能量が2,500万袋を下回る可能性が指摘されています。これを受けて4月23日のロンドン・ニューヨーク市場ではロブスタ・アラビカが同時急騰しました。",
+      "narration": "今週注目のコーヒーニュースです。ロンドンのロブスタ在庫が16か月ぶりの低水準まで急減。背景はベトナムの記録的不作です。",
+      "tags": ["ロブスタ", "ベトナム", "産地ハーベスト"],
       "narration_sections": {
-        "hook": "今週、アラビカ先物が3月以来の安値、1ポンド279ドル台まで下落しました。市況を読むカギは、実は1つのキーワードにあります。",
-        "origin": "4月24日の終値は前日比1.81%安。背景はブラジル国家機関Conabの予想で、2026/27シーズン過去最高6620万袋、前年比17%増の豊作見通しです。アラビカ単体でも23%増の4410万袋。供給増の見方が価格を押し下げています。",
-        "recommend": "価格が落ち着くこの夏は、新しい産地や焙煎度を試す好機です。EC準備中、信頼できる焙煎所をフォローしてお待ちください。"
+        "hook": "今週注目のコーヒーニュースです。ロンドンのロブスタ在庫が16か月ぶりの低水準まで急減。背景はベトナムの記録的不作です。",
+        "origin": "ベトナムは世界最大のロブスタ産地。去年11月の大型台風で水浸しになり、年明けから干ばつと塩害が直撃。主産地ダクラックでは収穫の15から20%がカビや黒豆で劣化と報告。USDA当初予想3,080万袋に対し、輸出量は2,500万袋割れの可能性が出ています。",
+        "recommend": "インスタントやブレンドに使われるロブスタが絞られると、家庭用スペシャルティの価格にも波及します。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "アラビカ先物が下落",
-        "origin": "ブラジル豊作の見通し",
-        "recommend": "夏は新しい豆を試す好機"
+        "hook": "ロブスタ在庫が急減",
+        "origin": "ベトナム不作の連鎖",
+        "recommend": "家庭用価格にも波及"
       },
       "section_descriptions": {
-        "hook": "1ポンド279ドル台、3月以来の安値となりました",
-        "origin": "Conab最新予想で過去最高6620万袋の見通し",
-        "recommend": "価格が落ち着く夏は産地や焙煎度を試したい時期"
+        "hook": "ICEロンドンのロブスタ在庫が16か月ぶり低水準",
+        "origin": "台風・干ばつ・塩害でダクラック15-20%が劣化",
+        "recommend": "ブレンドや家庭用の相場にも影響が出てきます"
       }
     }
   ]
