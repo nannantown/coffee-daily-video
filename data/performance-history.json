@@ -60,7 +60,7 @@
         "views": 75,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-26T00:00:57.246Z"
+        "updatedAt": "2026-04-27T00:01:56.755Z"
       }
     },
     {
@@ -122,7 +122,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-26T00:00:57.246Z"
+        "updatedAt": "2026-04-27T00:01:56.755Z"
       }
     },
     {
@@ -154,7 +154,7 @@
         "views": 59,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-26T00:00:57.246Z"
+        "updatedAt": "2026-04-27T00:01:56.755Z"
       }
     },
     {
@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-04-26T00:00:57.246Z"
+        "updatedAt": "2026-04-27T00:01:56.755Z"
       }
     },
     {
@@ -226,10 +226,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 64,
+        "views": 65,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-26T00:00:57.246Z"
+        "updatedAt": "2026-04-27T00:01:56.755Z"
       }
     },
     {
@@ -267,6 +267,50 @@
         ],
         "query": "arabica coffee futures price April 2026 weekly close ICE; Conab Brazil coffee 2026/27 first crop forecast",
         "freshness_hours": 48
+      },
+      "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-27T00:01:56.755Z"
+      }
+    },
+    {
+      "videoId": "3dqHTxYInQ4",
+      "videoUrl": "https://youtube.com/shorts/3dqHTxYInQ4",
+      "date": "2026-04-27",
+      "title": "【コーヒー豆知識】ベトナム不作でロブスタ在庫が16か月ぶり低水準｜2026/04/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind / Daily Coffee News / Helena Coffee Vietnam / Bloomberg を WebSearch で横断し、ベトナム 2025/26 ロブスタの収量損失と ICE Robusta 在庫 16 か月ぶり低水準のニュースをクロスチェック。前日 04-26 のブラジル豊作=供給増ストーリーの裏面として、月曜=ニュース起点で Robusta 供給逼迫を取り上げる。Pillar ②産地ハーベスト 強化を兼ねる",
+        "sources": [
+          "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/",
+          "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
+          "https://www.gcrmag.com/vietnams-coffee-harvest-headache/",
+          "https://dailycoffeenews.com/2025/12/10/vietnam-coffee-report-record-high-prices-drive-robusta-production/",
+          "https://www.bloomberg.com/news/articles/2025-11-20/vietnam-coffee-heavy-rain-threatens-robusta-output-in-dak-lak"
+        ],
+        "query": "Vietnam coffee Robusta 2025/26 crop loss Dak Lak drought saltwater intrusion April 2026; ICE Robusta inventory 16-month low",
+        "freshness_hours": 120
       },
       "stats": {
         "views": 0,
@@ -442,6 +486,13 @@
       "date": "2026-04-26",
       "changes": [
         "Day performance: Wed=164, Sat=75, Fri=64, Tue=59, Mon=3, Sun=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-27",
+      "changes": [
+        "Day performance: Wed=164, Sat=75, Fri=65, Tue=59, Mon=3, Sun=0"
       ],
       "recommendedTemplate": "standard"
     }
