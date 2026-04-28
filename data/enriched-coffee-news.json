@@ -1,40 +1,39 @@
 {
-  "date": "2026-04-27",
+  "date": "2026-04-29",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind / Daily Coffee News / Helena Coffee Vietnam / Bloomberg を WebSearch で横断し、ベトナム 2025/26 ロブスタの収量損失と ICE Robusta 在庫 16 か月ぶり低水準のニュースをクロスチェック。前日 04-26 のブラジル豊作=供給増ストーリーの裏面として、月曜=ニュース起点で Robusta 供給逼迫を取り上げる。Pillar ②産地ハーベスト 強化を兼ねる",
+    "method": "official-src",
+    "description": "B Corp Coffee Coalition の公式サイト bcorpcoffee.org を一次情報とし、Daily Coffee News と World Coffee Portal の発足記事でクロスチェック。直近 2 日が news-en 連続だったため、業界③柱の不足を補える官製/公式系へ意図的に方向転換。",
     "sources": [
-      "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/",
-      "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
-      "https://www.gcrmag.com/vietnams-coffee-harvest-headache/",
-      "https://dailycoffeenews.com/2025/12/10/vietnam-coffee-report-record-high-prices-drive-robusta-production/",
-      "https://www.bloomberg.com/news/articles/2025-11-20/vietnam-coffee-heavy-rain-threatens-robusta-output-in-dak-lak"
+      "https://bcorpcoffee.org/",
+      "https://bcorpcoffee.org/about-us/",
+      "https://dailycoffeenews.com/2026/04/28/seven-certified-b-corps-launch-a-global-coffee-coalition/",
+      "https://www.worldcoffeeportal.com/news/seven-global-b-corps-form-the-b-corp-coffee-coalition/"
     ],
-    "query": "Vietnam coffee Robusta 2025/26 crop loss Dak Lak drought saltwater intrusion April 2026; ICE Robusta inventory 16-month low",
-    "freshness_hours": 120
+    "query": "B Corp Coffee Coalition launch April 28 2026 founding members farmer prosperity",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベトナム不作でロブスタ在庫が16か月ぶり低水準",
-      "description": "ロンドンのロブスタ在庫が16か月ぶり低水準に。世界最大のロブスタ産地ベトナムで台風・干ばつ・塩害が連鎖し、収穫の15-20%が品質劣化と報告されています。",
-      "detail": "ICEロンドン市場のロブスタ在庫は4月22日時点で3,755ロットと、過去16か月で最低水準まで急減しました。背景はベトナム2025/26シーズンの大不作。世界最大のロブスタ産地ベトナムは、2025年11月の大型台風(Kalmaegi、Fengshen)で主要産地が水浸しになり、年明けからは深刻な干ばつとメコンデルタの塩害が直撃しています。ロブスタ生産の40%を占める中部高原ダクラックでは、収穫の15から20%がカビや黒豆として品質劣化したと報告。USDAは当初2025/26を3,080万袋と予想していましたが、現地分析では実際の輸出可能量が2,500万袋を下回る可能性が指摘されています。これを受けて4月23日のロンドン・ニューヨーク市場ではロブスタ・アラビカが同時急騰しました。",
-      "narration": "今週注目のコーヒーニュースです。ロンドンのロブスタ在庫が16か月ぶりの低水準まで急減。背景はベトナムの記録的不作です。",
-      "tags": ["ロブスタ", "ベトナム", "産地ハーベスト"],
+      "title": "7か国のB Corp企業がコーヒー連合を発足",
+      "description": "世界7か国のB Corp認証企業が業界横断の新団体を立ち上げ。",
+      "detail": "ブラジル・スイス・米国・デンマーク・シンガポール・豪州・ケニアの7社が、農家の収入改善と労働環境の向上に共同で取り組む。EUDR対応も視野。",
+      "narration": "今朝のニュース。コーヒー業界に新しい潮流です。世界7か国のB Corp認証企業が共同で『B Corp Coffee Coalition』を立ち上げました。",
+      "tags": ["業界ニュース", "サステナビリティ", "B Corp"],
       "narration_sections": {
-        "hook": "今週注目のコーヒーニュースです。ロンドンのロブスタ在庫が16か月ぶりの低水準まで急減。背景はベトナムの記録的不作です。",
-        "origin": "ベトナムは世界最大のロブスタ産地。去年11月の大型台風で水浸しになり、年明けから干ばつと塩害が直撃。主産地ダクラックでは収穫の15から20%がカビや黒豆で劣化と報告。USDA当初予想3,080万袋に対し、輸出量は2,500万袋割れの可能性が出ています。",
-        "recommend": "インスタントやブレンドに使われるロブスタが絞られると、家庭用スペシャルティの価格にも波及します。EC準備中、フォローしてお待ちください。"
+        "hook": "今朝のニュース。コーヒー業界に新しい潮流です。世界7か国のB Corp認証企業が共同で『B Corp Coffee Coalition』を立ち上げました。",
+        "origin": "参加は7か国の企業で、ブラジルの生産者組合、米国の輸入会社、北欧やケニアの焙煎所が並びます。共同で農家の収入改善と労働環境向上を進める計画。EU森林破壊防止規則EUDRへの備えも兼ねています。4月30日にオンラインQ&A実施。",
+        "recommend": "豆を選ぶ基準に『誰がどう作るか』が加わる時代へ。OGも続報を追います。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ロブスタ在庫が急減",
-        "origin": "ベトナム不作の連鎖",
-        "recommend": "家庭用価格にも波及"
+        "hook": "新コーヒー連合誕生",
+        "origin": "7か国の企業が結集",
+        "recommend": "豆を選ぶ新しい基準"
       },
       "section_descriptions": {
-        "hook": "ICEロンドンのロブスタ在庫が16か月ぶり低水準",
-        "origin": "台風・干ばつ・塩害でダクラック15-20%が劣化",
-        "recommend": "ブレンドや家庭用の相場にも影響が出てきます"
+        "hook": "世界7か国の認証企業がコーヒー業界で動き出しました",
+        "origin": "農家の収入と労働環境の改善を共同で進める計画です",
+        "recommend": "誰がどう作るかが豆選びの判断材料になります"
       }
     }
   ]
