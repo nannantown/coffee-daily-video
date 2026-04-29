@@ -60,7 +60,7 @@
         "views": 75,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -122,7 +122,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -154,7 +154,7 @@
         "views": 59,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -226,10 +226,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 66,
+        "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 59,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-28T00:11:38.920Z"
+        "updatedAt": "2026-04-29T00:13:09.678Z"
       }
     },
     {
@@ -355,6 +355,49 @@
         ],
         "query": "Vietnam coffee Robusta 2025/26 crop loss Dak Lak drought saltwater intrusion April 2026; ICE Robusta inventory 16-month low",
         "freshness_hours": 120
+      },
+      "stats": {
+        "views": 83,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-04-29T00:13:09.678Z"
+      }
+    },
+    {
+      "videoId": "kMNG9vyKunE",
+      "videoUrl": "https://youtube.com/shorts/kMNG9vyKunE",
+      "date": "2026-04-29",
+      "title": "【コーヒー豆知識】7か国のB Corp企業がコーヒー連合を発足｜2026/04/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "official-src",
+        "description": "B Corp Coffee Coalition の公式サイト bcorpcoffee.org を一次情報とし、Daily Coffee News と World Coffee Portal の発足記事でクロスチェック。直近 2 日が news-en 連続だったため、業界③柱の不足を補える官製/公式系へ意図的に方向転換。",
+        "sources": [
+          "https://bcorpcoffee.org/",
+          "https://bcorpcoffee.org/about-us/",
+          "https://dailycoffeenews.com/2026/04/28/seven-certified-b-corps-launch-a-global-coffee-coalition/",
+          "https://www.worldcoffeeportal.com/news/seven-global-b-corps-form-the-b-corp-coffee-coalition/"
+        ],
+        "query": "B Corp Coffee Coalition launch April 28 2026 founding members farmer prosperity",
+        "freshness_hours": 24
       },
       "stats": {
         "views": 0,
@@ -544,6 +587,14 @@
       "date": "2026-04-28",
       "changes": [
         "Day performance: Wed=164, Sat=75, Fri=66, Tue=59, Mon=31, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-29",
+      "changes": [
+        "standard: 51 avg views (10 videos)",
+        "Day performance: Wed=164, Sat=75, Tue=71, Fri=65, Mon=31, Sun=1"
       ],
       "recommendedTemplate": "standard"
     }
