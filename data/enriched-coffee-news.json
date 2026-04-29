@@ -1,39 +1,39 @@
 {
-  "date": "2026-04-29",
+  "date": "2026-04-30",
   "discovery": {
-    "method": "official-src",
-    "description": "B Corp Coffee Coalition の公式サイト bcorpcoffee.org を一次情報とし、Daily Coffee News と World Coffee Portal の発足記事でクロスチェック。直近 2 日が news-en 連続だったため、業界③柱の不足を補える官製/公式系へ意図的に方向転換。",
+    "method": "news-en",
+    "description": "Daily Coffee News(2026-04-28付)の『New Manual Pourover Brewers from World of Coffee San Diego』を起点に、Perfect Daily Grind の WoC SD まとめと JA Coffee / Genuine Origin の現場ブログでクロスチェック。直近7日が②産地ハーベスト柱に偏っていたため、③業界×ハンドドリップ器具という Primary ペルソナ直撃の角度で③柱を補充。",
     "sources": [
-      "https://bcorpcoffee.org/",
-      "https://bcorpcoffee.org/about-us/",
-      "https://dailycoffeenews.com/2026/04/28/seven-certified-b-corps-launch-a-global-coffee-coalition/",
-      "https://www.worldcoffeeportal.com/news/seven-global-b-corps-form-the-b-corp-coffee-coalition/"
+      "https://dailycoffeenews.com/2026/04/28/new-manual-pourover-brewers-from-world-of-coffee-san-diego/",
+      "https://perfectdailygrind.com/2026/04/whats-happening-at-world-of-coffee-san-diego/",
+      "https://www.jacoffee.com/blogs/news/world-of-coffee-san-diego-2026",
+      "https://blog.genuineorigin.com/2026/04/genuine-observations-from-world-of-coffee-san-diego/"
     ],
-    "query": "B Corp Coffee Coalition launch April 28 2026 founding members farmer prosperity",
-    "freshness_hours": 24
+    "query": "World of Coffee San Diego 2026 new manual pourover brewers Espro Pourover Timemore Vector Matt Winton",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "7か国のB Corp企業がコーヒー連合を発足",
-      "description": "世界7か国のB Corp認証企業が業界横断の新団体を立ち上げ。",
-      "detail": "ブラジル・スイス・米国・デンマーク・シンガポール・豪州・ケニアの7社が、農家の収入改善と労働環境の向上に共同で取り組む。EUDR対応も視野。",
-      "narration": "今朝のニュース。コーヒー業界に新しい潮流です。世界7か国のB Corp認証企業が共同で『B Corp Coffee Coalition』を立ち上げました。",
-      "tags": ["業界ニュース", "サステナビリティ", "B Corp"],
+      "title": "WoCサンディエゴで新ドリッパー5連発",
+      "description": "世界最大のコーヒー見本市から、ハンドドリッパーの新作が5ブランド一斉に発表されました。",
+      "detail": "目玉はEsproのChemex型新作Pourover(5月末発売・約60ドル)と、Timemoreが2021年世界ブリュワーズカップ王者マット・ウィントンの設計を採用した『Vector』。Hario、Sibarist、NextLevelも新作を投入し、ペーパー抽出器具の競争が再燃しています。",
+      "narration": "今朝のニュース。世界最大のコーヒー見本市『World of Coffee サンディエゴ』で、ハンドドリッパーの新作が5ブランド一気に発表されました。",
+      "tags": ["業界ニュース", "抽出器具", "ハンドドリップ"],
       "narration_sections": {
-        "hook": "今朝のニュース。コーヒー業界に新しい潮流です。世界7か国のB Corp認証企業が共同で『B Corp Coffee Coalition』を立ち上げました。",
-        "origin": "参加は7か国の企業で、ブラジルの生産者組合、米国の輸入会社、北欧やケニアの焙煎所が並びます。共同で農家の収入改善と労働環境向上を進める計画。EU森林破壊防止規則EUDRへの備えも兼ねています。4月30日にオンラインQ&A実施。",
-        "recommend": "豆を選ぶ基準に『誰がどう作るか』が加わる時代へ。OGも続報を追います。EC準備中、フォローしてお待ちください。"
+        "hook": "今朝のニュース。世界最大のコーヒー見本市『World of Coffee サンディエゴ』で、ハンドドリッパーの新作が5ブランド一気に発表されました。",
+        "origin": "目玉はEspro『Pourover』。Chemex型で5月末発売、約60ドル。Timemore『Vector』は2021年世界ブリュワーズカップ王者マット・ウィントン設計で米国デビュー。Hario、Sibarist、NextLevelも新作を発表。",
+        "recommend": "ハンドドリップの定番が変わるかも。お家の1杯を底上げしたい人は要チェックです。OGはEC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "新コーヒー連合誕生",
-        "origin": "7か国の企業が結集",
-        "recommend": "豆を選ぶ新しい基準"
+        "hook": "ドリッパー新作5連発",
+        "origin": "Espro復活と新顔参入",
+        "recommend": "家のドリップが進化"
       },
       "section_descriptions": {
-        "hook": "世界7か国の認証企業がコーヒー業界で動き出しました",
-        "origin": "農家の収入と労働環境の改善を共同で進める計画です",
-        "recommend": "誰がどう作るかが豆選びの判断材料になります"
+        "hook": "世界の見本市から人気ブランドが一斉に新作発表",
+        "origin": "Chemex似の新型や王者設計のフィルターが登場",
+        "recommend": "新作を取り入れて家の一杯を底上げしましょう"
       }
     }
   ]
