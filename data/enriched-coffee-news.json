@@ -1,39 +1,40 @@
 {
-  "date": "2026-04-30",
+  "date": "2026-05-01",
   "discovery": {
     "method": "news-en",
-    "description": "Daily Coffee News(2026-04-28付)の『New Manual Pourover Brewers from World of Coffee San Diego』を起点に、Perfect Daily Grind の WoC SD まとめと JA Coffee / Genuine Origin の現場ブログでクロスチェック。直近7日が②産地ハーベスト柱に偏っていたため、③業界×ハンドドリップ器具という Primary ペルソナ直撃の角度で③柱を補充。",
+    "description": "Perfect Daily Grind の 2026-04-29 公開フィーチャー記事『Homegrown coffee is fuelling Thailand's specialty boom』を起点に、SCA / 公式 World of Coffee Asia / Bangkok Post / Wikipedia でタイ産地データと WoC Bangkok 2026 の開催情報をクロスチェック。直近7日が②産地に偏っているが、(a) 直近14日で扱った産地(コロンビア/ハワイ/ベトナム/インド)に重複しないアジア新興産地で固有名詞ヒット仮説を継続検証、(b) 来週 5/7-9 開催の World of Coffee Bangkok 2026(BITEC、40カ国 600超出展)= 発信時点で残り 6 日の高鮮度ペグ、の 2 点で例外的に②柱を採用。",
     "sources": [
-      "https://dailycoffeenews.com/2026/04/28/new-manual-pourover-brewers-from-world-of-coffee-san-diego/",
-      "https://perfectdailygrind.com/2026/04/whats-happening-at-world-of-coffee-san-diego/",
-      "https://www.jacoffee.com/blogs/news/world-of-coffee-san-diego-2026",
-      "https://blog.genuineorigin.com/2026/04/genuine-observations-from-world-of-coffee-san-diego/"
+      "https://perfectdailygrind.com/2026/04/thailand-specialty-coffee-boom/",
+      "https://sca.coffee/sca-news/2025/5/16/world-of-coffee-heads-to-bangkok-in-2026-the-third-edition-of-world-of-coffee-asia",
+      "https://asia.worldofcoffee.org/show-info",
+      "https://www.thaipr.net/en/business_en/3715685",
+      "https://en.wikipedia.org/wiki/Coffee_production_in_Thailand"
     ],
-    "query": "World of Coffee San Diego 2026 new manual pourover brewers Espro Pourover Timemore Vector Matt Winton",
+    "query": "Thailand specialty coffee boom 2026 Perfect Daily Grind; World of Coffee Bangkok May 7-9 BITEC exhibitors; Chiang Mai Chiang Rai Doi Chang arabica production EU PDO",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "WoCサンディエゴで新ドリッパー5連発",
-      "description": "世界最大のコーヒー見本市から、ハンドドリッパーの新作が5ブランド一斉に発表されました。",
-      "detail": "目玉はEsproのChemex型新作Pourover(5月末発売・約60ドル)と、Timemoreが2021年世界ブリュワーズカップ王者マット・ウィントンの設計を採用した『Vector』。Hario、Sibarist、NextLevelも新作を投入し、ペーパー抽出器具の競争が再燃しています。",
-      "narration": "今朝のニュース。世界最大のコーヒー見本市『World of Coffee サンディエゴ』で、ハンドドリッパーの新作が5ブランド一気に発表されました。",
-      "tags": ["業界ニュース", "抽出器具", "ハンドドリップ"],
+      "title": "次の注目産地はタイ・WoCバンコク開幕間近",
+      "description": "来週バンコクで世界最大級のコーヒー見本市が初開催。タイは消費もアラビカ生産も急成長中の隠れた新興産地です。",
+      "detail": "5月7-9日にバンコクのBITECで開催される『World of Coffee Bangkok 2026』はアジア最大級のスペシャリティコーヒー見本市で、40カ国超から600以上の出展社が集まります。タイは一人当たりコーヒー消費が年間180から340杯に倍増し、国内市場は6500億バーツ規模に成長。チェンマイやチェンライの高地アラビカはドイチャン・ドイトゥンがEU保護原産地に登録された逸品ですが、国内需要が強く海外にほぼ出回らない希少枠になっています。",
+      "narration": "今朝のニュース。次の注目コーヒー産地、実はタイかもしれません。来週バンコクで世界最大級のコーヒー見本市が初開催されます。",
+      "tags": ["タイ", "アジア産地", "World of Coffee"],
       "narration_sections": {
-        "hook": "今朝のニュース。世界最大のコーヒー見本市『World of Coffee サンディエゴ』で、ハンドドリッパーの新作が5ブランド一気に発表されました。",
-        "origin": "目玉はEspro『Pourover』。Chemex型で5月末発売、約60ドル。Timemore『Vector』は2021年世界ブリュワーズカップ王者マット・ウィントン設計で米国デビュー。Hario、Sibarist、NextLevelも新作を発表。",
-        "recommend": "ハンドドリップの定番が変わるかも。お家の1杯を底上げしたい人は要チェックです。OGはEC準備中、フォローしてお待ちください。"
+        "hook": "今朝のニュース。次の注目コーヒー産地、実はタイかもしれません。来週バンコクで世界最大級のコーヒー見本市が初開催されます。",
+        "origin": "タイの一人当たりコーヒー消費は年間180から340杯に倍増、国内市場は6500億バーツ規模に成長。チェンマイやチェンライの高地アラビカはEU保護原産地ですが、国内需要に押されて海外にほぼ出回らない、知る人ぞ知る存在です。",
+        "recommend": "5月7-9日のWorld of Coffee Bangkokで注目度上昇。次の流行産地はタイかも。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ドリッパー新作5連発",
-        "origin": "Espro復活と新顔参入",
-        "recommend": "家のドリップが進化"
+        "hook": "次の注目産地はタイ",
+        "origin": "国内消費が340杯/年",
+        "recommend": "WoCバンコク開催間近"
       },
       "section_descriptions": {
-        "hook": "世界の見本市から人気ブランドが一斉に新作発表",
-        "origin": "Chemex似の新型や王者設計のフィルターが登場",
-        "recommend": "新作を取り入れて家の一杯を底上げしましょう"
+        "hook": "来週BITECで世界のコーヒーが集結する見本市が開催",
+        "origin": "消費倍増・国内市場6500億バーツ規模の急成長",
+        "recommend": "5月7-9日開催で世界の注目が集まる予感"
       }
     }
   ]
