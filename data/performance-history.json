@@ -60,7 +60,7 @@
         "views": 75,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.523Z"
       }
     },
     {
@@ -122,7 +122,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -154,7 +154,7 @@
         "views": 59,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -313,10 +313,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 59,
+        "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 83,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-04-29T00:13:09.678Z"
+        "updatedAt": "2026-04-30T00:13:31.524Z"
       }
     },
     {
@@ -398,6 +398,49 @@
         ],
         "query": "B Corp Coffee Coalition launch April 28 2026 founding members farmer prosperity",
         "freshness_hours": 24
+      },
+      "stats": {
+        "views": 270,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-04-30T00:13:31.524Z"
+      }
+    },
+    {
+      "videoId": "d2OgklPRyPU",
+      "videoUrl": "https://youtube.com/shorts/d2OgklPRyPU",
+      "date": "2026-04-30",
+      "title": "【コーヒー豆知識】WoCサンディエゴで新ドリッパー5連発｜2026/04/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News(2026-04-28付)の『New Manual Pourover Brewers from World of Coffee San Diego』を起点に、Perfect Daily Grind の WoC SD まとめと JA Coffee / Genuine Origin の現場ブログでクロスチェック。直近7日が②産地ハーベスト柱に偏っていたため、③業界×ハンドドリップ器具という Primary ペルソナ直撃の角度で③柱を補充。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/04/28/new-manual-pourover-brewers-from-world-of-coffee-san-diego/",
+          "https://perfectdailygrind.com/2026/04/whats-happening-at-world-of-coffee-san-diego/",
+          "https://www.jacoffee.com/blogs/news/world-of-coffee-san-diego-2026",
+          "https://blog.genuineorigin.com/2026/04/genuine-observations-from-world-of-coffee-san-diego/"
+        ],
+        "query": "World of Coffee San Diego 2026 new manual pourover brewers Espro Pourover Timemore Vector Matt Winton",
+        "freshness_hours": 48
       },
       "stats": {
         "views": 0,
@@ -595,6 +638,14 @@
       "changes": [
         "standard: 51 avg views (10 videos)",
         "Day performance: Wed=164, Sat=75, Tue=71, Fri=65, Mon=31, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-04-30",
+      "changes": [
+        "standard: 71 avg views (11 videos)",
+        "Day performance: Wed=217, Sat=75, Tue=71, Fri=65, Mon=32, Sun=1"
       ],
       "recommendedTemplate": "standard"
     }
