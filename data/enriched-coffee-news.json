@@ -1,40 +1,40 @@
 {
-  "date": "2026-05-01",
+  "date": "2026-05-02",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の 2026-04-29 公開フィーチャー記事『Homegrown coffee is fuelling Thailand's specialty boom』を起点に、SCA / 公式 World of Coffee Asia / Bangkok Post / Wikipedia でタイ産地データと WoC Bangkok 2026 の開催情報をクロスチェック。直近7日が②産地に偏っているが、(a) 直近14日で扱った産地(コロンビア/ハワイ/ベトナム/インド)に重複しないアジア新興産地で固有名詞ヒット仮説を継続検証、(b) 来週 5/7-9 開催の World of Coffee Bangkok 2026(BITEC、40カ国 600超出展)= 発信時点で残り 6 日の高鮮度ペグ、の 2 点で例外的に②柱を採用。",
+    "method": "expert-blog",
+    "description": "土曜のエバーグリーン枠。Primary ペルソナ(家で淹れる趣味層)に直撃する『精製方法と淹れ方』を取り上げる。05-01 のタイ産地ニュース(新興産地が嫌気性発酵を積極採用)の背景深掘りとして、Perfect Daily Grind の焙煎ガイド・Coffee Review の解説記事・Fellow Products の抽出ガイドを一次情報源にクロスチェック。news-en が直近 2 日連続(04-30/05-01)のため method 連続回避も兼ねて expert-blog を選択。",
     "sources": [
-      "https://perfectdailygrind.com/2026/04/thailand-specialty-coffee-boom/",
-      "https://sca.coffee/sca-news/2025/5/16/world-of-coffee-heads-to-bangkok-in-2026-the-third-edition-of-world-of-coffee-asia",
-      "https://asia.worldofcoffee.org/show-info",
-      "https://www.thaipr.net/en/business_en/3715685",
-      "https://en.wikipedia.org/wiki/Coffee_production_in_Thailand"
+      "https://perfectdailygrind.com/2024/01/how-to-roast-anaerobic-fermented-coffee/",
+      "https://www.coffeereview.com/anaerobic-fermentation-and-other-palate-bending-processing-experiments/",
+      "https://perfectdailygrind.com/2025/01/how-honey-processing-is-evolving-in-specialty-coffee/",
+      "https://fellowproducts.com/blogs/learn/anaerobic-fermentation-distinguishing-the-difference-in-your-cup",
+      "https://1zpresso.coffee/a-guide-to-anaerobic-coffee/"
     ],
-    "query": "Thailand specialty coffee boom 2026 Perfect Daily Grind; World of Coffee Bangkok May 7-9 BITEC exhibitors; Chiang Mai Chiang Rai Doi Chang arabica production EU PDO",
-    "freshness_hours": 48
+    "query": "anaerobic fermentation coffee processing flavor profile; how to roast anaerobic fermented coffee Perfect Daily Grind; brewing temperature grind size for anaerobic specialty coffee",
+    "freshness_hours": 11500
   },
   "articles": [
     {
       "rank": 1,
-      "title": "次の注目産地はタイ・WoCバンコク開幕間近",
-      "description": "来週バンコクで世界最大級のコーヒー見本市が初開催。タイは消費もアラビカ生産も急成長中の隠れた新興産地です。",
-      "detail": "5月7-9日にバンコクのBITECで開催される『World of Coffee Bangkok 2026』はアジア最大級のスペシャリティコーヒー見本市で、40カ国超から600以上の出展社が集まります。タイは一人当たりコーヒー消費が年間180から340杯に倍増し、国内市場は6500億バーツ規模に成長。チェンマイやチェンライの高地アラビカはドイチャン・ドイトゥンがEU保護原産地に登録された逸品ですが、国内需要が強く海外にほぼ出回らない希少枠になっています。",
-      "narration": "今朝のニュース。次の注目コーヒー産地、実はタイかもしれません。来週バンコクで世界最大級のコーヒー見本市が初開催されます。",
-      "tags": ["タイ", "アジア産地", "World of Coffee"],
+      "title": "アナエロビック発酵コーヒーは淹れ方が違う",
+      "description": "スペシャルティ売場で増える『アナエロビック発酵』の豆は、普通の淹れ方だと本領を発揮しないって知ってましたか?",
+      "detail": "嫌気性発酵(アナエロビック)はチェリーを酸素のない密閉タンクで発酵させてから乾燥させる新精製方法。Perfect Daily Grind の焙煎ガイドや Coffee Review の解説によると、出来上がる豆は可溶成分が多くて熱に敏感で、湯温88-91℃ × 挽き目750-800ミクロンが推奨です。普通のドリップ温度95℃台で淹れると渋みや苦みが立ちやすく、本来のパッションフルーツ・乳酸的な甘酸っぱさを引き出せません。コロンビア・パナマだけでなく、タイなどアジアの新興産地も積極採用しており、家のスペシャルティ棚で出会う機会が増えています。",
+      "narration": "今日のテーマ。最近スペシャルティ売場で増えてる『アナエロビック発酵』のコーヒー。実は普通の淹れ方だと本来の味が出きらないんです。",
+      "tags": ["アナエロビック", "嫌気性発酵", "ハンドドリップ"],
       "narration_sections": {
-        "hook": "今朝のニュース。次の注目コーヒー産地、実はタイかもしれません。来週バンコクで世界最大級のコーヒー見本市が初開催されます。",
-        "origin": "タイの一人当たりコーヒー消費は年間180から340杯に倍増、国内市場は6500億バーツ規模に成長。チェンマイやチェンライの高地アラビカはEU保護原産地ですが、国内需要に押されて海外にほぼ出回らない、知る人ぞ知る存在です。",
-        "recommend": "5月7-9日のWorld of Coffee Bangkokで注目度上昇。次の流行産地はタイかも。EC準備中、フォローしてお待ちください。"
+        "hook": "今日のテーマ。最近スペシャルティ売場で増えてる『アナエロビック発酵』のコーヒー。実は普通の淹れ方だと本来の味が出きらないんです。",
+        "origin": "嫌気性発酵の豆は可溶成分が多くて熱に敏感です。Perfect Daily Grindの焙煎ガイドでは、湯温は普段より低い88-91℃、挽き目は粗めの750-800ミクロンが目安。これでパッションフルーツや乳酸の甘酸っぱさが綺麗に立ち、渋みが抑えられます。",
+        "recommend": "家で試すならまず湯温を3-5℃下げて粗挽きで。同じ豆が別物になります。EC準備中、焙煎所のフォローでお待ちください。"
       },
       "section_titles": {
-        "hook": "次の注目産地はタイ",
-        "origin": "国内消費が340杯/年",
-        "recommend": "WoCバンコク開催間近"
+        "hook": "アナエロビック発酵とは",
+        "origin": "湯温88-91℃が目安",
+        "recommend": "家での淹れ方ワンポイント"
       },
       "section_descriptions": {
-        "hook": "来週BITECで世界のコーヒーが集結する見本市が開催",
-        "origin": "消費倍増・国内市場6500億バーツ規模の急成長",
-        "recommend": "5月7-9日開催で世界の注目が集まる予感"
+        "hook": "スペシャルティで増える嫌気性発酵コーヒーの特徴",
+        "origin": "焙煎ガイド推奨の湯温88-91℃と粗めの挽き目",
+        "recommend": "湯温を下げ粗挽きに変えれば味が一変します"
       }
     }
   ]
