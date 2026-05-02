@@ -1,40 +1,41 @@
 {
-  "date": "2026-05-02",
+  "date": "2026-05-03",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜のエバーグリーン枠。Primary ペルソナ(家で淹れる趣味層)に直撃する『精製方法と淹れ方』を取り上げる。05-01 のタイ産地ニュース(新興産地が嫌気性発酵を積極採用)の背景深掘りとして、Perfect Daily Grind の焙煎ガイド・Coffee Review の解説記事・Fellow Products の抽出ガイドを一次情報源にクロスチェック。news-en が直近 2 日連続(04-30/05-01)のため method 連続回避も兼ねて expert-blog を選択。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の 5/1 ニュース recap を起点に『China cuts tariffs on Ethiopian coffee imports』を抽出。China Daily / Bastille Post / Capital News / Xinhua 英語版で、5月1日に発効した中国のアフリカ53カ国向けゼロ関税政策と、その中で『Ethiopia → 中国向けコーヒー輸出が年間27%増、2024-25 年度で34,000トン超・2.18億ドル、中国は4位市場』というデータをクロスチェック。日曜日だがエバーグリーン化せず news-en に振った理由は、(a) 政策発効から freshness 約48時間で速報価値が高い、(b) 直近7日柱比率で①市況/③業界が手薄、(c) 日本のスペシャルティはエチオピア依存度が高く Primary ペルソナへの実需直撃という3点。method 連続性は 05-02 expert-blog を挟んだので news-en 復帰でも『直近2日と同じ method を連続で選ばない』に抵触しない。",
     "sources": [
-      "https://perfectdailygrind.com/2024/01/how-to-roast-anaerobic-fermented-coffee/",
-      "https://www.coffeereview.com/anaerobic-fermentation-and-other-palate-bending-processing-experiments/",
-      "https://perfectdailygrind.com/2025/01/how-honey-processing-is-evolving-in-specialty-coffee/",
-      "https://fellowproducts.com/blogs/learn/anaerobic-fermentation-distinguishing-the-difference-in-your-cup",
-      "https://1zpresso.coffee/a-guide-to-anaerobic-coffee/"
+      "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
+      "https://www.bastillepost.com/global/article/5824383-ethiopia-expects-zero-tariff-policy-to-boost-coffee-exports-to-china",
+      "https://global.chinadaily.com.cn/a/202604/22/WS69e87401a310d6866eb44e48.html",
+      "https://www.capitalfm.co.ke/news/2026/04/zero-tariff-policy-to-boost-ethiopian-coffee-exports/",
+      "https://english.news.cn/20260502/9c941b28babb482ea232520b7a14abdb/c.html",
+      "http://www.china.org.cn/2026-05/01/content_118473359.shtml"
     ],
-    "query": "anaerobic fermentation coffee processing flavor profile; how to roast anaerobic fermented coffee Perfect Daily Grind; brewing temperature grind size for anaerobic specialty coffee",
-    "freshness_hours": 11500
+    "query": "China zero-tariff Ethiopian coffee May 1 2026 effective; Ethiopia China coffee export 34000 tons 2024 2025; Africa 53 countries duty free policy specialty coffee impact",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アナエロビック発酵コーヒーは淹れ方が違う",
-      "description": "スペシャルティ売場で増える『アナエロビック発酵』の豆は、普通の淹れ方だと本領を発揮しないって知ってましたか?",
-      "detail": "嫌気性発酵(アナエロビック)はチェリーを酸素のない密閉タンクで発酵させてから乾燥させる新精製方法。Perfect Daily Grind の焙煎ガイドや Coffee Review の解説によると、出来上がる豆は可溶成分が多くて熱に敏感で、湯温88-91℃ × 挽き目750-800ミクロンが推奨です。普通のドリップ温度95℃台で淹れると渋みや苦みが立ちやすく、本来のパッションフルーツ・乳酸的な甘酸っぱさを引き出せません。コロンビア・パナマだけでなく、タイなどアジアの新興産地も積極採用しており、家のスペシャルティ棚で出会う機会が増えています。",
-      "narration": "今日のテーマ。最近スペシャルティ売場で増えてる『アナエロビック発酵』のコーヒー。実は普通の淹れ方だと本来の味が出きらないんです。",
-      "tags": ["アナエロビック", "嫌気性発酵", "ハンドドリップ"],
+      "title": "中国ゼロ関税で日本のエチオピアが値上がりするかも",
+      "description": "5月1日から中国がエチオピア産コーヒーの輸入関税をゼロにしました。日本のスペシャルティにもじわっと効いてきます。",
+      "detail": "中国は5月1日付で、外交関係のあるアフリカ53カ国からの輸入品に対するゼロ関税政策を発効させました。中国はすでにエチオピアにとって4番目に大きいコーヒー市場で、2024-25年度の輸出は34,000トン超・2.18億ドル、しかも年率27%で伸びています。関税ゼロで現地の中国向け買い付けがさらに加速すると、エチオピア国内の生豆価格は上昇圧力。日本のスペシャルティ売場で人気のイルガチェフェやシダモといったエチオピア銘柄も、仕入れ値が押し上げられる構図です。Perfect Daily Grind の5月1日ニュースレキャップでも今週の主要ストーリーとして取り上げられています。",
+      "narration": "知ってました?今月1日から、中国がエチオピア産コーヒーの輸入関税をゼロにしたんです。日本のスペシャルティにも、じわっと効いてきます。",
+      "tags": ["中国市場", "エチオピア", "関税ゼロ"],
       "narration_sections": {
-        "hook": "今日のテーマ。最近スペシャルティ売場で増えてる『アナエロビック発酵』のコーヒー。実は普通の淹れ方だと本来の味が出きらないんです。",
-        "origin": "嫌気性発酵の豆は可溶成分が多くて熱に敏感です。Perfect Daily Grindの焙煎ガイドでは、湯温は普段より低い88-91℃、挽き目は粗めの750-800ミクロンが目安。これでパッションフルーツや乳酸の甘酸っぱさが綺麗に立ち、渋みが抑えられます。",
-        "recommend": "家で試すならまず湯温を3-5℃下げて粗挽きで。同じ豆が別物になります。EC準備中、焙煎所のフォローでお待ちください。"
+        "hook": "知ってました?今月1日から、中国がエチオピア産コーヒーの輸入関税をゼロにしたんです。日本のスペシャルティにも、じわっと効いてきます。",
+        "origin": "エチオピアにとって中国はすでに4番目のコーヒー市場で、年間27%増のペースで伸びていました。関税ゼロでさらに買い付けが加速すると、現地の仕入れ価格は上昇。日本のスペシャルティ豆もエチオピア産は値上がり圧力がかかる構図です。",
+        "recommend": "今のうちにお気に入りのエチオピアを楽しんでおきましょう。OGは入荷チェックを続けます。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "アナエロビック発酵とは",
-        "origin": "湯温88-91℃が目安",
-        "recommend": "家での淹れ方ワンポイント"
+        "hook": "中国ゼロ関税ショック",
+        "origin": "27%成長の中国市場",
+        "recommend": "今のうちに楽しもう"
       },
       "section_descriptions": {
-        "hook": "スペシャルティで増える嫌気性発酵コーヒーの特徴",
-        "origin": "焙煎ガイド推奨の湯温88-91℃と粗めの挽き目",
-        "recommend": "湯温を下げ粗挽きに変えれば味が一変します"
+        "hook": "中国の関税ゼロが日本のスペシャリティにも波及",
+        "origin": "エチオピア産が値上がりしうる仕組みを解説",
+        "recommend": "お気に入りのエチオピアは今のうちに楽しもう"
       }
     }
   ]
