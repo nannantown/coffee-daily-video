@@ -122,7 +122,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -154,7 +154,7 @@
         "views": 59,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 84,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 270,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -443,10 +443,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 29,
+        "views": 39,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-01T00:12:12.327Z"
+        "updatedAt": "2026-05-03T00:06:21.751Z"
       }
     },
     {
@@ -484,6 +484,51 @@
           "https://en.wikipedia.org/wiki/Coffee_production_in_Thailand"
         ],
         "query": "Thailand specialty coffee boom 2026 Perfect Daily Grind; World of Coffee Bangkok May 7-9 BITEC exhibitors; Chiang Mai Chiang Rai Doi Chang arabica production EU PDO",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-03T00:06:21.751Z"
+      }
+    },
+    {
+      "videoId": "f_EDevsFIxg",
+      "videoUrl": "https://youtube.com/shorts/f_EDevsFIxg",
+      "date": "2026-05-03",
+      "title": "【コーヒー豆知識】中国ゼロ関税で日本のエチオピアが値上がりするかも｜2026/05/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind の 5/1 ニュース recap を起点に『China cuts tariffs on Ethiopian coffee imports』を抽出。China Daily / Bastille Post / Capital News / Xinhua 英語版で、5月1日に発効した中国のアフリカ53カ国向けゼロ関税政策と、その中で『Ethiopia → 中国向けコーヒー輸出が年間27%増、2024-25 年度で34,000トン超・2.18億ドル、中国は4位市場』というデータをクロスチェック。日曜日だがエバーグリーン化せず news-en に振った理由は、(a) 政策発効から freshness 約48時間で速報価値が高い、(b) 直近7日柱比率で①市況/③業界が手薄、(c) 日本のスペシャルティはエチオピア依存度が高く Primary ペルソナへの実需直撃という3点。method 連続性は 05-02 expert-blog を挟んだので news-en 復帰でも『直近2日と同じ method を連続で選ばない』に抵触しない。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
+          "https://www.bastillepost.com/global/article/5824383-ethiopia-expects-zero-tariff-policy-to-boost-coffee-exports-to-china",
+          "https://global.chinadaily.com.cn/a/202604/22/WS69e87401a310d6866eb44e48.html",
+          "https://www.capitalfm.co.ke/news/2026/04/zero-tariff-policy-to-boost-ethiopian-coffee-exports/",
+          "https://english.news.cn/20260502/9c941b28babb482ea232520b7a14abdb/c.html",
+          "http://www.china.org.cn/2026-05/01/content_118473359.shtml"
+        ],
+        "query": "China zero-tariff Ethiopian coffee May 1 2026 effective; Ethiopia China coffee export 34000 tons 2024 2025; Africa 53 countries duty free policy specialty coffee impact",
         "freshness_hours": 48
       },
       "stats": {
@@ -698,6 +743,14 @@
       "changes": [
         "standard: 68 avg views (12 videos)",
         "Day performance: Wed=217, Sat=75, Tue=72, Fri=65, Mon=32, Thu=29, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-03",
+      "changes": [
+        "standard: 63 avg views (13 videos)",
+        "Day performance: Wed=217, Sat=75, Tue=72, Thu=39, Fri=33, Mon=32, Sun=1"
       ],
       "recommendedTemplate": "standard"
     }
