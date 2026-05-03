@@ -1,41 +1,39 @@
 {
-  "date": "2026-05-03",
+  "date": "2026-05-04",
   "discovery": {
     "method": "news-en",
-    "description": "Perfect Daily Grind の 5/1 ニュース recap を起点に『China cuts tariffs on Ethiopian coffee imports』を抽出。China Daily / Bastille Post / Capital News / Xinhua 英語版で、5月1日に発効した中国のアフリカ53カ国向けゼロ関税政策と、その中で『Ethiopia → 中国向けコーヒー輸出が年間27%増、2024-25 年度で34,000トン超・2.18億ドル、中国は4位市場』というデータをクロスチェック。日曜日だがエバーグリーン化せず news-en に振った理由は、(a) 政策発効から freshness 約48時間で速報価値が高い、(b) 直近7日柱比率で①市況/③業界が手薄、(c) 日本のスペシャルティはエチオピア依存度が高く Primary ペルソナへの実需直撃という3点。method 連続性は 05-02 expert-blog を挟んだので news-en 復帰でも『直近2日と同じ method を連続で選ばない』に抵触しない。",
+    "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Nestlé→Centurium Capital への Blue Bottle 売却ニュースを Daily Coffee News / Inside Retail Asia / Food Dive で照合",
     "sources": [
       "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-      "https://www.bastillepost.com/global/article/5824383-ethiopia-expects-zero-tariff-policy-to-boost-coffee-exports-to-china",
-      "https://global.chinadaily.com.cn/a/202604/22/WS69e87401a310d6866eb44e48.html",
-      "https://www.capitalfm.co.ke/news/2026/04/zero-tariff-policy-to-boost-ethiopian-coffee-exports/",
-      "https://english.news.cn/20260502/9c941b28babb482ea232520b7a14abdb/c.html",
-      "http://www.china.org.cn/2026-05/01/content_118473359.shtml"
+      "https://dailycoffeenews.com/2026/04/24/nestle-confirms-blue-bottle-sale-to-luckins-largest-shareholder/",
+      "https://insideretail.asia/2026/04/27/nestle-completes-blue-bottle-sale-to-chinas-centurium-capital/",
+      "https://www.fooddive.com/news/nestle-sells-blue-bottle-coffee-to-Centurium-Capital/818334/"
     ],
-    "query": "China zero-tariff Ethiopian coffee May 1 2026 effective; Ethiopia China coffee export 34000 tons 2024 2025; Africa 53 countries duty free policy specialty coffee impact",
-    "freshness_hours": 48
+    "query": "Nestle Blue Bottle Coffee sale Centurium Capital Luckin May 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "中国ゼロ関税で日本のエチオピアが値上がりするかも",
-      "description": "5月1日から中国がエチオピア産コーヒーの輸入関税をゼロにしました。日本のスペシャルティにもじわっと効いてきます。",
-      "detail": "中国は5月1日付で、外交関係のあるアフリカ53カ国からの輸入品に対するゼロ関税政策を発効させました。中国はすでにエチオピアにとって4番目に大きいコーヒー市場で、2024-25年度の輸出は34,000トン超・2.18億ドル、しかも年率27%で伸びています。関税ゼロで現地の中国向け買い付けがさらに加速すると、エチオピア国内の生豆価格は上昇圧力。日本のスペシャルティ売場で人気のイルガチェフェやシダモといったエチオピア銘柄も、仕入れ値が押し上げられる構図です。Perfect Daily Grind の5月1日ニュースレキャップでも今週の主要ストーリーとして取り上げられています。",
-      "narration": "知ってました?今月1日から、中国がエチオピア産コーヒーの輸入関税をゼロにしたんです。日本のスペシャルティにも、じわっと効いてきます。",
-      "tags": ["中国市場", "エチオピア", "関税ゼロ"],
+      "title": "ブルーボトル、ネスレからルーキン系ファンドへ売却",
+      "description": "ネスレが9年前4.25億ドルで買ったブルーボトルを、4億ドル弱で中国系ファンドに手放しました",
+      "detail": "買い手はルーキン最大株主のセンチュリウム・キャピタル。店舗事業のみが渡り、豆やRTDなどのCPG事業はネスレに残ります",
+      "narration": "知ってましたか?ブルーボトルが9年ぶりに身売りです。ネスレが手放し、中国ルーキンを支えるファンドへ、4億ドル弱で売却が決まりました。",
+      "tags": ["業界ニュース", "ブルーボトル", "M&A"],
       "narration_sections": {
-        "hook": "知ってました?今月1日から、中国がエチオピア産コーヒーの輸入関税をゼロにしたんです。日本のスペシャルティにも、じわっと効いてきます。",
-        "origin": "エチオピアにとって中国はすでに4番目のコーヒー市場で、年間27%増のペースで伸びていました。関税ゼロでさらに買い付けが加速すると、現地の仕入れ価格は上昇。日本のスペシャルティ豆もエチオピア産は値上がり圧力がかかる構図です。",
-        "recommend": "今のうちにお気に入りのエチオピアを楽しんでおきましょう。OGは入荷チェックを続けます。EC準備中、フォローしてお待ちください。"
+        "hook": "知ってましたか?ブルーボトルが9年ぶりに身売りです。ネスレが手放し、中国ルーキンを支えるファンドへ、4億ドル弱で売却が決まりました。",
+        "origin": "2017年にネスレが68%株を4.25億ドルで取得しましたが、今回はそれを下回る4億ドル弱でセンチュリウム・キャピタルへ。あの中国ルーキンを支える私募ファンドです。店舗運営は買い手側、ネスレは豆やRTDなどCPG事業だけ残します。",
+        "recommend": "スペシャリティ大手が次々と他資本へ。独立焙煎所の存在意義は増しています。OGはEC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "中国ゼロ関税ショック",
-        "origin": "27%成長の中国市場",
-        "recommend": "今のうちに楽しもう"
+        "hook": "ブルーボトル身売り",
+        "origin": "9年ぶり買収の条件",
+        "recommend": "独立焙煎所の意味"
       },
       "section_descriptions": {
-        "hook": "中国の関税ゼロが日本のスペシャリティにも波及",
-        "origin": "エチオピア産が値上がりしうる仕組みを解説",
-        "recommend": "お気に入りのエチオピアは今のうちに楽しもう"
+        "hook": "ネスレが手放し中国系ファンドへ4億ドル弱で",
+        "origin": "9年前は4.25億ドル取得、今回はそれを下回る価格",
+        "recommend": "大手再編が進む中、独立ロースターの存在意義"
       }
     }
   ]
