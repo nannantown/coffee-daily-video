@@ -122,7 +122,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -154,7 +154,7 @@
         "views": 59,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -357,10 +357,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 84,
+        "views": 85,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 270,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -443,10 +443,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 39,
+        "views": 40,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -487,10 +487,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-03T00:06:21.751Z"
+        "updatedAt": "2026-05-04T00:09:23.198Z"
       }
     },
     {
@@ -532,6 +532,49 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 1170,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-04T00:09:23.198Z"
+      }
+    },
+    {
+      "videoId": "G7kXT84hXpY",
+      "videoUrl": "https://youtube.com/shorts/G7kXT84hXpY",
+      "date": "2026-05-04",
+      "title": "【コーヒー豆知識】ブルーボトル、ネスレからルーキン系ファンドへ売却｜2026/05/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Nestlé→Centurium Capital への Blue Bottle 売却ニュースを Daily Coffee News / Inside Retail Asia / Food Dive で照合",
+        "sources": [
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
+          "https://dailycoffeenews.com/2026/04/24/nestle-confirms-blue-bottle-sale-to-luckins-largest-shareholder/",
+          "https://insideretail.asia/2026/04/27/nestle-completes-blue-bottle-sale-to-chinas-centurium-capital/",
+          "https://www.fooddive.com/news/nestle-sells-blue-bottle-coffee-to-Centurium-Capital/818334/"
+        ],
+        "query": "Nestle Blue Bottle Coffee sale Centurium Capital Luckin May 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -540,13 +583,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=47"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -751,6 +787,14 @@
       "changes": [
         "standard: 63 avg views (13 videos)",
         "Day performance: Wed=217, Sat=75, Tue=72, Thu=39, Fri=33, Mon=32, Sun=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-04",
+      "changes": [
+        "standard: 143 avg views (14 videos)",
+        "Day performance: Sun=293, Wed=217, Sat=75, Tue=72, Thu=40, Fri=34, Mon=32"
       ],
       "recommendedTemplate": "standard"
     }
