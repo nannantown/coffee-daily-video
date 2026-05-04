@@ -1,39 +1,39 @@
 {
-  "date": "2026-05-04",
+  "date": "2026-05-05",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Nestlé→Centurium Capital への Blue Bottle 売却ニュースを Daily Coffee News / Inside Retail Asia / Food Dive で照合",
+    "method": "social-en",
+    "description": "コーヒー発祥地イエメンのカフェ文化が米国で逆輸入ブームを起こしているという話題が、AP系報道(Daily Journal/Washington Times)を起点にDaily Coffee News週次レcap、Reddit r/Coffeeや英語圏Xでも話題化。Technomicの飲食店業界調査を一次データに取り、新method社会的ディスカバリーをExploreとして検証。",
     "sources": [
-      "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-      "https://dailycoffeenews.com/2026/04/24/nestle-confirms-blue-bottle-sale-to-luckins-largest-shareholder/",
-      "https://insideretail.asia/2026/04/27/nestle-completes-blue-bottle-sale-to-chinas-centurium-capital/",
-      "https://www.fooddive.com/news/nestle-sells-blue-bottle-coffee-to-Centurium-Capital/818334/"
+      "https://dailyjournal.net/2026/05/02/yemen-introduced-the-world-to-coffee-now-its-coffeehouse-culture-is-booming-in-the-us/",
+      "https://www.washingtontimes.com/news/2026/may/2/yemen-coffeehouse-culture-booming-us/",
+      "https://dailycoffeenews.com/2026/05/01/weekly-coffee-news-yemeni-coffee-shop-boom-no-tip-reversal/",
+      "https://wtop.com/fashion/2026/05/yemen-introduced-the-world-to-coffee-now-its-coffeehouse-culture-is-booming-in-the-us/"
     ],
-    "query": "Nestle Blue Bottle Coffee sale Centurium Capital Luckin May 2026",
+    "query": "Yemeni coffee shop boom US Technomic 30 brands 50% growth Ramadan late night",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブルーボトル、ネスレからルーキン系ファンドへ売却",
-      "description": "ネスレが9年前4.25億ドルで買ったブルーボトルを、4億ドル弱で中国系ファンドに手放しました",
-      "detail": "買い手はルーキン最大株主のセンチュリウム・キャピタル。店舗事業のみが渡り、豆やRTDなどのCPG事業はネスレに残ります",
-      "narration": "知ってましたか?ブルーボトルが9年ぶりに身売りです。ネスレが手放し、中国ルーキンを支えるファンドへ、4億ドル弱で売却が決まりました。",
-      "tags": ["業界ニュース", "ブルーボトル", "M&A"],
+      "title": "米国でイエメン式カフェが急増、発祥地が逆輸入",
+      "description": "コーヒー発祥地イエメンのカフェ文化が、米国で急成長中のトレンドになっています",
+      "detail": "テクノミック調べで主要6社の店舗数は昨年50%増の136店、ブランド数も30超に到達",
+      "narration": "今アメリカで、イエメン式カフェが急増中なのを知ってますか?コーヒー文化発祥の地イエメンが、米国カフェ業界に逆輸入されています。",
+      "tags": ["業界ニュース", "イエメン", "カフェ文化"],
       "narration_sections": {
-        "hook": "知ってましたか?ブルーボトルが9年ぶりに身売りです。ネスレが手放し、中国ルーキンを支えるファンドへ、4億ドル弱で売却が決まりました。",
-        "origin": "2017年にネスレが68%株を4.25億ドルで取得しましたが、今回はそれを下回る4億ドル弱でセンチュリウム・キャピタルへ。あの中国ルーキンを支える私募ファンドです。店舗運営は買い手側、ネスレは豆やRTDなどCPG事業だけ残します。",
-        "recommend": "スペシャリティ大手が次々と他資本へ。独立焙煎所の存在意義は増しています。OGはEC準備中、フォローしてお待ちください。"
+        "hook": "今アメリカで、イエメン式カフェが急増中なのを知ってますか?コーヒー文化発祥の地イエメンが、米国カフェ業界に逆輸入されています。",
+        "origin": "米調査会社テクノミックによれば、イエメン式カフェチェーン主要6社の店舗数は昨年で50%増、現在136店。米国では今30以上のイエメン系ブランドが展開中。深夜3時まで営業しラマダン需要も取り込み、酒を飲まない若者の社交場として支持を広げています。",
+        "recommend": "コーヒー発祥地イエメンの文化が、世界を再び動かす流れ。次の波を一緒に追いかけませんか。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ブルーボトル身売り",
-        "origin": "9年ぶり買収の条件",
-        "recommend": "独立焙煎所の意味"
+        "hook": "イエメン式カフェ",
+        "origin": "急成長を支える数字",
+        "recommend": "発祥地が動く時代"
       },
       "section_descriptions": {
-        "hook": "ネスレが手放し中国系ファンドへ4億ドル弱で",
-        "origin": "9年前は4.25億ドル取得、今回はそれを下回る価格",
-        "recommend": "大手再編が進む中、独立ロースターの存在意義"
+        "hook": "コーヒー発祥地イエメンが米国カフェ業界に逆輸入",
+        "origin": "主要6社で店舗50%増・136店の最新実態",
+        "recommend": "発祥地イエメンが描くコーヒー新潮流の意味"
       }
     }
   ]
