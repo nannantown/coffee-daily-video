@@ -186,7 +186,7 @@
         "views": 164,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -269,10 +269,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 85,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 270,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -487,10 +487,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -532,10 +532,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1279,
+        "views": 1291,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -575,10 +575,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 158,
+        "views": 181,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-05T00:13:53.157Z"
+        "updatedAt": "2026-05-06T00:11:59.016Z"
       }
     },
     {
@@ -618,6 +618,53 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 264,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-06T00:11:59.016Z"
+      }
+    },
+    {
+      "videoId": "pyfbWjA44-c",
+      "videoUrl": "https://youtube.com/shorts/pyfbWjA44-c",
+      "date": "2026-05-06",
+      "title": "【コーヒー豆知識】ラバッツァが業界初の再生農業認証コーヒーを発表、調達先はホンジュラス｜2026/05/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 56,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind 5月1日 News Recap で挙がった Lavazza × Rainforest Alliance の業界初『再生農業』認証コーヒー発表(4月30日)を起点に、Rainforest Alliance 公式プレスリリース / Tea & Coffee Trade Journal / Comunicaffe / Global Coffee Report / CoffeeTalk で発表内容をクロスチェック。さらに USDA Foreign Agricultural Service の Honduras Coffee Annual と StoneX 解説で、調達先ホンジュラスの2025/26年産5.8百万袋予想・パライネマ品種普及・面積+3.3%の背景データを補強。直近2日(5/4 news-en→5/5 social-en)を挟んだので news-en 復帰可。Wed=平日ニュース起点で③業界×②産地のハイブリッド、Primary 趣味層が買う豆の判断軸『産地×品種×認証』を1本で繋ぐ角度。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
+          "https://www.rainforest-alliance.org/press-releases/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
+          "https://www.teaandcoffee.net/news/39217/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
+          "https://www.comunicaffe.com/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee-la-reserva-de-tierra",
+          "https://www.gcrmag.com/rainforest-alliance-welcomes-lavazza-release",
+          "https://coffeetalk.com/daily-dose/top-news/04-2026/109930/",
+          "https://www.stonex.com/en/market-intelligence/usda-attache-honduras-2025-2026-coffee-crop-pegged-at-5-8-millio/",
+          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Tegucigalpa_Honduras_HO2025-0002.pdf"
+        ],
+        "query": "Lavazza Rainforest Alliance Regenerative Agriculture La Reserva de Tierra Selection April 30 2026; Honduras coffee 2025/26 5.8 million bags Parainema rust resistant variety USDA attache",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -626,13 +673,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -839,6 +879,14 @@
       "changes": [
         "standard: 151 avg views (15 videos)",
         "Day performance: Sun=321, Wed=217, Sat=75, Mon=74, Tue=72, Thu=38, Fri=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-06",
+      "changes": [
+        "standard: 160 avg views (16 videos)",
+        "Day performance: Sun=324, Wed=217, Tue=136, Mon=82, Sat=75, Thu=38, Fri=34"
       ],
       "recommendedTemplate": "standard"
     }
