@@ -1,43 +1,41 @@
 {
-  "date": "2026-05-06",
+  "date": "2026-05-07",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 5月1日 News Recap で挙がった Lavazza × Rainforest Alliance の業界初『再生農業』認証コーヒー発表(4月30日)を起点に、Rainforest Alliance 公式プレスリリース / Tea & Coffee Trade Journal / Comunicaffe / Global Coffee Report / CoffeeTalk で発表内容をクロスチェック。さらに USDA Foreign Agricultural Service の Honduras Coffee Annual と StoneX 解説で、調達先ホンジュラスの2025/26年産5.8百万袋予想・パライネマ品種普及・面積+3.3%の背景データを補強。直近2日(5/4 news-en→5/5 social-en)を挟んだので news-en 復帰可。Wed=平日ニュース起点で③業界×②産地のハイブリッド、Primary 趣味層が買う豆の判断軸『産地×品種×認証』を1本で繋ぐ角度。",
+    "method": "official-src",
+    "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Cecafé(ブラジルコーヒー輸出協会)会長の最新コメント・MercoPress(Q1輸出-21%)・USDA FAS の Coffee: World Markets and Trade(2025/26世界生産178.8M袋過去最高、世界在庫5年連続減)を一次情報として確認。Conab の2026/27ブラジル新クロップ予測71.4M袋(+11.5%)を中心に、Cecafé会長 Márcio Ferreira の『Conilonは5月、Arabicaは7月の新クロップから本格的に輸出回復』見通しで季節性ストーリーを構築。直近4日(5/3 news-en, 5/4 news-en, 5/5 social-en, 5/6 news-en)で news-en が3回入り過密だったので、TOP method の official-src(B Corp 270 views 実績)を Exploit。柱は直近過密な③業界から空きの②産地ハーベストへ振り替え、ブラジル豊作期×輸出回復タイミングという行動指針を Primary 趣味層に提示。",
     "sources": [
       "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-      "https://www.rainforest-alliance.org/press-releases/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
-      "https://www.teaandcoffee.net/news/39217/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
-      "https://www.comunicaffe.com/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee-la-reserva-de-tierra",
-      "https://www.gcrmag.com/rainforest-alliance-welcomes-lavazza-release",
-      "https://coffeetalk.com/daily-dose/top-news/04-2026/109930/",
-      "https://www.stonex.com/en/market-intelligence/usda-attache-honduras-2025-2026-coffee-crop-pegged-at-5-8-millio/",
-      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Tegucigalpa_Honduras_HO2025-0002.pdf"
+      "https://en.mercopress.com/2026/04/14/brazil-coffee-exports-fall-21-in-q1-despite-record-crop-forecast",
+      "https://www.cecafe.com.br/en/publications/monthly-exports-report/",
+      "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/",
+      "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+      "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026"
     ],
-    "query": "Lavazza Rainforest Alliance Regenerative Agriculture La Reserva de Tierra Selection April 30 2026; Honduras coffee 2025/26 5.8 million bags Parainema rust resistant variety USDA attache",
+    "query": "Cecafe Brazil Q1 2026 exports recovery Conilon May Arabica July; Conab Brazil 2026/27 record crop 71.4 million bags +11.5%; USDA world coffee 2025/26 178.8 million bags record stocks decline",
     "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ラバッツァが業界初の再生農業認証コーヒーを発表、調達先はホンジュラス",
-      "description": "イタリア大手ラバッツァが業界初の再生農業認証コーヒーを発表、調達先はホンジュラス",
-      "detail": "4月30日、ラバッツァは再生農業認証の農園から調達。土壌再生と気候耐性を重視した規格です。調達先はホンジュラスで、さび病に強いパライネマ品種の普及で2025-26年産が5.8百万袋まで伸びる予想。70以上の農園が認証を取得済みで、6月から国際市場へ。",
-      "narration": "今朝のニュース。イタリア大手ラバッツァが、業界初の『再生農業』認証コーヒーを発表しました。意外な調達先はホンジュラスです。",
-      "tags": ["再生農業", "ラバッツァ", "ホンジュラス"],
+      "title": "ブラジル新クロップ過去最高、輸出回復はConilon5月・Arabica7月から",
+      "description": "ブラジル2026/27年新クロップが71.4M袋で過去最高、Cecafé会長は5月から輸出回復を見込む",
+      "detail": "ブラジルの2026/27年新クロップ予測が前年比+11.5%の71.4M袋に上方修正。輸出協会Cecaféの会長は、今年1〜3月の輸出が前年比21%減少した一方で、ロブスタ系のConilonは5月から、Arabicaは7月の新クロップから本格的に輸出回復すると発表。USDAによれば世界在庫は5年連続で減少中で、20.1M袋まで縮小しています。",
+      "narration": "知ってますか? 世界最大の産地ブラジル、2026/27年の新クロップ予測が過去最高の71.4M袋に上方修正されました。",
+      "tags": ["ブラジル", "ハーベスト2026", "Cecafé"],
       "narration_sections": {
-        "hook": "今朝のニュース。イタリア大手ラバッツァが、業界初の『再生農業』認証コーヒーを発表しました。意外な調達先はホンジュラスです。",
-        "origin": "4月30日、ラバッツァは再生農業認証の農園から調達。土壌再生と気候耐性を重視した規格です。調達先はホンジュラスで、さび病に強いパライネマ品種の普及で2025-26年産が5.8百万袋まで伸びる予想。70以上の農園が認証を取得済みで、6月から国際市場へ。",
-        "recommend": "豆を選ぶ時はラベルの認証もチェック。再生農業や有機認証は持続可能性の指標です。ホンジュラスは今後注目の産地です。"
+        "hook": "知ってますか? 世界最大の産地ブラジル、2026/27年の新クロップ予測が過去最高の71.4M袋に上方修正されました。",
+        "origin": "前年比プラス11.5%。ブラジル輸出協会Cecaféの会長は、今年1〜3月の輸出が前年比21%減少した一方、ロブスタ系のConilonは5月から、Arabicaは7月の新クロップから本格的に輸出が回復すると発表。世界在庫は5年連続で減少中です。",
+        "recommend": "つまり5月から7月は供給切り替えの過渡期。お気に入りの産地豆を見つけたら、今のうちに買い置きしておくと、入荷の波に振り回されず安心ですよ。"
       },
       "section_titles": {
-        "hook": "ラバッツァ最新ニュース",
-        "origin": "ホンジュラス急成長中",
-        "recommend": "ラベル認証の見方"
+        "hook": "ブラジル過去最高へ",
+        "origin": "Cecafé会長の見通し",
+        "recommend": "過渡期の買い置き術"
       },
       "section_descriptions": {
-        "hook": "イタリア大手ラバッツァが業界初の再生農業認証豆を発表",
-        "origin": "70農園が新認証取得、パライネマ品種でホンジュラス増産予想",
-        "recommend": "ラベルの認証情報も豆選びのチェックポイントに"
+        "hook": "2026/27年新クロップが+11.5%の71.4M袋に上方修正",
+        "origin": "Conilonは5月、Arabicaは7月の新クロップから本格回復",
+        "recommend": "供給切り替え期はお気に入り豆を早めに確保しよう"
       }
     }
   ]
