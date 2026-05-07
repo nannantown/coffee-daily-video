@@ -1,41 +1,41 @@
 {
-  "date": "2026-05-07",
+  "date": "2026-05-08",
   "discovery": {
-    "method": "official-src",
-    "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Cecafé(ブラジルコーヒー輸出協会)会長の最新コメント・MercoPress(Q1輸出-21%)・USDA FAS の Coffee: World Markets and Trade(2025/26世界生産178.8M袋過去最高、世界在庫5年連続減)を一次情報として確認。Conab の2026/27ブラジル新クロップ予測71.4M袋(+11.5%)を中心に、Cecafé会長 Márcio Ferreira の『Conilonは5月、Arabicaは7月の新クロップから本格的に輸出回復』見通しで季節性ストーリーを構築。直近4日(5/3 news-en, 5/4 news-en, 5/5 social-en, 5/6 news-en)で news-en が3回入り過密だったので、TOP method の official-src(B Corp 270 views 実績)を Exploit。柱は直近過密な③業界から空きの②産地ハーベストへ振り替え、ブラジル豊作期×輸出回復タイミングという行動指針を Primary 趣味層に提示。",
+    "method": "social-en",
+    "description": "Reddit r/Coffee と r/decaf、X コーヒー界隈で『コーヒーが体に良い理由が分子レベルで判明』として拡散中の Texas A&M 大学 NR4A1 受容体研究を起点に、Daily Coffee News (5/5 報道) と Texas A&M Stories (4/29 公式)、Sci.News / Futurity / Science X / IBTimes の科学メディア解説を集約。Nutrients 誌掲載論文の核心『カフェインの寄与は弱く、カフェ酸などポリフェノールが NR4A1 を活性化、炎症/代謝/組織修復に関与 → デカフェでも同効果』を Primary 趣味層向けに翻訳。直近 4 日 (5/4 news-en, 5/5 social-en, 5/6 news-en, 5/7 official-src) で official-src は連続 NG・news-en は過密のため、5/5 で 264 views (Explore 初成功) の social-en を 80/20 の Exploit 側に正式昇格させて起用。柱は ③業界(科学・研究ニュース)で、5/3 中国×エチオピア (1291v) と 5/5 米国×Yemeni (264v) で機能した『SNS で広がる話題を一次科学ソースで補強』型を踏襲。",
     "sources": [
-      "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-      "https://en.mercopress.com/2026/04/14/brazil-coffee-exports-fall-21-in-q1-despite-record-crop-forecast",
-      "https://www.cecafe.com.br/en/publications/monthly-exports-report/",
-      "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/",
-      "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
-      "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026"
+      "https://dailycoffeenews.com/2026/05/05/texas-am-researchers-identify-biological-pathway-through-which-coffee-supports-health/",
+      "https://stories.tamu.edu/news/2026/04/29/coffee-doesnt-just-wake-you-up-it-may-help-protect-your-body-from-aging/",
+      "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
+      "https://www.sci.news/medicine/coffee-nr4a1-receptor-14743.html",
+      "https://www.futurity.org/coffee-aging-3332602/",
+      "https://www.ibtimes.com.au/coffee-protects-against-aging-disease-new-texas-m-study-reveals-how-your-daily-cup-helps-1868134"
     ],
-    "query": "Cecafe Brazil Q1 2026 exports recovery Conilon May Arabica July; Conab Brazil 2026/27 record crop 71.4 million bags +11.5%; USDA world coffee 2025/26 178.8 million bags record stocks decline",
-    "freshness_hours": 144
+    "query": "Texas A&M NR4A1 coffee polyphenol caffeic acid receptor health pathway Nutrients journal April 2026; reddit r/Coffee r/decaf coffee health research viral May 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブラジル新クロップ過去最高、輸出回復はConilon5月・Arabica7月から",
-      "description": "ブラジル2026/27年新クロップが71.4M袋で過去最高、Cecafé会長は5月から輸出回復を見込む",
-      "detail": "ブラジルの2026/27年新クロップ予測が前年比+11.5%の71.4M袋に上方修正。輸出協会Cecaféの会長は、今年1〜3月の輸出が前年比21%減少した一方で、ロブスタ系のConilonは5月から、Arabicaは7月の新クロップから本格的に輸出回復すると発表。USDAによれば世界在庫は5年連続で減少中で、20.1M袋まで縮小しています。",
-      "narration": "知ってますか? 世界最大の産地ブラジル、2026/27年の新クロップ予測が過去最高の71.4M袋に上方修正されました。",
-      "tags": ["ブラジル", "ハーベスト2026", "Cecafé"],
+      "title": "コーヒーが体にいい理由がついに分子レベルで判明、デカフェでも同じ効果",
+      "description": "米テキサスA&M大学が NR4A1 受容体経路を特定、主役はカフェインじゃなくポリフェノール",
+      "detail": "テキサスA&M大学の研究チームが、コーヒーが健康をサポートする分子メカニズムを特定。鍵となるのは『NR4A1』という体内の受容体で、コーヒーに含まれるカフェ酸などのポリフェノール類が結合し、炎症・代謝・組織修復に関わる経路を活性化することが判明。カフェインの寄与は弱く、ポリフェノールが本命。これまで知られていた『デカフェでも同じ健康効果が観察される』疫学的事実の分子レベルの裏付けでもあります。論文は Nutrients 誌に掲載。",
+      "narration": "実は、コーヒーが健康にいい理由が分子レベルで判明しました。米テキサスA&M大学の最新研究で、なんとデカフェでも同じ効果なんです。",
+      "tags": ["健康効果", "Texas A&M研究", "ポリフェノール"],
       "narration_sections": {
-        "hook": "知ってますか? 世界最大の産地ブラジル、2026/27年の新クロップ予測が過去最高の71.4M袋に上方修正されました。",
-        "origin": "前年比プラス11.5%。ブラジル輸出協会Cecaféの会長は、今年1〜3月の輸出が前年比21%減少した一方、ロブスタ系のConilonは5月から、Arabicaは7月の新クロップから本格的に輸出が回復すると発表。世界在庫は5年連続で減少中です。",
-        "recommend": "つまり5月から7月は供給切り替えの過渡期。お気に入りの産地豆を見つけたら、今のうちに買い置きしておくと、入荷の波に振り回されず安心ですよ。"
+        "hook": "実は、コーヒーが健康にいい理由が分子レベルで判明しました。米テキサスA&M大学の最新研究で、なんとデカフェでも同じ効果なんです。",
+        "origin": "鍵は『NR4A1』という体内の受容体。コーヒーに含まれるカフェ酸などのポリフェノールが結合し、炎症や代謝、組織修復に関わる経路を活性化します。研究ではカフェインの寄与は弱く、ポリフェノールが本命。Nutrients誌に掲載されました。",
+        "recommend": "ポリフェノールは新鮮な豆ほど豊富。焙煎日が近いスペシャルティ豆を選んで、毎日のリラックス時間を健康習慣に変えてみませんか?"
       },
       "section_titles": {
-        "hook": "ブラジル過去最高へ",
-        "origin": "Cecafé会長の見通し",
-        "recommend": "過渡期の買い置き術"
+        "hook": "コーヒー健康の分子",
+        "origin": "鍵はNR4A1受容体",
+        "recommend": "新鮮な豆を選ぼう"
       },
       "section_descriptions": {
-        "hook": "2026/27年新クロップが+11.5%の71.4M袋に上方修正",
-        "origin": "Conilonは5月、Arabicaは7月の新クロップから本格回復",
-        "recommend": "供給切り替え期はお気に入り豆を早めに確保しよう"
+        "hook": "米テキサスA&M大が発表、デカフェも同じ効果",
+        "origin": "カフェインではなく、ポリフェノール類が主役",
+        "recommend": "焙煎日が新しい豆ほどポリフェノールが豊富"
       }
     }
   ]
