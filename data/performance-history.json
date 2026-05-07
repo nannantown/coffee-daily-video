@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 85,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 270,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -490,7 +490,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -532,10 +532,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1291,
+        "views": 1290,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -575,10 +575,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 181,
+        "views": 188,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -618,10 +618,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 264,
+        "views": 263,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-06T00:11:59.016Z"
+        "updatedAt": "2026-05-07T00:10:04.553Z"
       }
     },
     {
@@ -665,6 +665,51 @@
         "freshness_hours": 144
       },
       "stats": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-07T00:10:04.553Z"
+      }
+    },
+    {
+      "videoId": "LvjRhqI0Khg",
+      "videoUrl": "https://youtube.com/shorts/LvjRhqI0Khg",
+      "date": "2026-05-07",
+      "title": "【コーヒー豆知識】ブラジル新クロップ過去最高、輸出回復はConilon5月・Arabica7月から｜2026/05/07 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "official-src",
+        "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Cecafé(ブラジルコーヒー輸出協会)会長の最新コメント・MercoPress(Q1輸出-21%)・USDA FAS の Coffee: World Markets and Trade(2025/26世界生産178.8M袋過去最高、世界在庫5年連続減)を一次情報として確認。Conab の2026/27ブラジル新クロップ予測71.4M袋(+11.5%)を中心に、Cecafé会長 Márcio Ferreira の『Conilonは5月、Arabicaは7月の新クロップから本格的に輸出回復』見通しで季節性ストーリーを構築。直近4日(5/3 news-en, 5/4 news-en, 5/5 social-en, 5/6 news-en)で news-en が3回入り過密だったので、TOP method の official-src(B Corp 270 views 実績)を Exploit。柱は直近過密な③業界から空きの②産地ハーベストへ振り替え、ブラジル豊作期×輸出回復タイミングという行動指針を Primary 趣味層に提示。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
+          "https://en.mercopress.com/2026/04/14/brazil-coffee-exports-fall-21-in-q1-despite-record-crop-forecast",
+          "https://www.cecafe.com.br/en/publications/monthly-exports-report/",
+          "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/",
+          "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+          "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026"
+        ],
+        "query": "Cecafe Brazil Q1 2026 exports recovery Conilon May Arabica July; Conab Brazil 2026/27 record crop 71.4 million bags +11.5%; USDA world coffee 2025/26 178.8 million bags record stocks decline",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -673,13 +718,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -887,6 +925,14 @@
       "changes": [
         "standard: 160 avg views (16 videos)",
         "Day performance: Sun=324, Wed=217, Tue=136, Mon=82, Sat=75, Thu=38, Fri=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-07",
+      "changes": [
+        "standard: 151 avg views (17 videos)",
+        "Day performance: Sun=324, Wed=146, Tue=136, Mon=84, Sat=75, Thu=38, Fri=34"
       ],
       "recommendedTemplate": "standard"
     }
