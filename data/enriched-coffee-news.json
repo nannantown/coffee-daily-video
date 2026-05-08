@@ -1,41 +1,43 @@
 {
-  "date": "2026-05-08",
+  "date": "2026-05-09",
   "discovery": {
-    "method": "social-en",
-    "description": "Reddit r/Coffee と r/decaf、X コーヒー界隈で『コーヒーが体に良い理由が分子レベルで判明』として拡散中の Texas A&M 大学 NR4A1 受容体研究を起点に、Daily Coffee News (5/5 報道) と Texas A&M Stories (4/29 公式)、Sci.News / Futurity / Science X / IBTimes の科学メディア解説を集約。Nutrients 誌掲載論文の核心『カフェインの寄与は弱く、カフェ酸などポリフェノールが NR4A1 を活性化、炎症/代謝/組織修復に関与 → デカフェでも同効果』を Primary 趣味層向けに翻訳。直近 4 日 (5/4 news-en, 5/5 social-en, 5/6 news-en, 5/7 official-src) で official-src は連続 NG・news-en は過密のため、5/5 で 264 views (Explore 初成功) の social-en を 80/20 の Exploit 側に正式昇格させて起用。柱は ③業界(科学・研究ニュース)で、5/3 中国×エチオピア (1291v) と 5/5 米国×Yemeni (264v) で機能した『SNS で広がる話題を一次科学ソースで補強』型を踏襲。",
+    "method": "expert-blog",
+    "description": "土曜エバーグリーン枠で、前日 5/8 の Texas A&M NR4A1 ポリフェノール研究(news 動画)を土台に『じゃあ焙煎度で何が変わるのか』を化学エビデンスで深堀り。一次ソースとして PMC8705492 (HPLC-DAD 焙煎度別 CGA 定量) と PubMed 19530715 (Role of roasting conditions on CGA content) の査読論文を採用、焙煎業界向け解説として Perfect Daily Grind の Brewing for Roast Level / HeadCount Coffee の CGA 解説 / Healthline / Peet's の light vs dark caffeine 解説でクロスチェック。直近 5 日の method 分布 (news-en×2 / social-en×2 / official-src×1) で social-en は 5/5・5/8 連続のため避け、5/2 以来 7 日空きの expert-blog をローテで起用。柱は④焙煎士の一次情報(焙煎化学)で、4/25 焙煎度=味の角度、5/2 アナエロビック発酵=精製の角度と被らない『化学成分の数値変化』というフレッシュ角度。Primary 趣味層の買い物判断 (焙煎度を何で選ぶか) に直結する『査読論文 × 化学プロセス × カフェインじゃなくポリフェノール』テンプレで、5/8 ニュースとの翌日深堀り接続を試作。",
     "sources": [
-      "https://dailycoffeenews.com/2026/05/05/texas-am-researchers-identify-biological-pathway-through-which-coffee-supports-health/",
-      "https://stories.tamu.edu/news/2026/04/29/coffee-doesnt-just-wake-you-up-it-may-help-protect-your-body-from-aging/",
-      "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
-      "https://www.sci.news/medicine/coffee-nr4a1-receptor-14743.html",
-      "https://www.futurity.org/coffee-aging-3332602/",
-      "https://www.ibtimes.com.au/coffee-protects-against-aging-disease-new-texas-m-study-reveals-how-your-daily-cup-helps-1868134"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8705492/",
+      "https://pubmed.ncbi.nlm.nih.gov/19530715/",
+      "https://pubs.acs.org/doi/10.1021/jf900012b",
+      "https://www.mdpi.com/2227-9717/9/11/2040",
+      "https://perfectdailygrind.com/2019/10/how-to-adjust-your-brewing-recipe-for-coffee-roast-level/",
+      "https://www.headcountcoffee.com/blogs/coffee-news/how-chlorogenic-acids-shape-coffee-acidity-and-how-roasting-transforms-them",
+      "https://www.healthline.com/nutrition/light-vs-dark-roast-coffee",
+      "https://www.peets.com/blogs/peets/how-much-caffeine-is-in-a-cup-of-coffee"
     ],
-    "query": "Texas A&M NR4A1 coffee polyphenol caffeic acid receptor health pathway Nutrients journal April 2026; reddit r/Coffee r/decaf coffee health research viral May 2026",
-    "freshness_hours": 72
+    "query": "chlorogenic acid coffee roast level light dark percentage degradation HPLC; caffeine roast level light vs dark same amount stable thermal; coffee polyphenol antioxidant by roast degree peer reviewed",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コーヒーが体にいい理由がついに分子レベルで判明、デカフェでも同じ効果",
-      "description": "米テキサスA&M大学が NR4A1 受容体経路を特定、主役はカフェインじゃなくポリフェノール",
-      "detail": "テキサスA&M大学の研究チームが、コーヒーが健康をサポートする分子メカニズムを特定。鍵となるのは『NR4A1』という体内の受容体で、コーヒーに含まれるカフェ酸などのポリフェノール類が結合し、炎症・代謝・組織修復に関わる経路を活性化することが判明。カフェインの寄与は弱く、ポリフェノールが本命。これまで知られていた『デカフェでも同じ健康効果が観察される』疫学的事実の分子レベルの裏付けでもあります。論文は Nutrients 誌に掲載。",
-      "narration": "実は、コーヒーが健康にいい理由が分子レベルで判明しました。米テキサスA&M大学の最新研究で、なんとデカフェでも同じ効果なんです。",
-      "tags": ["健康効果", "Texas A&M研究", "ポリフェノール"],
+      "title": "焙煎度で変わるのはカフェインじゃなくポリフェノール",
+      "description": "昨日のTexas A&M研究の続編。実はカフェインは焙煎度でほぼ変わらず、激変するのはクロロゲン酸",
+      "detail": "コーヒーのカフェインは熱に強く、浅煎りでも深煎りでも豆1粒の量はほぼ同じ(重量比で差は2-5%)。一方、ポリフェノールの代表『クロロゲン酸(CGA)』は焙煎で大きく分解され、HPLC計測で浅煎り約50%・中煎り24%・深煎り10%以下まで激減します。昨日紹介したTexas A&M研究のNR4A1経路を活性化する分子の本命がCGA系ポリフェノールなので、健康効果を狙う飲み方なら浅~中煎りが優位。逆に深煎りはメラノイジンという別系統の抗酸化物質が増え、香ばしさで楽しむのが正解です。",
+      "narration": "実は、焙煎度でカフェインの量はほとんど変わりません。本当に大きく変わるのは、昨日紹介した健康効果の主役、ポリフェノールなんです。",
+      "tags": ["焙煎度", "クロロゲン酸", "ポリフェノール"],
       "narration_sections": {
-        "hook": "実は、コーヒーが健康にいい理由が分子レベルで判明しました。米テキサスA&M大学の最新研究で、なんとデカフェでも同じ効果なんです。",
-        "origin": "鍵は『NR4A1』という体内の受容体。コーヒーに含まれるカフェ酸などのポリフェノールが結合し、炎症や代謝、組織修復に関わる経路を活性化します。研究ではカフェインの寄与は弱く、ポリフェノールが本命。Nutrients誌に掲載されました。",
-        "recommend": "ポリフェノールは新鮮な豆ほど豊富。焙煎日が近いスペシャルティ豆を選んで、毎日のリラックス時間を健康習慣に変えてみませんか?"
+        "hook": "実は、焙煎度でカフェインの量はほとんど変わりません。本当に大きく変わるのは、昨日紹介した健康効果の主役、ポリフェノールなんです。",
+        "origin": "カフェインは熱に強く、深煎りでも豆1粒の量はほぼ同じ。一方、コーヒーのポリフェノール代表クロロゲン酸は、浅煎りで約50%、中煎りで24%、深煎りでは10%以下まで激減します。Texas A&M研究が示した健康効果の主役は、こちらの方なんです。",
+        "recommend": "ポリフェノール狙いなら浅煎り、香ばしさ重視なら深煎り。焙煎日が新しいスペシャルティ豆を選ぶのが、結局一番効きます。"
       },
       "section_titles": {
-        "hook": "コーヒー健康の分子",
-        "origin": "鍵はNR4A1受容体",
-        "recommend": "新鮮な豆を選ぼう"
+        "hook": "焙煎度の意外な真実",
+        "origin": "主役はクロロゲン酸",
+        "recommend": "目的で焙煎度を選ぶ"
       },
       "section_descriptions": {
-        "hook": "米テキサスA&M大が発表、デカフェも同じ効果",
-        "origin": "カフェインではなく、ポリフェノール類が主役",
-        "recommend": "焙煎日が新しい豆ほどポリフェノールが豊富"
+        "hook": "実はカフェインは焙煎度でほぼ変わりません",
+        "origin": "浅煎りで50%、深煎りで10%以下まで激減",
+        "recommend": "狙いに合わせて焙煎度を上手に選び分けよう"
       }
     }
   ]
