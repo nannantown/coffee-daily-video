@@ -229,7 +229,7 @@
         "views": 65,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -272,7 +272,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 85,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 270,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -490,7 +490,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -532,10 +532,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1290,
+        "views": 1292,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -578,7 +578,7 @@
         "views": 188,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -618,10 +618,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 263,
+        "views": 266,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -665,10 +665,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 3,
+        "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-07T00:10:04.553Z"
+        "updatedAt": "2026-05-08T00:13:05.986Z"
       }
     },
     {
@@ -713,18 +713,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-05-08T00:13:05.986Z"
+      }
+    },
+    {
+      "videoId": "cA085J85rSU",
+      "videoUrl": "https://youtube.com/shorts/cA085J85rSU",
+      "date": "2026-05-08",
+      "title": "【コーヒー豆知識】コーヒーが体にいい理由がついに分子レベルで判明、デカフェでも同じ効果｜2026/05/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "social-en",
+        "description": "Reddit r/Coffee と r/decaf、X コーヒー界隈で『コーヒーが体に良い理由が分子レベルで判明』として拡散中の Texas A&M 大学 NR4A1 受容体研究を起点に、Daily Coffee News (5/5 報道) と Texas A&M Stories (4/29 公式)、Sci.News / Futurity / Science X / IBTimes の科学メディア解説を集約。Nutrients 誌掲載論文の核心『カフェインの寄与は弱く、カフェ酸などポリフェノールが NR4A1 を活性化、炎症/代謝/組織修復に関与 → デカフェでも同効果』を Primary 趣味層向けに翻訳。直近 4 日 (5/4 news-en, 5/5 social-en, 5/6 news-en, 5/7 official-src) で official-src は連続 NG・news-en は過密のため、5/5 で 264 views (Explore 初成功) の social-en を 80/20 の Exploit 側に正式昇格させて起用。柱は ③業界(科学・研究ニュース)で、5/3 中国×エチオピア (1291v) と 5/5 米国×Yemeni (264v) で機能した『SNS で広がる話題を一次科学ソースで補強』型を踏襲。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/05/05/texas-am-researchers-identify-biological-pathway-through-which-coffee-supports-health/",
+          "https://stories.tamu.edu/news/2026/04/29/coffee-doesnt-just-wake-you-up-it-may-help-protect-your-body-from-aging/",
+          "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
+          "https://www.sci.news/medicine/coffee-nr4a1-receptor-14743.html",
+          "https://www.futurity.org/coffee-aging-3332602/",
+          "https://www.ibtimes.com.au/coffee-protects-against-aging-disease-new-texas-m-study-reveals-how-your-daily-cup-helps-1868134"
+        ],
+        "query": "Texas A&M NR4A1 coffee polyphenol caffeic acid receptor health pathway Nutrients journal April 2026; reddit r/Coffee r/decaf coffee health research viral May 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -933,6 +971,14 @@
       "changes": [
         "standard: 151 avg views (17 videos)",
         "Day performance: Sun=324, Wed=146, Tue=136, Mon=84, Sat=75, Thu=38, Fri=34"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-08",
+      "changes": [
+        "standard: 143 avg views (18 videos)",
+        "Day performance: Sun=324, Wed=147, Tue=137, Mon=84, Sat=75, Fri=34, Thu=19"
       ],
       "recommendedTemplate": "standard"
     }
