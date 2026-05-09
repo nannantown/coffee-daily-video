@@ -272,7 +272,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -360,7 +360,7 @@
         "views": 85,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -400,10 +400,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 270,
+        "views": 271,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -490,7 +490,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -532,10 +532,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1292,
+        "views": 1293,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -578,7 +578,7 @@
         "views": 188,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -618,10 +618,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 266,
+        "views": 269,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -665,10 +665,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 6,
+        "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -710,10 +710,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-08T00:13:05.986Z"
+        "updatedAt": "2026-05-09T00:15:36.989Z"
       }
     },
     {
@@ -755,6 +755,53 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 126,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-05-09T00:15:36.989Z"
+      }
+    },
+    {
+      "videoId": "Ukbzb4JRoXA",
+      "videoUrl": "https://youtube.com/shorts/Ukbzb4JRoXA",
+      "date": "2026-05-09",
+      "title": "【コーヒー豆知識】焙煎度で変わるのはカフェインじゃなくポリフェノール｜2026/05/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "土曜エバーグリーン枠で、前日 5/8 の Texas A&M NR4A1 ポリフェノール研究(news 動画)を土台に『じゃあ焙煎度で何が変わるのか』を化学エビデンスで深堀り。一次ソースとして PMC8705492 (HPLC-DAD 焙煎度別 CGA 定量) と PubMed 19530715 (Role of roasting conditions on CGA content) の査読論文を採用、焙煎業界向け解説として Perfect Daily Grind の Brewing for Roast Level / HeadCount Coffee の CGA 解説 / Healthline / Peet's の light vs dark caffeine 解説でクロスチェック。直近 5 日の method 分布 (news-en×2 / social-en×2 / official-src×1) で social-en は 5/5・5/8 連続のため避け、5/2 以来 7 日空きの expert-blog をローテで起用。柱は④焙煎士の一次情報(焙煎化学)で、4/25 焙煎度=味の角度、5/2 アナエロビック発酵=精製の角度と被らない『化学成分の数値変化』というフレッシュ角度。Primary 趣味層の買い物判断 (焙煎度を何で選ぶか) に直結する『査読論文 × 化学プロセス × カフェインじゃなくポリフェノール』テンプレで、5/8 ニュースとの翌日深堀り接続を試作。",
+        "sources": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8705492/",
+          "https://pubmed.ncbi.nlm.nih.gov/19530715/",
+          "https://pubs.acs.org/doi/10.1021/jf900012b",
+          "https://www.mdpi.com/2227-9717/9/11/2040",
+          "https://perfectdailygrind.com/2019/10/how-to-adjust-your-brewing-recipe-for-coffee-roast-level/",
+          "https://www.headcountcoffee.com/blogs/coffee-news/how-chlorogenic-acids-shape-coffee-acidity-and-how-roasting-transforms-them",
+          "https://www.healthline.com/nutrition/light-vs-dark-roast-coffee",
+          "https://www.peets.com/blogs/peets/how-much-caffeine-is-in-a-cup-of-coffee"
+        ],
+        "query": "chlorogenic acid coffee roast level light dark percentage degradation HPLC; caffeine roast level light vs dark same amount stable thermal; coffee polyphenol antioxidant by roast degree peer reviewed",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -763,13 +810,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -979,6 +1019,14 @@
       "changes": [
         "standard: 143 avg views (18 videos)",
         "Day performance: Sun=324, Wed=147, Tue=137, Mon=84, Sat=75, Fri=34, Thu=19"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-09",
+      "changes": [
+        "standard: 143 avg views (19 videos)",
+        "Day performance: Sun=324, Wed=147, Tue=138, Mon=84, Sat=75, Fri=65, Thu=20"
       ],
       "recommendedTemplate": "standard"
     }
