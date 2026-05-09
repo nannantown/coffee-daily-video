@@ -1,43 +1,40 @@
 {
-  "date": "2026-05-09",
+  "date": "2026-05-10",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜エバーグリーン枠で、前日 5/8 の Texas A&M NR4A1 ポリフェノール研究(news 動画)を土台に『じゃあ焙煎度で何が変わるのか』を化学エビデンスで深堀り。一次ソースとして PMC8705492 (HPLC-DAD 焙煎度別 CGA 定量) と PubMed 19530715 (Role of roasting conditions on CGA content) の査読論文を採用、焙煎業界向け解説として Perfect Daily Grind の Brewing for Roast Level / HeadCount Coffee の CGA 解説 / Healthline / Peet's の light vs dark caffeine 解説でクロスチェック。直近 5 日の method 分布 (news-en×2 / social-en×2 / official-src×1) で social-en は 5/5・5/8 連続のため避け、5/2 以来 7 日空きの expert-blog をローテで起用。柱は④焙煎士の一次情報(焙煎化学)で、4/25 焙煎度=味の角度、5/2 アナエロビック発酵=精製の角度と被らない『化学成分の数値変化』というフレッシュ角度。Primary 趣味層の買い物判断 (焙煎度を何で選ぶか) に直結する『査読論文 × 化学プロセス × カフェインじゃなくポリフェノール』テンプレで、5/8 ニュースとの翌日深堀り接続を試作。",
+    "method": "news-en",
+    "description": "日曜枠だが直近 2 日 (5/9 expert-blog / 5/8 social-en) が連続使用不可、かつ柱比率で①市況が 7%まで沈み込んでいたため、TOP method の news-en (217 avg, n=8) を Exploit。2026-05-05 一斉報道のインド・コーヒー委員会データ『1-4 月輸出 +26.6%、ロブスタ +36%』を The Week / IBEF / Daily Pioneer / KNN India でクロスチェック。4/27 既報のベトナム・ロブスタ16か月ぶり低水準ニュースの伏線回収として位置付け、5/3 中国×エチオピア (1293 views) で勝った『市況×産地クロス + 家計判断接続』テンプレを再現。",
     "sources": [
-      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8705492/",
-      "https://pubmed.ncbi.nlm.nih.gov/19530715/",
-      "https://pubs.acs.org/doi/10.1021/jf900012b",
-      "https://www.mdpi.com/2227-9717/9/11/2040",
-      "https://perfectdailygrind.com/2019/10/how-to-adjust-your-brewing-recipe-for-coffee-roast-level/",
-      "https://www.headcountcoffee.com/blogs/coffee-news/how-chlorogenic-acids-shape-coffee-acidity-and-how-roasting-transforms-them",
-      "https://www.healthline.com/nutrition/light-vs-dark-roast-coffee",
-      "https://www.peets.com/blogs/peets/how-much-caffeine-is-in-a-cup-of-coffee"
+      "https://www.theweek.in/news/biz-tech/2026/05/05/indian-coffee-revenue-growth-exports.html",
+      "https://www.ibef.org/news/india-s-coffee-exports-jump-27-in-jan-apr-on-strong-robusta-instant-coffee-demand",
+      "https://dailypioneer.com/news/indias-coffee-exports-jump-27-in-jan-apr",
+      "https://knnindia.co.in/news/newsdetails/sectors/exportimports/coffee-exports-jump-266-yoy-to-174-lakh-tonnes-in-early-2026-coffee-board",
+      "https://bynewsindia.com/india/india-s-coffee-exports-jump-27-in-jan/"
     ],
-    "query": "chlorogenic acid coffee roast level light dark percentage degradation HPLC; caffeine roast level light vs dark same amount stable thermal; coffee polyphenol antioxidant by roast degree peer reviewed",
-    "freshness_hours": 24
+    "query": "India coffee exports 26% January April 2026 Robusta 36%; specialty coffee news May 2026 specialty coffee industry",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "焙煎度で変わるのはカフェインじゃなくポリフェノール",
-      "description": "昨日のTexas A&M研究の続編。実はカフェインは焙煎度でほぼ変わらず、激変するのはクロロゲン酸",
-      "detail": "コーヒーのカフェインは熱に強く、浅煎りでも深煎りでも豆1粒の量はほぼ同じ(重量比で差は2-5%)。一方、ポリフェノールの代表『クロロゲン酸(CGA)』は焙煎で大きく分解され、HPLC計測で浅煎り約50%・中煎り24%・深煎り10%以下まで激減します。昨日紹介したTexas A&M研究のNR4A1経路を活性化する分子の本命がCGA系ポリフェノールなので、健康効果を狙う飲み方なら浅~中煎りが優位。逆に深煎りはメラノイジンという別系統の抗酸化物質が増え、香ばしさで楽しむのが正解です。",
-      "narration": "実は、焙煎度でカフェインの量はほとんど変わりません。本当に大きく変わるのは、昨日紹介した健康効果の主役、ポリフェノールなんです。",
-      "tags": ["焙煎度", "クロロゲン酸", "ポリフェノール"],
+      "title": "インドのコーヒー輸出が前年比26%急伸・ロブスタ大躍進",
+      "description": "今日のニュース、インドのコーヒー輸出が前年比26%増、ロブスタは+36%でベトナム不作の隙を埋めました。",
+      "detail": "インドの2026年1-4月コーヒー輸出は前年比+26.6%の17.4万トン。特にロブスタが+36%で8.5万トン、インスタント原料も2万トン超え、輸出額はRs936億まで急増しました。世界のロブスタ在庫が16か月ぶり低水準のなか、インドが安定供給国として一気に存在感を高めています。深煎りブレンドの土台にロブスタは欠かせず、供給マップの変化は将来の豆価格や選び方に効いてきます。",
+      "narration": "今日のニュース、インドのコーヒー輸出が1月から4月で前年比26%増と急伸しました。ベトナム不作の隙にロブスタの大供給国へと存在感を強めています。",
+      "tags": ["インド", "ロブスタ", "輸出市況"],
       "narration_sections": {
-        "hook": "実は、焙煎度でカフェインの量はほとんど変わりません。本当に大きく変わるのは、昨日紹介した健康効果の主役、ポリフェノールなんです。",
-        "origin": "カフェインは熱に強く、深煎りでも豆1粒の量はほぼ同じ。一方、コーヒーのポリフェノール代表クロロゲン酸は、浅煎りで約50%、中煎りで24%、深煎りでは10%以下まで激減します。Texas A&M研究が示した健康効果の主役は、こちらの方なんです。",
-        "recommend": "ポリフェノール狙いなら浅煎り、香ばしさ重視なら深煎り。焙煎日が新しいスペシャルティ豆を選ぶのが、結局一番効きます。"
+        "hook": "今日のニュース、インドのコーヒー輸出が1月から4月で前年比26%増と急伸しました。ベトナム不作の隙にロブスタの大供給国へと存在感を強めています。",
+        "origin": "内訳が興味深く、特にロブスタが前年比36%増の8万5千トン、インスタント原料も2万トン超え。輸出額は936億ルピーまで急増しました。世界のロブスタ在庫が16か月ぶり低水準のなか、インドが安定供給国として一気に存在感を高めています。",
+        "recommend": "ロブスタは深煎りブレンドの土台に欠かせない存在。供給地図が変わる今、袋の産地表示を見る習慣が一段と意味を持ちます。"
       },
       "section_titles": {
-        "hook": "焙煎度の意外な真実",
-        "origin": "主役はクロロゲン酸",
-        "recommend": "目的で焙煎度を選ぶ"
+        "hook": "インド輸出が急伸",
+        "origin": "ロブスタ+36%増",
+        "recommend": "産地マップが動く"
       },
       "section_descriptions": {
-        "hook": "実はカフェインは焙煎度でほぼ変わりません",
-        "origin": "浅煎りで50%、深煎りで10%以下まで激減",
-        "recommend": "狙いに合わせて焙煎度を上手に選び分けよう"
+        "hook": "今日のニュース、インドのコーヒーが急伸中です。",
+        "origin": "1月から4月の輸出データを数字で見ましょう。",
+        "recommend": "ベトナム不足の隙にインドが台頭し始めました。"
       }
     }
   ]
