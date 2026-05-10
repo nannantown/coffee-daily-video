@@ -1,40 +1,44 @@
 {
-  "date": "2026-05-10",
+  "date": "2026-05-11",
   "discovery": {
-    "method": "news-en",
-    "description": "日曜枠だが直近 2 日 (5/9 expert-blog / 5/8 social-en) が連続使用不可、かつ柱比率で①市況が 7%まで沈み込んでいたため、TOP method の news-en (217 avg, n=8) を Exploit。2026-05-05 一斉報道のインド・コーヒー委員会データ『1-4 月輸出 +26.6%、ロブスタ +36%』を The Week / IBEF / Daily Pioneer / KNN India でクロスチェック。4/27 既報のベトナム・ロブスタ16か月ぶり低水準ニュースの伏線回収として位置付け、5/3 中国×エチオピア (1293 views) で勝った『市況×産地クロス + 家計判断接続』テンプレを再現。",
+    "method": "official-src",
+    "description": "5月7-9日にバンコクで開催されたWorld of Coffee Asia 2026の公式併催競技『2026 World Cup Tasters Championship』で、ベトナム代表のLê Quang Cuong(Nicky)が初優勝。一次ソースは公式運営の World Coffee Championships (wcc.coffee) 競技者ページと WoC Asia 公式ページ。Daily Coffee News と Perfect Daily Grind のニュースリキャップで競技進行を確認、Vietnamese 主要紙(VnExpress / Thanh Nien / Tuoi Tre / Nguoi Lao Dong / Soha) 5/10 一斉報道で『初参戦・初優勝』『8問中7問3分35秒』『スイス代表(6/8 2:34)に競り勝ち』を相互照合。直近 2 日(5/9 expert-blog / 5/10 news-en)を回避しつつ、5/7 official-src(ブラジル新クロップ純数値=1 view)の失敗を受け、PDCA で立てた『story-driven official-src 仮説』を検証する Exploit リトライ。物語性:『誰が=ホーチミンの焙煎士クオン氏 / 何を=46か国の代表を抑え初優勝 / どう効く=ロブスタ大国ベトナムのスペシャリティ覚醒を裏付け』の3点が揃う。柱は③業界×②産地クロスで、4/27 ベトナム不作→5/10 インド輸出+26%→今日 ベトナム逆襲、というアジア連続ストーリーとして伏線回収。",
     "sources": [
-      "https://www.theweek.in/news/biz-tech/2026/05/05/indian-coffee-revenue-growth-exports.html",
-      "https://www.ibef.org/news/india-s-coffee-exports-jump-27-in-jan-apr-on-strong-robusta-instant-coffee-demand",
-      "https://dailypioneer.com/news/indias-coffee-exports-jump-27-in-jan-apr",
-      "https://knnindia.co.in/news/newsdetails/sectors/exportimports/coffee-exports-jump-266-yoy-to-174-lakh-tonnes-in-early-2026-coffee-board",
-      "https://bynewsindia.com/india/india-s-coffee-exports-jump-27-in-jan/"
+      "https://wcc.coffee/2026-wcc-competitors/wctc-quang-cuong-vietnam",
+      "https://wcc.coffee/bangkok-wctc",
+      "https://wcc.coffee/world-cup-tasters-championship",
+      "https://asia.worldofcoffee.org/world-cup-tasters-championship",
+      "https://vnexpress.net/viet-nam-gianh-ngoi-vo-dich-giai-thu-nem-ca-phe-the-gioi-5072166.html",
+      "https://thanhnien.vn/viet-nam-lan-dau-vo-dich-world-cup-thu-nem-ca-phe-185260510194645977.htm",
+      "https://tuoitre.vn/viet-nam-lan-dau-tien-thang-giai-thu-nem-ca-phe-the-gioi-20260510182611531.htm",
+      "https://nld.com.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-196260510170837889.htm",
+      "https://soha.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-198260510212624192.htm"
     ],
-    "query": "India coffee exports 26% January April 2026 Robusta 36%; specialty coffee news May 2026 specialty coffee industry",
-    "freshness_hours": 120
+    "query": "World Cup Tasters Championship 2026 Bangkok winner Vietnam Le Quang Cuong; WoC Asia Bangkok May 7-9 BITEC results; Vietnam specialty coffee G.O Cafe Roastery Saigon",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "インドのコーヒー輸出が前年比26%急伸・ロブスタ大躍進",
-      "description": "今日のニュース、インドのコーヒー輸出が前年比26%増、ロブスタは+36%でベトナム不作の隙を埋めました。",
-      "detail": "インドの2026年1-4月コーヒー輸出は前年比+26.6%の17.4万トン。特にロブスタが+36%で8.5万トン、インスタント原料も2万トン超え、輸出額はRs936億まで急増しました。世界のロブスタ在庫が16か月ぶり低水準のなか、インドが安定供給国として一気に存在感を高めています。深煎りブレンドの土台にロブスタは欠かせず、供給マップの変化は将来の豆価格や選び方に効いてきます。",
-      "narration": "今日のニュース、インドのコーヒー輸出が1月から4月で前年比26%増と急伸しました。ベトナム不作の隙にロブスタの大供給国へと存在感を強めています。",
-      "tags": ["インド", "ロブスタ", "輸出市況"],
+      "title": "ベトナム代表が世界利き手選手権で初優勝・ロブスタ大国の常識覆る",
+      "description": "先週末バンコクで開催された世界カップテイスター選手権で、ベトナム代表が史上初の優勝。ロブスタの国のイメージが揺らぐ瞬間です。",
+      "detail": "5月7日から9日、バンコクのBITECで開催されたWorld of Coffee Asia 2026の併催競技World Cup Tasters Championshipで、ホーチミンの焙煎士レー・クアン・クオンさんが優勝。決勝では8問中7問を3分35秒で正解、スイス代表(6問正解2分34秒)を抑え世界一に。ベトナム勢の同大会初参戦・初制覇です。クオンさんはホーチミンのG.O Cafe Roasteryのオーナー兼焙煎士。ベトナムは世界2位の生産国ながらロブスタ偏重で『安いコーヒーの国』イメージが強かったものの、若い焙煎士主導のスペシャリティシーンが急成長中。4月の不作報道から一転、世界舞台で技術力を証明した形です。",
+      "narration": "実は先週末、ベトナム代表がコーヒーの世界利き手選手権で初優勝しました。\"安いロブスタの国\"のイメージが、一気にひっくり返った瞬間です。",
+      "tags": ["ベトナム", "スペシャリティ", "世界大会"],
       "narration_sections": {
-        "hook": "今日のニュース、インドのコーヒー輸出が1月から4月で前年比26%増と急伸しました。ベトナム不作の隙にロブスタの大供給国へと存在感を強めています。",
-        "origin": "内訳が興味深く、特にロブスタが前年比36%増の8万5千トン、インスタント原料も2万トン超え。輸出額は936億ルピーまで急増しました。世界のロブスタ在庫が16か月ぶり低水準のなか、インドが安定供給国として一気に存在感を高めています。",
-        "recommend": "ロブスタは深煎りブレンドの土台に欠かせない存在。供給地図が変わる今、袋の産地表示を見る習慣が一段と意味を持ちます。"
+        "hook": "実は先週末、ベトナム代表がコーヒーの世界利き手選手権で初優勝しました。\"安いロブスタの国\"のイメージが、一気にひっくり返った瞬間です。",
+        "origin": "5月7日から9日、バンコクで開かれた世界大会の利き手部門で、46か国の代表を抑え、ホーチミンの焙煎士レー・クアン・クオンさんが優勝。決勝では8問中7問を3分35秒で正解、スイス代表に競り勝ちました。ベトナム勢の初挑戦でいきなりの世界制覇です。",
+        "recommend": "ベトナム産は実は今、若手焙煎士が引っ張るスペシャリティ覚醒の真っ最中。\"ロブスタの国\"のイメージは、もう更新時かもしれません。"
       },
       "section_titles": {
-        "hook": "インド輸出が急伸",
-        "origin": "ロブスタ+36%増",
-        "recommend": "産地マップが動く"
+        "hook": "ベトナム代表が初優勝",
+        "origin": "46か国を圧倒した決勝",
+        "recommend": "ロブスタ大国の常識"
       },
       "section_descriptions": {
-        "hook": "今日のニュース、インドのコーヒーが急伸中です。",
-        "origin": "1月から4月の輸出データを数字で見ましょう。",
-        "recommend": "ベトナム不足の隙にインドが台頭し始めました。"
+        "hook": "ロブスタの国のイメージが先週末ひっくり返った瞬間",
+        "origin": "世界46人を抑え3分35秒で8問中7問を正解",
+        "recommend": "ベトナム産スペシャリティ覚醒の今を読み解く"
       }
     }
   ]
