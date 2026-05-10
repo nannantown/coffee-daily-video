@@ -272,7 +272,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "views": 60,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -357,10 +357,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 85,
+        "views": 86,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 271,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -490,7 +490,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -535,7 +535,7 @@
         "views": 1293,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -578,7 +578,7 @@
         "views": 188,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -621,7 +621,7 @@
         "views": 269,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -713,7 +713,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -755,10 +755,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 126,
+        "views": 128,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-09T00:15:36.989Z"
+        "updatedAt": "2026-05-10T00:10:14.487Z"
       }
     },
     {
@@ -802,6 +802,50 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 71,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-10T00:10:14.487Z"
+      }
+    },
+    {
+      "videoId": "zkkhB3Ijfv4",
+      "videoUrl": "https://youtube.com/shorts/zkkhB3Ijfv4",
+      "date": "2026-05-10",
+      "title": "【コーヒー豆知識】インドのコーヒー輸出が前年比26%急伸・ロブスタ大躍進｜2026/05/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "焙煎",
+        "焙煎",
+        "焙煎"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "news-en",
+        "description": "日曜枠だが直近 2 日 (5/9 expert-blog / 5/8 social-en) が連続使用不可、かつ柱比率で①市況が 7%まで沈み込んでいたため、TOP method の news-en (217 avg, n=8) を Exploit。2026-05-05 一斉報道のインド・コーヒー委員会データ『1-4 月輸出 +26.6%、ロブスタ +36%』を The Week / IBEF / Daily Pioneer / KNN India でクロスチェック。4/27 既報のベトナム・ロブスタ16か月ぶり低水準ニュースの伏線回収として位置付け、5/3 中国×エチオピア (1293 views) で勝った『市況×産地クロス + 家計判断接続』テンプレを再現。",
+        "sources": [
+          "https://www.theweek.in/news/biz-tech/2026/05/05/indian-coffee-revenue-growth-exports.html",
+          "https://www.ibef.org/news/india-s-coffee-exports-jump-27-in-jan-apr-on-strong-robusta-instant-coffee-demand",
+          "https://dailypioneer.com/news/indias-coffee-exports-jump-27-in-jan-apr",
+          "https://knnindia.co.in/news/newsdetails/sectors/exportimports/coffee-exports-jump-266-yoy-to-174-lakh-tonnes-in-early-2026-coffee-board",
+          "https://bynewsindia.com/india/india-s-coffee-exports-jump-27-in-jan/"
+        ],
+        "query": "India coffee exports 26% January April 2026 Robusta 36%; specialty coffee news May 2026 specialty coffee industry",
+        "freshness_hours": 120
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -810,13 +854,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-12",
       "changes": [
@@ -1027,6 +1064,14 @@
       "changes": [
         "standard: 143 avg views (19 videos)",
         "Day performance: Sun=324, Wed=147, Tue=138, Mon=84, Sat=75, Fri=65, Thu=20"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-10",
+      "changes": [
+        "standard: 139 avg views (20 videos)",
+        "Day performance: Sun=324, Wed=147, Tue=138, Mon=84, Sat=73, Fri=65, Thu=20"
       ],
       "recommendedTemplate": "standard"
     }
