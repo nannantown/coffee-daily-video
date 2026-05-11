@@ -1,44 +1,41 @@
 {
-  "date": "2026-05-11",
+  "date": "2026-05-12",
   "discovery": {
-    "method": "official-src",
-    "description": "5月7-9日にバンコクで開催されたWorld of Coffee Asia 2026の公式併催競技『2026 World Cup Tasters Championship』で、ベトナム代表のLê Quang Cuong(Nicky)が初優勝。一次ソースは公式運営の World Coffee Championships (wcc.coffee) 競技者ページと WoC Asia 公式ページ。Daily Coffee News と Perfect Daily Grind のニュースリキャップで競技進行を確認、Vietnamese 主要紙(VnExpress / Thanh Nien / Tuoi Tre / Nguoi Lao Dong / Soha) 5/10 一斉報道で『初参戦・初優勝』『8問中7問3分35秒』『スイス代表(6/8 2:34)に競り勝ち』を相互照合。直近 2 日(5/9 expert-blog / 5/10 news-en)を回避しつつ、5/7 official-src(ブラジル新クロップ純数値=1 view)の失敗を受け、PDCA で立てた『story-driven official-src 仮説』を検証する Exploit リトライ。物語性:『誰が=ホーチミンの焙煎士クオン氏 / 何を=46か国の代表を抑え初優勝 / どう効く=ロブスタ大国ベトナムのスペシャリティ覚醒を裏付け』の3点が揃う。柱は③業界×②産地クロスで、4/27 ベトナム不作→5/10 インド輸出+26%→今日 ベトナム逆襲、というアジア連続ストーリーとして伏線回収。",
+    "method": "news-en",
+    "description": "Comunicaffe / Trading Economics / Yahoo Finance / Seeking Alpha の英語市況記事を当日確認し、ICE アラビカ先物が 1 ポンド 2.73 ドル前後と『2024 年 11 月以来の安値圏』に沈んでいる事実、Coffee Trading Academy(+12%, 71.4M bags) / Marex(+15.5%, 75.9M bags) / Sucafina(75.4M bags) のブラジル 2026/27 新クロップ予想、Rabobank の『年末までさらに 3 割下落』予想、CFTC データで投機筋が大規模ロング縮小という 4 つの数字を相互照合。illy アンドレア・イリー会長が『供給ショックの再来リスク』を警告しているコメントも同記事内で確認。直近 2 日 (5/10 news-en / 5/11 official-src) のうち news-en は 1 日空いたため連続違反にならず、TOP 1 method (avg 217 views, max 1293) の Exploit を継続。柱は ①市況 単独ではなく ②産地(ブラジル) × Primary 趣味層への買い物判断 (店頭価格 3-6 か月遅れ) と組み合わせ、strategy.md の『①単独禁則』ルールに準拠。5/3 中国ゼロ関税エチオピア (1293 views) の勝ち筋『海外マーケット動向 → 日本店頭への影響』テンプレを再現する設計。",
     "sources": [
-      "https://wcc.coffee/2026-wcc-competitors/wctc-quang-cuong-vietnam",
-      "https://wcc.coffee/bangkok-wctc",
-      "https://wcc.coffee/world-cup-tasters-championship",
-      "https://asia.worldofcoffee.org/world-cup-tasters-championship",
-      "https://vnexpress.net/viet-nam-gianh-ngoi-vo-dich-giai-thu-nem-ca-phe-the-gioi-5072166.html",
-      "https://thanhnien.vn/viet-nam-lan-dau-vo-dich-world-cup-thu-nem-ca-phe-185260510194645977.htm",
-      "https://tuoitre.vn/viet-nam-lan-dau-tien-thang-giai-thu-nem-ca-phe-the-gioi-20260510182611531.htm",
-      "https://nld.com.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-196260510170837889.htm",
-      "https://soha.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-198260510212624192.htm"
+      "https://www.comunicaffe.com/arabica-coffee-futures-at-their-lowest-level-since-november-2024-andrea-illy-warns-of-the-risks-of-further-market-shocks",
+      "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
+      "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
+      "https://tradingeconomics.com/commodity/coffee",
+      "https://finance.yahoo.com/news/coffee-prices-decline-prospects-bumper-165121014.html",
+      "https://seekingalpha.com/article/4854967-coffee-outlook-2026-supply-risks-keep-arabica-prices-supported"
     ],
-    "query": "World Cup Tasters Championship 2026 Bangkok winner Vietnam Le Quang Cuong; WoC Asia Bangkok May 7-9 BITEC results; Vietnam specialty coffee G.O Cafe Roastery Saigon",
-    "freshness_hours": 48
+    "query": "arabica coffee futures May 2026 lowest since November 2024 Brazil crop 71 million bags Rabobank forecast Illy warning",
+    "freshness_hours": 36
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベトナム代表が世界利き手選手権で初優勝・ロブスタ大国の常識覆る",
-      "description": "先週末バンコクで開催された世界カップテイスター選手権で、ベトナム代表が史上初の優勝。ロブスタの国のイメージが揺らぐ瞬間です。",
-      "detail": "5月7日から9日、バンコクのBITECで開催されたWorld of Coffee Asia 2026の併催競技World Cup Tasters Championshipで、ホーチミンの焙煎士レー・クアン・クオンさんが優勝。決勝では8問中7問を3分35秒で正解、スイス代表(6問正解2分34秒)を抑え世界一に。ベトナム勢の同大会初参戦・初制覇です。クオンさんはホーチミンのG.O Cafe Roasteryのオーナー兼焙煎士。ベトナムは世界2位の生産国ながらロブスタ偏重で『安いコーヒーの国』イメージが強かったものの、若い焙煎士主導のスペシャリティシーンが急成長中。4月の不作報道から一転、世界舞台で技術力を証明した形です。",
-      "narration": "実は先週末、ベトナム代表がコーヒーの世界利き手選手権で初優勝しました。\"安いロブスタの国\"のイメージが、一気にひっくり返った瞬間です。",
-      "tags": ["ベトナム", "スペシャリティ", "世界大会"],
+      "title": "アラビカ先物が1年半ぶり安値・ブラジル豊作で年末さらに3割下落予想",
+      "description": "ICEアラビカ先物が1ポンド2.73ドルと2024年11月以来の安値圏に下落。ブラジル新クロップが過去最高ペースで進み、年末までさらに3割下落との予想も。",
+      "detail": "5月上旬、ICEアラビカコーヒー先物が1ポンド2.73ドル前後まで下落し、2024年11月以来の安値水準に沈みました。半年前のピークから約3割安です。背景は世界最大の生産国ブラジルの2026/27年新クロップ豊作で、Coffee Trading Academyは前年比12%増の7,140万袋、Marex社は7,590万袋(+15.5%)、Sucafinaは7,540万袋と、いずれも過去最高ペースを予測。気象もブラジル産地で乾燥高温が続き収穫が順調に進行中で、市場は早くも供給超過を織り込み始めています。投機筋もCFTCデータで巨額のロングポジションを縮小しており、Rabobankは年末までにさらに約3割下落、225セント/lb前後まで沈むと予想。一方、illyのアンドレア・イリー会長は『気候変動や政情リスクで再度の供給ショックも残る』と警告しており、楽観一色ではありません。日本の店頭焙煎豆価格は通常3〜6か月遅れで国際相場を反映するため、消費者向けの値下がりは秋以降に表れる見込み。スペシャルティ豆も新クロップ入荷の秋が買い時候補となります。",
+      "narration": "先週末、アラビカコーヒー先物が2024年11月以来の安値圏まで急落しました。1ポンド2.73ドル、半年前のピークから約3割安です。",
+      "tags": ["市況", "アラビカ", "ブラジル"],
       "narration_sections": {
-        "hook": "実は先週末、ベトナム代表がコーヒーの世界利き手選手権で初優勝しました。\"安いロブスタの国\"のイメージが、一気にひっくり返った瞬間です。",
-        "origin": "5月7日から9日、バンコクで開かれた世界大会の利き手部門で、46か国の代表を抑え、ホーチミンの焙煎士レー・クアン・クオンさんが優勝。決勝では8問中7問を3分35秒で正解、スイス代表に競り勝ちました。ベトナム勢の初挑戦でいきなりの世界制覇です。",
-        "recommend": "ベトナム産は実は今、若手焙煎士が引っ張るスペシャリティ覚醒の真っ最中。\"ロブスタの国\"のイメージは、もう更新時かもしれません。"
+        "hook": "先週末、アラビカコーヒー先物が2024年11月以来の安値圏まで急落しました。1ポンド2.73ドル、半年前のピークから約3割安です。",
+        "origin": "背景はブラジルの新クロップ。今年は前年比12〜15%増の71〜75百万袋、過去最高ペースで進行中です。投機マネーも撤退し、ラボバンクは年末までにさらに3割下落と予想。一方、イリー会長は供給ショックのリスクも警告しています。",
+        "recommend": "店頭の豆価格は3〜6か月遅れで反映されます。スペシャルティの新クロップ入荷は秋以降。OGの入荷情報、ぜひフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ベトナム代表が初優勝",
-        "origin": "46か国を圧倒した決勝",
-        "recommend": "ロブスタ大国の常識"
+        "hook": "アラビカ価格急落",
+        "origin": "ブラジル豊作で押し下げ",
+        "recommend": "店頭価格への影響"
       },
       "section_descriptions": {
-        "hook": "ロブスタの国のイメージが先週末ひっくり返った瞬間",
-        "origin": "世界46人を抑え3分35秒で8問中7問を正解",
-        "recommend": "ベトナム産スペシャリティ覚醒の今を読み解く"
+        "hook": "1ポンド2.73ドル、半年前から3割安に。",
+        "origin": "ブラジル新クロップ12〜15%増、過去最高ペース。",
+        "recommend": "店頭は3〜6か月遅れ。秋以降の動きに注目です。"
       }
     }
   ]
