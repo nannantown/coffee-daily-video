@@ -360,7 +360,7 @@
         "views": 86,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -403,7 +403,7 @@
         "views": 271,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -446,7 +446,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -490,7 +490,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -532,10 +532,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 1293,
+        "views": 1294,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -578,7 +578,7 @@
         "views": 188,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -621,7 +621,7 @@
         "views": 269,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -713,7 +713,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -755,10 +755,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 128,
+        "views": 129,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -802,10 +802,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 78,
+        "views": 83,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -846,10 +846,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 41,
+        "views": 42,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-11T00:12:40.626Z"
+        "updatedAt": "2026-05-12T01:16:33.086Z"
       }
     },
     {
@@ -894,6 +894,51 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 40,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-12T01:16:33.086Z"
+      }
+    },
+    {
+      "videoId": "QqQb7ebPLeM",
+      "videoUrl": "https://youtube.com/shorts/QqQb7ebPLeM",
+      "date": "2026-05-12",
+      "title": "【コーヒー豆知識】アラビカ先物が1年半ぶり安値・ブラジル豊作で年末さらに3割下落予想｜2026/05/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "品種",
+        "品種",
+        "品種"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Comunicaffe / Trading Economics / Yahoo Finance / Seeking Alpha の英語市況記事を当日確認し、ICE アラビカ先物が 1 ポンド 2.73 ドル前後と『2024 年 11 月以来の安値圏』に沈んでいる事実、Coffee Trading Academy(+12%, 71.4M bags) / Marex(+15.5%, 75.9M bags) / Sucafina(75.4M bags) のブラジル 2026/27 新クロップ予想、Rabobank の『年末までさらに 3 割下落』予想、CFTC データで投機筋が大規模ロング縮小という 4 つの数字を相互照合。illy アンドレア・イリー会長が『供給ショックの再来リスク』を警告しているコメントも同記事内で確認。直近 2 日 (5/10 news-en / 5/11 official-src) のうち news-en は 1 日空いたため連続違反にならず、TOP 1 method (avg 217 views, max 1293) の Exploit を継続。柱は ①市況 単独ではなく ②産地(ブラジル) × Primary 趣味層への買い物判断 (店頭価格 3-6 か月遅れ) と組み合わせ、strategy.md の『①単独禁則』ルールに準拠。5/3 中国ゼロ関税エチオピア (1293 views) の勝ち筋『海外マーケット動向 → 日本店頭への影響』テンプレを再現する設計。",
+        "sources": [
+          "https://www.comunicaffe.com/arabica-coffee-futures-at-their-lowest-level-since-november-2024-andrea-illy-warns-of-the-risks-of-further-market-shocks",
+          "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
+          "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
+          "https://tradingeconomics.com/commodity/coffee",
+          "https://finance.yahoo.com/news/coffee-prices-decline-prospects-bumper-165121014.html",
+          "https://seekingalpha.com/article/4854967-coffee-outlook-2026-supply-risks-keep-arabica-prices-supported"
+        ],
+        "query": "arabica coffee futures May 2026 lowest since November 2024 Brazil crop 71 million bags Rabobank forecast Illy warning",
+        "freshness_hours": 36
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -902,13 +947,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-12",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-13",
       "changes": [
@@ -1121,6 +1159,14 @@
       "changes": [
         "standard: 135 avg views (21 videos)",
         "Day performance: Sun=268, Wed=147, Tue=138, Mon=84, Sat=77, Fri=66, Thu=21"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-12",
+      "changes": [
+        "standard: 131 avg views (22 videos)",
+        "Day performance: Sun=268, Wed=147, Tue=138, Sat=79, Mon=73, Fri=66, Thu=21"
       ],
       "recommendedTemplate": "standard"
     }
