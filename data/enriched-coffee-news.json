@@ -1,42 +1,43 @@
 {
-  "date": "2026-05-13",
+  "date": "2026-05-14",
   "discovery": {
-    "method": "news-en",
-    "description": "Ecofin Agency 5/6 速報『Ethiopia Projects Record 694,000-Ton Coffee Harvest in 2025-26』を起点に、USDA FAS Coffee Annual ET2025-0014 (11.56M bags / 694,000t, +9%、輸出 7.8M bags +11.4%、Top destinations: Germany/Saudi/Belgium/US/South Korea/Japan) を一次情報として確認。Algrano『Ethiopia Coffee Harvest 2026: High cherry prices and a tighter washed outlook』と Trabocca『Ethiopia Harvest 2025/26』、Nordic Approach 産地レポートで、(a) チェリー価格が $0.45→$1.51/kg(220-250 ETB/kg)で 3-4 倍、(b) 農家が washed→natural へ転換し washed share が 40-45%→20% に半減、(c) 南部(Yirgacheffe/Sidamo/Guji)減収・西部(Limu/Kaffa)豊作、の 3 点を相互照合。Daily Coffee News(2025/06/09 と recent recap)で生産・消費・輸出全部増のトレンド確認。直近 2 日 (5/11 official-src / 5/12 news-en) のうち news-en 連続だが、5/12 は ①市況×②産地ブラジル、本日は ②産地エチオピア×Primary 直撃と角度が異なる。method 14日 avg は news-en 262views (TOP)、official-src 105、social-en 199 で TOP method の Exploit を継続。柱配分は直近14日で ③業界 6本と過多、②産地 3本 (Thailand/Brazil/Vietnam) に対しエチオピアは 5/3 China 関税(1294v)以来 10日空き、Primary 趣味層が一番買う産地で Pillar ②を補強。5/3『海外政策→日本店頭』の勝ち筋に対し、本日は『産地の処理転換→日本のイルガチェフェ・ウォッシュト棚事情』という具体的・実用的アングルで購買判断に直結。",
+    "method": "social-en",
+    "description": "Daily Coffee News 4/17 Weekly Coffee News と CNN Travel / Star Tribune / Today.com / Yahoo Lifestyle / Bring Me The News / FoodBible / Tildes コミュニティ系の英語メディア横断で、ミネソタ州ノースフィールドの Little Joy Coffee 発『ラズベリーデニッシュラテ』が TikTok『DIY or Buy』(3/13 投稿) → 業務用レシピ無料公開 → SNS でグローバル拡散して 41 カ国 480 店舗が真似、地図 300 万回再生という社会的バイラル現象を確認。一次ソースは Little Joy 公式 Substack のレシピ投稿、店主 Cody Larson・店長 Serena Walker の各誌取材コメント、シリーズ TikTok 動画。直近 2 日 (5/12 news-en / 5/13 news-en) が連続で news-en 連続違反のため選択不可、TOP 2 method の social-en (5/5 269v, 5/8 129v、avg 199) を Exploit。5/8 以来 6 日空きで連続違反なし。柱は ③業界(個人焙煎所の戦い方)× Primary 趣味層への家庭アレンジ提案で、5/8 NR4A1 (129v) の『SNS バイラル → 一次科学/取材ソースで補強』テンプレを踏襲。さらに 5/3 中国×エチオピア (1294v) の『海外の小さな現象 → 日本視聴者の実生活に接続』勝ち筋(=休日に試せる)を併用。",
     "sources": [
-      "https://www.ecofinagency.com/news-agriculture/0506-47158-ethiopia-projects-record-694-000-ton-coffee-harvest-in-2025-26",
-      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Addis+Ababa_Ethiopia_ET2025-0014",
-      "https://www.fas.usda.gov/data/ethiopia-coffee-annual-9",
-      "https://algrano.com/learn/ethiopia-coffee-harvest-report-2026",
-      "https://www.trabocca.com/coffee-knowledge/ethiopian-coffee/ethiopia-harvest-2025-26/",
-      "https://www.nordicapproach.no/post/ethiopia-coffee-harvest-2026",
-      "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/"
+      "https://www.cnn.com/travel/raspberry-danish-viral-coffee-northfield-minnesota-spc",
+      "https://www.startribune.com/how-a-northfield-coffee-shop-built-a-global-audience-with-a-viral-latte-recipe/601731294",
+      "https://www.today.com/food/restaurants/raspberry-danish-latte-little-joy-coffee-shop-shares-recipe-rcna273693",
+      "https://dailycoffeenews.com/2026/04/17/weekly-coffee-news-ccres-the-first-sip-minnesota-recipe-goes-viral/",
+      "https://littlejoycoffee.substack.com/p/raspberry-danish-latte",
+      "https://www.yahoo.com/lifestyle/articles/small-coffee-shop-went-viral-174958431.html",
+      "https://bringmethenews.com/minnesota-lifestyle/hundreds-of-restaurants-take-northfield-cafe-up-on-offer-to-steal-its-viral-recipe",
+      "https://www.foodbible.com/news/drinks/viral-raspberry-danish-latte-recipe-social-media-839500-20260414"
     ],
-    "query": "Ethiopia coffee harvest 2025/26 record 11.56 million bags USDA FAS; Ethiopia washed coffee shortage natural shift cherry prices 4x; Yirgacheffe Sidamo Guji lower yield 2026",
+    "query": "raspberry danish latte Little Joy Coffee viral 480 shops 41 countries TikTok DIY or Buy May 2026; Northfield Minnesota Cody Larson Serena Walker open source recipe; cream cheese cold foam specialty coffee social media",
     "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "エチオピア過去最高の豊作なのにウォッシュトが品薄になる理由",
-      "description": "エチオピアの2025/26クロップは過去最高1160万袋の豊作予想、でもウォッシュトだけ品薄に",
-      "detail": "USDA最新レポートで生産は前年比9%増、輸出も11%増。ところがチェリー価格が4倍に高騰し、現金繰りが厳しい農家は洗わず家で乾燥させるナチュラルへ転換中。ウォッシュト比率は40%から20%へ半減し、特に南部のイルガチェフェやシダモが減産見通しです。",
-      "narration": "今朝のニュースです。エチオピア2026年クロップが過去最高1160万袋の豊作予想。でも私たちが大好きなウォッシュトは品薄になりそうです。",
-      "tags": ["エチオピア", "ウォッシュト", "イルガチェフェ"],
+      "title": "ミネソタの小さな焙煎所のラテが2か月で世界480店舗に拡散",
+      "description": "アメリカの人口2万人の町の焙煎所がレシピを無料公開、世界中の人気カフェに同じラテが急増中",
+      "detail": "Little Joy Coffeeが3月13日にTikTokの『DIY or Buy』シリーズで公開したラズベリーデニッシュラテが、業務用レシピ無料公開と地図公開を経て41カ国480店舗に拡散。地図は300万回再生、本店では月3,000杯売れる看板商品に",
+      "narration": "知ってました?今、世界の人気カフェに同じラテが急に増えてるんです。火付け役はアメリカの人口2万人の小さな町、ミネソタ州ノースフィールドにあるたった一軒の焙煎所。",
+      "tags": ["ラテ", "個人焙煎所", "業界ニュース"],
       "narration_sections": {
-        "hook": "今朝のニュースです。エチオピア2026年クロップが過去最高1160万袋の豊作予想。でも私たちが大好きなウォッシュトは品薄になりそうです。",
-        "origin": "USDA最新レポートで生産は前年比9%増、輸出も11%増。ところがチェリー価格が4倍に高騰し、現金繰りが厳しい農家は洗わず家で乾燥させるナチュラルへ転換中。ウォッシュト比率は40%から20%へ半減し、特に南部のイルガチェフェやシダモが減産見通しです。",
-        "recommend": "お気に入りのイルガチェフェ・ウォッシュトがある方は早めの確保を。逆にナチュラル派は品揃えが豊富な良い年になりそうです。"
+        "hook": "知ってました?今、世界の人気カフェに同じラテが急に増えてるんです。火付け役はアメリカの人口2万人の小さな町、ミネソタ州ノースフィールドにあるたった一軒の焙煎所。",
+        "origin": "3月13日Little Joy CoffeeがTikTokに投稿したラズベリーデニッシュラテ、シロップとクリームチーズのコールドフォームを重ねた一杯。業務用レシピを無料公開、2か月で41カ国480店舗が採用、地図は300万回再生。",
+        "recommend": "独占せずシェアして広げる新しい個人焙煎所の戦い方。家でも作れる4材料のシンプルレシピなので、ぜひ試してみてください。"
       },
       "section_titles": {
-        "hook": "エチオピア豊作の罠",
-        "origin": "チェリー4倍の影響",
-        "recommend": "今シーズンの戦略"
+        "hook": "世界に広がる一杯",
+        "origin": "公開された業務レシピ",
+        "recommend": "独占しない焙煎所"
       },
       "section_descriptions": {
-        "hook": "エチオピア過去最高の豊作、でも好きな豆は品薄に",
-        "origin": "チェリー価格4倍、農家の選択が市場を変える",
-        "recommend": "ウォッシュト派・ナチュラル派、それぞれの選び方"
+        "hook": "ミネソタの小さな焙煎所が起こした世界規模の波",
+        "origin": "ラズベリーシロップとクリームチーズのコールドフォーム",
+        "recommend": "独占せずシェアして広がる新しい個人店の戦い方"
       }
     }
   ]
