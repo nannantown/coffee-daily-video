@@ -1,43 +1,40 @@
 {
-  "date": "2026-05-14",
+  "date": "2026-05-15",
   "discovery": {
-    "method": "social-en",
-    "description": "Daily Coffee News 4/17 Weekly Coffee News と CNN Travel / Star Tribune / Today.com / Yahoo Lifestyle / Bring Me The News / FoodBible / Tildes コミュニティ系の英語メディア横断で、ミネソタ州ノースフィールドの Little Joy Coffee 発『ラズベリーデニッシュラテ』が TikTok『DIY or Buy』(3/13 投稿) → 業務用レシピ無料公開 → SNS でグローバル拡散して 41 カ国 480 店舗が真似、地図 300 万回再生という社会的バイラル現象を確認。一次ソースは Little Joy 公式 Substack のレシピ投稿、店主 Cody Larson・店長 Serena Walker の各誌取材コメント、シリーズ TikTok 動画。直近 2 日 (5/12 news-en / 5/13 news-en) が連続で news-en 連続違反のため選択不可、TOP 2 method の social-en (5/5 269v, 5/8 129v、avg 199) を Exploit。5/8 以来 6 日空きで連続違反なし。柱は ③業界(個人焙煎所の戦い方)× Primary 趣味層への家庭アレンジ提案で、5/8 NR4A1 (129v) の『SNS バイラル → 一次科学/取材ソースで補強』テンプレを踏襲。さらに 5/3 中国×エチオピア (1294v) の『海外の小さな現象 → 日本視聴者の実生活に接続』勝ち筋(=休日に試せる)を併用。",
+    "method": "news-en",
+    "description": "Daily Coffee News (5/13) と PBS NewsHour (AP配信, 5/12) と Washington Times (5/12) で先週バズった『AI が経営する Andon Café』を 3 媒体でクロスチェック。AP/PBS と DCN の双方が Andon Labs (San Francisco, AI 安全研究スタートアップ、2023 創業) が 2026 年 4 月中旬にストックホルムで Andon Café を開業し、Google Gemini ベースの AI エージェント Mona に採用・仕入れ・在庫・シフト管理を委任、人間バリスタはドリンク提供のみという構図を確認。共通する具体ファクト=オープン以来の売上 $5,700 / 残予算 5,000ドル未満 (元資金 $21,000+)、ナプキン 6,000 枚・ゴム手袋 3,000 枚・救急箱 4 個・メニューにないトマト缶を発注、深夜のバリスタへの業務連絡がスウェーデンの労働規範に抵触、食中毒時の責任所在不明という倫理問題が指摘されている点。柱は ③業界・ビジネスニュース (技術 × 小規模カフェ運営) で、5-04 ブルーボトル売却 (189v) や 5-03 中国ゼロ関税 (1294v) の勝ち筋 = 海外発の固有名詞ニュースを『視聴者の自分ごと』に翻訳する型を踏襲。Primary (家で淹れる趣味層) には『好きなカフェが AI 化したら』、Secondary (小規模カフェ店主) には『自店オペレーションの示唆』として二層に刺さる構造。直近 2 日 (5-13 news-en, 5-14 social-en) と method 連続違反なし。WORST 化しつつある official-src は本日見送り。",
     "sources": [
-      "https://www.cnn.com/travel/raspberry-danish-viral-coffee-northfield-minnesota-spc",
-      "https://www.startribune.com/how-a-northfield-coffee-shop-built-a-global-audience-with-a-viral-latte-recipe/601731294",
-      "https://www.today.com/food/restaurants/raspberry-danish-latte-little-joy-coffee-shop-shares-recipe-rcna273693",
-      "https://dailycoffeenews.com/2026/04/17/weekly-coffee-news-ccres-the-first-sip-minnesota-recipe-goes-viral/",
-      "https://littlejoycoffee.substack.com/p/raspberry-danish-latte",
-      "https://www.yahoo.com/lifestyle/articles/small-coffee-shop-went-viral-174958431.html",
-      "https://bringmethenews.com/minnesota-lifestyle/hundreds-of-restaurants-take-northfield-cafe-up-on-offer-to-steal-its-viral-recipe",
-      "https://www.foodbible.com/news/drinks/viral-raspberry-danish-latte-recipe-social-media-839500-20260414"
+      "https://dailycoffeenews.com/2026/05/13/an-ai-cafe-operator-is-messaging-baristas-at-midnight-and-making-weird-purchasing-orders/",
+      "https://www.pbs.org/newshour/world/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
+      "https://www.washingtontimes.com/news/2026/may/12/5-questions-ai-run-andon-cafe-sweden/",
+      "https://www.foodmanufacturing.com/consumer-trends/news/22966476/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
+      "https://andonlabs.com/blog/ai-cafe-stockholm"
     ],
-    "query": "raspberry danish latte Little Joy Coffee viral 480 shops 41 countries TikTok DIY or Buy May 2026; Northfield Minnesota Cody Larson Serena Walker open source recipe; cream cheese cold foam specialty coffee social media",
-    "freshness_hours": 120
+    "query": "Andon Labs Mona AI cafe Stockholm Gemini barista coffee 2026 weird inventory midnight messaging",
+    "freshness_hours": 60
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ミネソタの小さな焙煎所のラテが2か月で世界480店舗に拡散",
-      "description": "アメリカの人口2万人の町の焙煎所がレシピを無料公開、世界中の人気カフェに同じラテが急増中",
-      "detail": "Little Joy Coffeeが3月13日にTikTokの『DIY or Buy』シリーズで公開したラズベリーデニッシュラテが、業務用レシピ無料公開と地図公開を経て41カ国480店舗に拡散。地図は300万回再生、本店では月3,000杯売れる看板商品に",
-      "narration": "知ってました?今、世界の人気カフェに同じラテが急に増えてるんです。火付け役はアメリカの人口2万人の小さな町、ミネソタ州ノースフィールドにあるたった一軒の焙煎所。",
-      "tags": ["ラテ", "個人焙煎所", "業界ニュース"],
+      "title": "AIが店長のスウェーデンのカフェ・ナプキン6000枚など想定外の発注続出",
+      "description": "AIに経営判断を全部任せたカフェがストックホルムにオープン、トラブルも続出",
+      "detail": "サンフランシスコのAI研究所アンドンラボがGoogleのGeminiを店長に据えて4月にオープンしたカフェ。仕入れも採用もAIに任せた結果、メニューにないトマト缶やナプキン6000枚を発注、深夜に従業員へ業務連絡を送るなどのトラブルが続出している。",
+      "narration": "先週、海外で話題になったニュースです。スウェーデンに、バリスタは人間だけど経営判断はAIが全部やるカフェがオープンしました。",
+      "tags": ["AIカフェ", "業界ニュース", "スペシャルティコーヒー"],
       "narration_sections": {
-        "hook": "知ってました?今、世界の人気カフェに同じラテが急に増えてるんです。火付け役はアメリカの人口2万人の小さな町、ミネソタ州ノースフィールドにあるたった一軒の焙煎所。",
-        "origin": "3月13日Little Joy CoffeeがTikTokに投稿したラズベリーデニッシュラテ、シロップとクリームチーズのコールドフォームを重ねた一杯。業務用レシピを無料公開、2か月で41カ国480店舗が採用、地図は300万回再生。",
-        "recommend": "独占せずシェアして広げる新しい個人焙煎所の戦い方。家でも作れる4材料のシンプルレシピなので、ぜひ試してみてください。"
+        "hook": "先週、海外で話題になったニュースです。スウェーデンに、バリスタは人間だけど経営判断はAIが全部やるカフェがオープンしました。",
+        "origin": "ストックホルムに4月オープン、運営はサンフランシスコのアンドンラボ。AI店長モナはグーグルのジェミニで動き、仕入れも採用も担当。ただナプキン6000枚やメニューにないトマト缶を発注、深夜にバリスタへ業務連絡を送るトラブルも続出。",
+        "recommend": "データ計算は速くても、お店の空気を読むのはまだ人間の仕事。OGでは焙煎士の判断と一杯ずつの対話を大切にしていきます。"
       },
       "section_titles": {
-        "hook": "世界に広がる一杯",
-        "origin": "公開された業務レシピ",
-        "recommend": "独占しない焙煎所"
+        "hook": "AI店長のカフェ誕生",
+        "origin": "モナの想定外発注",
+        "recommend": "人にしか出せない味"
       },
       "section_descriptions": {
-        "hook": "ミネソタの小さな焙煎所が起こした世界規模の波",
-        "origin": "ラズベリーシロップとクリームチーズのコールドフォーム",
-        "recommend": "独占せずシェアして広がる新しい個人店の戦い方"
+        "hook": "スウェーデンでAIが経営を握る実験",
+        "origin": "ナプキン6000枚と深夜メッセージの謎",
+        "recommend": "AI時代に焙煎士が大切にすること"
       }
     }
   ]
