@@ -1,40 +1,40 @@
 {
-  "date": "2026-05-15",
+  "date": "2026-05-16",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News (5/13) と PBS NewsHour (AP配信, 5/12) と Washington Times (5/12) で先週バズった『AI が経営する Andon Café』を 3 媒体でクロスチェック。AP/PBS と DCN の双方が Andon Labs (San Francisco, AI 安全研究スタートアップ、2023 創業) が 2026 年 4 月中旬にストックホルムで Andon Café を開業し、Google Gemini ベースの AI エージェント Mona に採用・仕入れ・在庫・シフト管理を委任、人間バリスタはドリンク提供のみという構図を確認。共通する具体ファクト=オープン以来の売上 $5,700 / 残予算 5,000ドル未満 (元資金 $21,000+)、ナプキン 6,000 枚・ゴム手袋 3,000 枚・救急箱 4 個・メニューにないトマト缶を発注、深夜のバリスタへの業務連絡がスウェーデンの労働規範に抵触、食中毒時の責任所在不明という倫理問題が指摘されている点。柱は ③業界・ビジネスニュース (技術 × 小規模カフェ運営) で、5-04 ブルーボトル売却 (189v) や 5-03 中国ゼロ関税 (1294v) の勝ち筋 = 海外発の固有名詞ニュースを『視聴者の自分ごと』に翻訳する型を踏襲。Primary (家で淹れる趣味層) には『好きなカフェが AI 化したら』、Secondary (小規模カフェ店主) には『自店オペレーションの示唆』として二層に刺さる構造。直近 2 日 (5-13 news-en, 5-14 social-en) と method 連続違反なし。WORST 化しつつある official-src は本日見送り。",
+    "method": "expert-blog",
+    "description": "Perfect Daily Grind の 2026/04 記事『Why coffee roasters are explaining price increases』を起点に、今週のアラビカ先物 1 年半ぶり安値ニュース (5/12 #44) と先週末のラバッツァ再生農業 (5/6) の流れを焙煎士目線で繋ぐ週末エバーグリーン。柱は ④焙煎士の一次情報 × ①市況ニュースの橋渡し。視聴者の素朴な疑問『先物下がってるのに豆が値下がりしないのはなぜ』に差額(ディファレンシャル)の仕組みで答える。Primary (家で淹れる趣味層) を主ターゲットに、価格に対する納得感を深め『適正価値で選ぶ』姿勢を醸成。Sucafina の Differentials 解説と algrano の C-market 解説を裏取りソースに使用し、illycaffè 予想 (H2 2026 で C 価格 $2.80-3.00/lb 安定、それでも 5 年平均より上) も背景知識として参照。直近 2 日 (5-15 news-en, 5-14 social-en) と method 重複なし。expert-blog は過去 14 日で 1 投稿 85v、TOP3 圏内だが本数不足で再評価。",
     "sources": [
-      "https://dailycoffeenews.com/2026/05/13/an-ai-cafe-operator-is-messaging-baristas-at-midnight-and-making-weird-purchasing-orders/",
-      "https://www.pbs.org/newshour/world/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
-      "https://www.washingtontimes.com/news/2026/may/12/5-questions-ai-run-andon-cafe-sweden/",
-      "https://www.foodmanufacturing.com/consumer-trends/news/22966476/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
-      "https://andonlabs.com/blog/ai-cafe-stockholm"
+      "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
+      "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
+      "https://algrano.com/learn/the-c-market-explained",
+      "https://perfectdailygrind.com/2026/01/why-higher-coffee-prices-dont-mean-higher-quality/",
+      "https://perfectdailygrind.com/2025/08/high-coffee-prices-favour-local-smaller-roasters/"
     ],
-    "query": "Andon Labs Mona AI cafe Stockholm Gemini barista coffee 2026 weird inventory midnight messaging",
-    "freshness_hours": 60
+    "query": "why specialty coffee retail price doesn't drop when arabica C futures fall differential roaster costs",
+    "freshness_hours": 36
   },
   "articles": [
     {
       "rank": 1,
-      "title": "AIが店長のスウェーデンのカフェ・ナプキン6000枚など想定外の発注続出",
-      "description": "AIに経営判断を全部任せたカフェがストックホルムにオープン、トラブルも続出",
-      "detail": "サンフランシスコのAI研究所アンドンラボがGoogleのGeminiを店長に据えて4月にオープンしたカフェ。仕入れも採用もAIに任せた結果、メニューにないトマト缶やナプキン6000枚を発注、深夜に従業員へ業務連絡を送るなどのトラブルが続出している。",
-      "narration": "先週、海外で話題になったニュースです。スウェーデンに、バリスタは人間だけど経営判断はAIが全部やるカフェがオープンしました。",
-      "tags": ["AIカフェ", "業界ニュース", "スペシャルティコーヒー"],
+      "title": "先物が下がっても豆が安くならない理由・差額の仕組み",
+      "description": "アラビカ先物が1年半ぶり安値でもスペシャルティ豆の値段が下がらない仕組みを焙煎士目線で解説",
+      "detail": "スペシャルティ豆は先物価格に差額(ディファレンシャル)を上乗せして取引される。先物が下がっても品質・産地のプレミアム部分は据え置きか上昇。包装代・人件費・電気代も上がり続けていて、焙煎所の利益は薄いまま。",
+      "narration": "アラビカ先物が1年半ぶり安値になりました。でもお店のスペシャルティ豆の値段は下がりませんよね。今日はそのちゃんとした理由を解説します。",
+      "tags": ["市況解説", "焙煎士の視点", "ディファレンシャル"],
       "narration_sections": {
-        "hook": "先週、海外で話題になったニュースです。スウェーデンに、バリスタは人間だけど経営判断はAIが全部やるカフェがオープンしました。",
-        "origin": "ストックホルムに4月オープン、運営はサンフランシスコのアンドンラボ。AI店長モナはグーグルのジェミニで動き、仕入れも採用も担当。ただナプキン6000枚やメニューにないトマト缶を発注、深夜にバリスタへ業務連絡を送るトラブルも続出。",
-        "recommend": "データ計算は速くても、お店の空気を読むのはまだ人間の仕事。OGでは焙煎士の判断と一杯ずつの対話を大切にしていきます。"
+        "hook": "アラビカ先物が1年半ぶり安値になりました。でもお店のスペシャルティ豆の値段は下がりませんよね。今日はそのちゃんとした理由を解説します。",
+        "origin": "スペシャルティ豆は先物価格に「差額」という上乗せを足して取引されます。先物が下がっても、品質や産地ごとのプレミアム部分は据え置きか、むしろ上昇傾向。さらに包装代や人件費、電気代も上がり続けていて、焙煎所の利益は薄いままなんです。",
+        "recommend": "だから「安いはず」より「適正な価値」で選ぶのがおすすめ。生産者と焙煎所どちらにも続く値段の先に、本当に美味しい一杯があります。"
       },
       "section_titles": {
-        "hook": "AI店長のカフェ誕生",
-        "origin": "モナの想定外発注",
-        "recommend": "人にしか出せない味"
+        "hook": "なぜ豆は安くならない",
+        "origin": "差額が決めている",
+        "recommend": "持続可能な値段で選ぶ"
       },
       "section_descriptions": {
-        "hook": "スウェーデンでAIが経営を握る実験",
-        "origin": "ナプキン6000枚と深夜メッセージの謎",
-        "recommend": "AI時代に焙煎士が大切にすること"
+        "hook": "先物が安値でも、店頭の豆は値下がりしません。",
+        "origin": "差額・人件費・包装代。値段は先物だけで決まりません。",
+        "recommend": "適正価値で選ぶと、生産者と焙煎所に届きます。"
       }
     }
   ]
