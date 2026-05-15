@@ -6,6 +6,9 @@ on:
     # 23:30 UTC = 08:30 JST (30min after AI Trend Daily)
     - cron: "30 23 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - '.recovery-trigger'
 
 permissions:
   contents: write
