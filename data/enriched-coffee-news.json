@@ -1,40 +1,41 @@
 {
-  "date": "2026-05-16",
+  "date": "2026-05-17",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Perfect Daily Grind の 2026/04 記事『Why coffee roasters are explaining price increases』を起点に、今週のアラビカ先物 1 年半ぶり安値ニュース (5/12 #44) と先週末のラバッツァ再生農業 (5/6) の流れを焙煎士目線で繋ぐ週末エバーグリーン。柱は ④焙煎士の一次情報 × ①市況ニュースの橋渡し。視聴者の素朴な疑問『先物下がってるのに豆が値下がりしないのはなぜ』に差額(ディファレンシャル)の仕組みで答える。Primary (家で淹れる趣味層) を主ターゲットに、価格に対する納得感を深め『適正価値で選ぶ』姿勢を醸成。Sucafina の Differentials 解説と algrano の C-market 解説を裏取りソースに使用し、illycaffè 予想 (H2 2026 で C 価格 $2.80-3.00/lb 安定、それでも 5 年平均より上) も背景知識として参照。直近 2 日 (5-15 news-en, 5-14 social-en) と method 重複なし。expert-blog は過去 14 日で 1 投稿 85v、TOP3 圏内だが本数不足で再評価。",
+    "method": "social-en",
+    "description": "Reddit/Threads/Lemmy で継続話題の『Hario Switch が AeroPress を凌ぎつつある』コミュニティ現象を、Perfect Daily Grind 2026-03 ハイブリッド復活記事と 2025 World Brewers Cup ファイナリスト 9 人中 4 人がハイブリッド採用というハードファクトで裏打ち。日曜エバーグリーン枠で Primary ペルソナ (家で淹れる趣味層・器具持ち) に器具更新文脈で刺す。直近 2 日 (5/16 expert-blog, 5/15 news-en) と method 重複なし。TOP3 method の social-en (avg 134.7v) を exploit。柱は ④焙煎士の一次情報枠を抽出士目線で実装、戦略にある『weekend evergreen はニュース駆動の背景接続』を体現。Tetsu Kasuya の 2025 New Hybrid レシピ (3:30 brew) を recommend で提示し『今すぐ家で試せる』動線まで作る。視聴者の財布軸 = 2 千円台で買える具体的提案。",
     "sources": [
-      "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
-      "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
-      "https://algrano.com/learn/the-c-market-explained",
-      "https://perfectdailygrind.com/2026/01/why-higher-coffee-prices-dont-mean-higher-quality/",
-      "https://perfectdailygrind.com/2025/08/high-coffee-prices-favour-local-smaller-roasters/"
+      "https://perfectdailygrind.com/2026/03/hybrid-coffee-brewers-making-comeback/",
+      "https://wcc.coffee/latest-news/meet-the-2025-world-brewers-cup-finalists",
+      "https://www.timer.coffee/recipes/hario-switch/2025-new-hybrid-hario-switch-recipe-by-tetsu-kasuya/",
+      "https://perfectdailygrind.com/2026/04/custom-brewers-coffee-competitions/",
+      "https://perfectdailygrind.com/2026/02/new-coffee-brewers-extraction-tools-baristas/",
+      "https://www.fissionandbloom.co.uk/blog/hario-switch-vs-aeropress-which-brewer-suits-your-coffee-style"
     ],
-    "query": "why specialty coffee retail price doesn't drop when arabica C futures fall differential roaster costs",
-    "freshness_hours": 36
+    "query": "Hario Switch hybrid brewer World Brewers Cup 2025 finalists Tetsu Kasuya new recipe immersion percolation home brewing trend",
+    "freshness_hours": 60
   },
   "articles": [
     {
       "rank": 1,
-      "title": "先物が下がっても豆が安くならない理由・差額の仕組み",
-      "description": "アラビカ先物が1年半ぶり安値でもスペシャルティ豆の値段が下がらない仕組みを焙煎士目線で解説",
-      "detail": "スペシャルティ豆は先物価格に差額(ディファレンシャル)を上乗せして取引される。先物が下がっても品質・産地のプレミアム部分は据え置きか上昇。包装代・人件費・電気代も上がり続けていて、焙煎所の利益は薄いまま。",
-      "narration": "アラビカ先物が1年半ぶり安値になりました。でもお店のスペシャルティ豆の値段は下がりませんよね。今日はそのちゃんとした理由を解説します。",
-      "tags": ["市況解説", "焙煎士の視点", "ディファレンシャル"],
+      "title": "世界大会の44%が選んだHario Switch・家でハイブリッド抽出が主役に",
+      "description": "2025世界ブリュワーズカップでファイナリスト9人中4人がハイブリッド抽出器を採用、Hario Switchが急浮上",
+      "detail": "2025年の世界ブリュワーズカップ決勝で、9人中4人がハイブリッド抽出器を使用。コロンビア・インドネシア・グアテマラ代表がHario Switchを採用、米国代表はApril Brewerを選択。透過と浸漬を1台で切り替えられる仕組みで、家でも安定した一杯が淹れやすい。Switch本体は2千円台。",
+      "narration": "家でコーヒーを淹れるなら、最近の主役は変わりつつあります。世界大会のファイナリスト9人中4人が、ある『新しい型』の抽出器を選んでいたんです。",
+      "tags": ["家淹れ", "ハイブリッド抽出", "Hario Switch"],
       "narration_sections": {
-        "hook": "アラビカ先物が1年半ぶり安値になりました。でもお店のスペシャルティ豆の値段は下がりませんよね。今日はそのちゃんとした理由を解説します。",
-        "origin": "スペシャルティ豆は先物価格に「差額」という上乗せを足して取引されます。先物が下がっても、品質や産地ごとのプレミアム部分は据え置きか、むしろ上昇傾向。さらに包装代や人件費、電気代も上がり続けていて、焙煎所の利益は薄いままなんです。",
-        "recommend": "だから「安いはず」より「適正な価値」で選ぶのがおすすめ。生産者と焙煎所どちらにも続く値段の先に、本当に美味しい一杯があります。"
+        "hook": "家でコーヒーを淹れるなら、最近の主役は変わりつつあります。世界大会のファイナリスト9人中4人が、ある『新しい型』の抽出器を選んでいたんです。",
+        "origin": "2025年の世界ブリュワーズカップで一気に増えたのが、ハイブリッド抽出器。透過と浸漬を1台で切り替えられる仕組みで、特に日本のHario Switchが目立ちました。コロンビアやインドネシア代表が採用。価格は2千円台で、家でも安定した一杯が淹れやすいんです。",
+        "recommend": "世界王者カスヤさんの新ハイブリッドレシピは3分半で完成。普段の豆を、いつもよりちょっと甘く淹れたい人にぴったりです。"
       },
       "section_titles": {
-        "hook": "なぜ豆は安くならない",
-        "origin": "差額が決めている",
-        "recommend": "持続可能な値段で選ぶ"
+        "hook": "家淹れの新定番",
+        "origin": "ハイブリッド抽出",
+        "recommend": "世界王者のレシピ"
       },
       "section_descriptions": {
-        "hook": "先物が安値でも、店頭の豆は値下がりしません。",
-        "origin": "差額・人件費・包装代。値段は先物だけで決まりません。",
-        "recommend": "適正価値で選ぶと、生産者と焙煎所に届きます。"
+        "hook": "世界大会のファイナリスト、44%が同じ型を使った",
+        "origin": "透過と浸漬の良いとこ取り。家でも安定して旨くなる",
+        "recommend": "3分半で完成。普段の豆が甘く澄む新ハイブリッド式"
       }
     }
   ]
