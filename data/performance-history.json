@@ -535,7 +535,7 @@
         "views": 1294,
         "likes": 5,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -578,7 +578,7 @@
         "views": 189,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -621,7 +621,7 @@
         "views": 269,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -713,7 +713,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -758,7 +758,7 @@
         "views": 131,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -805,7 +805,7 @@
         "views": 85,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -849,7 +849,7 @@
         "views": 44,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -897,7 +897,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -942,7 +942,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -988,7 +988,7 @@
         "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -1032,10 +1032,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 4,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -1076,10 +1076,10 @@
         "freshness_hours": 60
       },
       "stats": {
-        "views": 23,
-        "likes": 0,
+        "views": 33,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-16T00:13:06.336Z"
+        "updatedAt": "2026-05-17T00:12:49.803Z"
       }
     },
     {
@@ -1120,6 +1120,51 @@
         "freshness_hours": 36
       },
       "stats": {
+        "views": 74,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-05-17T00:12:49.803Z"
+      }
+    },
+    {
+      "videoId": "YqAVrlMFxZM",
+      "videoUrl": "https://youtube.com/shorts/YqAVrlMFxZM",
+      "date": "2026-05-17",
+      "title": "【コーヒー豆知識】世界大会の44%が選んだHario Switch・家でハイブリッド抽出が主役に｜2026/05/17 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "social-en",
+        "description": "Reddit/Threads/Lemmy で継続話題の『Hario Switch が AeroPress を凌ぎつつある』コミュニティ現象を、Perfect Daily Grind 2026-03 ハイブリッド復活記事と 2025 World Brewers Cup ファイナリスト 9 人中 4 人がハイブリッド採用というハードファクトで裏打ち。日曜エバーグリーン枠で Primary ペルソナ (家で淹れる趣味層・器具持ち) に器具更新文脈で刺す。直近 2 日 (5/16 expert-blog, 5/15 news-en) と method 重複なし。TOP3 method の social-en (avg 134.7v) を exploit。柱は ④焙煎士の一次情報枠を抽出士目線で実装、戦略にある『weekend evergreen はニュース駆動の背景接続』を体現。Tetsu Kasuya の 2025 New Hybrid レシピ (3:30 brew) を recommend で提示し『今すぐ家で試せる』動線まで作る。視聴者の財布軸 = 2 千円台で買える具体的提案。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/03/hybrid-coffee-brewers-making-comeback/",
+          "https://wcc.coffee/latest-news/meet-the-2025-world-brewers-cup-finalists",
+          "https://www.timer.coffee/recipes/hario-switch/2025-new-hybrid-hario-switch-recipe-by-tetsu-kasuya/",
+          "https://perfectdailygrind.com/2026/04/custom-brewers-coffee-competitions/",
+          "https://perfectdailygrind.com/2026/02/new-coffee-brewers-extraction-tools-baristas/",
+          "https://www.fissionandbloom.co.uk/blog/hario-switch-vs-aeropress-which-brewer-suits-your-coffee-style"
+        ],
+        "query": "Hario Switch hybrid brewer World Brewers Cup 2025 finalists Tetsu Kasuya new recipe immersion percolation home brewing trend",
+        "freshness_hours": 60
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1128,13 +1173,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-15",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-16",
       "changes": [
@@ -1352,6 +1390,14 @@
       "changes": [
         "standard: 115 avg views (26 videos)",
         "Day performance: Sun=268, Wed=113, Tue=109, Mon=81, Sat=80, Fri=56, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-17",
+      "changes": [
+        "standard: 114 avg views (27 videos)",
+        "Day performance: Sun=268, Wed=113, Tue=109, Mon=81, Sat=78, Fri=59, Thu=16"
       ],
       "recommendedTemplate": "standard"
     }
