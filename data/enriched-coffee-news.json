@@ -1,41 +1,38 @@
 {
-  "date": "2026-05-17",
+  "date": "2026-05-18",
   "discovery": {
-    "method": "social-en",
-    "description": "Reddit/Threads/Lemmy で継続話題の『Hario Switch が AeroPress を凌ぎつつある』コミュニティ現象を、Perfect Daily Grind 2026-03 ハイブリッド復活記事と 2025 World Brewers Cup ファイナリスト 9 人中 4 人がハイブリッド採用というハードファクトで裏打ち。日曜エバーグリーン枠で Primary ペルソナ (家で淹れる趣味層・器具持ち) に器具更新文脈で刺す。直近 2 日 (5/16 expert-blog, 5/15 news-en) と method 重複なし。TOP3 method の social-en (avg 134.7v) を exploit。柱は ④焙煎士の一次情報枠を抽出士目線で実装、戦略にある『weekend evergreen はニュース駆動の背景接続』を体現。Tetsu Kasuya の 2025 New Hybrid レシピ (3:30 brew) を recommend で提示し『今すぐ家で試せる』動線まで作る。視聴者の財布軸 = 2 千円台で買える具体的提案。",
+    "method": "news-en",
+    "description": "Daily Coffee News (Roast Magazine) 2026-05-15 報 + 米労働省BLS 4月CPI。米国の挽き売りコーヒー平均価格が1ポンド9.72ドルに到達、BLS統計開始(1980)以来の最高値を記録。生豆高止まりに加え、2025年4月発動の米相互関税が輸入豆全般に上乗せされている構造。3日前の鮮度で柱①市況ニュース直撃。TOP3 method (social-en/expert-blog/news-en) のうち、直近2日と重複しない news-en を exploit。過去ヒット 5/3 中国関税 (1294v) と 5/4 ブルーボトル売却 (189v) で確立された『企業/国名+金額+生活への影響』フレームを継続。日本人視聴者にも値上げ実感がある身近な切り口で、初心者には関税構造を一行で噛み砕いて補足。",
     "sources": [
-      "https://perfectdailygrind.com/2026/03/hybrid-coffee-brewers-making-comeback/",
-      "https://wcc.coffee/latest-news/meet-the-2025-world-brewers-cup-finalists",
-      "https://www.timer.coffee/recipes/hario-switch/2025-new-hybrid-hario-switch-recipe-by-tetsu-kasuya/",
-      "https://perfectdailygrind.com/2026/04/custom-brewers-coffee-competitions/",
-      "https://perfectdailygrind.com/2026/02/new-coffee-brewers-extraction-tools-baristas/",
-      "https://www.fissionandbloom.co.uk/blog/hario-switch-vs-aeropress-which-brewer-suits-your-coffee-style"
+      "https://dailycoffeenews.com/2026/05/15/u-s-grocery-coffee-prices-hit-all-time-average-high-in-april/",
+      "https://www.bls.gov/news.release/pdf/cpi.pdf",
+      "https://www.thestreet.com/retail/u-s-coffee-prices-are-surging-at-a-record-pace"
     ],
-    "query": "Hario Switch hybrid brewer World Brewers Cup 2025 finalists Tetsu Kasuya new recipe immersion percolation home brewing trend",
-    "freshness_hours": 60
+    "query": "US ground coffee price record high April 2026 BLS $9.72",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "世界大会の44%が選んだHario Switch・家でハイブリッド抽出が主役に",
-      "description": "2025世界ブリュワーズカップでファイナリスト9人中4人がハイブリッド抽出器を採用、Hario Switchが急浮上",
-      "detail": "2025年の世界ブリュワーズカップ決勝で、9人中4人がハイブリッド抽出器を使用。コロンビア・インドネシア・グアテマラ代表がHario Switchを採用、米国代表はApril Brewerを選択。透過と浸漬を1台で切り替えられる仕組みで、家でも安定した一杯が淹れやすい。Switch本体は2千円台。",
-      "narration": "家でコーヒーを淹れるなら、最近の主役は変わりつつあります。世界大会のファイナリスト9人中4人が、ある『新しい型』の抽出器を選んでいたんです。",
-      "tags": ["家淹れ", "ハイブリッド抽出", "Hario Switch"],
+      "title": "米国挽き売りコーヒーが過去最高値・1ポンド9.72ドルに",
+      "description": "米労働省4月CPIで米国の挽き売りコーヒーが1980年以来の最高水準を記録",
+      "detail": "BLSコーヒー指数は前年比18.5%上昇、挽き売り17.3%、インスタント22.8%増。2025年1月から約39%値上がり。背景は生豆高止まりに加え、2025年4月発動の相互関税が輸入全般に上乗せ",
+      "narration": "知ってましたか?アメリカで挽き売りコーヒーが過去最高値を更新、1ポンドあたり9.72ドルです。1980年の統計開始以来、初の水準。",
+      "tags": ["市況ニュース", "米国小売", "関税"],
       "narration_sections": {
-        "hook": "家でコーヒーを淹れるなら、最近の主役は変わりつつあります。世界大会のファイナリスト9人中4人が、ある『新しい型』の抽出器を選んでいたんです。",
-        "origin": "2025年の世界ブリュワーズカップで一気に増えたのが、ハイブリッド抽出器。透過と浸漬を1台で切り替えられる仕組みで、特に日本のHario Switchが目立ちました。コロンビアやインドネシア代表が採用。価格は2千円台で、家でも安定した一杯が淹れやすいんです。",
-        "recommend": "世界王者カスヤさんの新ハイブリッドレシピは3分半で完成。普段の豆を、いつもよりちょっと甘く淹れたい人にぴったりです。"
+        "hook": "知ってましたか?アメリカで挽き売りコーヒーが過去最高値を更新、1ポンドあたり9.72ドルです。1980年の統計開始以来、初の水準。",
+        "origin": "米労働省の4月CPIで、コーヒー指数は前年比18.5%上昇。挽き売り17.3%、インスタント22.8%増。2025年1月からは約39%値上がりです。背景は生豆価格の高止まりと、米国が昨年4月に始めた相互関税。輸入豆全般に税が乗り、店頭にしわ寄せが来ています。",
+        "recommend": "日本の家庭用も値上げが続いていますね。今こそ良い豆を選ぶ目を養いたい時期。OGの最新入荷はフォローでお知らせします。"
       },
       "section_titles": {
-        "hook": "家淹れの新定番",
-        "origin": "ハイブリッド抽出",
-        "recommend": "世界王者のレシピ"
+        "hook": "米国コーヒー最高値",
+        "origin": "指数と関税の中身",
+        "recommend": "日本でも豆選びの目を"
       },
       "section_descriptions": {
-        "hook": "世界大会のファイナリスト、44%が同じ型を使った",
-        "origin": "透過と浸漬の良いとこ取り。家でも安定して旨くなる",
-        "recommend": "3分半で完成。普段の豆が甘く澄む新ハイブリッド式"
+        "hook": "米国の挽き売りコーヒーが史上最高値を更新",
+        "origin": "BLSの数字が示す上昇の正体と関税の影響",
+        "recommend": "日本も同じ流れ、良い豆を選ぶ目を持ちたい時期"
       }
     }
   ]
