@@ -1,38 +1,39 @@
 {
-  "date": "2026-05-18",
+  "date": "2026-05-19",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News (Roast Magazine) 2026-05-15 報 + 米労働省BLS 4月CPI。米国の挽き売りコーヒー平均価格が1ポンド9.72ドルに到達、BLS統計開始(1980)以来の最高値を記録。生豆高止まりに加え、2025年4月発動の米相互関税が輸入豆全般に上乗せされている構造。3日前の鮮度で柱①市況ニュース直撃。TOP3 method (social-en/expert-blog/news-en) のうち、直近2日と重複しない news-en を exploit。過去ヒット 5/3 中国関税 (1294v) と 5/4 ブルーボトル売却 (189v) で確立された『企業/国名+金額+生活への影響』フレームを継続。日本人視聴者にも値上げ実感がある身近な切り口で、初心者には関税構造を一行で噛み砕いて補足。",
+    "method": "official-src",
+    "description": "World Coffee Research (WCR、米国非営利) が約6日前に公開した『2025年次報告』を一次ソースに採用。気候変動下の品種開発ネットワーク Innovea が新たにベトナムとガーナを追加し、参加11カ国で世界生産量の4割をカバーする規模に到達。同ネットワークは TIME 誌『Best Invention of 2025』にも選出済み。柱②産地・ハーベスト直撃で『次世代品種＋気候変動＋権威付け』の角度。直近2日 (5/18 news-en, 5/17 social-en) と method 重複を避け、TOP3 (social-en/expert-blog/official-src) から official-src を exploit。前回 official-src は 5/11 (72v) と 5/7 (5v) で振れ幅大、固有名詞 (WCR, TIME) と数値 (11カ国/4割) で具体性を担保。",
     "sources": [
-      "https://dailycoffeenews.com/2026/05/15/u-s-grocery-coffee-prices-hit-all-time-average-high-in-april/",
-      "https://www.bls.gov/news.release/pdf/cpi.pdf",
-      "https://www.thestreet.com/retail/u-s-coffee-prices-are-surging-at-a-record-pace"
+      "https://worldcoffeeresearch.org/news/world-coffee-research-releases-2025-annual-report",
+      "https://worldcoffeeresearch.org/news/2025/innovea-global-breeding-network-named-a-time-best-invention-of-2025",
+      "https://www.teaandcoffee.net/news/37885/innovea-global-breeding-network-named-a-time-best-invention-of-2025/",
+      "https://time.com/collections/best-inventions-2025/7318233/innovea-global-coffee-breeding-network/"
     ],
-    "query": "US ground coffee price record high April 2026 BLS $9.72",
-    "freshness_hours": 72
+    "query": "World Coffee Research 2025 annual report Innovea breeding network TIME best invention",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "米国挽き売りコーヒーが過去最高値・1ポンド9.72ドルに",
-      "description": "米労働省4月CPIで米国の挽き売りコーヒーが1980年以来の最高水準を記録",
-      "detail": "BLSコーヒー指数は前年比18.5%上昇、挽き売り17.3%、インスタント22.8%増。2025年1月から約39%値上がり。背景は生豆高止まりに加え、2025年4月発動の相互関税が輸入全般に上乗せ",
-      "narration": "知ってましたか?アメリカで挽き売りコーヒーが過去最高値を更新、1ポンドあたり9.72ドルです。1980年の統計開始以来、初の水準。",
-      "tags": ["市況ニュース", "米国小売", "関税"],
+      "title": "WCRの次世代品種研究が11カ国に拡大・世界生産4割を結ぶ",
+      "description": "気候変動に立ち向かう国際品種開発ネットワーク『イノベア』の2025年次報告が公開",
+      "detail": "WCRが今年公開した2025年次報告で、品種育成ネット『イノベア』にベトナム・ガーナが加入。参加11カ国で世界コーヒー生産量の約4割をカバーする規模に拡大。Innoveaは2022年立ち上げ、史上最大の品種育成連合で、TIME誌の2025年Best Inventionにも選出された。",
+      "narration": "気候変動でコーヒーが消える、とよく言われますが、それを止めるための国際品種開発プロジェクトの最新成果が、先週公開されました。",
+      "tags": ["品種開発", "気候変動", "産地"],
       "narration_sections": {
-        "hook": "知ってましたか?アメリカで挽き売りコーヒーが過去最高値を更新、1ポンドあたり9.72ドルです。1980年の統計開始以来、初の水準。",
-        "origin": "米労働省の4月CPIで、コーヒー指数は前年比18.5%上昇。挽き売り17.3%、インスタント22.8%増。2025年1月からは約39%値上がりです。背景は生豆価格の高止まりと、米国が昨年4月に始めた相互関税。輸入豆全般に税が乗り、店頭にしわ寄せが来ています。",
-        "recommend": "日本の家庭用も値上げが続いていますね。今こそ良い豆を選ぶ目を養いたい時期。OGの最新入荷はフォローでお知らせします。"
+        "hook": "気候変動でコーヒーが消える、とよく言われますが、それを止めるための国際品種開発プロジェクトの最新成果が、先週公開されました。",
+        "origin": "主導するのは非営利のワールドコーヒーリサーチ。今年の年次報告によると、品種育成ネット『イノベア』にベトナムとガーナが加わり、参加11カ国で世界生産量の4割をカバーする規模になりました。気候に強く病気にも負けない、しかも美味しい品種を、各国で育てています。",
+        "recommend": "10年後も色々な産地のスペシャリティを楽しめるかは、こういう地道な研究にかかっています。EC準備中、フォローして続報をお待ちください。"
       },
       "section_titles": {
-        "hook": "米国コーヒー最高値",
-        "origin": "指数と関税の中身",
-        "recommend": "日本でも豆選びの目を"
+        "hook": "次世代品種の開発",
+        "origin": "11カ国の品種連合",
+        "recommend": "産地多様性を守る"
       },
       "section_descriptions": {
-        "hook": "米国の挽き売りコーヒーが史上最高値を更新",
-        "origin": "BLSの数字が示す上昇の正体と関税の影響",
-        "recommend": "日本も同じ流れ、良い豆を選ぶ目を持ちたい時期"
+        "hook": "気候変動に立ち向かう国際品種研究の最新成果",
+        "origin": "WCR年次報告・11カ国体制で世界生産4割を結集",
+        "recommend": "10年後も多様な産地を楽しめるかは研究次第"
       }
     }
   ]
