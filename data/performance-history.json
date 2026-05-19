@@ -621,7 +621,7 @@
         "views": 269,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -668,7 +668,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -713,7 +713,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -758,7 +758,7 @@
         "views": 131,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -805,7 +805,7 @@
         "views": 85,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -849,7 +849,7 @@
         "views": 44,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -897,7 +897,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -942,7 +942,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -988,7 +988,7 @@
         "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -1032,10 +1032,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 6,
+        "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -1079,7 +1079,7 @@
         "views": 41,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -1120,10 +1120,10 @@
         "freshness_hours": 36
       },
       "stats": {
-        "views": 75,
+        "views": 76,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -1165,10 +1165,10 @@
         "freshness_hours": 60
       },
       "stats": {
-        "views": 84,
+        "views": 86,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-18T01:25:51.350Z"
+        "updatedAt": "2026-05-19T01:28:49.768Z"
       }
     },
     {
@@ -1207,6 +1207,49 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-19T01:28:49.768Z"
+      }
+    },
+    {
+      "videoId": "3n82An4759s",
+      "videoUrl": "https://youtube.com/shorts/3n82An4759s",
+      "date": "2026-05-19",
+      "title": "【コーヒー豆知識】WCRの次世代品種研究が11カ国に拡大・世界生産4割を結ぶ｜2026/05/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "official-src",
+        "description": "World Coffee Research (WCR、米国非営利) が約6日前に公開した『2025年次報告』を一次ソースに採用。気候変動下の品種開発ネットワーク Innovea が新たにベトナムとガーナを追加し、参加11カ国で世界生産量の4割をカバーする規模に到達。同ネットワークは TIME 誌『Best Invention of 2025』にも選出済み。柱②産地・ハーベスト直撃で『次世代品種＋気候変動＋権威付け』の角度。直近2日 (5/18 news-en, 5/17 social-en) と method 重複を避け、TOP3 (social-en/expert-blog/official-src) から official-src を exploit。前回 official-src は 5/11 (72v) と 5/7 (5v) で振れ幅大、固有名詞 (WCR, TIME) と数値 (11カ国/4割) で具体性を担保。",
+        "sources": [
+          "https://worldcoffeeresearch.org/news/world-coffee-research-releases-2025-annual-report",
+          "https://worldcoffeeresearch.org/news/2025/innovea-global-breeding-network-named-a-time-best-invention-of-2025",
+          "https://www.teaandcoffee.net/news/37885/innovea-global-breeding-network-named-a-time-best-invention-of-2025/",
+          "https://time.com/collections/best-inventions-2025/7318233/innovea-global-coffee-breeding-network/"
+        ],
+        "query": "World Coffee Research 2025 annual report Innovea breeding network TIME best invention",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1215,13 +1258,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-17",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-18",
       "changes": [
@@ -1441,6 +1477,14 @@
       "changes": [
         "standard: 113 avg views (28 videos)",
         "Day performance: Sun=238, Wed=113, Tue=109, Mon=81, Sat=78, Fri=61, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-19",
+      "changes": [
+        "standard: 109 avg views (29 videos)",
+        "Day performance: Sun=238, Wed=113, Tue=109, Sat=79, Mon=65, Fri=61, Thu=18"
       ],
       "recommendedTemplate": "standard"
     }
