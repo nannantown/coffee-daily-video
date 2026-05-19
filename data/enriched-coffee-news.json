@@ -1,39 +1,39 @@
 {
-  "date": "2026-05-19",
+  "date": "2026-05-20",
   "discovery": {
-    "method": "official-src",
-    "description": "World Coffee Research (WCR、米国非営利) が約6日前に公開した『2025年次報告』を一次ソースに採用。気候変動下の品種開発ネットワーク Innovea が新たにベトナムとガーナを追加し、参加11カ国で世界生産量の4割をカバーする規模に到達。同ネットワークは TIME 誌『Best Invention of 2025』にも選出済み。柱②産地・ハーベスト直撃で『次世代品種＋気候変動＋権威付け』の角度。直近2日 (5/18 news-en, 5/17 social-en) と method 重複を避け、TOP3 (social-en/expert-blog/official-src) から official-src を exploit。前回 official-src は 5/11 (72v) と 5/7 (5v) で振れ幅大、固有名詞 (WCR, TIME) と数値 (11カ国/4割) で具体性を担保。",
+    "method": "expert-blog",
+    "description": "The Conversation (大学研究者の論考媒体) と Daily Coffee News (5/18 配信) を一次ソースに、業界の新トピック『パラキサンチン (カフェインの代謝物が次世代覚醒成分として登場)』を採用。柱③業界・ビジネスニュース。直近2日 (5/19 official-src, 5/18 news-en) と method 重複回避し、TOP3 (expert-blog 80.5avg / social-en / official-src) から expert-blog を exploit。前回 expert-blog は 5/16 (76v) と 5/09 (85v) で安定。news-en の WORST 推移 (3週連続平均21v) を踏まえ、本日はニュース性を保ちつつ専門家解説の角度で当てに行く。フックは『副作用なき覚醒成分』の逆説型 (5/08 デカフェ同効果 131v / 5/09 焙煎度の逆説 85v の勝ち筋を再現)。固有名詞 (パラキサンチン / Update / カーダシアン) と数値 (200mg/日, 海外) で具体性担保。",
     "sources": [
-      "https://worldcoffeeresearch.org/news/world-coffee-research-releases-2025-annual-report",
-      "https://worldcoffeeresearch.org/news/2025/innovea-global-breeding-network-named-a-time-best-invention-of-2025",
-      "https://www.teaandcoffee.net/news/37885/innovea-global-breeding-network-named-a-time-best-invention-of-2025/",
-      "https://time.com/collections/best-inventions-2025/7318233/innovea-global-coffee-breeding-network/"
+      "https://theconversation.com/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks-276923",
+      "https://dailycoffeenews.com/2026/05/18/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks/",
+      "https://www.sciencealert.com/new-caffeine-alternative-promises-no-jitters-or-crash-heres-the-evidence",
+      "https://www.healthline.com/health-news/kim-kardashian-new-caffeine-free-energy-drink-paraxanthine"
     ],
-    "query": "World Coffee Research 2025 annual report Innovea breeding network TIME best invention",
-    "freshness_hours": 144
+    "query": "paraxanthine caffeine alternative coffee 2026 daily coffee news",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "WCRの次世代品種研究が11カ国に拡大・世界生産4割を結ぶ",
-      "description": "気候変動に立ち向かう国際品種開発ネットワーク『イノベア』の2025年次報告が公開",
-      "detail": "WCRが今年公開した2025年次報告で、品種育成ネット『イノベア』にベトナム・ガーナが加入。参加11カ国で世界コーヒー生産量の約4割をカバーする規模に拡大。Innoveaは2022年立ち上げ、史上最大の品種育成連合で、TIME誌の2025年Best Inventionにも選出された。",
-      "narration": "気候変動でコーヒーが消える、とよく言われますが、それを止めるための国際品種開発プロジェクトの最新成果が、先週公開されました。",
-      "tags": ["品種開発", "気候変動", "産地"],
+      "title": "カフェインだけ抜く新成分パラキサンチン・コーヒー業界に登場",
+      "description": "動悸や不眠を起こさず覚醒だけ残す代謝物。5月発の話題",
+      "detail": "The Conversation と Daily Coffee News が 5月18日に報じた最新トピック。パラキサンチンはカフェインが体内で分解されてできる代謝物で、覚醒効果は維持しつつ動悸・不眠・不安を起こしにくいとされる。すでに海外では一部コーヒー製品やキム・カーダシアン氏の新エネルギードリンク『Update』に採用。欧州では新規食品として安全性審査中。長期の人体データはまだ少ない段階。",
+      "narration": "知ってました？コーヒーから動悸やそわそわ感だけ取り除いた新成分が海外で話題に。その名はパラキサンチン、5月のニュースです。",
+      "tags": ["業界ニュース", "カフェイン代替", "新成分"],
       "narration_sections": {
-        "hook": "気候変動でコーヒーが消える、とよく言われますが、それを止めるための国際品種開発プロジェクトの最新成果が、先週公開されました。",
-        "origin": "主導するのは非営利のワールドコーヒーリサーチ。今年の年次報告によると、品種育成ネット『イノベア』にベトナムとガーナが加わり、参加11カ国で世界生産量の4割をカバーする規模になりました。気候に強く病気にも負けない、しかも美味しい品種を、各国で育てています。",
-        "recommend": "10年後も色々な産地のスペシャリティを楽しめるかは、こういう地道な研究にかかっています。EC準備中、フォローして続報をお待ちください。"
+        "hook": "知ってました？コーヒーから動悸やそわそわ感だけ取り除いた新成分が海外で話題に。その名はパラキサンチン、5月のニュースです。",
+        "origin": "パラキサンチンはカフェインを体内で分解したあとに自然に生まれる物質。覚醒は維持しつつ、動悸や不眠を起こしにくいのが特徴。海外ではすでに一部のコーヒー製品や、有名人の新エネルギー飲料にも採用されています。ただ長期の人体データはまだ乏しい段階。",
+        "recommend": "つまり眠気覚ましだけが目的なら新成分でも代用可。でも豆の香りや酸の余韻はコーヒーにしか出せない味。EC準備中、フォローでお待ちください。"
       },
       "section_titles": {
-        "hook": "次世代品種の開発",
-        "origin": "11カ国の品種連合",
-        "recommend": "産地多様性を守る"
+        "hook": "カフェイン代替成分",
+        "origin": "副作用なき覚醒成分",
+        "recommend": "豆だけの香りと味"
       },
       "section_descriptions": {
-        "hook": "気候変動に立ち向かう国際品種研究の最新成果",
-        "origin": "WCR年次報告・11カ国体制で世界生産4割を結集",
-        "recommend": "10年後も多様な産地を楽しめるかは研究次第"
+        "hook": "コーヒー業界で話題、新たな覚醒成分が登場",
+        "origin": "カフェイン分解後の天然物質が海外で実用化",
+        "recommend": "成分は再現できても豆の香りは唯一無二の味"
       }
     }
   ]
