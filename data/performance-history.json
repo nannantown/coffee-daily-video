@@ -668,7 +668,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -713,7 +713,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -758,7 +758,7 @@
         "views": 131,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -805,7 +805,7 @@
         "views": 85,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -849,7 +849,7 @@
         "views": 44,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -897,7 +897,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -942,7 +942,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -985,10 +985,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 11,
+        "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1032,10 +1032,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 10,
+        "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1079,7 +1079,7 @@
         "views": 41,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1120,10 +1120,10 @@
         "freshness_hours": 36
       },
       "stats": {
-        "views": 76,
+        "views": 77,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1165,10 +1165,10 @@
         "freshness_hours": 60
       },
       "stats": {
-        "views": 86,
+        "views": 89,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
+        "updatedAt": "2026-05-20T01:30:14.465Z"
       }
     },
     {
@@ -1250,6 +1250,49 @@
         "freshness_hours": 144
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-20T01:30:14.465Z"
+      }
+    },
+    {
+      "videoId": "52AJSstlI6I",
+      "videoUrl": "https://youtube.com/shorts/52AJSstlI6I",
+      "date": "2026-05-20",
+      "title": "【コーヒー豆知識】カフェインだけ抜く新成分パラキサンチン・コーヒー業界に登場｜2026/05/20 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "The Conversation (大学研究者の論考媒体) と Daily Coffee News (5/18 配信) を一次ソースに、業界の新トピック『パラキサンチン (カフェインの代謝物が次世代覚醒成分として登場)』を採用。柱③業界・ビジネスニュース。直近2日 (5/19 official-src, 5/18 news-en) と method 重複回避し、TOP3 (expert-blog 80.5avg / social-en / official-src) から expert-blog を exploit。前回 expert-blog は 5/16 (76v) と 5/09 (85v) で安定。news-en の WORST 推移 (3週連続平均21v) を踏まえ、本日はニュース性を保ちつつ専門家解説の角度で当てに行く。フックは『副作用なき覚醒成分』の逆説型 (5/08 デカフェ同効果 131v / 5/09 焙煎度の逆説 85v の勝ち筋を再現)。固有名詞 (パラキサンチン / Update / カーダシアン) と数値 (200mg/日, 海外) で具体性担保。",
+        "sources": [
+          "https://theconversation.com/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks-276923",
+          "https://dailycoffeenews.com/2026/05/18/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks/",
+          "https://www.sciencealert.com/new-caffeine-alternative-promises-no-jitters-or-crash-heres-the-evidence",
+          "https://www.healthline.com/health-news/kim-kardashian-new-caffeine-free-energy-drink-paraxanthine"
+        ],
+        "query": "paraxanthine caffeine alternative coffee 2026 daily coffee news",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1258,13 +1301,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-18",
-      "changes": [
-        "Day performance: Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-19",
       "changes": [
@@ -1485,6 +1521,14 @@
       "changes": [
         "standard: 109 avg views (29 videos)",
         "Day performance: Sun=238, Wed=113, Tue=109, Sat=79, Mon=65, Fri=61, Thu=18"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-20",
+      "changes": [
+        "standard: 106 avg views (30 videos)",
+        "Day performance: Sun=239, Wed=114, Tue=87, Sat=79, Mon=65, Fri=61, Thu=18"
       ],
       "recommendedTemplate": "standard"
     }
