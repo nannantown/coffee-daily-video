@@ -1,39 +1,39 @@
 {
-  "date": "2026-05-20",
+  "date": "2026-05-21",
   "discovery": {
-    "method": "expert-blog",
-    "description": "The Conversation (大学研究者の論考媒体) と Daily Coffee News (5/18 配信) を一次ソースに、業界の新トピック『パラキサンチン (カフェインの代謝物が次世代覚醒成分として登場)』を採用。柱③業界・ビジネスニュース。直近2日 (5/19 official-src, 5/18 news-en) と method 重複回避し、TOP3 (expert-blog 80.5avg / social-en / official-src) から expert-blog を exploit。前回 expert-blog は 5/16 (76v) と 5/09 (85v) で安定。news-en の WORST 推移 (3週連続平均21v) を踏まえ、本日はニュース性を保ちつつ専門家解説の角度で当てに行く。フックは『副作用なき覚醒成分』の逆説型 (5/08 デカフェ同効果 131v / 5/09 焙煎度の逆説 85v の勝ち筋を再現)。固有名詞 (パラキサンチン / Update / カーダシアン) と数値 (200mg/日, 海外) で具体性担保。",
+    "method": "news-en",
+    "description": "Daily Coffee News (2026-05-18 配信) を一次ソースに、中国Mago Magaの第3世代家庭用焙煎機 Roma-X (約$1000, 300g 容量, Wi-Fiクラウド焙煎プロファイル, AI学習, 秋出荷予定) を採用。柱③業界・ビジネスニュース×家飲み趣味層(Primary)直撃。直近2日 (5/20 expert-blog, 5/19 official-src) と method 連続回避OK。news-en は 14日WORST (avg 23.8v) だが市況・統計型で沈んだ歴史 (5/12 先物21v, 5/18 米挽き売り1v)、家庭直結ニュース (5/15 AI 店長 41v) は例外。今日は勝ち筋 social-en (5/17 Hario Switch 89v) と隣接の『家庭の道具が変わる』角度で news-en を再挑戦。フックは『家で焙煎ロボットが現実に』の未来感+具体数値、締めは『焙煎が家に来る時代だからこそ焙煎士の豆の価値が際立つ』で EC 準備中の暫定 CTA に着地。",
     "sources": [
-      "https://theconversation.com/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks-276923",
-      "https://dailycoffeenews.com/2026/05/18/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks/",
-      "https://www.sciencealert.com/new-caffeine-alternative-promises-no-jitters-or-crash-heres-the-evidence",
-      "https://www.healthline.com/health-news/kim-kardashian-new-caffeine-free-energy-drink-paraxanthine"
+      "https://dailycoffeenews.com/2026/05/18/the-mago-maga-roma-x-promises-high-tech-roasting-for-the-home/",
+      "https://www.kickstarter.com/projects/magomaga/mago-maga-smart-roaster-pro",
+      "https://new.sca.coffee/entries/roma-x-mago-maga-smart-home-coffee-bean-roaster-v30",
+      "https://www.magomaga.com/products/roma-pro"
     ],
-    "query": "paraxanthine caffeine alternative coffee 2026 daily coffee news",
-    "freshness_hours": 48
+    "query": "Mago Maga Roma-X home roaster 300g wifi cloud kickstarter 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "カフェインだけ抜く新成分パラキサンチン・コーヒー業界に登場",
-      "description": "動悸や不眠を起こさず覚醒だけ残す代謝物。5月発の話題",
-      "detail": "The Conversation と Daily Coffee News が 5月18日に報じた最新トピック。パラキサンチンはカフェインが体内で分解されてできる代謝物で、覚醒効果は維持しつつ動悸・不眠・不安を起こしにくいとされる。すでに海外では一部コーヒー製品やキム・カーダシアン氏の新エネルギードリンク『Update』に採用。欧州では新規食品として安全性審査中。長期の人体データはまだ少ない段階。",
-      "narration": "知ってました？コーヒーから動悸やそわそわ感だけ取り除いた新成分が海外で話題に。その名はパラキサンチン、5月のニュースです。",
-      "tags": ["業界ニュース", "カフェイン代替", "新成分"],
+      "title": "家で焙煎まで自動化・$1000の家焙煎ロボットMago Maga Roma-Xが今秋出荷",
+      "description": "中国Mago Magaの第3世代家庭用焙煎機Roma-Xが約1000ドルで今年秋に出荷予定。Wi-Fiでクラウドの産地別カーブ266種を呼び出し、AIが好みを学習する。",
+      "detail": "Daily Coffee Newsが5月18日に報じた新製品。容量300グラム、熱風式、5インチタッチパネル、Bluetoothアプリ連携、AI適応アルゴリズム搭載。夏のKickstarter予約を経て秋出荷の見込み。",
+      "narration": "実は、家で焙煎まで自動でこなす1000ドル級のロボットが、5月18日Daily Coffee Newsで発表されました。趣味の延長線に焙煎が入ってきます。",
+      "tags": ["家焙煎", "焙煎機", "MagoMaga"],
       "narration_sections": {
-        "hook": "知ってました？コーヒーから動悸やそわそわ感だけ取り除いた新成分が海外で話題に。その名はパラキサンチン、5月のニュースです。",
-        "origin": "パラキサンチンはカフェインを体内で分解したあとに自然に生まれる物質。覚醒は維持しつつ、動悸や不眠を起こしにくいのが特徴。海外ではすでに一部のコーヒー製品や、有名人の新エネルギー飲料にも採用されています。ただ長期の人体データはまだ乏しい段階。",
-        "recommend": "つまり眠気覚ましだけが目的なら新成分でも代用可。でも豆の香りや酸の余韻はコーヒーにしか出せない味。EC準備中、フォローでお待ちください。"
+        "hook": "実は、家で焙煎まで自動でこなす1000ドル級のロボットが、5月18日Daily Coffee Newsで発表されました。趣味の延長線に焙煎が入ってきます。",
+        "origin": "中国Mago MagaのRoma-Xは熱風式で容量300グラム、Wi-Fiでクラウドの焙煎プロファイルを266種類取り込めます。タッチパネルでワンタップ自動焙煎、AIが好みを学習し、夏にKickstarter予約、今年秋出荷予定です。",
+        "recommend": "焙煎が家に来る時代だからこそ、焙煎士が選ぶ豆の価値が際立ちます。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "カフェイン代替成分",
-        "origin": "副作用なき覚醒成分",
-        "recommend": "豆だけの香りと味"
+        "hook": "家焙煎が現実に",
+        "origin": "Roma-Xの中身",
+        "recommend": "焙煎士の価値"
       },
       "section_descriptions": {
-        "hook": "コーヒー業界で話題、新たな覚醒成分が登場",
-        "origin": "カフェイン分解後の天然物質が海外で実用化",
-        "recommend": "成分は再現できても豆の香りは唯一無二の味"
+        "hook": "1000ドルの家焙煎ロボが秋出荷予定",
+        "origin": "産地カーブ266種をWi-Fiで取得、AI学習",
+        "recommend": "家焙煎時代だからこそ焙煎士の豆が光る"
       }
     }
   ]
