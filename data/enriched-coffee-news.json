@@ -1,39 +1,43 @@
 {
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News (2026-05-18 配信) を一次ソースに、中国Mago Magaの第3世代家庭用焙煎機 Roma-X (約$1000, 300g 容量, Wi-Fiクラウド焙煎プロファイル, AI学習, 秋出荷予定) を採用。柱③業界・ビジネスニュース×家飲み趣味層(Primary)直撃。直近2日 (5/20 expert-blog, 5/19 official-src) と method 連続回避OK。news-en は 14日WORST (avg 23.8v) だが市況・統計型で沈んだ歴史 (5/12 先物21v, 5/18 米挽き売り1v)、家庭直結ニュース (5/15 AI 店長 41v) は例外。今日は勝ち筋 social-en (5/17 Hario Switch 89v) と隣接の『家庭の道具が変わる』角度で news-en を再挑戦。フックは『家で焙煎ロボットが現実に』の未来感+具体数値、締めは『焙煎が家に来る時代だからこそ焙煎士の豆の価値が際立つ』で EC 準備中の暫定 CTA に着地。",
+    "method": "official-src",
+    "description": "Daily Coffee News の Weekly Coffee News (5/15 配信) を起点に、ブラジル・セラード地区の生産者協会 Expocacer (Cooperativa dos Cafeicultores do Cerrado) によるスペシャルティ・グレードのカフェインレスコーヒー日本向け輸出を一次情報化。協会発信を CNN Brasil / Revista Cultivar / Portal do Agronegócio / Conexão Safra / clickpetroleoegas 英語版でクロスチェックし、Mountain Water 製法は Descamex 公式と Belco の解説で裏取り。直近2日 (5/21 news-en, 5/20 expert-blog) と method 連続違反なし。WORST method の news-en は連続使用不可のため、TOP3 から official-src を Exploit。official-src の弱点 (硬い数値で跳ねない、5/19 WCR 6v) を回避するため『日本がリクエストし、ブラジルの産地が応えた』物語性を前面化 (5/11 ベトナム利き手 72v の成功要因を再現)。柱は②産地ハーベスト×処理 (脱カフェイン) で、直近③業界・健康ネタ偏重を是正。勝ちテンプレ『海外の動き→日本の生活直結』(5/03 中国ゼロ関税 1294v) を踏襲。鮮度注記: 一次イベント (5/6 出航・現地紙 5/7-8) は約2週間前で厳密には freshness>168 の原則 NG 圏だが、(a) 英語メディア初出 (DCN Weekly) が 5/15=168h で英語優先運用の discovery アンカー、(b)『史上初』のマイルストーン報道、(c) 当該コーヒーは現在も日本へ航海中 (東京着 6月見込み) でイベント進行中、の3点で限定的な例外として採用。freshness_hours は英語初出アンカーの 168 を記録。",
     "sources": [
-      "https://dailycoffeenews.com/2026/05/18/the-mago-maga-roma-x-promises-high-tech-roasting-for-the-home/",
-      "https://www.kickstarter.com/projects/magomaga/mago-maga-smart-roaster-pro",
-      "https://new.sca.coffee/entries/roma-x-mago-maga-smart-home-coffee-bean-roaster-v30",
-      "https://www.magomaga.com/products/roma-pro"
+      "https://dailycoffeenews.com/2026/05/15/weekly-coffee-news-weber-opens-european-hq-new-cup-tasters-champ/",
+      "https://en.clickpetroleoegas.com.br/japan-asked-and-cerrado-mineiro-delivered-84-tons-of-special-decaffeinated-coffee-with-a-score-of-84-depart-from-santos-heading-to-tokyo-a-v-mhbb01/",
+      "https://www.cnnbrasil.com.br/agro/cooperativa-vende-primeiro-lote-de-cafe-especial-descafeinado-ao-japao/",
+      "https://revistacultivar.com.br/noticias/expocacer-exporta-cafe-naturalmente-descafeinado-ao-japao",
+      "https://www.portaldoagronegocio.com.br/agricultura/cafe/noticias/cooperativa-do-cerrado-mineiro-realiza-exportacao-inedita-de-cafe-especial-naturalmente-descafeinado-para-o-japao",
+      "https://conexaosafra.com/cafeicultura/cafe-brasileiro-naturalmente-descafeinado-ganha-espaco-no-japao/",
+      "https://www.belco.fr/blog/cafe/decafeination-descamex",
+      "https://en.descamex.com.mx/home"
     ],
-    "query": "Mago Maga Roma-X home roaster 300g wifi cloud kickstarter 2026",
-    "freshness_hours": 72
+    "query": "Expocacer Cerrado coffee growers cooperative first specialty naturally decaffeinated coffee export Japan 8.4 tonnes Yellow Bourbon score 84 Mountain Water process Descamex",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "家で焙煎まで自動化・$1000の家焙煎ロボットMago Maga Roma-Xが今秋出荷",
-      "description": "中国Mago Magaの第3世代家庭用焙煎機Roma-Xが約1000ドルで今年秋に出荷予定。Wi-Fiでクラウドの産地別カーブ266種を呼び出し、AIが好みを学習する。",
-      "detail": "Daily Coffee Newsが5月18日に報じた新製品。容量300グラム、熱風式、5インチタッチパネル、Bluetoothアプリ連携、AI適応アルゴリズム搭載。夏のKickstarter予約を経て秋出荷の見込み。",
-      "narration": "実は、家で焙煎まで自動でこなす1000ドル級のロボットが、5月18日Daily Coffee Newsで発表されました。趣味の延長線に焙煎が入ってきます。",
-      "tags": ["家焙煎", "焙煎機", "MagoMaga"],
+      "title": "ブラジル初のスペシャルティ脱カフェ・8.4トンが日本へ出航",
+      "description": "ブラジルのコーヒー産地セラードから、史上初となるスペシャルティのカフェインレスコーヒー8.4トンが、日本へ向けて出航しました。",
+      "detail": "出荷したのはセラード地区の生産者協会エクスポカセール。SCA84点のイエローブルボンを、メキシコ発祥のマウンテンウォーター製法で脱カフェイン処理しました。薬品を使わず水とコーヒー由来の成分だけでカフェインを抜く方式で、5月6日にサントス港から東京へ出航しています。",
+      "narration": "実は今、ブラジルから日本へ、ある特別なコーヒーが海を渡っています。ブラジル史上初、スペシャルティのカフェインレスコーヒーです。",
+      "tags": ["デカフェ", "ブラジル", "セラード"],
       "narration_sections": {
-        "hook": "実は、家で焙煎まで自動でこなす1000ドル級のロボットが、5月18日Daily Coffee Newsで発表されました。趣味の延長線に焙煎が入ってきます。",
-        "origin": "中国Mago MagaのRoma-Xは熱風式で容量300グラム、Wi-Fiでクラウドの焙煎プロファイルを266種類取り込めます。タッチパネルでワンタップ自動焙煎、AIが好みを学習し、夏にKickstarter予約、今年秋出荷予定です。",
-        "recommend": "焙煎が家に来る時代だからこそ、焙煎士が選ぶ豆の価値が際立ちます。EC準備中、フォローしてお待ちください。"
+        "hook": "実は今、ブラジルから日本へ、ある特別なコーヒーが海を渡っています。ブラジル史上初、スペシャルティのカフェインレスコーヒーです。",
+        "origin": "セラード地区の生産者協会が、SCA84点のイエローブルボンを8.4トン、東京へ出荷しました。脱カフェインはメキシコ発祥のマウンテンウォーター製法で、薬品を使わず水と豆の成分だけで行います。ブラジルが1年で輸出する量の、約10倍の規模です。",
+        "recommend": "カフェインレスでも、もう妥協しない時代です。夜の一杯にこだわりたい方は、産地と製法まで見て選ぶと、きっと世界が広がりますよ。"
       },
       "section_titles": {
-        "hook": "家焙煎が現実に",
-        "origin": "Roma-Xの中身",
-        "recommend": "焙煎士の価値"
+        "hook": "ブラジルが日本へ初出荷",
+        "origin": "水と豆だけで脱カフェ",
+        "recommend": "夜の一杯の選び方"
       },
       "section_descriptions": {
-        "hook": "1000ドルの家焙煎ロボが秋出荷予定",
-        "origin": "産地カーブ266種をWi-Fiで取得、AI学習",
-        "recommend": "家焙煎時代だからこそ焙煎士の豆が光る"
+        "hook": "ブラジル史上初、特別なカフェインレスが日本へ",
+        "origin": "SCA84点のイエローブルボンを薬品なしで脱カフェ",
+        "recommend": "産地と製法まで見れば夜の一杯も妥協しない"
       }
     }
   ]
