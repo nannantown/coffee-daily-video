@@ -758,7 +758,7 @@
         "views": 131,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -805,7 +805,7 @@
         "views": 85,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -849,7 +849,7 @@
         "views": 44,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -897,7 +897,7 @@
         "views": 72,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -942,7 +942,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -988,7 +988,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1079,7 +1079,7 @@
         "views": 40,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1123,7 +1123,7 @@
         "views": 77,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1168,7 +1168,7 @@
         "views": 91,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1250,10 +1250,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 6,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1293,10 +1293,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 14,
+        "views": 17,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
+        "updatedAt": "2026-05-22T01:27:56.939Z"
       }
     },
     {
@@ -1336,6 +1336,53 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-22T01:27:56.939Z"
+      }
+    },
+    {
+      "videoId": "UbKIzkTGTPo",
+      "videoUrl": "https://youtube.com/shorts/UbKIzkTGTPo",
+      "date": "2026-05-22",
+      "title": "【コーヒー豆知識】ブラジル初のスペシャルティ脱カフェ・8.4トンが日本へ出航｜2026/05/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "official-src",
+        "description": "Daily Coffee News の Weekly Coffee News (5/15 配信) を起点に、ブラジル・セラード地区の生産者協会 Expocacer (Cooperativa dos Cafeicultores do Cerrado) によるスペシャルティ・グレードのカフェインレスコーヒー日本向け輸出を一次情報化。協会発信を CNN Brasil / Revista Cultivar / Portal do Agronegócio / Conexão Safra / clickpetroleoegas 英語版でクロスチェックし、Mountain Water 製法は Descamex 公式と Belco の解説で裏取り。直近2日 (5/21 news-en, 5/20 expert-blog) と method 連続違反なし。WORST method の news-en は連続使用不可のため、TOP3 から official-src を Exploit。official-src の弱点 (硬い数値で跳ねない、5/19 WCR 6v) を回避するため『日本がリクエストし、ブラジルの産地が応えた』物語性を前面化 (5/11 ベトナム利き手 72v の成功要因を再現)。柱は②産地ハーベスト×処理 (脱カフェイン) で、直近③業界・健康ネタ偏重を是正。勝ちテンプレ『海外の動き→日本の生活直結』(5/03 中国ゼロ関税 1294v) を踏襲。鮮度注記: 一次イベント (5/6 出航・現地紙 5/7-8) は約2週間前で厳密には freshness>168 の原則 NG 圏だが、(a) 英語メディア初出 (DCN Weekly) が 5/15=168h で英語優先運用の discovery アンカー、(b)『史上初』のマイルストーン報道、(c) 当該コーヒーは現在も日本へ航海中 (東京着 6月見込み) でイベント進行中、の3点で限定的な例外として採用。freshness_hours は英語初出アンカーの 168 を記録。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/05/15/weekly-coffee-news-weber-opens-european-hq-new-cup-tasters-champ/",
+          "https://en.clickpetroleoegas.com.br/japan-asked-and-cerrado-mineiro-delivered-84-tons-of-special-decaffeinated-coffee-with-a-score-of-84-depart-from-santos-heading-to-tokyo-a-v-mhbb01/",
+          "https://www.cnnbrasil.com.br/agro/cooperativa-vende-primeiro-lote-de-cafe-especial-descafeinado-ao-japao/",
+          "https://revistacultivar.com.br/noticias/expocacer-exporta-cafe-naturalmente-descafeinado-ao-japao",
+          "https://www.portaldoagronegocio.com.br/agricultura/cafe/noticias/cooperativa-do-cerrado-mineiro-realiza-exportacao-inedita-de-cafe-especial-naturalmente-descafeinado-para-o-japao",
+          "https://conexaosafra.com/cafeicultura/cafe-brasileiro-naturalmente-descafeinado-ganha-espaco-no-japao/",
+          "https://www.belco.fr/blog/cafe/decafeination-descamex",
+          "https://en.descamex.com.mx/home"
+        ],
+        "query": "Expocacer Cerrado coffee growers cooperative first specialty naturally decaffeinated coffee export Japan 8.4 tonnes Yellow Bourbon score 84 Mountain Water process Descamex",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1344,13 +1391,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-20",
-      "changes": [
-        "Day performance: Sat=72, Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-21",
       "changes": [
@@ -1573,6 +1613,14 @@
       "changes": [
         "standard: 103 avg views (31 videos)",
         "Day performance: Sun=239, Wed=94, Tue=88, Sat=79, Mon=65, Fri=60, Thu=18"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-22",
+      "changes": [
+        "standard: 100 avg views (32 videos)",
+        "Day performance: Sun=239, Wed=94, Tue=89, Sat=79, Mon=65, Fri=60, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
