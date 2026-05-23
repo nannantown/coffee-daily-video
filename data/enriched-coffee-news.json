@@ -1,38 +1,39 @@
 {
-  "date": "2026-05-23",
+  "date": "2026-05-24",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜エバーグリーン枠で抽出科学の expert 領域をリサーチ。WebSearch で『coffee water temperature pour over taste science』系クエリを起点に、Coffee ad Astra (Jonathan Gagné) や SCA News の継続的な引用文脈経由で UC Davis Coffee Center の Batali et al. 2020 Nature Scientific Reports 論文に到達。直近2日 (5/22 official-src, 5/21 news-en) と method 連続違反なし、TOP method の expert-blog を Exploit (前回 5/20 から 3 日空き)。5/17 Hario Switch (social-en 91v) で温まった『家庭抽出への関心』を、勝ちテンプレ『意外性 + 家で試せる科学』(5/09 ポリフェノール 85v・5/16 先物差額 77v) で土曜に深掘り。柱④焙煎士・抽出科学で、直近の③業界・②産地への偏重を是正し Primary ペルソナ (家で淹れる趣味層) 直撃を狙う。",
+    "method": "news-en",
+    "description": "日曜 Explore 枠で WORST method (news-en) を『科学発見系ニュース』に切り替えて再挑戦。PDG 5/22 週次ニュースリキャップを起点に、Daily Coffee News 5/21 解説記事、Sprudge 補足記事、英 Kew Royal Botanic Gardens チーム (Davis et al.) の Scientific Reports 早期公開論文 (5/14) で内容確認。直近 2 日と method 連続違反なし (5/23 expert-blog, 5/22 official-src)。気づき #3『個別品種の名前を持つストーリーは具体性で勝つ』仮説を、新ハイブリッド種 Libex (Coffea × libex = Liberica × Excelsa) で検証。柱②産地・ハーベストに新品種・育種ニュースを差し込む方針。",
     "sources": [
-      "https://www.nature.com/articles/s41598-020-73341-4",
-      "https://coffeeadastra.com/",
-      "https://sca.coffee/sca-news/25/issue-15/how-hot-is-hot-enough-brew-temperature-sensory-profile-and-consumer-acceptance-of-brewed-coffee"
+      "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
+      "https://dailycoffeenews.com/2026/05/21/researchers-propose-libex-hybrid-as-climate-change-accelerates/",
+      "https://sprudge.com/researchers-at-kew-gardens-just-found-a-promising-new-coffee-hybrid-1006414.html",
+      "https://www.nature.com/articles/s41598-026-49305-5"
     ],
-    "query": "coffee brew temperature sensory study fixed extraction Batali UC Davis Scientific Reports",
-    "freshness_hours": 168
+    "query": "liberica excelsa hybrid Libex Kew Royal Botanic Gardens Scientific Reports 2026",
+    "freshness_hours": 60
   },
   "articles": [
     {
       "rank": 1,
-      "title": "水温92度か96度か、UCデイビスが『同じ抽出収率なら味に差なし』と結論",
-      "description": "ドリップの水温は92度か96度か、毎朝迷いがちですが、UCデイビス校の実験では同じ抽出収率に揃えると味に差がほぼ出ませんでした。",
-      "detail": "カリフォルニア大学デイビス校のコーヒーセンターが、抽出温度を87度・90度・93度の3パターンで比較しました。同じ濃度と抽出収率に揃えた条件下では、訓練を受けたテイスターによる33項目の官能評価でほぼ差が出ません。決め手は温度より、挽き目とお湯の比率を整えることだったんです。",
-      "narration": "ドリップの水温、92度か96度か。家で淹れるとき、毎朝迷いますよね。実はその差、味にはほぼ出ないと科学が結論を出してます。",
-      "tags": ["コーヒー科学", "抽出", "ドリップ"],
+      "title": "アラビカでもロブスタでもない第3のコーヒー・新ハイブリッド種Libexが正式提唱",
+      "description": "英キュー王立植物園のチームが、リベリカとエクセルサの自然交雑種を『Libex』と命名し正式提唱。気候変動に強く、味も収量も扱いやすさも実用的という新品種です。",
+      "detail": "5月の科学誌Scientific Reportsで早期公開された論文で、Royal Botanic Gardens KewのDavisらが提唱。リベリカ譲りの暑さと降水への耐性、エクセルサ譲りの高い収量を併せ持ち、種のサイズはアラビカに近く焙煎・グラインドが扱いやすい。マレーシア・サラワクなどでは無自覚に長年栽培されていました。",
+      "narration": "アラビカでもロブスタでもない、第3のコーヒー品種が正式に発表されました。気候変動にも強くて、しかも美味しいって本当の話なんです。",
+      "tags": ["新品種", "気候変動", "ハイブリッド"],
       "narration_sections": {
-        "hook": "ドリップの水温、92度か96度か。家で淹れるとき、毎朝迷いますよね。実はその差、味にはほぼ出ないと科学が結論を出してます。",
-        "origin": "カリフォルニア大学デイビス校のコーヒーセンターが、87度・90度・93度の3パターンで実験しました。同じ濃度と抽出収率に揃えると、訓練したテイスターの33項目の評価でほぼ差が出ません。決め手は温度より、挽き目とお湯の比率なんです。",
-        "recommend": "温度計を0.5度刻みで気にするより、秤を1つ買うほうが、はるかに味が安定します。今朝の一杯で試してみてください。"
+        "hook": "アラビカでもロブスタでもない、第3のコーヒー品種が正式に発表されました。気候変動にも強くて、しかも美味しいって本当の話なんです。",
+        "origin": "提唱したのは英キュー王立植物園のチーム。リベリカとエクセルサの自然交雑種で『Libex』と命名されました。リベリカ譲りの暑さと雨にも負けない強さに、エクセルサの高い収量を併せ持つ。種のサイズもアラビカに近く、焙煎やグラインドが扱いやすいんです。",
+        "recommend": "マレーシアでは無自覚に長年栽培されていたそう。気候変動でアラビカが厳しい時代、数年後OGの棚にLibexが並ぶ日が来るかもしれません。要注目です。"
       },
       "section_titles": {
-        "hook": "水温と味の意外な関係",
-        "origin": "UCデイビスの3度実験",
-        "recommend": "温度計より秤と挽き目"
+        "hook": "第3のコーヒー品種",
+        "origin": "Libexってなに?",
+        "recommend": "OGの棚に並ぶ日"
       },
       "section_descriptions": {
-        "hook": "92度か96度か、毎朝の悩みに科学者が答えます",
-        "origin": "UCデイビス校が3つの温度で抽出を比較した結果",
-        "recommend": "週末に道具を見直すなら、温度計より先にこれ"
+        "hook": "気候変動に強い新コーヒーが正式に発表されました",
+        "origin": "英キュー王立植物園が論文発表、性質も味も注目です",
+        "recommend": "数年後OGの棚に並ぶ日が来るかもしれません"
       }
     }
   ]
