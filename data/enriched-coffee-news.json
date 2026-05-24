@@ -1,39 +1,40 @@
 {
-  "date": "2026-05-24",
+  "date": "2026-05-25",
   "discovery": {
-    "method": "news-en",
-    "description": "日曜 Explore 枠で WORST method (news-en) を『科学発見系ニュース』に切り替えて再挑戦。PDG 5/22 週次ニュースリキャップを起点に、Daily Coffee News 5/21 解説記事、Sprudge 補足記事、英 Kew Royal Botanic Gardens チーム (Davis et al.) の Scientific Reports 早期公開論文 (5/14) で内容確認。直近 2 日と method 連続違反なし (5/23 expert-blog, 5/22 official-src)。気づき #3『個別品種の名前を持つストーリーは具体性で勝つ』仮説を、新ハイブリッド種 Libex (Coffea × libex = Liberica × Excelsa) で検証。柱②産地・ハーベストに新品種・育種ニュースを差し込む方針。",
+    "method": "official-src",
+    "description": "Exploit 枠で TOP method `official-src` (avg 48v, max 72) を再採用。直近 2 日 (5/24 news-en, 5/23 expert-blog) と被らず多様性 OK。PDG 5/22 週次リキャップで Barista League Asia 2026 東京開催を確認 → 事実 (日時・会場・採点基準・審査員陣) は thebaristaleague.com 公式イベントページから取得し、Sprudge / Rancilio Specialty / Qahwa World / Barista Magazine で裏取り。気づき #4『海外大会×日本接続』(5/11 ベトナム利き手 72v 同型) の仮説再検証。柱③業界・ビジネスニュースの比率回復も兼ねる。",
     "sources": [
+      "https://www.thebaristaleague.com/2026-tbl-asia",
       "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-      "https://dailycoffeenews.com/2026/05/21/researchers-propose-libex-hybrid-as-climate-change-accelerates/",
-      "https://sprudge.com/researchers-at-kew-gardens-just-found-a-promising-new-coffee-hybrid-1006414.html",
-      "https://www.nature.com/articles/s41598-026-49305-5"
+      "https://sprudge.com/applications-are-open-for-the-2026-barista-league-482208.html",
+      "https://www.ranciliogroup.com/rancilio-specialty-sponsors-the-barista-league-asia-debut-in-tokyo/",
+      "https://qahwaworld.com/news/barista-league-2026-new-competition-format/"
     ],
-    "query": "liberica excelsa hybrid Libex Kew Royal Botanic Gardens Scientific Reports 2026",
-    "freshness_hours": 60
+    "query": "The Barista League Asia Tokyo June 11 2026 Adrift Shimokitazawa Miki Suzuki Yasuo Ishii rules format",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカでもロブスタでもない第3のコーヒー・新ハイブリッド種Libexが正式提唱",
-      "description": "英キュー王立植物園のチームが、リベリカとエクセルサの自然交雑種を『Libex』と命名し正式提唱。気候変動に強く、味も収量も扱いやすさも実用的という新品種です。",
-      "detail": "5月の科学誌Scientific Reportsで早期公開された論文で、Royal Botanic Gardens KewのDavisらが提唱。リベリカ譲りの暑さと降水への耐性、エクセルサ譲りの高い収量を併せ持ち、種のサイズはアラビカに近く焙煎・グラインドが扱いやすい。マレーシア・サラワクなどでは無自覚に長年栽培されていました。",
-      "narration": "アラビカでもロブスタでもない、第3のコーヒー品種が正式に発表されました。気候変動にも強くて、しかも美味しいって本当の話なんです。",
-      "tags": ["新品種", "気候変動", "ハイブリッド"],
+      "title": "下北沢で世界級コーヒー競技・スコアの62%が物語と接客のバリスタリーグ日本初上陸",
+      "description": "6大陸を巡る The Barista League Asia が6月11日、東京下北沢のAdriftで日本初開催。技術より創造性・接客を重視する新採点で、業界の競技観を塗り替えます。",
+      "detail": "ライブ配信なし、会場でしか観られないことで知られる The Barista League の Asia 大会が、6月11日に下北沢 Adrift で開催。スコアの62%は『コンセプト』と『サービス』で決まる新採点で、技術一辺倒の WBC とは別軸の競技観。審査員に2017年世界バリスタ準優勝の鈴木樹さん、Leaves Coffee 石井康雄さんなど日本の伝説勢が名を連ねます。",
+      "narration": "世界6大陸を巡る最先端コーヒー大会・バリスタリーグが、6月11日に日本初上陸します。場所は下北沢、ここが今熱いんです。",
+      "tags": ["バリスタリーグ", "東京下北沢", "業界トレンド"],
       "narration_sections": {
-        "hook": "アラビカでもロブスタでもない、第3のコーヒー品種が正式に発表されました。気候変動にも強くて、しかも美味しいって本当の話なんです。",
-        "origin": "提唱したのは英キュー王立植物園のチーム。リベリカとエクセルサの自然交雑種で『Libex』と命名されました。リベリカ譲りの暑さと雨にも負けない強さに、エクセルサの高い収量を併せ持つ。種のサイズもアラビカに近く、焙煎やグラインドが扱いやすいんです。",
-        "recommend": "マレーシアでは無自覚に長年栽培されていたそう。気候変動でアラビカが厳しい時代、数年後OGの棚にLibexが並ぶ日が来るかもしれません。要注目です。"
+        "hook": "世界6大陸を巡る最先端コーヒー大会・バリスタリーグが、6月11日に日本初上陸します。場所は下北沢、ここが今熱いんです。",
+        "origin": "すごいのは採点基準。スコアの62%が『コンセプト』と『サービス』、つまり技術より物語と体験で勝負する新形式です。審査員には2017年世界バリスタ準優勝の鈴木樹さんや、Leaves Coffeeの石井康雄さんなど日本の伝説勢が並びます。",
+        "recommend": "WBCとは別軸の、コンセプト勝負の新潮流。日本のコーヒーシーンが変わる転換点になるかも、目撃したい一日です。"
       },
       "section_titles": {
-        "hook": "第3のコーヒー品種",
-        "origin": "Libexってなに?",
-        "recommend": "OGの棚に並ぶ日"
+        "hook": "下北沢に世界大会",
+        "origin": "技術より物語と接客",
+        "recommend": "日本シーン転換点"
       },
       "section_descriptions": {
-        "hook": "気候変動に強い新コーヒーが正式に発表されました",
-        "origin": "英キュー王立植物園が論文発表、性質も味も注目です",
-        "recommend": "数年後OGの棚に並ぶ日が来るかもしれません"
+        "hook": "6大陸を巡る注目大会が日本初開催になります",
+        "origin": "スコアの6割超が物語と接客で決まる新採点",
+        "recommend": "コンセプト勝負へ、日本シーンの大きな転換点"
       }
     }
   ]
