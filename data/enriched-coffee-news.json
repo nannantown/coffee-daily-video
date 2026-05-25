@@ -1,40 +1,38 @@
 {
-  "date": "2026-05-25",
+  "date": "2026-05-26",
   "discovery": {
-    "method": "official-src",
-    "description": "Exploit 枠で TOP method `official-src` (avg 48v, max 72) を再採用。直近 2 日 (5/24 news-en, 5/23 expert-blog) と被らず多様性 OK。PDG 5/22 週次リキャップで Barista League Asia 2026 東京開催を確認 → 事実 (日時・会場・採点基準・審査員陣) は thebaristaleague.com 公式イベントページから取得し、Sprudge / Rancilio Specialty / Qahwa World / Barista Magazine で裏取り。気づき #4『海外大会×日本接続』(5/11 ベトナム利き手 72v 同型) の仮説再検証。柱③業界・ビジネスニュースの比率回復も兼ねる。",
+    "method": "market-data",
+    "description": "Explore 枠で過去14日未使用の market-data を初投入。USDA FAS の Mexico Coffee Annual (2026/27 予測) を Daily Coffee News 5/22 報道経由で確認し、ロブスタ生産が前年比約54%増の56万袋に達する構造変化データを抽出。アラビカ大国メキシコがロブスタ国化しつつある事実を産地ニュースとして展開。",
     "sources": [
-      "https://www.thebaristaleague.com/2026-tbl-asia",
-      "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-      "https://sprudge.com/applications-are-open-for-the-2026-barista-league-482208.html",
-      "https://www.ranciliogroup.com/rancilio-specialty-sponsors-the-barista-league-asia-debut-in-tokyo/",
-      "https://qahwaworld.com/news/barista-league-2026-new-competition-format/"
+      "https://www.fas.usda.gov/data/gain/2026/05/mexico-coffee-annual",
+      "https://dailycoffeenews.com/2026/05/22/mexico-coffee-report-production-rises-slightly-with-more-robusta/",
+      "https://qahwaworld.com/news/mexico-coffee-production-2026"
     ],
-    "query": "The Barista League Asia Tokyo June 11 2026 Adrift Shimokitazawa Miki Suzuki Yasuo Ishii rules format",
-    "freshness_hours": 72
+    "query": "Mexico coffee production 2026/27 USDA robusta Veracruz Puebla",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "下北沢で世界級コーヒー競技・スコアの62%が物語と接客のバリスタリーグ日本初上陸",
-      "description": "6大陸を巡る The Barista League Asia が6月11日、東京下北沢のAdriftで日本初開催。技術より創造性・接客を重視する新採点で、業界の競技観を塗り替えます。",
-      "detail": "ライブ配信なし、会場でしか観られないことで知られる The Barista League の Asia 大会が、6月11日に下北沢 Adrift で開催。スコアの62%は『コンセプト』と『サービス』で決まる新採点で、技術一辺倒の WBC とは別軸の競技観。審査員に2017年世界バリスタ準優勝の鈴木樹さん、Leaves Coffee 石井康雄さんなど日本の伝説勢が名を連ねます。",
-      "narration": "世界6大陸を巡る最先端コーヒー大会・バリスタリーグが、6月11日に日本初上陸します。場所は下北沢、ここが今熱いんです。",
-      "tags": ["バリスタリーグ", "東京下北沢", "業界トレンド"],
+      "title": "メキシコがロブスタ国に変身中・USDA予測で来年54%増",
+      "description": "USDAの最新Mexico Coffee Annualで、メキシコのロブスタ生産が来年54%増の56万袋に達する見通し。アラビカ大国の構造が静かに動き出しています。",
+      "detail": "2025/26期のメキシコのロブスタは36万袋でしたが、2026/27期は56万袋に急増する見通しです。背景は気候変動・サビ病耐性・インスタント需要の3つ。拡大の中心はベラクルスとプエブラ州です。",
+      "narration": "えっ、メキシコがロブスタを増やしてます。USDAの最新予測では、来年のロブスタ生産が54%増の56万袋に達する見通しです。",
+      "tags": ["産地ニュース", "メキシコ", "ロブスタ"],
       "narration_sections": {
-        "hook": "世界6大陸を巡る最先端コーヒー大会・バリスタリーグが、6月11日に日本初上陸します。場所は下北沢、ここが今熱いんです。",
-        "origin": "すごいのは採点基準。スコアの62%が『コンセプト』と『サービス』、つまり技術より物語と体験で勝負する新形式です。審査員には2017年世界バリスタ準優勝の鈴木樹さんや、Leaves Coffeeの石井康雄さんなど日本の伝説勢が並びます。",
-        "recommend": "WBCとは別軸の、コンセプト勝負の新潮流。日本のコーヒーシーンが変わる転換点になるかも、目撃したい一日です。"
+        "hook": "えっ、メキシコがロブスタを増やしてます。USDAの最新予測では、来年のロブスタ生産が54%増の56万袋に達する見通しです。",
+        "origin": "メキシコといえばアラビカのチアパスが有名ですが、いま構造が変わりつつあります。理由は3つ。気候変動でアラビカが厳しい低地でも育つこと、サビ病に強いこと、そしてインスタント工場からの需要急増です。拡大の中心はベラクルスとプエブラです。",
+        "recommend": "中米はアラビカ一辺倒という常識が動き始めました。最新のロブスタは品質も向上中。次に味見する一杯の見方が変わるかもしれません。"
       },
       "section_titles": {
-        "hook": "下北沢に世界大会",
-        "origin": "技術より物語と接客",
-        "recommend": "日本シーン転換点"
+        "hook": "メキシコのロブスタ急増",
+        "origin": "変化の3つの理由",
+        "recommend": "常識が動き始めた"
       },
       "section_descriptions": {
-        "hook": "6大陸を巡る注目大会が日本初開催になります",
-        "origin": "スコアの6割超が物語と接客で決まる新採点",
-        "recommend": "コンセプト勝負へ、日本シーンの大きな転換点"
+        "hook": "USDAの最新予測でメキシコの産地構造が動きます",
+        "origin": "気候・サビ病・インスタント需要が呼ぶロブスタ拡大",
+        "recommend": "中米アラビカ一辺倒の常識が静かに更新中です"
       }
     }
   ]
