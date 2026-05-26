@@ -1,38 +1,41 @@
 {
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "discovery": {
-    "method": "market-data",
-    "description": "Explore 枠で過去14日未使用の market-data を初投入。USDA FAS の Mexico Coffee Annual (2026/27 予測) を Daily Coffee News 5/22 報道経由で確認し、ロブスタ生産が前年比約54%増の56万袋に達する構造変化データを抽出。アラビカ大国メキシコがロブスタ国化しつつある事実を産地ニュースとして展開。",
+    "method": "news-en",
+    "description": "Daily Coffee News 5/26 公開『Indonesia Coffee Report: Production Predicted to Drop 8% in 2026/27』を起点に、USDA FAS Indonesia Coffee Annual (2026-05) を一次情報として確認。CoffeeTalk / RFDTV / FNB Coffee で数字をクロスチェック。主要ファクト: 2026/27 緑豆生産 1138万袋(-8%)、ロブスタ 1000万袋(前年比-100万袋)、アラビカ 1.38M袋(横ばい)、輸出 700万袋(-11%)、国内消費 483万袋微増、原因はスマトラ南部とジャワ西部の過剰降雨で開花・着果期を直撃。日本はインドネシア・コーヒーの主要輸出先で、Sumatra Mandheling 系深煎り愛好家(Primary 趣味層)に直結する逆風。直近 2 日 (5/26 market-data メキシコ+54% / 5/25 official-src Barista League) を回避、平日=ニュース日かつ news-en の弱点 (5/13・5/18・5/21 不振) を『海外固有名詞+日本人の生活直結+昨日との対比ストーリー』で再挑戦。昨日メキシコ+54%↔今日インドネシア-100万袋という『世界ロブスタ生産地殻変動』2話完結シリーズで、PDCA 仮説『シリーズ化で固定視聴を育てる』を初検証。",
     "sources": [
-      "https://www.fas.usda.gov/data/gain/2026/05/mexico-coffee-annual",
-      "https://dailycoffeenews.com/2026/05/22/mexico-coffee-report-production-rises-slightly-with-more-robusta/",
-      "https://qahwaworld.com/news/mexico-coffee-production-2026"
+      "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
+      "https://www.fas.usda.gov/data/gain/2026/05/indonesia-coffee-annual",
+      "https://coffeetalk.com/daily-dose/from-origin/05-2026/110086/",
+      "https://www.rfdtv.com/indonesia-coffee-output-falls-as-weather-cuts-yields",
+      "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+      "https://fnb.coffee/blog/coffee-export-by-country/"
     ],
-    "query": "Mexico coffee production 2026/27 USDA robusta Veracruz Puebla",
-    "freshness_hours": 96
+    "query": "Indonesia coffee 2026/27 production drop 8% USDA Coffee Annual robusta arabica Sumatra Java rainfall; Indonesia coffee export Japan Mandheling top destinations",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "メキシコがロブスタ国に変身中・USDA予測で来年54%増",
-      "description": "USDAの最新Mexico Coffee Annualで、メキシコのロブスタ生産が来年54%増の56万袋に達する見通し。アラビカ大国の構造が静かに動き出しています。",
-      "detail": "2025/26期のメキシコのロブスタは36万袋でしたが、2026/27期は56万袋に急増する見通しです。背景は気候変動・サビ病耐性・インスタント需要の3つ。拡大の中心はベラクルスとプエブラ州です。",
-      "narration": "えっ、メキシコがロブスタを増やしてます。USDAの最新予測では、来年のロブスタ生産が54%増の56万袋に達する見通しです。",
-      "tags": ["産地ニュース", "メキシコ", "ロブスタ"],
+      "title": "インドネシアの来年の収穫が8%減・ロブスタ100万袋が長雨で消える",
+      "description": "USDAの最新リポートで、2026/27年のインドネシア産が1138万袋に縮小する見通し。スマトラとジャワの長雨が原因で、日本のマンデリン好きにも逆風です。",
+      "detail": "減少分はほぼ全てロブスタ。前年比100万袋減って1000万袋まで沈みます。輸出も11%減って700万袋止まり。昨日のメキシコ+54%と真逆の動きで、世界のロブスタ供給地図が静かに塗り替わっています。",
+      "narration": "家で淹れるコーヒー、ちょっと心配なニュース。昨日お伝えしたメキシコと真逆で、インドネシアの来年の収穫が8%減るとUSDAが発表しました。",
+      "tags": ["インドネシア", "ロブスタ", "産地ニュース"],
       "narration_sections": {
-        "hook": "えっ、メキシコがロブスタを増やしてます。USDAの最新予測では、来年のロブスタ生産が54%増の56万袋に達する見通しです。",
-        "origin": "メキシコといえばアラビカのチアパスが有名ですが、いま構造が変わりつつあります。理由は3つ。気候変動でアラビカが厳しい低地でも育つこと、サビ病に強いこと、そしてインスタント工場からの需要急増です。拡大の中心はベラクルスとプエブラです。",
-        "recommend": "中米はアラビカ一辺倒という常識が動き始めました。最新のロブスタは品質も向上中。次に味見する一杯の見方が変わるかもしれません。"
+        "hook": "家で淹れるコーヒー、ちょっと心配なニュース。昨日お伝えしたメキシコと真逆で、インドネシアの来年の収穫が8%減るとUSDAが発表しました。",
+        "origin": "USDAの最新リポートで、2026/27年のインドネシア産が1138万袋に縮小。ロブスタが前年比100万袋減って1000万袋まで沈みます。原因はスマトラ南部とジャワの長雨で、花や実が落ちたこと。輸出も11%減、700万袋止まりに。日本は主要な輸入先です。",
+        "recommend": "マンデリン系の深煎りが好きな方は、3-6か月後の値上がりに備えて、お気に入りを早めに確保しておくのが安全です。"
       },
       "section_titles": {
-        "hook": "メキシコのロブスタ急増",
-        "origin": "変化の3つの理由",
-        "recommend": "常識が動き始めた"
+        "hook": "インドネシア8%減",
+        "origin": "長雨で消えた100万袋",
+        "recommend": "マンデリン早めに"
       },
       "section_descriptions": {
-        "hook": "USDAの最新予測でメキシコの産地構造が動きます",
-        "origin": "気候・サビ病・インスタント需要が呼ぶロブスタ拡大",
-        "recommend": "中米アラビカ一辺倒の常識が静かに更新中です"
+        "hook": "USDA最新、インドネシア来年8%減・主役はロブスタ",
+        "origin": "スマトラの長雨でロブスタ100万袋が消えました",
+        "recommend": "マンデリン系が値上がる前に早めの確保が安全"
       }
     }
   ]
