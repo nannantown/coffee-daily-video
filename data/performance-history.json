@@ -988,7 +988,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "views": 12,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1079,7 +1079,7 @@
         "views": 40,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1123,7 +1123,7 @@
         "views": 77,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1165,10 +1165,10 @@
         "freshness_hours": 60
       },
       "stats": {
-        "views": 91,
+        "views": 94,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1296,7 +1296,7 @@
         "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1336,10 +1336,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 10,
+        "views": 18,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1383,10 +1383,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 64,
-        "likes": 0,
+        "views": 73,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
+        "updatedAt": "2026-05-27T01:32:03.893Z"
       }
     },
     {
@@ -1425,6 +1425,51 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 82,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-27T01:32:03.893Z"
+      }
+    },
+    {
+      "videoId": "Mvsc5QcbwH0",
+      "videoUrl": "https://youtube.com/shorts/Mvsc5QcbwH0",
+      "date": "2026-05-27",
+      "title": "【コーヒー豆知識】インドネシアの来年の収穫が8%減・ロブスタ100万袋が長雨で消える｜2026/05/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News 5/26 公開『Indonesia Coffee Report: Production Predicted to Drop 8% in 2026/27』を起点に、USDA FAS Indonesia Coffee Annual (2026-05) を一次情報として確認。CoffeeTalk / RFDTV / FNB Coffee で数字をクロスチェック。主要ファクト: 2026/27 緑豆生産 1138万袋(-8%)、ロブスタ 1000万袋(前年比-100万袋)、アラビカ 1.38M袋(横ばい)、輸出 700万袋(-11%)、国内消費 483万袋微増、原因はスマトラ南部とジャワ西部の過剰降雨で開花・着果期を直撃。日本はインドネシア・コーヒーの主要輸出先で、Sumatra Mandheling 系深煎り愛好家(Primary 趣味層)に直結する逆風。直近 2 日 (5/26 market-data メキシコ+54% / 5/25 official-src Barista League) を回避、平日=ニュース日かつ news-en の弱点 (5/13・5/18・5/21 不振) を『海外固有名詞+日本人の生活直結+昨日との対比ストーリー』で再挑戦。昨日メキシコ+54%↔今日インドネシア-100万袋という『世界ロブスタ生産地殻変動』2話完結シリーズで、PDCA 仮説『シリーズ化で固定視聴を育てる』を初検証。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
+          "https://www.fas.usda.gov/data/gain/2026/05/indonesia-coffee-annual",
+          "https://coffeetalk.com/daily-dose/from-origin/05-2026/110086/",
+          "https://www.rfdtv.com/indonesia-coffee-output-falls-as-weather-cuts-yields",
+          "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
+          "https://fnb.coffee/blog/coffee-export-by-country/"
+        ],
+        "query": "Indonesia coffee 2026/27 production drop 8% USDA Coffee Annual robusta arabica Sumatra Java rainfall; Indonesia coffee export Japan Mandheling top destinations",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1433,13 +1478,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-21",
-      "changes": [
-        "Day performance: Sat=75, Mon=2, Sun=0, Tue=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-22",
       "changes": [
@@ -1664,6 +1702,14 @@
       "changes": [
         "standard: 100 avg views (33 videos)",
         "Day performance: Sun=239, Wed=95, Tue=89, Sat=79, Mon=65, Fri=61, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-27",
+      "changes": [
+        "standard: 100 avg views (34 videos)",
+        "Day performance: Sun=239, Wed=95, Tue=89, Sat=80, Mon=65, Fri=63, Thu=18"
       ],
       "recommendedTemplate": "standard"
     }
