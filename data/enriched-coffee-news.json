@@ -1,41 +1,45 @@
 {
-  "date": "2026-05-27",
+  "date": "2026-05-28",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News 5/26 公開『Indonesia Coffee Report: Production Predicted to Drop 8% in 2026/27』を起点に、USDA FAS Indonesia Coffee Annual (2026-05) を一次情報として確認。CoffeeTalk / RFDTV / FNB Coffee で数字をクロスチェック。主要ファクト: 2026/27 緑豆生産 1138万袋(-8%)、ロブスタ 1000万袋(前年比-100万袋)、アラビカ 1.38M袋(横ばい)、輸出 700万袋(-11%)、国内消費 483万袋微増、原因はスマトラ南部とジャワ西部の過剰降雨で開花・着果期を直撃。日本はインドネシア・コーヒーの主要輸出先で、Sumatra Mandheling 系深煎り愛好家(Primary 趣味層)に直結する逆風。直近 2 日 (5/26 market-data メキシコ+54% / 5/25 official-src Barista League) を回避、平日=ニュース日かつ news-en の弱点 (5/13・5/18・5/21 不振) を『海外固有名詞+日本人の生活直結+昨日との対比ストーリー』で再挑戦。昨日メキシコ+54%↔今日インドネシア-100万袋という『世界ロブスタ生産地殻変動』2話完結シリーズで、PDCA 仮説『シリーズ化で固定視聴を育てる』を初検証。",
+    "method": "expert-blog",
+    "description": "5/26 メキシコ・ロブスタ +54% (market-data) と 5/27 インドネシア -8% (news-en) で組み立てた『世界ロブスタ供給地殻変動』2 話シリーズの 3 話目=締めとして、『海外の値動きが日本の店頭に来るまで何ヶ月かかるか』を生豆物流 + 焙煎所サプライチェーン目線で解説する expert-blog。一次資料として Royal Coffee の Green Coffee Glossary (Contracts & Shipping)、Genuine Origin の Forward Buying ガイド、Sucafina の Differentials 解説、Those Coffee People の Japan 輸入実務、Perfect Daily Grind の roaster 価格改定/フォワード解説、Daily Coffee News 5/26 報の Indonesia USDA Coffee Annual、PDG 5/22 recap の EISA (ECOM) Brazil 50M bags forecast を統合参照。Method 選定根拠: 直近 14d で expert-blog が TOP1 avg 60.7v (5/16 77v / 5/23 82v / 5/20 23v)、直近 2 日 (5/27 news-en, 5/26 market-data) と連続違反なし、news-en は連続不振 + 連続違反でローテ除外、TOP1 自然 Exploit に該当。Pillar は ④焙煎士の一次情報 × ①市況の橋渡しで、5/16 (差額解説 77v) の勝ちテンプレを『時差解説』アングルで再現。Primary 趣味層 (家で淹れる人) が一番気にする『私の好きな豆はいつ値上がりするか』に査読/業界エビデンスで答える型を踏襲。",
     "sources": [
+      "https://royalcoffee.com/green-coffee-glossary-contracts-shipping/",
+      "https://blog.genuineorigin.com/2021/10/how-to-buy-green-coffee-forward/",
+      "https://www.covoyacoffee.com/blog/how-to-buy-forward-using-contracts.html",
+      "https://thosecoffeepeople.com/importing-coffee-beans-into-japan-guide/",
+      "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
+      "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
+      "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
       "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
-      "https://www.fas.usda.gov/data/gain/2026/05/indonesia-coffee-annual",
-      "https://coffeetalk.com/daily-dose/from-origin/05-2026/110086/",
-      "https://www.rfdtv.com/indonesia-coffee-output-falls-as-weather-cuts-yields",
-      "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
-      "https://fnb.coffee/blog/coffee-export-by-country/"
+      "https://www.investing.com/news/commodities-news/brazil-to-export-record-coffee-volume-el-nino-in-focus-trading-firm-says-4702049",
+      "https://www.coffee-rc.jp/news/detail/5"
     ],
-    "query": "Indonesia coffee 2026/27 production drop 8% USDA Coffee Annual robusta arabica Sumatra Java rainfall; Indonesia coffee export Japan Mandheling top destinations",
-    "freshness_hours": 24
+    "query": "green coffee shipping time origin Japan months; roaster forward contract 3-12 months; specialty coffee retail price lag differential; coffee inventory roaster stock months; Japan import sea freight coffee weeks",
+    "freshness_hours": 36
   },
   "articles": [
     {
       "rank": 1,
-      "title": "インドネシアの来年の収穫が8%減・ロブスタ100万袋が長雨で消える",
-      "description": "USDAの最新リポートで、2026/27年のインドネシア産が1138万袋に縮小する見通し。スマトラとジャワの長雨が原因で、日本のマンデリン好きにも逆風です。",
-      "detail": "減少分はほぼ全てロブスタ。前年比100万袋減って1000万袋まで沈みます。輸出も11%減って700万袋止まり。昨日のメキシコ+54%と真逆の動きで、世界のロブスタ供給地図が静かに塗り替わっています。",
-      "narration": "家で淹れるコーヒー、ちょっと心配なニュース。昨日お伝えしたメキシコと真逆で、インドネシアの来年の収穫が8%減るとUSDAが発表しました。",
-      "tags": ["インドネシア", "ロブスタ", "産地ニュース"],
+      "title": "海外の値動きが日本の店頭に出るまで何ヶ月か・3〜6ヶ月の時差の正体",
+      "description": "メキシコ+54%とインドネシア-8%のロブスタ・ショックは、日本の店頭にすぐ反映されません。生豆の物流と焙煎所の在庫構造でだいたい3〜6ヶ月遅れます。",
+      "detail": "生豆は船便で原産地から日本まで6〜8週間。焙煎所はフォワード契約で半年〜1年先まで仕入れ済み、倉庫在庫も2〜3ヶ月分。今週の供給変動が店頭に出るのは秋から冬です。",
+      "narration": "メキシコ54%増、インドネシア100万袋減とお伝えしましたが、海外の動きが日本の店頭に届くまで何ヶ月かかるか知っていますか。",
+      "tags": ["市況", "サプライチェーン", "焙煎士の視点"],
       "narration_sections": {
-        "hook": "家で淹れるコーヒー、ちょっと心配なニュース。昨日お伝えしたメキシコと真逆で、インドネシアの来年の収穫が8%減るとUSDAが発表しました。",
-        "origin": "USDAの最新リポートで、2026/27年のインドネシア産が1138万袋に縮小。ロブスタが前年比100万袋減って1000万袋まで沈みます。原因はスマトラ南部とジャワの長雨で、花や実が落ちたこと。輸出も11%減、700万袋止まりに。日本は主要な輸入先です。",
-        "recommend": "マンデリン系の深煎りが好きな方は、3-6か月後の値上がりに備えて、お気に入りを早めに確保しておくのが安全です。"
+        "hook": "メキシコ54%増、インドネシア100万袋減とお伝えしましたが、海外の動きが日本の店頭に届くまで何ヶ月かかるか知っていますか。",
+        "origin": "コーヒー生豆は船便で原産地から日本まで約6〜8週間。さらに焙煎所は半年から1年先の豆をフォワード契約で押さえ、倉庫在庫も2〜3ヶ月分あります。今週のロブスタ供給変動が店頭に出てくるのは、3〜6ヶ月後と見るのが現実的です。",
+        "recommend": "気に入っている豆は、値動きが秋から冬に来る前提で、お早めに次の1袋を確保しておくと安心です。"
       },
       "section_titles": {
-        "hook": "インドネシア8%減",
-        "origin": "長雨で消えた100万袋",
-        "recommend": "マンデリン早めに"
+        "hook": "日本の店頭の遅れ",
+        "origin": "海外と店頭の時差",
+        "recommend": "次の1袋は早めに"
       },
       "section_descriptions": {
-        "hook": "USDA最新、インドネシア来年8%減・主役はロブスタ",
-        "origin": "スマトラの長雨でロブスタ100万袋が消えました",
-        "recommend": "マンデリン系が値上がる前に早めの確保が安全"
+        "hook": "海外の供給ショックが日本に届くまでの時差",
+        "origin": "船便6週・在庫2か月・契約半年で遅れが積み上がる",
+        "recommend": "値上がりは秋〜冬。今のうちに次の豆を確保"
       }
     }
   ]
