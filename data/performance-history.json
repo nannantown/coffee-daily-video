@@ -1035,7 +1035,7 @@
         "views": 12,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1079,7 +1079,7 @@
         "views": 40,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1123,7 +1123,7 @@
         "views": 77,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1168,7 +1168,7 @@
         "views": 94,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1296,7 +1296,7 @@
         "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1339,7 +1339,7 @@
         "views": 18,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1386,7 +1386,7 @@
         "views": 73,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1428,7 +1428,7 @@
         "views": 82,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
+        "updatedAt": "2026-05-28T01:22:04.757Z"
       }
     },
     {
@@ -1470,6 +1470,55 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 3,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-28T01:22:04.757Z"
+      }
+    },
+    {
+      "videoId": "fuTlHUBPVz4",
+      "videoUrl": "https://youtube.com/shorts/fuTlHUBPVz4",
+      "date": "2026-05-28",
+      "title": "【コーヒー豆知識】海外の値動きが日本の店頭に出るまで何ヶ月か・3〜6ヶ月の時差の正体｜2026/05/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 47,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "5/26 メキシコ・ロブスタ +54% (market-data) と 5/27 インドネシア -8% (news-en) で組み立てた『世界ロブスタ供給地殻変動』2 話シリーズの 3 話目=締めとして、『海外の値動きが日本の店頭に来るまで何ヶ月かかるか』を生豆物流 + 焙煎所サプライチェーン目線で解説する expert-blog。一次資料として Royal Coffee の Green Coffee Glossary (Contracts & Shipping)、Genuine Origin の Forward Buying ガイド、Sucafina の Differentials 解説、Those Coffee People の Japan 輸入実務、Perfect Daily Grind の roaster 価格改定/フォワード解説、Daily Coffee News 5/26 報の Indonesia USDA Coffee Annual、PDG 5/22 recap の EISA (ECOM) Brazil 50M bags forecast を統合参照。Method 選定根拠: 直近 14d で expert-blog が TOP1 avg 60.7v (5/16 77v / 5/23 82v / 5/20 23v)、直近 2 日 (5/27 news-en, 5/26 market-data) と連続違反なし、news-en は連続不振 + 連続違反でローテ除外、TOP1 自然 Exploit に該当。Pillar は ④焙煎士の一次情報 × ①市況の橋渡しで、5/16 (差額解説 77v) の勝ちテンプレを『時差解説』アングルで再現。Primary 趣味層 (家で淹れる人) が一番気にする『私の好きな豆はいつ値上がりするか』に査読/業界エビデンスで答える型を踏襲。",
+        "sources": [
+          "https://royalcoffee.com/green-coffee-glossary-contracts-shipping/",
+          "https://blog.genuineorigin.com/2021/10/how-to-buy-green-coffee-forward/",
+          "https://www.covoyacoffee.com/blog/how-to-buy-forward-using-contracts.html",
+          "https://thosecoffeepeople.com/importing-coffee-beans-into-japan-guide/",
+          "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
+          "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
+          "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
+          "https://www.investing.com/news/commodities-news/brazil-to-export-record-coffee-volume-el-nino-in-focus-trading-firm-says-4702049",
+          "https://www.coffee-rc.jp/news/detail/5"
+        ],
+        "query": "green coffee shipping time origin Japan months; roaster forward contract 3-12 months; specialty coffee retail price lag differential; coffee inventory roaster stock months; Japan import sea freight coffee weeks",
+        "freshness_hours": 36
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1478,13 +1527,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-22",
-      "changes": [
-        "Day performance: Sat=75, Tue=43, Mon=3, Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-24",
       "changes": [
@@ -1710,6 +1752,14 @@
       "changes": [
         "standard: 100 avg views (34 videos)",
         "Day performance: Sun=239, Wed=95, Tue=89, Sat=80, Mon=65, Fri=63, Thu=18"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-28",
+      "changes": [
+        "standard: 97 avg views (35 videos)",
+        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=18"
       ],
       "recommendedTemplate": "standard"
     }
