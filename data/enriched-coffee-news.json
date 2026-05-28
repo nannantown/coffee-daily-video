@@ -1,45 +1,40 @@
 {
-  "date": "2026-05-28",
+  "date": "2026-05-29",
   "discovery": {
-    "method": "expert-blog",
-    "description": "5/26 メキシコ・ロブスタ +54% (market-data) と 5/27 インドネシア -8% (news-en) で組み立てた『世界ロブスタ供給地殻変動』2 話シリーズの 3 話目=締めとして、『海外の値動きが日本の店頭に来るまで何ヶ月かかるか』を生豆物流 + 焙煎所サプライチェーン目線で解説する expert-blog。一次資料として Royal Coffee の Green Coffee Glossary (Contracts & Shipping)、Genuine Origin の Forward Buying ガイド、Sucafina の Differentials 解説、Those Coffee People の Japan 輸入実務、Perfect Daily Grind の roaster 価格改定/フォワード解説、Daily Coffee News 5/26 報の Indonesia USDA Coffee Annual、PDG 5/22 recap の EISA (ECOM) Brazil 50M bags forecast を統合参照。Method 選定根拠: 直近 14d で expert-blog が TOP1 avg 60.7v (5/16 77v / 5/23 82v / 5/20 23v)、直近 2 日 (5/27 news-en, 5/26 market-data) と連続違反なし、news-en は連続不振 + 連続違反でローテ除外、TOP1 自然 Exploit に該当。Pillar は ④焙煎士の一次情報 × ①市況の橋渡しで、5/16 (差額解説 77v) の勝ちテンプレを『時差解説』アングルで再現。Primary 趣味層 (家で淹れる人) が一番気にする『私の好きな豆はいつ値上がりするか』に査読/業界エビデンスで答える型を踏襲。",
+    "method": "market-data",
+    "description": "World Bank 肥料価格指数 + Colombia FNC のコメントを尿素先物・農業マーケットデータから拾い、Perfect Daily Grind 5/22 recap の ICO 警告および Daily Coffee News の Iran 戦争コーヒー生産費レポートと突合。5/26 (Mexico Robusta +54% market-data) → 5/27 (Indonesia -8% news-en) → 5/28 (海外値動きの時差 expert-blog) で組み立てた『上流コスト 3 話シリーズ』を、相場側から生産費側に視点を切り替える 4 話目=締めとして展開。method 選定理由: 5/27 news-en / 5/28 expert-blog の直近 2 日連続違反を回避、TOP3 method (social-en / official-src) は今日のシリーズ閉じには素材が合わず、商品市況データを一次根拠とする本ストーリーには market-data が最も整合。5/26 と method 連続使用にならず 3 日空きあり、Pillar ①市況 25% + Pillar ②産地・生産費 25% にダブルヒット。",
     "sources": [
-      "https://royalcoffee.com/green-coffee-glossary-contracts-shipping/",
-      "https://blog.genuineorigin.com/2021/10/how-to-buy-green-coffee-forward/",
-      "https://www.covoyacoffee.com/blog/how-to-buy-forward-using-contracts.html",
-      "https://thosecoffeepeople.com/importing-coffee-beans-into-japan-guide/",
-      "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
-      "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
+      "https://blogs.worldbank.org/en/opendata/fertilizer-prices-surge-as-strait-of-hormuz-disruptions-tighten-",
+      "https://dailycoffeenews.com/2026/05/05/the-war-in-iran-is-making-coffee-production-more-expensive/",
       "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-      "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
-      "https://www.investing.com/news/commodities-news/brazil-to-export-record-coffee-volume-el-nino-in-focus-trading-firm-says-4702049",
-      "https://www.coffee-rc.jp/news/detail/5"
+      "https://www.riotimesonline.com/colombia-fertilizer-crisis-hormuz-prices-food-inflation/",
+      "https://www.cnbc.com/2026/03/25/fertilizer-price-iran-war-food-security-inflation-urea-potash-nitrogen-farmers.html"
     ],
-    "query": "green coffee shipping time origin Japan months; roaster forward contract 3-12 months; specialty coffee retail price lag differential; coffee inventory roaster stock months; Japan import sea freight coffee weeks",
-    "freshness_hours": 36
+    "query": "urea fertilizer price Colombia FNC coffee 2026 Strait of Hormuz",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外の値動きが日本の店頭に出るまで何ヶ月か・3〜6ヶ月の時差の正体",
-      "description": "メキシコ+54%とインドネシア-8%のロブスタ・ショックは、日本の店頭にすぐ反映されません。生豆の物流と焙煎所の在庫構造でだいたい3〜6ヶ月遅れます。",
-      "detail": "生豆は船便で原産地から日本まで6〜8週間。焙煎所はフォワード契約で半年〜1年先まで仕入れ済み、倉庫在庫も2〜3ヶ月分。今週の供給変動が店頭に出るのは秋から冬です。",
-      "narration": "メキシコ54%増、インドネシア100万袋減とお伝えしましたが、海外の動きが日本の店頭に届くまで何ヶ月かかるか知っていますか。",
-      "tags": ["市況", "サプライチェーン", "焙煎士の視点"],
+      "title": "尿素肥料が前年比78%高騰・コーヒー生産費の上流が動いている",
+      "description": "先物が下がってもコーヒーが安くならない、もう1つの理由が肥料コストとして表面化しています。",
+      "detail": "ホルムズ海峡の封鎖と中東情勢でウレア(尿素)肥料が1トン380ドルから679ドルへ、前年比78%高騰。コロンビアの生産者団体FNCは肥料が生産コストの2割を占め、国内供給は1割に満たず輸入9割依存と警告。同国の96%は5ヘクタール未満の小農家で、追加の経費圧縮は限界。世界銀行は2026年の肥料価格指数を31%上昇と予測しており、次の収穫の生産費は構造的に押し上げられます。",
+      "narration": "先物が下がってもコーヒーが安くならない、もう1つの理由が来ました。中東情勢で尿素肥料が前年比78%高騰しています。",
+      "tags": ["市況", "ニュース", "産地"],
       "narration_sections": {
-        "hook": "メキシコ54%増、インドネシア100万袋減とお伝えしましたが、海外の動きが日本の店頭に届くまで何ヶ月かかるか知っていますか。",
-        "origin": "コーヒー生豆は船便で原産地から日本まで約6〜8週間。さらに焙煎所は半年から1年先の豆をフォワード契約で押さえ、倉庫在庫も2〜3ヶ月分あります。今週のロブスタ供給変動が店頭に出てくるのは、3〜6ヶ月後と見るのが現実的です。",
-        "recommend": "気に入っている豆は、値動きが秋から冬に来る前提で、お早めに次の1袋を確保しておくと安心です。"
+        "hook": "先物が下がってもコーヒーが安くならない、もう1つの理由が来ました。中東情勢で尿素肥料が前年比78%高騰しています。",
+        "origin": "ホルムズ海峡の封鎖で尿素肥料は1トン380ドルから679ドルへ。コロンビアの生産者団体FNCは肥料が生産コストの2割、輸入9割依存と警告。同国の96%は5ヘクタール未満の小農家で、経費圧縮は限界です。",
+        "recommend": "秋以降の値段は相場だけじゃなく生産費も押し上げる構造。豆価格ニュースの裏側で、上流コストが動いています。"
       },
       "section_titles": {
-        "hook": "日本の店頭の遅れ",
-        "origin": "海外と店頭の時差",
-        "recommend": "次の1袋は早めに"
+        "hook": "豆が安くならない理由",
+        "origin": "尿素が78%高騰",
+        "recommend": "上流の生産費が動く"
       },
       "section_descriptions": {
-        "hook": "海外の供給ショックが日本に届くまでの時差",
-        "origin": "船便6週・在庫2か月・契約半年で遅れが積み上がる",
-        "recommend": "値上がりは秋〜冬。今のうちに次の豆を確保"
+        "hook": "先物以外の値上げ要因が表面化しています",
+        "origin": "ホルムズ封鎖で肥料価格が急騰しています",
+        "recommend": "秋以降の豆価格を読む視点が変わります"
       }
     }
   ]
