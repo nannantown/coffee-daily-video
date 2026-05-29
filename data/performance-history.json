@@ -1079,7 +1079,7 @@
         "views": 40,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1123,7 +1123,7 @@
         "views": 77,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1168,7 +1168,7 @@
         "views": 94,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1296,7 +1296,7 @@
         "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1339,7 +1339,7 @@
         "views": 18,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1386,7 +1386,7 @@
         "views": 73,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1428,7 +1428,7 @@
         "views": 82,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1473,7 +1473,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-28T01:22:04.757Z"
+        "updatedAt": "2026-05-29T01:31:17.935Z"
       }
     },
     {
@@ -1519,6 +1519,50 @@
         "freshness_hours": 36
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-29T01:31:17.935Z"
+      }
+    },
+    {
+      "videoId": "weFQIp1gSHE",
+      "videoUrl": "https://youtube.com/shorts/weFQIp1gSHE",
+      "date": "2026-05-29",
+      "title": "【コーヒー豆知識】尿素肥料が前年比78%高騰・コーヒー生産費の上流が動いている｜2026/05/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "market-data",
+        "description": "World Bank 肥料価格指数 + Colombia FNC のコメントを尿素先物・農業マーケットデータから拾い、Perfect Daily Grind 5/22 recap の ICO 警告および Daily Coffee News の Iran 戦争コーヒー生産費レポートと突合。5/26 (Mexico Robusta +54% market-data) → 5/27 (Indonesia -8% news-en) → 5/28 (海外値動きの時差 expert-blog) で組み立てた『上流コスト 3 話シリーズ』を、相場側から生産費側に視点を切り替える 4 話目=締めとして展開。method 選定理由: 5/27 news-en / 5/28 expert-blog の直近 2 日連続違反を回避、TOP3 method (social-en / official-src) は今日のシリーズ閉じには素材が合わず、商品市況データを一次根拠とする本ストーリーには market-data が最も整合。5/26 と method 連続使用にならず 3 日空きあり、Pillar ①市況 25% + Pillar ②産地・生産費 25% にダブルヒット。",
+        "sources": [
+          "https://blogs.worldbank.org/en/opendata/fertilizer-prices-surge-as-strait-of-hormuz-disruptions-tighten-",
+          "https://dailycoffeenews.com/2026/05/05/the-war-in-iran-is-making-coffee-production-more-expensive/",
+          "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
+          "https://www.riotimesonline.com/colombia-fertilizer-crisis-hormuz-prices-food-inflation/",
+          "https://www.cnbc.com/2026/03/25/fertilizer-price-iran-war-food-security-inflation-urea-potash-nitrogen-farmers.html"
+        ],
+        "query": "urea fertilizer price Colombia FNC coffee 2026 Strait of Hormuz",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1527,13 +1571,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-24",
-      "changes": [
-        "Day performance: Wed=159, Sat=75, Tue=58, Mon=3, Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-26",
       "changes": [
@@ -1760,6 +1797,14 @@
       "changes": [
         "standard: 97 avg views (35 videos)",
         "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=18"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-29",
+      "changes": [
+        "standard: 94 avg views (36 videos)",
+        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
