@@ -1,40 +1,41 @@
 {
-  "date": "2026-05-29",
+  "date": "2026-05-30",
   "discovery": {
-    "method": "market-data",
-    "description": "World Bank 肥料価格指数 + Colombia FNC のコメントを尿素先物・農業マーケットデータから拾い、Perfect Daily Grind 5/22 recap の ICO 警告および Daily Coffee News の Iran 戦争コーヒー生産費レポートと突合。5/26 (Mexico Robusta +54% market-data) → 5/27 (Indonesia -8% news-en) → 5/28 (海外値動きの時差 expert-blog) で組み立てた『上流コスト 3 話シリーズ』を、相場側から生産費側に視点を切り替える 4 話目=締めとして展開。method 選定理由: 5/27 news-en / 5/28 expert-blog の直近 2 日連続違反を回避、TOP3 method (social-en / official-src) は今日のシリーズ閉じには素材が合わず、商品市況データを一次根拠とする本ストーリーには market-data が最も整合。5/26 と method 連続使用にならず 3 日空きあり、Pillar ①市況 25% + Pillar ②産地・生産費 25% にダブルヒット。",
+    "method": "social-en",
+    "description": "Daily Coffee News 5/28 の Brezi launch 記事を起点に、Basic Barista review / Brezi 公式 brewing guide / DripBeans の hot bloom recipe ガイドを cross-reference。海外の家庭焙煎・抽出コミュニティが『ホットブルーム+冷水』ハイブリッド技法を独立に語っている流れを確認し、土曜エバーグリーン枠 = 季節接続(6月の冷たいコーヒー需要立ち上がり)に投入。5/17 Hario Switch (social-en, 94v TOP1) の『海外で証明された技法 → 家でこう再現』テンプレを 13 日ぶりに再活用。method 選定理由: 5/28 expert-blog / 5/29 market-data の直近 2 日連続違反回避、TOP1 method の再現性検証(n=1 → n=2)、土曜エバーグリーン路線への切替で複合的に整合。Pillar ④ 焙煎士の一次情報(週末寄せ)+ Pillar ③ 業界(gear launch)ダブルヒット。",
     "sources": [
-      "https://blogs.worldbank.org/en/opendata/fertilizer-prices-surge-as-strait-of-hormuz-disruptions-tighten-",
-      "https://dailycoffeenews.com/2026/05/05/the-war-in-iran-is-making-coffee-production-more-expensive/",
-      "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-      "https://www.riotimesonline.com/colombia-fertilizer-crisis-hormuz-prices-food-inflation/",
-      "https://www.cnbc.com/2026/03/25/fertilizer-price-iran-war-food-security-inflation-urea-potash-nitrogen-farmers.html"
+      "https://dailycoffeenews.com/2026/05/28/the-brezi-coffee-maker-goes-from-hot-bloom-to-cold-brew/",
+      "https://brezicoffee.com/blogs/art-science-of-brezi/the-magic-of-blooming-enhancing-cold-brew-without-sacrificing-smoothness",
+      "https://thebasicbarista.com/en-us/blogs/reviews/brezi-automatic-cold-brew-coffee-machine-review",
+      "https://dripbeans.com/cold-brew-hot-bloom-method/",
+      "https://www.themanual.com/food-and-drink/brezi-cold-brew-machine/",
+      "https://ifdesign.com/en/winner-ranking/project/brezi-cold-brew-coffee-machine/675863"
     ],
-    "query": "urea fertilizer price Colombia FNC coffee 2026 Strait of Hormuz",
-    "freshness_hours": 168
+    "query": "Brezi cold brew machine hot bloom launch 2026 home V60 hybrid extraction",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "尿素肥料が前年比78%高騰・コーヒー生産費の上流が動いている",
-      "description": "先物が下がってもコーヒーが安くならない、もう1つの理由が肥料コストとして表面化しています。",
-      "detail": "ホルムズ海峡の封鎖と中東情勢でウレア(尿素)肥料が1トン380ドルから679ドルへ、前年比78%高騰。コロンビアの生産者団体FNCは肥料が生産コストの2割を占め、国内供給は1割に満たず輸入9割依存と警告。同国の96%は5ヘクタール未満の小農家で、追加の経費圧縮は限界。世界銀行は2026年の肥料価格指数を31%上昇と予測しており、次の収穫の生産費は構造的に押し上げられます。",
-      "narration": "先物が下がってもコーヒーが安くならない、もう1つの理由が来ました。中東情勢で尿素肥料が前年比78%高騰しています。",
-      "tags": ["市況", "ニュース", "産地"],
+      "title": "夏前に再注目・新マシンBreziが広めるホットブルーム+冷水ハイブリッド抽出",
+      "description": "海外で話題の新マシンが、家のV60で再現できる夏向け抽出技法を再注目させています。",
+      "detail": "Daily Coffee News が5/28に報じた新コーヒーマシン Brezi(価格$399、iF Design Award 受賞)は、約70度のホットブルームで30秒コーヒーガスを抜いた後、約5度の冷水でゆっくり抽出。従来12〜24時間かかる水出しが5分で完成する。ポイントは「酸味は熱で引き出し、ボディは冷で残す」ハイブリッド技法で、Brezi 専用機なしでも V60 + 氷で再現可能。粉15g、90度の湯50gで45秒蒸らし、その後氷を入れた冷水150gを注ぐだけで、浅煎りの甘さと香りが冷たいまま残る。コミュニティ実証済みの夏向け定番手法。",
+      "narration": "先週アメリカで$399の新コーヒーマシンBreziが話題になりました。注目ポイントは熱湯と冷水を組み合わせるハイブリッド抽出で、実は家でも再現できます。",
+      "tags": ["抽出", "ハイブリッド", "ニュース"],
       "narration_sections": {
-        "hook": "先物が下がってもコーヒーが安くならない、もう1つの理由が来ました。中東情勢で尿素肥料が前年比78%高騰しています。",
-        "origin": "ホルムズ海峡の封鎖で尿素肥料は1トン380ドルから679ドルへ。コロンビアの生産者団体FNCは肥料が生産コストの2割、輸入9割依存と警告。同国の96%は5ヘクタール未満の小農家で、経費圧縮は限界です。",
-        "recommend": "秋以降の値段は相場だけじゃなく生産費も押し上げる構造。豆価格ニュースの裏側で、上流コストが動いています。"
+        "hook": "先週アメリカで$399の新コーヒーマシンBreziが話題になりました。注目ポイントは熱湯と冷水を組み合わせるハイブリッド抽出で、実は家でも再現できます。",
+        "origin": "Breziは約70度で30秒蒸らしてから約5度の冷水で抽出。12時間の従来水出しが5分で完成です。家ならV60に粉15g、90度の湯50gで45秒蒸らし、その後氷を入れた冷水150gを注ぐだけ。浅煎りの甘さと香りが冷たいまま残ります。",
+        "recommend": "酸味を残したい浅煎りこそハイブリッド向きの抽出。これからの季節、家の浅煎りが冷たいまま美味しく飲めます。"
       },
       "section_titles": {
-        "hook": "豆が安くならない理由",
-        "origin": "尿素が78%高騰",
-        "recommend": "上流の生産費が動く"
+        "hook": "ハイブリッド抽出再注目",
+        "origin": "家のV60で5分再現",
+        "recommend": "浅煎り×冷たい夏"
       },
       "section_descriptions": {
-        "hook": "先物以外の値上げ要因が表面化しています",
-        "origin": "ホルムズ封鎖で肥料価格が急騰しています",
-        "recommend": "秋以降の豆価格を読む視点が変わります"
+        "hook": "海外で話題のBreziが家技に翻訳できます",
+        "origin": "熱湯ブルームから冷水抽出までの具体手順を公開",
+        "recommend": "浅煎りの香りを冷たいまま夏も楽しめる技法"
       }
     }
   ]
