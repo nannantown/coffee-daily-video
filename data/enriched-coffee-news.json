@@ -1,41 +1,43 @@
 {
-  "date": "2026-05-30",
+  "date": "2026-05-31",
   "discovery": {
-    "method": "social-en",
-    "description": "Daily Coffee News 5/28 の Brezi launch 記事を起点に、Basic Barista review / Brezi 公式 brewing guide / DripBeans の hot bloom recipe ガイドを cross-reference。海外の家庭焙煎・抽出コミュニティが『ホットブルーム+冷水』ハイブリッド技法を独立に語っている流れを確認し、土曜エバーグリーン枠 = 季節接続(6月の冷たいコーヒー需要立ち上がり)に投入。5/17 Hario Switch (social-en, 94v TOP1) の『海外で証明された技法 → 家でこう再現』テンプレを 13 日ぶりに再活用。method 選定理由: 5/28 expert-blog / 5/29 market-data の直近 2 日連続違反回避、TOP1 method の再現性検証(n=1 → n=2)、土曜エバーグリーン路線への切替で複合的に整合。Pillar ④ 焙煎士の一次情報(週末寄せ)+ Pillar ③ 業界(gear launch)ダブルヒット。",
+    "method": "expert-blog",
+    "description": "今週の生産ニュース連発(5/26 メキシコ・ロブスタ+54%、5/27 インドネシア-8%、5/29 尿素+78%)を受け、量側の話題が飽和したタイミングで『質』側の革命を掘る。SCA が 2024 年に CVA(Coffee Value Assessment)を正式採用、その中で従来100点法に居場所がなかった Fine Robusta / Liberica / ハイブリッドが公式に評価対象として取り込まれた流れを、Daily Coffee News (2024-11-05) / SCA 公式 / Qahwa World / Ethio Coffee の業界ブログ群を横断して確認。Fine Robusta の閾値(カップ80点以上、欠点豆ほぼゼロ、ベトナム産2024年85.42点達成)も同時に確認。method 選定理由: 直近2日 (5/30 social-en / 5/29 market-data) の連続違反回避、TOP2 method (expert-blog 14d 平均45.75v、最高82v) の再投入、土日エバーグリーン枠で今週ニュースの裏側を深掘りする戦略 §運用フォーマットの趣旨に合致。Pillar ③業界・ビジネスニュース (20%) + ②産地 (25%) のクロス。news-en (WORST 15.5v) 凍結検討対象なので素材は news 系でも分類は expert-blog に寄せる。",
     "sources": [
-      "https://dailycoffeenews.com/2026/05/28/the-brezi-coffee-maker-goes-from-hot-bloom-to-cold-brew/",
-      "https://brezicoffee.com/blogs/art-science-of-brezi/the-magic-of-blooming-enhancing-cold-brew-without-sacrificing-smoothness",
-      "https://thebasicbarista.com/en-us/blogs/reviews/brezi-automatic-cold-brew-coffee-machine-review",
-      "https://dripbeans.com/cold-brew-hot-bloom-method/",
-      "https://www.themanual.com/food-and-drink/brezi-cold-brew-machine/",
-      "https://ifdesign.com/en/winner-ranking/project/brezi-cold-brew-coffee-machine/675863"
+      "https://sca.coffee/sca-news/sca-new-cva-cupping-standards",
+      "https://sca.coffee/value-assessment",
+      "https://dailycoffeenews.com/2024/11/05/sca-officially-adopts-new-cupping-forms-and-standards/",
+      "https://qahwaworld.com/coffee-reflections/evolved-q-grader-coffee-value-assessment-2025/",
+      "https://www.ethiocoffee.co/insights/new-sca-coffee-value-assessment",
+      "https://www.helenacoffee.vn/what-is-fine-robusta-facts-everyone-should-know-about-fine-robusta-helena-jsc/",
+      "https://hello5coffee.com/what-is-fine-robusta/",
+      "https://database.coffeeinstitute.org/coffees/robusta"
     ],
-    "query": "Brezi cold brew machine hot bloom launch 2026 home V60 hybrid extraction",
-    "freshness_hours": 48
+    "query": "fine robusta Q-grading CVA 2026 SCA descriptors specialty",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "夏前に再注目・新マシンBreziが広めるホットブルーム+冷水ハイブリッド抽出",
-      "description": "海外で話題の新マシンが、家のV60で再現できる夏向け抽出技法を再注目させています。",
-      "detail": "Daily Coffee News が5/28に報じた新コーヒーマシン Brezi(価格$399、iF Design Award 受賞)は、約70度のホットブルームで30秒コーヒーガスを抜いた後、約5度の冷水でゆっくり抽出。従来12〜24時間かかる水出しが5分で完成する。ポイントは「酸味は熱で引き出し、ボディは冷で残す」ハイブリッド技法で、Brezi 専用機なしでも V60 + 氷で再現可能。粉15g、90度の湯50gで45秒蒸らし、その後氷を入れた冷水150gを注ぐだけで、浅煎りの甘さと香りが冷たいまま残る。コミュニティ実証済みの夏向け定番手法。",
-      "narration": "先週アメリカで$399の新コーヒーマシンBreziが話題になりました。注目ポイントは熱湯と冷水を組み合わせるハイブリッド抽出で、実は家でも再現できます。",
-      "tags": ["抽出", "ハイブリッド", "ニュース"],
+      "title": "ロブスタはマズいの常識が崩れた・Fine Robustaが85点超え、SCA新評価CVAも公式採用",
+      "description": "ロブスタはマズいって思ってませんか? その常識、いま静かに崩れています。",
+      "detail": "Fine Robusta は CQI が定める高品質ロブスタ規格で、カップスコア80点以上、350g 中の主要欠点豆ゼロ・副欠点豆5個以下、ローストでクエーカー3粒以下という厳格基準。Excellent ランクは85点以上で、ベトナム・ナムバン産が2024年に85.42点を達成しCQIランキング世界Top14入り。さらにSCAは2024年に新評価基準 CVA(Coffee Value Assessment)を正式採用し、従来の100点法では『居場所がなかった』Fine Robusta、Liberica、ハイブリッド品種を公式に評価対象として取り込んだ。今週相次いだメキシコ54%増・インドネシア8%減のロブスタ生産ニュースの裏で、量だけでなく『質』の競争も静かに始まっている。",
+      "narration": "ロブスタはマズいって思ってませんか? 実はその常識、いま静かに崩れています。スペシャルティ業界が公式にロブスタを認め始めました。",
+      "tags": ["ロブスタ", "Fine Robusta", "SCA"],
       "narration_sections": {
-        "hook": "先週アメリカで$399の新コーヒーマシンBreziが話題になりました。注目ポイントは熱湯と冷水を組み合わせるハイブリッド抽出で、実は家でも再現できます。",
-        "origin": "Breziは約70度で30秒蒸らしてから約5度の冷水で抽出。12時間の従来水出しが5分で完成です。家ならV60に粉15g、90度の湯50gで45秒蒸らし、その後氷を入れた冷水150gを注ぐだけ。浅煎りの甘さと香りが冷たいまま残ります。",
-        "recommend": "酸味を残したい浅煎りこそハイブリッド向きの抽出。これからの季節、家の浅煎りが冷たいまま美味しく飲めます。"
+        "hook": "ロブスタはマズいって思ってませんか? 実はその常識、いま静かに崩れています。スペシャルティ業界が公式にロブスタを認め始めました。",
+        "origin": "カップスコア80点以上のロブスタはFine Robustaと呼ばれ、欠点豆ほぼゼロの厳格基準。ベトナム産は2024年に85点超え、SCAの新評価CVAも今年ロブスタ用記述子を正式採用。メキシコ+54%・インドネシア-8%の裏で質の競争も動いています。",
+        "recommend": "アラビカばかり買っている方も、年に1袋Fine Robustaを試すと驚きます。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ハイブリッド抽出再注目",
-        "origin": "家のV60で5分再現",
-        "recommend": "浅煎り×冷たい夏"
+        "hook": "ロブスタの常識崩壊",
+        "origin": "Fine Robusta",
+        "recommend": "1袋試す価値あり"
       },
       "section_descriptions": {
-        "hook": "海外で話題のBreziが家技に翻訳できます",
-        "origin": "熱湯ブルームから冷水抽出までの具体手順を公開",
-        "recommend": "浅煎りの香りを冷たいまま夏も楽しめる技法"
+        "hook": "スペシャルティ業界が静かに評価を変え始めた話",
+        "origin": "カップ85点超・SCAも新評価で正式に取り込む",
+        "recommend": "アラビカ党こそ年に1袋試す価値があります"
       }
     }
   ]
