@@ -1168,7 +1168,7 @@
         "views": 94,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1210,7 +1210,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1296,7 +1296,7 @@
         "views": 23,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1336,10 +1336,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 18,
+        "views": 19,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1383,10 +1383,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 73,
+        "views": 74,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1428,7 +1428,7 @@
         "views": 82,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1470,10 +1470,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 3,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1519,10 +1519,10 @@
         "freshness_hours": 36
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
+        "updatedAt": "2026-05-31T01:34:00.067Z"
       }
     },
     {
@@ -1563,6 +1563,53 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-05-31T01:34:00.067Z"
+      }
+    },
+    {
+      "videoId": "zSRYWT7RKZQ",
+      "videoUrl": "https://youtube.com/shorts/zSRYWT7RKZQ",
+      "date": "2026-05-31",
+      "title": "【コーヒー豆知識】ロブスタはマズいの常識が崩れた・Fine Robustaが85点超え、SCA新評価CVAも公式採用｜2026/05/31 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "今週の生産ニュース連発(5/26 メキシコ・ロブスタ+54%、5/27 インドネシア-8%、5/29 尿素+78%)を受け、量側の話題が飽和したタイミングで『質』側の革命を掘る。SCA が 2024 年に CVA(Coffee Value Assessment)を正式採用、その中で従来100点法に居場所がなかった Fine Robusta / Liberica / ハイブリッドが公式に評価対象として取り込まれた流れを、Daily Coffee News (2024-11-05) / SCA 公式 / Qahwa World / Ethio Coffee の業界ブログ群を横断して確認。Fine Robusta の閾値(カップ80点以上、欠点豆ほぼゼロ、ベトナム産2024年85.42点達成)も同時に確認。method 選定理由: 直近2日 (5/30 social-en / 5/29 market-data) の連続違反回避、TOP2 method (expert-blog 14d 平均45.75v、最高82v) の再投入、土日エバーグリーン枠で今週ニュースの裏側を深掘りする戦略 §運用フォーマットの趣旨に合致。Pillar ③業界・ビジネスニュース (20%) + ②産地 (25%) のクロス。news-en (WORST 15.5v) 凍結検討対象なので素材は news 系でも分類は expert-blog に寄せる。",
+        "sources": [
+          "https://sca.coffee/sca-news/sca-new-cva-cupping-standards",
+          "https://sca.coffee/value-assessment",
+          "https://dailycoffeenews.com/2024/11/05/sca-officially-adopts-new-cupping-forms-and-standards/",
+          "https://qahwaworld.com/coffee-reflections/evolved-q-grader-coffee-value-assessment-2025/",
+          "https://www.ethiocoffee.co/insights/new-sca-coffee-value-assessment",
+          "https://www.helenacoffee.vn/what-is-fine-robusta-facts-everyone-should-know-about-fine-robusta-helena-jsc/",
+          "https://hello5coffee.com/what-is-fine-robusta/",
+          "https://database.coffeeinstitute.org/coffees/robusta"
+        ],
+        "query": "fine robusta Q-grading CVA 2026 SCA descriptors specialty",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1571,13 +1618,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-26",
-      "changes": [
-        "Day performance: Wed=164, Sat=75, Fri=64, Tue=59, Mon=3, Sun=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-27",
       "changes": [
@@ -1805,6 +1845,14 @@
       "changes": [
         "standard: 94 avg views (36 videos)",
         "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=15"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-05-31",
+      "changes": [
+        "standard: 92 avg views (37 videos)",
+        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=53, Thu=15"
       ],
       "recommendedTemplate": "standard"
     }
