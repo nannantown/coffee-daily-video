@@ -1,44 +1,40 @@
 {
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "discovery": {
-    "method": "trends",
-    "description": "5/29 PDCA で計画した『6/1 月曜 強制 Explore: trends / news-ja / social-ja の未投入 method 投入』を実行。Google Trends 日本での『コーヒー 値上げ』検索が 2026 年春以降高止まり、3 月 UCC・キーコーヒー 10〜30% 改定、5 月コーヒー流通センター生豆改定で再加速の構図を起点に題材化。一方、海外アラビカ先物は $2.70/lb で 2024 年 11 月以来の安値、ブラジル Conab が 2026/27 を記録の 6,670 万袋 (+18% YoY、Arabica +28%) と予想、PDG 5/29 リキャップでも『speculators が $2.7B のロング解消』と報じる『上流急落 vs 店頭急騰』の矛盾を、検索データという視聴者の関心軸から逆照射。直近 2 日 (5/30 social-en, 5/31 expert-blog) と method 連続違反なし、news-en (WORST 3 連続 1/19/5v) を経由せず素材を trends にラベル替えする 6 月運用方針の第 1 弾。",
+    "method": "official-src",
+    "description": "Daily Coffee News が 6/01 (昨日) カバーした USDA Foreign Agricultural Service の Tanzania Coffee Annual 2026/27 を起点に題材化。USDA FAS = 戦略 §推奨ソースの official-src 本流で、freshness ~24h と速報性最強。Pillar ② 産地・ハーベスト (25%) は 5/27 インドネシアから 6 日空きで、アフリカ産地ニュースとしては 5/19 WCR から 14 日ぶり。直近 2 日 (5/31 expert-blog, 6/01 trends) と method 連続違反なし、直近 14d Method 平均 TOP1 (41v、5/22 ブラジル脱カフェ 74v) の Exploit 投入。news-en (WORST 3 連続) を経由せず素材を official-src 本流から直接持ち込む 6 月運用方針。",
     "sources": [
-      "https://perfectdailygrind.com/2026/05/coffee-news-recap-29-may-2026/",
-      "https://think.ing.com/articles/brazil-crop-recovery-to-push-coffee-prices-lower/",
-      "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
-      "https://tradingeconomics.com/commodity/coffee",
-      "https://www.gcrmag.com/arabica-coffee-futures-fall-following-bumper-brazil-crop-estimate",
-      "https://www.coffee-rc.jp/news/detail/5",
-      "https://www.ucc.co.jp/company/news/2025/rel251222.html",
-      "https://www.keycoffee.co.jp/news/detail/news_251212",
-      "https://koyo-coffee.com/coffee-price-increase-2026/"
+      "https://dailycoffeenews.com/2026/06/01/tanzania-coffee-report-production-rising-amid-farm-investments/",
+      "https://www.fas.usda.gov/data/tanzania-coffee-annual-7",
+      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Dar+Es+Salaam_Tanzania_TZ2025-0004.pdf",
+      "https://www.foodbusinessmea.com/tanzania-coffee-production-set-for-record-growth-in-2026-27/",
+      "https://www.ecofinagency.com/news-agriculture/2005-55755-tanzania-s-coffee-industry-targets-another-record-harvest-in-2026-27"
     ],
-    "query": "コーヒー 値上げ Google Trends 2026 / arabica futures May 2026 / Brazil Conab 26/27 forecast 66.7 million bags / illycaffe stock listing",
-    "freshness_hours": 72
+    "query": "Tanzania coffee production forecast 1.6 million bags 2026/27 USDA / Tanzania coffee 2026/27 USDA FAS report Arabica Robusta export Kilimanjaro",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Googleで『コーヒー 値上げ』検索が急増中・でも海外卸は今年20%下落の謎",
-      "description": "今、日本で『コーヒー 値上げ』の検索が急増しています。でも実は海外の卸は今年20%下落。",
-      "detail": "Google Trends 日本で『コーヒー 値上げ』検索が 2026 年春以降高止まり、3 月 UCC・キーコーヒーの 10〜30% 改定、5 月にコーヒー流通センターも生豆改定と続き再加速。一方ニューヨークのアラビカ先物は 1 ポンド 2.70 ドル、2024 年 11 月以来の安値で年初来マイナス 20%。ブラジル国家供給公社 Conab は 2026/27 の生産を記録の 6,670 万袋に上方修正、アラビカ単独でも +28% の豊作予想。投機筋は 27 億ドル相当のロングを解消。それでも店頭が高いのは、今焙煎されている豆が去年の高値で仕入れた在庫だから。卸が今下がっても、店頭に届くのは半年後。秋以降に店頭価格も転換点が来る見込みです。",
-      "narration": "今、日本のGoogleで『コーヒー 値上げ』の検索が急増しています。でも実は、海外の卸売価格は今年20%も下落しているんです。",
-      "tags": ["コーヒー値上げ", "アラビカ先物", "ブラジル豊作"],
+      "title": "タンザニア産コーヒーが過去最高更新へ・キリマンジャロ周辺の再生投資で来年+10.3%",
+      "description": "USDAが昨日発表、タンザニア産コーヒーが来年は過去最高生産量に。",
+      "detail": "USDA Foreign Agricultural Service が 6/01 公開した Tanzania Coffee Annual で、2026/27 シーズンのタンザニア産グリーンコーヒー生産予想は 60kg 袋換算で 160 万袋、前年比 +10.3%。内訳はキリマンジャロ・アルーシャ・タンガを中心としたアラビカが 85 万袋 (+10 万袋)、ロブスタが 75 万袋 (+5 万袋)。荒れていた既存農園の再生プロジェクトが収穫期に入り、ここ数年の高値圏に張り付いたコーヒー価格が農家の投資余力を押し上げている。輸出予想は 141 万袋 (+2.9%) で、EU が米国の約 5 倍を買い付けている。タンザニアは 2024/25 が 135 万袋、25/26 が 145 万袋、26/27 が 160 万袋と 2 年で +19% の成長軌道。アフリカ産地は 5/22 のエチオピア (USDA で 12.1 万袋 / 2026/27 で世界 4 位浮上見込み) と並び、Brazil / Vietnam / Indonesia の主要 3 産地に依存しない第二の供給源として存在感を強めている。",
+      "narration": "今日のニュース。タンザニアのコーヒーが、来年は過去最高生産量を更新する見込み。USDAが昨日6月1日に正式発表しました。",
+      "tags": ["タンザニア", "キリマンジャロ", "USDA予想", "2026/27収穫", "アフリカ産地"],
       "narration_sections": {
-        "hook": "今、日本のGoogleで『コーヒー 値上げ』の検索が急増しています。でも実は、海外の卸売価格は今年20%も下落しているんです。",
-        "origin": "アラビカ先物は1ポンド2.70ドルで2024年11月以来の安値。ブラジル来期は記録的な6,670万袋の豊作予想です。一方で店頭が高いのは、今飲んでる豆が去年の高値で仕入れた在庫だから。卸が今下がっても、店頭に届くのは半年後なんです。",
-        "recommend": "秋頃には店頭価格も落ち着く見込み。今は値段で迷うより、好みの豆を見つける飲み比べに向く時期です。EC準備中、フォローしてお待ちください。"
+        "hook": "今日のニュース。タンザニアのコーヒーが、来年は過去最高生産量を更新する見込み。USDAが昨日6月1日に正式発表しました。",
+        "origin": "2026/27シーズンの生産予想は60kg袋換算で160万袋・前年比10.3%増。内訳はキリマンジャロ周辺のアラビカ85万袋、ロブスタ75万袋。荒れていた農園の再生投資と高値圏のコーヒー価格が、農家への追い風になっています。",
+        "recommend": "アフリカ産地のスペシャルティ豆が、これから市場に増えます。キリマンジャロのクリアな酸味が好きな方は、今年から来年が新ロット入荷の好機です。"
       },
       "section_titles": {
-        "hook": "値上げ検索急増中",
-        "origin": "海外卸は実は急落",
-        "recommend": "秋に価格転換点"
+        "hook": "タンザニア過去最高更新",
+        "origin": "USDA予想は160万袋",
+        "recommend": "キリマン入荷の好機"
       },
       "section_descriptions": {
-        "hook": "店頭値上げで日本人が今検索していること",
-        "origin": "アラビカ2.70ドルとブラジル記録豊作の矛盾",
-        "recommend": "今飲んでる在庫が切れる秋頃が転換点"
+        "hook": "USDAが昨日発表した2026/27年の生産予想",
+        "origin": "アラビカ85万・ロブスタ75万袋の内訳と背景",
+        "recommend": "クリアな酸味好きには嬉しいニュースです"
       }
     }
   ]
