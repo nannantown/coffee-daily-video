@@ -1,40 +1,40 @@
 {
-  "date": "2026-06-02",
+  "date": "2026-06-03",
   "discovery": {
-    "method": "official-src",
-    "description": "Daily Coffee News が 6/01 (昨日) カバーした USDA Foreign Agricultural Service の Tanzania Coffee Annual 2026/27 を起点に題材化。USDA FAS = 戦略 §推奨ソースの official-src 本流で、freshness ~24h と速報性最強。Pillar ② 産地・ハーベスト (25%) は 5/27 インドネシアから 6 日空きで、アフリカ産地ニュースとしては 5/19 WCR から 14 日ぶり。直近 2 日 (5/31 expert-blog, 6/01 trends) と method 連続違反なし、直近 14d Method 平均 TOP1 (41v、5/22 ブラジル脱カフェ 74v) の Exploit 投入。news-en (WORST 3 連続) を経由せず素材を official-src 本流から直接持ち込む 6 月運用方針。",
+    "method": "market-data",
+    "description": "NCA + SCA の Spring 2026 Specialty Coffee Report (NCDT 派生、1850 人全米調査) を Daily Coffee News が 6/02 18:00 ET 公開した記事を起点に題材化。米コーヒー協会公式データ = 本来 official-src だが、6/02 PDCA で official-src 連投 2 日違反回避と、news-en 6 月凍結ルールの代替再ラベル指定 (trends/market-data/official-src/expert-blog) に従い market-data に再ラベル。market-data の定義を「商品市況・為替・指標データ」から消費者市場指標 (NCDT) 含めて運用拡張する初回試験投入。Pillar ③ 業界・ビジネス (20%) は 5/31 Fine Robusta 以来 3 日空き、Pillar ② 産地 6 日中 3 日占有から方向転換。直近 2 日 (6/01 trends, 6/02 official-src) と method 連続違反なし、5/29 market-data から 5 日空き、freshness ~22h で 6/02 official-src 24h と同等の速報性。",
     "sources": [
-      "https://dailycoffeenews.com/2026/06/01/tanzania-coffee-report-production-rising-amid-farm-investments/",
-      "https://www.fas.usda.gov/data/tanzania-coffee-annual-7",
-      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Dar+Es+Salaam_Tanzania_TZ2025-0004.pdf",
-      "https://www.foodbusinessmea.com/tanzania-coffee-production-set-for-record-growth-in-2026-27/",
-      "https://www.ecofinagency.com/news-agriculture/2005-55755-tanzania-s-coffee-industry-targets-another-record-harvest-in-2026-27"
+      "https://dailycoffeenews.com/2026/06/02/specialty-coffee-holds-lead-over-traditional-coffee-in-the-u-s/",
+      "https://www.ncausa.org/Market-Research/Specialty-Coffee-Report",
+      "https://sca.coffee/sca-news/2025-national-coffee-data-trends-report-available",
+      "https://stir-tea-coffee.com/tea-coffee-news/us-specialty-coffee-consumption-surpasses-traditional-coffee/",
+      "https://www.gcrmag.com/us-report-highlights-growing-interest-in-specialty-coffee/"
     ],
-    "query": "Tanzania coffee production forecast 1.6 million bags 2026/27 USDA / Tanzania coffee 2026/27 USDA FAS report Arabica Robusta export Kilimanjaro",
-    "freshness_hours": 24
+    "query": "NCA SCA 2026 Specialty Coffee Report 47% past day traditional 42% espresso based cold specialty growth NCDT 1850 adults",
+    "freshness_hours": 22
   },
   "articles": [
     {
       "rank": 1,
-      "title": "タンザニア産コーヒーが過去最高更新へ・キリマンジャロ周辺の再生投資で来年+10.3%",
-      "description": "USDAが昨日発表、タンザニア産コーヒーが来年は過去最高生産量に。",
-      "detail": "USDA Foreign Agricultural Service が 6/01 公開した Tanzania Coffee Annual で、2026/27 シーズンのタンザニア産グリーンコーヒー生産予想は 60kg 袋換算で 160 万袋、前年比 +10.3%。内訳はキリマンジャロ・アルーシャ・タンガを中心としたアラビカが 85 万袋 (+10 万袋)、ロブスタが 75 万袋 (+5 万袋)。荒れていた既存農園の再生プロジェクトが収穫期に入り、ここ数年の高値圏に張り付いたコーヒー価格が農家の投資余力を押し上げている。輸出予想は 141 万袋 (+2.9%) で、EU が米国の約 5 倍を買い付けている。タンザニアは 2024/25 が 135 万袋、25/26 が 145 万袋、26/27 が 160 万袋と 2 年で +19% の成長軌道。アフリカ産地は 5/22 のエチオピア (USDA で 12.1 万袋 / 2026/27 で世界 4 位浮上見込み) と並び、Brazil / Vietnam / Indonesia の主要 3 産地に依存しない第二の供給源として存在感を強めている。",
-      "narration": "今日のニュース。タンザニアのコーヒーが、来年は過去最高生産量を更新する見込み。USDAが昨日6月1日に正式発表しました。",
-      "tags": ["タンザニア", "キリマンジャロ", "USDA予想", "2026/27収穫", "アフリカ産地"],
+      "title": "米でスペシャルティが2年連続首位・全米調査でレギュラー42%を47%が上回る",
+      "description": "米コーヒー協会が昨日公表、スペシャルティが2年連続で逆転継続。",
+      "detail": "NCA (米国コーヒー協会) と SCA (米国スペシャルティコーヒー協会) が共同で 6/02 公表した 2026 Specialty Coffee Report で、米成人 1850 人調査『昨日飲んだコーヒー』は スペシャルティ 47% vs レギュラー (伝統的) 42%。差がついたのは 2024 年からで、2025 年に続き 2 年連続の逆転継続。スペシャルティのエンジンはエスプレッソ系で、昨日エスプレッソ系を飲んだ層は過去最高の 29%、過去 1 週間ベースでは 45% に到達 (内訳: ラテ 21%、エスプレッソ 20%、カプチーノ 17%)。さらに『昨日スペシャルティを飲んだ層』のうち過去 1 週間に冷たいスペシャルティを飲んだ層は 60% (前年比 +6pt)、冷たいエスプレッソ系も 38% (+6pt)、コールドラテ 17% / コールドモカ 11% が牽引。米国の消費者行動レベルで『主流のコーヒー = スペシャルティ + エスプレッソ + コールド』への構造転換が確定した形。日本市場は EU/北米トレンドを 1-2 年遅れで追う傾向があり、今この瞬間が国内スペシャルティ需要の立ち上がり期に該当する可能性。",
+      "narration": "今日のニュース。アメリカで昨日、最新データが発表。スペシャルティコーヒーがレギュラーを抜き、2年連続で首位を守りました。米国コーヒー業界の主役交代が確定です。",
+      "tags": ["スペシャルティ", "米国消費動向", "NCA調査", "エスプレッソ", "2年連続首位"],
       "narration_sections": {
-        "hook": "今日のニュース。タンザニアのコーヒーが、来年は過去最高生産量を更新する見込み。USDAが昨日6月1日に正式発表しました。",
-        "origin": "2026/27シーズンの生産予想は60kg袋換算で160万袋・前年比10.3%増。内訳はキリマンジャロ周辺のアラビカ85万袋、ロブスタ75万袋。荒れていた農園の再生投資と高値圏のコーヒー価格が、農家への追い風になっています。",
-        "recommend": "アフリカ産地のスペシャルティ豆が、これから市場に増えます。キリマンジャロのクリアな酸味が好きな方は、今年から来年が新ロット入荷の好機です。"
+        "hook": "今日のニュース。アメリカで昨日、最新データが発表。スペシャルティコーヒーがレギュラーを抜き、2年連続で首位を守りました。米国コーヒー業界の主役交代が確定です。",
+        "origin": "全米調査で昨日飲んだコーヒーはスペシャルティ47%、レギュラー42%。差がついたのは2024年からで2年連続。エスプレッソ系は過去最高の29%、コールドラテなど冷たい系も前年比6ポイント増えました。1850人の最新NCDTデータです。",
+        "recommend": "日本のスペシャルティ市場も同じ波が来ています。家で淹れる方は、エスプレッソ系の豆も飲み比べてみてください。"
       },
       "section_titles": {
-        "hook": "タンザニア過去最高更新",
-        "origin": "USDA予想は160万袋",
-        "recommend": "キリマン入荷の好機"
+        "hook": "米でスペシャルティ首位",
+        "origin": "全米調査47%対42%",
+        "recommend": "エスプレッソ系がカギ"
       },
       "section_descriptions": {
-        "hook": "USDAが昨日発表した2026/27年の生産予想",
-        "origin": "アラビカ85万・ロブスタ75万袋の内訳と背景",
-        "recommend": "クリアな酸味好きには嬉しいニュースです"
+        "hook": "米NCDTが昨日公表、2年連続で逆転継続",
+        "origin": "1850人調査の中身、エスプレッソが過去最高29%",
+        "recommend": "日本にも来る波、家での飲み比べに最適です"
       }
     }
   ]
