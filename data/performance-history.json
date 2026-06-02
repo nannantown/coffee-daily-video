@@ -1250,10 +1250,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 8,
+        "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1293,10 +1293,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 23,
-        "likes": 0,
+        "views": 24,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1336,10 +1336,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 20,
+        "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1383,10 +1383,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 74,
-        "likes": 1,
+        "views": 75,
+        "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1425,10 +1425,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 82,
-        "likes": 0,
+        "views": 83,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1470,10 +1470,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 5,
+        "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1519,10 +1519,10 @@
         "freshness_hours": 36
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1563,10 +1563,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 6,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1610,10 +1610,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 1,
-        "likes": 0,
+        "views": 5,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-01T01:38:39.040Z"
+        "updatedAt": "2026-06-02T01:44:13.358Z"
       }
     },
     {
@@ -1658,6 +1658,50 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 8,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-06-02T01:44:13.358Z"
+      }
+    },
+    {
+      "videoId": "9hhXPHWXt3w",
+      "videoUrl": "https://youtube.com/shorts/9hhXPHWXt3w",
+      "date": "2026-06-02",
+      "title": "【コーヒー豆知識】タンザニア産コーヒーが過去最高更新へ・キリマンジャロ周辺の再生投資で来年+10.3%｜2026/06/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "official-src",
+        "description": "Daily Coffee News が 6/01 (昨日) カバーした USDA Foreign Agricultural Service の Tanzania Coffee Annual 2026/27 を起点に題材化。USDA FAS = 戦略 §推奨ソースの official-src 本流で、freshness ~24h と速報性最強。Pillar ② 産地・ハーベスト (25%) は 5/27 インドネシアから 6 日空きで、アフリカ産地ニュースとしては 5/19 WCR から 14 日ぶり。直近 2 日 (5/31 expert-blog, 6/01 trends) と method 連続違反なし、直近 14d Method 平均 TOP1 (41v、5/22 ブラジル脱カフェ 74v) の Exploit 投入。news-en (WORST 3 連続) を経由せず素材を official-src 本流から直接持ち込む 6 月運用方針。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/06/01/tanzania-coffee-report-production-rising-amid-farm-investments/",
+          "https://www.fas.usda.gov/data/tanzania-coffee-annual-7",
+          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Dar+Es+Salaam_Tanzania_TZ2025-0004.pdf",
+          "https://www.foodbusinessmea.com/tanzania-coffee-production-set-for-record-growth-in-2026-27/",
+          "https://www.ecofinagency.com/news-agriculture/2005-55755-tanzania-s-coffee-industry-targets-another-record-harvest-in-2026-27"
+        ],
+        "query": "Tanzania coffee production forecast 1.6 million bags 2026/27 USDA / Tanzania coffee 2026/27 USDA FAS report Arabica Robusta export Kilimanjaro",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1666,13 +1710,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-28",
-      "changes": [
-        "Day performance: Wed=164, Sat=75, Fri=66, Tue=59, Mon=31, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-29",
       "changes": [
@@ -1902,6 +1939,14 @@
       "changes": [
         "standard: 90 avg views (38 videos)",
         "Day performance: Sun=205, Tue=89, Sat=80, Wed=80, Mon=65, Fri=54, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-02",
+      "changes": [
+        "standard: 88 avg views (39 videos)",
+        "Day performance: Sun=206, Tue=89, Wed=81, Sat=80, Mon=56, Fri=54, Thu=16"
       ],
       "recommendedTemplate": "standard"
     }
