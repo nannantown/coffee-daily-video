@@ -1296,7 +1296,7 @@
         "views": 24,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1339,7 +1339,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1386,7 +1386,7 @@
         "views": 75,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1428,7 +1428,7 @@
         "views": 83,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1473,7 +1473,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1522,7 +1522,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1566,7 +1566,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1610,10 +1610,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 5,
+        "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1661,7 +1661,7 @@
         "views": 8,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-02T01:44:13.358Z"
+        "updatedAt": "2026-06-03T02:04:50.167Z"
       }
     },
     {
@@ -1702,6 +1702,50 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 6,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-03T02:04:50.167Z"
+      }
+    },
+    {
+      "videoId": "-vd8_n5w3xs",
+      "videoUrl": "https://youtube.com/shorts/-vd8_n5w3xs",
+      "date": "2026-06-03",
+      "title": "【コーヒー豆知識】米でスペシャルティが2年連続首位・全米調査でレギュラー42%を47%が上回る｜2026/06/03 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "market-data",
+        "description": "NCA + SCA の Spring 2026 Specialty Coffee Report (NCDT 派生、1850 人全米調査) を Daily Coffee News が 6/02 18:00 ET 公開した記事を起点に題材化。米コーヒー協会公式データ = 本来 official-src だが、6/02 PDCA で official-src 連投 2 日違反回避と、news-en 6 月凍結ルールの代替再ラベル指定 (trends/market-data/official-src/expert-blog) に従い market-data に再ラベル。market-data の定義を「商品市況・為替・指標データ」から消費者市場指標 (NCDT) 含めて運用拡張する初回試験投入。Pillar ③ 業界・ビジネス (20%) は 5/31 Fine Robusta 以来 3 日空き、Pillar ② 産地 6 日中 3 日占有から方向転換。直近 2 日 (6/01 trends, 6/02 official-src) と method 連続違反なし、5/29 market-data から 5 日空き、freshness ~22h で 6/02 official-src 24h と同等の速報性。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/06/02/specialty-coffee-holds-lead-over-traditional-coffee-in-the-u-s/",
+          "https://www.ncausa.org/Market-Research/Specialty-Coffee-Report",
+          "https://sca.coffee/sca-news/2025-national-coffee-data-trends-report-available",
+          "https://stir-tea-coffee.com/tea-coffee-news/us-specialty-coffee-consumption-surpasses-traditional-coffee/",
+          "https://www.gcrmag.com/us-report-highlights-growing-interest-in-specialty-coffee/"
+        ],
+        "query": "NCA SCA 2026 Specialty Coffee Report 47% past day traditional 42% espresso based cold specialty growth NCDT 1850 adults",
+        "freshness_hours": 22
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1710,14 +1754,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-04-29",
-      "changes": [
-        "standard: 51 avg views (10 videos)",
-        "Day performance: Wed=164, Sat=75, Tue=71, Fri=65, Mon=31, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-04-30",
       "changes": [
@@ -1947,6 +1983,14 @@
       "changes": [
         "standard: 88 avg views (39 videos)",
         "Day performance: Sun=206, Tue=89, Wed=81, Sat=80, Mon=56, Fri=54, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-03",
+      "changes": [
+        "standard: 86 avg views (40 videos)",
+        "Day performance: Sun=206, Wed=81, Sat=80, Tue=75, Mon=56, Fri=54, Thu=16"
       ],
       "recommendedTemplate": "standard"
     }
