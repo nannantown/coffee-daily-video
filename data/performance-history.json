@@ -1386,7 +1386,7 @@
         "views": 75,
         "likes": 2,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1428,7 +1428,7 @@
         "views": 83,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1470,10 +1470,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 6,
+        "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1522,7 +1522,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1566,7 +1566,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1613,7 +1613,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.274Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1661,7 +1661,7 @@
         "views": 8,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.275Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1702,10 +1702,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 10,
+        "views": 14,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.275Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1749,7 +1749,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-04T02:03:24.275Z"
+        "updatedAt": "2026-06-05T01:35:57.738Z"
       }
     },
     {
@@ -1793,19 +1793,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-05T01:35:57.738Z"
+      }
+    },
+    {
+      "videoId": "a7vhex8lj8k",
+      "videoUrl": "https://youtube.com/shorts/a7vhex8lj8k",
+      "date": "2026-06-05",
+      "title": "【コーヒー豆知識】ブラジル来年7190万袋でアラビカ4ヶ月ぶり安値・USDA最新予測｜2026/06/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "official-src",
+        "description": "USDA FAS Brazil Coffee Annual (GAIN レポート、2026 年 6 月発表) を起点に、Daily Coffee News 6/04 解説、Conab 公式 (66.7M バッグ予測、2026/02 発表) をクロスチェック。USDA は来期 71.9M バッグ (+14.1%)、アラビカ 47.5M バッグ (+25%)、輸出 49.07M バッグ (+29.6%) を予測、アラビカ先物が 4 ヶ月ぶり安値に達した供給要因を一次データから翻訳。official-src は直近 14d Method 中央値 TOP1 (42.5、n=2 確定) で、6/04 PDCA の subtype 暫定保留・6/03 market-data 再ラベル失敗を受け、本来の official-src 定義 (産地機関・公的機関の一次データ) に直球で戻る運用。直近 2 日 (6/03 market-data, 6/04 expert-blog) と連続違反なし、6/02 から 3 日空き。Pillar ① 市況へ意図的スイッチし、直近 4 日 (5/31 ③ / 6/03 ③ / 6/04 ③) の業界連投と Pillar ② 14d 36% 過密の両方を回避。素材タイプ仮説『過去最大級の数字を含む産地機関一次データは 60-80v 帯を再現』を 5/22 ブラジル脱カフェ 75v ライン踏襲で検証。",
+        "sources": [
+          "https://www.fas.usda.gov/data/gain/2026/06/brazil-coffee-annual",
+          "https://dailycoffeenews.com/2026/06/04/brazil-coffee-report-record-crop-and-exports-expected-for-2026-27/",
+          "https://www.comunicaffe.com/brazil-brazil-conab-forecasts-a-record-harvest-of-66-2-million-17-for-the-2026-27-season/",
+          "https://www.gcrmag.com/conab-shares-2026-brazilian-coffee-production-estimates/",
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-retreat-expectations-bumper-182149963.html"
+        ],
+        "query": "USDA FAS Brazil Coffee Annual 2026/27 71.9 million bags arabica 47.5 export 49.07 record crop June release",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-01",
-      "changes": [
-        "standard: 68 avg views (12 videos)",
-        "Day performance: Wed=217, Sat=75, Tue=72, Fri=65, Mon=32, Thu=29, Sun=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-03",
       "changes": [
@@ -2035,6 +2071,14 @@
       "changes": [
         "standard: 84 avg views (41 videos)",
         "Day performance: Sun=206, Sat=80, Tue=76, Wed=70, Mon=56, Fri=54, Thu=16"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-05",
+      "changes": [
+        "standard: 82 avg views (42 videos)",
+        "Day performance: Sun=206, Sat=80, Tue=76, Wed=70, Mon=56, Fri=54, Thu=13"
       ],
       "recommendedTemplate": "standard"
     }
