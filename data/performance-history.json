@@ -1473,7 +1473,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1522,7 +1522,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1566,7 +1566,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1613,7 +1613,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1661,7 +1661,7 @@
         "views": 9,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1705,7 +1705,7 @@
         "views": 14,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1749,7 +1749,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1790,10 +1790,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 0,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1834,10 +1834,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 2,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
+        "updatedAt": "2026-06-07T01:35:55.820Z"
       }
     },
     {
@@ -1881,6 +1881,53 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 6,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-07T01:35:55.820Z"
+      }
+    },
+    {
+      "videoId": "yG0lbA_ow80",
+      "videoUrl": "https://youtube.com/shorts/yG0lbA_ow80",
+      "date": "2026-06-07",
+      "title": "【コーヒー豆知識】焙煎度別・コーヒー豆の飲み頃ピーク日 浅煎り7日・中煎り3日・深煎り1日｜2026/06/07 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "日曜エバーグリーン枠で、6/06 NCDT アイスエスプレッソ系の家庭抽出 TIP からの自然な接続として、家で淹れる Primary 層が買い物直後に悩む『ロースト日から何日後が一番おいしいか』を、SCA 公式 magazine 25 (Preserving Freshness: A Race Against Time、Roasters Guild + ZHAW 共同研究記述) と Clive Coffee / The Coffee Calculator / General Warfield's Coffee / Headcount Coffee / Achilles Coffee Roasters の海外焙煎所定説 5 媒体で組み立て。核心は『焙煎度で飲み頃が違う = 深煎り 1〜3 日、中煎り 3〜5 日、浅煎り 7〜10 日、保存条件次第で浅煎りは 21 日後まで美味しさが伸びる例も SCA 系研究で報告』というハードファクト。expert-blog 中央値 5.5 と直近不振だが、6/03 PDCA で立てた subtype 仮説 (`-home` 家で再現可 vs `-meta` 業界制度・価格) の検証実弾として `-home` 型を投入。5/9 焙煎度ポリフェノール 85v / 5/16 価格差 77v / 5/23 UC デイビス水温 83v の『査読・業界根拠 × 家で 1 週間で再現できる行動』テンプレを踏襲、5/28 / 5/31 / 6/04 連続の `-meta` 系不振との subtype 差を実証する設計。直近 2 日 (6/05 official-src, 6/06 social-en) と method 連続違反なし、6/04 expert-blog から 3 日空き。Pillar ④ 焙煎士の一次情報 (14d 14% → 15%帯) の分布是正と、直近過多の Pillar ②産地 36% / ③業界 29% からの分散も兼ねる。OG への接続は『ロースト日記載のある豆を選び、浅煎りは焦らず 7 日休ませる』という習慣変化 TIP で締め、強い CTA は出さず焙煎士の一次情報という差別化軸で『フォローして待つ価値』を積む。",
+        "sources": [
+          "https://sca.coffee/sca-news/25-magazine/issue-4/preserving-freshness-race-time-25-magazine-issue-4",
+          "https://scanews.coffee/2018/04/18/preserving-freshness-race-time-25-magazine-issue-4/",
+          "https://clivecoffee.com/blogs/learn/is-your-coffee-too-fresh",
+          "https://thecoffeecalculator.com/guides/guide-to-coffee-freshness",
+          "https://generalwarfieldscoffee.com/blogs/our-blog/coffee-7-10-days-after-roasting",
+          "https://www.headcountcoffee.com/blogs/coffee-news/why-freshly-roasted-coffee-degasses-for-days",
+          "https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/the-science-of-freshness-why-roast-date-matters-more-than-you-think",
+          "https://quantumbrewcoffee.com/blogs/the-freshness-lab/fresh-roasted-coffee-guide"
+        ],
+        "query": "coffee bean rest time peak freshness days after roast specialty 2026; coffee roast date peak flavor window degassing CO2 days research; SCA specialty coffee association degassing study peak extraction window research roast",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -1889,14 +1936,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-04",
-      "changes": [
-        "standard: 143 avg views (14 videos)",
-        "Day performance: Sun=293, Wed=217, Sat=75, Tue=72, Thu=40, Fri=34, Mon=32"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-05",
       "changes": [
@@ -2126,6 +2165,14 @@
       "changes": [
         "standard: 80 avg views (43 videos)",
         "Day performance: Sun=206, Sat=80, Tue=76, Wed=70, Mon=56, Fri=47, Thu=13"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-07",
+      "changes": [
+        "standard: 79 avg views (44 videos)",
+        "Day performance: Sun=206, Tue=76, Wed=70, Sat=65, Mon=56, Fri=47, Thu=14"
       ],
       "recommendedTemplate": "standard"
     }
