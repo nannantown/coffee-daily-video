@@ -1,47 +1,49 @@
 {
-  "date": "2026-06-07",
+  "date": "2026-06-08",
   "discovery": {
-    "method": "expert-blog",
-    "description": "日曜エバーグリーン枠で、6/06 NCDT アイスエスプレッソ系の家庭抽出 TIP からの自然な接続として、家で淹れる Primary 層が買い物直後に悩む『ロースト日から何日後が一番おいしいか』を、SCA 公式 magazine 25 (Preserving Freshness: A Race Against Time、Roasters Guild + ZHAW 共同研究記述) と Clive Coffee / The Coffee Calculator / General Warfield's Coffee / Headcount Coffee / Achilles Coffee Roasters の海外焙煎所定説 5 媒体で組み立て。核心は『焙煎度で飲み頃が違う = 深煎り 1〜3 日、中煎り 3〜5 日、浅煎り 7〜10 日、保存条件次第で浅煎りは 21 日後まで美味しさが伸びる例も SCA 系研究で報告』というハードファクト。expert-blog 中央値 5.5 と直近不振だが、6/03 PDCA で立てた subtype 仮説 (`-home` 家で再現可 vs `-meta` 業界制度・価格) の検証実弾として `-home` 型を投入。5/9 焙煎度ポリフェノール 85v / 5/16 価格差 77v / 5/23 UC デイビス水温 83v の『査読・業界根拠 × 家で 1 週間で再現できる行動』テンプレを踏襲、5/28 / 5/31 / 6/04 連続の `-meta` 系不振との subtype 差を実証する設計。直近 2 日 (6/05 official-src, 6/06 social-en) と method 連続違反なし、6/04 expert-blog から 3 日空き。Pillar ④ 焙煎士の一次情報 (14d 14% → 15%帯) の分布是正と、直近過多の Pillar ②産地 36% / ③業界 29% からの分散も兼ねる。OG への接続は『ロースト日記載のある豆を選び、浅煎りは焦らず 7 日休ませる』という習慣変化 TIP で締め、強い CTA は出さず焙煎士の一次情報という差別化軸で『フォローして待つ価値』を積む。",
+    "method": "news-en",
+    "description": "月曜=平日ニュース日、戦略 §運用フォーマット『news-en 優先』原則に従い 5/27 インドネシア -8% (10v) 以来 12 日空きで news-en を再投入。USDA FAS Vietnam Coffee Annual (2026/27 32.5M 袋予想・うち Robusta 31.4M・前期比+2.5%) を Comunicaffe で確認し、Barchart / Nasdaq の Robusta 先物ロンドン市場 6 月初動向 ($3,456/ton、5 月中旬以来高値、+1.7%)、Vietdata / Helena Coffee の Central Highlands 降雨 -10〜40% / 既に 25/26 期作の 15-20% 損失見込みデータ、Beverage Daily の Vietnam coffee turmoil 報道をクロスソースで統合。核心は『USDA は来期も微増の楽観予想なのに、市場は逆に Robusta 先物を急騰させている。理由は中央高原の異常乾燥と 6-12 月のエルニーニョ到来予報』という逆説的市況ストーリー。5/26 メキシコ +54% (market-data 未着) / 5/27 インドネシア -8% (news-en 10v) / 5/29 尿素 +78% (market-data 8v) / 6/05 ブラジル +14% (official-src 8v) で組み立てた『世界供給地殻変動マルチ章シリーズ』の Vietnam 章として位置付け、ベトナム=世界最大ロブスタ産地の現状追加でシリーズ完成度を上げる。Pillar ① 市況を主柱、② 産地を副次扱いで直近 ② 36% / ③ 27% 過多の分散是正、Primary 層 (家で淹れる趣味層) が一番気にする『値段がなぜ上がるのか』に上流の天候・需給から答える。直近 2 日 (6/06 social-en, 6/07 expert-blog) と method 連続違反なし。フック語彙は『過去最高』『最高水準』を回避 (6/02-6/05 で 4 日連続使用済み)、『急上昇』『急騰』『逆に』で 6/07 PDCA の語彙鮮度ルールを実践。OG 接続は『日本のインスタント・大手チェーンのブレンドはベトナム産が主役』『秋にかけて店頭価格チェック、スペシャルティの相対割安感も注目』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
     "sources": [
-      "https://sca.coffee/sca-news/25-magazine/issue-4/preserving-freshness-race-time-25-magazine-issue-4",
-      "https://scanews.coffee/2018/04/18/preserving-freshness-race-time-25-magazine-issue-4/",
-      "https://clivecoffee.com/blogs/learn/is-your-coffee-too-fresh",
-      "https://thecoffeecalculator.com/guides/guide-to-coffee-freshness",
-      "https://generalwarfieldscoffee.com/blogs/our-blog/coffee-7-10-days-after-roasting",
-      "https://www.headcountcoffee.com/blogs/coffee-news/why-freshly-roasted-coffee-degasses-for-days",
-      "https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/the-science-of-freshness-why-roast-date-matters-more-than-you-think",
-      "https://quantumbrewcoffee.com/blogs/the-freshness-lab/fresh-roasted-coffee-guide"
+      "https://www.comunicaffe.com/vietnam-usda-cy-2025-26-production-up-to-31-7-million-bags-el-nino-looms-over-cy-2026-27",
+      "https://www.fas.usda.gov/data/vietnam-coffee-annual-10",
+      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Hanoi_Vietnam_VM2025-0018.pdf",
+      "https://www.barchart.com/story/news/2091067/robusta-coffee-rallies-on-dry-conditions-in-vietnam",
+      "https://www.nasdaq.com/articles/hot-and-dry-weather-vietnam-boosts-robusta-coffee-prices",
+      "https://www.vietdata.vn/post/concerned-about-drought-reducing-production-in-vietnam-robusta-coffee-prices-reached-a-new-peak",
+      "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
+      "https://www.beveragedaily.com/Article/2026/03/06/vietnam-coffee-turmoil-set-to-hit-global-prices/",
+      "https://www.sorafutures.com/archives/43447",
+      "https://tradingeconomics.com/commodity/coffee"
     ],
-    "query": "coffee bean rest time peak freshness days after roast specialty 2026; coffee roast date peak flavor window degassing CO2 days research; SCA specialty coffee association degassing study peak extraction window research roast",
-    "freshness_hours": 24
+    "query": "Vietnam Central Highlands drought June 2026 robusta futures rally USDA Vietnam Coffee Annual 31.7 32.5 million bags El Nino 2026/27; robusta London $3456 per ton 1.7% rally mid-May high; Dak Lak Gia Lai Lam Dong rainfall 10-40% deficit 15-20% crop loss",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "焙煎度別・コーヒー豆の飲み頃ピーク日 浅煎り7日・中煎り3日・深煎り1日",
-      "description": "ロースト日の翌日が一番おいしいわけじゃない。焙煎度で『飲み頃』が全然違うんです。",
-      "detail": "焙煎直後は二酸化炭素が出続けて抽出が乱れる『新鮮すぎ問題』。海外焙煎所の定説は深煎り1〜3日・中煎り3〜5日・浅煎り7〜10日後がピーク。SCA研究では浅煎りは保存環境次第で21日後まで伸びる例も。",
-      "narration": "実はコーヒー豆、ロースト日の翌日が一番おいしいわけじゃないんです。焙煎度で「飲み頃」が全然違って、知らないと損するかも。",
+      "title": "ベトナムでロブスタ先物が急騰・USDAは来期も増産予想なのに中央高原の乾燥で市場が逆走",
+      "description": "USDAは楽観予想を出したのに、ロブスタ先物は逆に急上昇。世界一の産地ベトナムで何が起きているのか。",
+      "detail": "中央高原の降雨が平年比10〜40%減、エルニーニョが6月から年末まで居座る予報。ロンドンのロブスタ先物は1.7%上昇でトン3456ドル、5月中旬以来の高値。既に今期作の15〜20%が乾燥被害との情報も。",
+      "narration": "先週からニュースで話題、世界一のロブスタ産地ベトナムでコーヒー先物が急上昇です。USDAは来期も増産予想なのに、なぜ値上がり?",
       "tags": [
-        "コーヒー鮮度",
-        "ロースト日",
-        "焙煎度別飲み頃"
+        "ロブスタ先物",
+        "ベトナム産地",
+        "コーヒー市況"
       ],
       "narration_sections": {
-        "hook": "実はコーヒー豆、ロースト日の翌日が一番おいしいわけじゃないんです。焙煎度で「飲み頃」が全然違って、知らないと損するかも。",
-        "origin": "焙煎直後は豆の中で二酸化炭素が出続けて、抽出が乱れる「新鮮すぎ問題」が起きます。海外焙煎所の定説では、深煎りは1〜3日、中煎り3〜5日、浅煎りは7〜10日後がピーク。SCAの研究だと、浅煎りは保存環境次第で21日後まで美味しさが伸びるケースも報告されています。",
-        "recommend": "お持ちの豆のロースト日を確認してみてください。特に浅煎りは焦らず7日休ませると、香りと甘さが一気に開きます。"
+        "hook": "先週からニュースで話題、世界一のロブスタ産地ベトナムでコーヒー先物が急上昇です。USDAは来期も増産予想なのに、なぜ値上がり?",
+        "origin": "原因は中央高原のひどい乾燥です。今年の降雨が平年比10〜40%減で、エルニーニョが6月から年末まで居座る予報。ロンドンのロブスタ先物はトンあたり3456ドル、5月中旬以来の高値で1.7%上昇。すでに今期作の15〜20%が乾燥被害との情報も出てます。",
+        "recommend": "日本のインスタントや大手チェーンのブレンドはベトナム産が主役。秋にかけて店頭価格を要チェック、スペシャルティの相対的な割安感も注目です。"
       },
       "section_titles": {
-        "hook": "翌日が最旨ではない",
-        "origin": "焙煎度別ピーク日",
-        "recommend": "7日休ませて化ける"
+        "hook": "ベトナムが急騰中",
+        "origin": "中央高原の異常乾燥",
+        "recommend": "秋の値動き要警戒"
       },
       "section_descriptions": {
-        "hook": "ロースト日の翌日が最旨だと思っていませんか",
-        "origin": "深煎り1日・中煎り3日・浅煎り7日が海外定説",
-        "recommend": "浅煎りは焦らず1週間寝かせるだけで化けます"
+        "hook": "USDA楽観のはずがコーヒー先物が急騰中",
+        "origin": "エルニーニョと-40%降雨で15%が消える",
+        "recommend": "インスタント・缶もブレンド主役はベトナム産"
       }
     }
   ]
