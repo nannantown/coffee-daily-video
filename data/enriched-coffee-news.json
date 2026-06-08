@@ -1,49 +1,46 @@
 {
-  "date": "2026-06-08",
+  "date": "2026-06-09",
   "discovery": {
-    "method": "news-en",
-    "description": "月曜=平日ニュース日、戦略 §運用フォーマット『news-en 優先』原則に従い 5/27 インドネシア -8% (10v) 以来 12 日空きで news-en を再投入。USDA FAS Vietnam Coffee Annual (2026/27 32.5M 袋予想・うち Robusta 31.4M・前期比+2.5%) を Comunicaffe で確認し、Barchart / Nasdaq の Robusta 先物ロンドン市場 6 月初動向 ($3,456/ton、5 月中旬以来高値、+1.7%)、Vietdata / Helena Coffee の Central Highlands 降雨 -10〜40% / 既に 25/26 期作の 15-20% 損失見込みデータ、Beverage Daily の Vietnam coffee turmoil 報道をクロスソースで統合。核心は『USDA は来期も微増の楽観予想なのに、市場は逆に Robusta 先物を急騰させている。理由は中央高原の異常乾燥と 6-12 月のエルニーニョ到来予報』という逆説的市況ストーリー。5/26 メキシコ +54% (market-data 未着) / 5/27 インドネシア -8% (news-en 10v) / 5/29 尿素 +78% (market-data 8v) / 6/05 ブラジル +14% (official-src 8v) で組み立てた『世界供給地殻変動マルチ章シリーズ』の Vietnam 章として位置付け、ベトナム=世界最大ロブスタ産地の現状追加でシリーズ完成度を上げる。Pillar ① 市況を主柱、② 産地を副次扱いで直近 ② 36% / ③ 27% 過多の分散是正、Primary 層 (家で淹れる趣味層) が一番気にする『値段がなぜ上がるのか』に上流の天候・需給から答える。直近 2 日 (6/06 social-en, 6/07 expert-blog) と method 連続違反なし。フック語彙は『過去最高』『最高水準』を回避 (6/02-6/05 で 4 日連続使用済み)、『急上昇』『急騰』『逆に』で 6/07 PDCA の語彙鮮度ルールを実践。OG 接続は『日本のインスタント・大手チェーンのブレンドはベトナム産が主役』『秋にかけて店頭価格チェック、スペシャルティの相対割安感も注目』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
+    "method": "official-src",
+    "description": "火曜=平日ニュース日、14d Method TOP1 official-src (avg 12.0、6/02 タンザニア 14v / 6/05 ブラジル 10v) を 4 日空きで再投入。素材は USDA FAS Colombia Coffee Semi-annual (MY 2026/27 生産 13.4M 袋 +7.2%、輸出 13.4M、輸出先 1 位米国・2 位 EU・3 位日本、Fedecafé 肥料支援) を一次データに、Daily Coffee News 6/02 配信記事、StoneX / Eleva Finca の Mitaca 副収穫期 2 ヶ月遅延 (本来 4 月ピーク → 6 月にずれ込み)・今期生産 28-33% 減データをクロスソースで統合。直近 90 日でコロンビア未投入の地理空白を埋め、5/26 メキシコ / 5/27 インドネシア / 6/02 タンザニア / 6/05 ブラジル / 6/08 ベトナムに続く『世界供給地殻変動マルチ章シリーズ』第 7 章 (南米第 2 位編)。Pillar ② 産地・ハーベスト を主柱、直近 14d ① 33% / ② 25% の偏りを ② 27% 帯へ揺り戻し。コロンビアは日本人最なじみ三大ブランドの 1 つでキリマンジャロ・モカと並び Primary 層 (家で淹れる趣味層) 直撃。6/02 タンザニア 14v との類比で『日本人になじみある産地 + 構造的回復ストーリー + 公式機関 (FNC/Fedecafé) の支援アクション』の三点セットでテンプレ再現を狙う。フック語彙『過去最高』『最高水準』は引き続き回避 (6/02-6/05 4 日連続使用後 6/06-6/08 で休眠維持)、『回復』『2ヶ月遅れ』『なじみ深い』で語彙差別化。直近 2 日 (6/07 expert-blog、6/08 news-en) と method 連続違反なし。OG 接続は『コロンビアは日本人になじみ深い豆。値段はまだ高止まりですが、来年は供給回復で買いやすくなりそう。秋以降の入荷を要チェック』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
     "sources": [
-      "https://www.comunicaffe.com/vietnam-usda-cy-2025-26-production-up-to-31-7-million-bags-el-nino-looms-over-cy-2026-27",
-      "https://www.fas.usda.gov/data/vietnam-coffee-annual-10",
-      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Hanoi_Vietnam_VM2025-0018.pdf",
-      "https://www.barchart.com/story/news/2091067/robusta-coffee-rallies-on-dry-conditions-in-vietnam",
-      "https://www.nasdaq.com/articles/hot-and-dry-weather-vietnam-boosts-robusta-coffee-prices",
-      "https://www.vietdata.vn/post/concerned-about-drought-reducing-production-in-vietnam-robusta-coffee-prices-reached-a-new-peak",
-      "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
-      "https://www.beveragedaily.com/Article/2026/03/06/vietnam-coffee-turmoil-set-to-hit-global-prices/",
-      "https://www.sorafutures.com/archives/43447",
-      "https://tradingeconomics.com/commodity/coffee"
+      "https://www.fas.usda.gov/data/colombia-coffee-semi-annual-10",
+      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Semi-annual_Bogota_Colombia_CO2025-0035.pdf",
+      "https://dailycoffeenews.com/2026/06/02/colombia-coffee-report-production-expected-to-rise-7-2-on-better-weather/",
+      "https://www.elevafinca.com/post/colombia-origin-update",
+      "https://www.stonex.com/en/market-intelligence/colombia-picks-main-harvest-amid-production-drop-of-up-to-40pct/",
+      "https://sucafina.com/emea/news/colombia-2025-26-harvest-update",
+      "https://federaciondecafeteros.org/?lang=en"
     ],
-    "query": "Vietnam Central Highlands drought June 2026 robusta futures rally USDA Vietnam Coffee Annual 31.7 32.5 million bags El Nino 2026/27; robusta London $3456 per ton 1.7% rally mid-May high; Dak Lak Gia Lai Lam Dong rainfall 10-40% deficit 15-20% crop loss",
-    "freshness_hours": 48
+    "query": "USDA FAS Colombia Coffee Semi-annual MY 2026/27 13.4 million bags 7.2% production rebound; Colombia mitaca harvest delayed June 2026 peak; Fedecafe FNC fertilizer support; Colombia 2025/26 production drop 28-33%; US EU Japan top destinations",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベトナムでロブスタ先物が急騰・USDAは来期も増産予想なのに中央高原の乾燥で市場が逆走",
-      "description": "USDAは楽観予想を出したのに、ロブスタ先物は逆に急上昇。世界一の産地ベトナムで何が起きているのか。",
-      "detail": "中央高原の降雨が平年比10〜40%減、エルニーニョが6月から年末まで居座る予報。ロンドンのロブスタ先物は1.7%上昇でトン3456ドル、5月中旬以来の高値。既に今期作の15〜20%が乾燥被害との情報も。",
-      "narration": "先週からニュースで話題、世界一のロブスタ産地ベトナムでコーヒー先物が急上昇です。USDAは来期も増産予想なのに、なぜ値上がり?",
+      "title": "コロンビアの副収穫期『ミタカ』が2ヶ月遅れで今ようやくピーク・USDAは来期7.2%増回復予想",
+      "description": "コロンビアの『ミタカ』ご存知ですか? 副収穫期が2ヶ月遅れで今ピーク入り。来期は回復見通しです。",
+      "detail": "USDA最新半期報でコロンビアは来期1340万袋へ7.2%回復見通し。今期は長雨で生産2〜3割減も乾期到来で軌道修正。輸出先1位米国・2位EU・3位は日本。FNCも肥料支援を発表。",
+      "narration": "コロンビアの『ミタカ』ってご存知ですか?副収穫期が今ようやくピーク入り。本来は4月のはずが、今年は2ヶ月遅れで6月にずれ込みです。",
       "tags": [
-        "ロブスタ先物",
-        "ベトナム産地",
-        "コーヒー市況"
+        "コロンビア産地",
+        "ミタカ収穫",
+        "USDA半期報"
       ],
       "narration_sections": {
-        "hook": "先週からニュースで話題、世界一のロブスタ産地ベトナムでコーヒー先物が急上昇です。USDAは来期も増産予想なのに、なぜ値上がり?",
-        "origin": "原因は中央高原のひどい乾燥です。今年の降雨が平年比10〜40%減で、エルニーニョが6月から年末まで居座る予報。ロンドンのロブスタ先物はトンあたり3456ドル、5月中旬以来の高値で1.7%上昇。すでに今期作の15〜20%が乾燥被害との情報も出てます。",
-        "recommend": "日本のインスタントや大手チェーンのブレンドはベトナム産が主役。秋にかけて店頭価格を要チェック、スペシャルティの相対的な割安感も注目です。"
+        "hook": "コロンビアの『ミタカ』ってご存知ですか?副収穫期が今ようやくピーク入り。本来は4月のはずが、今年は2ヶ月遅れで6月にずれ込みです。",
+        "origin": "USDA最新報告で、来期コロンビア生産は7.2%増の1340万袋へ回復見通し。今期は長雨で開花が乱れ2〜3割減でしたが乾期到来で軌道修正。輸出先トップは米国、2位EU、3位は日本。FNCも肥料支援を発表しました。",
+        "recommend": "コロンビアは日本人になじみ深い豆。値段はまだ高止まりですが、来年は供給回復で買いやすくなりそう。秋以降の入荷を要チェックです。"
       },
       "section_titles": {
-        "hook": "ベトナムが急騰中",
-        "origin": "中央高原の異常乾燥",
-        "recommend": "秋の値動き要警戒"
+        "hook": "ミタカ2ヶ月遅れ",
+        "origin": "来期7.2%増の回復",
+        "recommend": "秋の入荷を要注目"
       },
       "section_descriptions": {
-        "hook": "USDA楽観のはずがコーヒー先物が急騰中",
-        "origin": "エルニーニョと-40%降雨で15%が消える",
-        "recommend": "インスタント・缶もブレンド主役はベトナム産"
+        "hook": "副収穫期が4月から6月にずれ込みピーク入り",
+        "origin": "USDA来期1340万袋・輸出先3位は日本",
+        "recommend": "供給回復で買いやすくなる秋入荷を注目"
       }
     }
   ]
