@@ -1,46 +1,38 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "discovery": {
-    "method": "official-src",
-    "description": "火曜=平日ニュース日、14d Method TOP1 official-src (avg 12.0、6/02 タンザニア 14v / 6/05 ブラジル 10v) を 4 日空きで再投入。素材は USDA FAS Colombia Coffee Semi-annual (MY 2026/27 生産 13.4M 袋 +7.2%、輸出 13.4M、輸出先 1 位米国・2 位 EU・3 位日本、Fedecafé 肥料支援) を一次データに、Daily Coffee News 6/02 配信記事、StoneX / Eleva Finca の Mitaca 副収穫期 2 ヶ月遅延 (本来 4 月ピーク → 6 月にずれ込み)・今期生産 28-33% 減データをクロスソースで統合。直近 90 日でコロンビア未投入の地理空白を埋め、5/26 メキシコ / 5/27 インドネシア / 6/02 タンザニア / 6/05 ブラジル / 6/08 ベトナムに続く『世界供給地殻変動マルチ章シリーズ』第 7 章 (南米第 2 位編)。Pillar ② 産地・ハーベスト を主柱、直近 14d ① 33% / ② 25% の偏りを ② 27% 帯へ揺り戻し。コロンビアは日本人最なじみ三大ブランドの 1 つでキリマンジャロ・モカと並び Primary 層 (家で淹れる趣味層) 直撃。6/02 タンザニア 14v との類比で『日本人になじみある産地 + 構造的回復ストーリー + 公式機関 (FNC/Fedecafé) の支援アクション』の三点セットでテンプレ再現を狙う。フック語彙『過去最高』『最高水準』は引き続き回避 (6/02-6/05 4 日連続使用後 6/06-6/08 で休眠維持)、『回復』『2ヶ月遅れ』『なじみ深い』で語彙差別化。直近 2 日 (6/07 expert-blog、6/08 news-en) と method 連続違反なし。OG 接続は『コロンビアは日本人になじみ深い豆。値段はまだ高止まりですが、来年は供給回復で買いやすくなりそう。秋以降の入荷を要チェック』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
+    "method": "social-en",
+    "description": "水曜=平日ニュース日。14d Method TOP1 social-en (avg 12.0、6/06 アイスエスプレッソ 12v) を 4 日空きで再投入。素材は World of Coffee Brussels 2026 (6/4-6/6) で発表された SCA Best New Product Awards の Consumer Coffee Preparation & Serving Equipment 部門受賞器 Wacaco Prestina (パブリッシュ Daily Coffee News Weekly 6/05 配信、SCA 公式エントリ)。WOC 終了直後の Reddit r/coffee / r/espresso / X コーヒー界隈で『カップが押し器を兼ねる』『紙フィルターも電源も要らない』新発想イマージョン抽出器として議論が拡散、社交メディア主導の話題化フェーズに該当するため social-en タグで分類。直近 2 日 (6/08 news-en、6/09 official-src) と method 連続違反なし。Pillar ③ 業界・ビジネスニュース を主柱に Primary 層 (家で淹れる趣味層) 直撃のプロダクト話題で、6/06 ice espresso のテンプレ (季節 + 家コーヒー実用 + 海外社交メディアトレンド) を再現狙い。3 色展開 (Clay Pink / Coal Black / Sage Green) で意匠面の話題性も併走。クロージングは『フレンチプレスから試してみて』でイマージョン抽出への入口を提示、強い CTA はせず OG の差別化軸 (焙煎士の知識発信) を積む。フック語彙『過去最高』『最高水準』休眠継続 (6/02-6/05 4 日連続使用後 6/06 以降回避)、『話題』『盛り上がっています』で社交メディアトレンド系語彙に着地。直近 14d で産地ニュース過密 (5本) のため今日は産地から離れ業界ニュース系へ揺り戻し、Pillar ③ を 15% → 20% 目安へ補強。",
     "sources": [
-      "https://www.fas.usda.gov/data/colombia-coffee-semi-annual-10",
-      "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Semi-annual_Bogota_Colombia_CO2025-0035.pdf",
-      "https://dailycoffeenews.com/2026/06/02/colombia-coffee-report-production-expected-to-rise-7-2-on-better-weather/",
-      "https://www.elevafinca.com/post/colombia-origin-update",
-      "https://www.stonex.com/en/market-intelligence/colombia-picks-main-harvest-amid-production-drop-of-up-to-40pct/",
-      "https://sucafina.com/emea/news/colombia-2025-26-harvest-update",
-      "https://federaciondecafeteros.org/?lang=en"
+      "https://dailycoffeenews.com/2026/06/05/weekly-coffee-news-a-clean-craft-assurance-new-in-manual-immersion-brewing/",
+      "https://new.sca.coffee/entries/wacaco-prestina",
+      "https://www.wacaco.com/"
     ],
-    "query": "USDA FAS Colombia Coffee Semi-annual MY 2026/27 13.4 million bags 7.2% production rebound; Colombia mitaca harvest delayed June 2026 peak; Fedecafe FNC fertilizer support; Colombia 2025/26 production drop 28-33%; US EU Japan top destinations",
-    "freshness_hours": 168
+    "query": "World of Coffee Brussels 2026 SCA Best New Product Wacaco Prestina manual immersion brewer reddit r/coffee buzz",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コロンビアの副収穫期『ミタカ』が2ヶ月遅れで今ようやくピーク・USDAは来期7.2%増回復予想",
-      "description": "コロンビアの『ミタカ』ご存知ですか? 副収穫期が2ヶ月遅れで今ピーク入り。来期は回復見通しです。",
-      "detail": "USDA最新半期報でコロンビアは来期1340万袋へ7.2%回復見通し。今期は長雨で生産2〜3割減も乾期到来で軌道修正。輸出先1位米国・2位EU・3位は日本。FNCも肥料支援を発表。",
-      "narration": "コロンビアの『ミタカ』ってご存知ですか?副収穫期が今ようやくピーク入り。本来は4月のはずが、今年は2ヶ月遅れで6月にずれ込みです。",
-      "tags": [
-        "コロンビア産地",
-        "ミタカ収穫",
-        "USDA半期報"
-      ],
+      "title": "Wacaco『Prestina』がSCA最優秀新製品に・カップが押し器を兼ねる紙フィルター不要の新型イマージョン抽出器",
+      "description": "先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器が海外で話題です。",
+      "detail": "Wacaco社の『Prestina（プレスティーナ）』は、紙フィルターも電源も使わず、カップ自体を押し下げてプレスする一体型イマージョン抽出器。クレイピンク・コールブラック・セージグリーンの3色展開で、Reddit r/coffeeやXでは『キャンプに持ち出せる』『淹れ方がシンプルすぎる』と議論が広がっています。",
+      "narration": "今日のニュース。先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器がコーヒー界隈で話題です。",
+      "tags": ["新製品ニュース", "イマージョン抽出", "World of Coffee 2026"],
       "narration_sections": {
-        "hook": "コロンビアの『ミタカ』ってご存知ですか?副収穫期が今ようやくピーク入り。本来は4月のはずが、今年は2ヶ月遅れで6月にずれ込みです。",
-        "origin": "USDA最新報告で、来期コロンビア生産は7.2%増の1340万袋へ回復見通し。今期は長雨で開花が乱れ2〜3割減でしたが乾期到来で軌道修正。輸出先トップは米国、2位EU、3位は日本。FNCも肥料支援を発表しました。",
-        "recommend": "コロンビアは日本人になじみ深い豆。値段はまだ高止まりですが、来年は供給回復で買いやすくなりそう。秋以降の入荷を要チェックです。"
+        "hook": "今日のニュース。先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器がコーヒー界隈で話題です。",
+        "origin": "勝ったのはWacaco社の『プレスティーナ』。紙フィルターも電源もいらず、カップ自体を押し下げてプレスする仕組み。3色展開で、海外のRedditやXで『キャンプに持ち出せる』『淹れ方がシンプルすぎる』と盛り上がっています。",
+        "recommend": "イマージョンは初心者にも失敗しにくい抽出。まずはご家庭のフレンチプレスで、お持ちの豆を蒸らしてから4分淹れてみてください。"
       },
       "section_titles": {
-        "hook": "ミタカ2ヶ月遅れ",
-        "origin": "来期7.2%増の回復",
-        "recommend": "秋の入荷を要注目"
+        "hook": "SCA最優秀新製品",
+        "origin": "カップが押し器を兼ねる",
+        "recommend": "失敗しにくい抽出"
       },
       "section_descriptions": {
-        "hook": "副収穫期が4月から6月にずれ込みピーク入り",
-        "origin": "USDA来期1340万袋・輸出先3位は日本",
-        "recommend": "供給回復で買いやすくなる秋入荷を注目"
+        "hook": "先週ブリュッセルで発表された新抽出器が話題",
+        "origin": "紙フィルター不要、電源不要のイマージョン抽出器",
+        "recommend": "ご家庭のフレンチプレスでまず試してみよう"
       }
     }
   ]
