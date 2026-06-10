@@ -1,38 +1,40 @@
 {
-  "date": "2026-06-10",
+  "date": "2026-06-11",
   "discovery": {
-    "method": "social-en",
-    "description": "水曜=平日ニュース日。14d Method TOP1 social-en (avg 12.0、6/06 アイスエスプレッソ 12v) を 4 日空きで再投入。素材は World of Coffee Brussels 2026 (6/4-6/6) で発表された SCA Best New Product Awards の Consumer Coffee Preparation & Serving Equipment 部門受賞器 Wacaco Prestina (パブリッシュ Daily Coffee News Weekly 6/05 配信、SCA 公式エントリ)。WOC 終了直後の Reddit r/coffee / r/espresso / X コーヒー界隈で『カップが押し器を兼ねる』『紙フィルターも電源も要らない』新発想イマージョン抽出器として議論が拡散、社交メディア主導の話題化フェーズに該当するため social-en タグで分類。直近 2 日 (6/08 news-en、6/09 official-src) と method 連続違反なし。Pillar ③ 業界・ビジネスニュース を主柱に Primary 層 (家で淹れる趣味層) 直撃のプロダクト話題で、6/06 ice espresso のテンプレ (季節 + 家コーヒー実用 + 海外社交メディアトレンド) を再現狙い。3 色展開 (Clay Pink / Coal Black / Sage Green) で意匠面の話題性も併走。クロージングは『フレンチプレスから試してみて』でイマージョン抽出への入口を提示、強い CTA はせず OG の差別化軸 (焙煎士の知識発信) を積む。フック語彙『過去最高』『最高水準』休眠継続 (6/02-6/05 4 日連続使用後 6/06 以降回避)、『話題』『盛り上がっています』で社交メディアトレンド系語彙に着地。直近 14d で産地ニュース過密 (5本) のため今日は産地から離れ業界ニュース系へ揺り戻し、Pillar ③ を 15% → 20% 目安へ補強。",
+    "method": "news-en",
+    "description": "木曜=平日ニュース日。14d Method TOP1 (trends 9.0/n=1, official-src 9.0/n=3, expert-blog 6.25/n=4) のうち official-src は前日 6/09 使用で連続不可、trends は 6/01 で 10 日空きあるが今日は大型ビジネスニュースの素材力が圧倒的。WORST だった news-en (n=1, v=2、6/08 ベトナム先物) を Explore 枠で再挑戦。前回失敗原因はコモディティ先物の専門用語過多と判断、今日は『世界最大級チェーンの巨大数字』というコンシューマー寄り素材で再評価。素材は 6/8 PR Newswire 経由公表の Luckin Coffee マイルストーン: 世界店舗数 35,000 突破、非コーヒー飲料の累計売上が RMB20B (= 約 US$2.9B / 約3,000億円) 超え (5/31 時点)。Comunicaffe / Global Coffee Report / Branding in Asia / The Manila Times / Food Business MEA / VIR (Vietnam) 等が同日〜翌日でカバー、業界全体で話題化中。看板の Coconut Latte は累計 21 億杯、Jasmine Milk Tea / Orange Americano など 22 商品が累計 1 億杯超え。コーヒー豆は Brazil / Ethiopia / Indonesia から調達継続を併せて公表。Pillar ③ 業界・ビジネスニュース (14d で 3 本 21%) を補強、6/02 タンザニア過去最高 (v=14)、6/05 ブラジル7190万袋 (v=10)、6/01 値上げ検索急増 (v=9) の『大型数字ヒック勝ち筋』テンプレを継承。Primary 層 (家で淹れる趣味層) へは『巨大チェーンの多角化と、家淹れスペシャルティの個性深掘りは真逆ベクトル』というフレーミングで自家焙煎の差別化軸を裏打ち、強い CTA は避け『産地・品種を深掘るスペシャルティ志向が刺さる時代』で締め。直近 2 日 (6/10 social-en、6/09 official-src) と method 連続違反なし。news-en 自体は 6/08 以来 3 日空き。フック語彙『過去最高』『最高水準』休眠継続、『3,000億円超え』『3.5万店突破』の数字インパクト主導で着地。",
     "sources": [
-      "https://dailycoffeenews.com/2026/06/05/weekly-coffee-news-a-clean-craft-assurance-new-in-manual-immersion-brewing/",
-      "https://new.sca.coffee/entries/wacaco-prestina",
-      "https://www.wacaco.com/"
+      "https://www.comunicaffe.com/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/",
+      "https://www.gcrmag.com/luckin-coffee-shares-performance-milestones/",
+      "https://www.brandinginasia.com/luckin-coffee-global-store-count-surpasses-35000-locations/",
+      "https://www.manilatimes.net/2026/06/08/tmt-newswire/pr-newswire/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/2360649",
+      "https://www.foodbusinessmea.com/luckin-coffee-surpasses-35000-stores-as-non-coffee-sales-top-us2-9b/"
     ],
-    "query": "World of Coffee Brussels 2026 SCA Best New Product Wacaco Prestina manual immersion brewer reddit r/coffee buzz",
-    "freshness_hours": 120
+    "query": "Luckin Coffee June 2026 non-coffee beverage RMB 20 billion 35000 stores milestone announcement",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Wacaco『Prestina』がSCA最優秀新製品に・カップが押し器を兼ねる紙フィルター不要の新型イマージョン抽出器",
-      "description": "先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器が海外で話題です。",
-      "detail": "Wacaco社の『Prestina（プレスティーナ）』は、紙フィルターも電源も使わず、カップ自体を押し下げてプレスする一体型イマージョン抽出器。クレイピンク・コールブラック・セージグリーンの3色展開で、Reddit r/coffeeやXでは『キャンプに持ち出せる』『淹れ方がシンプルすぎる』と議論が広がっています。",
-      "narration": "今日のニュース。先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器がコーヒー界隈で話題です。",
-      "tags": ["新製品ニュース", "イマージョン抽出", "World of Coffee 2026"],
+      "title": "Luckin Coffeeが世界店舗3.5万突破・非コーヒー飲料の累計売上3,000億円超え",
+      "description": "中国発の世界最大級チェーンLuckinが6月8日に発表した最新マイルストーンが業界で話題です。",
+      "detail": "Luckin Coffeeは6月8日、世界店舗数が35,000を突破し、非コーヒー飲料の累計売上が約3,000億円(RMB20B)を超えたと公表。看板のココナッツラテは累計21億杯、ジャスミンミルクティーやオレンジアメリカーノなど22商品がそれぞれ1億杯を突破。コーヒー豆は今もブラジル・エチオピア・インドネシアから調達し続けると明らかにしました。",
+      "narration": "今日のニュース。Luckin Coffeeが世界店舗数35,000を突破、コーヒー以外の飲料の売上が3,000億円超えと話題です。",
+      "tags": ["業界ニュース", "Luckin Coffee", "店舗3.5万突破"],
       "narration_sections": {
-        "hook": "今日のニュース。先週ブリュッセルで終わったWorld of Coffeeで、SCAの最優秀新製品に選ばれた抽出器がコーヒー界隈で話題です。",
-        "origin": "勝ったのはWacaco社の『プレスティーナ』。紙フィルターも電源もいらず、カップ自体を押し下げてプレスする仕組み。3色展開で、海外のRedditやXで『キャンプに持ち出せる』『淹れ方がシンプルすぎる』と盛り上がっています。",
-        "recommend": "イマージョンは初心者にも失敗しにくい抽出。まずはご家庭のフレンチプレスで、お持ちの豆を蒸らしてから4分淹れてみてください。"
+        "hook": "今日のニュース。Luckin Coffeeが世界店舗数35,000を突破、コーヒー以外の飲料の売上が3,000億円超えと話題です。",
+        "origin": "6月8日に中国発のLuckinが発表。看板のココナッツラテは累計21億杯、ジャスミンミルクティーやオレンジアメリカーノなど22商品がそれぞれ1億杯を突破しました。コーヒー豆は今もブラジル・エチオピア・インドネシアから調達と公表されています。",
+        "recommend": "巨大チェーンが多角化を進める一方で、家で淹れる派ほど産地・品種を深掘るスペシャルティ志向が今、刺さる時代です。"
       },
       "section_titles": {
-        "hook": "SCA最優秀新製品",
-        "origin": "カップが押し器を兼ねる",
-        "recommend": "失敗しにくい抽出"
+        "hook": "Luckin店舗3.5万",
+        "origin": "非コーヒーで3千億円",
+        "recommend": "家淹れは個性勝負"
       },
       "section_descriptions": {
-        "hook": "先週ブリュッセルで発表された新抽出器が話題",
-        "origin": "紙フィルター不要、電源不要のイマージョン抽出器",
-        "recommend": "ご家庭のフレンチプレスでまず試してみよう"
+        "hook": "中国大手チェーンの店舗数と非コーヒー売上の最新発表",
+        "origin": "看板はココナッツラテ累計21億杯、22商品が1億超え",
+        "recommend": "多角化チェーンと真逆、産地で選ぶスペシャルティの時代"
       }
     }
   ]
