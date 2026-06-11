@@ -1,40 +1,41 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-06-12",
   "discovery": {
-    "method": "news-en",
-    "description": "木曜=平日ニュース日。14d Method TOP1 (trends 9.0/n=1, official-src 9.0/n=3, expert-blog 6.25/n=4) のうち official-src は前日 6/09 使用で連続不可、trends は 6/01 で 10 日空きあるが今日は大型ビジネスニュースの素材力が圧倒的。WORST だった news-en (n=1, v=2、6/08 ベトナム先物) を Explore 枠で再挑戦。前回失敗原因はコモディティ先物の専門用語過多と判断、今日は『世界最大級チェーンの巨大数字』というコンシューマー寄り素材で再評価。素材は 6/8 PR Newswire 経由公表の Luckin Coffee マイルストーン: 世界店舗数 35,000 突破、非コーヒー飲料の累計売上が RMB20B (= 約 US$2.9B / 約3,000億円) 超え (5/31 時点)。Comunicaffe / Global Coffee Report / Branding in Asia / The Manila Times / Food Business MEA / VIR (Vietnam) 等が同日〜翌日でカバー、業界全体で話題化中。看板の Coconut Latte は累計 21 億杯、Jasmine Milk Tea / Orange Americano など 22 商品が累計 1 億杯超え。コーヒー豆は Brazil / Ethiopia / Indonesia から調達継続を併せて公表。Pillar ③ 業界・ビジネスニュース (14d で 3 本 21%) を補強、6/02 タンザニア過去最高 (v=14)、6/05 ブラジル7190万袋 (v=10)、6/01 値上げ検索急増 (v=9) の『大型数字ヒック勝ち筋』テンプレを継承。Primary 層 (家で淹れる趣味層) へは『巨大チェーンの多角化と、家淹れスペシャルティの個性深掘りは真逆ベクトル』というフレーミングで自家焙煎の差別化軸を裏打ち、強い CTA は避け『産地・品種を深掘るスペシャルティ志向が刺さる時代』で締め。直近 2 日 (6/10 social-en、6/09 official-src) と method 連続違反なし。news-en 自体は 6/08 以来 3 日空き。フック語彙『過去最高』『最高水準』休眠継続、『3,000億円超え』『3.5万店突破』の数字インパクト主導で着地。",
+    "method": "official-src",
+    "description": "金曜=平日ニュース日。14d Method 集計で official-src が avg 9.67/n=3 で TOP1、直近使用は 6/09 (3 日空き) で連続違反なし。trends は TOP2 (9.0/n=1) ながら素材が単発、social-en (8.0/n=2) は直近 6/10 で 2 日連続違反、news-en (1.5/n=2) は 6/11 (Luckin) と直近で連続違反かつ WORST 域。今日は UNSW Sydney School of Chemical Engineering の査読論文 (Dr. Francisco Trujillo 主導、6/01 オンライン公開 in Journal of Food Engineering) を一次出典として official-src で攻める。素材は『超音波エスプレッソ (Ultrasonic Espresso)』: 標準ポルタフィルター・バスケットを超音波リアクター化し、常温水で 2.5〜3 分抽出、カフェイン/オイル/フレーバー成分を音響キャビテーション (acoustic cavitation) で引き出す方式。論文は 18.03% 抽出収率 (325μm 粒度) を達成、消費電力 75% 削減、100 人ブラインドテストで通常エスプレッソと識別不可と報告。WO2025/118023A1 で UNSW が特許出願中。報道は UNSW 公式 newsroom (6/09)、Daily Coffee News (6/10)、Comunicaffe、TechXplore、SmartCompany、BeanScene、CityNews Canberra、Digital Trends 等で広範に拡散、freshness ~72h で 168h 制約クリア。Pillar ③業界・ビジネスニュース (14d 比率 21% → 22%、目標 20% 近傍維持)。④焙煎士の一次情報 (14d 1 本 7%) との橋渡しにもなり、家淹れ層の知的好奇心を刺激しつつ『新方式が普及してもスペシャリティ豆の個性を引き出す技術』に着地。NG パターン回避: コーヒーあるある×、雑学×、出典不明×、freshness>168 ×、産地タグ使い回し ×。フック語彙は『常温の水で』『時代が来ました』で勝ち筋テンプレ (急増/突破/過去最高) と差別化、技術ニュースは数字インパクト『75%省エネ』『2.5〜3 分』『100 人ブラインドで区別不能』で支える。Primary 層への接続は『カフェの電気代を下げる技術』→『スペシャリティ豆の風味を引き出す抽出の選択肢が増える』で OG の差別化軸を裏打ち、強い CTA は控えて『EC 準備中フォロー』ニュアンスは bio 任せ。",
     "sources": [
-      "https://www.comunicaffe.com/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/",
-      "https://www.gcrmag.com/luckin-coffee-shares-performance-milestones/",
-      "https://www.brandinginasia.com/luckin-coffee-global-store-count-surpasses-35000-locations/",
-      "https://www.manilatimes.net/2026/06/08/tmt-newswire/pr-newswire/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/2360649",
-      "https://www.foodbusinessmea.com/luckin-coffee-surpasses-35000-stores-as-non-coffee-sales-top-us2-9b/"
+      "https://www.unsw.edu.au/newsroom/news/2026/06/New-way-making-espresso",
+      "https://dailycoffeenews.com/2026/06/10/researchers-say-ultrasonic-brewing-can-match-espresso-reduce-energy/",
+      "https://www.comunicaffe.com/australian-researchers-brew-espresso-using-an-ultrasonic-machine-saving-over-75-in-energy/",
+      "https://techxplore.com/news/2026-06-espresso-coffee-world.html",
+      "https://www.smartcompany.com.au/technology/ultrasonic-espresso-slash-coffee-costs-for-cafes-unsw/",
+      "https://www.beanscenemag.com.au/creating-a-new-way-to-brew-coffee"
     ],
-    "query": "Luckin Coffee June 2026 non-coffee beverage RMB 20 billion 35000 stores milestone announcement",
+    "query": "UNSW Sydney ultrasonic espresso Francisco Trujillo Journal of Food Engineering June 2026 room temperature 75% energy",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Luckin Coffeeが世界店舗3.5万突破・非コーヒー飲料の累計売上3,000億円超え",
-      "description": "中国発の世界最大級チェーンLuckinが6月8日に発表した最新マイルストーンが業界で話題です。",
-      "detail": "Luckin Coffeeは6月8日、世界店舗数が35,000を突破し、非コーヒー飲料の累計売上が約3,000億円(RMB20B)を超えたと公表。看板のココナッツラテは累計21億杯、ジャスミンミルクティーやオレンジアメリカーノなど22商品がそれぞれ1億杯を突破。コーヒー豆は今もブラジル・エチオピア・インドネシアから調達し続けると明らかにしました。",
-      "narration": "今日のニュース。Luckin Coffeeが世界店舗数35,000を突破、コーヒー以外の飲料の売上が3,000億円超えと話題です。",
-      "tags": ["業界ニュース", "Luckin Coffee", "店舗3.5万突破"],
+      "title": "豪UNSWが超音波エスプレッソを発表・常温水で2.5分抽出・電力75%削減",
+      "description": "今週、シドニーの大学が発表した『超音波エスプレッソ』が世界で話題になっています。",
+      "detail": "UNSWシドニー校化学工学部のフランシスコ・トルヒージョ博士チームが6月1日、Journal of Food Engineering誌で『超音波エスプレッソ』の論文を公開。標準のポルタフィルター・バスケットに振動子を当てて高周波の超音波をかけると、音響キャビテーション(微細な泡の生成と崩壊)が豆を砕き、常温の水でも2.5〜3分でエスプレッソ並みの抽出が完成。325ミクロン粒度で抽出収率18.03%を記録し、100人のブラインドテストでも通常品と識別できなかったと報告。エネルギーは従来比75%減で、UNSWは特許出願中(WO2025/118023A1)。",
+      "narration": "知ってました?常温の水でエスプレッソが淹れられる時代が来ました。豪シドニーのUNSWが今週『超音波エスプレッソ』を発表したんです。",
+      "tags": ["業界ニュース", "超音波エスプレッソ", "UNSW Sydney"],
       "narration_sections": {
-        "hook": "今日のニュース。Luckin Coffeeが世界店舗数35,000を突破、コーヒー以外の飲料の売上が3,000億円超えと話題です。",
-        "origin": "6月8日に中国発のLuckinが発表。看板のココナッツラテは累計21億杯、ジャスミンミルクティーやオレンジアメリカーノなど22商品がそれぞれ1億杯を突破しました。コーヒー豆は今もブラジル・エチオピア・インドネシアから調達と公表されています。",
-        "recommend": "巨大チェーンが多角化を進める一方で、家で淹れる派ほど産地・品種を深掘るスペシャルティ志向が今、刺さる時代です。"
+        "hook": "知ってました?常温の水でエスプレッソが淹れられる時代が来ました。豪シドニーのUNSWが今週『超音波エスプレッソ』を発表したんです。",
+        "origin": "6月1日にJournal of Food Engineering誌に載った論文で、ポルタフィルターに超音波の振動子を当てて2.5から3分で抽出。100人のブラインドテストで通常のエスプレッソと区別がつかず、エネルギーは75%削減と報告されました。",
+        "recommend": "カフェの電気代を下げる技術として実用化が期待されます。スペシャリティ豆の風味を引き出す抽出の選択肢が、また一つ増えそうですね。"
       },
       "section_titles": {
-        "hook": "Luckin店舗3.5万",
-        "origin": "非コーヒーで3千億円",
-        "recommend": "家淹れは個性勝負"
+        "hook": "超音波エスプレッソ",
+        "origin": "75%省エネで再現",
+        "recommend": "新しい抽出の選択肢"
       },
       "section_descriptions": {
-        "hook": "中国大手チェーンの店舗数と非コーヒー売上の最新発表",
-        "origin": "看板はココナッツラテ累計21億杯、22商品が1億超え",
-        "recommend": "多角化チェーンと真逆、産地で選ぶスペシャルティの時代"
+        "hook": "UNSWが常温水で淹れる新方式を6月に発表しました",
+        "origin": "100人のブラインドテストで通常品と区別がつかず",
+        "recommend": "電気代節約とスペシャリティの相性を考えます"
       }
     }
   ]
