@@ -1,41 +1,39 @@
 {
-  "date": "2026-06-12",
+  "date": "2026-06-13",
   "discovery": {
-    "method": "official-src",
-    "description": "金曜=平日ニュース日。14d Method 集計で official-src が avg 9.67/n=3 で TOP1、直近使用は 6/09 (3 日空き) で連続違反なし。trends は TOP2 (9.0/n=1) ながら素材が単発、social-en (8.0/n=2) は直近 6/10 で 2 日連続違反、news-en (1.5/n=2) は 6/11 (Luckin) と直近で連続違反かつ WORST 域。今日は UNSW Sydney School of Chemical Engineering の査読論文 (Dr. Francisco Trujillo 主導、6/01 オンライン公開 in Journal of Food Engineering) を一次出典として official-src で攻める。素材は『超音波エスプレッソ (Ultrasonic Espresso)』: 標準ポルタフィルター・バスケットを超音波リアクター化し、常温水で 2.5〜3 分抽出、カフェイン/オイル/フレーバー成分を音響キャビテーション (acoustic cavitation) で引き出す方式。論文は 18.03% 抽出収率 (325μm 粒度) を達成、消費電力 75% 削減、100 人ブラインドテストで通常エスプレッソと識別不可と報告。WO2025/118023A1 で UNSW が特許出願中。報道は UNSW 公式 newsroom (6/09)、Daily Coffee News (6/10)、Comunicaffe、TechXplore、SmartCompany、BeanScene、CityNews Canberra、Digital Trends 等で広範に拡散、freshness ~72h で 168h 制約クリア。Pillar ③業界・ビジネスニュース (14d 比率 21% → 22%、目標 20% 近傍維持)。④焙煎士の一次情報 (14d 1 本 7%) との橋渡しにもなり、家淹れ層の知的好奇心を刺激しつつ『新方式が普及してもスペシャリティ豆の個性を引き出す技術』に着地。NG パターン回避: コーヒーあるある×、雑学×、出典不明×、freshness>168 ×、産地タグ使い回し ×。フック語彙は『常温の水で』『時代が来ました』で勝ち筋テンプレ (急増/突破/過去最高) と差別化、技術ニュースは数字インパクト『75%省エネ』『2.5〜3 分』『100 人ブラインドで区別不能』で支える。Primary 層への接続は『カフェの電気代を下げる技術』→『スペシャリティ豆の風味を引き出す抽出の選択肢が増える』で OG の差別化軸を裏打ち、強い CTA は控えて『EC 準備中フォロー』ニュアンスは bio 任せ。",
+    "method": "expert-blog",
+    "description": "土曜=エバーグリーン日。14d Method 集計で expert-blog は avg 7.0/n=3 と安定 TOP4、最後使用は 6/07 で 6 日空き(連続違反なし)。直近で過剰使用の official-src (4 本) と WORST 域の news-en (2 本 avg 1.5) を回避し、Pillar 内訳の偏り(③業界 38% で過剰、④焙煎士の一次情報 8% で目標 15% の半分)を是正するため、国内焙煎士の一次情報を直接届ける expert-blog を選択。素材は Kurasu Kyoto が公開した 6 月の Partner Roaster 特集『aoma coffee, Osaka | June 2026 Kurasu Partner Roaster』(6/09 公開、freshness ≈ 96h で 168h 制約クリア)。大阪・本町の焙煎士 青野浩史(Hiroshi Aono、2020 年 7 月開業) の家庭向けレシピと哲学を抽出: HARIO V60 で『コーヒー 13g 対 お湯 208g、1 対 16 の黄金比』。最大の主張は『同じ手順を毎回貫く』ことで、豆が変わっても淹れ方は固定し、味を調整したい時だけ挽き目を動かす一点集中型。背景には京都『整える(ととのえる)』の感性と元・染色職人としての職人気質。家で淹れる Primary 層が今日からそのまま真似できる粒度。Pillar ④焙煎士の一次情報(14d 8% → 15% へ寄与)。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○、freshness 96h○、産地タグ使い回し× (タグは焙煎士・V60・家淹れで動的)。フックは『土曜は焙煎士の話』+『シンプルすぎて逆に効きます』で勝ち筋の意外性テンプレ。連続トピックの英語企業ニュース(6/11 Luckin / 6/12 UNSW)と差別化し、視聴者の手元に確実に届くレシピで Primary 層の信頼を積み上げる。Explore サブ提案として `partner-roaster-feature` を pdca に記録。",
     "sources": [
-      "https://www.unsw.edu.au/newsroom/news/2026/06/New-way-making-espresso",
-      "https://dailycoffeenews.com/2026/06/10/researchers-say-ultrasonic-brewing-can-match-espresso-reduce-energy/",
-      "https://www.comunicaffe.com/australian-researchers-brew-espresso-using-an-ultrasonic-machine-saving-over-75-in-energy/",
-      "https://techxplore.com/news/2026-06-espresso-coffee-world.html",
-      "https://www.smartcompany.com.au/technology/ultrasonic-espresso-slash-coffee-costs-for-cafes-unsw/",
-      "https://www.beanscenemag.com.au/creating-a-new-way-to-brew-coffee"
+      "https://kurasu.kyoto/blogs/kurasu-journal/aoma-coffee-osaka-june-2026-kurasu-partner-roaster",
+      "https://typica.coffee/en/narratives/roasters/aoma-coffee/",
+      "https://danielfooddiary.com/2025/01/10/aomacoffee/",
+      "https://kurasu.kyoto/blogs/kurasu-journal/kurasu-vlog-aoma-coffee-osaka-interview-with-aono-san"
     ],
-    "query": "UNSW Sydney ultrasonic espresso Francisco Trujillo Journal of Food Engineering June 2026 room temperature 75% energy",
-    "freshness_hours": 72
+    "query": "Kurasu June 2026 Partner Roaster aoma coffee Osaka Hiroshi Aono V60 13g 208g recipe philosophy",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "豪UNSWが超音波エスプレッソを発表・常温水で2.5分抽出・電力75%削減",
-      "description": "今週、シドニーの大学が発表した『超音波エスプレッソ』が世界で話題になっています。",
-      "detail": "UNSWシドニー校化学工学部のフランシスコ・トルヒージョ博士チームが6月1日、Journal of Food Engineering誌で『超音波エスプレッソ』の論文を公開。標準のポルタフィルター・バスケットに振動子を当てて高周波の超音波をかけると、音響キャビテーション(微細な泡の生成と崩壊)が豆を砕き、常温の水でも2.5〜3分でエスプレッソ並みの抽出が完成。325ミクロン粒度で抽出収率18.03%を記録し、100人のブラインドテストでも通常品と識別できなかったと報告。エネルギーは従来比75%減で、UNSWは特許出願中(WO2025/118023A1)。",
-      "narration": "知ってました?常温の水でエスプレッソが淹れられる時代が来ました。豪シドニーのUNSWが今週『超音波エスプレッソ』を発表したんです。",
-      "tags": ["業界ニュース", "超音波エスプレッソ", "UNSW Sydney"],
+      "title": "大阪aoma coffee青野浩史式V60・1対16で淹れ方は固定、味は挽き目だけで動かす",
+      "description": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
+      "detail": "青野浩史さんのV60レシピは13グラム対208グラム、1対16の黄金比。同じ手順を毎回貫き、味を変えたい時は挽き目だけ動かす一点集中型です。",
+      "narration": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
+      "tags": ["焙煎士", "V60", "家淹れ"],
       "narration_sections": {
-        "hook": "知ってました?常温の水でエスプレッソが淹れられる時代が来ました。豪シドニーのUNSWが今週『超音波エスプレッソ』を発表したんです。",
-        "origin": "6月1日にJournal of Food Engineering誌に載った論文で、ポルタフィルターに超音波の振動子を当てて2.5から3分で抽出。100人のブラインドテストで通常のエスプレッソと区別がつかず、エネルギーは75%削減と報告されました。",
-        "recommend": "カフェの電気代を下げる技術として実用化が期待されます。スペシャリティ豆の風味を引き出す抽出の選択肢が、また一つ増えそうですね。"
+        "hook": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
+        "origin": "青野浩史さんのV60レシピは13グラム対208グラム、1対16の黄金比です。ポイントは『同じ手順を毎回貫く』こと。豆が変わっても淹れ方は固定し、味を変えたい時は挽き目だけ動かす。変数を絞ることで家でも再現性がぐっと上がります。",
+        "recommend": "まず『毎回同じ手順』を徹底してみてください。味がブレたら挽き目だけ変える。これだけで一段安定します。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "超音波エスプレッソ",
-        "origin": "75%省エネで再現",
-        "recommend": "新しい抽出の選択肢"
+        "hook": "aoma流V60レシピ",
+        "origin": "変えるのは挽き目だけ",
+        "recommend": "家での再現のコツ"
       },
       "section_descriptions": {
-        "hook": "UNSWが常温水で淹れる新方式を6月に発表しました",
-        "origin": "100人のブラインドテストで通常品と区別がつかず",
-        "recommend": "電気代節約とスペシャリティの相性を考えます"
+        "hook": "大阪の人気焙煎所、今月Kurasu特集の家レシピ",
+        "origin": "13g対208g、1対16の黄金比で淹れる",
+        "recommend": "変数は挽き目だけ、家でぐっと再現性を上げる"
       }
     }
   ]
