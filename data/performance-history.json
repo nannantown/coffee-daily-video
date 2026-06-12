@@ -1566,7 +1566,7 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1613,7 +1613,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1661,7 +1661,7 @@
         "views": 9,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1705,7 +1705,7 @@
         "views": 14,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1749,7 +1749,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1793,7 +1793,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1837,7 +1837,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1884,7 +1884,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1931,7 +1931,7 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -2065,10 +2065,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 4,
-        "likes": 0,
+        "views": 5,
+        "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
+        "updatedAt": "2026-06-12T01:43:01.314Z"
       }
     },
     {
@@ -2112,19 +2112,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-12T01:43:01.314Z"
+      }
+    },
+    {
+      "videoId": "fIPW7FFGrzE",
+      "videoUrl": "https://youtube.com/shorts/fIPW7FFGrzE",
+      "date": "2026-06-12",
+      "title": "【コーヒー豆知識】豪UNSWが超音波エスプレッソを発表・常温水で2.5分抽出・電力75%削減｜2026/06/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "official-src",
+        "description": "金曜=平日ニュース日。14d Method 集計で official-src が avg 9.67/n=3 で TOP1、直近使用は 6/09 (3 日空き) で連続違反なし。trends は TOP2 (9.0/n=1) ながら素材が単発、social-en (8.0/n=2) は直近 6/10 で 2 日連続違反、news-en (1.5/n=2) は 6/11 (Luckin) と直近で連続違反かつ WORST 域。今日は UNSW Sydney School of Chemical Engineering の査読論文 (Dr. Francisco Trujillo 主導、6/01 オンライン公開 in Journal of Food Engineering) を一次出典として official-src で攻める。素材は『超音波エスプレッソ (Ultrasonic Espresso)』: 標準ポルタフィルター・バスケットを超音波リアクター化し、常温水で 2.5〜3 分抽出、カフェイン/オイル/フレーバー成分を音響キャビテーション (acoustic cavitation) で引き出す方式。論文は 18.03% 抽出収率 (325μm 粒度) を達成、消費電力 75% 削減、100 人ブラインドテストで通常エスプレッソと識別不可と報告。WO2025/118023A1 で UNSW が特許出願中。報道は UNSW 公式 newsroom (6/09)、Daily Coffee News (6/10)、Comunicaffe、TechXplore、SmartCompany、BeanScene、CityNews Canberra、Digital Trends 等で広範に拡散、freshness ~72h で 168h 制約クリア。Pillar ③業界・ビジネスニュース (14d 比率 21% → 22%、目標 20% 近傍維持)。④焙煎士の一次情報 (14d 1 本 7%) との橋渡しにもなり、家淹れ層の知的好奇心を刺激しつつ『新方式が普及してもスペシャリティ豆の個性を引き出す技術』に着地。NG パターン回避: コーヒーあるある×、雑学×、出典不明×、freshness>168 ×、産地タグ使い回し ×。フック語彙は『常温の水で』『時代が来ました』で勝ち筋テンプレ (急増/突破/過去最高) と差別化、技術ニュースは数字インパクト『75%省エネ』『2.5〜3 分』『100 人ブラインドで区別不能』で支える。Primary 層への接続は『カフェの電気代を下げる技術』→『スペシャリティ豆の風味を引き出す抽出の選択肢が増える』で OG の差別化軸を裏打ち、強い CTA は控えて『EC 準備中フォロー』ニュアンスは bio 任せ。",
+        "sources": [
+          "https://www.unsw.edu.au/newsroom/news/2026/06/New-way-making-espresso",
+          "https://dailycoffeenews.com/2026/06/10/researchers-say-ultrasonic-brewing-can-match-espresso-reduce-energy/",
+          "https://www.comunicaffe.com/australian-researchers-brew-espresso-using-an-ultrasonic-machine-saving-over-75-in-energy/",
+          "https://techxplore.com/news/2026-06-espresso-coffee-world.html",
+          "https://www.smartcompany.com.au/technology/ultrasonic-espresso-slash-coffee-costs-for-cafes-unsw/",
+          "https://www.beanscenemag.com.au/creating-a-new-way-to-brew-coffee"
+        ],
+        "query": "UNSW Sydney ultrasonic espresso Francisco Trujillo Journal of Food Engineering June 2026 room temperature 75% energy",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-09",
-      "changes": [
-        "standard: 143 avg views (19 videos)",
-        "Day performance: Sun=324, Wed=147, Tue=138, Mon=84, Sat=75, Fri=65, Thu=20"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-10",
       "changes": [
@@ -2354,6 +2391,14 @@
       "changes": [
         "standard: 73 avg views (48 videos)",
         "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=48, Thu=14"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-12",
+      "changes": [
+        "standard: 71 avg views (49 videos)",
+        "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=48, Thu=12"
       ],
       "recommendedTemplate": "standard"
     }
