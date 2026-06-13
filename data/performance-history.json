@@ -1613,7 +1613,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1661,7 +1661,7 @@
         "views": 9,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1705,7 +1705,7 @@
         "views": 14,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1749,7 +1749,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1793,7 +1793,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1837,7 +1837,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1884,7 +1884,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1931,7 +1931,7 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -2065,10 +2065,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 5,
+        "views": 6,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.997Z"
       }
     },
     {
@@ -2109,10 +2109,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
+        "updatedAt": "2026-06-13T01:37:02.998Z"
       }
     },
     {
@@ -2154,6 +2154,49 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 4,
+        "likes": 1,
+        "comments": 0,
+        "updatedAt": "2026-06-13T01:37:02.998Z"
+      }
+    },
+    {
+      "videoId": "JwV7Y9ty_2c",
+      "videoUrl": "https://youtube.com/shorts/JwV7Y9ty_2c",
+      "date": "2026-06-13",
+      "title": "【コーヒー豆知識】大阪aoma coffee青野浩史式V60・1対16で淹れ方は固定、味は挽き目だけで動かす｜2026/06/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "土曜=エバーグリーン日。14d Method 集計で expert-blog は avg 7.0/n=3 と安定 TOP4、最後使用は 6/07 で 6 日空き(連続違反なし)。直近で過剰使用の official-src (4 本) と WORST 域の news-en (2 本 avg 1.5) を回避し、Pillar 内訳の偏り(③業界 38% で過剰、④焙煎士の一次情報 8% で目標 15% の半分)を是正するため、国内焙煎士の一次情報を直接届ける expert-blog を選択。素材は Kurasu Kyoto が公開した 6 月の Partner Roaster 特集『aoma coffee, Osaka | June 2026 Kurasu Partner Roaster』(6/09 公開、freshness ≈ 96h で 168h 制約クリア)。大阪・本町の焙煎士 青野浩史(Hiroshi Aono、2020 年 7 月開業) の家庭向けレシピと哲学を抽出: HARIO V60 で『コーヒー 13g 対 お湯 208g、1 対 16 の黄金比』。最大の主張は『同じ手順を毎回貫く』ことで、豆が変わっても淹れ方は固定し、味を調整したい時だけ挽き目を動かす一点集中型。背景には京都『整える(ととのえる)』の感性と元・染色職人としての職人気質。家で淹れる Primary 層が今日からそのまま真似できる粒度。Pillar ④焙煎士の一次情報(14d 8% → 15% へ寄与)。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○、freshness 96h○、産地タグ使い回し× (タグは焙煎士・V60・家淹れで動的)。フックは『土曜は焙煎士の話』+『シンプルすぎて逆に効きます』で勝ち筋の意外性テンプレ。連続トピックの英語企業ニュース(6/11 Luckin / 6/12 UNSW)と差別化し、視聴者の手元に確実に届くレシピで Primary 層の信頼を積み上げる。Explore サブ提案として `partner-roaster-feature` を pdca に記録。",
+        "sources": [
+          "https://kurasu.kyoto/blogs/kurasu-journal/aoma-coffee-osaka-june-2026-kurasu-partner-roaster",
+          "https://typica.coffee/en/narratives/roasters/aoma-coffee/",
+          "https://danielfooddiary.com/2025/01/10/aomacoffee/",
+          "https://kurasu.kyoto/blogs/kurasu-journal/kurasu-vlog-aoma-coffee-osaka-interview-with-aono-san"
+        ],
+        "query": "Kurasu June 2026 Partner Roaster aoma coffee Osaka Hiroshi Aono V60 13g 208g recipe philosophy",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2162,14 +2205,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-10",
-      "changes": [
-        "standard: 139 avg views (20 videos)",
-        "Day performance: Sun=324, Wed=147, Tue=138, Mon=84, Sat=73, Fri=65, Thu=20"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-11",
       "changes": [
@@ -2399,6 +2434,14 @@
       "changes": [
         "standard: 71 avg views (49 videos)",
         "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=48, Thu=12"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-13",
+      "changes": [
+        "standard: 70 avg views (50 videos)",
+        "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=42, Thu=12"
       ],
       "recommendedTemplate": "standard"
     }
