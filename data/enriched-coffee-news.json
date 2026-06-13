@@ -1,39 +1,39 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜=エバーグリーン日。14d Method 集計で expert-blog は avg 7.0/n=3 と安定 TOP4、最後使用は 6/07 で 6 日空き(連続違反なし)。直近で過剰使用の official-src (4 本) と WORST 域の news-en (2 本 avg 1.5) を回避し、Pillar 内訳の偏り(③業界 38% で過剰、④焙煎士の一次情報 8% で目標 15% の半分)を是正するため、国内焙煎士の一次情報を直接届ける expert-blog を選択。素材は Kurasu Kyoto が公開した 6 月の Partner Roaster 特集『aoma coffee, Osaka | June 2026 Kurasu Partner Roaster』(6/09 公開、freshness ≈ 96h で 168h 制約クリア)。大阪・本町の焙煎士 青野浩史(Hiroshi Aono、2020 年 7 月開業) の家庭向けレシピと哲学を抽出: HARIO V60 で『コーヒー 13g 対 お湯 208g、1 対 16 の黄金比』。最大の主張は『同じ手順を毎回貫く』ことで、豆が変わっても淹れ方は固定し、味を調整したい時だけ挽き目を動かす一点集中型。背景には京都『整える(ととのえる)』の感性と元・染色職人としての職人気質。家で淹れる Primary 層が今日からそのまま真似できる粒度。Pillar ④焙煎士の一次情報(14d 8% → 15% へ寄与)。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○、freshness 96h○、産地タグ使い回し× (タグは焙煎士・V60・家淹れで動的)。フックは『土曜は焙煎士の話』+『シンプルすぎて逆に効きます』で勝ち筋の意外性テンプレ。連続トピックの英語企業ニュース(6/11 Luckin / 6/12 UNSW)と差別化し、視聴者の手元に確実に届くレシピで Primary 層の信頼を積み上げる。Explore サブ提案として `partner-roaster-feature` を pdca に記録。",
+    "method": "social-en",
+    "description": "土曜=エバーグリーン日。14d Method 集計で social-en は avg 9.0/n=2 で TOP1 同率、最後使用は 6/10 で 4 日空き(連続違反なし)。直近2日が expert-blog (6/13) → official-src (6/12) で多様性的にも切替必須。Reddit/X 直接アクセス不可のため、海外コーヒー系メディアが報じた『コミュニティ駆動の再話題化』を二次ソースで拾う方針。Perfect Daily Grind が 2026-06-09 に公開した『First espresso, now filter coffee: Revisiting extract chilling』が完璧素材。Hugh Kelly(3 度 Australian Barista Champion、ONA Coffee)が 2021 WBC で世界デビューさせた『抽出チル(Extract Chilling)』が、Nucleus Coffee Tools の最新研究と Basic Barista の YouTube 解説を経て、いま filter コーヒー界隈で再ブーム化。技法は『espresso/filter の最初の 40% を冷えた金属球の上に落とす』だけで、揮発する香り成分を最大 40% 多く残せる。さらに直近の追試で『球を冷凍しなくても常温で同等の効果』と判明、家ブリュワーは特殊器具なしで再現可能に。柱は④焙煎士の一次情報系テクニック (Saturday evergreen)、Primary 層が今夜の一杯ですぐ試せる粒度。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○ (PDG/Nucleus/Basic Barista)、freshness 120h○、産地タグ使い回し× (タグは抽出/技法/家淹れで動的)。前日(6/13)の青野式 V60 が『シンプルさで効かせる』日本焙煎士視点だったので、今日は『海外最新テクで遊ぶ』対比軸でセッションを構成。Explore サブ提案 `competition-circuit-buzz`: WBC/Brewers Cup 競技者発のテクが海外メディアで再評価される瞬間を拾うパターン、今回が初回実装。",
     "sources": [
-      "https://kurasu.kyoto/blogs/kurasu-journal/aoma-coffee-osaka-june-2026-kurasu-partner-roaster",
-      "https://typica.coffee/en/narratives/roasters/aoma-coffee/",
-      "https://danielfooddiary.com/2025/01/10/aomacoffee/",
-      "https://kurasu.kyoto/blogs/kurasu-journal/kurasu-vlog-aoma-coffee-osaka-interview-with-aono-san"
+      "https://perfectdailygrind.com/2026/06/extract-chilling-filter-coffee-espresso/",
+      "https://nucleuscoffeetools.com/news/how-much-of-an-extraction-should-you-chill/",
+      "https://thebasicbarista.com/en-us/pages/extract-chilling-coffee",
+      "https://perfectdailygrind.com/2022/06/exploring-extract-chilling-in-coffee/"
     ],
-    "query": "Kurasu June 2026 Partner Roaster aoma coffee Osaka Hiroshi Aono V60 13g 208g recipe philosophy",
-    "freshness_hours": 96
+    "query": "extract chilling filter coffee 2026 Hugh Kelly Nucleus 40% volatile aroma room temperature sphere",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "大阪aoma coffee青野浩史式V60・1対16で淹れ方は固定、味は挽き目だけで動かす",
-      "description": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
-      "detail": "青野浩史さんのV60レシピは13グラム対208グラム、1対16の黄金比。同じ手順を毎回貫き、味を変えたい時は挽き目だけ動かす一点集中型です。",
-      "narration": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
-      "tags": ["焙煎士", "V60", "家淹れ"],
+      "title": "海外で再ブーム『抽出チル』・最初40%を金属に落とすだけで香り40%増、最新研究で球は常温OK",
+      "description": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技がついにハンドドリップにも応用され始めました。",
+      "detail": "最初の40%だけ冷えた金属球の上に落とすと、揮発しやすい香り成分を最大40%多く残せると判明。最新追試では球は常温でも同等の効果。",
+      "narration": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技が、ついにハンドドリップにも応用され始めました。",
+      "tags": ["抽出チル", "ハンドドリップ", "香り"],
       "narration_sections": {
-        "hook": "土曜は焙煎士の話。大阪aoma coffeeが今月Kurasu特集で出した家のレシピが、シンプルすぎて逆に効きます。",
-        "origin": "青野浩史さんのV60レシピは13グラム対208グラム、1対16の黄金比です。ポイントは『同じ手順を毎回貫く』こと。豆が変わっても淹れ方は固定し、味を変えたい時は挽き目だけ動かす。変数を絞ることで家でも再現性がぐっと上がります。",
-        "recommend": "まず『毎回同じ手順』を徹底してみてください。味がブレたら挽き目だけ変える。これだけで一段安定します。EC準備中、フォローしてお待ちください。"
+        "hook": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技が、ついにハンドドリップにも応用され始めました。",
+        "origin": "先週パーフェクトデイリーグラインドが報じた研究では、抽出の最初40%だけを冷えた金属球の上に落とすと、揮発しやすい香り成分を最大40%多く残せると判明。さらに最新の追試では、球を冷凍しなくても常温でほぼ同じ効果だったそうです。",
+        "recommend": "自宅ならステンレスのスプーンや小皿で代用できます。香りが立つ浅煎りで試すと差が分かりやすいので、ぜひ週末に体感してみてください。"
       },
       "section_titles": {
-        "hook": "aoma流V60レシピ",
-        "origin": "変えるのは挽き目だけ",
-        "recommend": "家での再現のコツ"
+        "hook": "抽出チル再ブーム",
+        "origin": "香り40%増の研究",
+        "recommend": "家ならスプーンでOK"
       },
       "section_descriptions": {
-        "hook": "大阪の人気焙煎所、今月Kurasu特集の家レシピ",
-        "origin": "13g対208g、1対16の黄金比で淹れる",
-        "recommend": "変数は挽き目だけ、家でぐっと再現性を上げる"
+        "hook": "エスプレッソの技がハンドドリップにも応用開始",
+        "origin": "PDG最新研究、最初40%だけ冷たい金属に当てる技法",
+        "recommend": "家ならステンレスのスプーンや小皿で代用OK"
       }
     }
   ]
