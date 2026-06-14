@@ -1,39 +1,43 @@
 {
-  "date": "2026-06-14",
+  "date": "2026-06-15",
   "discovery": {
-    "method": "social-en",
-    "description": "土曜=エバーグリーン日。14d Method 集計で social-en は avg 9.0/n=2 で TOP1 同率、最後使用は 6/10 で 4 日空き(連続違反なし)。直近2日が expert-blog (6/13) → official-src (6/12) で多様性的にも切替必須。Reddit/X 直接アクセス不可のため、海外コーヒー系メディアが報じた『コミュニティ駆動の再話題化』を二次ソースで拾う方針。Perfect Daily Grind が 2026-06-09 に公開した『First espresso, now filter coffee: Revisiting extract chilling』が完璧素材。Hugh Kelly(3 度 Australian Barista Champion、ONA Coffee)が 2021 WBC で世界デビューさせた『抽出チル(Extract Chilling)』が、Nucleus Coffee Tools の最新研究と Basic Barista の YouTube 解説を経て、いま filter コーヒー界隈で再ブーム化。技法は『espresso/filter の最初の 40% を冷えた金属球の上に落とす』だけで、揮発する香り成分を最大 40% 多く残せる。さらに直近の追試で『球を冷凍しなくても常温で同等の効果』と判明、家ブリュワーは特殊器具なしで再現可能に。柱は④焙煎士の一次情報系テクニック (Saturday evergreen)、Primary 層が今夜の一杯ですぐ試せる粒度。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○ (PDG/Nucleus/Basic Barista)、freshness 120h○、産地タグ使い回し× (タグは抽出/技法/家淹れで動的)。前日(6/13)の青野式 V60 が『シンプルさで効かせる』日本焙煎士視点だったので、今日は『海外最新テクで遊ぶ』対比軸でセッションを構成。Explore サブ提案 `competition-circuit-buzz`: WBC/Brewers Cup 競技者発のテクが海外メディアで再評価される瞬間を拾うパターン、今回が初回実装。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の6/12週次recap経由でブルームバーグのスタバ日本事業株式売却検討報道を発見、複数英語ソースで裏取り",
     "sources": [
-      "https://perfectdailygrind.com/2026/06/extract-chilling-filter-coffee-espresso/",
-      "https://nucleuscoffeetools.com/news/how-much-of-an-extraction-should-you-chill/",
-      "https://thebasicbarista.com/en-us/pages/extract-chilling-coffee",
-      "https://perfectdailygrind.com/2022/06/exploring-extract-chilling-in-coffee/"
+      "https://perfectdailygrind.com/2026/06/coffee-news-recap-12-june-2026/",
+      "https://www.businesstoday.com.my/2026/06/10/starbucks-weighs-japan-stake-sale-in-strategic-review-bloomberg-reports/",
+      "https://www.japantimes.co.jp/business/2026/06/10/companies/starbucks-japan-stake-sale-options/",
+      "https://www.worldcoffeeportal.com/news/starbucks-is-reportedly-exploring-a-2-5bn-stake-sale-of-its-successful-japanese-business-global-ambitions-could-explain-why/"
     ],
-    "query": "extract chilling filter coffee 2026 Hugh Kelly Nucleus 40% volatile aroma room temperature sphere",
+    "query": "Starbucks Japan sale 2.5 billion June 2026",
     "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外で再ブーム『抽出チル』・最初40%を金属に落とすだけで香り40%増、最新研究で球は常温OK",
-      "description": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技がついにハンドドリップにも応用され始めました。",
-      "detail": "最初の40%だけ冷えた金属球の上に落とすと、揮発しやすい香り成分を最大40%多く残せると判明。最新追試では球は常温でも同等の効果。",
-      "narration": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技が、ついにハンドドリップにも応用され始めました。",
-      "tags": ["抽出チル", "ハンドドリップ", "香り"],
+      "title": "スタバが日本事業を売却検討・最大5000億円規模、4月の中国売却に続く第2弾",
+      "description": "ブルームバーグ速報。米本社が日本2,100店舗の株式売却を検討中、評価額は最大5,000億円。4月の中国事業売却に続く再編の第2弾。",
+      "detail": "日本国内店舗数約2,100、評価額¥4,000〜5,000億円(US$2.5〜3.1bn)。米本社は4月に中国事業を中資ファンドへ約4,000億円超で売却済み、これに続くグローバル再編。投資銀行と初期協議中、買い手候補は同業大手かPEファンドと報じられる。",
+      "narration": "先週ブルームバーグが速報。スターバックスがついに日本事業の株式売却を検討、評価額は最大5,000億円規模と報じられました。",
+      "tags": [
+        "スターバックス",
+        "業界ニュース",
+        "M&A"
+      ],
       "narration_sections": {
-        "hook": "知ってました?海外で今『抽出チル』が再ブーム。エスプレッソ専用だった技が、ついにハンドドリップにも応用され始めました。",
-        "origin": "先週パーフェクトデイリーグラインドが報じた研究では、抽出の最初40%だけを冷えた金属球の上に落とすと、揮発しやすい香り成分を最大40%多く残せると判明。さらに最新の追試では、球を冷凍しなくても常温でほぼ同じ効果だったそうです。",
-        "recommend": "自宅ならステンレスのスプーンや小皿で代用できます。香りが立つ浅煎りで試すと差が分かりやすいので、ぜひ週末に体感してみてください。"
+        "hook": "先週ブルームバーグが速報。スターバックスがついに日本事業の株式売却を検討、評価額は最大5,000億円規模と報じられました。",
+        "origin": "日本国内の店舗数は約2,100店。米本社は4月に中国事業を中資ファンドへ4,000億円超で売却した流れで、これに続くグローバル再編の第2弾と見られます。投資銀行と初期協議中、買い手候補は同業大手かPEファンドと報じられました。",
+        "recommend": "買い手次第で日本の豆調達や卸価格に影響が及ぶ可能性。中小スペシャルティ焙煎所のシェアが動く局面で、毎朝のニュースで一緒に追っていきます。"
       },
       "section_titles": {
-        "hook": "抽出チル再ブーム",
-        "origin": "香り40%増の研究",
-        "recommend": "家ならスプーンでOK"
+        "hook": "スタバ日本売却検討",
+        "origin": "中国に続く海外再編",
+        "recommend": "国内豆相場に波及"
       },
       "section_descriptions": {
-        "hook": "エスプレッソの技がハンドドリップにも応用開始",
-        "origin": "PDG最新研究、最初40%だけ冷たい金属に当てる技法",
-        "recommend": "家ならステンレスのスプーンや小皿で代用OK"
+        "hook": "ブルームバーグが速報した米本社の戦略変更",
+        "origin": "4月の中国売却に続くグローバル再編の続編",
+        "recommend": "豆調達と中小焙煎所シェアへの影響"
       }
     }
   ]
