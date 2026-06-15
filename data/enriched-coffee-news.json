@@ -1,43 +1,42 @@
 {
-  "date": "2026-06-15",
+  "date": "2026-06-16",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の6/12週次recap経由でブルームバーグのスタバ日本事業株式売却検討報道を発見、複数英語ソースで裏取り",
+    "method": "official-src",
+    "description": "USDA FAS Ethiopia Coffee Annual (2026年5月発行) を起点に、Daily Coffee News 6/12 記事と Ecofin Agency の独立検証を経て、2026/27 にエチオピアがインドネシアを抜き世界4位の生産国に浮上する見通しを確認",
     "sources": [
-      "https://perfectdailygrind.com/2026/06/coffee-news-recap-12-june-2026/",
-      "https://www.businesstoday.com.my/2026/06/10/starbucks-weighs-japan-stake-sale-in-strategic-review-bloomberg-reports/",
-      "https://www.japantimes.co.jp/business/2026/06/10/companies/starbucks-japan-stake-sale-options/",
-      "https://www.worldcoffeeportal.com/news/starbucks-is-reportedly-exploring-a-2-5bn-stake-sale-of-its-successful-japanese-business-global-ambitions-could-explain-why/"
+      "https://www.fas.usda.gov/data/gain/2026/05/ethiopia-coffee-annual",
+      "https://dailycoffeenews.com/2026/06/12/ethiopia-coffee-report-production-up-government-promoting-modernization/",
+      "https://www.ecofinagency.com/news-agriculture/2205-55835-ethiopia-set-to-overtake-indonesia-as-fourth-largest-coffee-producer-in-2026/2027"
     ],
-    "query": "Starbucks Japan sale 2.5 billion June 2026",
-    "freshness_hours": 120
+    "query": "Ethiopia coffee 12.1 million bags 2026/27 USDA fourth largest producer",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "スタバが日本事業を売却検討・最大5000億円規模、4月の中国売却に続く第2弾",
-      "description": "ブルームバーグ速報。米本社が日本2,100店舗の株式売却を検討中、評価額は最大5,000億円。4月の中国事業売却に続く再編の第2弾。",
-      "detail": "日本国内店舗数約2,100、評価額¥4,000〜5,000億円(US$2.5〜3.1bn)。米本社は4月に中国事業を中資ファンドへ約4,000億円超で売却済み、これに続くグローバル再編。投資銀行と初期協議中、買い手候補は同業大手かPEファンドと報じられる。",
-      "narration": "先週ブルームバーグが速報。スターバックスがついに日本事業の株式売却を検討、評価額は最大5,000億円規模と報じられました。",
+      "title": "エチオピアが世界4位の生産国へ・USDA最新で2026/27は1,210万袋・インドネシア超え",
+      "description": "USDA最新Coffee Annualで、2026/27年のエチオピア生産は60kg袋で1,210万袋。インドネシアの1,138万袋を抜き世界4位に浮上、4年連続の増産が続きます。",
+      "detail": "2026/27年予想は1,210万袋、インドネシアの1,138万袋を上回り世界4位に浮上。前期1,156万袋から+4.7%、4年連続の増産。輸出予想は713万袋、中国向けの関税優遇が需要を押し上げ。収量改善・小幅な作付け拡大・好天が追い風。",
+      "narration": "エチオピアが、いよいよ世界4位のコーヒー生産国に。USDA最新レポートで、来期1,210万袋・インドネシア超えの見通しです。",
       "tags": [
-        "スターバックス",
-        "業界ニュース",
-        "M&A"
+        "産地",
+        "エチオピア",
+        "USDA"
       ],
       "narration_sections": {
-        "hook": "先週ブルームバーグが速報。スターバックスがついに日本事業の株式売却を検討、評価額は最大5,000億円規模と報じられました。",
-        "origin": "日本国内の店舗数は約2,100店。米本社は4月に中国事業を中資ファンドへ4,000億円超で売却した流れで、これに続くグローバル再編の第2弾と見られます。投資銀行と初期協議中、買い手候補は同業大手かPEファンドと報じられました。",
-        "recommend": "買い手次第で日本の豆調達や卸価格に影響が及ぶ可能性。中小スペシャルティ焙煎所のシェアが動く局面で、毎朝のニュースで一緒に追っていきます。"
+        "hook": "エチオピアが、いよいよ世界4位のコーヒー生産国に。USDA最新レポートで、来期1,210万袋・インドネシア超えの見通しです。",
+        "origin": "USDA最新の年次レポートで、2026/27年の生産予想は60kg袋で1,210万袋。インドネシアの1,138万袋を抜き、世界4位に浮上します。4年連続の増産で、収量改善と好天が追い風。輸出も713万袋に拡大予想、中国向けの関税優遇も後押しです。",
+        "recommend": "エチオピアの供給増は、浅煎り好きには朗報。今年のニュークロップに期待しつつ、OG入荷もフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "スタバ日本売却検討",
-        "origin": "中国に続く海外再編",
-        "recommend": "国内豆相場に波及"
+        "hook": "エチオピア急上昇",
+        "origin": "1,210万袋の中身",
+        "recommend": "家飲み派にも朗報"
       },
       "section_descriptions": {
-        "hook": "ブルームバーグが速報した米本社の戦略変更",
-        "origin": "4月の中国売却に続くグローバル再編の続編",
-        "recommend": "豆調達と中小焙煎所シェアへの影響"
+        "hook": "USDAの最新予測で、エチオピアが世界4位へ浮上します",
+        "origin": "2026/27年は1,210万袋、4年連続の増産が続きます",
+        "recommend": "浅煎り好きには朗報、入荷情報をお見逃しなく"
       }
     }
   ]
