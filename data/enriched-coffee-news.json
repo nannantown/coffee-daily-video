@@ -1,42 +1,42 @@
 {
-  "date": "2026-06-16",
+  "date": "2026-06-17",
   "discovery": {
-    "method": "official-src",
-    "description": "USDA FAS Ethiopia Coffee Annual (2026年5月発行) を起点に、Daily Coffee News 6/12 記事と Ecofin Agency の独立検証を経て、2026/27 にエチオピアがインドネシアを抜き世界4位の生産国に浮上する見通しを確認",
+    "method": "news-en",
+    "description": "Daily Coffee News (6/15) で USDA FAS Nicaragua Coffee Annual の 2026/27 予想 (生産244万袋・-4.7%、輸出-7%) を確認、World Coffee Portal の Week in Coffee 8-14 June とクロス参照。news-en は直近 14 日で WORST method だが、昨日 PDCA の所見 (M&A 系は弱いが産地系なら news-en でも勝てる可能性) を検証する位置づけ。",
     "sources": [
-      "https://www.fas.usda.gov/data/gain/2026/05/ethiopia-coffee-annual",
-      "https://dailycoffeenews.com/2026/06/12/ethiopia-coffee-report-production-up-government-promoting-modernization/",
-      "https://www.ecofinagency.com/news-agriculture/2205-55835-ethiopia-set-to-overtake-indonesia-as-fourth-largest-coffee-producer-in-2026/2027"
+      "https://dailycoffeenews.com/2026/06/15/nicaragua-coffee-report-weather-and-costs-hurting-production/",
+      "https://www.fas.usda.gov/data/nicaragua-coffee-annual-6",
+      "https://www.worldcoffeeportal.com/news/the-week-in-coffee-8-14-june-2026/"
     ],
-    "query": "Ethiopia coffee 12.1 million bags 2026/27 USDA fourth largest producer",
-    "freshness_hours": 96
+    "query": "Nicaragua coffee 2026/27 USDA forecast 2.44 million bags El Nino fertilizer",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "エチオピアが世界4位の生産国へ・USDA最新で2026/27は1,210万袋・インドネシア超え",
-      "description": "USDA最新Coffee Annualで、2026/27年のエチオピア生産は60kg袋で1,210万袋。インドネシアの1,138万袋を抜き世界4位に浮上、4年連続の増産が続きます。",
-      "detail": "2026/27年予想は1,210万袋、インドネシアの1,138万袋を上回り世界4位に浮上。前期1,156万袋から+4.7%、4年連続の増産。輸出予想は713万袋、中国向けの関税優遇が需要を押し上げ。収量改善・小幅な作付け拡大・好天が追い風。",
-      "narration": "エチオピアが、いよいよ世界4位のコーヒー生産国に。USDA最新レポートで、来期1,210万袋・インドネシア超えの見通しです。",
+      "title": "ニカラグア来期-4.7%減産・USDA予想244万袋・エルニーニョと肥料25%高で中米6位のSHG産地が苦境",
+      "description": "USDA最新でニカラグア2026/27は-4.7%の244万袋。エルニーニョと肥料25%高騰で、SHG高地豆の主力産地が苦境に直面しています。",
+      "detail": "USDA予想は244万袋・前期256万袋から-4.7%。エルニーニョによる雨不足と肥料コスト+25%が小農家を直撃。輸出も-7%の225万袋見通し。中米6位の生産国でSHGの主力産地、世界の浅煎り需要に影響あり。",
+      "narration": "ニカラグア来期-4.7%減産です。USDA最新でエルニーニョと肥料25%高騰のダブルパンチ、生産量は244万袋まで落ち込む見込みです。",
       "tags": [
         "産地",
-        "エチオピア",
+        "ニカラグア",
         "USDA"
       ],
       "narration_sections": {
-        "hook": "エチオピアが、いよいよ世界4位のコーヒー生産国に。USDA最新レポートで、来期1,210万袋・インドネシア超えの見通しです。",
-        "origin": "USDA最新の年次レポートで、2026/27年の生産予想は60kg袋で1,210万袋。インドネシアの1,138万袋を抜き、世界4位に浮上します。4年連続の増産で、収量改善と好天が追い風。輸出も713万袋に拡大予想、中国向けの関税優遇も後押しです。",
-        "recommend": "エチオピアの供給増は、浅煎り好きには朗報。今年のニュークロップに期待しつつ、OG入荷もフォローしてお待ちください。"
+        "hook": "ニカラグア来期-4.7%減産です。USDA最新でエルニーニョと肥料25%高騰のダブルパンチ、生産量は244万袋まで落ち込む見込みです。",
+        "origin": "ニカラグアは中米6位の生産国。SHG(高地で育つ高品質豆)で知られ、ミディアム〜浅煎り需要の支え。下期エルニーニョによる雨不足で実が小さく未熟になり、さらに肥料コスト25%上昇が小農家を直撃。前期256万袋から-4.7%、輸出も-7%の見通しです。",
+        "recommend": "昨日のエチオピア+4.7%と対照的に、中米は今厳しい局面。OGも仕入れ先と相場を毎日追います。続報お待ちください。"
       },
       "section_titles": {
-        "hook": "エチオピア急上昇",
-        "origin": "1,210万袋の中身",
-        "recommend": "家飲み派にも朗報"
+        "hook": "ニカラグア-4.7%",
+        "origin": "SHG高地の苦境",
+        "recommend": "中米と東アフリカ"
       },
       "section_descriptions": {
-        "hook": "USDAの最新予測で、エチオピアが世界4位へ浮上します",
-        "origin": "2026/27年は1,210万袋、4年連続の増産が続きます",
-        "recommend": "浅煎り好きには朗報、入荷情報をお見逃しなく"
+        "hook": "USDA最新で-4.7%減産予想、エルニーニョと肥料高が原因",
+        "origin": "SHG主産地、肥料25%高と雨不足のダブルパンチ",
+        "recommend": "昨日のエチオピアと対照的、相場を毎日追います"
       }
     }
   ]
