@@ -1,42 +1,45 @@
 {
-  "date": "2026-06-17",
+  "date": "2026-06-18",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News (6/15) で USDA FAS Nicaragua Coffee Annual の 2026/27 予想 (生産244万袋・-4.7%、輸出-7%) を確認、World Coffee Portal の Week in Coffee 8-14 June とクロス参照。news-en は直近 14 日で WORST method だが、昨日 PDCA の所見 (M&A 系は弱いが産地系なら news-en でも勝てる可能性) を検証する位置づけ。",
+    "method": "official-src",
+    "description": "NGO連合(Conservation International / Ethos Agriculture / Solidaridad / VOCAL、ドイツ連邦経済協力省支援)が6/12頃公開した『Coffee Barometer 2026』を一次素材化。Perfect Daily Grind 6/12 recap と Comunicaffe / Nestlé 公式レスポンスをクロス参照、freshness ~144h で 168h 制約クリア。14d Method TOP3 official-src (avg 7.33、6/05 ブラジル 71.9M 10v) を 6 日空きで再投入、直近 2 日 (6/15 news-en、6/17 news-en) と method 連続違反なし。news-en は 14d WORST (avg 4.67) で本日凍結適用。Pillar ③ 業界・ビジネス × ① 市況のクロス、直近 14d ③ 38% 過多 / ① 15% 不足の分布是正をサステナ × 価格構造軸で実現。素材タイプ仮説『業界の値段が誰によって作られているかを暴く構造ストーリー』(5/22 ブラジル脱カフェ 75v / 5/16 焙煎所の価格説明 77v の系統) を 3 本目として検証する位置づけ。",
     "sources": [
-      "https://dailycoffeenews.com/2026/06/15/nicaragua-coffee-report-weather-and-costs-hurting-production/",
-      "https://www.fas.usda.gov/data/nicaragua-coffee-annual-6",
-      "https://www.worldcoffeeportal.com/news/the-week-in-coffee-8-14-june-2026/"
+      "https://coffeebarometer.org/",
+      "https://www.solidaridadnetwork.org/news/sustainability-cannot-be-built-on-permanently-cheap-coffee-reveals-2026-coffee-barometer/",
+      "https://www.comunicaffe.com/coffee-barometer-2026-highlights-the-persistent-systemic-and-structural-imbalances-in-the-coffee-sector",
+      "https://perfectdailygrind.com/2026/06/coffee-news-recap-12-june-2026/",
+      "https://www.nestle.com/ask-nestle/human-rights/answers/coffee-barometer-2026-report",
+      "https://zerodeforestationhub.eu/coffee-barometer-2026/"
     ],
-    "query": "Nicaragua coffee 2026/27 USDA forecast 2.44 million bags El Nino fertilizer",
-    "freshness_hours": 48
+    "query": "Coffee Barometer 2026 release June Solidaridad Conservation International 10% unpaid family labor retail subsidy 15 largest roasters traders pricing disclosure Nestle Starbucks JDE Peet's EU 2029 living income obligation",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ニカラグア来期-4.7%減産・USDA予想244万袋・エルニーニョと肥料25%高で中米6位のSHG産地が苦境",
-      "description": "USDA最新でニカラグア2026/27は-4.7%の244万袋。エルニーニョと肥料25%高騰で、SHG高地豆の主力産地が苦境に直面しています。",
-      "detail": "USDA予想は244万袋・前期256万袋から-4.7%。エルニーニョによる雨不足と肥料コスト+25%が小農家を直撃。輸出も-7%の225万袋見通し。中米6位の生産国でSHGの主力産地、世界の浅煎り需要に影響あり。",
-      "narration": "ニカラグア来期-4.7%減産です。USDA最新でエルニーニョと肥料25%高騰のダブルパンチ、生産量は244万袋まで落ち込む見込みです。",
+      "title": "あなたのコーヒー10%は農家家族の無償労働・Coffee Barometer 2026が大手15社の価格非開示を暴露",
+      "description": "先週公開のCoffee Barometer 2026、コーヒー小売価格の10%は農家家族の無償労働で実質補填されているそうです。",
+      "detail": "NGO連合(Solidaridad / Conservation Internationalほか)が6/12頃公開。世界15社の大手焙煎・商社で価格構造を公開する会社はゼロ、Nestlé・Starbucks・JDE Peet'sも対象。EUは2029年から大手企業に生活賃金支払いを義務化。",
+      "narration": "あなたの一杯、10%は農家家族の無償労働で支えられています。先週公開のCoffee Barometer 2026、業界の構造を暴く最新報告書です。",
       "tags": [
-        "産地",
-        "ニカラグア",
-        "USDA"
+        "業界",
+        "サステナ",
+        "透明性"
       ],
       "narration_sections": {
-        "hook": "ニカラグア来期-4.7%減産です。USDA最新でエルニーニョと肥料25%高騰のダブルパンチ、生産量は244万袋まで落ち込む見込みです。",
-        "origin": "ニカラグアは中米6位の生産国。SHG(高地で育つ高品質豆)で知られ、ミディアム〜浅煎り需要の支え。下期エルニーニョによる雨不足で実が小さく未熟になり、さらに肥料コスト25%上昇が小農家を直撃。前期256万袋から-4.7%、輸出も-7%の見通しです。",
-        "recommend": "昨日のエチオピア+4.7%と対照的に、中米は今厳しい局面。OGも仕入れ先と相場を毎日追います。続報お待ちください。"
+        "hook": "あなたの一杯、10%は農家家族の無償労働で支えられています。先週公開のCoffee Barometer 2026、業界の構造を暴く最新報告書です。",
+        "origin": "世界15社の大手焙煎業者・商社で、価格構造を公開する会社はゼロ。Nestlé、Starbucks、JDE Peet'sも対象です。生産国に届く価値は下流に偏り、農家家族の無償労働が10%分のコストを肩代わり。EUは2029年から生活賃金支払いを義務化します。",
+        "recommend": "スペシャルティ豆が割高な理由はここにあります。透明な価格と生産者還元を選ぶ目線を、OGも仕入れで貫きます。"
       },
       "section_titles": {
-        "hook": "ニカラグア-4.7%",
-        "origin": "SHG高地の苦境",
-        "recommend": "中米と東アフリカ"
+        "hook": "10%は不払い労働",
+        "origin": "大手15社が非開示",
+        "recommend": "透明な価格を選ぶ"
       },
       "section_descriptions": {
-        "hook": "USDA最新で-4.7%減産予想、エルニーニョと肥料高が原因",
-        "origin": "SHG主産地、肥料25%高と雨不足のダブルパンチ",
-        "recommend": "昨日のエチオピアと対照的、相場を毎日追います"
+        "hook": "NGO連合6/12公開の最新業界レポート",
+        "origin": "Nestlé/Starbucks含む大手15社が非開示",
+        "recommend": "スペシャルティが割高な理由はここにあります"
       }
     }
   ]
