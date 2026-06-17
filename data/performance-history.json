@@ -1749,7 +1749,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -1793,7 +1793,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -1837,7 +1837,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -1884,7 +1884,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -1931,7 +1931,7 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2065,10 +2065,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 6,
+        "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2112,7 +2112,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2157,7 +2157,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2200,7 +2200,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2240,10 +2240,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 6,
+        "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
+        "updatedAt": "2026-06-17T01:59:23.550Z"
       }
     },
     {
@@ -2283,6 +2283,48 @@
         "freshness_hours": 120
       },
       "stats": {
+        "views": 9,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-17T01:59:23.550Z"
+      }
+    },
+    {
+      "videoId": "ydVwnaCLHKg",
+      "videoUrl": "https://youtube.com/shorts/ydVwnaCLHKg",
+      "date": "2026-06-17",
+      "title": "【コーヒー豆知識】ニカラグア来期-4.7%減産・USDA予想244万袋・エルニーニョと肥料25%高で中米6位のSHG産地が苦境｜2026/06/17 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 60,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News (6/15) で USDA FAS Nicaragua Coffee Annual の 2026/27 予想 (生産244万袋・-4.7%、輸出-7%) を確認、World Coffee Portal の Week in Coffee 8-14 June とクロス参照。news-en は直近 14 日で WORST method だが、昨日 PDCA の所見 (M&A 系は弱いが産地系なら news-en でも勝てる可能性) を検証する位置づけ。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/06/15/nicaragua-coffee-report-weather-and-costs-hurting-production/",
+          "https://www.fas.usda.gov/data/nicaragua-coffee-annual-6",
+          "https://www.worldcoffeeportal.com/news/the-week-in-coffee-8-14-june-2026/"
+        ],
+        "query": "Nicaragua coffee 2026/27 USDA forecast 2.44 million bags El Nino fertilizer",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2291,14 +2333,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-13",
-      "changes": [
-        "standard: 128 avg views (23 videos)",
-        "Day performance: Sun=268, Wed=147, Tue=108, Sat=80, Mon=80, Fri=66, Thu=21"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-14",
       "changes": [
@@ -2528,6 +2562,14 @@
       "changes": [
         "standard: 68 avg views (52 videos)",
         "Day performance: Sun=162, Tue=66, Wed=62, Sat=57, Mon=48, Fri=43, Thu=12"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-17",
+      "changes": [
+        "standard: 67 avg views (53 videos)",
+        "Day performance: Sun=162, Tue=66, Wed=62, Sat=57, Mon=43, Fri=43, Thu=12"
       ],
       "recommendedTemplate": "standard"
     }
