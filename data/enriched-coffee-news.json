@@ -1,45 +1,41 @@
 {
-  "date": "2026-06-18",
+  "date": "2026-06-19",
   "discovery": {
-    "method": "official-src",
-    "description": "NGO連合(Conservation International / Ethos Agriculture / Solidaridad / VOCAL、ドイツ連邦経済協力省支援)が6/12頃公開した『Coffee Barometer 2026』を一次素材化。Perfect Daily Grind 6/12 recap と Comunicaffe / Nestlé 公式レスポンスをクロス参照、freshness ~144h で 168h 制約クリア。14d Method TOP3 official-src (avg 7.33、6/05 ブラジル 71.9M 10v) を 6 日空きで再投入、直近 2 日 (6/15 news-en、6/17 news-en) と method 連続違反なし。news-en は 14d WORST (avg 4.67) で本日凍結適用。Pillar ③ 業界・ビジネス × ① 市況のクロス、直近 14d ③ 38% 過多 / ① 15% 不足の分布是正をサステナ × 価格構造軸で実現。素材タイプ仮説『業界の値段が誰によって作られているかを暴く構造ストーリー』(5/22 ブラジル脱カフェ 75v / 5/16 焙煎所の価格説明 77v の系統) を 3 本目として検証する位置づけ。",
+    "method": "market-data",
+    "description": "今週の Coffee C 先物の急変動 (月曜急騰→金曜急落) を Barchart / Comunicaffe / CNN / CNBC / FoodIngredientsFirst でクロス参照して再構成。米イランが 6/17 夜にホルムズ海峡の 60 日間無料通航 MOU を署名 (6/19 スイスで正式締結予定)、それを受けて 6/18 引けで 7 月限アラビカが -3.15%、ロブスタが -2.19% と急落。月曜は逆に Brazil ミナス・サンパウロの雨で収穫遅れ + ICE 認証在庫 396,171 袋 (前年同期 859,389 袋の 46% 水準) で急騰しており、1 週間で 360° ターンの値動き。Rabobank は Q4 2026 にアラビカ $2.50-3.00 (今より約 3 割安) を予測、Vietnam ロブスタ輸出も Jan-Apr +15.8% YoY と弱気材料が積み上がる構造。14d で market-data 投入ゼロ、5/29 (8v) / 6/03 (4v) の弱勝ち枠を Explore 比率で再投入。Pillar ① 市況 14d 15% の不足を直撃是正、Pillar ③ 31% 過多も同時分散。news-en は 14d WORST (avg 5.00) で凍結継続、6/17 ニカラグア 0v 未着、6/18 official-src と直近 2 日 method 連続違反なし。素材タイプ仮説『1 週間で市場が 360° ターンした急変動を Mon vs Fri の温度差で語る weekly-market-recap』を新パターンとして検証する位置づけ。",
     "sources": [
-      "https://coffeebarometer.org/",
-      "https://www.solidaridadnetwork.org/news/sustainability-cannot-be-built-on-permanently-cheap-coffee-reveals-2026-coffee-barometer/",
-      "https://www.comunicaffe.com/coffee-barometer-2026-highlights-the-persistent-systemic-and-structural-imbalances-in-the-coffee-sector",
-      "https://perfectdailygrind.com/2026/06/coffee-news-recap-12-june-2026/",
-      "https://www.nestle.com/ask-nestle/human-rights/answers/coffee-barometer-2026-report",
-      "https://zerodeforestationhub.eu/coffee-barometer-2026/"
+      "https://www.barchart.com/story/news/2521587/tighter-supplies-and-brazil-harvest-delays-boost-coffee-prices",
+      "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
+      "https://www.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel",
+      "https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html",
+      "https://www.foodingredientsfirst.com/news/coffee-prices-surplus-hormuz-disruption.html",
+      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-continue-higher-brazil-185524160.html"
     ],
-    "query": "Coffee Barometer 2026 release June Solidaridad Conservation International 10% unpaid family labor retail subsidy 15 largest roasters traders pricing disclosure Nestle Starbucks JDE Peet's EU 2029 living income obligation",
-    "freshness_hours": 144
+    "query": "arabica robusta futures Hormuz Brazil rain ICE stocks June 17 18 2026",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "あなたのコーヒー10%は農家家族の無償労働・Coffee Barometer 2026が大手15社の価格非開示を暴露",
-      "description": "先週公開のCoffee Barometer 2026、コーヒー小売価格の10%は農家家族の無償労働で実質補填されているそうです。",
-      "detail": "NGO連合(Solidaridad / Conservation Internationalほか)が6/12頃公開。世界15社の大手焙煎・商社で価格構造を公開する会社はゼロ、Nestlé・Starbucks・JDE Peet'sも対象。EUは2029年から大手企業に生活賃金支払いを義務化。",
-      "narration": "あなたの一杯、10%は農家家族の無償労働で支えられています。先週公開のCoffee Barometer 2026、業界の構造を暴く最新報告書です。",
-      "tags": [
-        "業界",
-        "サステナ",
-        "透明性"
-      ],
+      "title": "ホルムズ海峡再開合意でコーヒー先物が急落・月曜の急騰から金曜はアラビカ3.15%安・ロブスタ2.19%安",
+      "description": "今週、米イランの海峡合意でコーヒー先物が一気に逆走しました。",
+      "detail": "月曜は雨でブラジルの収穫が遅れ、ICE認証在庫も39万袋と歴史的低水準で急騰しました。ところが17日に米イランがホルムズ海峡60日間の無料通航で合意。金曜は7月限のアラビカが3.15%安、ロブスタも2.19%安と急落しました。",
+      "narration": "実は今週、コーヒー先物が大きく値下がりです。ホルムズ海峡を再開する米イラン合意で、月曜の急騰が金曜に一気に逆走しました。",
+      "tags": ["コーヒー先物", "アラビカ", "ホルムズ海峡", "ICE在庫", "市況"],
       "narration_sections": {
-        "hook": "あなたの一杯、10%は農家家族の無償労働で支えられています。先週公開のCoffee Barometer 2026、業界の構造を暴く最新報告書です。",
-        "origin": "世界15社の大手焙煎業者・商社で、価格構造を公開する会社はゼロ。Nestlé、Starbucks、JDE Peet'sも対象です。生産国に届く価値は下流に偏り、農家家族の無償労働が10%分のコストを肩代わり。EUは2029年から生活賃金支払いを義務化します。",
-        "recommend": "スペシャルティ豆が割高な理由はここにあります。透明な価格と生産者還元を選ぶ目線を、OGも仕入れで貫きます。"
+        "hook": "実は今週、コーヒー先物が大きく値下がりです。ホルムズ海峡を再開する米イラン合意で、月曜の急騰が金曜に一気に逆走しました。",
+        "origin": "月曜は雨でブラジルの収穫が遅れ、ICE認証在庫も39万袋と歴史的低水準で急騰しました。ところが17日に米イランがホルムズ海峡60日間の無料通航で合意。金曜は7月限のアラビカが3.15%安、ロブスタも2.19%安と急落しました。",
+        "recommend": "物流費の重しが取れたぶん、秋以降は小売の値上げ圧力も少し落ち着く可能性が出ます。豆を買うなら焙煎日の新しいものを少量で試すのが今は安全です。"
       },
       "section_titles": {
-        "hook": "10%は不払い労働",
-        "origin": "大手15社が非開示",
-        "recommend": "透明な価格を選ぶ"
+        "hook": "コーヒー先物が逆走",
+        "origin": "ホルムズ合意で急落",
+        "recommend": "焙煎日の新しい豆を少量"
       },
       "section_descriptions": {
-        "hook": "NGO連合6/12公開の最新業界レポート",
-        "origin": "Nestlé/Starbucks含む大手15社が非開示",
-        "recommend": "スペシャルティが割高な理由はここにあります"
+        "hook": "今週、月曜の急騰が金曜に一気に逆走しました。",
+        "origin": "米イラン合意でアラビカ・ロブスタ双方が急落",
+        "recommend": "秋の値下げに備えて焙煎の新しい豆を少量で"
       }
     }
   ]
