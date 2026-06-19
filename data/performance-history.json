@@ -1837,7 +1837,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -1884,7 +1884,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -1931,7 +1931,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2065,10 +2065,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 13,
+        "views": 14,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2112,7 +2112,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2157,7 +2157,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2200,7 +2200,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2243,7 +2243,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
+        "updatedAt": "2026-06-19T02:13:38.728Z"
       }
     },
     {
@@ -2373,19 +2373,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-19T02:13:38.728Z"
+      }
+    },
+    {
+      "videoId": "3M5Z08TDQVE",
+      "videoUrl": "https://youtube.com/shorts/3M5Z08TDQVE",
+      "date": "2026-06-19",
+      "title": "【コーヒー豆知識】ホルムズ海峡再開合意でコーヒー先物が急落・月曜の急騰から金曜はアラビカ3.15%安・ロブスタ2.19%安｜2026/06/19 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "market-data",
+        "description": "今週の Coffee C 先物の急変動 (月曜急騰→金曜急落) を Barchart / Comunicaffe / CNN / CNBC / FoodIngredientsFirst でクロス参照して再構成。米イランが 6/17 夜にホルムズ海峡の 60 日間無料通航 MOU を署名 (6/19 スイスで正式締結予定)、それを受けて 6/18 引けで 7 月限アラビカが -3.15%、ロブスタが -2.19% と急落。月曜は逆に Brazil ミナス・サンパウロの雨で収穫遅れ + ICE 認証在庫 396,171 袋 (前年同期 859,389 袋の 46% 水準) で急騰しており、1 週間で 360° ターンの値動き。Rabobank は Q4 2026 にアラビカ $2.50-3.00 (今より約 3 割安) を予測、Vietnam ロブスタ輸出も Jan-Apr +15.8% YoY と弱気材料が積み上がる構造。14d で market-data 投入ゼロ、5/29 (8v) / 6/03 (4v) の弱勝ち枠を Explore 比率で再投入。Pillar ① 市況 14d 15% の不足を直撃是正、Pillar ③ 31% 過多も同時分散。news-en は 14d WORST (avg 5.00) で凍結継続、6/17 ニカラグア 0v 未着、6/18 official-src と直近 2 日 method 連続違反なし。素材タイプ仮説『1 週間で市場が 360° ターンした急変動を Mon vs Fri の温度差で語る weekly-market-recap』を新パターンとして検証する位置づけ。",
+        "sources": [
+          "https://www.barchart.com/story/news/2521587/tighter-supplies-and-brazil-harvest-delays-boost-coffee-prices",
+          "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
+          "https://www.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel",
+          "https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html",
+          "https://www.foodingredientsfirst.com/news/coffee-prices-surplus-hormuz-disruption.html",
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-continue-higher-brazil-185524160.html"
+        ],
+        "query": "arabica robusta futures Hormuz Brazil rain ICE stocks June 17 18 2026",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-15",
-      "changes": [
-        "standard: 118 avg views (25 videos)",
-        "Day performance: Sun=268, Wed=113, Tue=109, Mon=81, Sat=80, Fri=67, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-16",
       "changes": [
@@ -2615,6 +2652,14 @@
       "changes": [
         "standard: 66 avg views (54 videos)",
         "Day performance: Sun=163, Tue=66, Sat=57, Wed=56, Mon=44, Fri=43, Thu=12"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-19",
+      "changes": [
+        "standard: 65 avg views (55 videos)",
+        "Day performance: Sun=163, Tue=66, Sat=57, Wed=56, Mon=44, Fri=43, Thu=11"
       ],
       "recommendedTemplate": "standard"
     }
