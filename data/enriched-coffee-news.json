@@ -1,41 +1,44 @@
 {
-  "date": "2026-06-19",
+  "date": "2026-06-20",
   "discovery": {
-    "method": "market-data",
-    "description": "今週の Coffee C 先物の急変動 (月曜急騰→金曜急落) を Barchart / Comunicaffe / CNN / CNBC / FoodIngredientsFirst でクロス参照して再構成。米イランが 6/17 夜にホルムズ海峡の 60 日間無料通航 MOU を署名 (6/19 スイスで正式締結予定)、それを受けて 6/18 引けで 7 月限アラビカが -3.15%、ロブスタが -2.19% と急落。月曜は逆に Brazil ミナス・サンパウロの雨で収穫遅れ + ICE 認証在庫 396,171 袋 (前年同期 859,389 袋の 46% 水準) で急騰しており、1 週間で 360° ターンの値動き。Rabobank は Q4 2026 にアラビカ $2.50-3.00 (今より約 3 割安) を予測、Vietnam ロブスタ輸出も Jan-Apr +15.8% YoY と弱気材料が積み上がる構造。14d で market-data 投入ゼロ、5/29 (8v) / 6/03 (4v) の弱勝ち枠を Explore 比率で再投入。Pillar ① 市況 14d 15% の不足を直撃是正、Pillar ③ 31% 過多も同時分散。news-en は 14d WORST (avg 5.00) で凍結継続、6/17 ニカラグア 0v 未着、6/18 official-src と直近 2 日 method 連続違反なし。素材タイプ仮説『1 週間で市場が 360° ターンした急変動を Mon vs Fri の温度差で語る weekly-market-recap』を新パターンとして検証する位置づけ。",
+    "method": "social-en",
+    "description": "Saturday social-en 専用枠の試験運用 1 本目。r/Coffee / r/espresso / James Hoffmann TikTok・YouTube・Facebook を横断、Reddit と coffee 系 Substack で 2025-2026 にかけて再評価が続く『豆を凍らせて挽く』技法を Bath 大学 Hendon et al. 2016 (Nature Scientific Reports) 査読論文で補強。一次論文は室温 20℃ / 家庭用冷凍庫 -19℃ / ドライアイス -79℃ / 液体窒素 -196℃ の 4 温度で同一豆を挽き比べ、温度が低いほど粒径分布が狭まり微粉が減少。家庭用冷凍庫 -19℃ でも明確な効果が確認され、Hoffmann も『small-portion vacuum-seal + 凍ったまま挽く』を推奨。Manchester Coffee Archive / 80plushome Substack / Barista Hustle 解説で 2024-2026 のコミュニティ再評価をクロスチェック。Saturday エバーグリーン枠で Pillar ④ 焙煎士一次情報・抽出科学軸、6/19 ホルムズ先物急落 (market-data) との接続軸として『物流費圧が剥がれる値下げ局面で手元の豆を最大限活用する技術』に位置付け。social-en は 14d TOP1 (avg 12.0、3 本連続 10v 以上)、最終使用 6/14 (6 日空き) で連続違反なし。news-en 凍結維持、土曜エバーグリーン × social-en 駆動の勝ち筋テンプレ『査読論文 × 家庭再現粒度』を継続検証。",
     "sources": [
-      "https://www.barchart.com/story/news/2521587/tighter-supplies-and-brazil-harvest-delays-boost-coffee-prices",
-      "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
-      "https://www.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel",
-      "https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html",
-      "https://www.foodingredientsfirst.com/news/coffee-prices-surplus-hormuz-disruption.html",
-      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-continue-higher-brazil-185524160.html"
+      "https://www.nature.com/articles/srep24483",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4834475/",
+      "https://www.tiktok.com/@jameshoffmanncoffee/video/7071301438164471046",
+      "https://www.tiktok.com/@jameshoffmanncoffee/video/6925723746384792838",
+      "https://www.facebook.com/jameshoffmanncoffee/videos/how-to-guide-the-best-way-to-freeze-coffee-beans/1627262214111253/",
+      "https://x.com/jimseven/status/1242836113779240961",
+      "https://manchestercoffeearchive.com/freezing-coffee/",
+      "https://80plushome.substack.com/p/should-you-grind-frozen-coffee",
+      "https://www.baristahustle.com/the-grinder-paper-explained/"
     ],
-    "query": "arabica robusta futures Hormuz Brazil rain ICE stocks June 17 18 2026",
-    "freshness_hours": 24
+    "query": "freezing coffee beans grind particle size distribution Bath Hendon 2016; James Hoffmann freeze coffee beans single dose grind frozen 2025 2026; r/Coffee freezer storage debate vacuum",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ホルムズ海峡再開合意でコーヒー先物が急落・月曜の急騰から金曜はアラビカ3.15%安・ロブスタ2.19%安",
-      "description": "今週、米イランの海峡合意でコーヒー先物が一気に逆走しました。",
-      "detail": "月曜は雨でブラジルの収穫が遅れ、ICE認証在庫も39万袋と歴史的低水準で急騰しました。ところが17日に米イランがホルムズ海峡60日間の無料通航で合意。金曜は7月限のアラビカが3.15%安、ロブスタも2.19%安と急落しました。",
-      "narration": "実は今週、コーヒー先物が大きく値下がりです。ホルムズ海峡を再開する米イラン合意で、月曜の急騰が金曜に一気に逆走しました。",
-      "tags": ["コーヒー先物", "アラビカ", "ホルムズ海峡", "ICE在庫", "市況"],
+      "title": "豆は凍らせて挽くと粒度が揃う・英Bath大学2016研究を海外コーヒー界隈が再評価中",
+      "description": "実は、豆を凍らせてから挽くと粒度がそろう、という研究が再評価されています。",
+      "detail": "英Bath大学チームは室温20度、冷凍庫マイナス19度、ドライアイス、液体窒素の4温度で挽き比べ。冷えるほど豆は脆くきれいに割れ、粒の大きさが揃って微粉も減ります。家庭用の冷凍庫でも明確に差が出て、抽出が均一になりロスが減ることが分かりました。",
+      "narration": "実はコーヒー豆って、凍らせてから挽くと粒度がそろうんです。今、海外のコーヒー界隈で2016年の英国Bath大学の研究が再評価中です。",
+      "tags": ["コーヒー豆", "冷凍保存", "グラインド", "粒度分布", "家で淹れる"],
       "narration_sections": {
-        "hook": "実は今週、コーヒー先物が大きく値下がりです。ホルムズ海峡を再開する米イラン合意で、月曜の急騰が金曜に一気に逆走しました。",
-        "origin": "月曜は雨でブラジルの収穫が遅れ、ICE認証在庫も39万袋と歴史的低水準で急騰しました。ところが17日に米イランがホルムズ海峡60日間の無料通航で合意。金曜は7月限のアラビカが3.15%安、ロブスタも2.19%安と急落しました。",
-        "recommend": "物流費の重しが取れたぶん、秋以降は小売の値上げ圧力も少し落ち着く可能性が出ます。豆を買うなら焙煎日の新しいものを少量で試すのが今は安全です。"
+        "hook": "実はコーヒー豆って、凍らせてから挽くと粒度がそろうんです。今、海外のコーヒー界隈で2016年の英国Bath大学の研究が再評価中です。",
+        "origin": "英Bath大学チームは室温、冷凍庫マイナス19度、ドライアイス、液体窒素の4温度で挽き比べ。冷えるほど豆は脆くきれいに割れ、粒の大きさが揃って微粉も減ります。普通の家庭用冷凍庫でも明確に差が出て、抽出が均一になりロスが減るのが分かりました。",
+        "recommend": "ジップロックに小分けして空気を抜き冷凍、使う分だけ凍ったまま挽くのがコツです。同じ豆がワンランク化けるので、ぜひ試してください。"
       },
       "section_titles": {
-        "hook": "コーヒー先物が逆走",
-        "origin": "ホルムズ合意で急落",
-        "recommend": "焙煎日の新しい豆を少量"
+        "hook": "凍らせて挽く新常識",
+        "origin": "Bath大学の4温度実験",
+        "recommend": "家庭用冷凍庫でも効果"
       },
       "section_descriptions": {
-        "hook": "今週、月曜の急騰が金曜に一気に逆走しました。",
-        "origin": "米イラン合意でアラビカ・ロブスタ双方が急落",
-        "recommend": "秋の値下げに備えて焙煎の新しい豆を少量で"
+        "hook": "豆を凍らせてから挽くと粒度がそろうという研究があります",
+        "origin": "英Bath大学が4温度で挽き比べ、家庭の冷凍庫でも差を確認",
+        "recommend": "小分け冷凍で使う分だけ凍ったまま挽くのがコツです"
       }
     }
   ]
