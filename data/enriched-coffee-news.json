@@ -1,44 +1,39 @@
 {
-  "date": "2026-06-20",
+  "date": "2026-06-21",
   "discovery": {
-    "method": "social-en",
-    "description": "Saturday social-en 専用枠の試験運用 1 本目。r/Coffee / r/espresso / James Hoffmann TikTok・YouTube・Facebook を横断、Reddit と coffee 系 Substack で 2025-2026 にかけて再評価が続く『豆を凍らせて挽く』技法を Bath 大学 Hendon et al. 2016 (Nature Scientific Reports) 査読論文で補強。一次論文は室温 20℃ / 家庭用冷凍庫 -19℃ / ドライアイス -79℃ / 液体窒素 -196℃ の 4 温度で同一豆を挽き比べ、温度が低いほど粒径分布が狭まり微粉が減少。家庭用冷凍庫 -19℃ でも明確な効果が確認され、Hoffmann も『small-portion vacuum-seal + 凍ったまま挽く』を推奨。Manchester Coffee Archive / 80plushome Substack / Barista Hustle 解説で 2024-2026 のコミュニティ再評価をクロスチェック。Saturday エバーグリーン枠で Pillar ④ 焙煎士一次情報・抽出科学軸、6/19 ホルムズ先物急落 (market-data) との接続軸として『物流費圧が剥がれる値下げ局面で手元の豆を最大限活用する技術』に位置付け。social-en は 14d TOP1 (avg 12.0、3 本連続 10v 以上)、最終使用 6/14 (6 日空き) で連続違反なし。news-en 凍結維持、土曜エバーグリーン × social-en 駆動の勝ち筋テンプレ『査読論文 × 家庭再現粒度』を継続検証。",
+    "method": "expert-blog",
+    "description": "Lance Hedrick の YouTube『One & Done 2026』を起点に、Beanbook と Lamose のレシピ集約サイトでパラメータをクロスチェック",
     "sources": [
-      "https://www.nature.com/articles/srep24483",
-      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4834475/",
-      "https://www.tiktok.com/@jameshoffmanncoffee/video/7071301438164471046",
-      "https://www.tiktok.com/@jameshoffmanncoffee/video/6925723746384792838",
-      "https://www.facebook.com/jameshoffmanncoffee/videos/how-to-guide-the-best-way-to-freeze-coffee-beans/1627262214111253/",
-      "https://x.com/jimseven/status/1242836113779240961",
-      "https://manchestercoffeearchive.com/freezing-coffee/",
-      "https://80plushome.substack.com/p/should-you-grind-frozen-coffee",
-      "https://www.baristahustle.com/the-grinder-paper-explained/"
+      "https://www.youtube.com/watch?v=oDnPHPVUorA",
+      "https://beanbook.app/recipes/4805bdac-4f99-406b-9294-86740e774a27",
+      "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
+      "https://www.cup-timer.com/en/barista/lance-hedrick"
     ],
-    "query": "freezing coffee beans grind particle size distribution Bath Hendon 2016; James Hoffmann freeze coffee beans single dose grind frozen 2025 2026; r/Coffee freezer storage debate vacuum",
+    "query": "Lance Hedrick coffee tutorial June 2026 One and Done V60",
     "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "豆は凍らせて挽くと粒度が揃う・英Bath大学2016研究を海外コーヒー界隈が再評価中",
-      "description": "実は、豆を凍らせてから挽くと粒度がそろう、という研究が再評価されています。",
-      "detail": "英Bath大学チームは室温20度、冷凍庫マイナス19度、ドライアイス、液体窒素の4温度で挽き比べ。冷えるほど豆は脆くきれいに割れ、粒の大きさが揃って微粉も減ります。家庭用の冷凍庫でも明確に差が出て、抽出が均一になりロスが減ることが分かりました。",
-      "narration": "実はコーヒー豆って、凍らせてから挽くと粒度がそろうんです。今、海外のコーヒー界隈で2016年の英国Bath大学の研究が再評価中です。",
-      "tags": ["コーヒー豆", "冷凍保存", "グラインド", "粒度分布", "家で淹れる"],
+      "title": "Lance Hedrickの新V60レシピ『ワン&ダン2026』が海外で話題・15g/225g/96度の固定処方でどの豆でも淹れる",
+      "description": "世界的バリスタのLance Hedrickさんが2026年版のV60汎用レシピを公開。豆を変えても同じ手順で安定する固定処方が要点です。",
+      "detail": "豆15gにお湯225g、温度は96度、挽き目は中挽き。粉を密閉シェイカーで振って塊と微粉を整え、蒸らしは60gで30秒、その後に残り165gを一気に注いで合計2分半で落とし切る2投構成です。",
+      "narration": "海外で今、新しいV60レシピが話題です。世界的バリスタのLance Hedrickさんが2026年版『ワン&ダン』をYouTubeで公開しました。",
+      "tags": ["V60レシピ", "ハンドドリップ", "Lance Hedrick"],
       "narration_sections": {
-        "hook": "実はコーヒー豆って、凍らせてから挽くと粒度がそろうんです。今、海外のコーヒー界隈で2016年の英国Bath大学の研究が再評価中です。",
-        "origin": "英Bath大学チームは室温、冷凍庫マイナス19度、ドライアイス、液体窒素の4温度で挽き比べ。冷えるほど豆は脆くきれいに割れ、粒の大きさが揃って微粉も減ります。普通の家庭用冷凍庫でも明確に差が出て、抽出が均一になりロスが減るのが分かりました。",
-        "recommend": "ジップロックに小分けして空気を抜き冷凍、使う分だけ凍ったまま挽くのがコツです。同じ豆がワンランク化けるので、ぜひ試してください。"
+        "hook": "海外で今、新しいV60レシピが話題です。世界的バリスタのLance Hedrickさんが2026年版『ワン&ダン』をYouTubeで公開しました。",
+        "origin": "豆15gにお湯225g、温度は96度、挽き目は中挽き。注ぐ前に粉を密閉シェイカーで振り、塊と微粉を整えてからセットします。蒸らしは粉の3倍にあたる60gを注いで30秒、残り165gを一気に注ぎ合計約2分半で落とし切る2段階構成です。",
+        "recommend": "豆を変えるたびに条件で悩む方こそ、まずは固定レシピで『自分の味の基準点』を作ると判断が早くなります。手元の豆でぜひ試してみてください。"
       },
       "section_titles": {
-        "hook": "凍らせて挽く新常識",
-        "origin": "Bath大学の4温度実験",
-        "recommend": "家庭用冷凍庫でも効果"
+        "hook": "ワン&ダン2026",
+        "origin": "シェイカー2投式",
+        "recommend": "自分の基準を作る"
       },
       "section_descriptions": {
-        "hook": "豆を凍らせてから挽くと粒度がそろうという研究があります",
-        "origin": "英Bath大学が4温度で挽き比べ、家庭の冷凍庫でも差を確認",
-        "recommend": "小分け冷凍で使う分だけ凍ったまま挽くのがコツです"
+        "hook": "Lance Hedrickの2026年版V60新レシピが海外で話題",
+        "origin": "粉を振って均一化、蒸らし60gと本投で2分半",
+        "recommend": "豆を変えても迷わない固定処方の効用"
       }
     }
   ]
