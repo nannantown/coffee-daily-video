@@ -1,39 +1,40 @@
 {
-  "date": "2026-06-21",
+  "date": "2026-06-22",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Lance Hedrick の YouTube『One & Done 2026』を起点に、Beanbook と Lamose のレシピ集約サイトでパラメータをクロスチェック",
+    "method": "market-data",
+    "description": "tradingeconomics の coffee 商品面 と Sucafina/StoneX のプロ用市況レポートで、ブラジル冷波 × USDA 26/27 期豊作見通し × ICE 認定在庫直近最低 の三層綱引きを照合",
     "sources": [
-      "https://www.youtube.com/watch?v=oDnPHPVUorA",
-      "https://beanbook.app/recipes/4805bdac-4f99-406b-9294-86740e774a27",
-      "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
-      "https://www.cup-timer.com/en/barista/lance-hedrick"
+      "https://tradingeconomics.com/commodity/coffee",
+      "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
+      "https://www.stonex.com/en-us/insights/arabica-futures-higher-as-ice-certified-stocks-drop-to-22-year-low/",
+      "https://qahwaworld.com/news/brazil-coffee-crop-frost-risk-2026/",
+      "https://royalcoffee.com/brazil-weather-update/"
     ],
-    "query": "Lance Hedrick coffee tutorial June 2026 One and Done V60",
-    "freshness_hours": 168
+    "query": "arabica futures Brazil frost June 2026 USDA 2026/27 harvest forecast ICE certified stocks",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Lance Hedrickの新V60レシピ『ワン&ダン2026』が海外で話題・15g/225g/96度の固定処方でどの豆でも淹れる",
-      "description": "世界的バリスタのLance Hedrickさんが2026年版のV60汎用レシピを公開。豆を変えても同じ手順で安定する固定処方が要点です。",
-      "detail": "豆15gにお湯225g、温度は96度、挽き目は中挽き。粉を密閉シェイカーで振って塊と微粉を整え、蒸らしは60gで30秒、その後に残り165gを一気に注いで合計2分半で落とし切る2投構成です。",
-      "narration": "海外で今、新しいV60レシピが話題です。世界的バリスタのLance Hedrickさんが2026年版『ワン&ダン』をYouTubeで公開しました。",
-      "tags": ["V60レシピ", "ハンドドリップ", "Lance Hedrick"],
+      "title": "アラビカ先物に綱引き・ブラジル冷波で霜リスク再燃の一方、USDAは26/27期に過去最大級の7,190万袋を予想",
+      "description": "今日のコーヒーニュース。アラビカ先物が綱引きの相場です。ブラジル南部の冷波で霜リスクが再燃する一方、26/27期は史上級の豊作予想という綱引き構図です。",
+      "detail": "冷波はパラナ州など南部の産地を通過中。一方でUSDAは26/27期、ブラジルの収穫を史上級の7,190万袋と予想し、アラビカは47.5百万袋で前期比25%増。ICE認定在庫は39万6千袋まで落ち、直近で最も低い水準です。",
+      "narration": "今日のコーヒーニュース。アラビカ先物に綱引きが起きています。ブラジル南部で冷波が抜け、6月後半恒例の霜リスクが再燃中です。",
+      "tags": ["アラビカ綱引き相場", "ブラジル霜リスク", "在庫直近最低"],
       "narration_sections": {
-        "hook": "海外で今、新しいV60レシピが話題です。世界的バリスタのLance Hedrickさんが2026年版『ワン&ダン』をYouTubeで公開しました。",
-        "origin": "豆15gにお湯225g、温度は96度、挽き目は中挽き。注ぐ前に粉を密閉シェイカーで振り、塊と微粉を整えてからセットします。蒸らしは粉の3倍にあたる60gを注いで30秒、残り165gを一気に注ぎ合計約2分半で落とし切る2段階構成です。",
-        "recommend": "豆を変えるたびに条件で悩む方こそ、まずは固定レシピで『自分の味の基準点』を作ると判断が早くなります。手元の豆でぜひ試してみてください。"
+        "hook": "今日のコーヒーニュース。アラビカ先物に綱引きが起きています。ブラジル南部で冷波が抜け、6月後半恒例の霜リスクが再燃中です。",
+        "origin": "冷波はパラナ州など南部の産地を通過中。一方でUSDAは26/27期、ブラジルの収穫を史上級の7,190万袋と予想し、アラビカは47.5百万袋で前期比25%増。ICE認定在庫は39万6千袋まで落ち、直近で最も低い水準です。",
+        "recommend": "短期は霜と低在庫で支え、中期は豊作で重い相場。家で淹れる人は値動きより、手元の豆を新鮮なうちに楽しむのが吉。EC準備中、フォローでお待ちを。"
       },
       "section_titles": {
-        "hook": "ワン&ダン2026",
-        "origin": "シェイカー2投式",
-        "recommend": "自分の基準を作る"
+        "hook": "アラビカ先物が綱引き",
+        "origin": "在庫最低と豊作予想",
+        "recommend": "家で迷わないコツ"
       },
       "section_descriptions": {
-        "hook": "Lance Hedrickの2026年版V60新レシピが海外で話題",
-        "origin": "粉を振って均一化、蒸らし60gと本投で2分半",
-        "recommend": "豆を変えても迷わない固定処方の効用"
+        "hook": "ブラジル冷波で霜リスク、先物相場に新展開",
+        "origin": "USDA予想と在庫データで26/27の需給を整理",
+        "recommend": "家で淹れる趣味層が今知っておきたい受け止め方"
       }
     }
   ]
