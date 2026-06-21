@@ -1931,7 +1931,7 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -1980,7 +1980,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2065,10 +2065,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 14,
+        "views": 15,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2112,7 +2112,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2157,7 +2157,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2200,7 +2200,7 @@
         "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2243,7 +2243,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
+        "updatedAt": "2026-06-21T01:57:36.384Z"
       }
     },
     {
@@ -2463,6 +2463,49 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 13,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-21T01:57:36.384Z"
+      }
+    },
+    {
+      "videoId": "mXVZeHTqvH0",
+      "videoUrl": "https://youtube.com/shorts/mXVZeHTqvH0",
+      "date": "2026-06-21",
+      "title": "【コーヒー豆知識】Lance Hedrickの新V60レシピ『ワン&ダン2026』が海外で話題・15g/225g/96度の固定処方でどの豆でも淹れる｜2026/06/21 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Lance Hedrick の YouTube『One & Done 2026』を起点に、Beanbook と Lamose のレシピ集約サイトでパラメータをクロスチェック",
+        "sources": [
+          "https://www.youtube.com/watch?v=oDnPHPVUorA",
+          "https://beanbook.app/recipes/4805bdac-4f99-406b-9294-86740e774a27",
+          "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
+          "https://www.cup-timer.com/en/barista/lance-hedrick"
+        ],
+        "query": "Lance Hedrick coffee tutorial June 2026 One and Done V60",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2471,14 +2514,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-17",
-      "changes": [
-        "standard: 114 avg views (27 videos)",
-        "Day performance: Sun=268, Wed=113, Tue=109, Mon=81, Sat=78, Fri=59, Thu=16"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-18",
       "changes": [
@@ -2708,6 +2743,14 @@
       "changes": [
         "standard: 64 avg views (56 videos)",
         "Day performance: Sun=163, Tue=66, Sat=57, Wed=56, Mon=44, Fri=38, Thu=11"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-21",
+      "changes": [
+        "standard: 63 avg views (57 videos)",
+        "Day performance: Sun=163, Tue=66, Wed=57, Sat=51, Mon=44, Fri=38, Thu=11"
       ],
       "recommendedTemplate": "standard"
     }
