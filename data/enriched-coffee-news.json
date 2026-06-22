@@ -1,40 +1,44 @@
 {
-  "date": "2026-06-22",
+  "date": "2026-06-23",
   "discovery": {
-    "method": "market-data",
-    "description": "tradingeconomics の coffee 商品面 と Sucafina/StoneX のプロ用市況レポートで、ブラジル冷波 × USDA 26/27 期豊作見通し × ICE 認定在庫直近最低 の三層綱引きを照合",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の 6/19 News Recap 『Liberia to revive coffee production』を起点に、JR Farms × リベリア農業省の 60M USD・20 年パートナーシップ (6/8 締結) を Liberia Ministry of Agriculture 公式・The New Dawn Liberia・Comunicaffe・Global Coffee Report・Food Business MEA・Punch Nigeria でクロスチェック。さらに Wikipedia (Coffea liberica) と Perfect Daily Grind 既存解説で『コーヒー第3の品種 Liberica=世界生産1.5%未満』の希少性データを補強。14d Method 集計で news-en は TOP3 (avg 5.33/n=3)、最終使用 6/17 で 5 日空きの Exploit。Pillar ② 産地・ハーベスト (14d 15% で目標 25% に対し不足) を是正、6/09 コロンビア・6/17 ニカラグアと産地重複なしの西アフリカ。勝ち筋テンプレ『驚き視点+一次ソース』を social-en 以外で再現する試行: 『コーヒーには第3の品種があった』という Primary 層の知識ギャップを突くアングル。OG 接続は『数年後リベリカが店頭に並ぶかも・入荷情報チェックを』で強い CTA 回避、焙煎士の知識発信という差別化軸でフォロー価値を積む。",
     "sources": [
-      "https://tradingeconomics.com/commodity/coffee",
-      "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
-      "https://www.stonex.com/en-us/insights/arabica-futures-higher-as-ice-certified-stocks-drop-to-22-year-low/",
-      "https://qahwaworld.com/news/brazil-coffee-crop-frost-risk-2026/",
-      "https://royalcoffee.com/brazil-weather-update/"
+      "https://perfectdailygrind.com/2026/06/coffee-news-recap-19-june-2026/",
+      "https://www.thenewdawnliberia.com/moa-secures-us60-million-investment-to-revive-liberias-coffee-sector/",
+      "https://www.foodbusinessmea.com/jr-farms-signs-us60m-coffee-partnership-with-liberia-to-revive-sector/",
+      "https://www.gcrmag.com/liberian-government-signs-landmark-coffee-partnership",
+      "https://www.comunicaffe.com/liberia-to-launch-coffee-liberica-under-faos-global-one-country-one-priority-product-initiative/",
+      "https://www.moa.gov.lr/media/press-releases/liberia-launch-coffee-liberica-under-faos-global-one-country-one-priority",
+      "https://independent.ng/liberia-nigerian-firm-seal-60m-pact-to-revive-coffee-industry-create-300000-jobs/",
+      "https://en.wikipedia.org/wiki/Coffea_liberica",
+      "https://perfectdailygrind.com/2020/11/what-is-coffea-liberica/"
     ],
-    "query": "arabica futures Brazil frost June 2026 USDA 2026/27 harvest forecast ICE certified stocks",
-    "freshness_hours": 72
+    "query": "Liberia revive coffee production June 2026 JR Farms 60 million partnership Coffea Liberica third species FAO One Country One Priority Product",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカ先物に綱引き・ブラジル冷波で霜リスク再燃の一方、USDAは26/27期に過去最大級の7,190万袋を予想",
-      "description": "今日のコーヒーニュース。アラビカ先物が綱引きの相場です。ブラジル南部の冷波で霜リスクが再燃する一方、26/27期は史上級の豊作予想という綱引き構図です。",
-      "detail": "冷波はパラナ州など南部の産地を通過中。一方でUSDAは26/27期、ブラジルの収穫を史上級の7,190万袋と予想し、アラビカは47.5百万袋で前期比25%増。ICE認定在庫は39万6千袋まで落ち、直近で最も低い水準です。",
-      "narration": "今日のコーヒーニュース。アラビカ先物に綱引きが起きています。ブラジル南部で冷波が抜け、6月後半恒例の霜リスクが再燃中です。",
-      "tags": ["アラビカ綱引き相場", "ブラジル霜リスク", "在庫直近最低"],
+      "title": "コーヒー第3の品種リベリカが大復活・リベリアが90億円規模の20年計画",
+      "description": "実はコーヒーには第3の品種があるんです。アラビカ、ロブスタ、そしてリベリカ。今、西アフリカで大復活計画が始動。",
+      "detail": "先週リベリア政府がアフリカ系企業JR Farmsと約90億円・20年契約を締結。20万人の農家を巻き込み、25万ヘクタールに2億本のリベリカを植えます。FAOが各国1品目だけ指定する重点品種にも選ばれました。",
+      "narration": "実はコーヒー、第3の品種があるって知ってますか？アラビカ、ロブスタ、そしてリベリカ。今、西アフリカのリベリアで大復活計画が動き出しました。",
+      "tags": ["リベリカ", "リベリア", "産地ニュース"],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。アラビカ先物に綱引きが起きています。ブラジル南部で冷波が抜け、6月後半恒例の霜リスクが再燃中です。",
-        "origin": "冷波はパラナ州など南部の産地を通過中。一方でUSDAは26/27期、ブラジルの収穫を史上級の7,190万袋と予想し、アラビカは47.5百万袋で前期比25%増。ICE認定在庫は39万6千袋まで落ち、直近で最も低い水準です。",
-        "recommend": "短期は霜と低在庫で支え、中期は豊作で重い相場。家で淹れる人は値動きより、手元の豆を新鮮なうちに楽しむのが吉。EC準備中、フォローでお待ちを。"
+        "hook": "実はコーヒー、第3の品種があるって知ってますか？アラビカ、ロブスタ、そしてリベリカ。今、西アフリカのリベリアで大復活計画が動き出しました。",
+        "origin": "先週リベリア政府がアフリカ企業JR Farmsと約90億円・20年契約を締結。20万人の農家を巻き込み、25万ヘクタールに2億本のリベリカを植えます。FAOが各国1品目だけ指定する重点品種にも選ばれました。",
+        "recommend": "数年後、お店の棚で第3の品種リベリカが選べる時代が来るかも。覚えておいて損はないですよ。今後の入荷情報もチェックしてくださいね。"
       },
       "section_titles": {
-        "hook": "アラビカ先物が綱引き",
-        "origin": "在庫最低と豊作予想",
-        "recommend": "家で迷わないコツ"
+        "hook": "コーヒー第3の品種",
+        "origin": "90億円・20年計画",
+        "recommend": "数年後の新選択肢"
       },
       "section_descriptions": {
-        "hook": "ブラジル冷波で霜リスク、先物相場に新展開",
-        "origin": "USDA予想と在庫データで26/27の需給を整理",
-        "recommend": "家で淹れる趣味層が今知っておきたい受け止め方"
+        "hook": "アラビカ、ロブスタの次の第3の品種に注目",
+        "origin": "西アフリカで動き出した20年規模の大計画",
+        "recommend": "数年後、リベリカ豆を選べる時代が来るかも"
       }
     }
   ]
