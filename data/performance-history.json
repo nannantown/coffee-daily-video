@@ -1977,10 +1977,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2026,7 +2026,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2068,7 +2068,7 @@
         "views": 15,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2112,7 +2112,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2157,7 +2157,7 @@
         "views": 7,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2197,10 +2197,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 11,
+        "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2240,10 +2240,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 10,
+        "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2463,10 +2463,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 13,
+        "views": 24,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-21T01:57:36.384Z"
+        "updatedAt": "2026-06-22T01:59:10.766Z"
       }
     },
     {
@@ -2509,19 +2509,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-06-22T01:59:10.766Z"
+      }
+    },
+    {
+      "videoId": "gk3O_IaEFpo",
+      "videoUrl": "https://youtube.com/shorts/gk3O_IaEFpo",
+      "date": "2026-06-22",
+      "title": "【コーヒー豆知識】アラビカ先物に綱引き・ブラジル冷波で霜リスク再燃の一方、USDAは26/27期に過去最大級の7,190万袋を予想｜2026/06/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 57,
+      "discovery": {
+        "method": "market-data",
+        "description": "tradingeconomics の coffee 商品面 と Sucafina/StoneX のプロ用市況レポートで、ブラジル冷波 × USDA 26/27 期豊作見通し × ICE 認定在庫直近最低 の三層綱引きを照合",
+        "sources": [
+          "https://tradingeconomics.com/commodity/coffee",
+          "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
+          "https://www.stonex.com/en-us/insights/arabica-futures-higher-as-ice-certified-stocks-drop-to-22-year-low/",
+          "https://qahwaworld.com/news/brazil-coffee-crop-frost-risk-2026/",
+          "https://royalcoffee.com/brazil-weather-update/"
+        ],
+        "query": "arabica futures Brazil frost June 2026 USDA 2026/27 harvest forecast ICE certified stocks",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-18",
-      "changes": [
-        "standard: 113 avg views (28 videos)",
-        "Day performance: Sun=238, Wed=113, Tue=109, Mon=81, Sat=78, Fri=61, Thu=16"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-19",
       "changes": [
@@ -2751,6 +2787,14 @@
       "changes": [
         "standard: 63 avg views (57 videos)",
         "Day performance: Sun=163, Tue=66, Wed=57, Sat=51, Mon=44, Fri=38, Thu=11"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-22",
+      "changes": [
+        "standard: 62 avg views (58 videos)",
+        "Day performance: Sun=146, Tue=66, Wed=57, Sat=53, Mon=44, Fri=38, Thu=11"
       ],
       "recommendedTemplate": "standard"
     }
