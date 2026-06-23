@@ -1,44 +1,40 @@
 {
-  "date": "2026-06-23",
+  "date": "2026-06-24",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の 6/19 News Recap 『Liberia to revive coffee production』を起点に、JR Farms × リベリア農業省の 60M USD・20 年パートナーシップ (6/8 締結) を Liberia Ministry of Agriculture 公式・The New Dawn Liberia・Comunicaffe・Global Coffee Report・Food Business MEA・Punch Nigeria でクロスチェック。さらに Wikipedia (Coffea liberica) と Perfect Daily Grind 既存解説で『コーヒー第3の品種 Liberica=世界生産1.5%未満』の希少性データを補強。14d Method 集計で news-en は TOP3 (avg 5.33/n=3)、最終使用 6/17 で 5 日空きの Exploit。Pillar ② 産地・ハーベスト (14d 15% で目標 25% に対し不足) を是正、6/09 コロンビア・6/17 ニカラグアと産地重複なしの西アフリカ。勝ち筋テンプレ『驚き視点+一次ソース』を social-en 以外で再現する試行: 『コーヒーには第3の品種があった』という Primary 層の知識ギャップを突くアングル。OG 接続は『数年後リベリカが店頭に並ぶかも・入荷情報チェックを』で強い CTA 回避、焙煎士の知識発信という差別化軸でフォロー価値を積む。",
+    "method": "official-src",
+    "description": "中国科学院・昆明植物研究所 (Qiu Minghua チーム) が Elsevier Food Chemistry 誌 2026 年 3 月号に発表した『コーヒーチェリー内生菌 Talaromyces funiculosus KQ2 を用いた発酵で雲南アラビカの SCA カッピングスコアが 1.5 点上昇しスペシャリティ域に到達』論文を一次ソースとし、Daily Coffee News (6/22) と Comunicaffe の解説、ScienceDirect 査読論文 (S0308814625050435)、中国科学院英語版プレス、Kunming InKunming 報道でクロスチェック。14d Method 集計で official-src は avg 5.50/n=4、最終使用 6/18 で 6 日空き。TOP3 (social-en/expert-blog/news-en) ではないが、直近 2 日ルール (6/22 market-data, 6/23 news-en) で TOP3 のうち news-en が使用不可となる中、勝ち筋テンプレ『驚き視点+一次研究ソース』(6/20 Bath大 34v) を official-src で再現する Explore 寄り試行。Pillar ② 産地・ハーベスト (発酵プロセシング革新) を選択。6/23 リベリカ (西アフリカ・国家計画) と同 Pillar だが、軸 (アジア・雲南×プロセシング技術) を変えて重複回避。Primary 層 (家で淹れる趣味層) には『お手頃豆がスペシャリティ品質に化ける』という経済・知的二重関心、焙煎士の技術理解力で差別化軸を補強。",
     "sources": [
-      "https://perfectdailygrind.com/2026/06/coffee-news-recap-19-june-2026/",
-      "https://www.thenewdawnliberia.com/moa-secures-us60-million-investment-to-revive-liberias-coffee-sector/",
-      "https://www.foodbusinessmea.com/jr-farms-signs-us60m-coffee-partnership-with-liberia-to-revive-sector/",
-      "https://www.gcrmag.com/liberian-government-signs-landmark-coffee-partnership",
-      "https://www.comunicaffe.com/liberia-to-launch-coffee-liberica-under-faos-global-one-country-one-priority-product-initiative/",
-      "https://www.moa.gov.lr/media/press-releases/liberia-launch-coffee-liberica-under-faos-global-one-country-one-priority",
-      "https://independent.ng/liberia-nigerian-firm-seal-60m-pact-to-revive-coffee-industry-create-300000-jobs/",
-      "https://en.wikipedia.org/wiki/Coffea_liberica",
-      "https://perfectdailygrind.com/2020/11/what-is-coffea-liberica/"
+      "https://dailycoffeenews.com/2026/06/22/chinese-study-finds-native-fungus-may-lift-conventional-coffee-into-specialty-range/",
+      "https://www.sciencedirect.com/science/article/abs/pii/S0308814625050435",
+      "https://english.cas.cn/newsroom/cas-in-media/202603/t20260320_1153041.shtml",
+      "https://www.comunicaffe.com/chinese-study-shows-endophytic-fungi-when-used-in-fermentation-can-help-enhance-the-sensory-profile-of-coffee",
+      "https://www.kunming.cn/en/c/2026-04-22/14035524.shtml"
     ],
-    "query": "Liberia revive coffee production June 2026 JR Farms 60 million partnership Coffea Liberica third species FAO One Country One Priority Product",
-    "freshness_hours": 96
+    "query": "Talaromyces funiculosus KQ2 Yunnan arabica endophytic fungus fermentation specialty coffee Kunming Institute Botany Food Chemistry June 2026",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コーヒー第3の品種リベリカが大復活・リベリアが90億円規模の20年計画",
-      "description": "実はコーヒーには第3の品種があるんです。アラビカ、ロブスタ、そしてリベリカ。今、西アフリカで大復活計画が始動。",
-      "detail": "先週リベリア政府がアフリカ系企業JR Farmsと約90億円・20年契約を締結。20万人の農家を巻き込み、25万ヘクタールに2億本のリベリカを植えます。FAOが各国1品目だけ指定する重点品種にも選ばれました。",
-      "narration": "実はコーヒー、第3の品種があるって知ってますか？アラビカ、ロブスタ、そしてリベリカ。今、西アフリカのリベリアで大復活計画が動き出しました。",
-      "tags": ["リベリカ", "リベリア", "産地ニュース"],
+      "title": "中国の最新研究・コーヒーチェリー内の天然菌で発酵させると安価な豆もスペシャリティ級に",
+      "description": "実は、安いコーヒー豆をスペシャリティ級まで格上げできる新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
+      "detail": "研究は中国科学院・昆明植物研究所のチームです。雲南省のコーヒーチェリー内に住む天然の菌を発酵に使うと、カッピングスコアが1.5点上がり80点超えのスペシャリティ級に。バニラとシナモンの香りが立ち、糖分は17%増えました。",
+      "narration": "実は、安いコーヒー豆を一気にスペシャリティ級まで格上げできるという新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
+      "tags": ["プロセシング", "発酵", "中国雲南", "スペシャリティ", "産地ニュース"],
       "narration_sections": {
-        "hook": "実はコーヒー、第3の品種があるって知ってますか？アラビカ、ロブスタ、そしてリベリカ。今、西アフリカのリベリアで大復活計画が動き出しました。",
-        "origin": "先週リベリア政府がアフリカ企業JR Farmsと約90億円・20年契約を締結。20万人の農家を巻き込み、25万ヘクタールに2億本のリベリカを植えます。FAOが各国1品目だけ指定する重点品種にも選ばれました。",
-        "recommend": "数年後、お店の棚で第3の品種リベリカが選べる時代が来るかも。覚えておいて損はないですよ。今後の入荷情報もチェックしてくださいね。"
+        "hook": "実は、安いコーヒー豆を一気にスペシャリティ級まで格上げできるという新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
+        "origin": "研究は中国科学院・昆明植物研究所のチームです。雲南省のコーヒーチェリー内に住む天然の菌を発酵に使うと、カッピングスコアが1.5点上がり80点超えのスペシャリティ級に。バニラとシナモンの香りが立ち、糖分は17%増えました。",
+        "recommend": "将来この技術が普及すれば、お手頃な豆でもスペシャリティの香味を楽しめる未来が見えてきます。最新の発酵プロセシング、要注目です。"
       },
       "section_titles": {
-        "hook": "コーヒー第3の品種",
-        "origin": "90億円・20年計画",
-        "recommend": "数年後の新選択肢"
+        "hook": "安い豆が激変する研究",
+        "origin": "雲南の天然菌KQ2の力",
+        "recommend": "発酵の未来は要注目"
       },
       "section_descriptions": {
-        "hook": "アラビカ、ロブスタの次の第3の品種に注目",
-        "origin": "西アフリカで動き出した20年規模の大計画",
-        "recommend": "数年後、リベリカ豆を選べる時代が来るかも"
+        "hook": "中国で発表の新研究、海外メディアが一斉報道",
+        "origin": "コーヒーチェリーの天然菌で1.5点アップ",
+        "recommend": "発酵で豆の格が変わる、注目のプロセシング"
       }
     }
   ]
