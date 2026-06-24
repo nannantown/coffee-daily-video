@@ -1,40 +1,40 @@
 {
-  "date": "2026-06-24",
+  "date": "2026-06-25",
   "discovery": {
-    "method": "official-src",
-    "description": "中国科学院・昆明植物研究所 (Qiu Minghua チーム) が Elsevier Food Chemistry 誌 2026 年 3 月号に発表した『コーヒーチェリー内生菌 Talaromyces funiculosus KQ2 を用いた発酵で雲南アラビカの SCA カッピングスコアが 1.5 点上昇しスペシャリティ域に到達』論文を一次ソースとし、Daily Coffee News (6/22) と Comunicaffe の解説、ScienceDirect 査読論文 (S0308814625050435)、中国科学院英語版プレス、Kunming InKunming 報道でクロスチェック。14d Method 集計で official-src は avg 5.50/n=4、最終使用 6/18 で 6 日空き。TOP3 (social-en/expert-blog/news-en) ではないが、直近 2 日ルール (6/22 market-data, 6/23 news-en) で TOP3 のうち news-en が使用不可となる中、勝ち筋テンプレ『驚き視点+一次研究ソース』(6/20 Bath大 34v) を official-src で再現する Explore 寄り試行。Pillar ② 産地・ハーベスト (発酵プロセシング革新) を選択。6/23 リベリカ (西アフリカ・国家計画) と同 Pillar だが、軸 (アジア・雲南×プロセシング技術) を変えて重複回避。Primary 層 (家で淹れる趣味層) には『お手頃豆がスペシャリティ品質に化ける』という経済・知的二重関心、焙煎士の技術理解力で差別化軸を補強。",
+    "method": "news-en",
+    "description": "Barchart (6/23『Arabica Coffee Prices Surge as Brazil Rains Disrupt the Coffee Harvest』) と Trading Economics (6/24 終値 $2.7665/lb +0.25%) を一次ソースとし、Safras & Mercado の 6/17 時点 Brazil 2026/27 収穫進捗 39% (昨年同期 43%、5 年平均 40%)、ICE 認証 Arabica 在庫 396,171 袋 (1 年前 859,389 袋から半減超) のデータを Comunicaffe / tradingeconomics でクロスチェック。14d Method 集計で news-en は avg 4.00/n=4 で TOP3 #3、ただし 6/15 スタバ日本売却 12v vs 6/11 Luckin 中国 2v / 6/17 ニカラグア 2v の内訳格差から『日本接続あり』subtype が勝ち筋と特定。今日は『収穫遅延 + 在庫低水準 + 先物高値』の三点セットを『家で淹れる豆の価格に響く可能性』として日本接続。Pillar ① 市況 (14d 15% → 目標 25% 補充) + ② 産地・ハーベスト クロス。6/22 Brazil 寒波 + USDA 過剰予想 との差分は『将来予想』→『現在進行データ (収穫 % + 在庫袋数 + 直近価格)』で完全に別チャプター扱い。直近 2 日ルール (6/23 news-en + 6/24 official-src) に対し news-en 再選択は『連続 2 日』ではなく『3 日内 2 回目』のトレードオフを取り、平日 news 優先原則と Pillar ① 補充の必要性を両立。",
     "sources": [
-      "https://dailycoffeenews.com/2026/06/22/chinese-study-finds-native-fungus-may-lift-conventional-coffee-into-specialty-range/",
-      "https://www.sciencedirect.com/science/article/abs/pii/S0308814625050435",
-      "https://english.cas.cn/newsroom/cas-in-media/202603/t20260320_1153041.shtml",
-      "https://www.comunicaffe.com/chinese-study-shows-endophytic-fungi-when-used-in-fermentation-can-help-enhance-the-sensory-profile-of-coffee",
-      "https://www.kunming.cn/en/c/2026-04-22/14035524.shtml"
+      "https://www.barchart.com/story/news/2610777/arabica-coffee-prices-surge-as-brazil-rains-disrupt-the-coffee-harvest",
+      "https://tradingeconomics.com/commodity/coffee",
+      "https://www.comunicaffe.com/arabica-coffee-futures-continue-to-fall-according-to-safras-mercado-a-quarter-of-the-brazilian-harvest-has-been-completed",
+      "https://www.barchart.com/story/news/2607857/arabica-coffee-prices-jump-as-brazil-rains-delay-the-coffee-harvest",
+      "https://tradingeconomics.com/commodity/coffee/news/516992"
     ],
-    "query": "Talaromyces funiculosus KQ2 Yunnan arabica endophytic fungus fermentation specialty coffee Kunming Institute Botany Food Chemistry June 2026",
-    "freshness_hours": 48
+    "query": "arabica coffee futures June 24 2026 Brazil harvest rain delay Safras ICE stocks five-year low",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "中国の最新研究・コーヒーチェリー内の天然菌で発酵させると安価な豆もスペシャリティ級に",
-      "description": "実は、安いコーヒー豆をスペシャリティ級まで格上げできる新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
-      "detail": "研究は中国科学院・昆明植物研究所のチームです。雲南省のコーヒーチェリー内に住む天然の菌を発酵に使うと、カッピングスコアが1.5点上がり80点超えのスペシャリティ級に。バニラとシナモンの香りが立ち、糖分は17%増えました。",
-      "narration": "実は、安いコーヒー豆を一気にスペシャリティ級まで格上げできるという新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
-      "tags": ["プロセシング", "発酵", "中国雲南", "スペシャリティ", "産地ニュース"],
+      "title": "ブラジル雨で収穫遅延・Arabica先物が5週間ぶり高値、ICE在庫は1年前から半減",
+      "description": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
+      "detail": "Safrasによると6月17日時点の収穫進捗は39%、昨年同期の43%を下回ります。雨でチェリーの品質も心配されています。一方ICE認証在庫は約39万袋と、1年前の約86万袋から半減以下。先物は0.25%高の2.78ドルまで上がりました。",
+      "narration": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
+      "tags": ["ブラジル", "Arabica先物", "ICE在庫", "市況", "収穫"],
       "narration_sections": {
-        "hook": "実は、安いコーヒー豆を一気にスペシャリティ級まで格上げできるという新研究が中国で発表され、海外の業界メディアが一斉に取り上げています。",
-        "origin": "研究は中国科学院・昆明植物研究所のチームです。雲南省のコーヒーチェリー内に住む天然の菌を発酵に使うと、カッピングスコアが1.5点上がり80点超えのスペシャリティ級に。バニラとシナモンの香りが立ち、糖分は17%増えました。",
-        "recommend": "将来この技術が普及すれば、お手頃な豆でもスペシャリティの香味を楽しめる未来が見えてきます。最新の発酵プロセシング、要注目です。"
+        "hook": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
+        "origin": "Safrasによると6月17日時点の収穫進捗は39%、昨年同期の43%を下回ります。雨でチェリーの品質も心配されています。一方ICE認証在庫は約39万袋と、1年前の約86万袋から半減以下。先物は0.25%高の2.78ドルまで上がりました。",
+        "recommend": "在庫が薄いほど価格は天候ニュースに敏感に動きます。お気に入りの豆がある方は、しばらく値動きをチェックしておきましょう。"
       },
       "section_titles": {
-        "hook": "安い豆が激変する研究",
-        "origin": "雲南の天然菌KQ2の力",
-        "recommend": "発酵の未来は要注目"
+        "hook": "豆価格5週間ぶり高値",
+        "origin": "ブラジル雨で収穫遅延",
+        "recommend": "薄在庫で値動き拡大"
       },
       "section_descriptions": {
-        "hook": "中国で発表の新研究、海外メディアが一斉報道",
-        "origin": "コーヒーチェリーの天然菌で1.5点アップ",
-        "recommend": "発酵で豆の格が変わる、注目のプロセシング"
+        "hook": "雨と低在庫で先物が2.78ドル、5週ぶり高値",
+        "origin": "Safras速報、6月17日時点の収穫39%で前年下回る",
+        "recommend": "ICE在庫は1年前から半減、値動きの振幅注意"
       }
     }
   ]
