@@ -2112,7 +2112,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2157,7 +2157,7 @@
         "views": 8,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2200,7 +2200,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2243,7 +2243,7 @@
         "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2466,7 +2466,7 @@
         "views": 34,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 9,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-24T01:23:53.629Z"
+        "updatedAt": "2026-06-25T01:31:27.897Z"
       }
     },
     {
@@ -2642,6 +2642,50 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-25T01:31:27.897Z"
+      }
+    },
+    {
+      "videoId": "WSioto0cU2U",
+      "videoUrl": "https://youtube.com/shorts/WSioto0cU2U",
+      "date": "2026-06-25",
+      "title": "【コーヒー豆知識】ブラジル雨で収穫遅延・Arabica先物が5週間ぶり高値、ICE在庫は1年前から半減｜2026/06/25 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Barchart (6/23『Arabica Coffee Prices Surge as Brazil Rains Disrupt the Coffee Harvest』) と Trading Economics (6/24 終値 $2.7665/lb +0.25%) を一次ソースとし、Safras & Mercado の 6/17 時点 Brazil 2026/27 収穫進捗 39% (昨年同期 43%、5 年平均 40%)、ICE 認証 Arabica 在庫 396,171 袋 (1 年前 859,389 袋から半減超) のデータを Comunicaffe / tradingeconomics でクロスチェック。14d Method 集計で news-en は avg 4.00/n=4 で TOP3 #3、ただし 6/15 スタバ日本売却 12v vs 6/11 Luckin 中国 2v / 6/17 ニカラグア 2v の内訳格差から『日本接続あり』subtype が勝ち筋と特定。今日は『収穫遅延 + 在庫低水準 + 先物高値』の三点セットを『家で淹れる豆の価格に響く可能性』として日本接続。Pillar ① 市況 (14d 15% → 目標 25% 補充) + ② 産地・ハーベスト クロス。6/22 Brazil 寒波 + USDA 過剰予想 との差分は『将来予想』→『現在進行データ (収穫 % + 在庫袋数 + 直近価格)』で完全に別チャプター扱い。直近 2 日ルール (6/23 news-en + 6/24 official-src) に対し news-en 再選択は『連続 2 日』ではなく『3 日内 2 回目』のトレードオフを取り、平日 news 優先原則と Pillar ① 補充の必要性を両立。",
+        "sources": [
+          "https://www.barchart.com/story/news/2610777/arabica-coffee-prices-surge-as-brazil-rains-disrupt-the-coffee-harvest",
+          "https://tradingeconomics.com/commodity/coffee",
+          "https://www.comunicaffe.com/arabica-coffee-futures-continue-to-fall-according-to-safras-mercado-a-quarter-of-the-brazilian-harvest-has-been-completed",
+          "https://www.barchart.com/story/news/2607857/arabica-coffee-prices-jump-as-brazil-rains-delay-the-coffee-harvest",
+          "https://tradingeconomics.com/commodity/coffee/news/516992"
+        ],
+        "query": "arabica coffee futures June 24 2026 Brazil harvest rain delay Safras ICE stocks five-year low",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2650,14 +2694,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-21",
-      "changes": [
-        "standard: 103 avg views (31 videos)",
-        "Day performance: Sun=239, Wed=94, Tue=88, Sat=79, Mon=65, Fri=60, Thu=18"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-22",
       "changes": [
@@ -2887,6 +2923,14 @@
       "changes": [
         "standard: 60 avg views (60 videos)",
         "Day performance: Sun=147, Tue=58, Wed=57, Sat=54, Mon=39, Fri=38, Thu=11"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-25",
+      "changes": [
+        "standard: 59 avg views (61 videos)",
+        "Day performance: Sun=147, Tue=58, Sat=54, Wed=51, Mon=39, Fri=38, Thu=11"
       ],
       "recommendedTemplate": "standard"
     }
