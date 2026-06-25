@@ -1,40 +1,42 @@
 {
-  "date": "2026-06-25",
+  "date": "2026-06-26",
   "discovery": {
-    "method": "news-en",
-    "description": "Barchart (6/23『Arabica Coffee Prices Surge as Brazil Rains Disrupt the Coffee Harvest』) と Trading Economics (6/24 終値 $2.7665/lb +0.25%) を一次ソースとし、Safras & Mercado の 6/17 時点 Brazil 2026/27 収穫進捗 39% (昨年同期 43%、5 年平均 40%)、ICE 認証 Arabica 在庫 396,171 袋 (1 年前 859,389 袋から半減超) のデータを Comunicaffe / tradingeconomics でクロスチェック。14d Method 集計で news-en は avg 4.00/n=4 で TOP3 #3、ただし 6/15 スタバ日本売却 12v vs 6/11 Luckin 中国 2v / 6/17 ニカラグア 2v の内訳格差から『日本接続あり』subtype が勝ち筋と特定。今日は『収穫遅延 + 在庫低水準 + 先物高値』の三点セットを『家で淹れる豆の価格に響く可能性』として日本接続。Pillar ① 市況 (14d 15% → 目標 25% 補充) + ② 産地・ハーベスト クロス。6/22 Brazil 寒波 + USDA 過剰予想 との差分は『将来予想』→『現在進行データ (収穫 % + 在庫袋数 + 直近価格)』で完全に別チャプター扱い。直近 2 日ルール (6/23 news-en + 6/24 official-src) に対し news-en 再選択は『連続 2 日』ではなく『3 日内 2 回目』のトレードオフを取り、平日 news 優先原則と Pillar ① 補充の必要性を両立。",
+    "method": "social-en",
+    "description": "X / Reddit r/Coffee / r/roasting / Sprudge コメント欄など海外コーヒー界隈が今週『WoC Brussels 開幕』『WBrC 決勝週末』で SNS 張り付き状態。発端は SCA 主催 World of Coffee Brussels 2026 (6/25-27、初ベルギー開催) の公式スケジュール公開と、Perfect Daily Grind / Tea & Coffee Trade Journal の現地速報。本日 6/26 (Brussels 11:00 = JST 18:00) に Best New Product / Coffee Design Awards 発表、Brewers Cup Finals は明日 6/27 9:00-14:00 Brussels 時間、Roasting Championship Awards は同日 16:30。直近 2 日 (6/24 official-src / 6/25 news-en) と異なる method、Method 14d TOP1 (avg 22.5、6/14 抽出チル 11v + 6/20 凍結グラインド 34v) を Exploit。社会的盛り上がり (海外コーヒー業界が一斉に視聴・実況) が discovery の本体。",
     "sources": [
-      "https://www.barchart.com/story/news/2610777/arabica-coffee-prices-surge-as-brazil-rains-disrupt-the-coffee-harvest",
-      "https://tradingeconomics.com/commodity/coffee",
-      "https://www.comunicaffe.com/arabica-coffee-futures-continue-to-fall-according-to-safras-mercado-a-quarter-of-the-brazilian-harvest-has-been-completed",
-      "https://www.barchart.com/story/news/2607857/arabica-coffee-prices-jump-as-brazil-rains-delay-the-coffee-harvest",
-      "https://tradingeconomics.com/commodity/coffee/news/516992"
+      "https://europe.worldofcoffee.org/",
+      "https://europe.worldofcoffee.org/schedule-of-events",
+      "https://europe.worldofcoffee.org/brussels-world-coffee-championships",
+      "https://wcc.coffee/brussels-wcc",
+      "https://perfectdailygrind.com/2026/06/whats-happening-world-of-coffee-brussels/",
+      "https://www.teaandcoffee.net/news/39520/final-countdown-begins-for-world-of-coffee-brussels-2026/",
+      "https://www.comunicaffe.com/world-of-coffee-brussels-2026-championships-awards-specialty-coffee/"
     ],
-    "query": "arabica coffee futures June 24 2026 Brazil harvest rain delay Safras ICE stocks five-year low",
-    "freshness_hours": 24
+    "query": "World of Coffee Brussels 2026 brewers cup roasting championship finals weekend schedule",
+    "freshness_hours": 12
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブラジル雨で収穫遅延・Arabica先物が5週間ぶり高値、ICE在庫は1年前から半減",
-      "description": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
-      "detail": "Safrasによると6月17日時点の収穫進捗は39%、昨年同期の43%を下回ります。雨でチェリーの品質も心配されています。一方ICE認証在庫は約39万袋と、1年前の約86万袋から半減以下。先物は0.25%高の2.78ドルまで上がりました。",
-      "narration": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
-      "tags": ["ブラジル", "Arabica先物", "ICE在庫", "市況", "収穫"],
+      "title": "WoC Brussels 開催中・Brewers Cup / Roasting / Good Spirits の3冠が今週末まとめて決定",
+      "description": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
+      "detail": "6月25-27日の3日間で、Brewers Cup、Roasting、Good Spiritsの世界選手権が一気に決定。Best New Productは今日、Brewers Cup決勝は明日朝。海外SNSは生放送に張り付く年1の祭です。",
+      "narration": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
+      "tags": ["WoCブリュッセル", "世界選手権", "Brewers Cup"],
       "narration_sections": {
-        "hook": "今日のニュースです。ブラジルの収穫が雨で遅れ、Arabica先物が5週間ぶりの高値に。さらに在庫は5年ぶり低水準まで落ちました。",
-        "origin": "Safrasによると6月17日時点の収穫進捗は39%、昨年同期の43%を下回ります。雨でチェリーの品質も心配されています。一方ICE認証在庫は約39万袋と、1年前の約86万袋から半減以下。先物は0.25%高の2.78ドルまで上がりました。",
-        "recommend": "在庫が薄いほど価格は天候ニュースに敏感に動きます。お気に入りの豆がある方は、しばらく値動きをチェックしておきましょう。"
+        "hook": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
+        "origin": "6月25-27日の3日間で、Brewers Cup、Roasting、Good Spiritsの世界選手権が一気に決定。Best New Productは今日、Brewers Cup決勝は明日朝。海外SNSは生放送に張り付く年1の祭です。",
+        "recommend": "日本からはWCC公式ライブ配信で観戦できます。優勝レシピは翌週から世界中で真似される定番に。週末の楽しみにどうぞ。"
       },
       "section_titles": {
-        "hook": "豆価格5週間ぶり高値",
-        "origin": "ブラジル雨で収穫遅延",
-        "recommend": "薄在庫で値動き拡大"
+        "hook": "WoCブリュッセル開幕",
+        "origin": "3冠が一気に決定",
+        "recommend": "日本から観戦OK"
       },
       "section_descriptions": {
-        "hook": "雨と低在庫で先物が2.78ドル、5週ぶり高値",
-        "origin": "Safras速報、6月17日時点の収穫39%で前年下回る",
-        "recommend": "ICE在庫は1年前から半減、値動きの振幅注意"
+        "hook": "SCA主催の欧州最大級トレードショーが本日開幕",
+        "origin": "3つの世界選手権が今週末一気にまとめて決定",
+        "recommend": "WCC公式ライブで日本からも生中継視聴OK"
       }
     }
   ]
