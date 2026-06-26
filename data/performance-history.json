@@ -2157,7 +2157,7 @@
         "views": 8,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2200,7 +2200,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2243,7 +2243,7 @@
         "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2466,7 +2466,7 @@
         "views": 34,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 9,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
+        "updatedAt": "2026-06-26T01:34:58.697Z"
       }
     },
     {
@@ -2686,6 +2686,52 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-26T01:34:58.697Z"
+      }
+    },
+    {
+      "videoId": "DqMzOr2zfEM",
+      "videoUrl": "https://youtube.com/shorts/DqMzOr2zfEM",
+      "date": "2026-06-26",
+      "title": "【コーヒー豆知識】WoC Brussels 開催中・Brewers Cup / Roasting / Good Spirits の3冠が今週末まとめて決定｜2026/06/26 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "social-en",
+        "description": "X / Reddit r/Coffee / r/roasting / Sprudge コメント欄など海外コーヒー界隈が今週『WoC Brussels 開幕』『WBrC 決勝週末』で SNS 張り付き状態。発端は SCA 主催 World of Coffee Brussels 2026 (6/25-27、初ベルギー開催) の公式スケジュール公開と、Perfect Daily Grind / Tea & Coffee Trade Journal の現地速報。本日 6/26 (Brussels 11:00 = JST 18:00) に Best New Product / Coffee Design Awards 発表、Brewers Cup Finals は明日 6/27 9:00-14:00 Brussels 時間、Roasting Championship Awards は同日 16:30。直近 2 日 (6/24 official-src / 6/25 news-en) と異なる method、Method 14d TOP1 (avg 22.5、6/14 抽出チル 11v + 6/20 凍結グラインド 34v) を Exploit。社会的盛り上がり (海外コーヒー業界が一斉に視聴・実況) が discovery の本体。",
+        "sources": [
+          "https://europe.worldofcoffee.org/",
+          "https://europe.worldofcoffee.org/schedule-of-events",
+          "https://europe.worldofcoffee.org/brussels-world-coffee-championships",
+          "https://wcc.coffee/brussels-wcc",
+          "https://perfectdailygrind.com/2026/06/whats-happening-world-of-coffee-brussels/",
+          "https://www.teaandcoffee.net/news/39520/final-countdown-begins-for-world-of-coffee-brussels-2026/",
+          "https://www.comunicaffe.com/world-of-coffee-brussels-2026-championships-awards-specialty-coffee/"
+        ],
+        "query": "World of Coffee Brussels 2026 brewers cup roasting championship finals weekend schedule",
+        "freshness_hours": 12
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2694,14 +2740,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-22",
-      "changes": [
-        "standard: 100 avg views (32 videos)",
-        "Day performance: Sun=239, Wed=94, Tue=89, Sat=79, Mon=65, Fri=60, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-23",
       "changes": [
@@ -2931,6 +2969,14 @@
       "changes": [
         "standard: 59 avg views (61 videos)",
         "Day performance: Sun=147, Tue=58, Sat=54, Wed=51, Mon=39, Fri=38, Thu=11"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-26",
+      "changes": [
+        "standard: 58 avg views (62 videos)",
+        "Day performance: Sun=147, Tue=58, Sat=54, Wed=51, Mon=39, Fri=38, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
