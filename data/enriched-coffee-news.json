@@ -1,42 +1,43 @@
 {
-  "date": "2026-06-26",
+  "date": "2026-06-27",
   "discovery": {
-    "method": "social-en",
-    "description": "X / Reddit r/Coffee / r/roasting / Sprudge コメント欄など海外コーヒー界隈が今週『WoC Brussels 開幕』『WBrC 決勝週末』で SNS 張り付き状態。発端は SCA 主催 World of Coffee Brussels 2026 (6/25-27、初ベルギー開催) の公式スケジュール公開と、Perfect Daily Grind / Tea & Coffee Trade Journal の現地速報。本日 6/26 (Brussels 11:00 = JST 18:00) に Best New Product / Coffee Design Awards 発表、Brewers Cup Finals は明日 6/27 9:00-14:00 Brussels 時間、Roasting Championship Awards は同日 16:30。直近 2 日 (6/24 official-src / 6/25 news-en) と異なる method、Method 14d TOP1 (avg 22.5、6/14 抽出チル 11v + 6/20 凍結グラインド 34v) を Exploit。社会的盛り上がり (海外コーヒー業界が一斉に視聴・実況) が discovery の本体。",
+    "method": "expert-blog",
+    "description": "2016 WBrC 王者・粕谷哲が優勝10周年で新V60レシピを公開。20g/300g/Comandante 40-45クリックの超粗挽き+96度+15秒ごとに30gを10回注ぐ『Multi-Pour Method』(別名 Neo Brew / Click 45)。本人YouTube公開は約3週間前だが、Instagram Reels/YouTube Shorts/海外コーヒー系チャンネルでの検証・リアクション動画が今週も続々アップ中で『二次バイラル』フェーズに入っており、海外コーヒー界隈の今週のメイントピックの一つ。土曜=エバーグリーンOK日、Method 14d TOP2(expert-blog avg 10.5、6/21 Lance Hedrick『One&Done』9v + 6/13 aoma青野 12v)を Exploit。直近 2日(6/25 news-en, 6/26 social-en)とも被らない expert-blog 選択。Primary ペルソナ(家で淹れる趣味層、V60+ミル所有)に直接刺さる実践レシピ。",
     "sources": [
-      "https://europe.worldofcoffee.org/",
-      "https://europe.worldofcoffee.org/schedule-of-events",
-      "https://europe.worldofcoffee.org/brussels-world-coffee-championships",
-      "https://wcc.coffee/brussels-wcc",
-      "https://perfectdailygrind.com/2026/06/whats-happening-world-of-coffee-brussels/",
-      "https://www.teaandcoffee.net/news/39520/final-countdown-begins-for-world-of-coffee-brussels-2026/",
-      "https://www.comunicaffe.com/world-of-coffee-brussels-2026-championships-awards-specialty-coffee/"
+      "https://www.youtube.com/shorts/1QLvuh2O7i8",
+      "https://www.youtube.com/shorts/LhFA5oNZDPs",
+      "https://www.youtube.com/watch?v=x-T5eWd1NSs",
+      "https://www.youtube.com/watch?v=o1mb2r_t2wk",
+      "https://roastaroma.com/blog/tetsu-kasuyas-new-multi-pour-method-2026-the-10-pour-super-coarse-v60-recipe",
+      "https://note.com/udatsunoagaru919/n/n51d188a44d72?hl=en",
+      "https://www.instagram.com/reel/DZWN0cfs2La/",
+      "https://www.instagram.com/reel/DZH_ENNgS_x/"
     ],
-    "query": "World of Coffee Brussels 2026 brewers cup roasting championship finals weekend schedule",
-    "freshness_hours": 12
+    "query": "Tetsu Kasuya new V60 recipe 10 pour multi-pour click 45 neo brew 2026",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "WoC Brussels 開催中・Brewers Cup / Roasting / Good Spirits の3冠が今週末まとめて決定",
-      "description": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
-      "detail": "6月25-27日の3日間で、Brewers Cup、Roasting、Good Spiritsの世界選手権が一気に決定。Best New Productは今日、Brewers Cup決勝は明日朝。海外SNSは生放送に張り付く年1の祭です。",
-      "narration": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
-      "tags": ["WoCブリュッセル", "世界選手権", "Brewers Cup"],
+      "title": "粕谷哲『10-Pourメソッド』別名クリック45・優勝10周年で新V60レシピ、海外コーヒー界で検証動画が続出中",
+      "description": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
+      "detail": "名前は「10-Pour メソッド」、通称クリック45。豆20gに96度の熱湯を300g、Comandante45クリックの超粗挽きで、15秒ごとに30gずつ10回に分けて注ぎます。粗挽き高温で雑味を抑え、回数を増やしてボディと甘さを引き出す逆張り設計です。",
+      "narration": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
+      "tags": ["粕谷哲", "V60レシピ", "10pourメソッド", "ハンドドリップ"],
       "narration_sections": {
-        "hook": "今ブリュッセルで、コーヒー界の祭典が始まっています。SCA主催のWorld of Coffee Brussels 2026、初のベルギー開催です。",
-        "origin": "6月25-27日の3日間で、Brewers Cup、Roasting、Good Spiritsの世界選手権が一気に決定。Best New Productは今日、Brewers Cup決勝は明日朝。海外SNSは生放送に張り付く年1の祭です。",
-        "recommend": "日本からはWCC公式ライブ配信で観戦できます。優勝レシピは翌週から世界中で真似される定番に。週末の楽しみにどうぞ。"
+        "hook": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
+        "origin": "名前は「10-Pour メソッド」、通称クリック45。豆20gに96度の熱湯を300g、Comandante45クリックの超粗挽きで、15秒ごとに30gずつ10回に分けて注ぎます。粗挽き高温で雑味を抑え、回数を増やしてボディと甘さを引き出す逆張り設計です。",
+        "recommend": "ただし深煎りには合いません。浅〜中焙煎の質の高い豆で試すのがおすすめ。OGの新入荷もご期待を。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "WoCブリュッセル開幕",
-        "origin": "3冠が一気に決定",
-        "recommend": "日本から観戦OK"
+        "hook": "粕谷哲の新レシピ",
+        "origin": "10回注ぎ・クリック45",
+        "recommend": "浅〜中焙煎で試そう"
       },
       "section_descriptions": {
-        "hook": "SCA主催の欧州最大級トレードショーが本日開幕",
-        "origin": "3つの世界選手権が今週末一気にまとめて決定",
-        "recommend": "WCC公式ライブで日本からも生中継視聴OK"
+        "hook": "2016年世界優勝の粕谷哲、10年ぶり新作レシピ公開",
+        "origin": "豆20g/水300g/96度/15秒×10回",
+        "recommend": "深煎りNG。質の高い浅〜中焙煎の豆で試そう"
       }
     }
   ]
