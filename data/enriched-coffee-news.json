@@ -1,43 +1,42 @@
 {
-  "date": "2026-06-27",
+  "date": "2026-06-28",
   "discovery": {
-    "method": "expert-blog",
-    "description": "2016 WBrC 王者・粕谷哲が優勝10周年で新V60レシピを公開。20g/300g/Comandante 40-45クリックの超粗挽き+96度+15秒ごとに30gを10回注ぐ『Multi-Pour Method』(別名 Neo Brew / Click 45)。本人YouTube公開は約3週間前だが、Instagram Reels/YouTube Shorts/海外コーヒー系チャンネルでの検証・リアクション動画が今週も続々アップ中で『二次バイラル』フェーズに入っており、海外コーヒー界隈の今週のメイントピックの一つ。土曜=エバーグリーンOK日、Method 14d TOP2(expert-blog avg 10.5、6/21 Lance Hedrick『One&Done』9v + 6/13 aoma青野 12v)を Exploit。直近 2日(6/25 news-en, 6/26 social-en)とも被らない expert-blog 選択。Primary ペルソナ(家で淹れる趣味層、V60+ミル所有)に直接刺さる実践レシピ。",
+    "method": "news-en",
+    "description": "今日は日曜=エバーグリーンOK日。直近14日Method別 TOP3(social-en 15.3v / expert-blog 4.5v / news-en 3.8v)のうち、social-en・expert-blogは直近2日で連投済み(6/26・6/27)。連続NG制約により80% Exploitの中で残った news-en を採用。Grand View Research / Hardtank / Beverage Daily / Twiga / Counter Culture 等の英語業界メディアを横断し、『海外コールドブリュー2026年トレンド』を市場規模・年率成長・米国/Z世代消費率の3指標で確認、その上で家庭抽出のコツ(1対8・粗挽き・12〜16h)を合体させた news+実用 TIP のハイブリッド。柱③業界(市場成長ニュース)と④焙煎士一次情報(家庭抽出ノウハウ)のブリッジ。Primary ペルソナ(家で淹れる趣味層、夏シーズン入り)に直撃する設計。",
     "sources": [
-      "https://www.youtube.com/shorts/1QLvuh2O7i8",
-      "https://www.youtube.com/shorts/LhFA5oNZDPs",
-      "https://www.youtube.com/watch?v=x-T5eWd1NSs",
-      "https://www.youtube.com/watch?v=o1mb2r_t2wk",
-      "https://roastaroma.com/blog/tetsu-kasuyas-new-multi-pour-method-2026-the-10-pour-super-coarse-v60-recipe",
-      "https://note.com/udatsunoagaru919/n/n51d188a44d72?hl=en",
-      "https://www.instagram.com/reel/DZWN0cfs2La/",
-      "https://www.instagram.com/reel/DZH_ENNgS_x/"
+      "https://www.grandviewresearch.com/industry-analysis/cold-brew-coffee-market",
+      "https://www.grandviewresearch.com/press-release/global-cold-brew-coffee-market",
+      "https://hardtank.com/2026/04/28/iced-coffee-trends-changing-cold-brew/",
+      "https://twigacoffee.com/blogs/news/top-coffee-trends-in-2026-how-today-s-innovations-are-shaping-your-brew",
+      "https://www.beveragedaily.com/Article/2026/01/28/top-coffee-trends-functional-coffee-rtd-specialty-coffee-cold-brew/",
+      "https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew",
+      "https://www.stumptowncoffee.com/blogs/news/cold-brewing-faqs"
     ],
-    "query": "Tetsu Kasuya new V60 recipe 10 pour multi-pour click 45 neo brew 2026",
-    "freshness_hours": 168
+    "query": "cold brew 2026 trend market size US weekly Gen Z home brewing ratio grind",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "粕谷哲『10-Pourメソッド』別名クリック45・優勝10周年で新V60レシピ、海外コーヒー界で検証動画が続出中",
-      "description": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
-      "detail": "名前は「10-Pour メソッド」、通称クリック45。豆20gに96度の熱湯を300g、Comandante45クリックの超粗挽きで、15秒ごとに30gずつ10回に分けて注ぎます。粗挽き高温で雑味を抑え、回数を増やしてボディと甘さを引き出す逆張り設計です。",
-      "narration": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
-      "tags": ["粕谷哲", "V60レシピ", "10pourメソッド", "ハンドドリップ"],
+      "title": "海外コールドブリュー市場が年20%成長中・米成人5人に1人が毎週飲む、家で失敗しない黄金比",
+      "description": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
+      "detail": "市場規模は2030年までに約1,800億円、つまり3倍超に拡大予測。家で淹れる黄金比は、豆と水を1対8、粗挽き、冷蔵庫で12〜16時間。お湯抽出と違い苦みが出にくく、浅煎りの花や果実の香りがクリアに残ります。",
+      "narration": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
+      "tags": ["コールドブリュー", "市場トレンド", "家淹れレシピ", "浅煎り"],
       "narration_sections": {
-        "hook": "ご存知ですか?4:6メソッドで世界を変えた粕谷哲さんが、優勝10周年で新V60レシピを発表。今、海外で検証動画が大量に出ています。",
-        "origin": "名前は「10-Pour メソッド」、通称クリック45。豆20gに96度の熱湯を300g、Comandante45クリックの超粗挽きで、15秒ごとに30gずつ10回に分けて注ぎます。粗挽き高温で雑味を抑え、回数を増やしてボディと甘さを引き出す逆張り設計です。",
-        "recommend": "ただし深煎りには合いません。浅〜中焙煎の質の高い豆で試すのがおすすめ。OGの新入荷もご期待を。EC準備中、フォローしてお待ちください。"
+        "hook": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
+        "origin": "市場規模は2030年までに約1,800億円、つまり3倍超に拡大予測。家で淹れる黄金比は、豆と水を1対8、粗挽き、冷蔵庫で12〜16時間。お湯抽出と違い苦みが出にくく、浅煎りの花や果実の香りがクリアに残ります。",
+        "recommend": "暑くなる季節、まずは手持ちの浅煎り豆で試してみてください。OGの新入荷もご期待を。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "粕谷哲の新レシピ",
-        "origin": "10回注ぎ・クリック45",
-        "recommend": "浅〜中焙煎で試そう"
+        "hook": "コールドブリュー急成長",
+        "origin": "家で淹れる黄金比",
+        "recommend": "夏は浅煎りで試そう"
       },
       "section_descriptions": {
-        "hook": "2016年世界優勝の粕谷哲、10年ぶり新作レシピ公開",
-        "origin": "豆20g/水300g/96度/15秒×10回",
-        "recommend": "深煎りNG。質の高い浅〜中焙煎の豆で試そう"
+        "hook": "海外市場は年20%成長・Z世代の68%が冷派",
+        "origin": "1対8・粗挽き・冷蔵12〜16時間が王道",
+        "recommend": "浅煎りの華やかさが活きるアイス抽出"
       }
     }
   ]
