@@ -1,42 +1,43 @@
 {
-  "date": "2026-06-28",
+  "date": "2026-06-29",
   "discovery": {
     "method": "news-en",
-    "description": "今日は日曜=エバーグリーンOK日。直近14日Method別 TOP3(social-en 15.3v / expert-blog 4.5v / news-en 3.8v)のうち、social-en・expert-blogは直近2日で連投済み(6/26・6/27)。連続NG制約により80% Exploitの中で残った news-en を採用。Grand View Research / Hardtank / Beverage Daily / Twiga / Counter Culture 等の英語業界メディアを横断し、『海外コールドブリュー2026年トレンド』を市場規模・年率成長・米国/Z世代消費率の3指標で確認、その上で家庭抽出のコツ(1対8・粗挽き・12〜16h)を合体させた news+実用 TIP のハイブリッド。柱③業界(市場成長ニュース)と④焙煎士一次情報(家庭抽出ノウハウ)のブリッジ。Primary ペルソナ(家で淹れる趣味層、夏シーズン入り)に直撃する設計。",
+    "description": "Specialty Coffee Association 公式 / WCC 公式・Travel & Tour World で WoC Brussels 2026 の Brewers Cup 優勝者を確認。マレーシア初の世界 Brewers Cup 王者誕生という「個人主役」型 news-en を採用。",
     "sources": [
-      "https://www.grandviewresearch.com/industry-analysis/cold-brew-coffee-market",
-      "https://www.grandviewresearch.com/press-release/global-cold-brew-coffee-market",
-      "https://hardtank.com/2026/04/28/iced-coffee-trends-changing-cold-brew/",
-      "https://twigacoffee.com/blogs/news/top-coffee-trends-in-2026-how-today-s-innovations-are-shaping-your-brew",
-      "https://www.beveragedaily.com/Article/2026/01/28/top-coffee-trends-functional-coffee-rtd-specialty-coffee-cold-brew/",
-      "https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew",
-      "https://www.stumptowncoffee.com/blogs/news/cold-brewing-faqs"
+      "https://wcc.coffee/world-brewers-cup",
+      "https://wcc.coffee/brussels-wbrc",
+      "https://www.travelandtourworld.com/news/article/0wr5rxw14tgb/",
+      "https://en.wikipedia.org/wiki/World_Brewers_Cup"
     ],
-    "query": "cold brew 2026 trend market size US weekly Gen Z home brewing ratio grind",
-    "freshness_hours": 72
+    "query": "World Brewers Cup 2026 winner Brussels Nas Jaafar Malaysia",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外コールドブリュー市場が年20%成長中・米成人5人に1人が毎週飲む、家で失敗しない黄金比",
-      "description": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
-      "detail": "市場規模は2030年までに約1,800億円、つまり3倍超に拡大予測。家で淹れる黄金比は、豆と水を1対8、粗挽き、冷蔵庫で12〜16時間。お湯抽出と違い苦みが出にくく、浅煎りの花や果実の香りがクリアに残ります。",
-      "narration": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
-      "tags": ["コールドブリュー", "市場トレンド", "家淹れレシピ", "浅煎り"],
+      "title": "マレーシアのナス・ジャファルが世界Brewers Cup初優勝",
+      "description": "6月27日、ベルギー・ブリュッセルでの決勝で、マレーシア出身のNas Jaafar選手がマレーシア史上初の世界Brewers Cup王者に。",
+      "detail": "Brewers Cupは選手が選んだ豆を手動ドリップで淹れて競う世界大会。豪州・香港・チェコ・韓国・フランスの強豪を抑えてのマレーシア初優勝で、東南アジアのスペシャリティ熱の到達点を示した一杯となった。",
+      "narration": "6月27日、世界ブリュワーズカップ2026の優勝者が決まりました。マレーシアのナス・ジャファル選手、同国初の世界一です。",
+      "tags": [
+        "ブリュワーズカップ",
+        "ハンドドリップ",
+        "スペシャリティコーヒー"
+      ],
       "narration_sections": {
-        "hook": "ご存知ですか?海外のコールドブリュー市場が今、年20%成長中。米国では成人の5人に1人が毎週飲み、Z世代の68%は冷たいコーヒー派なんです。",
-        "origin": "市場規模は2030年までに約1,800億円、つまり3倍超に拡大予測。家で淹れる黄金比は、豆と水を1対8、粗挽き、冷蔵庫で12〜16時間。お湯抽出と違い苦みが出にくく、浅煎りの花や果実の香りがクリアに残ります。",
-        "recommend": "暑くなる季節、まずは手持ちの浅煎り豆で試してみてください。OGの新入荷もご期待を。EC準備中、フォローしてお待ちください。"
+        "hook": "6月27日、世界ブリュワーズカップ2026の優勝者が決まりました。マレーシアのナス・ジャファル選手、同国初の世界一です。",
+        "origin": "ブリュワーズカップは、選手が選んだ豆をハンドドリップで淹れて競う、家の抽出に最も近い世界大会。決勝はブリュッセルで6月27日に開催され、豪州、香港、チェコ、韓国、フランスの強豪を抑えての優勝。東南アジアのスペシャリティ熱が、ついに世界の頂点に届きました。",
+        "recommend": "世界の頂点はハンドドリップ。家庭でも極められる世界。OGの一杯にもこだわります。EC準備中、フォローしてお待ちを。"
       },
       "section_titles": {
-        "hook": "コールドブリュー急成長",
-        "origin": "家で淹れる黄金比",
-        "recommend": "夏は浅煎りで試そう"
+        "hook": "ブリュワーズCup王者",
+        "origin": "ブリュッセル決勝",
+        "recommend": "家庭の技、世界へ"
       },
       "section_descriptions": {
-        "hook": "海外市場は年20%成長・Z世代の68%が冷派",
-        "origin": "1対8・粗挽き・冷蔵12〜16時間が王道",
-        "recommend": "浅煎りの華やかさが活きるアイス抽出"
+        "hook": "ブリュワーズカップ2026、ついに新王者誕生",
+        "origin": "ブリュッセル決勝、強豪国相手の歴史的快挙",
+        "recommend": "ハンドドリップは家庭で再現できる世界の技"
       }
     }
   ]
