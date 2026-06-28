@@ -2243,7 +2243,7 @@
         "views": 11,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.139Z"
       }
     },
     {
@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.139Z"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.139Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.139Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2463,10 +2463,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 34,
+        "views": 35,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2506,10 +2506,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 9,
+        "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2732,10 +2732,10 @@
         "freshness_hours": 12
       },
       "stats": {
-        "views": 1,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
+        "updatedAt": "2026-06-28T01:31:42.140Z"
       }
     },
     {
@@ -2779,6 +2779,52 @@
         "freshness_hours": 168
       },
       "stats": {
+        "views": 12,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-28T01:31:42.140Z"
+      }
+    },
+    {
+      "videoId": "WtNrk0KFHXc",
+      "videoUrl": "https://youtube.com/shorts/WtNrk0KFHXc",
+      "date": "2026-06-28",
+      "title": "【コーヒー豆知識】海外コールドブリュー市場が年20%成長中・米成人5人に1人が毎週飲む、家で失敗しない黄金比｜2026/06/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "news-en",
+        "description": "今日は日曜=エバーグリーンOK日。直近14日Method別 TOP3(social-en 15.3v / expert-blog 4.5v / news-en 3.8v)のうち、social-en・expert-blogは直近2日で連投済み(6/26・6/27)。連続NG制約により80% Exploitの中で残った news-en を採用。Grand View Research / Hardtank / Beverage Daily / Twiga / Counter Culture 等の英語業界メディアを横断し、『海外コールドブリュー2026年トレンド』を市場規模・年率成長・米国/Z世代消費率の3指標で確認、その上で家庭抽出のコツ(1対8・粗挽き・12〜16h)を合体させた news+実用 TIP のハイブリッド。柱③業界(市場成長ニュース)と④焙煎士一次情報(家庭抽出ノウハウ)のブリッジ。Primary ペルソナ(家で淹れる趣味層、夏シーズン入り)に直撃する設計。",
+        "sources": [
+          "https://www.grandviewresearch.com/industry-analysis/cold-brew-coffee-market",
+          "https://www.grandviewresearch.com/press-release/global-cold-brew-coffee-market",
+          "https://hardtank.com/2026/04/28/iced-coffee-trends-changing-cold-brew/",
+          "https://twigacoffee.com/blogs/news/top-coffee-trends-in-2026-how-today-s-innovations-are-shaping-your-brew",
+          "https://www.beveragedaily.com/Article/2026/01/28/top-coffee-trends-functional-coffee-rtd-specialty-coffee-cold-brew/",
+          "https://counterculturecoffee.com/blogs/counter-culture-coffee/guide-to-cold-brew",
+          "https://www.stumptowncoffee.com/blogs/news/cold-brewing-faqs"
+        ],
+        "query": "cold brew 2026 trend market size US weekly Gen Z home brewing ratio grind",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2787,14 +2833,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-27",
-      "changes": [
-        "standard: 100 avg views (34 videos)",
-        "Day performance: Sun=239, Wed=95, Tue=89, Sat=80, Mon=65, Fri=63, Thu=18"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-28",
       "changes": [
@@ -3024,6 +3062,14 @@
       "changes": [
         "standard: 57 avg views (63 videos)",
         "Day performance: Sun=147, Tue=58, Sat=54, Wed=51, Mon=39, Fri=35, Thu=10"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-28",
+      "changes": [
+        "standard: 57 avg views (64 videos)",
+        "Day performance: Sun=147, Tue=58, Wed=51, Sat=49, Mon=39, Fri=35, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
