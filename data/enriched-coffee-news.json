@@ -1,43 +1,43 @@
 {
-  "date": "2026-06-29",
+  "date": "2026-06-30",
   "discovery": {
-    "method": "news-en",
-    "description": "Specialty Coffee Association 公式 / WCC 公式・Travel & Tour World で WoC Brussels 2026 の Brewers Cup 優勝者を確認。マレーシア初の世界 Brewers Cup 王者誕生という「個人主役」型 news-en を採用。",
+    "method": "social-en",
+    "description": "Sprudge / WCC公式 / Comunicaffe / BeanScene で WoC Brussels 2026 三冠の最終決定を確認。海外コーヒーコミュニティ(Sprudge等)で盛り上がる『地元ベルギー人が世界焙煎士チャンピオン』というコミュニティ拡散型の話題を選定。昨日 news-en 2連発の打開と『焙煎』軸の柱④強化を兼ねる。",
     "sources": [
-      "https://wcc.coffee/world-brewers-cup",
-      "https://wcc.coffee/brussels-wbrc",
-      "https://www.travelandtourworld.com/news/article/0wr5rxw14tgb/",
-      "https://en.wikipedia.org/wiki/World_Brewers_Cup"
+      "https://sprudge.com/three-new-world-coffee-champions-were-just-crowned-1101834.html",
+      "https://wcc.coffee/latest-news/wcrc-winners",
+      "https://www.comunicaffe.com/wcc-in-brussels-china-malaysia-and-belgium-on-top-of-the-world",
+      "https://www.beanscenemag.com.au/australian-competitors-shine-at-world-of-coffee-brussels"
     ],
-    "query": "World Brewers Cup 2026 winner Brussels Nas Jaafar Malaysia",
-    "freshness_hours": 48
+    "query": "Benjamin Brassart Belgium World Coffee Roasting Championship 2026 Brussels winner",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "マレーシアのナス・ジャファルが世界Brewers Cup初優勝",
-      "description": "6月27日、ベルギー・ブリュッセルでの決勝で、マレーシア出身のNas Jaafar選手がマレーシア史上初の世界Brewers Cup王者に。",
-      "detail": "Brewers Cupは選手が選んだ豆を手動ドリップで淹れて競う世界大会。豪州・香港・チェコ・韓国・フランスの強豪を抑えてのマレーシア初優勝で、東南アジアのスペシャリティ熱の到達点を示した一杯となった。",
-      "narration": "6月27日、世界ブリュワーズカップ2026の優勝者が決まりました。マレーシアのナス・ジャファル選手、同国初の世界一です。",
+      "title": "ベルギー人Benjamin Brassartが世界焙煎士チャンピオン2026優勝",
+      "description": "6月27日、WoC Brussels 2026の世界焙煎士チャンピオンシップで、ベルギー人のBenjamin Brassart選手が619点で優勝。",
+      "detail": "Brassartは中国、ギリシャ、台湾、オーストリアの強豪を破り、地元ブリュッセル開催のWoC三大競技ではマレーシア(Brewers Cup)・中国(Good Spirits)に続く同国初の歴史的3冠目を決めました。焙煎は『豆選び+焙煎技術+カッピング』の総合評価競技。",
+      "narration": "海外コーヒー界が盛り上がっています。WoC Brussels 2026の世界焙煎士チャンピオンが、地元ベルギーから誕生しました",
       "tags": [
-        "ブリュワーズカップ",
-        "ハンドドリップ",
+        "焙煎",
+        "WoC Brussels",
         "スペシャリティコーヒー"
       ],
       "narration_sections": {
-        "hook": "6月27日、世界ブリュワーズカップ2026の優勝者が決まりました。マレーシアのナス・ジャファル選手、同国初の世界一です。",
-        "origin": "ブリュワーズカップは、選手が選んだ豆をハンドドリップで淹れて競う、家の抽出に最も近い世界大会。決勝はブリュッセルで6月27日に開催され、豪州、香港、チェコ、韓国、フランスの強豪を抑えての優勝。東南アジアのスペシャリティ熱が、ついに世界の頂点に届きました。",
-        "recommend": "世界の頂点はハンドドリップ。家庭でも極められる世界。OGの一杯にもこだわります。EC準備中、フォローしてお待ちを。"
+        "hook": "海外コーヒー界が盛り上がっています。WoC Brussels 2026の世界焙煎士チャンピオンが、地元ベルギーから誕生しました",
+        "origin": "ベルギーのBenjamin Brassart選手が619点で優勝。中国、ギリシャ、台湾、オーストリアの強豪を抑えた地元戴冠です。Roastingは焙煎技術とカッピングを組み合わせた競技で、Brussels三大競技はマレーシア・中国に続く同国初の歴史的3冠目",
+        "recommend": "焙煎士の世界はこんなに進化中です。OGも一杯ごとに豆選びと焙煎で挑戦の日々。EC準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "ブリュワーズCup王者",
-        "origin": "ブリュッセル決勝",
-        "recommend": "家庭の技、世界へ"
+        "hook": "焙煎士チャンピオン",
+        "origin": "ベルギー地元戴冠",
+        "recommend": "焙煎の世界の進化"
       },
       "section_descriptions": {
-        "hook": "ブリュワーズカップ2026、ついに新王者誕生",
-        "origin": "ブリュッセル決勝、強豪国相手の歴史的快挙",
-        "recommend": "ハンドドリップは家庭で再現できる世界の技"
+        "hook": "WoC Brussels 2026・最後の世界冠が決定",
+        "origin": "619点で中国・台湾の強豪を抑え地元優勝",
+        "recommend": "焙煎の世界をOGも豆と焙煎で毎日追いかけています"
       }
     }
   ]
