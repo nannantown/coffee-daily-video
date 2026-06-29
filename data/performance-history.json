@@ -2286,7 +2286,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.139Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2325,10 +2325,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.139Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.139Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2466,7 +2466,7 @@
         "views": 35,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2732,10 +2732,10 @@
         "freshness_hours": 12
       },
       "stats": {
-        "views": 5,
+        "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2779,10 +2779,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 12,
+        "views": 28,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.140Z"
+        "updatedAt": "2026-06-29T01:35:31.112Z"
       }
     },
     {
@@ -2825,6 +2825,49 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-29T01:35:31.112Z"
+      }
+    },
+    {
+      "videoId": "AWYbOrBYveA",
+      "videoUrl": "https://youtube.com/shorts/AWYbOrBYveA",
+      "date": "2026-06-29",
+      "title": "【コーヒー豆知識】マレーシアのナス・ジャファルが世界Brewers Cup初優勝｜2026/06/29 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "news-en",
+        "description": "Specialty Coffee Association 公式 / WCC 公式・Travel & Tour World で WoC Brussels 2026 の Brewers Cup 優勝者を確認。マレーシア初の世界 Brewers Cup 王者誕生という「個人主役」型 news-en を採用。",
+        "sources": [
+          "https://wcc.coffee/world-brewers-cup",
+          "https://wcc.coffee/brussels-wbrc",
+          "https://www.travelandtourworld.com/news/article/0wr5rxw14tgb/",
+          "https://en.wikipedia.org/wiki/World_Brewers_Cup"
+        ],
+        "query": "World Brewers Cup 2026 winner Brussels Nas Jaafar Malaysia",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2833,14 +2876,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-28",
-      "changes": [
-        "standard: 97 avg views (35 videos)",
-        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=18"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-29",
       "changes": [
@@ -3070,6 +3105,14 @@
       "changes": [
         "standard: 57 avg views (64 videos)",
         "Day performance: Sun=147, Tue=58, Wed=51, Sat=49, Mon=39, Fri=35, Thu=10"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-29",
+      "changes": [
+        "standard: 56 avg views (65 videos)",
+        "Day performance: Sun=134, Tue=58, Sat=51, Wed=51, Mon=39, Fri=36, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
