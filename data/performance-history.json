@@ -2328,7 +2328,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2463,10 +2463,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 35,
+        "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2732,10 +2732,10 @@
         "freshness_hours": 12
       },
       "stats": {
-        "views": 10,
+        "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2779,10 +2779,10 @@
         "freshness_hours": 168
       },
       "stats": {
-        "views": 28,
+        "views": 35,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2828,7 +2828,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-29T01:35:31.112Z"
+        "updatedAt": "2026-06-30T01:30:08.891Z"
       }
     },
     {
@@ -2868,6 +2868,49 @@
         "freshness_hours": 48
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-06-30T01:30:08.891Z"
+      }
+    },
+    {
+      "videoId": "H5mzoCrh5ng",
+      "videoUrl": "https://youtube.com/shorts/H5mzoCrh5ng",
+      "date": "2026-06-30",
+      "title": "【コーヒー豆知識】ベルギー人Benjamin Brassartが世界焙煎士チャンピオン2026優勝｜2026/06/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "social-en",
+        "description": "Sprudge / WCC公式 / Comunicaffe / BeanScene で WoC Brussels 2026 三冠の最終決定を確認。海外コーヒーコミュニティ(Sprudge等)で盛り上がる『地元ベルギー人が世界焙煎士チャンピオン』というコミュニティ拡散型の話題を選定。昨日 news-en 2連発の打開と『焙煎』軸の柱④強化を兼ねる。",
+        "sources": [
+          "https://sprudge.com/three-new-world-coffee-champions-were-just-crowned-1101834.html",
+          "https://wcc.coffee/latest-news/wcrc-winners",
+          "https://www.comunicaffe.com/wcc-in-brussels-china-malaysia-and-belgium-on-top-of-the-world",
+          "https://www.beanscenemag.com.au/australian-competitors-shine-at-world-of-coffee-brussels"
+        ],
+        "query": "Benjamin Brassart Belgium World Coffee Roasting Championship 2026 Brussels winner",
+        "freshness_hours": 72
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2876,14 +2919,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-29",
-      "changes": [
-        "standard: 94 avg views (36 videos)",
-        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=63, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-05-31",
       "changes": [
@@ -3113,6 +3148,14 @@
       "changes": [
         "standard: 56 avg views (65 videos)",
         "Day performance: Sun=134, Tue=58, Sat=51, Wed=51, Mon=39, Fri=36, Thu=10"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-06-30",
+      "changes": [
+        "standard: 56 avg views (66 videos)",
+        "Day performance: Sun=134, Tue=58, Sat=52, Wed=51, Mon=36, Fri=36, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
