@@ -1,43 +1,41 @@
 {
-  "date": "2026-06-30",
+  "date": "2026-07-01",
   "discovery": {
-    "method": "social-en",
-    "description": "Sprudge / WCC公式 / Comunicaffe / BeanScene で WoC Brussels 2026 三冠の最終決定を確認。海外コーヒーコミュニティ(Sprudge等)で盛り上がる『地元ベルギー人が世界焙煎士チャンピオン』というコミュニティ拡散型の話題を選定。昨日 news-en 2連発の打開と『焙煎』軸の柱④強化を兼ねる。",
+    "method": "expert-blog",
+    "description": "Sprudge と The Fermentation Project 公式から、James Hoffmann × Lucia Solis 共同企画『The Fermentation Project 2026』のグローバルカッピングが今週末〜来週開催のニュースを確認。expert-blog 方面の TOP1 method (直近14日 avg 22.5views) を継続活用しつつ、柱④焙煎士の一次情報を強化する判断。直近2日 (news-en→social-en) と被らない method 選定。",
     "sources": [
-      "https://sprudge.com/three-new-world-coffee-champions-were-just-crowned-1101834.html",
-      "https://wcc.coffee/latest-news/wcrc-winners",
-      "https://www.comunicaffe.com/wcc-in-brussels-china-malaysia-and-belgium-on-top-of-the-world",
-      "https://www.beanscenemag.com.au/australian-competitors-shine-at-world-of-coffee-brussels"
+      "https://sprudge.com/roasters-james-hoffmann-wants-you-to-join-his-next-global-coffee-tasting-828680.html",
+      "https://thefermentationproject.com/"
     ],
-    "query": "Benjamin Brassart Belgium World Coffee Roasting Championship 2026 Brussels winner",
-    "freshness_hours": 72
+    "query": "James Hoffmann Fermentation Project 2026 Lucia Solis Guatemala",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベルギー人Benjamin Brassartが世界焙煎士チャンピオン2026優勝",
-      "description": "6月27日、WoC Brussels 2026の世界焙煎士チャンピオンシップで、ベルギー人のBenjamin Brassart選手が619点で優勝。",
-      "detail": "Brassartは中国、ギリシャ、台湾、オーストリアの強豪を破り、地元ブリュッセル開催のWoC三大競技ではマレーシア(Brewers Cup)・中国(Good Spirits)に続く同国初の歴史的3冠目を決めました。焙煎は『豆選び+焙煎技術+カッピング』の総合評価競技。",
-      "narration": "海外コーヒー界が盛り上がっています。WoC Brussels 2026の世界焙煎士チャンピオンが、地元ベルギーから誕生しました",
+      "title": "James Hoffmann × Lucia Solis 『Fermentation Project 2026』 今週グローバルカッピング",
+      "description": "実は今週、世界中のロースターが、同じ1つのグアテマラ豆で発酵プロセスを一斉に勉強中です。",
+      "detail": "コーヒー界の有名 YouTuber Hoffmann 氏と生豆発酵の権威 Solis 氏のコラボ企画。グアテマラの1ロットを4つに分け、それぞれ違う発酵プロセスで仕上げた豆を、世界中の焙煎所が同時にテイスティング。今年は半袋単位で配布、参加ハードルも下がっています。",
+      "narration": "実は今週、世界中のロースターが、同じグアテマラ豆で発酵プロセスを一斉に勉強中。仕掛け人はあの James Hoffmann 氏です",
       "tags": [
-        "焙煎",
-        "WoC Brussels",
-        "スペシャリティコーヒー"
+        "発酵",
+        "James Hoffmann",
+        "Fermentation Project"
       ],
       "narration_sections": {
-        "hook": "海外コーヒー界が盛り上がっています。WoC Brussels 2026の世界焙煎士チャンピオンが、地元ベルギーから誕生しました",
-        "origin": "ベルギーのBenjamin Brassart選手が619点で優勝。中国、ギリシャ、台湾、オーストリアの強豪を抑えた地元戴冠です。Roastingは焙煎技術とカッピングを組み合わせた競技で、Brussels三大競技はマレーシア・中国に続く同国初の歴史的3冠目",
-        "recommend": "焙煎士の世界はこんなに進化中です。OGも一杯ごとに豆選びと焙煎で挑戦の日々。EC準備中、フォローしてお待ちください"
+        "hook": "実は今週、世界中のロースターが、同じグアテマラ豆で発酵プロセスを一斉に勉強中。仕掛け人はあの James Hoffmann 氏です",
+        "origin": "コーヒー界の有名 YouTuber Hoffmann 氏と、生豆発酵の権威 Lucia Solis 氏のコラボ企画。グアテマラの1ロットを4つに分け、違う発酵プロセスで仕上げた豆を世界中の焙煎所が同時カッピング。今年は半袋単位で参加ハードルも下げました",
+        "recommend": "同じ豆でも発酵で味は劇的に変わります。OG も常に最新の研究を追いかけ中。EC 準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "焙煎士チャンピオン",
-        "origin": "ベルギー地元戴冠",
-        "recommend": "焙煎の世界の進化"
+        "hook": "Hoffmann発酵企画",
+        "origin": "1豆を4プロセスに分割",
+        "recommend": "発酵で味は変わる"
       },
       "section_descriptions": {
-        "hook": "WoC Brussels 2026・最後の世界冠が決定",
-        "origin": "619点で中国・台湾の強豪を抑え地元優勝",
-        "recommend": "焙煎の世界をOGも豆と焙煎で毎日追いかけています"
+        "hook": "今週、世界の焙煎所が同じ豆を一斉カッピング",
+        "origin": "Hoffmann×Solis発酵学習プロジェクト2026版",
+        "recommend": "発酵で味は劇的変化、OGも常に研究中"
       }
     }
   ]
