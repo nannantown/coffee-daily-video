@@ -1,41 +1,44 @@
 {
-  "date": "2026-07-01",
+  "date": "2026-07-02",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Sprudge と The Fermentation Project 公式から、James Hoffmann × Lucia Solis 共同企画『The Fermentation Project 2026』のグローバルカッピングが今週末〜来週開催のニュースを確認。expert-blog 方面の TOP1 method (直近14日 avg 22.5views) を継続活用しつつ、柱④焙煎士の一次情報を強化する判断。直近2日 (news-en→social-en) と被らない method 選定。",
+    "method": "news-en",
+    "description": "Barista Magazine の今週特集 (Cup of Coffee July 1 daily brief 経由で再拡散) から、米 SF の中南米系スタートアップ Força Foods の『MILKish』(スイカの種原料の世界初 SeedMilk) が海外カフェで導入本格化中というトレンドを検出。柱③業界・ビジネスニュース (20%) の食材トレンド枠を埋めつつ、5 週連続不振の news-en を『主人公+striking な 1 数字+実用 TIP』フォーマットで再挑戦する検証第 1 弾。直近 2 日 (social-en / expert-blog) と被らない method 選定。",
     "sources": [
-      "https://sprudge.com/roasters-james-hoffmann-wants-you-to-join-his-next-global-coffee-tasting-828680.html",
-      "https://thefermentationproject.com/"
+      "https://www.baristamagazine.com/watermelon-seeds-are-hitting-the-alternative-milk-scene/",
+      "https://foodinstitute.com/focus/watermelon-seed-milk-a-dairy-alternative-requiring-99-less-water-than-almonds/",
+      "https://forcafoods.com/"
     ],
-    "query": "James Hoffmann Fermentation Project 2026 Lucia Solis Guatemala",
+    "query": "watermelon seed milk MILKish Forca Foods barista cafe 2026",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "James Hoffmann × Lucia Solis 『Fermentation Project 2026』 今週グローバルカッピング",
-      "description": "実は今週、世界中のロースターが、同じ1つのグアテマラ豆で発酵プロセスを一斉に勉強中です。",
-      "detail": "コーヒー界の有名 YouTuber Hoffmann 氏と生豆発酵の権威 Solis 氏のコラボ企画。グアテマラの1ロットを4つに分け、それぞれ違う発酵プロセスで仕上げた豆を、世界中の焙煎所が同時にテイスティング。今年は半袋単位で配布、参加ハードルも下がっています。",
-      "narration": "実は今週、世界中のロースターが、同じグアテマラ豆で発酵プロセスを一斉に勉強中。仕掛け人はあの James Hoffmann 氏です",
+      "title": "スイカの種で作る植物ミルク『MILKish』海外カフェで本格採用・アーモンドより水 99% 少ない",
+      "description": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入りしています。",
+      "detail": "米 SF の中南米系スタートアップ Força Foods が開発した『MILKish』は、世界初のスイカの種を原料にした植物ミルク。アーモンドミルクより水の使用量が 99% 少なく、オートミルクよりも 15% 少ない。50 kcal・タンパク質 2g・カルシウム RDA 35% と栄養もしっかり。Barista Magazine が今週特集し、海外カフェが続々メニュー入りさせています。",
+      "narration": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入り。話題の理由は水の使用量にあります",
       "tags": [
-        "発酵",
-        "James Hoffmann",
-        "Fermentation Project"
+        "植物ミルク",
+        "MILKish",
+        "スイカ",
+        "サステナビリティ",
+        "業界トレンド"
       ],
       "narration_sections": {
-        "hook": "実は今週、世界中のロースターが、同じグアテマラ豆で発酵プロセスを一斉に勉強中。仕掛け人はあの James Hoffmann 氏です",
-        "origin": "コーヒー界の有名 YouTuber Hoffmann 氏と、生豆発酵の権威 Lucia Solis 氏のコラボ企画。グアテマラの1ロットを4つに分け、違う発酵プロセスで仕上げた豆を世界中の焙煎所が同時カッピング。今年は半袋単位で参加ハードルも下げました",
-        "recommend": "同じ豆でも発酵で味は劇的に変わります。OG も常に最新の研究を追いかけ中。EC 準備中、フォローしてお待ちください"
+        "hook": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入り。話題の理由は水の使用量にあります",
+        "origin": "米 SF の中南米系スタートアップ Força Foods が開発した MILKish。原料はスイカの種と豆タンパクで、アーモンドミルクより水の使用量が 99% 少なく、オートより 15% 少ない。50kcal・タンパク質 2g・カルシウム豊富で、海外カフェが続々採用中",
+        "recommend": "植物ミルクの次の主役になるかも。OG も毎朝、海外の最新トレンドを追っています。EC 準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "Hoffmann発酵企画",
-        "origin": "1豆を4プロセスに分割",
-        "recommend": "発酵で味は変わる"
+        "hook": "スイカ種で植物ミルク",
+        "origin": "水 99% 減の新素材",
+        "recommend": "次の主役になるかも"
       },
       "section_descriptions": {
-        "hook": "今週、世界の焙煎所が同じ豆を一斉カッピング",
-        "origin": "Hoffmann×Solis発酵学習プロジェクト2026版",
-        "recommend": "発酵で味は劇的変化、OGも常に研究中"
+        "hook": "海外カフェで今、話題のスイカ種ミルクとは",
+        "origin": "水 99% 減・高栄養で持続可能な新植物ミルク",
+        "recommend": "植物ミルクの新星、OG も海外動向を追跡中"
       }
     }
   ]
