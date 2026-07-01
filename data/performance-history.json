@@ -2328,7 +2328,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2466,7 +2466,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2735,7 +2735,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2782,7 +2782,7 @@
         "views": 35,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2825,10 +2825,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-06-30T01:30:08.891Z"
+        "updatedAt": "2026-07-01T01:37:41.519Z"
       }
     },
     {
@@ -2911,6 +2911,47 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 4,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-01T01:37:41.519Z"
+      }
+    },
+    {
+      "videoId": "nRThv_VXup0",
+      "videoUrl": "https://youtube.com/shorts/nRThv_VXup0",
+      "date": "2026-07-01",
+      "title": "【コーヒー豆知識】James Hoffmann × Lucia Solis 『Fermentation Project 2026』 今週グローバルカッピング｜2026/07/01 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Sprudge と The Fermentation Project 公式から、James Hoffmann × Lucia Solis 共同企画『The Fermentation Project 2026』のグローバルカッピングが今週末〜来週開催のニュースを確認。expert-blog 方面の TOP1 method (直近14日 avg 22.5views) を継続活用しつつ、柱④焙煎士の一次情報を強化する判断。直近2日 (news-en→social-en) と被らない method 選定。",
+        "sources": [
+          "https://sprudge.com/roasters-james-hoffmann-wants-you-to-join-his-next-global-coffee-tasting-828680.html",
+          "https://thefermentationproject.com/"
+        ],
+        "query": "James Hoffmann Fermentation Project 2026 Lucia Solis Guatemala",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2919,14 +2960,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-05-31",
-      "changes": [
-        "standard: 92 avg views (37 videos)",
-        "Day performance: Sun=239, Tue=89, Sat=80, Wed=80, Mon=65, Fri=53, Thu=15"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-01",
       "changes": [
@@ -3156,6 +3189,14 @@
       "changes": [
         "standard: 56 avg views (66 videos)",
         "Day performance: Sun=134, Tue=58, Sat=52, Wed=51, Mon=36, Fri=36, Thu=10"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-01",
+      "changes": [
+        "standard: 55 avg views (67 videos)",
+        "Day performance: Sun=134, Sat=52, Tue=52, Wed=51, Mon=36, Fri=36, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
