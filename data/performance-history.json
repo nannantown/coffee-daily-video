@@ -2373,7 +2373,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2466,7 +2466,7 @@
         "views": 38,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2509,7 +2509,7 @@
         "views": 10,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2735,7 +2735,7 @@
         "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2782,7 +2782,7 @@
         "views": 35,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2828,7 +2828,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2911,10 +2911,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 4,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-01T01:37:41.519Z"
+        "updatedAt": "2026-07-02T01:30:49.611Z"
       }
     },
     {
@@ -2952,6 +2952,48 @@
         "freshness_hours": 96
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-02T01:30:49.611Z"
+      }
+    },
+    {
+      "videoId": "5kgHzDiZy5k",
+      "videoUrl": "https://youtube.com/shorts/5kgHzDiZy5k",
+      "date": "2026-07-02",
+      "title": "【コーヒー豆知識】スイカの種で作る植物ミルク『MILKish』海外カフェで本格採用・アーモンドより水 99% 少ない｜2026/07/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "news-en",
+        "description": "Barista Magazine の今週特集 (Cup of Coffee July 1 daily brief 経由で再拡散) から、米 SF の中南米系スタートアップ Força Foods の『MILKish』(スイカの種原料の世界初 SeedMilk) が海外カフェで導入本格化中というトレンドを検出。柱③業界・ビジネスニュース (20%) の食材トレンド枠を埋めつつ、5 週連続不振の news-en を『主人公+striking な 1 数字+実用 TIP』フォーマットで再挑戦する検証第 1 弾。直近 2 日 (social-en / expert-blog) と被らない method 選定。",
+        "sources": [
+          "https://www.baristamagazine.com/watermelon-seeds-are-hitting-the-alternative-milk-scene/",
+          "https://foodinstitute.com/focus/watermelon-seed-milk-a-dairy-alternative-requiring-99-less-water-than-almonds/",
+          "https://forcafoods.com/"
+        ],
+        "query": "watermelon seed milk MILKish Forca Foods barista cafe 2026",
+        "freshness_hours": 96
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -2960,14 +3002,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-01",
-      "changes": [
-        "standard: 90 avg views (38 videos)",
-        "Day performance: Sun=205, Tue=89, Sat=80, Wed=80, Mon=65, Fri=54, Thu=16"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-02",
       "changes": [
@@ -3197,6 +3231,14 @@
       "changes": [
         "standard: 55 avg views (67 videos)",
         "Day performance: Sun=134, Sat=52, Tue=52, Wed=51, Mon=36, Fri=36, Thu=10"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-02",
+      "changes": [
+        "standard: 54 avg views (68 videos)",
+        "Day performance: Sun=134, Sat=52, Tue=52, Wed=47, Mon=36, Fri=36, Thu=10"
       ],
       "recommendedTemplate": "standard"
     }
