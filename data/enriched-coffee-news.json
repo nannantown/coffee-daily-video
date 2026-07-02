@@ -1,44 +1,44 @@
 {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "discovery": {
-    "method": "news-en",
-    "description": "Barista Magazine の今週特集 (Cup of Coffee July 1 daily brief 経由で再拡散) から、米 SF の中南米系スタートアップ Força Foods の『MILKish』(スイカの種原料の世界初 SeedMilk) が海外カフェで導入本格化中というトレンドを検出。柱③業界・ビジネスニュース (20%) の食材トレンド枠を埋めつつ、5 週連続不振の news-en を『主人公+striking な 1 数字+実用 TIP』フォーマットで再挑戦する検証第 1 弾。直近 2 日 (social-en / expert-blog) と被らない method 選定。",
+    "method": "social-en",
+    "description": "TikTok / X で拡散中の『コーヒーに塩ひとつまみ』トレンドを検出、Fox News が今夏の再ブームとして特集し食品科学者 Ed McCormick 氏がナトリウムイオンによる苦味受容体ブロックのメカニズムを解説。Sprudge / Koffee Kult のロースター側解説と併せて内容確認。TOP method である social-en を 3 日空けて再登板 (直近 06-30 Brassart 以来)。5 週不振の news-en を昨日試したので、TOP2 の social-en に一旦戻して比較データを取る。柱④焙煎士の一次情報 (実用 TIP) に近い『抽出テクニック × 味覚科学』ハイブリッド、家淹れ層 (Primary) にど真ん中。",
     "sources": [
-      "https://www.baristamagazine.com/watermelon-seeds-are-hitting-the-alternative-milk-scene/",
-      "https://foodinstitute.com/focus/watermelon-seed-milk-a-dairy-alternative-requiring-99-less-water-than-almonds/",
-      "https://forcafoods.com/"
+      "https://www.foxnews.com/food-drink/forget-sugar-cream-viral-coffee-hack-might-transform-your-morning-brew",
+      "https://sprudge.com/the-latest-tiktok-coffee-trend-is-weird-but-good-337898.html",
+      "https://www.koffeekult.com/blogs/blog/salt-in-coffee-the-simple-trick-that-cuts-bitterness"
     ],
-    "query": "watermelon seed milk MILKish Forca Foods barista cafe 2026",
-    "freshness_hours": 96
+    "query": "salt in coffee viral TikTok Turkey Vietnam Fox News 2026 bitterness sodium",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "スイカの種で作る植物ミルク『MILKish』海外カフェで本格採用・アーモンドより水 99% 少ない",
-      "description": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入りしています。",
-      "detail": "米 SF の中南米系スタートアップ Força Foods が開発した『MILKish』は、世界初のスイカの種を原料にした植物ミルク。アーモンドミルクより水の使用量が 99% 少なく、オートミルクよりも 15% 少ない。50 kcal・タンパク質 2g・カルシウム RDA 35% と栄養もしっかり。Barista Magazine が今週特集し、海外カフェが続々メニュー入りさせています。",
-      "narration": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入り。話題の理由は水の使用量にあります",
+      "title": "海外で『コーヒーに塩ひとつまみ』が今夏再ブーム・Fox News特集、砂糖なしで苦味だけ消える科学",
+      "description": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏特集しました。",
+      "detail": "食品科学者 Ed McCormick 氏によると、塩のナトリウムイオンが舌の苦味受容体を直接ブロックし、深煎りでは甘みも立つ。使い方は挽いた粉に極少量、または淹れた 1 杯にひとつまみ。砂糖やクリームと違って風味を隠さず、苦味だけを削れるのが最大の強み。トルコ・ベトナム・台湾で数百年続く伝統技が、TikTok 発で今夏 SNS 拡散中です。",
+      "narration": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏正式に特集したんです",
       "tags": [
-        "植物ミルク",
-        "MILKish",
-        "スイカ",
-        "サステナビリティ",
-        "業界トレンド"
+        "塩ひとつまみ",
+        "苦味コントロール",
+        "海外トレンド",
+        "抽出テクニック",
+        "深煎り"
       ],
       "narration_sections": {
-        "hook": "実は今、海外のスペシャルティコーヒー界で「スイカの種で作るミルク」がカフェメニュー入り。話題の理由は水の使用量にあります",
-        "origin": "米 SF の中南米系スタートアップ Força Foods が開発した MILKish。原料はスイカの種と豆タンパクで、アーモンドミルクより水の使用量が 99% 少なく、オートより 15% 少ない。50kcal・タンパク質 2g・カルシウム豊富で、海外カフェが続々採用中",
-        "recommend": "植物ミルクの次の主役になるかも。OG も毎朝、海外の最新トレンドを追っています。EC 準備中、フォローしてお待ちください"
+        "hook": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏正式に特集したんです",
+        "origin": "食品科学者Ed McCormick氏によると、塩のナトリウムイオンが舌の苦味受容体を直接ブロック、深煎りでは甘みも立つそう。使い方は挽いた粉に極少量、または淹れた1杯にひとつまみ。砂糖やクリームと違い、風味を隠さず苦味だけ削れます",
+        "recommend": "明日の朝、耳かき1杯の塩をドリップ前の粉に振ってみて。苦味が消え、甘みが立ちます。EC準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "スイカ種で植物ミルク",
-        "origin": "水 99% 減の新素材",
-        "recommend": "次の主役になるかも"
+        "hook": "今夏の塩コーヒー再ブーム",
+        "origin": "苦味だけ消す科学",
+        "recommend": "耳かき1杯で試す"
       },
       "section_descriptions": {
-        "hook": "海外カフェで今、話題のスイカ種ミルクとは",
-        "origin": "水 99% 減・高栄養で持続可能な新植物ミルク",
-        "recommend": "植物ミルクの新星、OG も海外動向を追跡中"
+        "hook": "トルコ数百年の技を Fox News が特集、海外で拡散",
+        "origin": "ナトリウムが舌の苦味受容体を直接ブロック",
+        "recommend": "深煎りの1杯に極少量、まず今朝から試して"
       }
     }
   ]
