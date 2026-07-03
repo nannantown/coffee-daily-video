@@ -1,44 +1,46 @@
 {
-  "date": "2026-07-03",
+  "date": "2026-07-04",
   "discovery": {
-    "method": "social-en",
-    "description": "TikTok / X で拡散中の『コーヒーに塩ひとつまみ』トレンドを検出、Fox News が今夏の再ブームとして特集し食品科学者 Ed McCormick 氏がナトリウムイオンによる苦味受容体ブロックのメカニズムを解説。Sprudge / Koffee Kult のロースター側解説と併せて内容確認。TOP method である social-en を 3 日空けて再登板 (直近 06-30 Brassart 以来)。5 週不振の news-en を昨日試したので、TOP2 の social-en に一旦戻して比較データを取る。柱④焙煎士の一次情報 (実用 TIP) に近い『抽出テクニック × 味覚科学』ハイブリッド、家淹れ層 (Primary) にど真ん中。",
+    "method": "expert-blog",
+    "description": "土曜エバーグリーン深掘り。昨日 07-03 の『塩ひとつまみ』(Fox News / Ed McCormick) から続く『深煎りが苦い時のリカバリ』を横串で完成させる企画。James Hoffmann の AeroPress ガイドの一次発言『湯温を 75℃ まで下げるという 1 つの変更が苦味を最も高確率で解消する』、Scott Rao の V60 記事『微粉が多いと苦味が増す、20-22g 以上のドーズで挽き目を 1 段粗く』を、昨日の塩 (ナトリウムイオン → 舌の苦味受容体ブロック) と組み合わせて 3 段階リカバリとして提示。TOP2 method の expert-blog を 2 日空けて再登板 (07-01 Hoffmann×Solis 以来)。土曜エバーグリーンで freshness_hours 制約は緩めに扱う。柱④焙煎士の一次情報 (15%) 下位カテゴリ『抽出フレーバー修正 TIP』の第 1 号事例、かつ `expert-blog:derived` (複数焙煎士の一次情報横串) サブタイプ試験の第 1 回。",
     "sources": [
-      "https://www.foxnews.com/food-drink/forget-sugar-cream-viral-coffee-hack-might-transform-your-morning-brew",
-      "https://sprudge.com/the-latest-tiktok-coffee-trend-is-weird-but-good-337898.html",
-      "https://www.koffeekult.com/blogs/blog/salt-in-coffee-the-simple-trick-that-cuts-bitterness"
+      "https://www.fluentincoffee.com/james-hoffmann-aeropress-recipe-the-full-method/",
+      "https://letsbrew.net/immersion-brewing/french-press-james-hoffmann-method-explained/",
+      "https://www.scottrao.com/blog/2017/9/14/v60-video",
+      "https://libertybeanscoffee.com/coffee/optimal-coffee-brewing-temperature-guide/",
+      "https://www.foxnews.com/food-drink/forget-sugar-cream-viral-coffee-hack-might-transform-your-morning-brew"
     ],
-    "query": "salt in coffee viral TikTok Turkey Vietnam Fox News 2026 bitterness sodium",
-    "freshness_hours": 72
+    "query": "James Hoffmann bitter coffee fix temperature grind Scott Rao brew guide 2026",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外で『コーヒーに塩ひとつまみ』が今夏再ブーム・Fox News特集、砂糖なしで苦味だけ消える科学",
-      "description": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏特集しました。",
-      "detail": "食品科学者 Ed McCormick 氏によると、塩のナトリウムイオンが舌の苦味受容体を直接ブロックし、深煎りでは甘みも立つ。使い方は挽いた粉に極少量、または淹れた 1 杯にひとつまみ。砂糖やクリームと違って風味を隠さず、苦味だけを削れるのが最大の強み。トルコ・ベトナム・台湾で数百年続く伝統技が、TikTok 発で今夏 SNS 拡散中です。",
-      "narration": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏正式に特集したんです",
+      "title": "深煎りが苦い時のリカバリ3段階・Hoffmann『湯温75℃』とScott Rao『挽き目1段粗く』、昨日の塩と合わせて完成",
+      "description": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
+      "detail": "1つ目は昨日話した塩、ナトリウムイオンが舌の苦味受容体を直接ブロックします。2つ目はJames Hoffmann推奨の湯温を75℃まで下げる方法、本人曰く『たった1つの変更で苦味が消える確率が最も高い』と AeroPress ガイドで明言。3つ目は Scott Rao が V60 記事で指摘する挽き目、微粉が多いと苦味が増すのでドーズを 20g 以上にして挽き目を 1 段粗くします。順番は湯温 → 挽き目 → 塩の順で 1 つずつ試すのが正解です。",
+      "narration": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
       "tags": [
-        "塩ひとつまみ",
-        "苦味コントロール",
-        "海外トレンド",
+        "深煎り苦味リカバリ",
+        "James Hoffmann",
+        "Scott Rao",
         "抽出テクニック",
-        "深煎り"
+        "湯温"
       ],
       "narration_sections": {
-        "hook": "実は今、海外で『コーヒーに塩ひとつまみ』が再ブーム。トルコで数百年続く伝統技を、Fox Newsが今夏正式に特集したんです",
-        "origin": "食品科学者Ed McCormick氏によると、塩のナトリウムイオンが舌の苦味受容体を直接ブロック、深煎りでは甘みも立つそう。使い方は挽いた粉に極少量、または淹れた1杯にひとつまみ。砂糖やクリームと違い、風味を隠さず苦味だけ削れます",
-        "recommend": "明日の朝、耳かき1杯の塩をドリップ前の粉に振ってみて。苦味が消え、甘みが立ちます。EC準備中、フォローしてお待ちください"
+        "hook": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
+        "origin": "1つ目は昨日話した塩、ナトリウムが舌の苦味受容体をブロック。2つ目はHoffmann推奨、湯温を75℃まで下げる。本人曰く1つの変更で苦味が消える確率が最も高い。3つ目はScott Rao指摘、微粉多いと苦味増なので挽き目を1段粗く",
+        "recommend": "順番は湯温→挽き目→塩で試して。1つずつ変えないと原因が分かりません。EC準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "今夏の塩コーヒー再ブーム",
-        "origin": "苦味だけ消す科学",
-        "recommend": "耳かき1杯で試す"
+        "hook": "深煎りが苦い時の3手",
+        "origin": "焙煎士推奨の3段階",
+        "recommend": "試す順番は湯温から"
       },
       "section_descriptions": {
-        "hook": "トルコ数百年の技を Fox News が特集、海外で拡散",
-        "origin": "ナトリウムが舌の苦味受容体を直接ブロック",
-        "recommend": "深煎りの1杯に極少量、まず今朝から試して"
+        "hook": "塩の次に効く2手、Hoffmann直伝の順番",
+        "origin": "湯温75℃と挽き目粗めで苦味の抽出を抑える",
+        "recommend": "変更は1つずつ、原因を特定してから積み上げる"
       }
     }
   ]
