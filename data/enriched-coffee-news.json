@@ -1,46 +1,46 @@
 {
-  "date": "2026-07-04",
+  "date": "2026-07-05",
   "discovery": {
-    "method": "expert-blog",
-    "description": "土曜エバーグリーン深掘り。昨日 07-03 の『塩ひとつまみ』(Fox News / Ed McCormick) から続く『深煎りが苦い時のリカバリ』を横串で完成させる企画。James Hoffmann の AeroPress ガイドの一次発言『湯温を 75℃ まで下げるという 1 つの変更が苦味を最も高確率で解消する』、Scott Rao の V60 記事『微粉が多いと苦味が増す、20-22g 以上のドーズで挽き目を 1 段粗く』を、昨日の塩 (ナトリウムイオン → 舌の苦味受容体ブロック) と組み合わせて 3 段階リカバリとして提示。TOP2 method の expert-blog を 2 日空けて再登板 (07-01 Hoffmann×Solis 以来)。土曜エバーグリーンで freshness_hours 制約は緩めに扱う。柱④焙煎士の一次情報 (15%) 下位カテゴリ『抽出フレーバー修正 TIP』の第 1 号事例、かつ `expert-blog:derived` (複数焙煎士の一次情報横串) サブタイプ試験の第 1 回。",
+    "method": "social-en",
+    "description": "日曜エバーグリーン深掘り枠。06-29 に一報のみ流した Nas Jaafar (マレーシア人初の 2026 World Brewers Cup 世界王者) の優勝レシピを、決勝直後に本人 Instagram / Threads と海外バリスタ note (Fujisaki) / gota.cafe に出た数字を横串で集めて家庭器具版に翻訳。粕谷哲 10-Pour (41 views/TOP1) と同型『世界王者の具体レシピ数字』テンプレの再打。Method 選定は TOP2 の social-en を Exploit (TOP1 expert-blog は 07-04 連日制約回避)、07-03 塩ネタから 2 日空いてリセット済み。柱④焙煎士の一次情報(15%) を Nas 本人発信で埋める。単独完結型、07-04 沈黙仮説を踏まえて前日ネタとの接続は敢えて切る。",
     "sources": [
-      "https://www.fluentincoffee.com/james-hoffmann-aeropress-recipe-the-full-method/",
-      "https://letsbrew.net/immersion-brewing/french-press-james-hoffmann-method-explained/",
-      "https://www.scottrao.com/blog/2017/9/14/v60-video",
-      "https://libertybeanscoffee.com/coffee/optimal-coffee-brewing-temperature-guide/",
-      "https://www.foxnews.com/food-drink/forget-sugar-cream-viral-coffee-hack-might-transform-your-morning-brew"
+      "https://www.malaymail.com/news/eat-drink/2026/06/28/lord-of-the-beans-nas-jaafar-is-malaysias-first-ever-world-brewers-cup-champion/225537",
+      "https://note.com/brewers/n/nc0e25f1ae82c?hl=en",
+      "https://www.sinardaily.my/article/737543/focus/national/nas-jaafar-makes-history-as-malaysias-first-world-brewers-cup-champion",
+      "https://www.instagram.com/nasjaafar/",
+      "https://gota.cafe/en/authors/nas-jaafar"
     ],
-    "query": "James Hoffmann bitter coffee fix temperature grind Scott Rao brew guide 2026",
-    "freshness_hours": 96
+    "query": "Nas Jaafar World Brewers Cup 2026 winner recipe bean signature grind temperature Hario Switch",
+    "freshness_hours": 192
   },
   "articles": [
     {
       "rank": 1,
-      "title": "深煎りが苦い時のリカバリ3段階・Hoffmann『湯温75℃』とScott Rao『挽き目1段粗く』、昨日の塩と合わせて完成",
-      "description": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
-      "detail": "1つ目は昨日話した塩、ナトリウムイオンが舌の苦味受容体を直接ブロックします。2つ目はJames Hoffmann推奨の湯温を75℃まで下げる方法、本人曰く『たった1つの変更で苦味が消える確率が最も高い』と AeroPress ガイドで明言。3つ目は Scott Rao が V60 記事で指摘する挽き目、微粉が多いと苦味が増すのでドーズを 20g 以上にして挽き目を 1 段粗くします。順番は湯温 → 挽き目 → 塩の順で 1 つずつ試すのが正解です。",
-      "narration": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
+      "title": "Nas Jaafar優勝Switchレシピ・15g/200g/92℃、58秒で閉じ2分00秒で開ける2段抽出",
+      "description": "先週マレーシア人が世界Brewers Cup初優勝、優勝レシピの数字が海外で話題です。家のHario Switchで真似できます",
+      "detail": "豆15g、湯200gの1:13.3で湯温92℃。V60の上でパーコレーション、下にHario Switchを重ねます。まず100g注いで58秒でSwitchを閉じ、そのまま浸けて甘味を引き出す。2分00秒でSwitchを開けて2分10秒で完了。テーマはResistance、抵抗を敵にしない発想です",
+      "narration": "先週マレーシア人が世界Brewers Cup初優勝、優勝レシピの数字が海外で話題です。家のHario Switchで真似できます",
       "tags": [
-        "深煎り苦味リカバリ",
-        "James Hoffmann",
-        "Scott Rao",
-        "抽出テクニック",
-        "湯温"
+        "Nas Jaafar",
+        "Hario Switch",
+        "Brewers Cup 2026",
+        "世界王者レシピ",
+        "浅煎り抽出"
       ],
       "narration_sections": {
-        "hook": "深煎りが苦い時、実は塩以外にも効く手が2つあります。海外焙煎士James Hoffmann直伝、家で今日から使える3段階リカバリです",
-        "origin": "1つ目は昨日話した塩、ナトリウムが舌の苦味受容体をブロック。2つ目はHoffmann推奨、湯温を75℃まで下げる。本人曰く1つの変更で苦味が消える確率が最も高い。3つ目はScott Rao指摘、微粉多いと苦味増なので挽き目を1段粗く",
-        "recommend": "順番は湯温→挽き目→塩で試して。1つずつ変えないと原因が分かりません。EC準備中、フォローしてお待ちください"
+        "hook": "先週マレーシア人が世界Brewers Cup初優勝、優勝レシピの数字が海外で話題です。家のHario Switchで真似できます",
+        "origin": "豆15g、湯200gの比率1:13.3、湯温92℃。V60の上でパーコレーション、下にSwitchを重ねます。まず100g注ぎ58秒でSwitchを閉じ、浸けて甘味を出す。2分00秒でSwitchを開けて2分10秒で完了です",
+        "recommend": "浅煎りが花のように開く2段抽出です。挽き目は微粉を抑えて少し粗くが鍵。EC準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "深煎りが苦い時の3手",
-        "origin": "焙煎士推奨の3段階",
-        "recommend": "試す順番は湯温から"
+        "hook": "優勝Switchレシピ",
+        "origin": "58秒で閉じる2段抽出",
+        "recommend": "浅煎りが花に開く"
       },
       "section_descriptions": {
-        "hook": "塩の次に効く2手、Hoffmann直伝の順番",
-        "origin": "湯温75℃と挽き目粗めで苦味の抽出を抑える",
-        "recommend": "変更は1つずつ、原因を特定してから積み上げる"
+        "hook": "マレーシア人初優勝、家Switchで再現可能",
+        "origin": "V60上でパーコレ→下Switchで浸ける2段構造",
+        "recommend": "浅煎りに合わせ挽き目は微粉抑えて少し粗く"
       }
     }
   ]
