@@ -1,47 +1,47 @@
 {
-  "date": "2026-07-06",
+  "date": "2026-07-07",
   "discovery": {
     "method": "news-en",
-    "description": "月曜・ニュース中心枠。Perfect Daily Grind の 07-03 Weekly Round-Up と Reuters 経由の Investing.com / GV Wire / ESM Magazine / Manila Times / CoffeeTalk を横串で確認し、視聴者の財布に直結する『Nestlé (Nescafe/Nespresso 所有) が年内のコーヒー値下げを明言』(2026-06-30 Reuters) を選定。柱①市況ニュース(25%) が直近 14 日で明確に不足しており、比率補正も兼ねる。method は weekday 指定の news-en を Exploit しつつ、これまで news-en 5 投稿で上振れ 0 だったため『大手ブランド x 消費者価格』サブ切り口で立て直しを試験。07-05 (Nas Jaafar Switch レシピ) の 0 views 沈黙を受け、抽出テクニック・海外選手系は本日は完全に休止、単独完結型でリセット。",
+    "description": "火曜・ニュース中心枠。Perfect Daily Grind 7/3 recap をハブに、Food Business MEA / Medafrica Times / Ethiopian News Agency (ENA) / Farmers Review Africa でエチオピア農相 Addisu Arega が発表した5年計画を裏取り。輸出額が初の3,000億円台に到達し、2031年までに6,000億円へ倍増、単収を1ha 9→21キンタルへ倍増、Jimma研究所に組織培養施設を新設。柱②産地・ハーベスト(25%目標)は直近14日で不足しており比率補正を兼ねる。07-06 の news-en:consumer-brand が 0 views で不発だったため、切り口を『大手ブランド財布直結』→『産地政策 x specialty 銘柄未来』に変更し、Primary ペルソナ (家で淹れる趣味層) の知っている固有銘柄名 (イルガチェフェ、シダモ) で recommend を締める設計に転換。",
     "sources": [
-      "https://www.investing.com/news/stock-market-news/nestle-could-lower-coffee-prices-as-bean-costs-fall-4768515",
-      "https://gvwire.com/2026/06/30/nestle-could-lower-coffee-prices-as-bean-costs-fall/",
-      "https://www.esmmagazine.com/a-brands/nestle-could-lower-coffee-prices-as-bean-costs-fall-315640",
-      "https://www.manilatimes.net/2026/07/02/business/foreign-business/nestle-could-lower-coffee-prices-as-bean-costs-fall/2376961",
-      "https://coffeetalk.com/daily-dose/top-news/06-2026/110360/",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/"
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/",
+      "https://www.foodbusinessmea.com/ethiopia-launches-national-coffee-strategy-to-double-production-increase-export-revenue/",
+      "https://medafricatimes.com/46064-ethiopia-earns-3-billion-from-coffee-exports-targets-doubling-revenue-within-five-years.html",
+      "https://www.ena.et/web/eng/w/eng_9151027",
+      "https://farmersreviewafrica.com/ethiopia-tops-us3-billion-in-coffee-export-earnings-as-government-launches-five-year-productivity-drive/",
+      "https://allafrica.com/stories/202607030377.html"
     ],
-    "query": "Nestle coffee price cut Nescafe Axel Touzet 2026 bean prices Reuters",
+    "query": "Ethiopia coffee export $3 billion 2025/26 5-year plan yield doubling Jimma tissue culture",
     "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ネスレが年内コーヒー値下げに言及・豆値下落を反映、店頭に届くまで9ヶ月ラグ",
-      "description": "ネスカフェで有名なネスレが年内のコーヒー値下げに言及しました。世界最大手が豆の卸値下落を店頭価格に反映する構えです",
-      "detail": "担当役員がロイターに、豆価格の下落を小売価格に反映すると発言しました。ただし豆値が実際の店頭に届くまで最短9ヶ月かかるとのこと。焙煎リードタイムと年間契約更新のタイムラグが理由です。ネスレ以外の大手も追随する動きを見せそうです",
-      "narration": "ネスカフェで有名なネスレが、年内のコーヒー値下げに言及しました。世界最大手が豆の卸値下落を、店頭価格に反映する構えです。",
+      "title": "エチオピア コーヒー輸出3,000億円突破・5年で倍増計画も同時発表、単収を9→21キンタルへ",
+      "description": "エチオピア農相が2025-26年の輸出額初の3,000億円台と、2031年までに6,000億円へ倍増する5年計画を発表しました。",
+      "detail": "農相の発表では2031年までに輸出6,000億円が目標。1ha当たりの収穫量を9キンタルから21キンタルへ倍増させます。核となるのは南西部Jimma研究所の組織培養施設で、耐病性の高収量苗を全国のスペシャリティ農家へ配布する計画です。",
+      "narration": "今朝のニュース。エチオピアのコーヒー輸出が初めて3,000億円を突破し、政府が5年で倍増を目指す新戦略も同時発表しました。",
       "tags": [
-        "ネスレ",
-        "ネスカフェ",
-        "コーヒー市況",
-        "豆価格",
-        "市況ニュース"
+        "エチオピア",
+        "産地ニュース",
+        "イルガチェフェ",
+        "シダモ",
+        "スペシャリティ"
       ],
       "narration_sections": {
-        "hook": "ネスカフェで有名なネスレが、年内のコーヒー値下げに言及しました。世界最大手が豆の卸値下落を、店頭価格に反映する構えです。",
-        "origin": "担当役員がロイターに、豆価格の下落を小売価格に反映すると発言しました。ただし豆値が実際の店頭に届くまで最短9ヶ月かかるとのこと。焙煎リードタイムと年間契約更新のタイムラグが理由です。ネスレ以外の大手も、追随する動きを見せそうです。",
-        "recommend": "大手が動けば専門店の豆値も少し落ち着く可能性。次に淹れ替えるなら値動きを見て選ぶ好機ですね。EC準備中、フォローしてお待ちください"
+        "hook": "今朝のニュース。エチオピアのコーヒー輸出が初めて3,000億円を突破し、政府が5年で倍増を目指す新戦略も同時発表しました。",
+        "origin": "農相の発表では2031年までに輸出6,000億円が目標。1ha当たりの収穫量を9キンタルから21キンタルへ倍増させます。核となるのは南西部Jimma研究所の組織培養施設で、耐病性の高収量苗を全国のスペシャリティ農家へ配布する計画です。",
+        "recommend": "イルガチェフェやシダモを買うなら、この5年で供給と価格が確実に変わります。お気に入り銘柄は今のうちに味を覚えておきたいですね。"
       },
       "section_titles": {
-        "hook": "ネスレ値下げ言及",
-        "origin": "反映まで9ヶ月ラグ",
-        "recommend": "淹れ替えのチャンス"
+        "hook": "エチオピア倍増計画",
+        "origin": "9→21キンタルへ",
+        "recommend": "銘柄を今のうちに"
       },
       "section_descriptions": {
-        "hook": "世界最大手ネスレが豆値下落を店頭に反映する構え",
-        "origin": "焙煎リードと年間契約更新のラグで店頭反映は9ヶ月後",
-        "recommend": "大手が動くなら専門店の豆値も落ち着く可能性あり"
+        "hook": "エチオピアが5年で倍増戦略、輸出額初の3,000億円台",
+        "origin": "単収を1ha 9→21キンタルへ、Jimma組織培養で挑む",
+        "recommend": "産地の中身が変わる前に、好きな銘柄を試したい"
       }
     }
   ]
