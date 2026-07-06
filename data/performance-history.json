@@ -2553,7 +2553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2689,7 +2689,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2735,7 +2735,7 @@
         "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2782,7 +2782,7 @@
         "views": 43,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2828,7 +2828,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2868,10 +2868,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 4,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2914,7 +2914,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2955,7 +2955,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -2994,10 +2994,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -3036,10 +3036,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -3083,7 +3083,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
+        "updatedAt": "2026-07-06T01:13:59.884Z"
       }
     },
     {
@@ -3124,6 +3124,51 @@
         "freshness_hours": 192
       },
       "stats": {
+        "views": 13,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-06T01:13:59.884Z"
+      }
+    },
+    {
+      "videoId": "851S2AZaROE",
+      "videoUrl": "https://youtube.com/shorts/851S2AZaROE",
+      "date": "2026-07-06",
+      "title": "【コーヒー豆知識】ネスレが年内コーヒー値下げに言及・豆値下落を反映、店頭に届くまで9ヶ月ラグ｜2026/07/06 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "news-en",
+        "description": "月曜・ニュース中心枠。Perfect Daily Grind の 07-03 Weekly Round-Up と Reuters 経由の Investing.com / GV Wire / ESM Magazine / Manila Times / CoffeeTalk を横串で確認し、視聴者の財布に直結する『Nestlé (Nescafe/Nespresso 所有) が年内のコーヒー値下げを明言』(2026-06-30 Reuters) を選定。柱①市況ニュース(25%) が直近 14 日で明確に不足しており、比率補正も兼ねる。method は weekday 指定の news-en を Exploit しつつ、これまで news-en 5 投稿で上振れ 0 だったため『大手ブランド x 消費者価格』サブ切り口で立て直しを試験。07-05 (Nas Jaafar Switch レシピ) の 0 views 沈黙を受け、抽出テクニック・海外選手系は本日は完全に休止、単独完結型でリセット。",
+        "sources": [
+          "https://www.investing.com/news/stock-market-news/nestle-could-lower-coffee-prices-as-bean-costs-fall-4768515",
+          "https://gvwire.com/2026/06/30/nestle-could-lower-coffee-prices-as-bean-costs-fall/",
+          "https://www.esmmagazine.com/a-brands/nestle-could-lower-coffee-prices-as-bean-costs-fall-315640",
+          "https://www.manilatimes.net/2026/07/02/business/foreign-business/nestle-could-lower-coffee-prices-as-bean-costs-fall/2376961",
+          "https://coffeetalk.com/daily-dose/top-news/06-2026/110360/",
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/"
+        ],
+        "query": "Nestle coffee price cut Nescafe Axel Touzet 2026 bean prices Reuters",
+        "freshness_hours": 144
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3132,14 +3177,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-05",
-      "changes": [
-        "standard: 82 avg views (42 videos)",
-        "Day performance: Sun=206, Sat=80, Tue=76, Wed=70, Mon=56, Fri=54, Thu=13"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-06",
       "changes": [
@@ -3369,6 +3406,14 @@
       "changes": [
         "standard: 52 avg views (71 videos)",
         "Day performance: Sun=134, Tue=52, Sat=47, Wed=47, Mon=36, Fri=33, Thu=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-06",
+      "changes": [
+        "standard: 51 avg views (72 videos)",
+        "Day performance: Sun=124, Tue=52, Sat=47, Wed=47, Mon=36, Fri=33, Thu=9"
       ],
       "recommendedTemplate": "standard"
     }
