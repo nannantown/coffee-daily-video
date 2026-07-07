@@ -1,47 +1,47 @@
 {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "discovery": {
-    "method": "news-en",
-    "description": "火曜・ニュース中心枠。Perfect Daily Grind 7/3 recap をハブに、Food Business MEA / Medafrica Times / Ethiopian News Agency (ENA) / Farmers Review Africa でエチオピア農相 Addisu Arega が発表した5年計画を裏取り。輸出額が初の3,000億円台に到達し、2031年までに6,000億円へ倍増、単収を1ha 9→21キンタルへ倍増、Jimma研究所に組織培養施設を新設。柱②産地・ハーベスト(25%目標)は直近14日で不足しており比率補正を兼ねる。07-06 の news-en:consumer-brand が 0 views で不発だったため、切り口を『大手ブランド財布直結』→『産地政策 x specialty 銘柄未来』に変更し、Primary ペルソナ (家で淹れる趣味層) の知っている固有銘柄名 (イルガチェフェ、シダモ) で recommend を締める設計に転換。",
+    "method": "social-en",
+    "description": "水曜・ニュース中心枠。英語圏コーヒーコミュニティ (トレーダー Twitter、r/Coffee、PDG 論説、Global Coffee Report、StoneX ENSO Watch) が同時に『ゴジラ・エルニーニョ』を話題化している熱を主軸に据える。7/6 のアラビカ先物 6.71% 急伸 (5ヶ月ぶり高値) → 7/7 の 8% 急落という乱高下の背景に、NOAA 67% 確率のスーパーエルニーニョ発生予測と、日本気象庁が 6/10 に発生を正式認定した事実が重なりコミュニティ全体が警戒モードに入っている。柱①市況ニュース(25%目標) が直近14日で7%と大幅不足のため比率補正を兼ねる。07-06 の news-en:consumer-brand と 07-07 の news-en:origin-policy が2日連続 news-en だったため戦略の連続採用禁止ルールに従い、TOP3 method の中から social-en を選択。06-25 ブラジル雨の 2 views 不発は『数字だけの相場報告』が原因だったので、今回は数字は最小限、コミュニティの感情ライン (警戒モード、9-10月のブラジル開花期待ち) を主軸に翻訳した。Primary ペルソナ (家で淹れる趣味層) へは『あなたのブラジル系ブレンドが1-2年後どう変わるか』への着地で数字→生活への影響の2段翻訳を実施。",
     "sources": [
       "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/",
-      "https://www.foodbusinessmea.com/ethiopia-launches-national-coffee-strategy-to-double-production-increase-export-revenue/",
-      "https://medafricatimes.com/46064-ethiopia-earns-3-billion-from-coffee-exports-targets-doubling-revenue-within-five-years.html",
-      "https://www.ena.et/web/eng/w/eng_9151027",
-      "https://farmersreviewafrica.com/ethiopia-tops-us3-billion-in-coffee-export-earnings-as-government-launches-five-year-productivity-drive/",
-      "https://allafrica.com/stories/202607030377.html"
+      "https://www.gcrmag.com/godzilla-el-nino-to-influence-coffee-prices/",
+      "https://www.stonex.com/en-gb/insights/enso-watch-what-la-nina-s-fade-and-a-potential-el-nino-mean-for-coffee-in-2026/",
+      "https://finance.yahoo.com/markets/commodities/articles/el-ni-o-fears-spark-182807792.html",
+      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-prices-decline-profit-154801915.html",
+      "https://www.barchart.com/story/news/3147188/coffee-prices-surge-on-brazil-weather-risks"
     ],
-    "query": "Ethiopia coffee export $3 billion 2025/26 5-year plan yield doubling Jimma tissue culture",
-    "freshness_hours": 144
+    "query": "Godzilla El Nino coffee community reaction 2026 arabica futures Brazil flowering September October",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "エチオピア コーヒー輸出3,000億円突破・5年で倍増計画も同時発表、単収を9→21キンタルへ",
-      "description": "エチオピア農相が2025-26年の輸出額初の3,000億円台と、2031年までに6,000億円へ倍増する5年計画を発表しました。",
-      "detail": "農相の発表では2031年までに輸出6,000億円が目標。1ha当たりの収穫量を9キンタルから21キンタルへ倍増させます。核となるのは南西部Jimma研究所の組織培養施設で、耐病性の高収量苗を全国のスペシャリティ農家へ配布する計画です。",
-      "narration": "今朝のニュース。エチオピアのコーヒー輸出が初めて3,000億円を突破し、政府が5年で倍増を目指す新戦略も同時発表しました。",
+      "title": "海外コーヒー界が『ゴジラ・エルニーニョ』警戒モード・アラビカ先物5ヶ月高値の裏で、9-10月のブラジル開花期が本当の焦点",
+      "description": "海外のコーヒートレーダーとロースター界隈が『ゴジラ・エルニーニョ』警戒モードに入り、アラビカ先物が今週5ヶ月ぶり高値をつけました。",
+      "detail": "NOAA は今年、史上最強級のスーパーエルニーニョ発生確率を67%と発表、日本気象庁も6月10日にエルニーニョ発生を正式認定しました。9-10月のブラジル主要産地の開花期に雨が遅れると、2027-28年のアラビカ収穫がまるごと打撃を受ける恐れがあります。",
+      "narration": "今朝のニュース。海外のコーヒートレーダーが「ゴジラ・エルニーニョ」警戒モードに入り、先物が5ヶ月ぶり高値をつけました。",
       "tags": [
-        "エチオピア",
-        "産地ニュース",
-        "イルガチェフェ",
-        "シダモ",
+        "エルニーニョ",
+        "気候ニュース",
+        "ブラジル",
+        "先物市場",
         "スペシャリティ"
       ],
       "narration_sections": {
-        "hook": "今朝のニュース。エチオピアのコーヒー輸出が初めて3,000億円を突破し、政府が5年で倍増を目指す新戦略も同時発表しました。",
-        "origin": "農相の発表では2031年までに輸出6,000億円が目標。1ha当たりの収穫量を9キンタルから21キンタルへ倍増させます。核となるのは南西部Jimma研究所の組織培養施設で、耐病性の高収量苗を全国のスペシャリティ農家へ配布する計画です。",
-        "recommend": "イルガチェフェやシダモを買うなら、この5年で供給と価格が確実に変わります。お気に入り銘柄は今のうちに味を覚えておきたいですね。"
+        "hook": "今朝のニュース。海外のコーヒートレーダーが「ゴジラ・エルニーニョ」警戒モードに入り、先物が5ヶ月ぶり高値をつけました。",
+        "origin": "NOAAが今年、史上最強級のスーパーエルニーニョ発生確率を67%と発表、日本の気象庁も6月10日にエルニーニョ発生を認定しました。9-10月のブラジル主要産地の開花期に雨が遅れると、2027-28年のアラビカ収穫がまるごと打撃を受ける恐れがあります。",
+        "recommend": "お気に入りのブラジル系ブレンドは今のうちに焙煎日を確認して、いつもの銘柄の味を体に染み込ませておきたいですね。"
       },
       "section_titles": {
-        "hook": "エチオピア倍増計画",
-        "origin": "9→21キンタルへ",
+        "hook": "ゴジラEl Niño警戒",
+        "origin": "9-10月開花が鍵",
         "recommend": "銘柄を今のうちに"
       },
       "section_descriptions": {
-        "hook": "エチオピアが5年で倍増戦略、輸出額初の3,000億円台",
-        "origin": "単収を1ha 9→21キンタルへ、Jimma組織培養で挑む",
-        "recommend": "産地の中身が変わる前に、好きな銘柄を試したい"
+        "hook": "先物5ヶ月ぶり高値、海外トレーダーが警戒モード",
+        "origin": "NOAA発生確率67%、来年収穫への影響が懸念",
+        "recommend": "供給が締まる前に、好きな銘柄を試したい"
       }
     }
   ]
