@@ -2601,7 +2601,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2645,7 +2645,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2686,10 +2686,10 @@
         "freshness_hours": 24
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2735,7 +2735,7 @@
         "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2782,7 +2782,7 @@
         "views": 43,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2828,7 +2828,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2914,7 +2914,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2952,10 +2952,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 3,
+        "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -2997,7 +2997,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -3039,7 +3039,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -3080,10 +3080,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -3124,10 +3124,10 @@
         "freshness_hours": 192
       },
       "stats": {
-        "views": 13,
+        "views": 16,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
+        "updatedAt": "2026-07-07T01:14:07.108Z"
       }
     },
     {
@@ -3172,19 +3172,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-07T01:14:07.108Z"
+      }
+    },
+    {
+      "videoId": "6AB2EKDy334",
+      "videoUrl": "https://youtube.com/shorts/6AB2EKDy334",
+      "date": "2026-07-07",
+      "title": "【コーヒー豆知識】エチオピア コーヒー輸出3,000億円突破・5年で倍増計画も同時発表、単収を9→21キンタルへ｜2026/07/07 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "news-en",
+        "description": "火曜・ニュース中心枠。Perfect Daily Grind 7/3 recap をハブに、Food Business MEA / Medafrica Times / Ethiopian News Agency (ENA) / Farmers Review Africa でエチオピア農相 Addisu Arega が発表した5年計画を裏取り。輸出額が初の3,000億円台に到達し、2031年までに6,000億円へ倍増、単収を1ha 9→21キンタルへ倍増、Jimma研究所に組織培養施設を新設。柱②産地・ハーベスト(25%目標)は直近14日で不足しており比率補正を兼ねる。07-06 の news-en:consumer-brand が 0 views で不発だったため、切り口を『大手ブランド財布直結』→『産地政策 x specialty 銘柄未来』に変更し、Primary ペルソナ (家で淹れる趣味層) の知っている固有銘柄名 (イルガチェフェ、シダモ) で recommend を締める設計に転換。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/",
+          "https://www.foodbusinessmea.com/ethiopia-launches-national-coffee-strategy-to-double-production-increase-export-revenue/",
+          "https://medafricatimes.com/46064-ethiopia-earns-3-billion-from-coffee-exports-targets-doubling-revenue-within-five-years.html",
+          "https://www.ena.et/web/eng/w/eng_9151027",
+          "https://farmersreviewafrica.com/ethiopia-tops-us3-billion-in-coffee-export-earnings-as-government-launches-five-year-productivity-drive/",
+          "https://allafrica.com/stories/202607030377.html"
+        ],
+        "query": "Ethiopia coffee export $3 billion 2025/26 5-year plan yield doubling Jimma tissue culture",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-06",
-      "changes": [
-        "standard: 80 avg views (43 videos)",
-        "Day performance: Sun=206, Sat=80, Tue=76, Wed=70, Mon=56, Fri=47, Thu=13"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-07",
       "changes": [
@@ -3414,6 +3451,14 @@
       "changes": [
         "standard: 51 avg views (72 videos)",
         "Day performance: Sun=124, Tue=52, Sat=47, Wed=47, Mon=36, Fri=33, Thu=9"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-07",
+      "changes": [
+        "standard: 51 avg views (73 videos)",
+        "Day performance: Sun=124, Tue=52, Sat=48, Wed=47, Fri=33, Mon=32, Thu=9"
       ],
       "recommendedTemplate": "standard"
     }
