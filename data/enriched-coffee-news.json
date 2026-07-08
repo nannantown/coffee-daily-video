@@ -1,47 +1,44 @@
 {
-  "date": "2026-07-08",
+  "date": "2026-07-09",
   "discovery": {
-    "method": "social-en",
-    "description": "水曜・ニュース中心枠。英語圏コーヒーコミュニティ (トレーダー Twitter、r/Coffee、PDG 論説、Global Coffee Report、StoneX ENSO Watch) が同時に『ゴジラ・エルニーニョ』を話題化している熱を主軸に据える。7/6 のアラビカ先物 6.71% 急伸 (5ヶ月ぶり高値) → 7/7 の 8% 急落という乱高下の背景に、NOAA 67% 確率のスーパーエルニーニョ発生予測と、日本気象庁が 6/10 に発生を正式認定した事実が重なりコミュニティ全体が警戒モードに入っている。柱①市況ニュース(25%目標) が直近14日で7%と大幅不足のため比率補正を兼ねる。07-06 の news-en:consumer-brand と 07-07 の news-en:origin-policy が2日連続 news-en だったため戦略の連続採用禁止ルールに従い、TOP3 method の中から social-en を選択。06-25 ブラジル雨の 2 views 不発は『数字だけの相場報告』が原因だったので、今回は数字は最小限、コミュニティの感情ライン (警戒モード、9-10月のブラジル開花期待ち) を主軸に翻訳した。Primary ペルソナ (家で淹れる趣味層) へは『あなたのブラジル系ブレンドが1-2年後どう変わるか』への着地で数字→生活への影響の2段翻訳を実施。",
+    "method": "news-en",
+    "description": "英語圏コーヒーメディア (Seoul Economic Daily 7/1、CoffeeTalk 6月末、Perfect Daily Grind 7/3 Coffee News Recap) で話題化していた中央大学・有賀敦紀教授の『カップ触感が酸味知覚を変える』研究を、日本語圏で先に噛み砕いて速報する。日本発の一次研究が英語圏で先に拡散、日本語圏では未深掘りという逆輸入型の news-en 事例。直近3日 news-en が連続で0 views と失速している中、TOP3 の勝ちパターン (Bath大凍結 38 views、Kasuya 10-Pour 43 views、Nas Switch 21 views) に共通する『科学的根拠 + 家で試せる』構造に合わせて、news-en の中でも corporate/policy ではなく research サブ角度で復調挑戦。柱③業界・ビジネスの科学ネタ枠は 06-24 中国発酵以来空白のため補正効果もある。Primary ペルソナ (家で淹れる趣味層) 直撃の実践アクション『ザラつくコースターから滑らかなマグに持ち替える』を section 3 に据える。",
     "sources": [
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/",
-      "https://www.gcrmag.com/godzilla-el-nino-to-influence-coffee-prices/",
-      "https://www.stonex.com/en-gb/insights/enso-watch-what-la-nina-s-fade-and-a-potential-el-nino-mean-for-coffee-in-2026/",
-      "https://finance.yahoo.com/markets/commodities/articles/el-ni-o-fears-spark-182807792.html",
-      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-prices-decline-profit-154801915.html",
-      "https://www.barchart.com/story/news/3147188/coffee-prices-surge-on-brazil-weather-risks"
+      "https://en.sedaily.com/finance/2026/07/01/cup-sleeve-texture-alters-coffee-sourness-japanese-study",
+      "https://coffeetalk.com/daily-dose/top-news/06-2026/110341/",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/"
     ],
-    "query": "Godzilla El Nino coffee community reaction 2026 arabica futures Brazil flowering September October",
-    "freshness_hours": 48
+    "query": "Japanese study cup texture coffee taste perception Chuo University Ariga Multisensory Research",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外コーヒー界が『ゴジラ・エルニーニョ』警戒モード・アラビカ先物5ヶ月高値の裏で、9-10月のブラジル開花期が本当の焦点",
-      "description": "海外のコーヒートレーダーとロースター界隈が『ゴジラ・エルニーニョ』警戒モードに入り、アラビカ先物が今週5ヶ月ぶり高値をつけました。",
-      "detail": "NOAA は今年、史上最強級のスーパーエルニーニョ発生確率を67%と発表、日本気象庁も6月10日にエルニーニョ発生を正式認定しました。9-10月のブラジル主要産地の開花期に雨が遅れると、2027-28年のアラビカ収穫がまるごと打撃を受ける恐れがあります。",
-      "narration": "今朝のニュース。海外のコーヒートレーダーが「ゴジラ・エルニーニョ」警戒モードに入り、先物が5ヶ月ぶり高値をつけました。",
+      "title": "日本の中央大学が『カップの手触りで酸味の感じ方が変わる』を証明・92人ブラインド実験、荒いスリーブから滑らかなマグで酸味が弱まる知覚",
+      "description": "マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わることを日本の研究チームが証明しました。",
+      "detail": "中央大学・有賀敦紀教授の研究チームが92人を目隠しで68度の黒コーヒーを飲ませる実験を実施。サンドペーパー製の荒いスリーブと、なめらかな紙のスリーブを順番に触らせた結果、先に荒い方を触った人だけが、滑らかスリーブのコーヒーを『酸味が弱い』と感じました。国際誌 Multisensory Research 掲載、Perfect Daily Grind など海外コーヒーメディアで話題化中です。",
+      "narration": "知ってました? マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わるって、日本の研究チームが証明したんです。",
       "tags": [
-        "エルニーニョ",
-        "気候ニュース",
-        "ブラジル",
-        "先物市場",
-        "スペシャリティ"
+        "コーヒー科学",
+        "感覚と味覚",
+        "マグカップ",
+        "酸味",
+        "日本発の研究"
       ],
       "narration_sections": {
-        "hook": "今朝のニュース。海外のコーヒートレーダーが「ゴジラ・エルニーニョ」警戒モードに入り、先物が5ヶ月ぶり高値をつけました。",
-        "origin": "NOAAが今年、史上最強級のスーパーエルニーニョ発生確率を67%と発表、日本の気象庁も6月10日にエルニーニョ発生を認定しました。9-10月のブラジル主要産地の開花期に雨が遅れると、2027-28年のアラビカ収穫がまるごと打撃を受ける恐れがあります。",
-        "recommend": "お気に入りのブラジル系ブレンドは今のうちに焙煎日を確認して、いつもの銘柄の味を体に染み込ませておきたいですね。"
+        "hook": "知ってました? マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わるって、日本の研究チームが証明したんです。",
+        "origin": "中央大学の有賀教授の研究。92人が目隠しで、ザラザラのサンドペーパー製スリーブと、なめらかな紙スリーブから同じ68度の黒コーヒーを飲む実験。結果、先にザラザラを触った人は、滑らかスリーブのコーヒーを酸味が弱いと感じました。",
+        "recommend": "ザラつく素材から滑らかなマグに持ち替えて飲むと、酸味が丸く感じます。深煎りの酸味が苦手な日、試してみてください。"
       },
       "section_titles": {
-        "hook": "ゴジラEl Niño警戒",
-        "origin": "9-10月開花が鍵",
-        "recommend": "銘柄を今のうちに"
+        "hook": "触感で味が変わる",
+        "origin": "日本の研究で判明",
+        "recommend": "酸味を丸くする裏技"
       },
       "section_descriptions": {
-        "hook": "先物5ヶ月ぶり高値、海外トレーダーが警戒モード",
-        "origin": "NOAA発生確率67%、来年収穫への影響が懸念",
-        "recommend": "供給が締まる前に、好きな銘柄を試したい"
+        "hook": "日本の中央大学の研究が海外で話題に",
+        "origin": "92人ブラインド実験の意外な結果",
+        "recommend": "深煎りの酸味が苦手な日にすぐ試せます"
       }
     }
   ]
