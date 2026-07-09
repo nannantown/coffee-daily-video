@@ -1,44 +1,45 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "discovery": {
-    "method": "news-en",
-    "description": "英語圏コーヒーメディア (Seoul Economic Daily 7/1、CoffeeTalk 6月末、Perfect Daily Grind 7/3 Coffee News Recap) で話題化していた中央大学・有賀敦紀教授の『カップ触感が酸味知覚を変える』研究を、日本語圏で先に噛み砕いて速報する。日本発の一次研究が英語圏で先に拡散、日本語圏では未深掘りという逆輸入型の news-en 事例。直近3日 news-en が連続で0 views と失速している中、TOP3 の勝ちパターン (Bath大凍結 38 views、Kasuya 10-Pour 43 views、Nas Switch 21 views) に共通する『科学的根拠 + 家で試せる』構造に合わせて、news-en の中でも corporate/policy ではなく research サブ角度で復調挑戦。柱③業界・ビジネスの科学ネタ枠は 06-24 中国発酵以来空白のため補正効果もある。Primary ペルソナ (家で淹れる趣味層) 直撃の実践アクション『ザラつくコースターから滑らかなマグに持ち替える』を section 3 に据える。",
+    "method": "market-data",
+    "description": "今週 (7/6 月〜7/9 木) の Arabica 先物が歴史的乱高下を記録。7/6 月曜に 1 日で 16% 急騰 (26年ぶり最大の上げ幅、5ヶ月高値 $3.50 タッチ)、7/8 水曜に 8% 急落と真逆の展開。裏で USDA の Foreign Agricultural Service が Brazil 26/27 期を過去最大級の 7,190 万 60kg 袋 (前年比 +14%)、アラビカ生産だけで +25% の 4,750 万袋と予想発表。同週 ICE がマージン要求を引き上げ、投機筋の急速な巻き戻しが起きた。Barchart / StoneX / Business Recorder / Philstar の英語商品市況ソースを横断して数字を裏取り、日本語圏では depth 記事が翌日以降になるため、翌朝の速報として届ける狙い。TOP3 method (expert-blog / social-en / news-en) は今日全て制約ヒット (ネタ切れ or 直近2日禁止) のため、80/20 の Explore 枠として 6/22 で 0 views 確定した market-data を『narrative-first』(乾いた数字表ではなく物語として) 再フレームで検証。07-08 の Godzilla El Niño 記事 (bullish) からの 48h narrative flip も同時に見せて、視聴者に『毎朝チェックの価値』を体感してもらう狙い。ペルソナ Primary (家で淹れる趣味層) には「短期の値上がり不安は落ち着く見込み、店頭反映は 9ヶ月遅れ」という家計・購買感覚への接続で締める。",
     "sources": [
-      "https://en.sedaily.com/finance/2026/07/01/cup-sleeve-texture-alters-coffee-sourness-japanese-study",
-      "https://coffeetalk.com/daily-dose/top-news/06-2026/110341/",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/"
+      "https://www.barchart.com/story/news/2265836/arabica-coffee-tumbles-on-brazil-harvest-pressures",
+      "https://www.stonex.com/en-us/insights/brazil-harvest-pressures-coffee-market-as-arabica-futures-fall-to-19-month-lows/",
+      "https://www.brecorder.com/news/40428967/arabica-coffee-heads-sharply-lower-after-stellar-rally",
+      "https://www.philstar.com/business/stock-commentary/2026/07/08/2540759/arabica-coffee-prices-remain-extremely-volatile"
     ],
-    "query": "Japanese study cup texture coffee taste perception Chuo University Ariga Multisensory Research",
-    "freshness_hours": 144
+    "query": "arabica coffee futures crash July 8 9 2026 profit taking Brazil harvest USDA record forecast margin",
+    "freshness_hours": 36
   },
   "articles": [
     {
       "rank": 1,
-      "title": "日本の中央大学が『カップの手触りで酸味の感じ方が変わる』を証明・92人ブラインド実験、荒いスリーブから滑らかなマグで酸味が弱まる知覚",
-      "description": "マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わることを日本の研究チームが証明しました。",
-      "detail": "中央大学・有賀敦紀教授の研究チームが92人を目隠しで68度の黒コーヒーを飲ませる実験を実施。サンドペーパー製の荒いスリーブと、なめらかな紙のスリーブを順番に触らせた結果、先に荒い方を触った人だけが、滑らかスリーブのコーヒーを『酸味が弱い』と感じました。国際誌 Multisensory Research 掲載、Perfect Daily Grind など海外コーヒーメディアで話題化中です。",
-      "narration": "知ってました? マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わるって、日本の研究チームが証明したんです。",
+      "title": "アラビカ先物が月曜16%急騰→水曜8%急落・USDAがBrazil26/27期を史上最大級7,190万袋と予想、店頭反映は9ヶ月遅れ",
+      "description": "アラビカ先物が今週26年ぶりの記録的な乱高下、USDAが過去最大級のBrazil予想を発表しました。",
+      "detail": "7月6日にアラビカ先物が1日で16%急騰、26年で最大の上げ幅を記録し5ヶ月高値をつけました。ブラジル収穫遅延とICE低在庫が背景です。ところが翌々日の8日、USDA (米国農務省) がブラジル26/27期の収穫を史上最大級の7,190万袋、アラビカ生産だけで前年比25%増と発表。同日ICEがマージン要求を引き上げ、水曜のアラビカ先物は8%反落しました。店頭価格への反映は約9ヶ月遅れです。",
+      "narration": "知ってました? アラビカ先物、月曜に26年ぶり最大級の急騰、その2日後に8%大暴落。今週、コーヒー相場が歴史的な乱高下です。",
       "tags": [
-        "コーヒー科学",
-        "感覚と味覚",
-        "マグカップ",
-        "酸味",
-        "日本発の研究"
+        "コーヒー市況",
+        "アラビカ先物",
+        "相場乱高下",
+        "USDA予想",
+        "豆値の行方"
       ],
       "narration_sections": {
-        "hook": "知ってました? マグカップの表面のザラつきで、コーヒーの酸味の感じ方が変わるって、日本の研究チームが証明したんです。",
-        "origin": "中央大学の有賀教授の研究。92人が目隠しで、ザラザラのサンドペーパー製スリーブと、なめらかな紙スリーブから同じ68度の黒コーヒーを飲む実験。結果、先にザラザラを触った人は、滑らかスリーブのコーヒーを酸味が弱いと感じました。",
-        "recommend": "ザラつく素材から滑らかなマグに持ち替えて飲むと、酸味が丸く感じます。深煎りの酸味が苦手な日、試してみてください。"
+        "hook": "知ってました? アラビカ先物、月曜に26年ぶり最大級の急騰、その2日後に8%大暴落。今週、コーヒー相場が歴史的な乱高下です。",
+        "origin": "7月6日にアラビカ先物が1日で16%上昇、26年ぶり最大の上げ幅。ブラジル収穫遅延と低在庫が背景です。ところが8日、USDAがブラジル26/27期を史上最大級7,190万袋、アラビカ前年比25%増と発表、水曜に8%反落しました。",
+        "recommend": "短期の値上がり不安は落ち着く見込みですが、豆値が店頭に反映されるのは9ヶ月遅れです。今後の価格、要ウォッチです。"
       },
       "section_titles": {
-        "hook": "触感で味が変わる",
-        "origin": "日本の研究で判明",
-        "recommend": "酸味を丸くする裏技"
+        "hook": "相場が歴史的乱高下",
+        "origin": "16%上げから8%下げ",
+        "recommend": "豆値は9ヶ月遅れ"
       },
       "section_descriptions": {
-        "hook": "日本の中央大学の研究が海外で話題に",
-        "origin": "92人ブラインド実験の意外な結果",
-        "recommend": "深煎りの酸味が苦手な日にすぐ試せます"
+        "hook": "今週アラビカ先物が26年ぶりの記録的乱高下",
+        "origin": "USDAがBrazilを史上最大級と予想",
+        "recommend": "店頭価格に反映されるまで9ヶ月かかります"
       }
     }
   ]
