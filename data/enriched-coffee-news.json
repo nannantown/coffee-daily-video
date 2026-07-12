@@ -1,46 +1,40 @@
 {
-  "date": "2026-07-12",
+  "date": "2026-07-13",
   "discovery": {
-    "method": "social-en",
-    "description": "日曜のエバーグリーン枠を『海外バリスタコミュニティが夏に必ず語る具体レシピ』角度で強化。方針: (a) 直近 4 日で未使用の TOP 1 method social-en (8.00 avg) を exploit、(b) 直近 2 日 (expert-blog, market-data) と重複しない、(c) 07-05 Nas Jaafar Switch レシピ (21 views) / 06-27 粕谷哲 10-Pour (43 views) が示した『具体数字入り再現手順』の勝ちパターン再現、(d) 日本の連日 30 度超という時事に噛み合わせる。トピックは Japanese Iced Coffee / フラッシュブリュー。James Hoffmann が『熱抽出→急冷でアロマが逃げない、コールドブリューが失う産地の複雑さが出る』と公言する日本発祥のアイスコーヒー抽出。海外の Gear Patrol / Coffee Slang / Complete Home Barista / Ovalware 等が夏になると必ず特集する定番。粉 20g / 湯 200g / 氷 100g、1:15 比率のうち 1/3 を氷に置換の具体数字を軸に、Primary ペルソナ (家で淹れる趣味層) が今日午後にドリッパーと氷だけで試せる形で提示。昨日 07-11 の『豆の冷凍保存で夏を守る』からの自然な流れ (守った豆を最大に活かす抽出) として暗黙のシリーズ効果も狙う。",
+    "method": "news-en",
+    "description": "英語コーヒー業界メディア (Perfect Daily Grind, Comunicaffe, StoneX, Barchart) と Reuters/Yahoo Finance で 7 月上旬のブラジル収穫停止 + アラビカ先物急騰ニュースを収集",
     "sources": [
-      "https://www.gearpatrol.com/home/a741518/pour-over-iced-coffee/",
-      "https://www.timer.coffee/recipes/v60/james-hoffmann-iced-v60-recipe/",
-      "https://coffee-slang.com/coffee-recipes/james-hoffmanns-immersion-inspired-iced-coffee-method/",
-      "https://completehomebarista.com/guides/japanese-iced-coffee-method/",
-      "https://www.ovalware.com/blogs/oval-blog/japanese-iced-coffee-how-to-make-iced-pour-over-at-home-flash-brew-guide"
+      "https://www.stonex.com/en-us/insights/arabica-futures-fall-on-expectations-of-global-coffee-surplus/",
+      "https://www.barchart.com/story/news/2447902/coffee-prices-continue-higher-on-brazil-coffee-harvest-delays",
+      "https://www.comunicaffe.com/coffee-markets-still-on-the-decline-harvest-delayed-in-brazil-due-to-rain-but-estimates-are-optimistic",
+      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-surge-brazil-harvest-160727971.html",
+      "https://tradingeconomics.com/commodity/coffee"
     ],
-    "query": "Japanese iced coffee flash brew James Hoffmann V60 recipe ratio ice hot water oxidation summer 2026 barista",
+    "query": "arabica coffee price futures Brazil harvest rain Minas Gerais July 2026",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "夏のアイスコーヒー正解は日本発祥のフラッシュブリュー・James Hoffmannも支持、粉20g/湯200g/氷100gの1:15比率で1/3を氷置換、コールドブリューが失う産地アロマが立つ",
-      "description": "連日 30 度超の日本、海外バリスタが夏になると必ず語る一杯は、実は日本発祥のフラッシュブリューでした。",
-      "detail": "James Hoffmann は『熱抽出→急冷でアロマが逃げず、コールドブリューが失う産地の複雑さが出る』とフラッシュブリュー (Japanese Iced Coffee) を支持。基本レシピはシンプルで、粉 20g、湯温 93 度、湯 200g の 1:15 比率のうち、氷 100g をサーバーに先入れして湯を 100g 減らすだけ。総量 300g のうち 1/3 を氷に置き換える計算。ドリップ直後、湯が氷に触れた瞬間に急冷され、酸化とアロマの飛散を止められます。コールドブリューが 12 時間かかって失うフルーティーさや花香が、わずか 3 分で残ります。使う豆は浅煎りのシングルオリジンほど差がわかりやすく、エチオピアやコロンビアのウォッシュドが特に映えます。氷とドリッパーがあれば今日午後試せる、夏の家淹れの決定版です。",
-      "narration": "連日35度超えの日本、実は海外バリスタ界隈で今夏のアイスコーヒー正解は既に決着済み。答えは日本発祥のフラッシュブリュー方式です。",
-      "tags": [
-        "Japanese Iced Coffee",
-        "フラッシュブリュー",
-        "夏のアイスコーヒー",
-        "Hoffmann推奨",
-        "抽出レシピ"
-      ],
+      "title": "ブラジル異常降雨で収穫停止、アラビカ先物が4.5ヶ月ぶり高値",
+      "description": "ミナスジェライスで平均の20倍の雨、先物は4.5ヶ月ぶり高値に急騰",
+      "detail": "6-7月の豪雨でMinas Geraisの週間降水量が過去平均の1,956%に到達。収穫進捗52%は昨年60%を大幅下回り、ICE認定倉庫在庫は2.25年ぶり低水準の377,465袋に低下、アラビカ先物は6.71%上昇し4.5ヶ月ぶり高値に。",
+      "narration": "今、ブラジル最大の産地ミナスジェライスで異常事態が起きてます。先週アラビカ先物がまた4.5ヶ月ぶり高値に急騰、豆価格に影響が出そうです。",
+      "tags": ["市況ニュース", "ブラジル収穫", "アラビカ先物"],
       "narration_sections": {
-        "hook": "連日35度超えの日本、実は海外バリスタ界隈で今夏のアイスコーヒー正解は既に決着済み。答えは日本発祥のフラッシュブリュー方式です。",
-        "origin": "作り方はシンプル。粉20g、湯温93度、湯200gの1:15比率のうち、氷100gを先入れして湯を100g減らすだけ。James Hoffmannも『空気接触時間が短いほど酸化が抑えられる』と支持する熱抽出→急冷方式。",
-        "recommend": "浅煎りのフルーティー系ほど差が出ます。氷が溶けて完成まで約3分、砂糖なしで香りが立ちます。今日の午後、透明感のある一杯を試してみてください。"
+        "hook": "今、ブラジル最大の産地ミナスジェライスで異常事態が起きてます。先週アラビカ先物がまた4.5ヶ月ぶり高値に急騰、豆価格に影響が出そうです。",
+        "origin": "原因は6-7月の豪雨。ミナスジェライスの雨量が過去平均の1,956%に達し、収穫が停止しました。進捗率は52%と昨年60%を大幅に下回っています。さらにICE認定倉庫の在庫は2年3ヶ月ぶり低水準の377,465袋に落ちました。",
+        "recommend": "小売価格に反映されるまで数ヶ月ラグがあります。エチオピアや中南米の気に入っている豆があれば、今のうち買い置きしておくのも一手ですよ。"
       },
       "section_titles": {
-        "hook": "夏の正解ブリュー",
-        "origin": "1:15+氷100g",
-        "recommend": "浅煎りで試してみて"
+        "hook": "ブラジル異常降雨",
+        "origin": "収穫停止と在庫底値",
+        "recommend": "今月中に買い置き"
       },
       "section_descriptions": {
-        "hook": "海外バリスタ界で決着した今夏のアイスコーヒー正解",
-        "origin": "粉20g湯200g氷100gの黄金比率と急冷理論",
-        "recommend": "浅煎りシングルで差が出る氷1/3の夏レシピ"
+        "hook": "ミナスジェライスで平均の20倍の雨、先物は4.5ヶ月ぶり高値",
+        "origin": "収穫52%止まり、ICE在庫は2.25年ぶり低水準に",
+        "recommend": "価格反映は数ヶ月ラグ、好きな豆は今のうちに"
       }
     }
   ]
