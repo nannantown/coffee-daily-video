@@ -2,37 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "3xXzX_xrAy4",
-      "videoUrl": "https://youtube.com/shorts/3xXzX_xrAy4",
-      "date": "2026-04-12",
-      "title": "【コーヒー豆知識】アラビカ種とロブスタ種｜2026/04/12 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "コーヒー好き",
-        "CoffeeLovers",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "品種",
-        "品種",
-        "品種"
-      ],
-      "durationSeconds": 68,
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-04-12T23:59:08.102Z"
-      }
-    },
-    {
       "videoId": "-hnqXuNR8Ic",
       "videoUrl": "https://youtube.com/shorts/-hnqXuNR8Ic",
       "date": "2026-04-18",
@@ -2871,7 +2840,7 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -2914,7 +2883,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -2955,7 +2924,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -2997,7 +2966,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3039,7 +3008,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3083,7 +3052,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3127,7 +3096,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3172,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3217,7 +3186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.229Z"
       }
     },
     {
@@ -3262,7 +3231,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.230Z"
       }
     },
     {
@@ -3304,7 +3273,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-10T01:07:10.702Z"
+        "updatedAt": "2026-07-13T01:00:05.230Z"
       }
     },
     {
@@ -3347,19 +3316,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-13T01:00:05.230Z"
+      }
+    },
+    {
+      "videoId": "48H6MQxxX88",
+      "videoUrl": "https://youtube.com/shorts/48H6MQxxX88",
+      "date": "2026-07-13",
+      "title": "【コーヒー豆知識】ブラジル異常降雨で収穫停止、アラビカ先物が4.5ヶ月ぶり高値｜2026/07/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語コーヒー業界メディア (Perfect Daily Grind, Comunicaffe, StoneX, Barchart) と Reuters/Yahoo Finance で 7 月上旬のブラジル収穫停止 + アラビカ先物急騰ニュースを収集",
+        "sources": [
+          "https://www.stonex.com/en-us/insights/arabica-futures-fall-on-expectations-of-global-coffee-surplus/",
+          "https://www.barchart.com/story/news/2447902/coffee-prices-continue-higher-on-brazil-coffee-harvest-delays",
+          "https://www.comunicaffe.com/coffee-markets-still-on-the-decline-harvest-delayed-in-brazil-due-to-rain-but-estimates-are-optimistic",
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-surge-brazil-harvest-160727971.html",
+          "https://tradingeconomics.com/commodity/coffee"
+        ],
+        "query": "arabica coffee price futures Brazil harvest rain Minas Gerais July 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-10",
-      "changes": [
-        "standard: 74 avg views (47 videos)",
-        "Day performance: Sun=182, Wed=70, Sat=66, Tue=66, Mon=48, Fri=48, Thu=14"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-11",
       "changes": [
@@ -3589,6 +3594,14 @@
       "changes": [
         "standard: 49 avg views (76 videos)",
         "Day performance: Sun=125, Sat=48, Tue=47, Wed=43, Mon=33, Fri=33, Thu=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-13",
+      "changes": [
+        "standard: 48 avg views (77 videos)",
+        "Day performance: Sun=125, Sat=48, Tue=47, Wed=43, Mon=33, Fri=30, Thu=8"
       ],
       "recommendedTemplate": "standard"
     }
