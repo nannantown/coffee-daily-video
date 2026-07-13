@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-13",
+  "date": "2026-07-14",
   "discovery": {
-    "method": "news-en",
-    "description": "英語コーヒー業界メディア (Perfect Daily Grind, Comunicaffe, StoneX, Barchart) と Reuters/Yahoo Finance で 7 月上旬のブラジル収穫停止 + アラビカ先物急騰ニュースを収集",
+    "method": "official-src",
+    "description": "コロンビア全国コーヒー生産者連合会 (FNC / Federación Nacional de Cafeteros) の 6 月生産統計を Perfect Daily Grind の 7/10 recap で英語再確認、Infobae / El Tiempo / Yahoo Noticias(スペイン語一次報道) で数値クロスチェック",
     "sources": [
-      "https://www.stonex.com/en-us/insights/arabica-futures-fall-on-expectations-of-global-coffee-surplus/",
-      "https://www.barchart.com/story/news/2447902/coffee-prices-continue-higher-on-brazil-coffee-harvest-delays",
-      "https://www.comunicaffe.com/coffee-markets-still-on-the-decline-harvest-delayed-in-brazil-due-to-rain-but-estimates-are-optimistic",
-      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-surge-brazil-harvest-160727971.html",
-      "https://tradingeconomics.com/commodity/coffee"
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-10-july-2026/",
+      "https://www.infobae.com/america/agencias/2026/07/03/la-produccion-cafetera-de-colombia-crece-un-43-en-junio-aunque-persiste-baja-exportacion/",
+      "https://www.eltiempo.com/amp/economia/sectores/la-produccion-de-cafe-de-colombia-aumento-un-43-en-junio-pero-sigue-en-numeros-rojos-en-lo-corrido-del-ano-3568738",
+      "https://es-us.noticias.yahoo.com/producci%C3%B3n-caf%C3%A9-colombia-repunt%C3%B3-43-200000593.html",
+      "https://federaciondecafeteros.org/wp/?lang=en"
     ],
-    "query": "arabica coffee price futures Brazil harvest rain Minas Gerais July 2026",
-    "freshness_hours": 72
+    "query": "Colombia coffee production June 2026 43% FNC Federacion Cafeteros yield exports",
+    "freshness_hours": 100
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブラジル異常降雨で収穫停止、アラビカ先物が4.5ヶ月ぶり高値",
-      "description": "ミナスジェライスで平均の20倍の雨、先物は4.5ヶ月ぶり高値に急騰",
-      "detail": "6-7月の豪雨でMinas Geraisの週間降水量が過去平均の1,956%に到達。収穫進捗52%は昨年60%を大幅下回り、ICE認定倉庫在庫は2.25年ぶり低水準の377,465袋に低下、アラビカ先物は6.71%上昇し4.5ヶ月ぶり高値に。",
-      "narration": "今、ブラジル最大の産地ミナスジェライスで異常事態が起きてます。先週アラビカ先物がまた4.5ヶ月ぶり高値に急騰、豆価格に影響が出そうです。",
-      "tags": ["市況ニュース", "ブラジル収穫", "アラビカ先物"],
+      "title": "コロンビア6月コーヒー生産+43%、でも上半期は-10%のカラクリ",
+      "description": "FNC発表、6月単月130万袋で急回復も上半期合計は依然マイナス圏",
+      "detail": "コロンビア全国コーヒー生産者連合会 (FNC) の発表。6月単月生産130万袋 (昨年90.9万袋比+43%)、Q2は3.06M袋 (+26%)、しかし1-6月合計は5.58M袋で-10%、輸出は5.23M袋で-18%。年初の雨で豆の熟成が遅れ、収穫が6月にずれ込んだのが原因。",
+      "narration": "コロンビアの6月コーヒー生産が去年比+43%と急回復しました。ところが上半期合計ではまだマイナス10%。数字のカラクリを解説します。",
+      "tags": ["産地ハーベスト", "コロンビア", "FNC統計"],
       "narration_sections": {
-        "hook": "今、ブラジル最大の産地ミナスジェライスで異常事態が起きてます。先週アラビカ先物がまた4.5ヶ月ぶり高値に急騰、豆価格に影響が出そうです。",
-        "origin": "原因は6-7月の豪雨。ミナスジェライスの雨量が過去平均の1,956%に達し、収穫が停止しました。進捗率は52%と昨年60%を大幅に下回っています。さらにICE認定倉庫の在庫は2年3ヶ月ぶり低水準の377,465袋に落ちました。",
-        "recommend": "小売価格に反映されるまで数ヶ月ラグがあります。エチオピアや中南米の気に入っている豆があれば、今のうち買い置きしておくのも一手ですよ。"
+        "hook": "コロンビアの6月コーヒー生産が去年比+43%と急回復しました。ところが上半期合計ではまだマイナス10%。数字のカラクリを解説します。",
+        "origin": "発表はコロンビア全国コーヒー生産者連合会FNC。6月単月は130万袋で昨年90.9万袋から+43%、四半期でも+26%です。ただし1-6月合計は558万袋で-10%、輸出も-18%。前半の雨で豆の熟成が遅れ、収穫が6月に集中したのが正体です。",
+        "recommend": "秋にはコロンビア豆の供給が回復する流れです。今出回っているロットは希少枠、気に入った精製があれば早めが安心ですよ。"
       },
       "section_titles": {
-        "hook": "ブラジル異常降雨",
-        "origin": "収穫停止と在庫底値",
-        "recommend": "今月中に買い置き"
+        "hook": "コロンビア+43%",
+        "origin": "半期は-10%の実態",
+        "recommend": "秋まで貴重ロット"
       },
       "section_descriptions": {
-        "hook": "ミナスジェライスで平均の20倍の雨、先物は4.5ヶ月ぶり高値",
-        "origin": "収穫52%止まり、ICE在庫は2.25年ぶり低水準に",
-        "recommend": "価格反映は数ヶ月ラグ、好きな豆は今のうちに"
+        "hook": "6月生産が去年比+43%、上半期は依然マイナス",
+        "origin": "FNC発表、雨で収穫が6月に集中した実態",
+        "recommend": "秋の回復まで在庫は希少、好みの精製は早めに"
       }
     }
   ]
