@@ -2883,7 +2883,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -2924,7 +2924,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -2966,7 +2966,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3008,7 +3008,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3052,7 +3052,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3096,7 +3096,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3141,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3186,7 +3186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.229Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3231,7 +3231,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.230Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3273,7 +3273,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.230Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3316,7 +3316,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-13T01:00:05.230Z"
+        "updatedAt": "2026-07-14T00:13:13.538Z"
       }
     },
     {
@@ -3360,19 +3360,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-14T00:13:13.538Z"
+      }
+    },
+    {
+      "videoId": "afmpbaRw44g",
+      "videoUrl": "https://youtube.com/shorts/afmpbaRw44g",
+      "date": "2026-07-14",
+      "title": "【コーヒー豆知識】コロンビア6月コーヒー生産+43%、でも上半期は-10%のカラクリ｜2026/07/14 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 61,
+      "discovery": {
+        "method": "official-src",
+        "description": "コロンビア全国コーヒー生産者連合会 (FNC / Federación Nacional de Cafeteros) の 6 月生産統計を Perfect Daily Grind の 7/10 recap で英語再確認、Infobae / El Tiempo / Yahoo Noticias(スペイン語一次報道) で数値クロスチェック",
+        "sources": [
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-10-july-2026/",
+          "https://www.infobae.com/america/agencias/2026/07/03/la-produccion-cafetera-de-colombia-crece-un-43-en-junio-aunque-persiste-baja-exportacion/",
+          "https://www.eltiempo.com/amp/economia/sectores/la-produccion-de-cafe-de-colombia-aumento-un-43-en-junio-pero-sigue-en-numeros-rojos-en-lo-corrido-del-ano-3568738",
+          "https://es-us.noticias.yahoo.com/producci%C3%B3n-caf%C3%A9-colombia-repunt%C3%B3-43-200000593.html",
+          "https://federaciondecafeteros.org/wp/?lang=en"
+        ],
+        "query": "Colombia coffee production June 2026 43% FNC Federacion Cafeteros yield exports",
+        "freshness_hours": 100
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-11",
-      "changes": [
-        "standard: 73 avg views (48 videos)",
-        "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=48, Thu=14"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-12",
       "changes": [
@@ -3602,6 +3638,14 @@
       "changes": [
         "standard: 48 avg views (77 videos)",
         "Day performance: Sun=125, Sat=48, Tue=47, Wed=43, Mon=33, Fri=30, Thu=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-14",
+      "changes": [
+        "standard: 48 avg views (77 videos)",
+        "Day performance: Sun=136, Sat=48, Tue=47, Wed=43, Mon=30, Fri=30, Thu=8"
       ],
       "recommendedTemplate": "standard"
     }
