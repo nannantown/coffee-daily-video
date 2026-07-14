@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-14",
+  "date": "2026-07-15",
   "discovery": {
-    "method": "official-src",
-    "description": "コロンビア全国コーヒー生産者連合会 (FNC / Federación Nacional de Cafeteros) の 6 月生産統計を Perfect Daily Grind の 7/10 recap で英語再確認、Infobae / El Tiempo / Yahoo Noticias(スペイン語一次報道) で数値クロスチェック",
+    "method": "social-en",
+    "description": "r/coffee と TikTok #coffeetok で今夏バズッているギリシャ発 #FreddoEspresso を英語で追跡。Koffee Kult のトレンド recap と Barista Life のレシピ解説、Sage Studios UK のギリシャ式修正版チュートリアル、Andy Cooks × ST. ALi コラボの viral 動画で技法・比率・foam 生成条件をクロスチェック",
     "sources": [
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-10-july-2026/",
-      "https://www.infobae.com/america/agencias/2026/07/03/la-produccion-cafetera-de-colombia-crece-un-43-en-junio-aunque-persiste-baja-exportacion/",
-      "https://www.eltiempo.com/amp/economia/sectores/la-produccion-de-cafe-de-colombia-aumento-un-43-en-junio-pero-sigue-en-numeros-rojos-en-lo-corrido-del-ano-3568738",
-      "https://es-us.noticias.yahoo.com/producci%C3%B3n-caf%C3%A9-colombia-repunt%C3%B3-43-200000593.html",
-      "https://federaciondecafeteros.org/wp/?lang=en"
+      "https://www.koffeekult.com/blogs/blog/freddo-espresso-is-having-a-moment-here",
+      "https://baristalife.co/blogs/blog/freddo-espresso",
+      "https://www.tiktok.com/@sagestudios_uk/video/7398486305891503393",
+      "https://www.tiktok.com/@andy_cooks/video/7280932548111387905",
+      "https://www.reddit.com/r/Coffee/search?q=freddo+espresso&t=month"
     ],
-    "query": "Colombia coffee production June 2026 43% FNC Federacion Cafeteros yield exports",
-    "freshness_hours": 100
+    "query": "freddo espresso viral 2026 recipe tiktok reddit greek shake foam",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コロンビア6月コーヒー生産+43%、でも上半期は-10%のカラクリ",
-      "description": "FNC発表、6月単月130万袋で急回復も上半期合計は依然マイナス圏",
-      "detail": "コロンビア全国コーヒー生産者連合会 (FNC) の発表。6月単月生産130万袋 (昨年90.9万袋比+43%)、Q2は3.06M袋 (+26%)、しかし1-6月合計は5.58M袋で-10%、輸出は5.23M袋で-18%。年初の雨で豆の熟成が遅れ、収穫が6月にずれ込んだのが原因。",
-      "narration": "コロンビアの6月コーヒー生産が去年比+43%と急回復しました。ところが上半期合計ではまだマイナス10%。数字のカラクリを解説します。",
-      "tags": ["産地ハーベスト", "コロンビア", "FNC統計"],
+      "title": "海外r/coffee×TikTokで大バズり、ギリシャ発フレッド・エスプレッソ",
+      "description": "冷ブリューの12時間待ち不要、エスプレッソ+氷を10-20秒シェイクで泡たっぷりの一杯",
+      "detail": "r/coffee と TikTok #coffeetok で今夏バズッているのがギリシャ発の Freddo Espresso。ダブルショット・エスプレッソに砂糖(お好み)を熱いうちに溶かし、氷2-3個と一緒に密閉容器で10-20秒しっかりシェイク。表面が霜で凍りつく頃、きめ細かい tan foam (タン色の泡) が生成される。あとは氷たっぷりのグラスに泡ごとオン。冷ブリュー設備も長い待ち時間も不要、家のエスプレッソマシンだけで完結する低いハードルが viral の理由。",
+      "narration": "実は今、海外のr/coffeeとTikTokで『フレッド・エスプレッソ』が大バズり。ギリシャ発のこの冷たい一杯、冷ブリュー要らずで30秒完成なんです。",
+      "tags": ["夏の冷コーヒー", "エスプレッソ", "海外トレンド"],
       "narration_sections": {
-        "hook": "コロンビアの6月コーヒー生産が去年比+43%と急回復しました。ところが上半期合計ではまだマイナス10%。数字のカラクリを解説します。",
-        "origin": "発表はコロンビア全国コーヒー生産者連合会FNC。6月単月は130万袋で昨年90.9万袋から+43%、四半期でも+26%です。ただし1-6月合計は558万袋で-10%、輸出も-18%。前半の雨で豆の熟成が遅れ、収穫が6月に集中したのが正体です。",
-        "recommend": "秋にはコロンビア豆の供給が回復する流れです。今出回っているロットは希少枠、気に入った精製があれば早めが安心ですよ。"
+        "hook": "実は今、海外のr/coffeeとTikTokで『フレッド・エスプレッソ』が大バズり。ギリシャ発のこの冷たい一杯、冷ブリュー要らずで30秒完成なんです。",
+        "origin": "作り方は驚くほど簡単。ダブルショット・エスプレッソを砂糖入れて熱いうちに溶かし、氷2-3個と一緒に密閉容器で10-20秒しっかりシェイク。表面が霜で凍りついたら、たっぷりの氷を入れたグラスに泡ごとオン。ミルクもシロップも要りません。",
+        "recommend": "家のエスプレッソマシンで今夜試せます。氷+シェイカー、砂糖派は熱いうちに溶かすのがコツ。フォローで毎朝の抽出ネタお届け中です。"
       },
       "section_titles": {
-        "hook": "コロンビア+43%",
-        "origin": "半期は-10%の実態",
-        "recommend": "秋まで貴重ロット"
+        "hook": "フレッド・エスプレッソ",
+        "origin": "作り方10秒シェイク",
+        "recommend": "家で今夜すぐ試せる"
       },
       "section_descriptions": {
-        "hook": "6月生産が去年比+43%、上半期は依然マイナス",
-        "origin": "FNC発表、雨で収穫が6月に集中した実態",
-        "recommend": "秋の回復まで在庫は希少、好みの精製は早めに"
+        "hook": "r/coffeeとTikTokでギリシャ発が大流行",
+        "origin": "氷とシェイカーで10-20秒、砂糖は熱いうちに",
+        "recommend": "エスプレッソマシンで今夜すぐ試せる冷たい一杯"
       }
     }
   ]
