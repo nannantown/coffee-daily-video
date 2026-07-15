@@ -1,40 +1,38 @@
 {
-  "date": "2026-07-15",
+  "date": "2026-07-16",
   "discovery": {
-    "method": "social-en",
-    "description": "r/coffee と TikTok #coffeetok で今夏バズッているギリシャ発 #FreddoEspresso を英語で追跡。Koffee Kult のトレンド recap と Barista Life のレシピ解説、Sage Studios UK のギリシャ式修正版チュートリアル、Andy Cooks × ST. ALi コラボの viral 動画で技法・比率・foam 生成条件をクロスチェック",
+    "method": "news-en",
+    "description": "Daily Coffee News (Roast Magazine) 7/15付の速報『コーヒー果肉エキス→LDLコレステロール14.9%低下』を確認、原論文(Frontiers in Nutrition 2026年3月掲載、タイ Chiang Mai・Hillkoff社支援のランダム化二重盲検試験)まで遡って詳細をクロスチェック。Perfect Daily Grind Weekly Recap でも同時期の業界話題(WoC Brussels優勝者・アラビカ市況)を照合し、健康×サステナ×新ビジネスの3層で報道価値が高い本件を選定。",
     "sources": [
-      "https://www.koffeekult.com/blogs/blog/freddo-espresso-is-having-a-moment-here",
-      "https://baristalife.co/blogs/blog/freddo-espresso",
-      "https://www.tiktok.com/@sagestudios_uk/video/7398486305891503393",
-      "https://www.tiktok.com/@andy_cooks/video/7280932548111387905",
-      "https://www.reddit.com/r/Coffee/search?q=freddo+espresso&t=month"
+      "https://dailycoffeenews.com/2026/07/15/industry-backed-study-says-coffee-pulp-extract-may-lower-cholesterol/",
+      "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1755054/full",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-10-july-2026/"
     ],
-    "query": "freddo espresso viral 2026 recipe tiktok reddit greek shake foam",
-    "freshness_hours": 120
+    "query": "coffee pulp cholesterol LDL clinical trial 2026 Thailand obesity",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外r/coffee×TikTokで大バズり、ギリシャ発フレッド・エスプレッソ",
-      "description": "冷ブリューの12時間待ち不要、エスプレッソ+氷を10-20秒シェイクで泡たっぷりの一杯",
-      "detail": "r/coffee と TikTok #coffeetok で今夏バズッているのがギリシャ発の Freddo Espresso。ダブルショット・エスプレッソに砂糖(お好み)を熱いうちに溶かし、氷2-3個と一緒に密閉容器で10-20秒しっかりシェイク。表面が霜で凍りつく頃、きめ細かい tan foam (タン色の泡) が生成される。あとは氷たっぷりのグラスに泡ごとオン。冷ブリュー設備も長い待ち時間も不要、家のエスプレッソマシンだけで完結する低いハードルが viral の理由。",
-      "narration": "実は今、海外のr/coffeeとTikTokで『フレッド・エスプレッソ』が大バズり。ギリシャ発のこの冷たい一杯、冷ブリュー要らずで30秒完成なんです。",
-      "tags": ["夏の冷コーヒー", "エスプレッソ", "海外トレンド"],
+      "title": "コーヒー果肉エキスがLDLを14.9%下げる、タイ二重盲検試験で確認",
+      "description": "普段捨てられるコーヒーチェリーの果肉が悪玉コレステロールを約2倍のペースで低下、サステナ×健康の新ビジネスに",
+      "detail": "Daily Coffee News 7/15付の報道によれば、タイ Chiang Mai の Hillkoff社が支援したランダム化二重盲検プラセボ対照試験(Frontiers in Nutrition 掲載)で、BMI25以上・LDLコレステロール130mg/dL超の79人にコーヒー果肉(通常は廃棄・堆肥化される部分)由来のエキス75mLを1日2回12週間投与。プラセボ群のLDL低下7.7%に対し、エキス群は14.9%と約2倍の減少。腸でのコレステロール吸収阻害・胆汁酸との結合競合が主メカニズムと推定される。副次評価項目の体重・腹囲・インスリン抵抗性もエキス群優位。Hillkoff は Coffogenic というブランドでこのエキスを商品化中。コーヒー産業のサステナビリティ(廃棄物のアップサイクル)と健康食品市場の交差点で、業界注目度が高い。",
+      "narration": "実は今、あなたの毎日のカップから捨てられている『あの部分』が、悪玉コレステロールを15%下げるという臨床試験結果が今週発表されました。",
+      "tags": ["業界ニュース", "サステナ", "コーヒー果肉"],
       "narration_sections": {
-        "hook": "実は今、海外のr/coffeeとTikTokで『フレッド・エスプレッソ』が大バズり。ギリシャ発のこの冷たい一杯、冷ブリュー要らずで30秒完成なんです。",
-        "origin": "作り方は驚くほど簡単。ダブルショット・エスプレッソを砂糖入れて熱いうちに溶かし、氷2-3個と一緒に密閉容器で10-20秒しっかりシェイク。表面が霜で凍りついたら、たっぷりの氷を入れたグラスに泡ごとオン。ミルクもシロップも要りません。",
-        "recommend": "家のエスプレッソマシンで今夜試せます。氷+シェイカー、砂糖派は熱いうちに溶かすのがコツ。フォローで毎朝の抽出ネタお届け中です。"
+        "hook": "実は今、あなたの毎日のカップから捨てられている『あの部分』が、悪玉コレステロールを15%下げるという臨床試験結果が今週発表されました。",
+        "origin": "タイの二重盲検試験、BMI25以上・LDL130超の79人対象。コーヒー果肉の抽出液75mLを1日2回、12週間摂取。結果、プラセボ群LDL低下7.7%に対しエキス群は14.9%と約2倍の効果。腸でのコレステロール吸収を阻害する仕組みだそうです。",
+        "recommend": "捨てられていた果肉に価値、コーヒー産業のサステナ最前線。毎朝の一杯の裏側、フォローで続きお届け中です。"
       },
       "section_titles": {
-        "hook": "フレッド・エスプレッソ",
-        "origin": "作り方10秒シェイク",
-        "recommend": "家で今夜すぐ試せる"
+        "hook": "コーヒー果肉が朗報",
+        "origin": "LDLが約2倍下がる",
+        "recommend": "捨てる部分がお宝に"
       },
       "section_descriptions": {
-        "hook": "r/coffeeとTikTokでギリシャ発が大流行",
-        "origin": "氷とシェイカーで10-20秒、砂糖は熱いうちに",
-        "recommend": "エスプレッソマシンで今夜すぐ試せる冷たい一杯"
+        "hook": "毎日のカップに捨てられている『あの部分』の効果",
+        "origin": "タイ79人試験、12週で悪玉コレステロール低下",
+        "recommend": "サステナと健康、コーヒー産業の新しい価値創出"
       }
     }
   ]
