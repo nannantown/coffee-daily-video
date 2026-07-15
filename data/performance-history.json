@@ -2924,7 +2924,7 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -2966,7 +2966,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3008,7 +3008,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3052,7 +3052,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3096,7 +3096,7 @@
         "views": 21,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3141,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3186,7 +3186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3231,7 +3231,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3273,7 +3273,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3316,7 +3316,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3360,7 +3360,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-14T00:13:13.538Z"
+        "updatedAt": "2026-07-15T00:12:17.600Z"
       }
     },
     {
@@ -3404,19 +3404,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-15T00:12:17.600Z"
+      }
+    },
+    {
+      "videoId": "4UsL_AfxNSg",
+      "videoUrl": "https://youtube.com/shorts/4UsL_AfxNSg",
+      "date": "2026-07-15",
+      "title": "【コーヒー豆知識】海外r/coffee×TikTokで大バズり、ギリシャ発フレッド・エスプレッソ｜2026/07/15 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "social-en",
+        "description": "r/coffee と TikTok #coffeetok で今夏バズッているギリシャ発 #FreddoEspresso を英語で追跡。Koffee Kult のトレンド recap と Barista Life のレシピ解説、Sage Studios UK のギリシャ式修正版チュートリアル、Andy Cooks × ST. ALi コラボの viral 動画で技法・比率・foam 生成条件をクロスチェック",
+        "sources": [
+          "https://www.koffeekult.com/blogs/blog/freddo-espresso-is-having-a-moment-here",
+          "https://baristalife.co/blogs/blog/freddo-espresso",
+          "https://www.tiktok.com/@sagestudios_uk/video/7398486305891503393",
+          "https://www.tiktok.com/@andy_cooks/video/7280932548111387905",
+          "https://www.reddit.com/r/Coffee/search?q=freddo+espresso&t=month"
+        ],
+        "query": "freddo espresso viral 2026 recipe tiktok reddit greek shake foam",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-12",
-      "changes": [
-        "standard: 71 avg views (49 videos)",
-        "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=48, Thu=12"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-13",
       "changes": [
@@ -3646,6 +3682,14 @@
       "changes": [
         "standard: 48 avg views (77 videos)",
         "Day performance: Sun=136, Sat=48, Tue=47, Wed=43, Mon=30, Fri=30, Thu=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-15",
+      "changes": [
+        "standard: 48 avg views (78 videos)",
+        "Day performance: Sun=136, Sat=48, Tue=43, Wed=43, Mon=30, Fri=30, Thu=8"
       ],
       "recommendedTemplate": "standard"
     }
