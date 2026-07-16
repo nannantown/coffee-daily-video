@@ -2966,7 +2966,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3008,7 +3008,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3052,7 +3052,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3093,10 +3093,10 @@
         "freshness_hours": 192
       },
       "stats": {
-        "views": 21,
+        "views": 22,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3141,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3186,7 +3186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3231,7 +3231,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3273,7 +3273,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3316,7 +3316,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3360,7 +3360,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3404,7 +3404,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-15T00:12:17.600Z"
+        "updatedAt": "2026-07-16T00:54:11.026Z"
       }
     },
     {
@@ -3448,19 +3448,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-16T00:54:11.026Z"
+      }
+    },
+    {
+      "videoId": "TqbMk6HZgfs",
+      "videoUrl": "https://youtube.com/shorts/TqbMk6HZgfs",
+      "date": "2026-07-16",
+      "title": "【コーヒー豆知識】コーヒー果肉エキスがLDLを14.9%下げる、タイ二重盲検試験で確認｜2026/07/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News (Roast Magazine) 7/15付の速報『コーヒー果肉エキス→LDLコレステロール14.9%低下』を確認、原論文(Frontiers in Nutrition 2026年3月掲載、タイ Chiang Mai・Hillkoff社支援のランダム化二重盲検試験)まで遡って詳細をクロスチェック。Perfect Daily Grind Weekly Recap でも同時期の業界話題(WoC Brussels優勝者・アラビカ市況)を照合し、健康×サステナ×新ビジネスの3層で報道価値が高い本件を選定。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/07/15/industry-backed-study-says-coffee-pulp-extract-may-lower-cholesterol/",
+          "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1755054/full",
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-10-july-2026/"
+        ],
+        "query": "coffee pulp cholesterol LDL clinical trial 2026 Thailand obesity",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-13",
-      "changes": [
-        "standard: 70 avg views (50 videos)",
-        "Day performance: Sun=182, Sat=66, Tue=66, Wed=62, Mon=48, Fri=42, Thu=12"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-14",
       "changes": [
@@ -3690,6 +3724,14 @@
       "changes": [
         "standard: 48 avg views (78 videos)",
         "Day performance: Sun=136, Sat=48, Tue=43, Wed=43, Mon=30, Fri=30, Thu=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-16",
+      "changes": [
+        "standard: 47 avg views (79 videos)",
+        "Day performance: Sun=136, Sat=48, Tue=43, Wed=40, Mon=30, Fri=30, Thu=8"
       ],
       "recommendedTemplate": "standard"
     }
