@@ -1,39 +1,40 @@
 {
-  "date": "2026-07-17",
+  "date": "2026-07-18",
   "discovery": {
-    "method": "expert-blog",
-    "description": "世界的スペシャルティバリスタ Lance Hedrick が2026年6月12日にYouTubeで公開した『One & Done 2026 V60』(どの豆でも同じ手順で味を出せる万能レシピ)を、coffeecalculator.app / lamose.com / tmrw.coffee / timer.coffee の複数のセカンダリソースで数値・思想をクロスチェック。TOP methodである expert-blog(直近30日平均15.5 views)を6日ぶりに再運用、TOP3共通構造『著名人×具体手順×すぐ試せる』に完全一致するネタとして選定。Primary ペルソナ(家で淹れる趣味層)の『豆を変えるたびレシピを迷う』痛点を直撃する。",
+    "method": "official-src",
+    "description": "EU委員会が2026-07-13に採択したDelegated Act(EUDR対象拡大)を一次情報として、Daily Coffee News / Comunicaffe / Just-Drinks / Perfect Daily Grind の業界解説と照合。official-srcを『規制官庁公式』へ拡張する試行(従来は産地機関・協会中心だったカテゴリの再挑戦)。",
     "sources": [
-      "https://www.youtube.com/watch?v=oDnPHPVUorA",
-      "https://www.coffeecalculator.app/blog/lance-hedrick-pour-over-recipe",
-      "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
-      "https://tmrw.coffee/methods/v60-lance-hedrick"
+      "https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en",
+      "https://dailycoffeenews.com/2026/07/16/european-commission-adds-soluble-coffee-to-eudr-product-list/",
+      "https://www.just-drinks.com/news/eu-commission-proposes-to-add-instant-coffee-to-eudr-scope/",
+      "https://www.comunicaffe.com/eudr-new-delegated-act-updates-the-list-of-products-covered-by-the-regulation-adding-instant-coffee",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-17-jul-2026/"
     ],
-    "query": "Lance Hedrick One and Done 2026 V60 recipe universal any coffee grind temperature",
-    "freshness_hours": 840
+    "query": "EUDR instant coffee July 2026 Delegated Act",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Lance Hedrick『One & Done』2026 V60・豆を選ばず1杯が決まる万能レシピ、15g/225g/96℃",
-      "description": "豆を変えるたびレシピに迷う人へ。世界的バリスタが2026年に公開した、どの豆でも同じ手順で味を出せる新常識",
-      "detail": "Lance Hedrick が2026年6月にYouTubeで公開した『One & Done 2026』は、粉15g・湯225g(1:15比)・96℃で組み立てるV60レシピ。核心は3つ。①事前にブラインドシェイカーで粉を振って静電気で発生するダマ(クランプ)を解消、粒度分布を均一にする。②注ぎは高い位置から乱気流を作って粉全体をかき混ぜる『アグレッシブな撹拌』で抽出を均一化(従来のジェントル派とは真逆)。③焙煎度が変わっても、レシピ骨格は固定して粒度と湯温だけ微調整(浅煎りは細かく熱く、深煎りは粗く低く)する。DF64 Gen 2 で grind 50 が基準値。ブラインドシェイカー撹拌+高所からの乱気流注ぎで、家庭グラインダーの弱点である微粉によるチャネリング/えぐみを抑える設計。焙煎所視点で言えば、EC顧客が『どの豆を買っても迷わず一杯決まる』体験に直結する。",
-      "narration": "実は豆を変えるたび『レシピどうする?』と迷いがち。世界的バリスタ Lance Hedrick の『One & Done』が話題です。",
-      "tags": ["ドリップ", "V60", "エキスパート"],
+      "title": "EUがEUDRにインスタントコーヒー正式追加(2026/7/13採択)、2027年12月末から適用でスペシャルティは追い風",
+      "description": "EU委員会が7月13日、インスタントコーヒーをEU森林破壊防止規則(EUDR)の正式対象に追加しました。",
+      "detail": "EUDRは違法伐採された土地の産物をEU市場から締め出す規則。当初コーヒーは生豆と挽豆だけが対象で、インスタントは抜け穴でした。今回追加され、2027年12月末から適用開始。日本のインスタント大手にも対応義務が発生します。スペシャルティコーヒーは元々産地が明確で追跡可能なため、この規制でむしろ差別化価値が強化されます。",
+      "narration": "今日のコーヒーニュース。7月13日、EU委員会がついに動きました。インスタントコーヒーもEUDR、EU森林破壊防止規則の正式対象になります。",
+      "tags": ["EUDR", "業界ニュース", "サステナビリティ"],
       "narration_sections": {
-        "hook": "実は豆を変えるたび『レシピどうする?』と迷いがち。世界的バリスタ Lance Hedrick の『One & Done』が話題です。",
-        "origin": "レシピは粉15g・湯225g・96℃で1:15の黄金比。ポイントは事前にブラインドシェイカーで粉を振ってダマを解消、注ぎは高い位置から乱気流を作り抽出を均一化。焙煎度が変わっても粒度と湯温だけ調整すれば同じ手順で味が決まります。",
-        "recommend": "どんな豆でも同じ手順で味が決まる万能レシピ。ぜひ家の1杯に落とし込んでみてください。フォローで技法続けます。"
+        "hook": "今日のコーヒーニュース。7月13日、EU委員会がついに動きました。インスタントコーヒーもEUDR、EU森林破壊防止規則の正式対象になります。",
+        "origin": "EUDRは違法伐採された土地の産物をEU市場から締め出す規則。当初コーヒーは生豆と挽豆だけが対象で、インスタントは抜け穴でした。今回追加され、2027年12月末から適用開始。日本のインスタント大手にも対応義務が発生します。",
+        "recommend": "スペシャルティコーヒーは元々産地が明確なので、この規制でむしろ追い風。次に豆を買う時、産地表示にも注目してみてください。"
       },
       "section_titles": {
-        "hook": "1杯を決める新常識",
-        "origin": "15g/225g/96℃",
-        "recommend": "豆を選ばない万能派"
+        "hook": "EUDRに大きな一手",
+        "origin": "規則の中身と発効日",
+        "recommend": "産地表示に注目したい"
       },
       "section_descriptions": {
-        "hook": "Lance Hedrickの新V60法が話題です",
-        "origin": "粉15g・湯225g・96℃・1:15の黄金比",
-        "recommend": "どんな豆でも同じ手順で味が決まる万能レシピ"
+        "hook": "7月13日EU決定、コーヒー業界を揺らす新ルール",
+        "origin": "規則の中身と2027年12月の発効タイミング",
+        "recommend": "スペシャルティは追い風。豆選びで注目したい点"
       }
     }
   ]
