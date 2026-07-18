@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-18",
+  "date": "2026-07-19",
   "discovery": {
-    "method": "official-src",
-    "description": "EU委員会が2026-07-13に採択したDelegated Act(EUDR対象拡大)を一次情報として、Daily Coffee News / Comunicaffe / Just-Drinks / Perfect Daily Grind の業界解説と照合。official-srcを『規制官庁公式』へ拡張する試行(従来は産地機関・協会中心だったカテゴリの再挑戦)。",
+    "method": "social-en",
+    "description": "Clive Coffeeの2026エスプレッソトレンド記事とhome-barista.com/r/espressoコミュニティで熱議されているステップダウンバスケットを日本語話者向けにキュレーション。social-enのサブジャンル『ギア・道具』角度の新規実験。",
     "sources": [
-      "https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en",
-      "https://dailycoffeenews.com/2026/07/16/european-commission-adds-soluble-coffee-to-eudr-product-list/",
-      "https://www.just-drinks.com/news/eu-commission-proposes-to-add-instant-coffee-to-eudr-scope/",
-      "https://www.comunicaffe.com/eudr-new-delegated-act-updates-the-list-of-products-covered-by-the-regulation-adding-instant-coffee",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-17-jul-2026/"
+      "https://clivecoffee.com/blogs/learn/where-espresso-is-headed-2026-and-beyond",
+      "https://clivecoffee.com/blogs/learn/bigger-isn-t-always-better-rethinking-basket-size",
+      "https://www.home-barista.com/espresso-machines/step-down-basket-from-58-to-49mm-t97930.html",
+      "https://www.normcorewares.com/products/normcore-step-down-portafilter-basket-kit-58-to-49mm",
+      "https://rmckeon.medium.com/graph-coffee-step-down-espresso-baskets-15d0e7bc489c"
     ],
-    "query": "EUDR instant coffee July 2026 Delegated Act",
+    "query": "step-down basket espresso 2026 home barista trend",
     "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "EUがEUDRにインスタントコーヒー正式追加(2026/7/13採択)、2027年12月末から適用でスペシャルティは追い風",
-      "description": "EU委員会が7月13日、インスタントコーヒーをEU森林破壊防止規則(EUDR)の正式対象に追加しました。",
-      "detail": "EUDRは違法伐採された土地の産物をEU市場から締め出す規則。当初コーヒーは生豆と挽豆だけが対象で、インスタントは抜け穴でした。今回追加され、2027年12月末から適用開始。日本のインスタント大手にも対応義務が発生します。スペシャルティコーヒーは元々産地が明確で追跡可能なため、この規制でむしろ差別化価値が強化されます。",
-      "narration": "今日のコーヒーニュース。7月13日、EU委員会がついに動きました。インスタントコーヒーもEUDR、EU森林破壊防止規則の正式対象になります。",
-      "tags": ["EUDR", "業界ニュース", "サステナビリティ"],
+      "title": "2026 ホームバリスタ発トレンド、ステップダウンバスケット。58ミリマシンのまま抽出が別物に",
+      "description": "手持ちの58ミリマシンをそのまま活かして、パック層を厚くして甘みと口当たりを引き出す新定番ギア",
+      "detail": "上58ミリ下49ミリの段付き設計で、ドーズ量を増やさずにパック厚を稼げる。チャネリングが減り、甘みや口当たりが立ち、渋み苦味を抑えられる。1:4濃厚ショット時代に相性が良い",
+      "narration": "今、海外のホームバリスタ界隈で\"ステップダウンバスケット\"が急拡大中です。手持ちの58ミリマシンのままで、家のエスプレッソが別物になると話題ですね。",
+      "tags": ["エスプレッソ", "ホームバリスタ", "ステップダウンバスケット"],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。7月13日、EU委員会がついに動きました。インスタントコーヒーもEUDR、EU森林破壊防止規則の正式対象になります。",
-        "origin": "EUDRは違法伐採された土地の産物をEU市場から締め出す規則。当初コーヒーは生豆と挽豆だけが対象で、インスタントは抜け穴でした。今回追加され、2027年12月末から適用開始。日本のインスタント大手にも対応義務が発生します。",
-        "recommend": "スペシャルティコーヒーは元々産地が明確なので、この規制でむしろ追い風。次に豆を買う時、産地表示にも注目してみてください。"
+        "hook": "今、海外のホームバリスタ界隈で\"ステップダウンバスケット\"が急拡大中です。手持ちの58ミリマシンのままで、家のエスプレッソが別物になると話題ですね。",
+        "origin": "バスケットの内側が上58ミリ・下49ミリと段付きになっていて、同じ豆量でもパックが厚くなります。お湯と豆の接触時間が延びてチャネリングが減り、甘みや口当たりが際立ち、渋みや苦味が抑えられる。1:4濃厚ショット時代に合う設計だと。",
+        "recommend": "マシンもグラインダーもそのままで、バスケットだけ差し替えて試せるのが便利です。次のアップグレードで検討してみてください。"
       },
       "section_titles": {
-        "hook": "EUDRに大きな一手",
-        "origin": "規則の中身と発効日",
-        "recommend": "産地表示に注目したい"
+        "hook": "段付きバスケット",
+        "origin": "厚パックの仕組み",
+        "recommend": "手持ち機で試すコツ"
       },
       "section_descriptions": {
-        "hook": "7月13日EU決定、コーヒー業界を揺らす新ルール",
-        "origin": "規則の中身と2027年12月の発効タイミング",
-        "recommend": "スペシャルティは追い風。豆選びで注目したい点"
+        "hook": "58ミリ機を変えず抽出をアップデートするギアが今熱い",
+        "origin": "パック層を厚くしてお湯との接触時間を延ばす設計",
+        "recommend": "バスケット差し替えだけ、他は今のまま試せます"
       }
     }
   ]
