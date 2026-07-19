@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-19",
+  "date": "2026-07-20",
   "discovery": {
-    "method": "social-en",
-    "description": "Clive Coffeeの2026エスプレッソトレンド記事とhome-barista.com/r/espressoコミュニティで熱議されているステップダウンバスケットを日本語話者向けにキュレーション。social-enのサブジャンル『ギア・道具』角度の新規実験。",
+    "method": "news-en",
+    "description": "Daily Coffee News の Weekly Coffee Recap (2026/7/17) 経由で Costa Rica Cup of Excellence 2026 の record auction 結果を確認。Global Coffee Report・The Tico Times・The Costa Rica News の一次記事群でファクト補完。オークションは 2026/7/9 開催、週末〜週明けの英語圏まとめメディアで再拡散されている段階。",
     "sources": [
-      "https://clivecoffee.com/blogs/learn/where-espresso-is-headed-2026-and-beyond",
-      "https://clivecoffee.com/blogs/learn/bigger-isn-t-always-better-rethinking-basket-size",
-      "https://www.home-barista.com/espresso-machines/step-down-basket-from-58-to-49mm-t97930.html",
-      "https://www.normcorewares.com/products/normcore-step-down-portafilter-basket-kit-58-to-49mm",
-      "https://rmckeon.medium.com/graph-coffee-step-down-espresso-baskets-15d0e7bc489c"
+      "https://dailycoffeenews.com/2026/07/17/weekly-coffee-news-cqi-in-brazil-another-coffee-festival/",
+      "https://www.gcrmag.com/costa-rica-cup-of-excellence-2026-sees-30-winners",
+      "https://ticotimes.net/2026/07/11/costa-rica-coffee-200-pound-cup-of-excellence-2026",
+      "https://thecostaricanews.com/costa-rican-coffee-reaches-record-200-10-lb-at-2026-cup-of-excellence-auction/",
+      "https://auction.allianceforcoffeeexcellence.org/en/lots/auction/costa-rica-cup-of-excellence-auction-2026"
     ],
-    "query": "step-down basket espresso 2026 home barista trend",
-    "freshness_hours": 120
+    "query": "Costa Rica Cup of Excellence 2026 auction Rio Blanco record price",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "2026 ホームバリスタ発トレンド、ステップダウンバスケット。58ミリマシンのまま抽出が別物に",
-      "description": "手持ちの58ミリマシンをそのまま活かして、パック層を厚くして甘みと口当たりを引き出す新定番ギア",
-      "detail": "上58ミリ下49ミリの段付き設計で、ドーズ量を増やさずにパック厚を稼げる。チャネリングが減り、甘みや口当たりが立ち、渋み苦味を抑えられる。1:4濃厚ショット時代に相性が良い",
-      "narration": "今、海外のホームバリスタ界隈で\"ステップダウンバスケット\"が急拡大中です。手持ちの58ミリマシンのままで、家のエスプレッソが別物になると話題ですね。",
-      "tags": ["エスプレッソ", "ホームバリスタ", "ステップダウンバスケット"],
+      "title": "コスタリカCoE 2026でリオブランコ農園が1ポンド200.10ドルの史上最高値、91.36点、平均落札額も前年比+48%",
+      "description": "先週のCosta Rica Cup of Excellence 2026で、リオブランコ農園のジャバ種が1ポンド200.10ドル、コスタリカ史上最高値を更新",
+      "detail": "コペイ・デ・ドタ地区の標高1,950mで栽培されたウォッシュト・ジャバ種、カッピング91.36点。上位30ロットの平均落札額も1ポンド45.53ドル、前年比プラス48%と大幅上昇。オークション総額は79万7,967ドル。",
+      "narration": "知ってました？先週のコスタリカ・カップオブエクセレンス2026で、生豆1ポンドが200ドル、コスタリカ史上最高値で落札されました。",
+      "tags": ["カップオブエクセレンス", "コスタリカ", "スペシャルティ相場"],
       "narration_sections": {
-        "hook": "今、海外のホームバリスタ界隈で\"ステップダウンバスケット\"が急拡大中です。手持ちの58ミリマシンのままで、家のエスプレッソが別物になると話題ですね。",
-        "origin": "バスケットの内側が上58ミリ・下49ミリと段付きになっていて、同じ豆量でもパックが厚くなります。お湯と豆の接触時間が延びてチャネリングが減り、甘みや口当たりが際立ち、渋みや苦味が抑えられる。1:4濃厚ショット時代に合う設計だと。",
-        "recommend": "マシンもグラインダーもそのままで、バスケットだけ差し替えて試せるのが便利です。次のアップグレードで検討してみてください。"
+        "hook": "知ってました？先週のコスタリカ・カップオブエクセレンス2026で、生豆1ポンドが200ドル、コスタリカ史上最高値で落札されました。",
+        "origin": "優勝は、コペイデドタ地区のフィンカ・リオブランコが標高1,950メートルで栽培したウォッシュト・ジャバ種、カッピング91.36点でした。上位30ロット平均も1ポンド45ドルに達し、前年比プラス48パーセントの大幅上昇です。",
+        "recommend": "気候リスクと生産者の努力が同時に価格へ乗った結果です。スペシャルティ豆を選ぶ時、こんな一杯の背景も想像しながら味わってみてください。"
       },
       "section_titles": {
-        "hook": "段付きバスケット",
-        "origin": "厚パックの仕組み",
-        "recommend": "手持ち機で試すコツ"
+        "hook": "コスタリカCoE最高値",
+        "origin": "リオブランコ農園",
+        "recommend": "スペシャルティの深化"
       },
       "section_descriptions": {
-        "hook": "58ミリ機を変えず抽出をアップデートするギアが今熱い",
-        "origin": "パック層を厚くしてお湯との接触時間を延ばす設計",
-        "recommend": "バスケット差し替えだけ、他は今のまま試せます"
+        "hook": "先週、コスタリカ産の生豆が1ポンド200ドル記録",
+        "origin": "標高1,950m、91.36点のジャバ種が主役",
+        "recommend": "気候と努力の背景まで味わうスペシャルティ"
       }
     }
   ]
