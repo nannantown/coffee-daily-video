@@ -1,40 +1,41 @@
 {
-  "date": "2026-07-20",
+  "date": "2026-07-21",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News の Weekly Coffee Recap (2026/7/17) 経由で Costa Rica Cup of Excellence 2026 の record auction 結果を確認。Global Coffee Report・The Tico Times・The Costa Rica News の一次記事群でファクト補完。オークションは 2026/7/9 開催、週末〜週明けの英語圏まとめメディアで再拡散されている段階。",
+    "method": "news-ja",
+    "description": "日経・Impress Watch・ORICON・流通ニュース・PR TIMES 等の日本語ソースで、ドトールコーヒーの2026-07-23値上げ発表(発表日2026-07-01、実施2026-07-23)を確認。日経は『中東情勢の影響』と物流費高騰を主な理由として報道。英語圏メディアは未報道の国内ニュース。事件発生日(実施日)は2日後で、日本人視聴者にとって最も鮮度が高くなるタイミングを狙う。",
     "sources": [
-      "https://dailycoffeenews.com/2026/07/17/weekly-coffee-news-cqi-in-brazil-another-coffee-festival/",
-      "https://www.gcrmag.com/costa-rica-cup-of-excellence-2026-sees-30-winners",
-      "https://ticotimes.net/2026/07/11/costa-rica-coffee-200-pound-cup-of-excellence-2026",
-      "https://thecostaricanews.com/costa-rican-coffee-reaches-record-200-10-lb-at-2026-cup-of-excellence-auction/",
-      "https://auction.allianceforcoffeeexcellence.org/en/lots/auction/costa-rica-cup-of-excellence-auction-2026"
+      "https://www.doutor.co.jp/news/newsrelease/detail/20260701110453.html",
+      "https://www.nikkei.com/article/DGXZQOUC018YH0R00C26A7000000/",
+      "https://www.watch.impress.co.jp/docs/news/2121792.html",
+      "https://www.oricon.co.jp/news/2465199/full/",
+      "https://www.ryutsuu.biz/strategy/s070241.html",
+      "https://news.livedoor.com/topics/detail/31720393/"
     ],
-    "query": "Costa Rica Cup of Excellence 2026 auction Rio Blanco record price",
-    "freshness_hours": 72
+    "query": "ドトール 値上げ 2026年7月23日 ブレンドコーヒー 300円",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コスタリカCoE 2026でリオブランコ農園が1ポンド200.10ドルの史上最高値、91.36点、平均落札額も前年比+48%",
-      "description": "先週のCosta Rica Cup of Excellence 2026で、リオブランコ農園のジャバ種が1ポンド200.10ドル、コスタリカ史上最高値を更新",
-      "detail": "コペイ・デ・ドタ地区の標高1,950mで栽培されたウォッシュト・ジャバ種、カッピング91.36点。上位30ロットの平均落札額も1ポンド45.53ドル、前年比プラス48%と大幅上昇。オークション総額は79万7,967ドル。",
-      "narration": "知ってました？先週のコスタリカ・カップオブエクセレンス2026で、生豆1ポンドが200ドル、コスタリカ史上最高値で落札されました。",
-      "tags": ["カップオブエクセレンス", "コスタリカ", "スペシャルティ相場"],
+      "title": "ドトールが7月23日から値上げ、ブレンドS 280円→300円、中東情勢と物流費高騰でアラビカ相場も3.5ドル台",
+      "description": "ドトールコーヒーが2026年7月23日から全国約1,200店で値上げ、ブレンドコーヒーSが280円から300円へ",
+      "detail": "対象はドトールコーヒーショップ・エクセルシオール カフェ等 全国約1,200店。ブレンドS 280→300円、カフェ・ラテS 380→400円、ミラノサンドA 490→520円、マイルドブレンド豆200g 1090→1110円。日経は『中東情勢の不安定化による原材料・物流費・人件費の上昇』を主な理由と報道。背景にはブラジル降雨とエルニーニョ警戒でアラビカ先物が7月に3.5ドル台まで急騰した相場環境がある。",
+      "narration": "知ってました？ドトールが7月23日からコーヒー値上げ。ブレンドが280円から300円に。実はこの20円、世界のコーヒー相場と直結してます。",
+      "tags": ["ドトール値上げ", "コーヒー相場", "中東情勢", "アラビカ先物", "業界ニュース"],
       "narration_sections": {
-        "hook": "知ってました？先週のコスタリカ・カップオブエクセレンス2026で、生豆1ポンドが200ドル、コスタリカ史上最高値で落札されました。",
-        "origin": "優勝は、コペイデドタ地区のフィンカ・リオブランコが標高1,950メートルで栽培したウォッシュト・ジャバ種、カッピング91.36点でした。上位30ロット平均も1ポンド45ドルに達し、前年比プラス48パーセントの大幅上昇です。",
-        "recommend": "気候リスクと生産者の努力が同時に価格へ乗った結果です。スペシャルティ豆を選ぶ時、こんな一杯の背景も想像しながら味わってみてください。"
+        "hook": "知ってました？ドトールが7月23日からコーヒー値上げ。ブレンドが280円から300円に。実はこの20円、世界のコーヒー相場と直結してます。",
+        "origin": "マイルドブレンド豆200gも1090円から1110円に。日経は中東情勢と物流費高騰を主な理由と報道。7月にはブラジル降雨とエルニーニョ懸念でアラビカ先物が3.5ドル台に急騰。街のカフェチェーンにも相場が波及してきました。",
+        "recommend": "1杯20円の差はコーヒー相場を映す鏡。同じ300円分でスペシャルティ豆を家で淹れれば、こだわりの1杯が3〜4杯分楽しめる時代です。"
       },
       "section_titles": {
-        "hook": "コスタリカCoE最高値",
-        "origin": "リオブランコ農園",
-        "recommend": "スペシャルティの深化"
+        "hook": "ドトール7月値上げ",
+        "origin": "背景は中東情勢と相場",
+        "recommend": "家淹れという選択"
       },
       "section_descriptions": {
-        "hook": "先週、コスタリカ産の生豆が1ポンド200ドル記録",
-        "origin": "標高1,950m、91.36点のジャバ種が主役",
-        "recommend": "気候と努力の背景まで味わうスペシャルティ"
+        "hook": "ブレンドS 280円→300円、7月23日から新価格",
+        "origin": "アラビカ先物3.5ドル台、街のカフェにも波及",
+        "recommend": "同じ300円分でスペシャルティを家淹れという選択"
       }
     }
   ]
