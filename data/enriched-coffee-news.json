@@ -1,41 +1,43 @@
 {
-  "date": "2026-07-21",
+  "date": "2026-07-22",
   "discovery": {
-    "method": "news-ja",
-    "description": "日経・Impress Watch・ORICON・流通ニュース・PR TIMES 等の日本語ソースで、ドトールコーヒーの2026-07-23値上げ発表(発表日2026-07-01、実施2026-07-23)を確認。日経は『中東情勢の影響』と物流費高騰を主な理由として報道。英語圏メディアは未報道の国内ニュース。事件発生日(実施日)は2日後で、日本人視聴者にとって最も鮮度が高くなるタイミングを狙う。",
+    "method": "social-en",
+    "description": "Perfect Daily Grind / Yahoo Creators / Ovalware / Java City / spatuladesserts / drinkripples / Coffee Creations 等の英語圏メディアで2026年『swavory (甘塩) トレンド』の中核として味噌カラメルラテのバズを確認。Nespresso 公式レシピページや Kerry Foodservice メニュー化事例で普及度をクロスチェック。うま味の科学基盤=1908年に東京帝大 (現東京大学) の池田菊苗博士が発見した第5の味覚(グルタミン酸)を一次情報として、日本文化発信のアイデンティティ角度で Primary 家淹れ層に接続。直近2本の social-en (07-19 ステップダウンバスケット、07-15 フレッド・エスプレッソ) が連続0viewだったのは『マニアック過ぎ or 珍しすぎる』トピック選定エラーと分析し、今回は『白味噌小さじ1+カラメル』で家庭再現可能な即行動化トピックへリセット。5/8 NR4A1 論文(129v) / 5/5 Yemeni カフェ(269v)で機能した『海外バズ話題 × 一次科学/文化ソースで補強 × 日本文化との接続』テンプレを踏襲。",
     "sources": [
-      "https://www.doutor.co.jp/news/newsrelease/detail/20260701110453.html",
-      "https://www.nikkei.com/article/DGXZQOUC018YH0R00C26A7000000/",
-      "https://www.watch.impress.co.jp/docs/news/2121792.html",
-      "https://www.oricon.co.jp/news/2465199/full/",
-      "https://www.ryutsuu.biz/strategy/s070241.html",
-      "https://news.livedoor.com/topics/detail/31720393/"
+      "https://www.ovalware.com/blogs/oval-blog/miso-caramel-latte-recipe",
+      "https://www.spatuladesserts.com/what-is-savory-coffee-and-why-baristas-are-ditching-sweet-lattes/",
+      "https://creators.yahoo.com/lifestyle/story/what-is-savory-coffee-and-why-baristas-are-ditching-sweet-lattes-205405914.html",
+      "https://blog.lovers.coffee/top-coffee-drink-trends-taking-over-in-2026/",
+      "https://javacity.com/blogs/coffee-blog/2026-coffee-trends",
+      "https://www.drinkripples.com/blog/summer-coffee-trends/",
+      "https://coffeecreationsofficial.com/blogs/coffee-edit/trending-coffee-flavors-2026",
+      "https://perfectdailygrind.com/2025/12/umami-flavours-specialty-coffee-valuable/"
     ],
-    "query": "ドトール 値上げ 2026年7月23日 ブレンドコーヒー 300円",
-    "freshness_hours": 48
+    "query": "swavory coffee trend miso caramel latte 2026; umami Kikunae Ikeda 1908 Tokyo Imperial University fifth taste; savory latte espresso menu Nespresso viral",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ドトールが7月23日から値上げ、ブレンドS 280円→300円、中東情勢と物流費高騰でアラビカ相場も3.5ドル台",
-      "description": "ドトールコーヒーが2026年7月23日から全国約1,200店で値上げ、ブレンドコーヒーSが280円から300円へ",
-      "detail": "対象はドトールコーヒーショップ・エクセルシオール カフェ等 全国約1,200店。ブレンドS 280→300円、カフェ・ラテS 380→400円、ミラノサンドA 490→520円、マイルドブレンド豆200g 1090→1110円。日経は『中東情勢の不安定化による原材料・物流費・人件費の上昇』を主な理由と報道。背景にはブラジル降雨とエルニーニョ警戒でアラビカ先物が7月に3.5ドル台まで急騰した相場環境がある。",
-      "narration": "知ってました？ドトールが7月23日からコーヒー値上げ。ブレンドが280円から300円に。実はこの20円、世界のコーヒー相場と直結してます。",
-      "tags": ["ドトール値上げ", "コーヒー相場", "中東情勢", "アラビカ先物", "業界ニュース"],
+      "title": "海外カフェで味噌カラメルラテが大バズり、支えているのは1908年に東京大学の日本人博士が発見したうま味の科学",
+      "description": "2026年の海外カフェで急増中の『swavory (甘塩) トレンド』、その主役は味噌カラメルラテ。科学基盤は1908年に東京帝大 池田菊苗博士が発見した第5の味覚うま味",
+      "detail": "Nespresso公式もレシピ公開、Perfect Daily Grindや Yahoo クリエイターズが2026年の一大トレンドとして特集。パルメザン泡コールドブリュー、塩キャラメルマキアート、褐色バターエスプレッソまで『甘塩系スワボリー』が海外カフェメニューを席巻。科学基盤は日本人・池田菊苗博士が1908年、東京帝国大学(現・東京大学)で発見したグルタミン酸=第5の味覚うま味。味噌の発酵うま味×カラメルの甘味×エスプレッソの苦味という三味構造がヒットの正体。家淹れなら白味噌小さじ1をカラメル1杯に混ぜて温めミルクとエスプレッソに注ぐだけ。深煎り豆と特に好相性。",
+      "narration": "知ってました？2026年の海外カフェで大バズり中、味噌カラメルラテ。裏で効いてるのは日本人が発明した『うま味』の科学です。",
+      "tags": ["味噌カラメルラテ", "うま味", "池田菊苗", "swavoryトレンド", "海外カフェ2026"],
       "narration_sections": {
-        "hook": "知ってました？ドトールが7月23日からコーヒー値上げ。ブレンドが280円から300円に。実はこの20円、世界のコーヒー相場と直結してます。",
-        "origin": "マイルドブレンド豆200gも1090円から1110円に。日経は中東情勢と物流費高騰を主な理由と報道。7月にはブラジル降雨とエルニーニョ懸念でアラビカ先物が3.5ドル台に急騰。街のカフェチェーンにも相場が波及してきました。",
-        "recommend": "1杯20円の差はコーヒー相場を映す鏡。同じ300円分でスペシャルティ豆を家で淹れれば、こだわりの1杯が3〜4杯分楽しめる時代です。"
+        "hook": "知ってました？2026年の海外カフェで大バズり中、味噌カラメルラテ。裏で効いてるのは日本人が発明した『うま味』の科学です。",
+        "origin": "うま味は1908年、東京帝大の池田菊苗博士が発見した5つ目の味覚。この味を味噌の発酵感が絶妙に演出します。海外ではNespresso公式もレシピを公開、パルメザン泡や塩キャラメルまでスワボリー系として広がり中です。",
+        "recommend": "うちで試すなら白味噌小さじ1をカラメル1杯に混ぜてラテに。深煎りの豆と特に合います。日本発の科学が世界の1杯を変える2026年です。"
       },
       "section_titles": {
-        "hook": "ドトール7月値上げ",
-        "origin": "背景は中東情勢と相場",
-        "recommend": "家淹れという選択"
+        "hook": "味噌カラメルラテ",
+        "origin": "うま味は日本発見",
+        "recommend": "家で試せる白味噌"
       },
       "section_descriptions": {
-        "hook": "ブレンドS 280円→300円、7月23日から新価格",
-        "origin": "アラビカ先物3.5ドル台、街のカフェにも波及",
-        "recommend": "同じ300円分でスペシャルティを家淹れという選択"
+        "hook": "海外で大バズり中、味噌×コーヒーの新定番トレンド",
+        "origin": "5つ目の味覚うま味、1908年に日本で発見された基礎",
+        "recommend": "白味噌小さじ1で家庭でも簡単に再現できる新レシピ"
       }
     }
   ]
