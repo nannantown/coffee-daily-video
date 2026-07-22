@@ -1,43 +1,39 @@
 {
-  "date": "2026-07-22",
+  "date": "2026-07-23",
   "discovery": {
-    "method": "social-en",
-    "description": "Perfect Daily Grind / Yahoo Creators / Ovalware / Java City / spatuladesserts / drinkripples / Coffee Creations 等の英語圏メディアで2026年『swavory (甘塩) トレンド』の中核として味噌カラメルラテのバズを確認。Nespresso 公式レシピページや Kerry Foodservice メニュー化事例で普及度をクロスチェック。うま味の科学基盤=1908年に東京帝大 (現東京大学) の池田菊苗博士が発見した第5の味覚(グルタミン酸)を一次情報として、日本文化発信のアイデンティティ角度で Primary 家淹れ層に接続。直近2本の social-en (07-19 ステップダウンバスケット、07-15 フレッド・エスプレッソ) が連続0viewだったのは『マニアック過ぎ or 珍しすぎる』トピック選定エラーと分析し、今回は『白味噌小さじ1+カラメル』で家庭再現可能な即行動化トピックへリセット。5/8 NR4A1 論文(129v) / 5/5 Yemeni カフェ(269v)で機能した『海外バズ話題 × 一次科学/文化ソースで補強 × 日本文化との接続』テンプレを踏襲。",
+    "method": "news-en",
+    "description": "Barchart/TradingEconomics/Investing.com で 7/22 のアラビカ先物ザラ場・終値を確認し、Brazil harvest progress (64% as of 7/15) と USDA FAS 2026/27 record 71.9M bag 予想を突き合わせて『先週高値からの反落 = 天候リスクプレミアム剥落』のストーリーで組み立て",
     "sources": [
-      "https://www.ovalware.com/blogs/oval-blog/miso-caramel-latte-recipe",
-      "https://www.spatuladesserts.com/what-is-savory-coffee-and-why-baristas-are-ditching-sweet-lattes/",
-      "https://creators.yahoo.com/lifestyle/story/what-is-savory-coffee-and-why-baristas-are-ditching-sweet-lattes-205405914.html",
-      "https://blog.lovers.coffee/top-coffee-drink-trends-taking-over-in-2026/",
-      "https://javacity.com/blogs/coffee-blog/2026-coffee-trends",
-      "https://www.drinkripples.com/blog/summer-coffee-trends/",
-      "https://coffeecreationsofficial.com/blogs/coffee-edit/trending-coffee-flavors-2026",
-      "https://perfectdailygrind.com/2025/12/umami-flavours-specialty-coffee-valuable/"
+      "https://www.tradingview.com/news/te_news:564924:0-arabica-coffee-futures-halt-rally/",
+      "https://www.barchart.com/futures/quotes/kc*0/futures-prices",
+      "https://www.investing.com/commodities/us-coffee-c",
+      "https://www.fas.usda.gov/data/gain/2026/06/brazil-coffee-annual"
     ],
-    "query": "swavory coffee trend miso caramel latte 2026; umami Kikunae Ikeda 1908 Tokyo Imperial University fifth taste; savory latte espresso menu Nespresso viral",
-    "freshness_hours": 120
+    "query": "arabica coffee futures July 22 2026 close Brazil harvest weather",
+    "freshness_hours": 20
   },
   "articles": [
     {
       "rank": 1,
-      "title": "海外カフェで味噌カラメルラテが大バズり、支えているのは1908年に東京大学の日本人博士が発見したうま味の科学",
-      "description": "2026年の海外カフェで急増中の『swavory (甘塩) トレンド』、その主役は味噌カラメルラテ。科学基盤は1908年に東京帝大 池田菊苗博士が発見した第5の味覚うま味",
-      "detail": "Nespresso公式もレシピ公開、Perfect Daily Grindや Yahoo クリエイターズが2026年の一大トレンドとして特集。パルメザン泡コールドブリュー、塩キャラメルマキアート、褐色バターエスプレッソまで『甘塩系スワボリー』が海外カフェメニューを席巻。科学基盤は日本人・池田菊苗博士が1908年、東京帝国大学(現・東京大学)で発見したグルタミン酸=第5の味覚うま味。味噌の発酵うま味×カラメルの甘味×エスプレッソの苦味という三味構造がヒットの正体。家淹れなら白味噌小さじ1をカラメル1杯に混ぜて温めミルクとエスプレッソに注ぐだけ。深煎り豆と特に好相性。",
-      "narration": "知ってました？2026年の海外カフェで大バズり中、味噌カラメルラテ。裏で効いてるのは日本人が発明した『うま味』の科学です。",
-      "tags": ["味噌カラメルラテ", "うま味", "池田菊苗", "swavoryトレンド", "海外カフェ2026"],
+      "title": "アラビカ先物が7/22に4.1%急落・1ポンド3.13ドルへ、ブラジル気象モデル更新で乾燥予想に切り替わり天候プレミアム剥落",
+      "description": "先週3.5ドル台から一気に反落、ブラジル収穫は64%進行中で市場は供給余剰へ視線",
+      "detail": "ICE Arabica 7/22 終値 313.53c/lb (-4.1%)。原因は気象モデルの乾燥予想シフトで、雨・霜プレミアムが剥落。USDA FAS は 2026/27 Brazil 産を過去最高の 7,190 万袋 (+14% y/y) と予想、7/15 時点で収穫 64% (昨年 77%、5 年平均 70%) と遅れつつ進行。卸価格への反映は数ヶ月遅れのため、店頭値下げは早くて秋以降。",
+      "narration": "知ってました?昨日アラビカ先物が4.1%急落、1ポンド3.13ドルへ戻しました。先週まで3.5ドル台だったのに、一気の下げです。",
+      "tags": ["市況", "アラビカ先物", "ブラジル"],
       "narration_sections": {
-        "hook": "知ってました？2026年の海外カフェで大バズり中、味噌カラメルラテ。裏で効いてるのは日本人が発明した『うま味』の科学です。",
-        "origin": "うま味は1908年、東京帝大の池田菊苗博士が発見した5つ目の味覚。この味を味噌の発酵感が絶妙に演出します。海外ではNespresso公式もレシピを公開、パルメザン泡や塩キャラメルまでスワボリー系として広がり中です。",
-        "recommend": "うちで試すなら白味噌小さじ1をカラメル1杯に混ぜてラテに。深煎りの豆と特に合います。日本発の科学が世界の1杯を変える2026年です。"
+        "hook": "知ってました?昨日アラビカ先物が4.1%急落、1ポンド3.13ドルへ戻しました。先週まで3.5ドル台だったのに、一気の下げです。",
+        "origin": "原因はブラジルの気象モデル更新。乾燥予想に切り替わり、これまで積まれてた雨と霜のリスクプレミアムが消えました。USDAは2026/27年産を7,190万袋と過去最高予想、収穫も64%まで進み、視線は供給余剰へ動いています。",
+        "recommend": "ただ卸への反映は数ヶ月遅れ、店頭が下がるのは秋以降です。今の家淹れは焙煎日の新しさを優先を。OG入荷は準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "味噌カラメルラテ",
-        "origin": "うま味は日本発見",
-        "recommend": "家で試せる白味噌"
+        "hook": "アラビカ先物急落",
+        "origin": "ブラジル気象好転",
+        "recommend": "店頭反映は数ヶ月後"
       },
       "section_descriptions": {
-        "hook": "海外で大バズり中、味噌×コーヒーの新定番トレンド",
-        "origin": "5つ目の味覚うま味、1908年に日本で発見された基礎",
-        "recommend": "白味噌小さじ1で家庭でも簡単に再現できる新レシピ"
+        "hook": "昨日ICE先物が4.1%急落、$3.13へ",
+        "origin": "ブラジル収穫は64%進、天候好転で乾燥予想へ",
+        "recommend": "店頭反映は数ヶ月遅れ、家淹れは焙煎日重視で"
       }
     }
   ]
