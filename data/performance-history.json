@@ -3116,7 +3116,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3159,7 +3159,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3203,7 +3203,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3247,7 +3247,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3291,7 +3291,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3333,7 +3333,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3376,7 +3376,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3420,7 +3420,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3464,7 +3464,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3508,7 +3508,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3553,7 +3553,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-22T00:14:14.789Z"
+        "updatedAt": "2026-07-23T00:58:32.488Z"
       }
     },
     {
@@ -3600,19 +3600,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-23T00:58:32.488Z"
+      }
+    },
+    {
+      "videoId": "Y7iWNBWqF4c",
+      "videoUrl": "https://youtube.com/shorts/Y7iWNBWqF4c",
+      "date": "2026-07-23",
+      "title": "【コーヒー豆知識】アラビカ先物が7/22に4.1%急落・1ポンド3.13ドルへ、ブラジル気象モデル更新で乾燥予想に切り替わり天候プレミアム剥落｜2026/07/23 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 56,
+      "discovery": {
+        "method": "news-en",
+        "description": "Barchart/TradingEconomics/Investing.com で 7/22 のアラビカ先物ザラ場・終値を確認し、Brazil harvest progress (64% as of 7/15) と USDA FAS 2026/27 record 71.9M bag 予想を突き合わせて『先週高値からの反落 = 天候リスクプレミアム剥落』のストーリーで組み立て",
+        "sources": [
+          "https://www.tradingview.com/news/te_news:564924:0-arabica-coffee-futures-halt-rally/",
+          "https://www.barchart.com/futures/quotes/kc*0/futures-prices",
+          "https://www.investing.com/commodities/us-coffee-c",
+          "https://www.fas.usda.gov/data/gain/2026/06/brazil-coffee-annual"
+        ],
+        "query": "arabica coffee futures July 22 2026 close Brazil harvest weather",
+        "freshness_hours": 20
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-21",
-      "changes": [
-        "standard: 63 avg views (57 videos)",
-        "Day performance: Sun=163, Tue=66, Wed=57, Sat=51, Mon=44, Fri=38, Thu=11"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-22",
       "changes": [
@@ -3842,6 +3877,14 @@
       "changes": [
         "standard: 44 avg views (81 videos)",
         "Day performance: Sun=136, Wed=40, Sat=39, Tue=37, Mon=30, Fri=28, Thu=8"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-23",
+      "changes": [
+        "standard: 42 avg views (81 videos)",
+        "Day performance: Sun=136, Sat=39, Tue=37, Mon=30, Fri=28, Wed=27, Thu=8"
       ],
       "recommendedTemplate": "standard"
     }
