@@ -1,39 +1,39 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "discovery": {
-    "method": "news-en",
-    "description": "Barchart/TradingEconomics/Investing.com で 7/22 のアラビカ先物ザラ場・終値を確認し、Brazil harvest progress (64% as of 7/15) と USDA FAS 2026/27 record 71.9M bag 予想を突き合わせて『先週高値からの反落 = 天候リスクプレミアム剥落』のストーリーで組み立て",
+    "method": "official-src",
+    "description": "USDA FAS が7/22に発表した『Coffee: World Markets and Trade』(通例6月刊行が今年は約1ヶ月遅れて7/22リリース)を Comunicaffe / RFD-TV で確認し、2026/27年産の世界コーヒー生産・輸出・消費・在庫の総覧数値を抽出。過去14日で産地柱が7%と欠落しているため、産地・ハーベスト系で埋める",
     "sources": [
-      "https://www.tradingview.com/news/te_news:564924:0-arabica-coffee-futures-halt-rally/",
-      "https://www.barchart.com/futures/quotes/kc*0/futures-prices",
-      "https://www.investing.com/commodities/us-coffee-c",
-      "https://www.fas.usda.gov/data/gain/2026/06/brazil-coffee-annual"
+      "https://www.comunicaffe.com/usda-world-coffee-production-6-exports-9-and-global-consumption-3-6-set-to-reach-record-levels-in-2026-27",
+      "https://www.rfdtv.com/coffee-market-tightens-as-global-supplies-shift",
+      "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026",
+      "https://www.foodbusinessmea.com/global-coffee-production-to-hit-record-180-million-bags-in-2026-27-as-brazil-drives-supply-surge/"
     ],
-    "query": "arabica coffee futures July 22 2026 close Brazil harvest weather",
-    "freshness_hours": 20
+    "query": "USDA Coffee World Markets Trade 2026/27 189 million bags arabica record",
+    "freshness_hours": 40
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカ先物が7/22に4.1%急落・1ポンド3.13ドルへ、ブラジル気象モデル更新で乾燥予想に切り替わり天候プレミアム剥落",
-      "description": "先週3.5ドル台から一気に反落、ブラジル収穫は64%進行中で市場は供給余剰へ視線",
-      "detail": "ICE Arabica 7/22 終値 313.53c/lb (-4.1%)。原因は気象モデルの乾燥予想シフトで、雨・霜プレミアムが剥落。USDA FAS は 2026/27 Brazil 産を過去最高の 7,190 万袋 (+14% y/y) と予想、7/15 時点で収穫 64% (昨年 77%、5 年平均 70%) と遅れつつ進行。卸価格への反映は数ヶ月遅れのため、店頭値下げは早くて秋以降。",
-      "narration": "知ってました?昨日アラビカ先物が4.1%急落、1ポンド3.13ドルへ戻しました。先週まで3.5ドル台だったのに、一気の下げです。",
-      "tags": ["市況", "アラビカ先物", "ブラジル"],
+      "title": "USDAが7/22公表・2026/27世界コーヒー生産1億8,967万袋で過去最高、アラビカ12%増の1億586万袋、輸出も9%増加見込み",
+      "description": "USDAの世界需給レポート最新版で来年産の生産予想が過去最高に。アラビカは記録更新、ブラジル増産が牽引",
+      "detail": "USDA FAS が7/22公表した『Coffee: World Markets and Trade』2026/27年予想。世界生産は189.67百万袋(+6%/+10.8百万袋)で過去最高、アラビカは史上最高の105.87百万袋(+12.1%)、ロブスタは83.8百万袋(-0.7%)で歴代2位。ブラジルは71.9百万袋(+14.1%)、うちアラビカ47.5百万袋(+25%)で5年低迷から回復。世界輸出は123.8百万袋(+9%)、消費は過去最高の173.9百万袋。ただし世界在庫は5年連続減で20.1百万袋まで縮小、店頭値下げ実感は当面来ない構図",
+      "narration": "知ってました?今週22日、USDAが最新の世界コーヒー需給レポートを公開しました。26/27年産の生産予想が過去最高に一気に更新です。",
+      "tags": ["産地", "USDA", "アラビカ"],
       "narration_sections": {
-        "hook": "知ってました?昨日アラビカ先物が4.1%急落、1ポンド3.13ドルへ戻しました。先週まで3.5ドル台だったのに、一気の下げです。",
-        "origin": "原因はブラジルの気象モデル更新。乾燥予想に切り替わり、これまで積まれてた雨と霜のリスクプレミアムが消えました。USDAは2026/27年産を7,190万袋と過去最高予想、収穫も64%まで進み、視線は供給余剰へ動いています。",
-        "recommend": "ただ卸への反映は数ヶ月遅れ、店頭が下がるのは秋以降です。今の家淹れは焙煎日の新しさを優先を。OG入荷は準備中、フォローしてお待ちください。"
+        "hook": "知ってました?今週22日、USDAが最新の世界コーヒー需給レポートを公開しました。26/27年産の生産予想が過去最高に一気に更新です。",
+        "origin": "新予想は世界全体で1億8,967万袋、前年より1,080万袋の上乗せで過去最高です。特にアラビカは1億586万袋で12%増、ブラジルの記録豊作が牽引。ロブスタは83.8百万で若干減。世界輸出も9%増える見通しです。",
+        "recommend": "ただし在庫は5年連続で減少中、店頭への値下げ実感はまだ先。旬の豆を今楽しむ視点で。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "アラビカ先物急落",
-        "origin": "ブラジル気象好転",
-        "recommend": "店頭反映は数ヶ月後"
+        "hook": "USDA最新予想",
+        "origin": "生産1.9億袋へ",
+        "recommend": "在庫は5年連続減"
       },
       "section_descriptions": {
-        "hook": "昨日ICE先物が4.1%急落、$3.13へ",
-        "origin": "ブラジル収穫は64%進、天候好転で乾燥予想へ",
-        "recommend": "店頭反映は数ヶ月遅れ、家淹れは焙煎日重視で"
+        "hook": "USDAが世界需給レポートを7/22に公開、生産予想更新",
+        "origin": "アラビカ+12%で記録更新、ブラジル増産が牽引",
+        "recommend": "在庫5年連続減で店頭値下げは先、家淹れは旬の豆を"
       }
     }
   ]
