@@ -1,39 +1,39 @@
 {
-  "date": "2026-07-24",
+  "date": "2026-07-25",
   "discovery": {
-    "method": "official-src",
-    "description": "USDA FAS が7/22に発表した『Coffee: World Markets and Trade』(通例6月刊行が今年は約1ヶ月遅れて7/22リリース)を Comunicaffe / RFD-TV で確認し、2026/27年産の世界コーヒー生産・輸出・消費・在庫の総覧数値を抽出。過去14日で産地柱が7%と欠落しているため、産地・ハーベスト系で埋める",
+    "method": "expert-blog",
+    "description": "4週間ウインドウで平均views最高 (avg 13.0) の expert-blog を土曜エバーグリーン枠で採用。過去最大ヒット (43view/6-27) を出した粕谷哲さんが2026-06-08にYouTubeで公開した新レシピ『The 10-Pulse Method (Multi-Pour / Neo Brew / Click 45)』を、RoastAroma解説記事とnote.com日本語blogで補完し、極粗挽き+10投という4:6メソッドを封印する設計変更の全パラメータを抽出",
     "sources": [
-      "https://www.comunicaffe.com/usda-world-coffee-production-6-exports-9-and-global-consumption-3-6-set-to-reach-record-levels-in-2026-27",
-      "https://www.rfdtv.com/coffee-market-tightens-as-global-supplies-shift",
-      "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026",
-      "https://www.foodbusinessmea.com/global-coffee-production-to-hit-record-180-million-bags-in-2026-27-as-brazil-drives-supply-surge/"
+      "https://www.youtube.com/watch?v=x-T5eWd1NSs",
+      "https://roastaroma.com/blog/tetsu-kasuyas-new-multi-pour-method-2026-the-10-pour-super-coarse-v60-recipe",
+      "https://beanbook.app/recipes/tetsu-kasuya--v60-neo-10-pours-brew__cefe5cb9-1d7f-4663-b86e-c8ca523d9103",
+      "https://note.com/udatsunoagaru919/n/n51d188a44d72"
     ],
-    "query": "USDA Coffee World Markets Trade 2026/27 189 million bags arabica record",
-    "freshness_hours": 40
+    "query": "Tetsu Kasuya Multi-Pour Neo Brew 10 pulse V60 2026 super coarse Comandante",
+    "freshness_hours": 1128
   },
   "articles": [
     {
       "rank": 1,
-      "title": "USDAが7/22公表・2026/27世界コーヒー生産1億8,967万袋で過去最高、アラビカ12%増の1億586万袋、輸出も9%増加見込み",
-      "description": "USDAの世界需給レポート最新版で来年産の生産予想が過去最高に。アラビカは記録更新、ブラジル増産が牽引",
-      "detail": "USDA FAS が7/22公表した『Coffee: World Markets and Trade』2026/27年予想。世界生産は189.67百万袋(+6%/+10.8百万袋)で過去最高、アラビカは史上最高の105.87百万袋(+12.1%)、ロブスタは83.8百万袋(-0.7%)で歴代2位。ブラジルは71.9百万袋(+14.1%)、うちアラビカ47.5百万袋(+25%)で5年低迷から回復。世界輸出は123.8百万袋(+9%)、消費は過去最高の173.9百万袋。ただし世界在庫は5年連続減で20.1百万袋まで縮小、店頭値下げ実感は当面来ない構図",
-      "narration": "知ってました?今週22日、USDAが最新の世界コーヒー需給レポートを公開しました。26/27年産の生産予想が過去最高に一気に更新です。",
-      "tags": ["産地", "USDA", "アラビカ"],
+      "title": "粕谷哲2026新作『10投レシピ』・4:6を封印、20g/300g/コマンダンテ40-45クリック超極粗挽き+15秒間隔10投で渋み消し粘度最大化",
+      "description": "2016 世界チャンピオン就任10周年、粕谷さんが自身の4:6メソッドを塗り替えた新レシピ。極粗挽き+10分割で渋みを消し、粘度と甘みを最大化",
+      "detail": "粕谷哲さん(2016 World Brewers Cup 王者)が2026-06-08にYouTubeで公開した新レシピ、通称『The 10-Pulse Method / Multi-Pour / Neo Brew / Click 45』。豆20gに湯300g(1:15)、Comandante C40は40-45クリックの超極粗挽き、湯温96℃。30秒蒸らし後に30gずつ15秒間隔で計10投、抽出時間約2分45秒。従来4:6が想定した中挽き5投を丸ごと差し替え、極粗挽きで湯滞留を短縮しつつ10投で層を重ねることで、過抽出の渋み(タンニン抽出)を回避しシロップ状の粘度と甘みを最大化する設計。Hario 2026年新製品Neoドリッパーの直垂れ流出特性と相性が良い",
+      "narration": "実は、粕谷哲さんが自身の4:6メソッドを封印した新レシピを発表しました。世界チャンピオン就任10周年の記念作で、家淹れ層で今話題です。",
+      "tags": ["ホームブリュー", "V60", "粕谷哲"],
       "narration_sections": {
-        "hook": "知ってました?今週22日、USDAが最新の世界コーヒー需給レポートを公開しました。26/27年産の生産予想が過去最高に一気に更新です。",
-        "origin": "新予想は世界全体で1億8,967万袋、前年より1,080万袋の上乗せで過去最高です。特にアラビカは1億586万袋で12%増、ブラジルの記録豊作が牽引。ロブスタは83.8百万で若干減。世界輸出も9%増える見通しです。",
-        "recommend": "ただし在庫は5年連続で減少中、店頭への値下げ実感はまだ先。旬の豆を今楽しむ視点で。EC準備中、フォローしてお待ちください。"
+        "hook": "実は、粕谷哲さんが自身の4:6メソッドを封印した新レシピを発表しました。世界チャンピオン就任10周年の記念作で、家淹れ層で今話題です。",
+        "origin": "レシピは豆20gにお湯300g、コマンダンテ40〜45クリックの超極粗挽き、湯温96℃、30秒の蒸らし後に30gずつ15秒間隔で計10投します。極粗挽きに10分割抽出を重ねることで、渋みを出さず粘度とジャム感の甘みを最大化するのが狙いです。",
+        "recommend": "呼び名はNeo BrewかClick45か視聴者募集中。アイスにも合う超極粗挽きレシピ、この週末にぜひ試してみてください。"
       },
       "section_titles": {
-        "hook": "USDA最新予想",
-        "origin": "生産1.9億袋へ",
-        "recommend": "在庫は5年連続減"
+        "hook": "粕谷哲の10投レシピ",
+        "origin": "極粗挽き10投の設計",
+        "recommend": "命名は視聴者募集中"
       },
       "section_descriptions": {
-        "hook": "USDAが世界需給レポートを7/22に公開、生産予想更新",
-        "origin": "アラビカ+12%で記録更新、ブラジル増産が牽引",
-        "recommend": "在庫5年連続減で店頭値下げは先、家淹れは旬の豆を"
+        "hook": "世界チャンピオンが4:6を封印、新10投レシピ",
+        "origin": "20g×300g、超極粗挽きで30gを15秒間隔10投",
+        "recommend": "呼び名募集中、アイスにも合う極粗挽きレシピ"
       }
     }
   ]
