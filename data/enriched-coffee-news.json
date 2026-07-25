@@ -1,39 +1,41 @@
 {
-  "date": "2026-07-25",
+  "date": "2026-07-26",
   "discovery": {
-    "method": "expert-blog",
-    "description": "4週間ウインドウで平均views最高 (avg 13.0) の expert-blog を土曜エバーグリーン枠で採用。過去最大ヒット (43view/6-27) を出した粕谷哲さんが2026-06-08にYouTubeで公開した新レシピ『The 10-Pulse Method (Multi-Pour / Neo Brew / Click 45)』を、RoastAroma解説記事とnote.com日本語blogで補完し、極粗挽き+10投という4:6メソッドを封印する設計変更の全パラメータを抽出",
+    "method": "social-en",
+    "description": "US全米バリスタ選手権2026新王者 Jak Michael Ryan (Proud Mary Coffee, Austin) の使用豆と抽出比率が Barista Friend Podcast (Miranda Haney) や home-barista.com のコミュニティで海外家淹れ層に継続議論。Sprudge / Fresh Cup / Barista Magazine の報道と、Proud Mary Academy 公式ブリューイングガイドを突き合わせて実際に家で再現可能なパラメータに落とし込んだ。日曜エバーグリーン枠、優勝は6/17-21のDenver大会",
     "sources": [
-      "https://www.youtube.com/watch?v=x-T5eWd1NSs",
-      "https://roastaroma.com/blog/tetsu-kasuyas-new-multi-pour-method-2026-the-10-pour-super-coarse-v60-recipe",
-      "https://beanbook.app/recipes/tetsu-kasuya--v60-neo-10-pours-brew__cefe5cb9-1d7f-4663-b86e-c8ca523d9103",
-      "https://note.com/udatsunoagaru919/n/n51d188a44d72"
+      "https://sprudge.com/the-2026-us-barista-championship-finals-1098386.html",
+      "https://freshcup.com/the-2026-us-barista-champion-has-been-named/",
+      "https://www.baristamagazine.com/an-inside-look-at-drink-development-with-coffee-competitors/",
+      "http://www.proudmaryacademy.com/en/articles/10509558-espresso-brewing-basics",
+      "https://proudmarycoffee.com/products/limited-honduras-benjamin-paz-la-salsa-1st-place-cup-of-excellence-geisha-washed",
+      "https://creators.spotify.com/pod/profile/miranda-haney/episodes/5--Espresso-for-Jak-Michael-Ryan-Proud-Mary-e2nl81m"
     ],
-    "query": "Tetsu Kasuya Multi-Pour Neo Brew 10 pulse V60 2026 super coarse Comandante",
-    "freshness_hours": 1128
+    "query": "Jak Michael Ryan Proud Mary US Barista Champion 2026 Honduras Gesha Benjamin Paz La Salsa espresso ratio",
+    "freshness_hours": 840
   },
   "articles": [
     {
       "rank": 1,
-      "title": "粕谷哲2026新作『10投レシピ』・4:6を封印、20g/300g/コマンダンテ40-45クリック超極粗挽き+15秒間隔10投で渋み消し粘度最大化",
-      "description": "2016 世界チャンピオン就任10周年、粕谷さんが自身の4:6メソッドを塗り替えた新レシピ。極粗挽き+10分割で渋みを消し、粘度と甘みを最大化",
-      "detail": "粕谷哲さん(2016 World Brewers Cup 王者)が2026-06-08にYouTubeで公開した新レシピ、通称『The 10-Pulse Method / Multi-Pour / Neo Brew / Click 45』。豆20gに湯300g(1:15)、Comandante C40は40-45クリックの超極粗挽き、湯温96℃。30秒蒸らし後に30gずつ15秒間隔で計10投、抽出時間約2分45秒。従来4:6が想定した中挽き5投を丸ごと差し替え、極粗挽きで湯滞留を短縮しつつ10投で層を重ねることで、過抽出の渋み(タンニン抽出)を回避しシロップ状の粘度と甘みを最大化する設計。Hario 2026年新製品Neoドリッパーの直垂れ流出特性と相性が良い",
-      "narration": "実は、粕谷哲さんが自身の4:6メソッドを封印した新レシピを発表しました。世界チャンピオン就任10周年の記念作で、家淹れ層で今話題です。",
-      "tags": ["ホームブリュー", "V60", "粕谷哲"],
+      "title": "US全米バリスタ選手権2026新王者・Proud MaryのJak Michael Ryan、ホンジュラス Benjamin Paz ゲイシャを1:2.5で引く優勝ルーティン",
+      "description": "テキサス Proud Mary の Jak Michael Ryan さんが2026 US Barista Championship で優勝。10月にパナマの世界大会へ",
+      "detail": "2026-06-17〜21にDenverで開催された US Barista Championship でオースティンの Proud Mary Coffee Jak Michael Ryan さんが優勝。2025 6位から返り咲きで Jason Yeo / Meg Skop / 元王者 Morgan Eckroth を退けた。使用豆はホンジュラスの生産者 Benjamin Paz が Santa Barbara の La Salsa 農園で仕上げたゲイシャ Lot No.1(Cup of Excellence 上位常連)。Proud Mary 標準レシピはブラック用が20gに対して湯50g(比率1:2.5)、ミルクドリンク用が20g→40g(1:2)、いずれも20g VST バスケット。ルーティンのテーマは時間、メトロノームと砂時計を演出に用い、シグネチャードリンクは乳酸発酵パッションフルーツ + プランテンと蜂蜜のクリアファイド + マンゴー蒸留水をゲイシャエスプレッソに合わせて金レーズンとキウイの香りを引き出す設計。10月のパナマ世界大会に出場",
+      "narration": "知ってました？先月、全米バリスタ選手権2026の新王者が誕生。テキサスのProud MaryのJak Ryanさんで、海外の家淹れ層で使ってた豆が話題です。",
+      "tags": ["エスプレッソ", "USBC2026", "ゲイシャ"],
       "narration_sections": {
-        "hook": "実は、粕谷哲さんが自身の4:6メソッドを封印した新レシピを発表しました。世界チャンピオン就任10周年の記念作で、家淹れ層で今話題です。",
-        "origin": "レシピは豆20gにお湯300g、コマンダンテ40〜45クリックの超極粗挽き、湯温96℃、30秒の蒸らし後に30gずつ15秒間隔で計10投します。極粗挽きに10分割抽出を重ねることで、渋みを出さず粘度とジャム感の甘みを最大化するのが狙いです。",
-        "recommend": "呼び名はNeo BrewかClick45か視聴者募集中。アイスにも合う超極粗挽きレシピ、この週末にぜひ試してみてください。"
+        "hook": "知ってました？先月、全米バリスタ選手権2026の新王者が誕生。テキサスのProud MaryのJak Ryanさんで、海外の家淹れ層で使ってた豆が話題です。",
+        "origin": "使ったのはホンジュラスBenjamin PazさんのLa Salsa農園ゲイシャLot No.1。エスプレッソは豆20gに湯50g、比率1:2.5のVSTバスケット、ミルクドリンクは20g→40gの1:2で濃いめに組みます。",
+        "recommend": "10月パナマ世界大会に出場。La Salsaはコスパ良い中米ゲイシャの代表格、1:2.5で引くのが再現のコツです。"
       },
       "section_titles": {
-        "hook": "粕谷哲の10投レシピ",
-        "origin": "極粗挽き10投の設計",
-        "recommend": "命名は視聴者募集中"
+        "hook": "US全米バリスタ新王者",
+        "origin": "ホンジュラスゲイシャ",
+        "recommend": "10月世界大会へ"
       },
       "section_descriptions": {
-        "hook": "世界チャンピオンが4:6を封印、新10投レシピ",
-        "origin": "20g×300g、超極粗挽きで30gを15秒間隔10投",
-        "recommend": "呼び名募集中、アイスにも合う極粗挽きレシピ"
+        "hook": "先月テキサスProud MaryのJak Ryanが優勝",
+        "origin": "La Salsa農園ゲイシャ、1:2.5で50g抽出",
+        "recommend": "10月パナマ世界大会に出場、1:2.5がコツ"
       }
     }
   ]
