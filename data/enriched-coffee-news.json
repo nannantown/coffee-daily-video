@@ -1,41 +1,40 @@
 {
-  "date": "2026-07-26",
+  "date": "2026-07-27",
   "discovery": {
-    "method": "social-en",
-    "description": "US全米バリスタ選手権2026新王者 Jak Michael Ryan (Proud Mary Coffee, Austin) の使用豆と抽出比率が Barista Friend Podcast (Miranda Haney) や home-barista.com のコミュニティで海外家淹れ層に継続議論。Sprudge / Fresh Cup / Barista Magazine の報道と、Proud Mary Academy 公式ブリューイングガイドを突き合わせて実際に家で再現可能なパラメータに落とし込んだ。日曜エバーグリーン枠、優勝は6/17-21のDenver大会",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の 7/24 News Recap、Comunicaffe、World Coffee Portal、Global Coffee Report で Massimo Zanetti Beverage Group (Segafredo親会社) に大手投資ファンド6社が入札し評価額 最大 €1.2B との報道を確認。日本でも Segafredo Zanetti Japan Inc. がショッピングモール中心に20拠点超を展開しているため国内視聴者の認知が高い、業界ビジネスニュース(柱③)の直近14日カバー率を補強",
     "sources": [
-      "https://sprudge.com/the-2026-us-barista-championship-finals-1098386.html",
-      "https://freshcup.com/the-2026-us-barista-champion-has-been-named/",
-      "https://www.baristamagazine.com/an-inside-look-at-drink-development-with-coffee-competitors/",
-      "http://www.proudmaryacademy.com/en/articles/10509558-espresso-brewing-basics",
-      "https://proudmarycoffee.com/products/limited-honduras-benjamin-paz-la-salsa-1st-place-cup-of-excellence-geisha-washed",
-      "https://creators.spotify.com/pod/profile/miranda-haney/episodes/5--Espresso-for-Jak-Michael-Ryan-Proud-Mary-e2nl81m"
+      "https://www.comunicaffe.com/six-private-equity-funds-are-in-the-running-to-acquire-mzb-group-which-is-valued-at-up-to-1-2-billion-massimo-zanetti-if-the-terms-are-acceptable-i-will-sell-my-stake-too-pierlu/",
+      "https://www.worldcoffeeportal.com/news/massimo-zanetti-beverage-group-valued-at-eur1-2bn-as-multiple-bidders-suggest-sale-imminent/",
+      "https://www.gcrmag.com/massimo-zanetti-beverage-group-sale-imminent",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/",
+      "https://www.mzb-group.com/en/activities/cafes/dettaglio/segafredo-zanetti-japan-inc"
     ],
-    "query": "Jak Michael Ryan Proud Mary US Barista Champion 2026 Honduras Gesha Benjamin Paz La Salsa espresso ratio",
-    "freshness_hours": 840
+    "query": "Massimo Zanetti Beverage Group private equity bid 1.2 billion euros Segafredo July 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "US全米バリスタ選手権2026新王者・Proud MaryのJak Michael Ryan、ホンジュラス Benjamin Paz ゲイシャを1:2.5で引く優勝ルーティン",
-      "description": "テキサス Proud Mary の Jak Michael Ryan さんが2026 US Barista Championship で優勝。10月にパナマの世界大会へ",
-      "detail": "2026-06-17〜21にDenverで開催された US Barista Championship でオースティンの Proud Mary Coffee Jak Michael Ryan さんが優勝。2025 6位から返り咲きで Jason Yeo / Meg Skop / 元王者 Morgan Eckroth を退けた。使用豆はホンジュラスの生産者 Benjamin Paz が Santa Barbara の La Salsa 農園で仕上げたゲイシャ Lot No.1(Cup of Excellence 上位常連)。Proud Mary 標準レシピはブラック用が20gに対して湯50g(比率1:2.5)、ミルクドリンク用が20g→40g(1:2)、いずれも20g VST バスケット。ルーティンのテーマは時間、メトロノームと砂時計を演出に用い、シグネチャードリンクは乳酸発酵パッションフルーツ + プランテンと蜂蜜のクリアファイド + マンゴー蒸留水をゲイシャエスプレッソに合わせて金レーズンとキウイの香りを引き出す設計。10月のパナマ世界大会に出場",
-      "narration": "知ってました？先月、全米バリスタ選手権2026の新王者が誕生。テキサスのProud MaryのJak Ryanさんで、海外の家淹れ層で使ってた豆が話題です。",
-      "tags": ["エスプレッソ", "USBC2026", "ゲイシャ"],
+      "title": "Segafredo親会社 Massimo Zanetti に世界大手ファンド6社が入札、評価額最大12億ユーロで100%売却も視野",
+      "description": "日本でも20拠点超を展開するイタリア・セガフレード、その運営会社が最大1,700億円規模の売却協議入り",
+      "detail": "2026-07-23〜24に Comunicaffe / World Coffee Portal / Global Coffee Report / Perfect Daily Grind が報道。Segafredo Zanetti・MJB など40ブランドを傘下に持ち世界20拠点で年商 約12億ドル規模の Massimo Zanetti Beverage Group (MZBG) に、BC Partners / CapVest / CVC / Advent / Blackstone / One Rock Capital の大手投資ファンド6社が予備入札。現在70%を保有するイタリアの PE ファンド QuattroR の株式に加え、創業者 Massimo Zanetti 氏本人も『条件が合えば持ち分を売却する』と発言し、最大100%売却シナリオが浮上。評価額は最大12億ユーロ (約1,700億円)。日本では大丸心斎橋の Segafredo Caffé や JR 系駅ナカ Espresso 店など20店超を展開しており、身近なブランドの背後で進む大型再編。決着は年内中と業界誌は見立てている",
+      "narration": "今週のニュース。日本でカフェ20店超のイタリア・セガフレード、運営会社が最大1,700億円で買収される可能性が浮上しました。",
+      "tags": ["業界再編", "セガフレード", "投資ファンド"],
       "narration_sections": {
-        "hook": "知ってました？先月、全米バリスタ選手権2026の新王者が誕生。テキサスのProud MaryのJak Ryanさんで、海外の家淹れ層で使ってた豆が話題です。",
-        "origin": "使ったのはホンジュラスBenjamin PazさんのLa Salsa農園ゲイシャLot No.1。エスプレッソは豆20gに湯50g、比率1:2.5のVSTバスケット、ミルクドリンクは20g→40gの1:2で濃いめに組みます。",
-        "recommend": "10月パナマ世界大会に出場。La Salsaはコスパ良い中米ゲイシャの代表格、1:2.5で引くのが再現のコツです。"
+        "hook": "今週のニュース。日本でカフェ20店超のイタリア・セガフレード、運営会社が最大1,700億円で買収される可能性が浮上しました。",
+        "origin": "セガフレードの親会社Massimo Zanettiに、Blackstone・CVC・Advent含む世界大手ファンド6社が入札。評価額は最大12億ユーロ、日本円で約1,700億円。世界20拠点・40ブランドを持つコーヒー大手が、専門ファンドの手に渡る可能性が高まっています。",
+        "recommend": "大資本の再編が進むほど、顔が見える小規模焙煎所の存在感が増します。EC準備中です、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "US全米バリスタ新王者",
-        "origin": "ホンジュラスゲイシャ",
-        "recommend": "10月世界大会へ"
+        "hook": "セガフレード売却協議",
+        "origin": "ファンド6社が入札",
+        "recommend": "小規模焙煎所の価値"
       },
       "section_descriptions": {
-        "hook": "先月テキサスProud MaryのJak Ryanが優勝",
-        "origin": "La Salsa農園ゲイシャ、1:2.5で50g抽出",
-        "recommend": "10月パナマ世界大会に出場、1:2.5がコツ"
+        "hook": "日本20店超のセガフレード、親会社売却へ",
+        "origin": "Blackstone等6社、最大1,700億円で評価",
+        "recommend": "大資本再編、個性ある小規模の存在感"
       }
     }
   ]
