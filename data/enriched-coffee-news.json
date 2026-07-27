@@ -1,40 +1,40 @@
 {
-  "date": "2026-07-27",
+  "date": "2026-07-28",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の 7/24 News Recap、Comunicaffe、World Coffee Portal、Global Coffee Report で Massimo Zanetti Beverage Group (Segafredo親会社) に大手投資ファンド6社が入札し評価額 最大 €1.2B との報道を確認。日本でも Segafredo Zanetti Japan Inc. がショッピングモール中心に20拠点超を展開しているため国内視聴者の認知が高い、業界ビジネスニュース(柱③)の直近14日カバー率を補強",
+    "method": "market-data",
+    "description": "PDCA 07-27 で提案の『市況週次サマリー Tue 定期化』初回。Barchart / Yahoo Finance / StoneX / TradingEconomics / TradingView の市況ニュースを横断し、ICE 指定倉庫のアラビカ認証在庫が 315,615 袋・2 年 3 ヶ月ぶり低水準 (前年比 -59%) にまで細っている一方、USDA WASDE (1.8967 億袋、過去最高) との乖離が今週相場のねじれを生んでいる構造を検出",
     "sources": [
-      "https://www.comunicaffe.com/six-private-equity-funds-are-in-the-running-to-acquire-mzb-group-which-is-valued-at-up-to-1-2-billion-massimo-zanetti-if-the-terms-are-acceptable-i-will-sell-my-stake-too-pierlu/",
-      "https://www.worldcoffeeportal.com/news/massimo-zanetti-beverage-group-valued-at-eur1-2bn-as-multiple-bidders-suggest-sale-imminent/",
-      "https://www.gcrmag.com/massimo-zanetti-beverage-group-sale-imminent",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/",
-      "https://www.mzb-group.com/en/activities/cafes/dettaglio/segafredo-zanetti-japan-inc"
+      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-supported-shrinking-ice-155912238.html",
+      "https://www.tradingview.com/news/barchart:7ce1de1f6094b:0-coffee-prices-supported-by-shrinking-ice-inventories/",
+      "https://www.stonex.com/en/insights/arabica-futures-extend-recovery-on-weather-risks-and-tight-inventories/",
+      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-finish-sharply-higher-183449788.html",
+      "https://www.barchart.com/futures/quotes/KCU26"
     ],
-    "query": "Massimo Zanetti Beverage Group private equity bid 1.2 billion euros Segafredo July 2026",
+    "query": "arabica coffee ICE certified stocks 2 year low July 2026 vs USDA production forecast",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Segafredo親会社 Massimo Zanetti に世界大手ファンド6社が入札、評価額最大12億ユーロで100%売却も視野",
-      "description": "日本でも20拠点超を展開するイタリア・セガフレード、その運営会社が最大1,700億円規模の売却協議入り",
-      "detail": "2026-07-23〜24に Comunicaffe / World Coffee Portal / Global Coffee Report / Perfect Daily Grind が報道。Segafredo Zanetti・MJB など40ブランドを傘下に持ち世界20拠点で年商 約12億ドル規模の Massimo Zanetti Beverage Group (MZBG) に、BC Partners / CapVest / CVC / Advent / Blackstone / One Rock Capital の大手投資ファンド6社が予備入札。現在70%を保有するイタリアの PE ファンド QuattroR の株式に加え、創業者 Massimo Zanetti 氏本人も『条件が合えば持ち分を売却する』と発言し、最大100%売却シナリオが浮上。評価額は最大12億ユーロ (約1,700億円)。日本では大丸心斎橋の Segafredo Caffé や JR 系駅ナカ Espresso 店など20店超を展開しており、身近なブランドの背後で進む大型再編。決着は年内中と業界誌は見立てている",
-      "narration": "今週のニュース。日本でカフェ20店超のイタリア・セガフレード、運営会社が最大1,700億円で買収される可能性が浮上しました。",
-      "tags": ["業界再編", "セガフレード", "投資ファンド"],
+      "title": "ICE指定倉庫のアラビカ在庫が2年3ヶ月ぶり低水準・前年比-59%、USDA過去最高生産予想と真逆の相場ねじれ",
+      "description": "生産は過去最高予想なのに在庫は急減、先物価格が1ポンド3ドル台前半で乱高下する背景",
+      "detail": "2026-07-25 前後の複数市況レポート (Barchart / Yahoo Finance / StoneX / TradingEconomics) が報じるとおり、ICE 指定倉庫のアラビカ認証在庫は 315,615 袋まで減少し 2 年 3 ヶ月ぶりの低水準、前年同期比では約 -59% と大幅細り。一方 7/22 発表の USDA WASDE は 2026/27 世界コーヒー生産を 1.8967 億袋と過去最高予想 (アラビカ +12%、07-24 に既報)。ブラジル 2026/27 収穫は 7/15 時点で 64% (前年 77%、5 年平均 70%) と雨で遅延、届く豆はあるのに港・倉庫まで動かない状態。加えて ICE の証拠金引上げで大口の板が薄くなり、先物価格 (KCU26 9 月限) は 1 ポンド 3 ドル台前半 (約 300-320 セント帯) で 1 日 2% 超の乱高下が続く。生産予想と在庫実態の乖離が、この夏の相場ボラティリティの正体",
+      "narration": "今週のマーケット速報。生産量は過去最高予想なのに、在庫は2年3ヶ月ぶり低水準。コーヒー相場のねじれが起きています。",
+      "tags": ["先物相場", "在庫低水準", "市況"],
       "narration_sections": {
-        "hook": "今週のニュース。日本でカフェ20店超のイタリア・セガフレード、運営会社が最大1,700億円で買収される可能性が浮上しました。",
-        "origin": "セガフレードの親会社Massimo Zanettiに、Blackstone・CVC・Advent含む世界大手ファンド6社が入札。評価額は最大12億ユーロ、日本円で約1,700億円。世界20拠点・40ブランドを持つコーヒー大手が、専門ファンドの手に渡る可能性が高まっています。",
-        "recommend": "大資本の再編が進むほど、顔が見える小規模焙煎所の存在感が増します。EC準備中です、フォローしてお待ちください。"
+        "hook": "今週のマーケット速報。生産量は過去最高予想なのに、在庫は2年3ヶ月ぶり低水準。コーヒー相場のねじれが起きています。",
+        "origin": "ICE取引所のアラビカ在庫は先週31万袋台まで減り、2年3ヶ月ぶり低水準。前年比マイナス59%です。一方USDAは新年度の世界生産を1億9千万袋と過去最高予想。ブラジル収穫は雨で64%止まり、先物価格は1ポンド3ドル台前半で乱高下しています。",
+        "recommend": "相場が荒れるほど、顔の見える焙煎所の入荷情報の価値が上がります。EC準備中です、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "セガフレード売却協議",
-        "origin": "ファンド6社が入札",
-        "recommend": "小規模焙煎所の価値"
+        "hook": "在庫2年3ヶ月ぶり最低",
+        "origin": "生産最高予想でも在庫減",
+        "recommend": "顔の見える焙煎所の価値"
       },
       "section_descriptions": {
-        "hook": "日本20店超のセガフレード、親会社売却へ",
-        "origin": "Blackstone等6社、最大1,700億円で評価",
-        "recommend": "大資本再編、個性ある小規模の存在感"
+        "hook": "生産最高予想でも在庫が急減。相場のねじれ",
+        "origin": "31万袋・前年比-59%とUSDA予想の乖離解剖",
+        "recommend": "荒れ相場こそ小規模焙煎所の入荷情報の価値"
       }
     }
   ]
