@@ -1,40 +1,41 @@
 {
-  "date": "2026-07-28",
+  "date": "2026-07-29",
   "discovery": {
-    "method": "market-data",
-    "description": "PDCA 07-27 で提案の『市況週次サマリー Tue 定期化』初回。Barchart / Yahoo Finance / StoneX / TradingEconomics / TradingView の市況ニュースを横断し、ICE 指定倉庫のアラビカ認証在庫が 315,615 袋・2 年 3 ヶ月ぶり低水準 (前年比 -59%) にまで細っている一方、USDA WASDE (1.8967 億袋、過去最高) との乖離が今週相場のねじれを生んでいる構造を検出",
+    "method": "official-src",
+    "description": "Colombia の国家コーヒー基金 (FoNC / Fondo Nacional del Café) の運営契約が 7/7 期限切れ寸前に暫定 5 ヶ月延長で決着、8/7 就任予定の Abelardo de la Espriella 次期大統領は FNC 自律維持を明言。StoneX による産地機関 (FNC) と Colombian government の公式発表を集約したレポートを一次入口に、USDA FAS Colombia Coffee Annual (5 月) で生産・輸出規模の裏取り。②産地柱 (直近 14 日 7% で目標 25% 大幅不足) の緊急補正 & 前日 PDCA の Wed 予定 `official-src` に合致",
     "sources": [
-      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-supported-shrinking-ice-155912238.html",
-      "https://www.tradingview.com/news/barchart:7ce1de1f6094b:0-coffee-prices-supported-by-shrinking-ice-inventories/",
-      "https://www.stonex.com/en/insights/arabica-futures-extend-recovery-on-weather-risks-and-tight-inventories/",
-      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-finish-sharply-higher-183449788.html",
-      "https://www.barchart.com/futures/quotes/KCU26"
+      "https://www.stonex.com/en/insights/colombian-government-and-fnc-agreed-to-temporary-extension-of-national-coffee-fund/",
+      "https://www.stonex.com/en/insights/colombia-s-fnc-defends-management-of-national-coffee-fund-as-contract-of-fund-is-set-to-expire-in-2026/",
+      "https://www.stonex.com/en-us/insights/uncertainty-surrounds-future-of-contract-for-colombia-s-national-coffee-fund-set-to-expire-on-july-7/",
+      "https://www.stonex.com/en/insights/update-colombia-s-right-wing-candidate-abelardo-de-la-espriella-wins-presidency-coffee-cocoa-sectors-to-benefit/",
+      "https://www.fas.usda.gov/data/gain/2026/05/colombia-coffee-annual",
+      "https://federaciondecafeteros.org/?lang=en"
     ],
-    "query": "arabica coffee ICE certified stocks 2 year low July 2026 vs USDA production forecast",
+    "query": "Colombia FNC National Coffee Fund FoNC extension July 2026 Abelardo Espriella",
     "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ICE指定倉庫のアラビカ在庫が2年3ヶ月ぶり低水準・前年比-59%、USDA過去最高生産予想と真逆の相場ねじれ",
-      "description": "生産は過去最高予想なのに在庫は急減、先物価格が1ポンド3ドル台前半で乱高下する背景",
-      "detail": "2026-07-25 前後の複数市況レポート (Barchart / Yahoo Finance / StoneX / TradingEconomics) が報じるとおり、ICE 指定倉庫のアラビカ認証在庫は 315,615 袋まで減少し 2 年 3 ヶ月ぶりの低水準、前年同期比では約 -59% と大幅細り。一方 7/22 発表の USDA WASDE は 2026/27 世界コーヒー生産を 1.8967 億袋と過去最高予想 (アラビカ +12%、07-24 に既報)。ブラジル 2026/27 収穫は 7/15 時点で 64% (前年 77%、5 年平均 70%) と雨で遅延、届く豆はあるのに港・倉庫まで動かない状態。加えて ICE の証拠金引上げで大口の板が薄くなり、先物価格 (KCU26 9 月限) は 1 ポンド 3 ドル台前半 (約 300-320 セント帯) で 1 日 2% 超の乱高下が続く。生産予想と在庫実態の乖離が、この夏の相場ボラティリティの正体",
-      "narration": "今週のマーケット速報。生産量は過去最高予想なのに、在庫は2年3ヶ月ぶり低水準。コーヒー相場のねじれが起きています。",
-      "tags": ["先物相場", "在庫低水準", "市況"],
+      "title": "コロンビア国家コーヒー基金FoNCが7/7期限直前に5ヶ月延長で決着、8/7就任のデラエスプリエラ次期大統領はFNC自律維持を明言",
+      "description": "世界3位アラビカ産地の運営インフラを担うFNC体制が、政治混乱を経て当面維持へ",
+      "detail": "コロンビアの国家コーヒー基金 FoNC (Fondo Nacional del Café) は、生産者組織 FNC (Federación Nacional de Cafeteros) が長年運営してきたパラフィスカル基金で、コーヒー価格保証・研究機関 Cenicafé・33 の生産者協同組合ネットワークを支える中核インフラ。運営契約が 7/7 で満了する寸前、ペトロ政権は政府直轄化を示唆したが、期限切れによるコーヒーセクター混乱回避のため両者で最大 5 ヶ月の暫定延長に合意。8 月 7 日にペトロ大統領の任期満了、同日就任の次期大統領 Abelardo de la Espriella 氏 (6 月決選投票で 49.66%、1,295 万票獲得) は FNC の完全な自律維持を公約。コロンビアは 2026/27 マーケティングイヤーで 60kg 袋換算 1,340 万袋の生産・輸出予想 (USDA FAS、5 月版) で、世界 3 位アラビカ産地の玉調達安定性が当面確保された",
+      "narration": "今日のコーヒーニュース。7月7日期限だったコロンビアの国家コーヒー基金、生産者連合と政府が5ヶ月延長で決着。世界3位産地の混乱回避です。",
+      "tags": ["コロンビア", "FNC", "産地ニュース"],
       "narration_sections": {
-        "hook": "今週のマーケット速報。生産量は過去最高予想なのに、在庫は2年3ヶ月ぶり低水準。コーヒー相場のねじれが起きています。",
-        "origin": "ICE取引所のアラビカ在庫は先週31万袋台まで減り、2年3ヶ月ぶり低水準。前年比マイナス59%です。一方USDAは新年度の世界生産を1億9千万袋と過去最高予想。ブラジル収穫は雨で64%止まり、先物価格は1ポンド3ドル台前半で乱高下しています。",
-        "recommend": "相場が荒れるほど、顔の見える焙煎所の入荷情報の価値が上がります。EC準備中です、フォローしてお待ちください。"
+        "hook": "今日のコーヒーニュース。7月7日期限だったコロンビアの国家コーヒー基金、生産者連合と政府が5ヶ月延長で決着。世界3位産地の混乱回避です。",
+        "origin": "国家コーヒー基金FoNCは、FNC生産者連合が長年運営してきた仕組みです。ペトロ政権は政府直轄化を示唆しましたが、期限切れ回避で暫定合意。8月7日就任のデラエスプリエラ次期大統領はFNCの自律を維持すると明言、コロンビア産の供給インフラは当面安定します。",
+        "recommend": "コロンビアの豆はこの体制が支えてきました。今後の産地情報も追いかけます。EC準備中です、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "在庫2年3ヶ月ぶり最低",
-        "origin": "生産最高予想でも在庫減",
-        "recommend": "顔の見える焙煎所の価値"
+        "hook": "コロンビア基金5ヶ月延長",
+        "origin": "FNC自律・政権交代局面",
+        "recommend": "産地の続報を追う"
       },
       "section_descriptions": {
-        "hook": "生産最高予想でも在庫が急減。相場のねじれ",
-        "origin": "31万袋・前年比-59%とUSDA予想の乖離解剖",
-        "recommend": "荒れ相場こそ小規模焙煎所の入荷情報の価値"
+        "hook": "世界3位アラビカ産地で運営契約が緊急延長",
+        "origin": "ペトロ政権と次期大統領、FNC体制の攻防解説",
+        "recommend": "産地の政治を追い、焙煎所選びに活かす視点"
       }
     }
   ]
