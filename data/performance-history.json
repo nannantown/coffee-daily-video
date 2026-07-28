@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "ZB0AXNS9ZzU",
-      "videoUrl": "https://youtube.com/shorts/ZB0AXNS9ZzU",
-      "date": "2026-04-28",
-      "title": "【コーヒー豆知識】インド モンスーンマラバール｜2026/04/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 45,
-      "discovery": {
-        "method": "news-en",
-        "description": "Perfect Daily Grind / Daily Coffee News / Helena Coffee Vietnam / Bloomberg を WebSearch で横断し、ベトナム 2025/26 ロブスタの収量損失と ICE Robusta 在庫 16 か月ぶり低水準のニュースをクロスチェック。前日 04-26 のブラジル豊作=供給増ストーリーの裏面として、月曜=ニュース起点で Robusta 供給逼迫を取り上げる。Pillar ②産地ハーベスト 強化を兼ねる",
-        "sources": [
-          "https://perfectdailygrind.com/2026/04/coffee-news-recap-24-april-2026/",
-          "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
-          "https://www.gcrmag.com/vietnams-coffee-harvest-headache/",
-          "https://dailycoffeenews.com/2025/12/10/vietnam-coffee-report-record-high-prices-drive-robusta-production/",
-          "https://www.bloomberg.com/news/articles/2025-11-20/vietnam-coffee-heavy-rain-threatens-robusta-output-in-dak-lak"
-        ],
-        "query": "Vietnam coffee Robusta 2025/26 crop loss Dak Lak drought saltwater intrusion April 2026; ICE Robusta inventory 16-month low",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 86,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-12T01:16:33.086Z"
-      }
-    },
-    {
       "videoId": "kMNG9vyKunE",
       "videoUrl": "https://youtube.com/shorts/kMNG9vyKunE",
       "date": "2026-04-29",
@@ -3117,7 +3073,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3158,10 +3114,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3203,7 +3159,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3246,7 +3202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3290,7 +3246,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3334,7 +3290,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3378,7 +3334,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3423,7 +3379,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3470,7 +3426,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3513,7 +3469,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3556,7 +3512,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-27T01:06:02.479Z"
+        "updatedAt": "2026-07-28T00:54:36.963Z"
       }
     },
     {
@@ -3600,19 +3556,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-07-28T00:54:36.963Z"
+      }
+    },
+    {
+      "videoId": "yv9mDPu2SbI",
+      "videoUrl": "https://youtube.com/shorts/yv9mDPu2SbI",
+      "date": "2026-07-28",
+      "title": "【コーヒー豆知識】ICE指定倉庫のアラビカ在庫が2年3ヶ月ぶり低水準・前年比-59%、USDA過去最高生産予想と真逆の相場ねじれ｜2026/07/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "market-data",
+        "description": "PDCA 07-27 で提案の『市況週次サマリー Tue 定期化』初回。Barchart / Yahoo Finance / StoneX / TradingEconomics / TradingView の市況ニュースを横断し、ICE 指定倉庫のアラビカ認証在庫が 315,615 袋・2 年 3 ヶ月ぶり低水準 (前年比 -59%) にまで細っている一方、USDA WASDE (1.8967 億袋、過去最高) との乖離が今週相場のねじれを生んでいる構造を検出",
+        "sources": [
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-supported-shrinking-ice-155912238.html",
+          "https://www.tradingview.com/news/barchart:7ce1de1f6094b:0-coffee-prices-supported-by-shrinking-ice-inventories/",
+          "https://www.stonex.com/en/insights/arabica-futures-extend-recovery-on-weather-risks-and-tight-inventories/",
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-finish-sharply-higher-183449788.html",
+          "https://www.barchart.com/futures/quotes/KCU26"
+        ],
+        "query": "arabica coffee ICE certified stocks 2 year low July 2026 vs USDA production forecast",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-24",
-      "changes": [
-        "standard: 60 avg views (60 videos)",
-        "Day performance: Sun=147, Tue=58, Wed=57, Sat=54, Mon=39, Fri=38, Thu=11"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-25",
       "changes": [
@@ -3842,6 +3834,14 @@
       "changes": [
         "standard: 41 avg views (82 videos)",
         "Day performance: Sun=136, Sat=39, Tue=37, Mon=30, Wed=27, Fri=23, Thu=7"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-28",
+      "changes": [
+        "standard: 41 avg views (81 videos)",
+        "Day performance: Sun=149, Sat=39, Tue=37, Wed=27, Mon=25, Fri=23, Thu=7"
       ],
       "recommendedTemplate": "standard"
     }
