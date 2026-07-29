@@ -1,41 +1,42 @@
 {
-  "date": "2026-07-29",
+  "date": "2026-07-30",
   "discovery": {
-    "method": "official-src",
-    "description": "Colombia の国家コーヒー基金 (FoNC / Fondo Nacional del Café) の運営契約が 7/7 期限切れ寸前に暫定 5 ヶ月延長で決着、8/7 就任予定の Abelardo de la Espriella 次期大統領は FNC 自律維持を明言。StoneX による産地機関 (FNC) と Colombian government の公式発表を集約したレポートを一次入口に、USDA FAS Colombia Coffee Annual (5 月) で生産・輸出規模の裏取り。②産地柱 (直近 14 日 7% で目標 25% 大幅不足) の緊急補正 & 前日 PDCA の Wed 予定 `official-src` に合致",
+    "method": "news-en",
+    "description": "Perfect Daily Grind 7/24 Weekly News Recap を起点に、Comunicaffe (nestle-h1-2026-results-organic-growth-guidance) / Investing.com Earnings Call Transcript / ShopAppy / Ad-Hoc News / Yahoo Finance でネスレの2026年上半期決算のコーヒー部門実績をクロスチェック。総売上3.6%オーガニック成長・純利益35億CHF・EPS1.35CHFの全社数字に対し、コーヒー部門は121.26億CHF(名目+0.9%、オーガニック+7.5%)、ネスプレッソが31億CHFでVertuoと限定シリーズが北米シェアを拡大、Dua Lipaグローバル契約で若年新規獲得という3層の成長ドライバーを確認。直近2日(7/28 market-data、7/29 official-src)と重複しないTOP methodのnews-en(4週投稿数9で最多、avg 0.44)をExploit(前回7/27 Segafredo以来3日空き ✓)。柱は③業界・ビジネスニュースで直近14日3→2に落ちた枠を補強、Primary『家で淹れる趣味層』の中でもネスプレッソ保有層への直撃 × Secondary『小規模カフェ店主』への『大手は体験物語化で若年獲得中、小規模はロット物語で正面から張り合える』という戦い方示唆で二層に刺す。前日PDCA(7/29)のThu予定はexpert-blogだったが、直近14日で④焙煎士エバー柱が5/14=36%と目標15%の2.4倍で継続超過、expert-blogではさらに④が積み増すため柱バランス優先で③業界へシフト。",
     "sources": [
-      "https://www.stonex.com/en/insights/colombian-government-and-fnc-agreed-to-temporary-extension-of-national-coffee-fund/",
-      "https://www.stonex.com/en/insights/colombia-s-fnc-defends-management-of-national-coffee-fund-as-contract-of-fund-is-set-to-expire-in-2026/",
-      "https://www.stonex.com/en-us/insights/uncertainty-surrounds-future-of-contract-for-colombia-s-national-coffee-fund-set-to-expire-on-july-7/",
-      "https://www.stonex.com/en/insights/update-colombia-s-right-wing-candidate-abelardo-de-la-espriella-wins-presidency-coffee-cocoa-sectors-to-benefit/",
-      "https://www.fas.usda.gov/data/gain/2026/05/colombia-coffee-annual",
-      "https://federaciondecafeteros.org/?lang=en"
+      "https://www.comunicaffe.com/nestle-h1-2026-results-organic-growth-guidance",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/",
+      "https://www.investing.com/news/transcripts/earnings-call-transcript-nestle-posts-solid-h1-2026-growth-as-rig-improves-93CH-4807852",
+      "https://shopappy.com/news/company-news/nestle-h1-2026-results-organic-growth",
+      "https://www.ad-hoc-news.de/boerse/news/ueberblick/nestle-stock-reacts-to-half-year-2026-results-as-margin-and-portfolio/69858003",
+      "https://finance.yahoo.com/quote/1NESN.MI/earnings/1NESN.MI-H1-2026-earnings_call-549076.html",
+      "https://www.nestle.com/media/pressreleases/allpressreleases/three-month-sales-2026"
     ],
-    "query": "Colombia FNC National Coffee Fund FoNC extension July 2026 Abelardo Espriella",
-    "freshness_hours": 72
+    "query": "Nestle H1 2026 coffee organic growth 7.5% Nespresso Vertuo Dua Lipa CHF 121 billion",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コロンビア国家コーヒー基金FoNCが7/7期限直前に5ヶ月延長で決着、8/7就任のデラエスプリエラ次期大統領はFNC自律維持を明言",
-      "description": "世界3位アラビカ産地の運営インフラを担うFNC体制が、政治混乱を経て当面維持へ",
-      "detail": "コロンビアの国家コーヒー基金 FoNC (Fondo Nacional del Café) は、生産者組織 FNC (Federación Nacional de Cafeteros) が長年運営してきたパラフィスカル基金で、コーヒー価格保証・研究機関 Cenicafé・33 の生産者協同組合ネットワークを支える中核インフラ。運営契約が 7/7 で満了する寸前、ペトロ政権は政府直轄化を示唆したが、期限切れによるコーヒーセクター混乱回避のため両者で最大 5 ヶ月の暫定延長に合意。8 月 7 日にペトロ大統領の任期満了、同日就任の次期大統領 Abelardo de la Espriella 氏 (6 月決選投票で 49.66%、1,295 万票獲得) は FNC の完全な自律維持を公約。コロンビアは 2026/27 マーケティングイヤーで 60kg 袋換算 1,340 万袋の生産・輸出予想 (USDA FAS、5 月版) で、世界 3 位アラビカ産地の玉調達安定性が当面確保された",
-      "narration": "今日のコーヒーニュース。7月7日期限だったコロンビアの国家コーヒー基金、生産者連合と政府が5ヶ月延長で決着。世界3位産地の混乱回避です。",
-      "tags": ["コロンビア", "FNC", "産地ニュース"],
+      "title": "ネスレ2026上半期決算・コーヒーだけが実力7.5%成長、ネスプレッソVertuo×Dua Lipa契約で北米若年層を新規獲得",
+      "description": "世界最大の食品会社ネスレの2026上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出した",
+      "detail": "7/24発表、上半期コーヒー売上は121億スイスフラン(約2.2兆円)で純利益35億フラン。ネスプレッソが北米でシェア拡大、Vertuoと限定シリーズが牽引、Dua Lipaグローバル契約で若年新規獲得",
+      "narration": "知ってました?世界最大の食品会社ネスレの2026年上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出しました。",
+      "tags": ["業界ニュース", "ネスプレッソ", "決算"],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。7月7日期限だったコロンビアの国家コーヒー基金、生産者連合と政府が5ヶ月延長で決着。世界3位産地の混乱回避です。",
-        "origin": "国家コーヒー基金FoNCは、FNC生産者連合が長年運営してきた仕組みです。ペトロ政権は政府直轄化を示唆しましたが、期限切れ回避で暫定合意。8月7日就任のデラエスプリエラ次期大統領はFNCの自律を維持すると明言、コロンビア産の供給インフラは当面安定します。",
-        "recommend": "コロンビアの豆はこの体制が支えてきました。今後の産地情報も追いかけます。EC準備中です、フォローしてお待ちください。"
+        "hook": "知ってました?世界最大の食品会社ネスレの2026年上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出しました。",
+        "origin": "発表は7月24日、上半期のコーヒー売上は121億スイスフラン、約2.2兆円で純利益は35億フラン。ネスプレッソが北米でシェアを伸ばし、Vertuoと限定シリーズが牽引、歌手Dua Lipaとの契約で若年層も新規獲得しました。",
+        "recommend": "大手が『体験の物語化』で若い層を取りにきている合図。小さな焙煎所はロット物語と産地の顔でこそ、大手と正面から張り合える競い方になります。"
       },
       "section_titles": {
-        "hook": "コロンビア基金5ヶ月延長",
-        "origin": "FNC自律・政権交代局面",
-        "recommend": "産地の続報を追う"
+        "hook": "コーヒー+7.5%成長",
+        "origin": "ネスプレッソ好調",
+        "recommend": "小さな焙煎所の対抗軸"
       },
       "section_descriptions": {
-        "hook": "世界3位アラビカ産地で運営契約が緊急延長",
-        "origin": "ペトロ政権と次期大統領、FNC体制の攻防解説",
-        "recommend": "産地の政治を追い、焙煎所選びに活かす視点"
+        "hook": "ネスレ2026上半期、コーヒー部門が独走",
+        "origin": "Vertuo・限定・Dua Lipaで新規層獲得",
+        "recommend": "ロット物語や産地の顔で大手ブランドと競える"
       }
     }
   ]
