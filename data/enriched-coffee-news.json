@@ -1,42 +1,42 @@
 {
-  "date": "2026-07-30",
+  "date": "2026-07-31",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 7/24 Weekly News Recap を起点に、Comunicaffe (nestle-h1-2026-results-organic-growth-guidance) / Investing.com Earnings Call Transcript / ShopAppy / Ad-Hoc News / Yahoo Finance でネスレの2026年上半期決算のコーヒー部門実績をクロスチェック。総売上3.6%オーガニック成長・純利益35億CHF・EPS1.35CHFの全社数字に対し、コーヒー部門は121.26億CHF(名目+0.9%、オーガニック+7.5%)、ネスプレッソが31億CHFでVertuoと限定シリーズが北米シェアを拡大、Dua Lipaグローバル契約で若年新規獲得という3層の成長ドライバーを確認。直近2日(7/28 market-data、7/29 official-src)と重複しないTOP methodのnews-en(4週投稿数9で最多、avg 0.44)をExploit(前回7/27 Segafredo以来3日空き ✓)。柱は③業界・ビジネスニュースで直近14日3→2に落ちた枠を補強、Primary『家で淹れる趣味層』の中でもネスプレッソ保有層への直撃 × Secondary『小規模カフェ店主』への『大手は体験物語化で若年獲得中、小規模はロット物語で正面から張り合える』という戦い方示唆で二層に刺す。前日PDCA(7/29)のThu予定はexpert-blogだったが、直近14日で④焙煎士エバー柱が5/14=36%と目標15%の2.4倍で継続超過、expert-blogではさらに④が積み増すため柱バランス優先で③業界へシフト。",
+    "method": "market-data",
+    "description": "Yahoo Finance / Barchart / Business Recorder / ESM Magazine / MarketScreener / Comunicaffe / Perfect Daily Grind (Coffee News Recap 7/24) をクロスチェックし、7/30 (水) 発表のブラジル最大コーヒー協同組合 Cooxupe (Minas Gerais 拠点) の 2026 収穫進捗を確定 (7/24 時点 58.3%、前週 47.3%、前年同時期 67.1% と大幅に遅れ)。原因はミナスジェライスへの週間 32.4mm・歴史平均比 2700% の記録的大雨で収穫中断。同時に ICE 指定倉庫のアラビカ在庫が 7/28 時点 289,759袋 (前週 328,759袋、前年同時期 800,326袋の 36% で -64%) と極めてタイト。前日 PDCA (7/30) の Fri 予定 `market-data` (週次市況枠定期化第 2 回) に従い、直近 2 日 (7/30 news-en, 7/29 official-src) を回避、前回 market-data (7/28 ICE 在庫単独) から 3 日空きで多様性ルール ✓。柱はコンテンツバランス上で ②産地 (Cooxupe = ブラジル産地の生産者団体データ、産地固有ニュース) に分類し、直近 14 日 15% と目標 25% 不足を補正。Primary『家で淹れる趣味層』にはスペシャルティ用マイクロロット供給遅延として実利化、USDA 7/22 発表の 2026/27 過去最高生産予想 (1.9 億袋) との『大局と目先のねじれ』を 1 本で提示。",
     "sources": [
-      "https://www.comunicaffe.com/nestle-h1-2026-results-organic-growth-guidance",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/",
-      "https://www.investing.com/news/transcripts/earnings-call-transcript-nestle-posts-solid-h1-2026-growth-as-rig-improves-93CH-4807852",
-      "https://shopappy.com/news/company-news/nestle-h1-2026-results-organic-growth",
-      "https://www.ad-hoc-news.de/boerse/news/ueberblick/nestle-stock-reacts-to-half-year-2026-results-as-margin-and-portfolio/69858003",
-      "https://finance.yahoo.com/quote/1NESN.MI/earnings/1NESN.MI-H1-2026-earnings_call-549076.html",
-      "https://www.nestle.com/media/pressreleases/allpressreleases/three-month-sales-2026"
+      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-tumbles-brazil-harvest-182608289.html",
+      "https://www.barchart.com/story/news/2363119/coffee-prices-pressured-by-brazil-coffee-harvest",
+      "https://www.brecorder.com/news/40432416/arabica-coffee-prices-rise",
+      "https://www.esmmagazine.com/supply-chain/brazils-2026-coffee-harvest-behind-last-years-pace-says-co-op-316086",
+      "https://www.marketscreener.com/quote/index/S-P-GSCI-COFFEE-INDEX-46869134/news/Brazil-s-Cooxupe-coffee-harvest-lags-previous-year-amid-rains-50275859/",
+      "https://www.comunicaffe.com/weather-and-quality-concerns-drive-high-arabica-volatility-cepea",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/"
     ],
-    "query": "Nestle H1 2026 coffee organic growth 7.5% Nespresso Vertuo Dua Lipa CHF 121 billion",
-    "freshness_hours": 144
+    "query": "Cooxupe 58.3% Brazil coffee harvest July 24 2026 lagging 67.1%; ICE arabica certified stocks 289759 bags July 28 2026; Minas Gerais rain 2700% historical average",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ネスレ2026上半期決算・コーヒーだけが実力7.5%成長、ネスプレッソVertuo×Dua Lipa契約で北米若年層を新規獲得",
-      "description": "世界最大の食品会社ネスレの2026上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出した",
-      "detail": "7/24発表、上半期コーヒー売上は121億スイスフラン(約2.2兆円)で純利益35億フラン。ネスプレッソが北米でシェア拡大、Vertuoと限定シリーズが牽引、Dua Lipaグローバル契約で若年新規獲得",
-      "narration": "知ってました?世界最大の食品会社ネスレの2026年上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出しました。",
-      "tags": ["業界ニュース", "ネスプレッソ", "決算"],
+      "title": "ブラジル・クーシュペ収穫が去年67.1%→今年58.3%に遅延、原因はミナス大雨、ICE在庫は前年比-64%",
+      "description": "ブラジル最大のコーヒー協同組合クーシュペが7月30日、2026年の収穫が去年より大幅に遅れていると発表した",
+      "detail": "7月24日時点58.3% (前週47.3%) で去年同時期67.1%を下回るペース。原因はミナスジェライスへの週32.4mm、歴史平均2700%の記録的大雨。ICE指定倉庫のアラビカ在庫も289,759袋、前年800,326袋比マイナス64%",
+      "narration": "今日のニュースです。ブラジル最大のコーヒー協同組合クーシュペが、2026年の収穫が予想以上に遅れていると発表しました。",
+      "tags": ["ブラジル", "収穫遅延", "市況"],
       "narration_sections": {
-        "hook": "知ってました?世界最大の食品会社ネスレの2026年上半期決算で、コーヒー部門だけが実力ベース7.5%成長を叩き出しました。",
-        "origin": "発表は7月24日、上半期のコーヒー売上は121億スイスフラン、約2.2兆円で純利益は35億フラン。ネスプレッソが北米でシェアを伸ばし、Vertuoと限定シリーズが牽引、歌手Dua Lipaとの契約で若年層も新規獲得しました。",
-        "recommend": "大手が『体験の物語化』で若い層を取りにきている合図。小さな焙煎所はロット物語と産地の顔でこそ、大手と正面から張り合える競い方になります。"
+        "hook": "今日のニュースです。ブラジル最大のコーヒー協同組合クーシュペが、2026年の収穫が予想以上に遅れていると発表しました。",
+        "origin": "7月24日時点で全体の58.3%、去年同時期67.1%を下回るペースです。原因はブラジル・ミナスジェライスへの記録的な大雨で、収穫が中断。ICE指定倉庫のアラビカ在庫も289,759袋と、前年比マイナス64%まで急減しました。",
+        "recommend": "USDAは過去最高生産予想を出していますが、目先は上質なロットの供給がタイト。この夏に狙いの豆は早めに確保するのが安全です。"
       },
       "section_titles": {
-        "hook": "コーヒー+7.5%成長",
-        "origin": "ネスプレッソ好調",
-        "recommend": "小さな焙煎所の対抗軸"
+        "hook": "収穫が去年比大幅遅れ",
+        "origin": "ミナス大雨で在庫急減",
+        "recommend": "狙いの豆は早めに確保"
       },
       "section_descriptions": {
-        "hook": "ネスレ2026上半期、コーヒー部門が独走",
-        "origin": "Vertuo・限定・Dua Lipaで新規層獲得",
-        "recommend": "ロット物語や産地の顔で大手ブランドと競える"
+        "hook": "ブラジル最大の協同組合クーシュペが2026年収穫の遅延を発表",
+        "origin": "7月24日で58.3%、去年同時期67.1%を下回る",
+        "recommend": "供給タイト継続、上質ロットは早めに確保が安全"
       }
     }
   ]
