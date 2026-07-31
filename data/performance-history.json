@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "SroEdhT5WZ4",
-      "videoUrl": "https://youtube.com/shorts/SroEdhT5WZ4",
-      "date": "2026-05-01",
-      "title": "【コーヒー豆知識】次の注目産地はタイ・WoCバンコク開幕間近｜2026/05/01 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "news-en",
-        "description": "Perfect Daily Grind の 2026-04-29 公開フィーチャー記事『Homegrown coffee is fuelling Thailand's specialty boom』を起点に、SCA / 公式 World of Coffee Asia / Bangkok Post / Wikipedia でタイ産地データと WoC Bangkok 2026 の開催情報をクロスチェック。直近7日が②産地に偏っているが、(a) 直近14日で扱った産地(コロンビア/ハワイ/ベトナム/インド)に重複しないアジア新興産地で固有名詞ヒット仮説を継続検証、(b) 来週 5/7-9 開催の World of Coffee Bangkok 2026(BITEC、40カ国 600超出展)= 発信時点で残り 6 日の高鮮度ペグ、の 2 点で例外的に②柱を採用。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/04/thailand-specialty-coffee-boom/",
-          "https://sca.coffee/sca-news/2025/5/16/world-of-coffee-heads-to-bangkok-in-2026-the-third-edition-of-world-of-coffee-asia",
-          "https://asia.worldofcoffee.org/show-info",
-          "https://www.thaipr.net/en/business_en/3715685",
-          "https://en.wikipedia.org/wiki/Coffee_production_in_Thailand"
-        ],
-        "query": "Thailand specialty coffee boom 2026 Perfect Daily Grind; World of Coffee Bangkok May 7-9 BITEC exhibitors; Chiang Mai Chiang Rai Doi Chang arabica production EU PDO",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-15T01:20:31.554Z"
-      }
-    },
-    {
       "videoId": "f_EDevsFIxg",
       "videoUrl": "https://youtube.com/shorts/f_EDevsFIxg",
       "date": "2026-05-03",
@@ -3116,7 +3072,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3160,7 +3116,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3204,7 +3160,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3248,7 +3204,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3293,7 +3249,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3340,7 +3296,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3383,7 +3339,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3426,7 +3382,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3470,7 +3426,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3514,7 +3470,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3559,7 +3515,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-30T00:52:59.606Z"
+        "updatedAt": "2026-07-31T01:01:42.760Z"
       }
     },
     {
@@ -3602,6 +3558,52 @@
         "freshness_hours": 144
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-07-31T01:01:42.760Z"
+      }
+    },
+    {
+      "videoId": "z3Ubls2Cojo",
+      "videoUrl": "https://youtube.com/shorts/z3Ubls2Cojo",
+      "date": "2026-07-31",
+      "title": "【コーヒー豆知識】ブラジル・クーシュペ収穫が去年67.1%→今年58.3%に遅延、原因はミナス大雨、ICE在庫は前年比-64%｜2026/07/31 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "market-data",
+        "description": "Yahoo Finance / Barchart / Business Recorder / ESM Magazine / MarketScreener / Comunicaffe / Perfect Daily Grind (Coffee News Recap 7/24) をクロスチェックし、7/30 (水) 発表のブラジル最大コーヒー協同組合 Cooxupe (Minas Gerais 拠点) の 2026 収穫進捗を確定 (7/24 時点 58.3%、前週 47.3%、前年同時期 67.1% と大幅に遅れ)。原因はミナスジェライスへの週間 32.4mm・歴史平均比 2700% の記録的大雨で収穫中断。同時に ICE 指定倉庫のアラビカ在庫が 7/28 時点 289,759袋 (前週 328,759袋、前年同時期 800,326袋の 36% で -64%) と極めてタイト。前日 PDCA (7/30) の Fri 予定 `market-data` (週次市況枠定期化第 2 回) に従い、直近 2 日 (7/30 news-en, 7/29 official-src) を回避、前回 market-data (7/28 ICE 在庫単独) から 3 日空きで多様性ルール ✓。柱はコンテンツバランス上で ②産地 (Cooxupe = ブラジル産地の生産者団体データ、産地固有ニュース) に分類し、直近 14 日 15% と目標 25% 不足を補正。Primary『家で淹れる趣味層』にはスペシャルティ用マイクロロット供給遅延として実利化、USDA 7/22 発表の 2026/27 過去最高生産予想 (1.9 億袋) との『大局と目先のねじれ』を 1 本で提示。",
+        "sources": [
+          "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-tumbles-brazil-harvest-182608289.html",
+          "https://www.barchart.com/story/news/2363119/coffee-prices-pressured-by-brazil-coffee-harvest",
+          "https://www.brecorder.com/news/40432416/arabica-coffee-prices-rise",
+          "https://www.esmmagazine.com/supply-chain/brazils-2026-coffee-harvest-behind-last-years-pace-says-co-op-316086",
+          "https://www.marketscreener.com/quote/index/S-P-GSCI-COFFEE-INDEX-46869134/news/Brazil-s-Cooxupe-coffee-harvest-lags-previous-year-amid-rains-50275859/",
+          "https://www.comunicaffe.com/weather-and-quality-concerns-drive-high-arabica-volatility-cepea",
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/"
+        ],
+        "query": "Cooxupe 58.3% Brazil coffee harvest July 24 2026 lagging 67.1%; ICE arabica certified stocks 289759 bags July 28 2026; Minas Gerais rain 2700% historical average",
+        "freshness_hours": 24
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3610,14 +3612,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-27",
-      "changes": [
-        "standard: 57 avg views (63 videos)",
-        "Day performance: Sun=147, Tue=58, Sat=54, Wed=51, Mon=39, Fri=35, Thu=10"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-28",
       "changes": [
@@ -3847,6 +3841,14 @@
       "changes": [
         "standard: 36 avg views (81 videos)",
         "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=23, Thu=7, Wed=7"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-07-31",
+      "changes": [
+        "standard: 36 avg views (81 videos)",
+        "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=23, Wed=7, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
