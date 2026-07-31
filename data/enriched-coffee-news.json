@@ -1,42 +1,42 @@
 {
-  "date": "2026-07-31",
+  "date": "2026-08-01",
   "discovery": {
-    "method": "market-data",
-    "description": "Yahoo Finance / Barchart / Business Recorder / ESM Magazine / MarketScreener / Comunicaffe / Perfect Daily Grind (Coffee News Recap 7/24) をクロスチェックし、7/30 (水) 発表のブラジル最大コーヒー協同組合 Cooxupe (Minas Gerais 拠点) の 2026 収穫進捗を確定 (7/24 時点 58.3%、前週 47.3%、前年同時期 67.1% と大幅に遅れ)。原因はミナスジェライスへの週間 32.4mm・歴史平均比 2700% の記録的大雨で収穫中断。同時に ICE 指定倉庫のアラビカ在庫が 7/28 時点 289,759袋 (前週 328,759袋、前年同時期 800,326袋の 36% で -64%) と極めてタイト。前日 PDCA (7/30) の Fri 予定 `market-data` (週次市況枠定期化第 2 回) に従い、直近 2 日 (7/30 news-en, 7/29 official-src) を回避、前回 market-data (7/28 ICE 在庫単独) から 3 日空きで多様性ルール ✓。柱はコンテンツバランス上で ②産地 (Cooxupe = ブラジル産地の生産者団体データ、産地固有ニュース) に分類し、直近 14 日 15% と目標 25% 不足を補正。Primary『家で淹れる趣味層』にはスペシャルティ用マイクロロット供給遅延として実利化、USDA 7/22 発表の 2026/27 過去最高生産予想 (1.9 億袋) との『大局と目先のねじれ』を 1 本で提示。",
+    "method": "expert-blog",
+    "description": "James Hoffmann の YouTube / Sprudge / Nucleus / 94 Celsius / La Barba / Rosso / Regalia の pre-order ページをクロスチェックし、Hoffmann×Lucia Solis 主催『The Fermentation Project』(9月世界同時カッピング) を確定。単一グアテマラ豆 (Finca San Miguel Urias, アンティグア) を①機械脱ミュシラージ ②自然発酵 (48h) ③乳酸菌接種 (48h) ④酵母接種の4種類で処理し、世界中のロースターが同じ豆を各国でローストしてテイスティングする史上初の設計。Pre-order 出荷 2026/8/12、テイスティング 9月上旬。土曜のエバーグリーン枠として『今週の高騰ニュース (Cooxupe 収穫遅延・ICE 在庫-64%) の背景にある発酵/精製の科学』に接続する深堀り。前 2 日 (7/31 market-data, 7/30 news-en) を回避、expert-blog は 7/25 (粕谷哲) 以来 7 日空きで多様性 ✓。柱は④焙煎士の一次情報 (Hoffmann / Solis の設計思想) 15% 枠。Primary『家で淹れる趣味層』が味覚の言語化を鍛える絶好の教材。",
     "sources": [
-      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-tumbles-brazil-harvest-182608289.html",
-      "https://www.barchart.com/story/news/2363119/coffee-prices-pressured-by-brazil-coffee-harvest",
-      "https://www.brecorder.com/news/40432416/arabica-coffee-prices-rise",
-      "https://www.esmmagazine.com/supply-chain/brazils-2026-coffee-harvest-behind-last-years-pace-says-co-op-316086",
-      "https://www.marketscreener.com/quote/index/S-P-GSCI-COFFEE-INDEX-46869134/news/Brazil-s-Cooxupe-coffee-harvest-lags-previous-year-amid-rains-50275859/",
-      "https://www.comunicaffe.com/weather-and-quality-concerns-drive-high-arabica-volatility-cepea",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/"
+      "https://sprudge.com/roasters-james-hoffmann-wants-you-to-join-his-next-global-coffee-tasting-828680.html",
+      "https://94celcius.com/en/blogs/blog-personnelle/fermentation-project-james-hoffmann-canada",
+      "https://nucleuscoffee.com/en/blogs/cafe/le-projet-de-fermentation-de-james-hoffmann-au-canada",
+      "https://www.glenlyoncoffee.co.uk/products/james-hoffmanns-the-fermentation-project-quartet-box",
+      "https://labarbacoffee.com/products/the-fermentation-project",
+      "https://www.rossocoffeeroasters.com/en-us/products/fermentation-project-with-james-hoffmann-tasting-kit",
+      "https://regaliacoffee.com/products/pre-sale-james-hoffmann-fermentation-project-x-regalia"
     ],
-    "query": "Cooxupe 58.3% Brazil coffee harvest July 24 2026 lagging 67.1%; ICE arabica certified stocks 289759 bags July 28 2026; Minas Gerais rain 2700% historical average",
-    "freshness_hours": 24
+    "query": "James Hoffmann Lucia Solis Fermentation Project 2026 Guatemala Finca San Miguel Urias four fermentation methods global tasting September",
+    "freshness_hours": 240
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブラジル・クーシュペ収穫が去年67.1%→今年58.3%に遅延、原因はミナス大雨、ICE在庫は前年比-64%",
-      "description": "ブラジル最大のコーヒー協同組合クーシュペが7月30日、2026年の収穫が去年より大幅に遅れていると発表した",
-      "detail": "7月24日時点58.3% (前週47.3%) で去年同時期67.1%を下回るペース。原因はミナスジェライスへの週32.4mm、歴史平均2700%の記録的大雨。ICE指定倉庫のアラビカ在庫も289,759袋、前年800,326袋比マイナス64%",
-      "narration": "今日のニュースです。ブラジル最大のコーヒー協同組合クーシュペが、2026年の収穫が予想以上に遅れていると発表しました。",
-      "tags": ["ブラジル", "収穫遅延", "市況"],
+      "title": "James Hoffmann×Lucia Solis『Fermentation Project』・同じグアテマラを4通りの発酵で世界同時カッピング(9月)",
+      "description": "James Hoffmann と発酵専門家 Lucia Solis が同じグアテマラ豆を4通りの発酵で処理、9月に世界同時カッピングを開催すると発表",
+      "detail": "豆はアンティグアの Finca San Miguel Urias。①機械脱ミュシラージ ②自然発酵(48h) ③乳酸菌接種(48h) ④酵母接種の4種類で処理。世界中のロースターが同じ豆を各国でローストし、9月上旬にテイスティング(Pre-order 出荷は2026/8/12)。パートナーは Acaia と Slow Pour Supply",
+      "narration": "9月、世界同時カッピング開催です。James Hoffmannが仕掛けるFermentation Project、同じグアテマラの豆を4通りの発酵で飲み比べます。",
+      "tags": ["発酵", "グアテマラ", "JamesHoffmann"],
       "narration_sections": {
-        "hook": "今日のニュースです。ブラジル最大のコーヒー協同組合クーシュペが、2026年の収穫が予想以上に遅れていると発表しました。",
-        "origin": "7月24日時点で全体の58.3%、去年同時期67.1%を下回るペースです。原因はブラジル・ミナスジェライスへの記録的な大雨で、収穫が中断。ICE指定倉庫のアラビカ在庫も289,759袋と、前年比マイナス64%まで急減しました。",
-        "recommend": "USDAは過去最高生産予想を出していますが、目先は上質なロットの供給がタイト。この夏に狙いの豆は早めに確保するのが安全です。"
+        "hook": "9月、世界同時カッピング開催です。James Hoffmannが仕掛けるFermentation Project、同じグアテマラの豆を4通りの発酵で飲み比べます。",
+        "origin": "豆はグアテマラ・アンティグアの単一農園から。監修は発酵専門家Lucia Solis。同じロットを機械脱ミュシラージ、自然発酵、乳酸菌接種、酵母接種の4種類で処理します。他の変数を揃えたので、発酵だけの違いを純粋に比較できる史上初の設計です。",
+        "recommend": "発酵は味の主役か脇役か。9月に世界の焙煎家と同時にカップを傾け、同じ答え合わせができる貴重な機会です。"
       },
       "section_titles": {
-        "hook": "収穫が去年比大幅遅れ",
-        "origin": "ミナス大雨で在庫急減",
-        "recommend": "狙いの豆は早めに確保"
+        "hook": "世界同時カッピング",
+        "origin": "4種の発酵で分岐",
+        "recommend": "9月の同時テイスティング"
       },
       "section_descriptions": {
-        "hook": "ブラジル最大の協同組合クーシュペが2026年収穫の遅延を発表",
-        "origin": "7月24日で58.3%、去年同時期67.1%を下回る",
-        "recommend": "供給タイト継続、上質ロットは早めに確保が安全"
+        "hook": "Hoffmannが仕掛ける発酵プロジェクト",
+        "origin": "同じグアテマラの豆を4通りの発酵で比べる史上初",
+        "recommend": "発酵は主役か脇役か、答え合わせできる好機"
       }
     }
   ]
