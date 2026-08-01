@@ -1,42 +1,41 @@
 {
-  "date": "2026-08-01",
+  "date": "2026-08-02",
   "discovery": {
-    "method": "expert-blog",
-    "description": "James Hoffmann の YouTube / Sprudge / Nucleus / 94 Celsius / La Barba / Rosso / Regalia の pre-order ページをクロスチェックし、Hoffmann×Lucia Solis 主催『The Fermentation Project』(9月世界同時カッピング) を確定。単一グアテマラ豆 (Finca San Miguel Urias, アンティグア) を①機械脱ミュシラージ ②自然発酵 (48h) ③乳酸菌接種 (48h) ④酵母接種の4種類で処理し、世界中のロースターが同じ豆を各国でローストしてテイスティングする史上初の設計。Pre-order 出荷 2026/8/12、テイスティング 9月上旬。土曜のエバーグリーン枠として『今週の高騰ニュース (Cooxupe 収穫遅延・ICE 在庫-64%) の背景にある発酵/精製の科学』に接続する深堀り。前 2 日 (7/31 market-data, 7/30 news-en) を回避、expert-blog は 7/25 (粕谷哲) 以来 7 日空きで多様性 ✓。柱は④焙煎士の一次情報 (Hoffmann / Solis の設計思想) 15% 枠。Primary『家で淹れる趣味層』が味覚の言語化を鍛える絶好の教材。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind 07-31 週次要約と Comunicaffe / StoneX / FoodBusinessMEA の Rabobank commentary、IRI/NOAA 7月 ENSO 予測 を横断確認。①市況ニュースとして『相場が下値要因(供給余剰)と上値要因(天候リスク)の綱引き局面にある』を整理。前 2 日は expert-blog (08-01 Hoffmann) と market-data (07-31 Cooxupe) — 両方回避して news-en (TOP method avg 0.5) を Exploit 80% 側で選択。日曜だが週末エバーグリーン枠を『今週ニュースの背景を俯瞰する市況総括』に転用、Primary『家で淹れる趣味層』の『買い溜めすべきか』判断材料になる。ここ 2 週の市況ネタが上値偏重 (07-28 低在庫 / 07-30 決算 / 07-31 収穫遅延) だったため、反対サイドの視点を挟むバランス補正も兼ねる。",
     "sources": [
-      "https://sprudge.com/roasters-james-hoffmann-wants-you-to-join-his-next-global-coffee-tasting-828680.html",
-      "https://94celcius.com/en/blogs/blog-personnelle/fermentation-project-james-hoffmann-canada",
-      "https://nucleuscoffee.com/en/blogs/cafe/le-projet-de-fermentation-de-james-hoffmann-au-canada",
-      "https://www.glenlyoncoffee.co.uk/products/james-hoffmanns-the-fermentation-project-quartet-box",
-      "https://labarbacoffee.com/products/the-fermentation-project",
-      "https://www.rossocoffeeroasters.com/en-us/products/fermentation-project-with-james-hoffmann-tasting-kit",
-      "https://regaliacoffee.com/products/pre-sale-james-hoffmann-fermentation-project-x-regalia"
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-31-july-2026/",
+      "https://www.comunicaffe.com/rabobank-and-hedgepoint-forecast-record-production-and-a-rebalancing-of-the-market-in-2026-27/",
+      "https://www.stonex.com/en/insights/rabobank-signals-market-shift-as-brazil-comeback-pushes-coffee-into-surplus-cycle/",
+      "https://www.stonex.com/en/insights/rabobank-flags-record-2026-27-coffee-production-as-global-market-braces-for-rebalancing/",
+      "https://www.foodbusinessmea.com/rabobank-forecasts-global-coffee-surplus-as-brazils-record-2026-27-crop-reshapes-market-outlook/",
+      "https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/"
     ],
-    "query": "James Hoffmann Lucia Solis Fermentation Project 2026 Guatemala Finca San Miguel Urias four fermentation methods global tasting September",
-    "freshness_hours": 240
+    "query": "Rabobank 2026/27 arabica surplus 9.5 million bags upgrade NOAA Super El Nino coffee futures Brazil harvest",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "James Hoffmann×Lucia Solis『Fermentation Project』・同じグアテマラを4通りの発酵で世界同時カッピング(9月)",
-      "description": "James Hoffmann と発酵専門家 Lucia Solis が同じグアテマラ豆を4通りの発酵で処理、9月に世界同時カッピングを開催すると発表",
-      "detail": "豆はアンティグアの Finca San Miguel Urias。①機械脱ミュシラージ ②自然発酵(48h) ③乳酸菌接種(48h) ④酵母接種の4種類で処理。世界中のロースターが同じ豆を各国でローストし、9月上旬にテイスティング(Pre-order 出荷は2026/8/12)。パートナーは Acaia と Slow Pour Supply",
-      "narration": "9月、世界同時カッピング開催です。James Hoffmannが仕掛けるFermentation Project、同じグアテマラの豆を4通りの発酵で飲み比べます。",
-      "tags": ["発酵", "グアテマラ", "JamesHoffmann"],
+      "title": "アラビカ相場の綱引き・Rabobank供給余剰950万袋 vs NOAA Super El Niño 63%",
+      "description": "Rabobankは2026/27アラビカ供給余剰を950万袋に上方修正、一方NOAAはSuper El Niño 63%と警告、コーヒー相場は下値と上値の綱引き局面",
+      "detail": "下値はRabobank、2026/27アラビカ供給余剰を950万袋へ上方修正・7月試算から+250万袋。ブラジル生産は前年比14%増の7190万袋、記録的水準。上値はNOAA、11-1月にSuper El Niño 63%と警告、Brazil開花期を襲えば来年の収穫が危うい局面",
+      "narration": "今日のニュース、コーヒー相場に綱引き。Rabobankは供給余剰入りを予測、NOAAはSuper El Niño 63%と警告しています。",
+      "tags": ["アラビカ相場", "Rabobank", "ElNiño"],
       "narration_sections": {
-        "hook": "9月、世界同時カッピング開催です。James Hoffmannが仕掛けるFermentation Project、同じグアテマラの豆を4通りの発酵で飲み比べます。",
-        "origin": "豆はグアテマラ・アンティグアの単一農園から。監修は発酵専門家Lucia Solis。同じロットを機械脱ミュシラージ、自然発酵、乳酸菌接種、酵母接種の4種類で処理します。他の変数を揃えたので、発酵だけの違いを純粋に比較できる史上初の設計です。",
-        "recommend": "発酵は味の主役か脇役か。9月に世界の焙煎家と同時にカップを傾け、同じ答え合わせができる貴重な機会です。"
+        "hook": "今日のニュース、コーヒー相場に綱引き。Rabobankは供給余剰入りを予測、NOAAはSuper El Niño 63%と警告しています。",
+        "origin": "下値はRabobank、2026/27アラビカ供給余剰を950万袋へ上方修正・7月試算から+250万袋。ブラジル生産は+14%の7190万袋。上値はNOAA、11-1月にSuper El Niño 63%と警告、開花期を襲えば来年の収穫が危うい。",
+        "recommend": "焙煎所視点は中長期に余剰入り、短期は天候で乱高下。買い溜めより産地の飲み比べを、OGの入荷はフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "世界同時カッピング",
-        "origin": "4種の発酵で分岐",
-        "recommend": "9月の同時テイスティング"
+        "hook": "アラビカ相場の綱引き",
+        "origin": "余剰予測vs天候",
+        "recommend": "焙煎所からの助言"
       },
       "section_descriptions": {
-        "hook": "Hoffmannが仕掛ける発酵プロジェクト",
-        "origin": "同じグアテマラの豆を4通りの発酵で比べる史上初",
-        "recommend": "発酵は主役か脇役か、答え合わせできる好機"
+        "hook": "供給余剰予測と天候リスク、両サイドの綱引き",
+        "origin": "2026/27アラビカ余剰950万袋の上方修正",
+        "recommend": "中長期は余剰、短期は乱高下、豆選びの助言"
       }
     }
   ]
