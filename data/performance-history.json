@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "f_EDevsFIxg",
-      "videoUrl": "https://youtube.com/shorts/f_EDevsFIxg",
-      "date": "2026-05-03",
-      "title": "【コーヒー豆知識】中国ゼロ関税で日本のエチオピアが値上がりするかも｜2026/05/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "news-en",
-        "description": "Perfect Daily Grind の 5/1 ニュース recap を起点に『China cuts tariffs on Ethiopian coffee imports』を抽出。China Daily / Bastille Post / Capital News / Xinhua 英語版で、5月1日に発効した中国のアフリカ53カ国向けゼロ関税政策と、その中で『Ethiopia → 中国向けコーヒー輸出が年間27%増、2024-25 年度で34,000トン超・2.18億ドル、中国は4位市場』というデータをクロスチェック。日曜日だがエバーグリーン化せず news-en に振った理由は、(a) 政策発効から freshness 約48時間で速報価値が高い、(b) 直近7日柱比率で①市況/③業界が手薄、(c) 日本のスペシャルティはエチオピア依存度が高く Primary ペルソナへの実需直撃という3点。method 連続性は 05-02 expert-blog を挟んだので news-en 復帰でも『直近2日と同じ method を連続で選ばない』に抵触しない。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-          "https://www.bastillepost.com/global/article/5824383-ethiopia-expects-zero-tariff-policy-to-boost-coffee-exports-to-china",
-          "https://global.chinadaily.com.cn/a/202604/22/WS69e87401a310d6866eb44e48.html",
-          "https://www.capitalfm.co.ke/news/2026/04/zero-tariff-policy-to-boost-ethiopian-coffee-exports/",
-          "https://english.news.cn/20260502/9c941b28babb482ea232520b7a14abdb/c.html",
-          "http://www.china.org.cn/2026-05/01/content_118473359.shtml"
-        ],
-        "query": "China zero-tariff Ethiopian coffee May 1 2026 effective; Ethiopia China coffee export 34000 tons 2024 2025; Africa 53 countries duty free policy specialty coffee impact",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 1294,
-        "likes": 5,
-        "comments": 0,
-        "updatedAt": "2026-05-17T00:12:49.803Z"
-      }
-    },
-    {
       "videoId": "G7kXT84hXpY",
       "videoUrl": "https://youtube.com/shorts/G7kXT84hXpY",
       "date": "2026-05-04",
@@ -3160,7 +3115,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3204,7 +3159,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3249,7 +3204,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3296,7 +3251,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3339,7 +3294,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3382,7 +3337,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3426,7 +3381,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3470,7 +3425,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3515,7 +3470,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3561,7 +3516,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
+        "updatedAt": "2026-08-02T01:04:10.659Z"
       }
     },
     {
@@ -3607,19 +3562,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-02T01:04:10.659Z"
+      }
+    },
+    {
+      "videoId": "iGuHm0o30KU",
+      "videoUrl": "https://youtube.com/shorts/iGuHm0o30KU",
+      "date": "2026-08-02",
+      "title": "【コーヒー豆知識】アラビカ相場の綱引き・Rabobank供給余剰950万袋 vs NOAA Super El Niño 63%｜2026/08/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind 07-31 週次要約と Comunicaffe / StoneX / FoodBusinessMEA の Rabobank commentary、IRI/NOAA 7月 ENSO 予測 を横断確認。①市況ニュースとして『相場が下値要因(供給余剰)と上値要因(天候リスク)の綱引き局面にある』を整理。前 2 日は expert-blog (08-01 Hoffmann) と market-data (07-31 Cooxupe) — 両方回避して news-en (TOP method avg 0.5) を Exploit 80% 側で選択。日曜だが週末エバーグリーン枠を『今週ニュースの背景を俯瞰する市況総括』に転用、Primary『家で淹れる趣味層』の『買い溜めすべきか』判断材料になる。ここ 2 週の市況ネタが上値偏重 (07-28 低在庫 / 07-30 決算 / 07-31 収穫遅延) だったため、反対サイドの視点を挟むバランス補正も兼ねる。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/07/coffee-news-recap-31-july-2026/",
+          "https://www.comunicaffe.com/rabobank-and-hedgepoint-forecast-record-production-and-a-rebalancing-of-the-market-in-2026-27/",
+          "https://www.stonex.com/en/insights/rabobank-signals-market-shift-as-brazil-comeback-pushes-coffee-into-surplus-cycle/",
+          "https://www.stonex.com/en/insights/rabobank-flags-record-2026-27-coffee-production-as-global-market-braces-for-rebalancing/",
+          "https://www.foodbusinessmea.com/rabobank-forecasts-global-coffee-surplus-as-brazils-record-2026-27-crop-reshapes-market-outlook/",
+          "https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/"
+        ],
+        "query": "Rabobank 2026/27 arabica surplus 9.5 million bags upgrade NOAA Super El Nino coffee futures Brazil harvest",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-28",
-      "changes": [
-        "standard: 57 avg views (64 videos)",
-        "Day performance: Sun=147, Tue=58, Wed=51, Sat=49, Mon=39, Fri=35, Thu=10"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-06-29",
       "changes": [
@@ -3849,6 +3841,14 @@
       "changes": [
         "standard: 36 avg views (81 videos)",
         "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=23, Wed=7, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-02",
+      "changes": [
+        "standard: 36 avg views (81 videos)",
+        "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=22, Wed=7, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
