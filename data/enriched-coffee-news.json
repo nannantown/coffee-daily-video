@@ -1,41 +1,40 @@
 {
-  "date": "2026-08-03",
+  "date": "2026-08-04",
   "discovery": {
-    "method": "official-src",
-    "description": "India-UK CETA (Comprehensive Economic and Trade Agreement、2026/7/15 発効) と関連する Indian Commerce Ministry / UK DBT の公式発表、および 8/1 実施のインド初のゼロ関税コーヒー出荷 (Kruti Coffee) を報じる印英メディアを横断確認。直近 2 日は news-en (08-02 Rabobank 綱引き) と expert-blog (08-01 Hoffmann Fermentation) → 両方回避、official-src は 07-29 (5 日ぶり) で多様性 ✓。TOP method news-en が塞がる中、公式トリガー × 実際の商取引 (48h 前) という同じ勝ちパターンを official-src で再現。柱バランス面ではここ 2 週で不足していた ②産地 (14 日以上空白のインド) と ③業界 (国際貿易協定) のダブルフィットで、Primary (家で淹れる趣味層) に次に飲む豆の新しい選択肢というアクション導線を渡す。",
+    "method": "market-data",
+    "description": "SCA (Specialty Coffee Association) が 2026 年 7 月に公式発表し、7/31 Perfect Daily Grind 週次 recap の筆頭に上がった 2026 NCDT (National Coffee Data Trends) Specialty Coffee Report を軸に取材。NCA と SCA の共同、Dig Insights 実施の全米代表 1850 人調査。1 日消費率 47%が昨年の記録水準を維持しトラディショナル (42%) を超え続けている。直近 2 日は official-src (08-03 India-UK CETA) / news-en (08-02 Rabobank vs Super El Niño) が使用済 → 両方回避、market-data は 07-31 (4 日ぶり) で多様性 ✓。TOP method news-en が塞がる中、consumer market indicator data として market-data の定義に妥当に収まる次善 Exploit。柱バランス面では ③業界の「需要側の追い風」軸で 14 日重複なし、Primary (家で淹れる趣味層) に「自分の選択は世界的な流れに沿っている」肯定シグナルを渡し OG のスペシャルティ焙煎ポジションを強化。",
     "sources": [
-      "https://www.millenniumpost.in/business/india-uk-ceta-1st-zero-duty-coffee-jewellery-shipments-reach-uk-shores-668480",
-      "https://blitzindiamedia.com/news/india-uk-ceta-first-zero-duty-coffee-export/",
-      "https://www.logisticsinsider.in/india-uk-ceta-delivers-first-zero-duty-shipments-as-jewellery-coffee-reach-britain/",
-      "https://kruticoffee.com/blogs/news/kruti-coffee-odisha-specialty-coffee-koraput",
-      "https://ddnews.gov.in/en/india-ranks-7th-in-global-coffee-production-as-exports-hit-1-29-billion/",
-      "https://www.fas.usda.gov/data/gain-report/2026/05/Coffee%20Annual_New%20Delhi_India_IN2026-0026.pdf"
+      "https://sca.coffee/sca-news/2026-national-coffee-data-trends-report",
+      "https://www.teaandcoffee.net/blog/39649/specialty-coffee-consumption-in-the-us-remains-at-record-highs/",
+      "https://www.comunicaffe.com/nca-survey-consumption-of-specialty-coffee-among-daily-coffee-drinkers-still-outstrips-that-of-traditional-coffee-in-the-u-s/",
+      "https://perfectdailygrind.com/2026/07/coffee-news-recap-31-july-2026/",
+      "https://www.ncausa.org/Research-Trends/Market-Research/NCDT/Specialty-Coffee-Report"
     ],
-    "query": "India UK CETA coffee zero duty August 2026 Kruti Coffee first shipment London cafe Odisha Koraput",
-    "freshness_hours": 48
+    "query": "NCA SCA 2026 NCDT specialty coffee report 47% past-day consumption United States record",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "インドUK関税ゼロ協定CETA発効・8/1にKruti Coffeeが初のインド産コーヒーをロンドン初店舗へ",
-      "description": "7/15発効のインドUK自由貿易協定CETAで99%の関税撤廃、8月1日オディシャ州Kruti Coffeeがロンドン1号店開店に合わせ、コルカタから初のインド産スペシャルティコーヒーを積み出し",
-      "detail": "インドUK包括的経済貿易協定CETAが7/15発効、コーヒーを含む99%の関税撤廃。オディシャ州の Kruti Coffee がロンドン1号店開店に合わせ、コルカタから初のゼロ関税コーヒー出荷。積み出されたのは Koraput 産100%アラビカ。インドは世界7位の生産国 (Brazil, Vietnam, Colombia, Indonesia, Ethiopia, Uganda に次ぐ)。",
-      "narration": "今日のニュース、8月1日にインドから英国へ関税ゼロのコーヒー初出荷が到着、7月15日発効のCETA自由貿易協定の初弾です。",
-      "tags": ["インド産コーヒー", "India-UK CETA", "Koraput"],
+      "title": "米NCDT 2026・スペシャルティ1日消費率47%が過去最高を維持、25-39歳の69%が週1回以上",
+      "description": "NCA全米コーヒー協会が7月に発表した2026年NCDT Specialty Coffee Report、1850人代表調査でスペシャルティ1日消費率が47%と昨年の記録水準を維持、ふつうのコーヒー42%を上回り続けている",
+      "detail": "NCAとSCA共催の2026年NCDT Specialty Coffee Report、Dig Insights実施の全米1850人代表調査。1日消費率スペシャルティ47%、ふつうのコーヒー42%、昨年に続き逆転を維持。若年層25-39歳は69%が週1回以上スペシャルティを飲むと回答し全世代でトップ。スペシャルティ愛飲者は家より店で飲む比率が高く、体験としての価値が支持されている。",
+      "narration": "アメリカで、スペシャルティコーヒーの1日消費率が2026年も47%と過去最高水準を維持。昨年に続き、ふつうのコーヒー42%を上回りました。",
+      "tags": ["スペシャルティコーヒー", "米国市場", "消費トレンド"],
       "narration_sections": {
-        "hook": "今日のニュース、8月1日にインドから英国へ関税ゼロのコーヒー初出荷が到着、7月15日発効のCETA自由貿易協定の初弾です。",
-        "origin": "インドUK包括的経済貿易協定CETAが7月15日発効、コーヒー含む99%の関税を撤廃。オディシャ州のKruti Coffeeがロンドン1号店開店に合わせ、コルカタから初のインド産スペシャルティを積み出し、コラプト産アラビカが英国棚に並びました。",
-        "recommend": "インドは世界7位の生産国、コラプトやカルナータカの華やかで丸みある個性は豆選びの新しい選択肢に、OGの入荷はフォローしてお待ちください。"
+        "hook": "アメリカで、スペシャルティコーヒーの1日消費率が2026年も47%と過去最高水準を維持。昨年に続き、ふつうのコーヒー42%を上回りました。",
+        "origin": "全米コーヒー協会NCAが7月末に発表した2026年NCDT調査で、25-39歳の若い層は69%が週1回以上スペシャルティを飲むと回答し全世代でトップ。1850人代表調査で、家より店で飲む比率も高く、体験としての価値が支持されています。",
+        "recommend": "日本もじきに追随するはず。プロが焙煎した豆を選んで、家で丁寧に淹れる流れは確実に強まっています。今日の一杯からぜひ。"
       },
       "section_titles": {
-        "hook": "インド初のUK出荷",
-        "origin": "CETA発効99%撤廃",
-        "recommend": "産地選びの新選択"
+        "hook": "米スペシャルティ47%",
+        "origin": "若年層69%が牽引",
+        "recommend": "日本もこの波を捉える"
       },
       "section_descriptions": {
-        "hook": "8月1日、CETA初弾のインド産コーヒーが英国到着",
-        "origin": "オディシャKrutiがロンドン1号店へコルカタから積出",
-        "recommend": "インドは世界7位の生産国、豆選びの新しい選択肢に"
+        "hook": "アメリカ市場で2年連続の逆転を維持しています",
+        "origin": "1850人調査で見えた若年層の飲用実態を紹介",
+        "recommend": "家で飲む一杯を格上げする豆選びのヒント"
       }
     }
   ]
