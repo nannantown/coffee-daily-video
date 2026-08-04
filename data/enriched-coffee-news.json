@@ -1,40 +1,42 @@
 {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "discovery": {
-    "method": "market-data",
-    "description": "SCA (Specialty Coffee Association) が 2026 年 7 月に公式発表し、7/31 Perfect Daily Grind 週次 recap の筆頭に上がった 2026 NCDT (National Coffee Data Trends) Specialty Coffee Report を軸に取材。NCA と SCA の共同、Dig Insights 実施の全米代表 1850 人調査。1 日消費率 47%が昨年の記録水準を維持しトラディショナル (42%) を超え続けている。直近 2 日は official-src (08-03 India-UK CETA) / news-en (08-02 Rabobank vs Super El Niño) が使用済 → 両方回避、market-data は 07-31 (4 日ぶり) で多様性 ✓。TOP method news-en が塞がる中、consumer market indicator data として market-data の定義に妥当に収まる次善 Exploit。柱バランス面では ③業界の「需要側の追い風」軸で 14 日重複なし、Primary (家で淹れる趣味層) に「自分の選択は世界的な流れに沿っている」肯定シグナルを渡し OG のスペシャルティ焙煎ポジションを強化。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind / World Coffee Portal / Global Coffee Report 系の週次ニュースを英語で走査。Fairtrade International が 8/3 に発表したコーヒー最低価格の改定 (washed Arabica $1.80→$2.00, 3年ぶり) を発見。相場高騰下でも農家の底値保証を強化する構造改革で、Primary 趣味層が『豆を選ぶ判断軸=認証×価格』に直結する。認証系の話題は 5/6 Lavazza Rainforest Alliance 以来ご無沙汰で新規性◎。直近 2 日は market-data (08-04) / official-src (08-03) が使用済 → 両方回避、news-en は 08-02 (3 日ぶり) で多様性 ✓。柱バランスは ③業界・ビジネス (認証系) × 微 ①市況で 14 日重複なし。",
     "sources": [
-      "https://sca.coffee/sca-news/2026-national-coffee-data-trends-report",
-      "https://www.teaandcoffee.net/blog/39649/specialty-coffee-consumption-in-the-us-remains-at-record-highs/",
-      "https://www.comunicaffe.com/nca-survey-consumption-of-specialty-coffee-among-daily-coffee-drinkers-still-outstrips-that-of-traditional-coffee-in-the-u-s/",
-      "https://perfectdailygrind.com/2026/07/coffee-news-recap-31-july-2026/",
-      "https://www.ncausa.org/Research-Trends/Market-Research/NCDT/Specialty-Coffee-Report"
+      "https://www.comunicaffe.com/fairtrade-increases-minimum-coffee-prices-december-2026",
+      "https://www.gcrmag.com/fairtrades-minimum-coffee-prices-to-increase",
+      "https://coffeetalk.com/daily-dose/top-news/07-2026/110592/",
+      "https://www.3blmedia.com/news/fairtrade-strengthens-safety-net-coffee-farmers",
+      "https://sucafina.com/apac/news/understanding-fairtrade-s-new-minimum-coffee-prices",
+      "https://finance.yahoo.com/markets/commodities/articles/fairtrade-international-updates-minimum-prices-142656567.html",
+      "https://www.foodbusinessmea.com/fairtrade-international-raises-minimum-coffee-prices-for-arabica-and-robusta-beans/"
     ],
-    "query": "NCA SCA 2026 NCDT specialty coffee report 47% past-day consumption United States record",
-    "freshness_hours": 96
+    "query": "Fairtrade International arabica minimum price 2026 $2.00 washed robusta December 1 announcement 11 percent increase",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "米NCDT 2026・スペシャルティ1日消費率47%が過去最高を維持、25-39歳の69%が週1回以上",
-      "description": "NCA全米コーヒー協会が7月に発表した2026年NCDT Specialty Coffee Report、1850人代表調査でスペシャルティ1日消費率が47%と昨年の記録水準を維持、ふつうのコーヒー42%を上回り続けている",
-      "detail": "NCAとSCA共催の2026年NCDT Specialty Coffee Report、Dig Insights実施の全米1850人代表調査。1日消費率スペシャルティ47%、ふつうのコーヒー42%、昨年に続き逆転を維持。若年層25-39歳は69%が週1回以上スペシャルティを飲むと回答し全世代でトップ。スペシャルティ愛飲者は家より店で飲む比率が高く、体験としての価値が支持されている。",
-      "narration": "アメリカで、スペシャルティコーヒーの1日消費率が2026年も47%と過去最高水準を維持。昨年に続き、ふつうのコーヒー42%を上回りました。",
-      "tags": ["スペシャルティコーヒー", "米国市場", "消費トレンド"],
+      "title": "フェアトレード最低価格が12月から3年ぶり引き上げ・洗いアラビカ11%UPで1ポンド2ドル、農家の底値保証を強化",
+      "description": "フェアトレードのコーヒー最低価格が、12月から3年ぶりに11%引き上げられます。",
+      "detail": "8月3日発表、12月1日からの新規契約が対象。washed アラビカが1ポンド1.80→2.00ドル、robusta も1.20→1.30ドル。プレミアム0.20ドルと有機差額0.40ドルは据え置きで、価格の予測可能性も両立。",
+      "narration": "今日のニュース、知ってました? フェアトレードのコーヒー最低価格が、12月から3年ぶりに引き上げ。洗いアラビカは1ポンド2ドルへ、11%アップです。",
+      "tags": ["ニュース", "認証", "サステナビリティ"],
       "narration_sections": {
-        "hook": "アメリカで、スペシャルティコーヒーの1日消費率が2026年も47%と過去最高水準を維持。昨年に続き、ふつうのコーヒー42%を上回りました。",
-        "origin": "全米コーヒー協会NCAが7月末に発表した2026年NCDT調査で、25-39歳の若い層は69%が週1回以上スペシャルティを飲むと回答し全世代でトップ。1850人代表調査で、家より店で飲む比率も高く、体験としての価値が支持されています。",
-        "recommend": "日本もじきに追随するはず。プロが焙煎した豆を選んで、家で丁寧に淹れる流れは確実に強まっています。今日の一杯からぜひ。"
+        "hook": "今日のニュース、知ってました? フェアトレードのコーヒー最低価格が、12月から3年ぶりに引き上げ。洗いアラビカは1ポンド2ドルへ、11%アップです。",
+        "origin": "発表は8月3日、12月からの新規契約が対象です。洗いアラビカが1ポンド1.80→2.00ドル、ロブスタも1.20→1.30ドルへ、11%と8%の引き上げ。相場高騰が続く中でも生産者の生活保障を強めるため、今後は4年ごとに全面見直しをする方針です。",
+        "recommend": "認証マークを覚えておくと、次に豆を選ぶとき『農家の底値を守った1杯』が見えてきます。ラベルの意味を確認してみてください。"
       },
       "section_titles": {
-        "hook": "米スペシャルティ47%",
-        "origin": "若年層69%が牽引",
-        "recommend": "日本もこの波を捉える"
+        "hook": "最低価格11%UP",
+        "origin": "12月改定の中身",
+        "recommend": "認証ラベルを見よう"
       },
       "section_descriptions": {
-        "hook": "アメリカ市場で2年連続の逆転を維持しています",
-        "origin": "1850人調査で見えた若年層の飲用実態を紹介",
-        "recommend": "家で飲む一杯を格上げする豆選びのヒント"
+        "hook": "フェアトレード、12月から3年ぶり値上げ",
+        "origin": "洗いアラビカ2ドル、ロブスタ1.30ドルへ",
+        "recommend": "農家に確実に届く価格を保証、認証を意識してみましょう"
       }
     }
   ]
