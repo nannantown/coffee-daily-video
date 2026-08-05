@@ -1,42 +1,41 @@
 {
-  "date": "2026-08-05",
+  "date": "2026-08-06",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind / World Coffee Portal / Global Coffee Report 系の週次ニュースを英語で走査。Fairtrade International が 8/3 に発表したコーヒー最低価格の改定 (washed Arabica $1.80→$2.00, 3年ぶり) を発見。相場高騰下でも農家の底値保証を強化する構造改革で、Primary 趣味層が『豆を選ぶ判断軸=認証×価格』に直結する。認証系の話題は 5/6 Lavazza Rainforest Alliance 以来ご無沙汰で新規性◎。直近 2 日は market-data (08-04) / official-src (08-03) が使用済 → 両方回避、news-en は 08-02 (3 日ぶり) で多様性 ✓。柱バランスは ③業界・ビジネス (認証系) × 微 ①市況で 14 日重複なし。",
+    "method": "official-src",
+    "description": "エチオピア 25/26 コーヒー収穫の一次レポート(Algrano / Nordic Approach / Sucafina / Trabocca / Efico など specialty green trader の origin リポート)を英語で横断。全社共通の観測として、チェリー価格が去年 $0.45/kg → 今シーズン $1.51/kg(現地 220-250 ETB/kg)まで約3倍高騰、原因は Ethiopian birr の切り下げ・世界相場高・人件費上昇。ウォッシングステーションが仕入資金を回せず、農家が自宅で乾かすナチュラルへシフトしたため、生産量は USDA FAS 予測で過去最高の 1156 万袋なのに、ロースターが看板に据えてきた洗いイルガチェフェ・グジは大幅減の見込み。Primary『家で淹れる趣味層』が特に指名で買う washed Yirgacheffe/Guji の入手性と価格に直結する話題。直近 2 日は news-en (08-05) / market-data (08-04) が使用済のため両方回避、official-src は 08-03 以来 3 日ぶりで多様性 ✓。柱バランスは①市況ニュース連発だった直近を、②産地・ハーベスト(前回 07-31 Brazil から6日ぶり)へ振替。",
     "sources": [
-      "https://www.comunicaffe.com/fairtrade-increases-minimum-coffee-prices-december-2026",
-      "https://www.gcrmag.com/fairtrades-minimum-coffee-prices-to-increase",
-      "https://coffeetalk.com/daily-dose/top-news/07-2026/110592/",
-      "https://www.3blmedia.com/news/fairtrade-strengthens-safety-net-coffee-farmers",
-      "https://sucafina.com/apac/news/understanding-fairtrade-s-new-minimum-coffee-prices",
-      "https://finance.yahoo.com/markets/commodities/articles/fairtrade-international-updates-minimum-prices-142656567.html",
-      "https://www.foodbusinessmea.com/fairtrade-international-raises-minimum-coffee-prices-for-arabica-and-robusta-beans/"
+      "https://algrano.com/learn/ethiopia-coffee-harvest-report-2026",
+      "https://www.nordicapproach.no/post/ethiopia-coffee-harvest-2026",
+      "https://sucafina.com/na/news/ethiopia-2025-26-harvest-update",
+      "https://www.trabocca.com/coffee-knowledge/ethiopian-coffee/ethiopia-harvest-25-26/",
+      "https://efico.com/press-cuprima/ethiopia-harvest-25-26-promising-quality/",
+      "https://www.ethiocoffee.co/insights/rising-ethiopian-coffee-prices-explained"
     ],
-    "query": "Fairtrade International arabica minimum price 2026 $2.00 washed robusta December 1 announcement 11 percent increase",
-    "freshness_hours": 48
+    "query": "Ethiopia coffee harvest 2025/26 cherry price triple washed shortage Yirgacheffe Guji naturals shift birr devaluation",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "フェアトレード最低価格が12月から3年ぶり引き上げ・洗いアラビカ11%UPで1ポンド2ドル、農家の底値保証を強化",
-      "description": "フェアトレードのコーヒー最低価格が、12月から3年ぶりに11%引き上げられます。",
-      "detail": "8月3日発表、12月1日からの新規契約が対象。washed アラビカが1ポンド1.80→2.00ドル、robusta も1.20→1.30ドル。プレミアム0.20ドルと有機差額0.40ドルは据え置きで、価格の予測可能性も両立。",
-      "narration": "今日のニュース、知ってました? フェアトレードのコーヒー最低価格が、12月から3年ぶりに引き上げ。洗いアラビカは1ポンド2ドルへ、11%アップです。",
-      "tags": ["ニュース", "認証", "サステナビリティ"],
+      "title": "エチオピア25/26シーズン・洗いイルガチェフェ激減の見通し、チェリー価格3倍で農家が自宅ナチュラルへ移行",
+      "description": "洗いのイルガチェフェが今シーズン激減する見通し。原因はチェリー価格3倍高騰で農家が自宅乾燥へ移ったことです。",
+      "detail": "25/26のチェリーは1キロ0.45ドルから1.51ドルへ3倍高騰。ビル通貨切り下げと世界相場高、人件費増が理由。洗い場は資金不足で農家は自宅ナチュラルへ移行し、生産は過去最高1156万袋でも、洗いイルガチェフェ・グジは供給激減の見込みです。",
+      "narration": "今シーズン、洗いのイルガチェフェが激減する見通しです。エチオピアでチェリー価格が3倍に高騰、農家が自宅で乾かし始めたからです。",
+      "tags": ["ニュース", "エチオピア", "産地"],
       "narration_sections": {
-        "hook": "今日のニュース、知ってました? フェアトレードのコーヒー最低価格が、12月から3年ぶりに引き上げ。洗いアラビカは1ポンド2ドルへ、11%アップです。",
-        "origin": "発表は8月3日、12月からの新規契約が対象です。洗いアラビカが1ポンド1.80→2.00ドル、ロブスタも1.20→1.30ドルへ、11%と8%の引き上げ。相場高騰が続く中でも生産者の生活保障を強めるため、今後は4年ごとに全面見直しをする方針です。",
-        "recommend": "認証マークを覚えておくと、次に豆を選ぶとき『農家の底値を守った1杯』が見えてきます。ラベルの意味を確認してみてください。"
+        "hook": "今シーズン、洗いのイルガチェフェが激減する見通しです。エチオピアでチェリー価格が3倍に高騰、農家が自宅で乾かし始めたからです。",
+        "origin": "25/26のチェリーは1キロ0.45ドルから1.51ドル、3倍高騰。通貨切り下げと相場高、人件費増が重なりました。洗い場は資金不足で、農家は自宅ナチュラルへ移行。生産は過去最高の1156万袋ですが、洗いイルガチェフェとグジは激減の見込みです。",
+        "recommend": "洗いのエチオピアがお好きな方は早めの購入がおすすめ。OGも入荷情報を発信します。EC準備中、ぜひフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "最低価格11%UP",
-        "origin": "12月改定の中身",
-        "recommend": "認証ラベルを見よう"
+        "hook": "洗いエチオピア激減",
+        "origin": "チェリー価格3倍",
+        "recommend": "早めの購入がカギ"
       },
       "section_descriptions": {
-        "hook": "フェアトレード、12月から3年ぶり値上げ",
-        "origin": "洗いアラビカ2ドル、ロブスタ1.30ドルへ",
-        "recommend": "農家に確実に届く価格を保証、認証を意識してみましょう"
+        "hook": "25/26シーズン、洗いのイルガチェフェが激減の見通し",
+        "origin": "通貨切り下げと相場高、人件費増でチェリー価格3倍高騰",
+        "recommend": "OGも入荷情報を発信、EC準備中でフォローお待ちください"
       }
     }
   ]
