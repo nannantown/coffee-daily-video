@@ -2,96 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "xnrTn6MhO0Y",
-      "videoUrl": "https://youtube.com/shorts/xnrTn6MhO0Y",
-      "date": "2026-05-05",
-      "title": "【コーヒー豆知識】米国でイエメン式カフェが急増、発祥地が逆輸入｜2026/05/05 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "social-en",
-        "description": "コーヒー発祥地イエメンのカフェ文化が米国で逆輸入ブームを起こしているという話題が、AP系報道(Daily Journal/Washington Times)を起点にDaily Coffee News週次レcap、Reddit r/Coffeeや英語圏Xでも話題化。Technomicの飲食店業界調査を一次データに取り、新method社会的ディスカバリーをExploreとして検証。",
-        "sources": [
-          "https://dailyjournal.net/2026/05/02/yemen-introduced-the-world-to-coffee-now-its-coffeehouse-culture-is-booming-in-the-us/",
-          "https://www.washingtontimes.com/news/2026/may/2/yemen-coffeehouse-culture-booming-us/",
-          "https://dailycoffeenews.com/2026/05/01/weekly-coffee-news-yemeni-coffee-shop-boom-no-tip-reversal/",
-          "https://wtop.com/fashion/2026/05/yemen-introduced-the-world-to-coffee-now-its-coffeehouse-culture-is-booming-in-the-us/"
-        ],
-        "query": "Yemeni coffee shop boom US Technomic 30 brands 50% growth Ramadan late night",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 269,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-19T01:28:49.768Z"
-      }
-    },
-    {
-      "videoId": "pyfbWjA44-c",
-      "videoUrl": "https://youtube.com/shorts/pyfbWjA44-c",
-      "date": "2026-05-06",
-      "title": "【コーヒー豆知識】ラバッツァが業界初の再生農業認証コーヒーを発表、調達先はホンジュラス｜2026/05/06 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 56,
-      "discovery": {
-        "method": "news-en",
-        "description": "Perfect Daily Grind 5月1日 News Recap で挙がった Lavazza × Rainforest Alliance の業界初『再生農業』認証コーヒー発表(4月30日)を起点に、Rainforest Alliance 公式プレスリリース / Tea & Coffee Trade Journal / Comunicaffe / Global Coffee Report / CoffeeTalk で発表内容をクロスチェック。さらに USDA Foreign Agricultural Service の Honduras Coffee Annual と StoneX 解説で、調達先ホンジュラスの2025/26年産5.8百万袋予想・パライネマ品種普及・面積+3.3%の背景データを補強。直近2日(5/4 news-en→5/5 social-en)を挟んだので news-en 復帰可。Wed=平日ニュース起点で③業界×②産地のハイブリッド、Primary 趣味層が買う豆の判断軸『産地×品種×認証』を1本で繋ぐ角度。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-          "https://www.rainforest-alliance.org/press-releases/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
-          "https://www.teaandcoffee.net/news/39217/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee/",
-          "https://www.comunicaffe.com/lavazza-launches-new-rainforest-alliance-certified-regenerative-coffee-la-reserva-de-tierra",
-          "https://www.gcrmag.com/rainforest-alliance-welcomes-lavazza-release",
-          "https://coffeetalk.com/daily-dose/top-news/04-2026/109930/",
-          "https://www.stonex.com/en/market-intelligence/usda-attache-honduras-2025-2026-coffee-crop-pegged-at-5-8-millio/",
-          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Tegucigalpa_Honduras_HO2025-0002.pdf"
-        ],
-        "query": "Lavazza Rainforest Alliance Regenerative Agriculture La Reserva de Tierra Selection April 30 2026; Honduras coffee 2025/26 5.8 million bags Parainema rust resistant variety USDA attache",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 7,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-20T01:30:14.465Z"
-      }
-    },
-    {
       "videoId": "LvjRhqI0Khg",
       "videoUrl": "https://youtube.com/shorts/LvjRhqI0Khg",
       "date": "2026-05-07",
@@ -3208,7 +3118,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3251,7 +3161,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3294,7 +3204,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3338,7 +3248,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3382,7 +3292,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3427,7 +3337,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3473,7 +3383,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3519,7 +3429,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3564,7 +3474,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-03T01:03:34.470Z"
+        "updatedAt": "2026-08-05T00:53:11.243Z"
       }
     },
     {
@@ -3609,19 +3519,57 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-05T00:53:11.243Z"
+      }
+    },
+    {
+      "videoId": "mduzmYNyPEQ",
+      "videoUrl": "https://youtube.com/shorts/mduzmYNyPEQ",
+      "date": "2026-08-05",
+      "title": "【コーヒー豆知識】フェアトレード最低価格が12月から3年ぶり引き上げ・洗いアラビカ11%UPで1ポンド2ドル、農家の底値保証を強化｜2026/08/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind / World Coffee Portal / Global Coffee Report 系の週次ニュースを英語で走査。Fairtrade International が 8/3 に発表したコーヒー最低価格の改定 (washed Arabica $1.80→$2.00, 3年ぶり) を発見。相場高騰下でも農家の底値保証を強化する構造改革で、Primary 趣味層が『豆を選ぶ判断軸=認証×価格』に直結する。認証系の話題は 5/6 Lavazza Rainforest Alliance 以来ご無沙汰で新規性◎。直近 2 日は market-data (08-04) / official-src (08-03) が使用済 → 両方回避、news-en は 08-02 (3 日ぶり) で多様性 ✓。柱バランスは ③業界・ビジネス (認証系) × 微 ①市況で 14 日重複なし。",
+        "sources": [
+          "https://www.comunicaffe.com/fairtrade-increases-minimum-coffee-prices-december-2026",
+          "https://www.gcrmag.com/fairtrades-minimum-coffee-prices-to-increase",
+          "https://coffeetalk.com/daily-dose/top-news/07-2026/110592/",
+          "https://www.3blmedia.com/news/fairtrade-strengthens-safety-net-coffee-farmers",
+          "https://sucafina.com/apac/news/understanding-fairtrade-s-new-minimum-coffee-prices",
+          "https://finance.yahoo.com/markets/commodities/articles/fairtrade-international-updates-minimum-prices-142656567.html",
+          "https://www.foodbusinessmea.com/fairtrade-international-raises-minimum-coffee-prices-for-arabica-and-robusta-beans/"
+        ],
+        "query": "Fairtrade International arabica minimum price 2026 $2.00 washed robusta December 1 announcement 11 percent increase",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-06-30",
-      "changes": [
-        "standard: 56 avg views (66 videos)",
-        "Day performance: Sun=134, Tue=58, Sat=52, Wed=51, Mon=36, Fri=36, Thu=10"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-01",
       "changes": [
@@ -3851,6 +3799,14 @@
       "changes": [
         "standard: 20 avg views (81 videos)",
         "Day performance: Sat=39, Tue=29, Mon=25, Fri=22, Sun=20, Wed=7, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-05",
+      "changes": [
+        "standard: 17 avg views (81 videos)",
+        "Day performance: Sat=39, Tue=29, Fri=22, Sun=20, Mon=9, Wed=7, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
