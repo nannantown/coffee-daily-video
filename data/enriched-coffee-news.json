@@ -1,41 +1,40 @@
 {
-  "date": "2026-08-06",
+  "date": "2026-08-07",
   "discovery": {
-    "method": "official-src",
-    "description": "エチオピア 25/26 コーヒー収穫の一次レポート(Algrano / Nordic Approach / Sucafina / Trabocca / Efico など specialty green trader の origin リポート)を英語で横断。全社共通の観測として、チェリー価格が去年 $0.45/kg → 今シーズン $1.51/kg(現地 220-250 ETB/kg)まで約3倍高騰、原因は Ethiopian birr の切り下げ・世界相場高・人件費上昇。ウォッシングステーションが仕入資金を回せず、農家が自宅で乾かすナチュラルへシフトしたため、生産量は USDA FAS 予測で過去最高の 1156 万袋なのに、ロースターが看板に据えてきた洗いイルガチェフェ・グジは大幅減の見込み。Primary『家で淹れる趣味層』が特に指名で買う washed Yirgacheffe/Guji の入手性と価格に直結する話題。直近 2 日は news-en (08-05) / market-data (08-04) が使用済のため両方回避、official-src は 08-03 以来 3 日ぶりで多様性 ✓。柱バランスは①市況ニュース連発だった直近を、②産地・ハーベスト(前回 07-31 Brazil から6日ぶり)へ振替。",
+    "method": "market-data",
+    "description": "ベトナム政府統計総局(GSO)が8/3公表した1-7月コーヒー輸出統計(Business Recorder / Comunicaffe / VnExpress で英語横断)を出発点に、Hedgepoint Global Markets の2026/27サープラス予想 9.9→8.2百万袋への下方修正、ICEアラビカ9月限8/4=324.10c・8/5=326.90cの上昇と併読して整合性を確認。ベトナムは1-7月輸出量131万トン(+21.1% YoY)なのに売上げは54.5億ドル(-11.2% YoY)、原因は2025年のロブスタ相場ピーク後の単価反落。世界2位の生産国かつロブスタ95%のベトナム動向はエスプレッソ・インスタント原料単価、ひいてはスペシャルティアラビカ相場との綱引きにも波及。直近2日は 8/5 news-en / 8/6 official-src が使用済みのため両方回避、市況統計の一次データを扱う market-data (前回8/4から3日空き) を選択。柱バランスは①市況ニュース連発(直近14日で6件)を、②産地・ハーベスト(前回8/6 Ethiopia、今回はベトナム視点)に振替。Primary『家で淹れる趣味層』が相場感覚を養える数字ドリブンな内容。",
     "sources": [
-      "https://algrano.com/learn/ethiopia-coffee-harvest-report-2026",
-      "https://www.nordicapproach.no/post/ethiopia-coffee-harvest-2026",
-      "https://sucafina.com/na/news/ethiopia-2025-26-harvest-update",
-      "https://www.trabocca.com/coffee-knowledge/ethiopian-coffee/ethiopia-harvest-25-26/",
-      "https://efico.com/press-cuprima/ethiopia-harvest-25-26-promising-quality/",
-      "https://www.ethiocoffee.co/insights/rising-ethiopian-coffee-prices-explained"
+      "https://www.brecorder.com/news/40433060/vietnam-jan-july-coffee-exports-up-by-211-to-131mn-t-stats-office-says",
+      "https://www.comunicaffe.com/coffee-markets-futures-prices-went-haywire-in-july-the-outlook-for-august-is-uncertain/",
+      "https://e.vnexpress.net/news/business/economy/coffee-exports-reach-4-78b-in-h1-5094618.html",
+      "https://english.vov.vn/en/economy/vietnam-cements-status-as-worlds-no2-coffee-producer-robusta-powerhouse-post1291673.vov",
+      "https://www.brecorder.com/news/40428165/vietnam-h1-coffee-exports-up-97-yryr-to-11-million-t-government-says"
     ],
-    "query": "Ethiopia coffee harvest 2025/26 cherry price triple washed shortage Yirgacheffe Guji naturals shift birr devaluation",
-    "freshness_hours": 72
+    "query": "Vietnam Jan-July 2026 coffee exports 1.31 million tonnes 21.1% revenue 5.45 billion -11.2% robusta price GSO statistics office; Hedgepoint 2026/27 surplus 9.9 to 8.2 million bags cut; ICE arabica September August 4 5 2026 close 324 326 cents",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "エチオピア25/26シーズン・洗いイルガチェフェ激減の見通し、チェリー価格3倍で農家が自宅ナチュラルへ移行",
-      "description": "洗いのイルガチェフェが今シーズン激減する見通し。原因はチェリー価格3倍高騰で農家が自宅乾燥へ移ったことです。",
-      "detail": "25/26のチェリーは1キロ0.45ドルから1.51ドルへ3倍高騰。ビル通貨切り下げと世界相場高、人件費増が理由。洗い場は資金不足で農家は自宅ナチュラルへ移行し、生産は過去最高1156万袋でも、洗いイルガチェフェ・グジは供給激減の見込みです。",
-      "narration": "今シーズン、洗いのイルガチェフェが激減する見通しです。エチオピアでチェリー価格が3倍に高騰、農家が自宅で乾かし始めたからです。",
-      "tags": ["ニュース", "エチオピア", "産地"],
+      "title": "ベトナム1-7月コーヒー輸出量+21%なのに収益-11%、2025ロブスタ相場ピーク剥落で豊作と価格反落が同時進行",
+      "description": "世界2位のコーヒー生産国ベトナム、輸出量は21%増なのに収益は11%減の逆転現象が起きています。",
+      "detail": "政府発表で1-7月の輸出は131万トン、前年比21%増。一方で売上げは54.5億ドル、11%減です。理由は2025年に高騰したロブスタ相場が落ち着き、単価が下がったから。ベトナムは世界2位でロブスタが95%を占めます。豊作と価格反落が同時進行しています。",
+      "narration": "今日のニュース。世界2位のコーヒー生産国ベトナム、1-7月の輸出量は去年比21%増なのに、収益は11%減という不思議な現象が起きています。",
+      "tags": ["ニュース", "ベトナム", "相場"],
       "narration_sections": {
-        "hook": "今シーズン、洗いのイルガチェフェが激減する見通しです。エチオピアでチェリー価格が3倍に高騰、農家が自宅で乾かし始めたからです。",
-        "origin": "25/26のチェリーは1キロ0.45ドルから1.51ドル、3倍高騰。通貨切り下げと相場高、人件費増が重なりました。洗い場は資金不足で、農家は自宅ナチュラルへ移行。生産は過去最高の1156万袋ですが、洗いイルガチェフェとグジは激減の見込みです。",
-        "recommend": "洗いのエチオピアがお好きな方は早めの購入がおすすめ。OGも入荷情報を発信します。EC準備中、ぜひフォローしてお待ちください。"
+        "hook": "今日のニュース。世界2位のコーヒー生産国ベトナム、1-7月の輸出量は去年比21%増なのに、収益は11%減という不思議な現象が起きています。",
+        "origin": "政府発表で1-7月の輸出は131万トン、前年比21%増。一方で売上げは54.5億ドル、11%減です。理由は2025年に高騰したロブスタ相場が落ち着き、単価が下がったから。ベトナムは世界2位でロブスタが95%を占めます。豊作と価格反落が同時進行しています。",
+        "recommend": "単価下落分は焙煎所仕入れにも回りますが、スペシャルティは別トラック。OGは相場動向を発信、EC準備中、フォローお待ちください。"
       },
       "section_titles": {
-        "hook": "洗いエチオピア激減",
-        "origin": "チェリー価格3倍",
-        "recommend": "早めの購入がカギ"
+        "hook": "ベトナム輸出の異変",
+        "origin": "ロブスタ相場が反落",
+        "recommend": "相場の行方に注目"
       },
       "section_descriptions": {
-        "hook": "25/26シーズン、洗いのイルガチェフェが激減の見通し",
-        "origin": "通貨切り下げと相場高、人件費増でチェリー価格3倍高騰",
-        "recommend": "OGも入荷情報を発信、EC準備中でフォローお待ちください"
+        "hook": "世界2位ベトナム、輸出量+21%だが収益は11%減",
+        "origin": "2025ロブスタ相場ピーク後の単価下落が原因",
+        "recommend": "単価下落は焙煎所仕入れにも波及、動向注視"
       }
     }
   ]
