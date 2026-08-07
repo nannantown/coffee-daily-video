@@ -2,96 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "LvjRhqI0Khg",
-      "videoUrl": "https://youtube.com/shorts/LvjRhqI0Khg",
-      "date": "2026-05-07",
-      "title": "【コーヒー豆知識】ブラジル新クロップ過去最高、輸出回復はConilon5月・Arabica7月から｜2026/05/07 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "official-src",
-        "description": "Perfect Daily Grind 5月1日 News Recap を起点に、Cecafé(ブラジルコーヒー輸出協会)会長の最新コメント・MercoPress(Q1輸出-21%)・USDA FAS の Coffee: World Markets and Trade(2025/26世界生産178.8M袋過去最高、世界在庫5年連続減)を一次情報として確認。Conab の2026/27ブラジル新クロップ予測71.4M袋(+11.5%)を中心に、Cecafé会長 Márcio Ferreira の『Conilonは5月、Arabicaは7月の新クロップから本格的に輸出回復』見通しで季節性ストーリーを構築。直近4日(5/3 news-en, 5/4 news-en, 5/5 social-en, 5/6 news-en)で news-en が3回入り過密だったので、TOP method の official-src(B Corp 270 views 実績)を Exploit。柱は直近過密な③業界から空きの②産地ハーベストへ振り替え、ブラジル豊作期×輸出回復タイミングという行動指針を Primary 趣味層に提示。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-1-may-2026/",
-          "https://en.mercopress.com/2026/04/14/brazil-coffee-exports-fall-21-in-q1-despite-record-crop-forecast",
-          "https://www.cecafe.com.br/en/publications/monthly-exports-report/",
-          "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/",
-          "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
-          "https://www.fas.usda.gov/data/coffee-world-markets-and-trade-12182026"
-        ],
-        "query": "Cecafe Brazil Q1 2026 exports recovery Conilon May Arabica July; Conab Brazil 2026/27 record crop 71.4 million bags +11.5%; USDA world coffee 2025/26 178.8 million bags record stocks decline",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-21T01:30:50.391Z"
-      }
-    },
-    {
-      "videoId": "cA085J85rSU",
-      "videoUrl": "https://youtube.com/shorts/cA085J85rSU",
-      "date": "2026-05-08",
-      "title": "【コーヒー豆知識】コーヒーが体にいい理由がついに分子レベルで判明、デカフェでも同じ効果｜2026/05/08 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "social-en",
-        "description": "Reddit r/Coffee と r/decaf、X コーヒー界隈で『コーヒーが体に良い理由が分子レベルで判明』として拡散中の Texas A&M 大学 NR4A1 受容体研究を起点に、Daily Coffee News (5/5 報道) と Texas A&M Stories (4/29 公式)、Sci.News / Futurity / Science X / IBTimes の科学メディア解説を集約。Nutrients 誌掲載論文の核心『カフェインの寄与は弱く、カフェ酸などポリフェノールが NR4A1 を活性化、炎症/代謝/組織修復に関与 → デカフェでも同効果』を Primary 趣味層向けに翻訳。直近 4 日 (5/4 news-en, 5/5 social-en, 5/6 news-en, 5/7 official-src) で official-src は連続 NG・news-en は過密のため、5/5 で 264 views (Explore 初成功) の social-en を 80/20 の Exploit 側に正式昇格させて起用。柱は ③業界(科学・研究ニュース)で、5/3 中国×エチオピア (1291v) と 5/5 米国×Yemeni (264v) で機能した『SNS で広がる話題を一次科学ソースで補強』型を踏襲。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/05/05/texas-am-researchers-identify-biological-pathway-through-which-coffee-supports-health/",
-          "https://stories.tamu.edu/news/2026/04/29/coffee-doesnt-just-wake-you-up-it-may-help-protect-your-body-from-aging/",
-          "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
-          "https://www.sci.news/medicine/coffee-nr4a1-receptor-14743.html",
-          "https://www.futurity.org/coffee-aging-3332602/",
-          "https://www.ibtimes.com.au/coffee-protects-against-aging-disease-new-texas-m-study-reveals-how-your-daily-cup-helps-1868134"
-        ],
-        "query": "Texas A&M NR4A1 coffee polyphenol caffeic acid receptor health pathway Nutrients journal April 2026; reddit r/Coffee r/decaf coffee health research viral May 2026",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 131,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-22T01:27:56.939Z"
-      }
-    },
-    {
       "videoId": "Ukbzb4JRoXA",
       "videoUrl": "https://youtube.com/shorts/Ukbzb4JRoXA",
       "date": "2026-05-09",
@@ -3204,7 +3114,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3245,10 +3155,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3292,7 +3202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3337,7 +3247,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3383,7 +3293,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3429,7 +3339,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3474,7 +3384,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3519,7 +3429,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-05T00:53:11.243Z"
+        "updatedAt": "2026-08-07T23:56:39.359Z"
       }
     },
     {
@@ -3565,19 +3475,57 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-07T23:56:39.359Z"
+      }
+    },
+    {
+      "videoId": "YMTaDzmhlBE",
+      "videoUrl": "https://youtube.com/shorts/YMTaDzmhlBE",
+      "date": "2026-08-08",
+      "title": "【コーヒー豆知識】Best of Panama 2026 決着・Elida Estate ゲイシャ洗い96.25点で王座、9月8-9日オンライン競売｜2026/08/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "焙煎",
+        "焙煎",
+        "焙煎"
+      ],
+      "durationSeconds": 45,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind の 8/7 Coffee News Recap で『Best of Panama 2026 結果発表 & 9/8-9 オンライン競売』が再掲されたのを起点に、Newsroom Panama (8/2)・BeanScene・Global Coffee Report・Boquete Coffee Traders の英語4媒体で受賞者と得点を triangulate。1位ラマストゥス家 Elida Estate (Geisha Washed 96.25pt)、Lérida Estate (María Antonella Amoruso C. / Geisha Natural 95.63pt)、Altieri Specialty Coffee (Varietals 93.63pt)、Copa Panamá は Hacienda La Esmeralda。歴史的背景として 2025 Esmeralda Washed Geisha 98pt が 1kg=$30,204 の史上最高落札額を記録した文脈を確認。今日は土曜=戦略ではエバーグリーンも可だが、Panama Geisha は 9/8-9 の競売で世界のスペシャルティ相場が動く未来ニュースであり、Primary『家で淹れる趣味層』が『指名買い』の予習をする典型的な入口。柱バランス上、直近14日で③業界5件と過剰なため今回は Panama を②産地・ハーベスト枠に振替 (産地=生産国の品評会結果は origin story)。直近2日 (8/7 market-data, 8/6 official-src) を回避、news-en は 8/5 以来3日空きで多様性 ✓。日本語メディア未翻訳の速報 (英語優先方針の勝ち筋)。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
+          "https://newsroompanama.com/2026/08/02/these-were-the-winners-of-the-best-of-panama-2026-the-kings-of-geisha-coffee/",
+          "https://www.beanscenemag.com.au/best-of-panama-auction-results-announced/",
+          "https://www.gcrmag.com/best-of-panama-releases-record-breaking-auction-results/",
+          "https://boquetecoffeetraders.com/blogs/news/best-of-panama-coffee",
+          "https://bestofpanama.org/",
+          "https://stir-tea-coffee.com/tea-coffee-news/record-breaking-panama-auction-lot/"
+        ],
+        "query": "Best of Panama 2026 winners auction September 8 9 Elida Estate Lamastus Geisha Washed 96.25 Lerida Natural 95.63 Altieri Varietals 93.63 Esmeralda Copa Panama; Panama Geisha 2025 record auction 30204 per kg",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-01",
-      "changes": [
-        "standard: 55 avg views (67 videos)",
-        "Day performance: Sun=134, Sat=52, Tue=52, Wed=51, Mon=36, Fri=36, Thu=10"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-02",
       "changes": [
@@ -3807,6 +3755,14 @@
       "changes": [
         "standard: 17 avg views (81 videos)",
         "Day performance: Sat=39, Tue=29, Fri=22, Sun=20, Mon=9, Wed=7, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-07",
+      "changes": [
+        "standard: 14 avg views (80 videos)",
+        "Day performance: Sat=39, Fri=22, Sun=20, Mon=9, Tue=6, Wed=6, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
