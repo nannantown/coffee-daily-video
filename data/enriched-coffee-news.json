@@ -1,40 +1,42 @@
 {
-  "date": "2026-08-07",
+  "date": "2026-08-08",
   "discovery": {
-    "method": "market-data",
-    "description": "ベトナム政府統計総局(GSO)が8/3公表した1-7月コーヒー輸出統計(Business Recorder / Comunicaffe / VnExpress で英語横断)を出発点に、Hedgepoint Global Markets の2026/27サープラス予想 9.9→8.2百万袋への下方修正、ICEアラビカ9月限8/4=324.10c・8/5=326.90cの上昇と併読して整合性を確認。ベトナムは1-7月輸出量131万トン(+21.1% YoY)なのに売上げは54.5億ドル(-11.2% YoY)、原因は2025年のロブスタ相場ピーク後の単価反落。世界2位の生産国かつロブスタ95%のベトナム動向はエスプレッソ・インスタント原料単価、ひいてはスペシャルティアラビカ相場との綱引きにも波及。直近2日は 8/5 news-en / 8/6 official-src が使用済みのため両方回避、市況統計の一次データを扱う market-data (前回8/4から3日空き) を選択。柱バランスは①市況ニュース連発(直近14日で6件)を、②産地・ハーベスト(前回8/6 Ethiopia、今回はベトナム視点)に振替。Primary『家で淹れる趣味層』が相場感覚を養える数字ドリブンな内容。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の 8/7 Coffee News Recap で『Best of Panama 2026 結果発表 & 9/8-9 オンライン競売』が再掲されたのを起点に、Newsroom Panama (8/2)・BeanScene・Global Coffee Report・Boquete Coffee Traders の英語4媒体で受賞者と得点を triangulate。1位ラマストゥス家 Elida Estate (Geisha Washed 96.25pt)、Lérida Estate (María Antonella Amoruso C. / Geisha Natural 95.63pt)、Altieri Specialty Coffee (Varietals 93.63pt)、Copa Panamá は Hacienda La Esmeralda。歴史的背景として 2025 Esmeralda Washed Geisha 98pt が 1kg=$30,204 の史上最高落札額を記録した文脈を確認。今日は土曜=戦略ではエバーグリーンも可だが、Panama Geisha は 9/8-9 の競売で世界のスペシャルティ相場が動く未来ニュースであり、Primary『家で淹れる趣味層』が『指名買い』の予習をする典型的な入口。柱バランス上、直近14日で③業界5件と過剰なため今回は Panama を②産地・ハーベスト枠に振替 (産地=生産国の品評会結果は origin story)。直近2日 (8/7 market-data, 8/6 official-src) を回避、news-en は 8/5 以来3日空きで多様性 ✓。日本語メディア未翻訳の速報 (英語優先方針の勝ち筋)。",
     "sources": [
-      "https://www.brecorder.com/news/40433060/vietnam-jan-july-coffee-exports-up-by-211-to-131mn-t-stats-office-says",
-      "https://www.comunicaffe.com/coffee-markets-futures-prices-went-haywire-in-july-the-outlook-for-august-is-uncertain/",
-      "https://e.vnexpress.net/news/business/economy/coffee-exports-reach-4-78b-in-h1-5094618.html",
-      "https://english.vov.vn/en/economy/vietnam-cements-status-as-worlds-no2-coffee-producer-robusta-powerhouse-post1291673.vov",
-      "https://www.brecorder.com/news/40428165/vietnam-h1-coffee-exports-up-97-yryr-to-11-million-t-government-says"
+      "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
+      "https://newsroompanama.com/2026/08/02/these-were-the-winners-of-the-best-of-panama-2026-the-kings-of-geisha-coffee/",
+      "https://www.beanscenemag.com.au/best-of-panama-auction-results-announced/",
+      "https://www.gcrmag.com/best-of-panama-releases-record-breaking-auction-results/",
+      "https://boquetecoffeetraders.com/blogs/news/best-of-panama-coffee",
+      "https://bestofpanama.org/",
+      "https://stir-tea-coffee.com/tea-coffee-news/record-breaking-panama-auction-lot/"
     ],
-    "query": "Vietnam Jan-July 2026 coffee exports 1.31 million tonnes 21.1% revenue 5.45 billion -11.2% robusta price GSO statistics office; Hedgepoint 2026/27 surplus 9.9 to 8.2 million bags cut; ICE arabica September August 4 5 2026 close 324 326 cents",
-    "freshness_hours": 96
+    "query": "Best of Panama 2026 winners auction September 8 9 Elida Estate Lamastus Geisha Washed 96.25 Lerida Natural 95.63 Altieri Varietals 93.63 Esmeralda Copa Panama; Panama Geisha 2025 record auction 30204 per kg",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベトナム1-7月コーヒー輸出量+21%なのに収益-11%、2025ロブスタ相場ピーク剥落で豊作と価格反落が同時進行",
-      "description": "世界2位のコーヒー生産国ベトナム、輸出量は21%増なのに収益は11%減の逆転現象が起きています。",
-      "detail": "政府発表で1-7月の輸出は131万トン、前年比21%増。一方で売上げは54.5億ドル、11%減です。理由は2025年に高騰したロブスタ相場が落ち着き、単価が下がったから。ベトナムは世界2位でロブスタが95%を占めます。豊作と価格反落が同時進行しています。",
-      "narration": "今日のニュース。世界2位のコーヒー生産国ベトナム、1-7月の輸出量は去年比21%増なのに、収益は11%減という不思議な現象が起きています。",
-      "tags": ["ニュース", "ベトナム", "相場"],
+      "title": "Best of Panama 2026 決着・Elida Estate ゲイシャ洗い96.25点で王座、9月8-9日オンライン競売",
+      "description": "パナマ・ゲイシャの世界最高峰コンテスト Best of Panama 2026 の結果が先週発表され、9月8-9日にオンライン競売が開催されます。",
+      "detail": "洗い部門はラマストゥス家 Elida Estate が96.25点で1位、ナチュラル部門は Lérida Estate が95.63点で王座、総合の Copa Panamá は名門 Hacienda La Esmeralda。オンライン競売は9月8日と9日、昨年は1kg 3万ドル超の落札記録も出ています。",
+      "narration": "知ってましたか? パナマ・ゲイシャの世界最高峰コンテスト、Best of Panama 2026 の結果が発表されました。",
+      "tags": ["ニュース", "パナマ", "ゲイシャ"],
       "narration_sections": {
-        "hook": "今日のニュース。世界2位のコーヒー生産国ベトナム、1-7月の輸出量は去年比21%増なのに、収益は11%減という不思議な現象が起きています。",
-        "origin": "政府発表で1-7月の輸出は131万トン、前年比21%増。一方で売上げは54.5億ドル、11%減です。理由は2025年に高騰したロブスタ相場が落ち着き、単価が下がったから。ベトナムは世界2位でロブスタが95%を占めます。豊作と価格反落が同時進行しています。",
-        "recommend": "単価下落分は焙煎所仕入れにも回りますが、スペシャルティは別トラック。OGは相場動向を発信、EC準備中、フォローお待ちください。"
+        "hook": "知ってましたか? パナマ・ゲイシャの世界最高峰コンテスト、Best of Panama 2026 の結果が発表されました。",
+        "origin": "洗い部門はラマストゥス家 Elida Estate が96.25点で1位、ナチュラル部門は Lérida Estate が95.63点で王座、総合カップ・パナマは名門 Esmeralda。オンライン競売は9月8日と9日、昨年は1kg 3万ドル超の記録も。",
+        "recommend": "Geisha は花と柑橘の香りが別格。日本のスペシャルティ焙煎店で限定入荷が出るので、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ベトナム輸出の異変",
-        "origin": "ロブスタ相場が反落",
-        "recommend": "相場の行方に注目"
+        "hook": "パナマ2026結果",
+        "origin": "各部門1位と競売",
+        "recommend": "国内入荷を待とう"
       },
       "section_descriptions": {
-        "hook": "世界2位ベトナム、輸出量+21%だが収益は11%減",
-        "origin": "2025ロブスタ相場ピーク後の単価下落が原因",
-        "recommend": "単価下落は焙煎所仕入れにも波及、動向注視"
+        "hook": "世界最高峰の品評会 Best of Panama 2026",
+        "origin": "洗い/ナチュラル/総合の頂点と9月競売の日程",
+        "recommend": "日本の焙煎店で限定入荷を狙って予習しよう"
       }
     }
   ]
