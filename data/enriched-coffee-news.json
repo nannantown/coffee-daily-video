@@ -1,42 +1,44 @@
 {
-  "date": "2026-08-08",
+  "date": "2026-08-09",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の 8/7 Coffee News Recap で『Best of Panama 2026 結果発表 & 9/8-9 オンライン競売』が再掲されたのを起点に、Newsroom Panama (8/2)・BeanScene・Global Coffee Report・Boquete Coffee Traders の英語4媒体で受賞者と得点を triangulate。1位ラマストゥス家 Elida Estate (Geisha Washed 96.25pt)、Lérida Estate (María Antonella Amoruso C. / Geisha Natural 95.63pt)、Altieri Specialty Coffee (Varietals 93.63pt)、Copa Panamá は Hacienda La Esmeralda。歴史的背景として 2025 Esmeralda Washed Geisha 98pt が 1kg=$30,204 の史上最高落札額を記録した文脈を確認。今日は土曜=戦略ではエバーグリーンも可だが、Panama Geisha は 9/8-9 の競売で世界のスペシャルティ相場が動く未来ニュースであり、Primary『家で淹れる趣味層』が『指名買い』の予習をする典型的な入口。柱バランス上、直近14日で③業界5件と過剰なため今回は Panama を②産地・ハーベスト枠に振替 (産地=生産国の品評会結果は origin story)。直近2日 (8/7 market-data, 8/6 official-src) を回避、news-en は 8/5 以来3日空きで多様性 ✓。日本語メディア未翻訳の速報 (英語優先方針の勝ち筋)。",
+    "method": "expert-blog",
+    "description": "日曜=戦略でエバーグリーン深掘り可 (土日枠)。60日 method 別平均 views では expert-blog 12.33 が全 method 中トップ、社会共有性の高い『抽出レシピ』は全ジャンルで最強のフォーマット。8/1 の Hoffmann×Solis 発酵カッピング以来 8 日空きで直近2日重複なし (8/8 news-en / 8/7 market-data)。exploit 側の勝ち筋 method を weekend 枠で再投入。トピックは Lance Hedrick が 2026-06-12 に公開した『One & Done』V60 レシピ (15g→225g / 96℃ / 3投 / 2:00-2:30 / 挽き値ではなく時間で狙う設計) — Home-Barista / Reddit r/pourover 界隈でこの夏バズり続けている定番化候補。Perfect Daily Grind / Coffee Chronicler が『ハイブリッド抽出とレシピ汎用化』を2026中盤の家淹れトレンドとして取り上げており、evergreen ではあるが『トレンド継続中』の文脈で価値あり。日本語圏では未紹介の切り口 (英語優先の勝ち筋)。Primary『家で淹れる趣味層』が今日すぐドリッパーで試せる TIP。柱④焙煎士(バリスタ)の一次情報 (weekend evergreen)。フレッシュネスはニュースではなく evergreen 技術のため freshness_hours は情報源公開からの経過時間として記録 (58日=1392時間、evergreen 例外)。",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
-      "https://newsroompanama.com/2026/08/02/these-were-the-winners-of-the-best-of-panama-2026-the-kings-of-geisha-coffee/",
-      "https://www.beanscenemag.com.au/best-of-panama-auction-results-announced/",
-      "https://www.gcrmag.com/best-of-panama-releases-record-breaking-auction-results/",
-      "https://boquetecoffeetraders.com/blogs/news/best-of-panama-coffee",
-      "https://bestofpanama.org/",
-      "https://stir-tea-coffee.com/tea-coffee-news/record-breaking-panama-auction-lot/"
+      "https://www.youtube.com/watch?v=oDnPHPVUorA",
+      "https://gota.cafe/en/recipes/v60-02/hedrick-one-and-done",
+      "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
+      "https://tmrw.coffee/methods/v60-lance-hedrick",
+      "https://coffeechronicler.com/best-way-to-make-coffee-at-home/"
     ],
-    "query": "Best of Panama 2026 winners auction September 8 9 Elida Estate Lamastus Geisha Washed 96.25 Lerida Natural 95.63 Altieri Varietals 93.63 Esmeralda Copa Panama; Panama Geisha 2025 record auction 30204 per kg",
-    "freshness_hours": 24
+    "query": "Lance Hedrick One and Done V60 recipe 15g 225g 96C three pours 2 min 30 sec pour-over 2026 forgiving grind by drawdown time; home barista trending pour over July August 2026",
+    "freshness_hours": 1392
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Best of Panama 2026 決着・Elida Estate ゲイシャ洗い96.25点で王座、9月8-9日オンライン競売",
-      "description": "パナマ・ゲイシャの世界最高峰コンテスト Best of Panama 2026 の結果が先週発表され、9月8-9日にオンライン競売が開催されます。",
-      "detail": "洗い部門はラマストゥス家 Elida Estate が96.25点で1位、ナチュラル部門は Lérida Estate が95.63点で王座、総合の Copa Panamá は名門 Hacienda La Esmeralda。オンライン競売は9月8日と9日、昨年は1kg 3万ドル超の落札記録も出ています。",
-      "narration": "知ってましたか? パナマ・ゲイシャの世界最高峰コンテスト、Best of Panama 2026 の結果が発表されました。",
-      "tags": ["ニュース", "パナマ", "ゲイシャ"],
+      "title": "Lance Hedrick『One & Done』V60レシピ・15g→225g/96度/3投で全体2分半、挽き値ではなく時間で合わせる万能設計",
+      "description": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
+      "detail": "豆15g、湯225g、96度で注水は3回。まず45g入れて蒸らし、90gまで渦を描き、最後は中心へ225gまで。コツは2つのブルームともに揺らさないこと。あとは全体2分〜2分半に収まるよう挽き目だけを合わせる、時間で狙う設計です。",
+      "narration": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
+      "tags": [
+        "抽出レシピ",
+        "V60",
+        "ホームバリスタ"
+      ],
       "narration_sections": {
-        "hook": "知ってましたか? パナマ・ゲイシャの世界最高峰コンテスト、Best of Panama 2026 の結果が発表されました。",
-        "origin": "洗い部門はラマストゥス家 Elida Estate が96.25点で1位、ナチュラル部門は Lérida Estate が95.63点で王座、総合カップ・パナマは名門 Esmeralda。オンライン競売は9月8日と9日、昨年は1kg 3万ドル超の記録も。",
-        "recommend": "Geisha は花と柑橘の香りが別格。日本のスペシャルティ焙煎店で限定入荷が出るので、フォローしてお待ちください。"
+        "hook": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
+        "origin": "豆15g、湯225g、96度で注水は3回。まず45g入れて蒸らし、90gまで渦を描き、最後は中心へ225gまで。コツは2つのブルームともに揺らさないこと。あとは全体2分〜2分半に収まるよう挽き目だけを合わせる、時間で狙う設計です。",
+        "recommend": "浅煎りも深煎りも同じ手順で通せる汎用レシピ。まずは手持ちの豆で試してみてください。OGの新入荷は準備中、フォローしてお待ちを。"
       },
       "section_titles": {
-        "hook": "パナマ2026結果",
-        "origin": "各部門1位と競売",
-        "recommend": "国内入荷を待とう"
+        "hook": "ランスの万能V60レシピ",
+        "origin": "3投・時間で狙う設計",
+        "recommend": "手持ちの豆で試すTIP"
       },
       "section_descriptions": {
-        "hook": "世界最高峰の品評会 Best of Panama 2026",
-        "origin": "洗い/ナチュラル/総合の頂点と9月競売の日程",
-        "recommend": "日本の焙煎店で限定入荷を狙って予習しよう"
+        "hook": "今、家淹れ勢が試している万能V60レシピ",
+        "origin": "15g/225g/96度、3投で全体2分半に着地",
+        "recommend": "浅煎りも深煎りも同じ手順で通せる汎用性"
       }
     }
   ]
