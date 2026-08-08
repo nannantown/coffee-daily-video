@@ -2,53 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "Ukbzb4JRoXA",
-      "videoUrl": "https://youtube.com/shorts/Ukbzb4JRoXA",
-      "date": "2026-05-09",
-      "title": "【コーヒー豆知識】焙煎度で変わるのはカフェインじゃなくポリフェノール｜2026/05/09 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "土曜エバーグリーン枠で、前日 5/8 の Texas A&M NR4A1 ポリフェノール研究(news 動画)を土台に『じゃあ焙煎度で何が変わるのか』を化学エビデンスで深堀り。一次ソースとして PMC8705492 (HPLC-DAD 焙煎度別 CGA 定量) と PubMed 19530715 (Role of roasting conditions on CGA content) の査読論文を採用、焙煎業界向け解説として Perfect Daily Grind の Brewing for Roast Level / HeadCount Coffee の CGA 解説 / Healthline / Peet's の light vs dark caffeine 解説でクロスチェック。直近 5 日の method 分布 (news-en×2 / social-en×2 / official-src×1) で social-en は 5/5・5/8 連続のため避け、5/2 以来 7 日空きの expert-blog をローテで起用。柱は④焙煎士の一次情報(焙煎化学)で、4/25 焙煎度=味の角度、5/2 アナエロビック発酵=精製の角度と被らない『化学成分の数値変化』というフレッシュ角度。Primary 趣味層の買い物判断 (焙煎度を何で選ぶか) に直結する『査読論文 × 化学プロセス × カフェインじゃなくポリフェノール』テンプレで、5/8 ニュースとの翌日深堀り接続を試作。",
-        "sources": [
-          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8705492/",
-          "https://pubmed.ncbi.nlm.nih.gov/19530715/",
-          "https://pubs.acs.org/doi/10.1021/jf900012b",
-          "https://www.mdpi.com/2227-9717/9/11/2040",
-          "https://perfectdailygrind.com/2019/10/how-to-adjust-your-brewing-recipe-for-coffee-roast-level/",
-          "https://www.headcountcoffee.com/blogs/coffee-news/how-chlorogenic-acids-shape-coffee-acidity-and-how-roasting-transforms-them",
-          "https://www.healthline.com/nutrition/light-vs-dark-roast-coffee",
-          "https://www.peets.com/blogs/peets/how-much-caffeine-is-in-a-cup-of-coffee"
-        ],
-        "query": "chlorogenic acid coffee roast level light dark percentage degradation HPLC; caffeine roast level light vs dark same amount stable thermal; coffee polyphenol antioxidant by roast degree peer reviewed",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 85,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
-      }
-    },
-    {
       "videoId": "zkkhB3Ijfv4",
       "videoUrl": "https://youtube.com/shorts/zkkhB3Ijfv4",
       "date": "2026-05-10",
@@ -3158,7 +3111,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3202,7 +3155,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3247,7 +3200,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3293,7 +3246,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3339,7 +3292,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3384,7 +3337,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3429,7 +3382,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3475,7 +3428,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-07T23:56:39.359Z"
+        "updatedAt": "2026-08-08T23:52:17.189Z"
       }
     },
     {
@@ -3518,6 +3471,50 @@
         "freshness_hours": 24
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-08-08T23:52:17.189Z"
+      }
+    },
+    {
+      "videoId": "rb--BVvNZDY",
+      "videoUrl": "https://youtube.com/shorts/rb--BVvNZDY",
+      "date": "2026-08-09",
+      "title": "【コーヒー豆知識】Lance Hedrick『One & Done』V60レシピ・15g→225g/96度/3投で全体2分半、挽き値ではなく時間で合わせる万能設計｜2026/08/09 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "焙煎",
+        "焙煎",
+        "焙煎"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "日曜=戦略でエバーグリーン深掘り可 (土日枠)。60日 method 別平均 views では expert-blog 12.33 が全 method 中トップ、社会共有性の高い『抽出レシピ』は全ジャンルで最強のフォーマット。8/1 の Hoffmann×Solis 発酵カッピング以来 8 日空きで直近2日重複なし (8/8 news-en / 8/7 market-data)。exploit 側の勝ち筋 method を weekend 枠で再投入。トピックは Lance Hedrick が 2026-06-12 に公開した『One & Done』V60 レシピ (15g→225g / 96℃ / 3投 / 2:00-2:30 / 挽き値ではなく時間で狙う設計) — Home-Barista / Reddit r/pourover 界隈でこの夏バズり続けている定番化候補。Perfect Daily Grind / Coffee Chronicler が『ハイブリッド抽出とレシピ汎用化』を2026中盤の家淹れトレンドとして取り上げており、evergreen ではあるが『トレンド継続中』の文脈で価値あり。日本語圏では未紹介の切り口 (英語優先の勝ち筋)。Primary『家で淹れる趣味層』が今日すぐドリッパーで試せる TIP。柱④焙煎士(バリスタ)の一次情報 (weekend evergreen)。フレッシュネスはニュースではなく evergreen 技術のため freshness_hours は情報源公開からの経過時間として記録 (58日=1392時間、evergreen 例外)。",
+        "sources": [
+          "https://www.youtube.com/watch?v=oDnPHPVUorA",
+          "https://gota.cafe/en/recipes/v60-02/hedrick-one-and-done",
+          "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
+          "https://tmrw.coffee/methods/v60-lance-hedrick",
+          "https://coffeechronicler.com/best-way-to-make-coffee-at-home/"
+        ],
+        "query": "Lance Hedrick One and Done V60 recipe 15g 225g 96C three pours 2 min 30 sec pour-over 2026 forgiving grind by drawdown time; home barista trending pour over July August 2026",
+        "freshness_hours": 1392
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3526,14 +3523,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-02",
-      "changes": [
-        "standard: 54 avg views (68 videos)",
-        "Day performance: Sun=134, Sat=52, Tue=52, Wed=47, Mon=36, Fri=36, Thu=10"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-03",
       "changes": [
@@ -3763,6 +3752,14 @@
       "changes": [
         "standard: 14 avg views (80 videos)",
         "Day performance: Sat=39, Fri=22, Sun=20, Mon=9, Tue=6, Wed=6, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-08",
+      "changes": [
+        "standard: 13 avg views (79 videos)",
+        "Day performance: Sat=35, Sun=20, Fri=13, Mon=9, Tue=6, Wed=6, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
