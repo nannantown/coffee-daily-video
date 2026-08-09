@@ -1,44 +1,44 @@
 {
-  "date": "2026-08-09",
+  "date": "2026-08-10",
   "discovery": {
-    "method": "expert-blog",
-    "description": "日曜=戦略でエバーグリーン深掘り可 (土日枠)。60日 method 別平均 views では expert-blog 12.33 が全 method 中トップ、社会共有性の高い『抽出レシピ』は全ジャンルで最強のフォーマット。8/1 の Hoffmann×Solis 発酵カッピング以来 8 日空きで直近2日重複なし (8/8 news-en / 8/7 market-data)。exploit 側の勝ち筋 method を weekend 枠で再投入。トピックは Lance Hedrick が 2026-06-12 に公開した『One & Done』V60 レシピ (15g→225g / 96℃ / 3投 / 2:00-2:30 / 挽き値ではなく時間で狙う設計) — Home-Barista / Reddit r/pourover 界隈でこの夏バズり続けている定番化候補。Perfect Daily Grind / Coffee Chronicler が『ハイブリッド抽出とレシピ汎用化』を2026中盤の家淹れトレンドとして取り上げており、evergreen ではあるが『トレンド継続中』の文脈で価値あり。日本語圏では未紹介の切り口 (英語優先の勝ち筋)。Primary『家で淹れる趣味層』が今日すぐドリッパーで試せる TIP。柱④焙煎士(バリスタ)の一次情報 (weekend evergreen)。フレッシュネスはニュースではなく evergreen 技術のため freshness_hours は情報源公開からの経過時間として記録 (58日=1392時間、evergreen 例外)。",
+    "method": "news-en",
+    "description": "平日=戦略上 news 中心が原則。60日で news-en は avg 1.75 と低いが、Meta-PDCA から『新奇性ある固有名詞×意外性』を仕込めば伸びる仮説を立てた本日のテスト運用。昨日 (8/9) は expert-blog で連日禁止のため今日は news 系。Liberian Observer / Food Business MEA / Ministry of Information Liberia が Aug 7 前後で報じた、LACRAが7/28に5郡の農家へ70万本のリベリカ(Liberica)苗を配布し、同時にJR Farms Group Inc. と20年約60億円規模の提携を締結、2030年までに500万本のリベリカ植樹・250,000ヘクタール開墾・200,000農家支援・300,000雇用創出を目指す国家プロジェクトが動き出したというニュース。日本語圏未紹介、西アフリカ発、そして『アラビカ・ロブスタに次ぐ第3のコーヒー種リベリカ』という強い教育性フックあり。柱③業界・ビジネスニュース(産地投資×品種復興)。過去14日は Segafredo / ICE在庫 / FoNC / Nestlé / クーシュペ / Rabobank×El Niño / India-UK CETA / FairTrade / Panama Geisha / Lance Hedrick V60 のいずれとも重複なし。数字を500万本/60億円/20年の3つに絞りナレーション文字数を制御。",
     "sources": [
-      "https://www.youtube.com/watch?v=oDnPHPVUorA",
-      "https://gota.cafe/en/recipes/v60-02/hedrick-one-and-done",
-      "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
-      "https://tmrw.coffee/methods/v60-lance-hedrick",
-      "https://coffeechronicler.com/best-way-to-make-coffee-at-home/"
+      "https://www.liberianobserver.com/news/lacra-distributes-700k-coffee-liberica-seedlings-to-revive-coffee-industry/article_2ef6fc2b-cc41-4825-bf3b-098364c7c710.html",
+      "https://www.foodbusinessmea.com/jr-farms-signs-us60m-coffee-partnership-with-liberia-to-revive-sector/",
+      "https://www.micat.gov.lr/office/news/newsroom/press-releases/government-liberia-and-jr-farms-group-inc-sign-landmark-us60",
+      "https://dailycoffeenews.com/2026/08/07/weekly-coffee-news-peruvian-harvest-guide-florida-roaster-expands/",
+      "https://frontpageafricaonline.com/agric-matters/liberia-farmers-received-thousands-of-coffee-seedlings-to-revitalize-their-farms/"
     ],
-    "query": "Lance Hedrick One and Done V60 recipe 15g 225g 96C three pours 2 min 30 sec pour-over 2026 forgiving grind by drawdown time; home barista trending pour over July August 2026",
-    "freshness_hours": 1392
+    "query": "Liberia coffee liberica 700000 seedlings JR Farms 2026 revival LACRA; specialty coffee industry news week August 2026 origin harvest",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Lance Hedrick『One & Done』V60レシピ・15g→225g/96度/3投で全体2分半、挽き値ではなく時間で合わせる万能設計",
-      "description": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
-      "detail": "豆15g、湯225g、96度で注水は3回。まず45g入れて蒸らし、90gまで渦を描き、最後は中心へ225gまで。コツは2つのブルームともに揺らさないこと。あとは全体2分〜2分半に収まるよう挽き目だけを合わせる、時間で狙う設計です。",
-      "narration": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
+      "title": "リベリアが第3のコーヒー『リベリカ』を復活・LACRAが70万本の苗を配布、JR Farmsと20年60億円提携で2030年までに500万本植樹",
+      "description": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
+      "detail": "リベリア政府とLACRAが7月28日、5つの郡で70万本のリベリカ苗を農家に配布。並行してJR Farmsと20年・約60億円規模の提携も締結し、2030年までにリベリカ500万本を植樹する国家プロジェクトが動き出しました。",
+      "narration": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
       "tags": [
-        "抽出レシピ",
-        "V60",
-        "ホームバリスタ"
+        "リベリア",
+        "リベリカ",
+        "業界ニュース"
       ],
       "narration_sections": {
-        "hook": "「1つのレシピでどんな豆も」を掲げるランス・ヘドリックのV60レシピが、いま世界のホームバリスタ界隈で静かに流行っています。",
-        "origin": "豆15g、湯225g、96度で注水は3回。まず45g入れて蒸らし、90gまで渦を描き、最後は中心へ225gまで。コツは2つのブルームともに揺らさないこと。あとは全体2分〜2分半に収まるよう挽き目だけを合わせる、時間で狙う設計です。",
-        "recommend": "浅煎りも深煎りも同じ手順で通せる汎用レシピ。まずは手持ちの豆で試してみてください。OGの新入荷は準備中、フォローしてお待ちを。"
+        "hook": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
+        "origin": "リベリア政府とLACRAが7月28日、5つの郡で70万本のリベリカ苗を農家に配布。並行してJR Farmsと20年・約60億円規模の提携も締結し、2030年までにリベリカ500万本を植樹する国家プロジェクトが動き出しました。",
+        "recommend": "リベリカは苦味と独特の香りで日本ではほぼ流通しませんが、数年後は選択肢に入るかも。OGは焙煎所として動向を追い続けます。"
       },
       "section_titles": {
-        "hook": "ランスの万能V60レシピ",
-        "origin": "3投・時間で狙う設計",
-        "recommend": "手持ちの豆で試すTIP"
+        "hook": "第3の種リベリカ復活",
+        "origin": "LACRAが70万本配布",
+        "recommend": "日本流通は先の話"
       },
       "section_descriptions": {
-        "hook": "今、家淹れ勢が試している万能V60レシピ",
-        "origin": "15g/225g/96度、3投で全体2分半に着地",
-        "recommend": "浅煎りも深煎りも同じ手順で通せる汎用性"
+        "hook": "アラビカ・ロブスタに次ぐ第3のコーヒーが動く",
+        "origin": "7/28に配布、JR Farmsと20年60億円提携",
+        "recommend": "日本上陸はまだ先、まずコーヒー品種の知識を更新"
       }
     }
   ]
