@@ -1,44 +1,42 @@
 {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "discovery": {
     "method": "news-en",
-    "description": "平日=戦略上 news 中心が原則。60日で news-en は avg 1.75 と低いが、Meta-PDCA から『新奇性ある固有名詞×意外性』を仕込めば伸びる仮説を立てた本日のテスト運用。昨日 (8/9) は expert-blog で連日禁止のため今日は news 系。Liberian Observer / Food Business MEA / Ministry of Information Liberia が Aug 7 前後で報じた、LACRAが7/28に5郡の農家へ70万本のリベリカ(Liberica)苗を配布し、同時にJR Farms Group Inc. と20年約60億円規模の提携を締結、2030年までに500万本のリベリカ植樹・250,000ヘクタール開墾・200,000農家支援・300,000雇用創出を目指す国家プロジェクトが動き出したというニュース。日本語圏未紹介、西アフリカ発、そして『アラビカ・ロブスタに次ぐ第3のコーヒー種リベリカ』という強い教育性フックあり。柱③業界・ビジネスニュース(産地投資×品種復興)。過去14日は Segafredo / ICE在庫 / FoNC / Nestlé / クーシュペ / Rabobank×El Niño / India-UK CETA / FairTrade / Panama Geisha / Lance Hedrick V60 のいずれとも重複なし。数字を500万本/60億円/20年の3つに絞りナレーション文字数を制御。",
+    "description": "平日 = news 中心が原則、直近14日は news-en が唯一 1 views を2回取れた method (avg 0.4)。連続禁止規定は 8/9 expert-blog で切れているため news-en を続投。今日は 8/10 に一般公衆へ開放されたばかりの Aillio LATAM 本部/ショールーム開所 (エルサルバドル・サンサルバドル市サンベニト地区、1,100 sq ft ≒ 約100平米、ライブ焙煎デモ・マスタークラス実施、2027 年に中南米初の Regional Aillio Bullet Championship 開催予定) を取り上げる。Perfect Daily Grind の 8/7 週次ラウンドアップと Global Coffee Report の追い記事で確認。日本語圏で未紹介、freshness_hours < 24。柱③業界ニュース x 機材ベンダー動向。Primary (家で淹れる/一部は自家焙煎マニア) と Secondary (小規模カフェ) の両ペルソナが憧れる Aillio Bullet ブランドを扱うことで、⑤OG入荷 の穴 (2週ゼロ) を『裏側の機材』ネタで補填する試みも兼ねる。過去14日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE在庫) と重複なし。",
     "sources": [
-      "https://www.liberianobserver.com/news/lacra-distributes-700k-coffee-liberica-seedlings-to-revive-coffee-industry/article_2ef6fc2b-cc41-4825-bf3b-098364c7c710.html",
-      "https://www.foodbusinessmea.com/jr-farms-signs-us60m-coffee-partnership-with-liberia-to-revive-sector/",
-      "https://www.micat.gov.lr/office/news/newsroom/press-releases/government-liberia-and-jr-farms-group-inc-sign-landmark-us60",
-      "https://dailycoffeenews.com/2026/08/07/weekly-coffee-news-peruvian-harvest-guide-florida-roaster-expands/",
-      "https://frontpageafricaonline.com/agric-matters/liberia-farmers-received-thousands-of-coffee-seedlings-to-revitalize-their-farms/"
+      "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
+      "https://perfectdailygrind.com/2026/04/prf-el-salvador-2026-recap/",
+      "https://us.aillio.com/products/bullet-r1-v2"
     ],
-    "query": "Liberia coffee liberica 700000 seedlings JR Farms 2026 revival LACRA; specialty coffee industry news week August 2026 origin harvest",
-    "freshness_hours": 72
+    "query": "Aillio LATAM headquarters San Salvador August 2026 Bullet Championship 2027; Perfect Daily Grind coffee news recap August 2026",
+    "freshness_hours": 20
   },
   "articles": [
     {
       "rank": 1,
-      "title": "リベリアが第3のコーヒー『リベリカ』を復活・LACRAが70万本の苗を配布、JR Farmsと20年60億円提携で2030年までに500万本植樹",
-      "description": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
-      "detail": "リベリア政府とLACRAが7月28日、5つの郡で70万本のリベリカ苗を農家に配布。並行してJR Farmsと20年・約60億円規模の提携も締結し、2030年までにリベリカ500万本を植樹する国家プロジェクトが動き出しました。",
-      "narration": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
+      "title": "Aillioが中南米初の本部・体験ショールームをエルサルバドルに開設・8/10 一般開放、2027年に地域Bullet焙煎選手権も",
+      "description": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
+      "detail": "場所はエルサルバドルの首都サンサルバドル、約100平米の施設で、ライブ焙煎デモやマスタークラスを開催。2027年にはここで中南米初のBullet焙煎選手権も開かれます。デンマーク発のメーカーが産地の目の前に根を張る動きです。",
+      "narration": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
       "tags": [
-        "リベリア",
-        "リベリカ",
-        "業界ニュース"
+        "業界ニュース",
+        "焙煎機",
+        "エルサルバドル"
       ],
       "narration_sections": {
-        "hook": "ご存じですか?アラビカ、ロブスタに次ぐ第3のコーヒー『リベリカ』を復活させる大型プロジェクトが、いま西アフリカのリベリアで動き始めました。",
-        "origin": "リベリア政府とLACRAが7月28日、5つの郡で70万本のリベリカ苗を農家に配布。並行してJR Farmsと20年・約60億円規模の提携も締結し、2030年までにリベリカ500万本を植樹する国家プロジェクトが動き出しました。",
-        "recommend": "リベリカは苦味と独特の香りで日本ではほぼ流通しませんが、数年後は選択肢に入るかも。OGは焙煎所として動向を追い続けます。"
+        "hook": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
+        "origin": "場所はエルサルバドルの首都サンサルバドル、約100平米の施設で、ライブ焙煎デモやマスタークラスを開催。2027年にはここで中南米初のBullet焙煎選手権も開かれます。デンマーク発のメーカーが産地の目の前に根を張る動きです。",
+        "recommend": "Bulletは家庭でも扱える1キロ機として国内でも人気。OGでも小型焙煎の話を発信していきます、EC準備中なのでフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "第3の種リベリカ復活",
-        "origin": "LACRAが70万本配布",
-        "recommend": "日本流通は先の話"
+        "hook": "Aillio中南米上陸",
+        "origin": "サンサル100平米",
+        "recommend": "国内焙煎士も熱視線"
       },
       "section_descriptions": {
-        "hook": "アラビカ・ロブスタに次ぐ第3のコーヒーが動く",
-        "origin": "7/28に配布、JR Farmsと20年60億円提携",
-        "recommend": "日本上陸はまだ先、まずコーヒー品種の知識を更新"
+        "hook": "デンマーク発の人気小型焙煎機がLATAMへ本格進出",
+        "origin": "首都サンサルバドルに約100平米のショールーム開設",
+        "recommend": "家庭でも扱える1キロ機、国内焙煎士にも人気機種"
       }
     }
   ]
