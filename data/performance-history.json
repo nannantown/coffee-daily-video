@@ -2,99 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "5eTttOiY91s",
-      "videoUrl": "https://youtube.com/shorts/5eTttOiY91s",
-      "date": "2026-05-11",
-      "title": "【コーヒー豆知識】ベトナム代表が世界利き手選手権で初優勝・ロブスタ大国の常識覆る｜2026/05/11 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "焙煎",
-        "焙煎",
-        "焙煎"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "official-src",
-        "description": "5月7-9日にバンコクで開催されたWorld of Coffee Asia 2026の公式併催競技『2026 World Cup Tasters Championship』で、ベトナム代表のLê Quang Cuong(Nicky)が初優勝。一次ソースは公式運営の World Coffee Championships (wcc.coffee) 競技者ページと WoC Asia 公式ページ。Daily Coffee News と Perfect Daily Grind のニュースリキャップで競技進行を確認、Vietnamese 主要紙(VnExpress / Thanh Nien / Tuoi Tre / Nguoi Lao Dong / Soha) 5/10 一斉報道で『初参戦・初優勝』『8問中7問3分35秒』『スイス代表(6/8 2:34)に競り勝ち』を相互照合。直近 2 日(5/9 expert-blog / 5/10 news-en)を回避しつつ、5/7 official-src(ブラジル新クロップ純数値=1 view)の失敗を受け、PDCA で立てた『story-driven official-src 仮説』を検証する Exploit リトライ。物語性:『誰が=ホーチミンの焙煎士クオン氏 / 何を=46か国の代表を抑え初優勝 / どう効く=ロブスタ大国ベトナムのスペシャリティ覚醒を裏付け』の3点が揃う。柱は③業界×②産地クロスで、4/27 ベトナム不作→5/10 インド輸出+26%→今日 ベトナム逆襲、というアジア連続ストーリーとして伏線回収。",
-        "sources": [
-          "https://wcc.coffee/2026-wcc-competitors/wctc-quang-cuong-vietnam",
-          "https://wcc.coffee/bangkok-wctc",
-          "https://wcc.coffee/world-cup-tasters-championship",
-          "https://asia.worldofcoffee.org/world-cup-tasters-championship",
-          "https://vnexpress.net/viet-nam-gianh-ngoi-vo-dich-giai-thu-nem-ca-phe-the-gioi-5072166.html",
-          "https://thanhnien.vn/viet-nam-lan-dau-vo-dich-world-cup-thu-nem-ca-phe-185260510194645977.htm",
-          "https://tuoitre.vn/viet-nam-lan-dau-tien-thang-giai-thu-nem-ca-phe-the-gioi-20260510182611531.htm",
-          "https://nld.com.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-196260510170837889.htm",
-          "https://soha.vn/lan-dau-tien-viet-nam-co-nha-vo-dich-thu-nem-ca-phe-the-gioi-198260510212624192.htm"
-        ],
-        "query": "World Cup Tasters Championship 2026 Bangkok winner Vietnam Le Quang Cuong; WoC Asia Bangkok May 7-9 BITEC results; Vietnam specialty coffee G.O Cafe Roastery Saigon",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 72,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
-      }
-    },
-    {
-      "videoId": "QqQb7ebPLeM",
-      "videoUrl": "https://youtube.com/shorts/QqQb7ebPLeM",
-      "date": "2026-05-12",
-      "title": "【コーヒー豆知識】アラビカ先物が1年半ぶり安値・ブラジル豊作で年末さらに3割下落予想｜2026/05/12 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "品種",
-        "品種",
-        "品種"
-      ],
-      "durationSeconds": 55,
-      "discovery": {
-        "method": "news-en",
-        "description": "Comunicaffe / Trading Economics / Yahoo Finance / Seeking Alpha の英語市況記事を当日確認し、ICE アラビカ先物が 1 ポンド 2.73 ドル前後と『2024 年 11 月以来の安値圏』に沈んでいる事実、Coffee Trading Academy(+12%, 71.4M bags) / Marex(+15.5%, 75.9M bags) / Sucafina(75.4M bags) のブラジル 2026/27 新クロップ予想、Rabobank の『年末までさらに 3 割下落』予想、CFTC データで投機筋が大規模ロング縮小という 4 つの数字を相互照合。illy アンドレア・イリー会長が『供給ショックの再来リスク』を警告しているコメントも同記事内で確認。直近 2 日 (5/10 news-en / 5/11 official-src) のうち news-en は 1 日空いたため連続違反にならず、TOP 1 method (avg 217 views, max 1293) の Exploit を継続。柱は ①市況 単独ではなく ②産地(ブラジル) × Primary 趣味層への買い物判断 (店頭価格 3-6 か月遅れ) と組み合わせ、strategy.md の『①単独禁則』ルールに準拠。5/3 中国ゼロ関税エチオピア (1293 views) の勝ち筋『海外マーケット動向 → 日本店頭への影響』テンプレを再現する設計。",
-        "sources": [
-          "https://www.comunicaffe.com/arabica-coffee-futures-at-their-lowest-level-since-november-2024-andrea-illy-warns-of-the-risks-of-further-market-shocks",
-          "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
-          "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
-          "https://tradingeconomics.com/commodity/coffee",
-          "https://finance.yahoo.com/news/coffee-prices-decline-prospects-bumper-165121014.html",
-          "https://seekingalpha.com/article/4854967-coffee-outlook-2026-supply-risks-keep-arabica-prices-supported"
-        ],
-        "query": "arabica coffee futures May 2026 lowest since November 2024 Brazil crop 71 million bags Rabobank forecast Illy warning",
-        "freshness_hours": 36
-      },
-      "stats": {
-        "views": 21,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-23T01:21:54.604Z"
-      }
-    },
-    {
       "videoId": "1hKS_ThngZU",
       "videoUrl": "https://youtube.com/shorts/1hKS_ThngZU",
       "date": "2026-05-13",
@@ -3067,7 +2974,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3111,7 +3018,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3156,7 +3063,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3202,7 +3109,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3248,7 +3155,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3293,7 +3200,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3338,7 +3245,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3384,7 +3291,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3430,7 +3337,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3474,7 +3381,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-09T23:56:46.527Z"
+        "updatedAt": "2026-08-10T23:58:43.248Z"
       }
     },
     {
@@ -3518,19 +3425,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-10T23:58:43.248Z"
+      }
+    },
+    {
+      "videoId": "_Si21aIKAt0",
+      "videoUrl": "https://youtube.com/shorts/_Si21aIKAt0",
+      "date": "2026-08-11",
+      "title": "【コーヒー豆知識】Aillioが中南米初の本部・体験ショールームをエルサルバドルに開設・8/10 一般開放、2027年に地域Bullet焙煎選手権も｜2026/08/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "news-en",
+        "description": "平日 = news 中心が原則、直近14日は news-en が唯一 1 views を2回取れた method (avg 0.4)。連続禁止規定は 8/9 expert-blog で切れているため news-en を続投。今日は 8/10 に一般公衆へ開放されたばかりの Aillio LATAM 本部/ショールーム開所 (エルサルバドル・サンサルバドル市サンベニト地区、1,100 sq ft ≒ 約100平米、ライブ焙煎デモ・マスタークラス実施、2027 年に中南米初の Regional Aillio Bullet Championship 開催予定) を取り上げる。Perfect Daily Grind の 8/7 週次ラウンドアップと Global Coffee Report の追い記事で確認。日本語圏で未紹介、freshness_hours < 24。柱③業界ニュース x 機材ベンダー動向。Primary (家で淹れる/一部は自家焙煎マニア) と Secondary (小規模カフェ) の両ペルソナが憧れる Aillio Bullet ブランドを扱うことで、⑤OG入荷 の穴 (2週ゼロ) を『裏側の機材』ネタで補填する試みも兼ねる。過去14日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE在庫) と重複なし。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
+          "https://perfectdailygrind.com/2026/04/prf-el-salvador-2026-recap/",
+          "https://us.aillio.com/products/bullet-r1-v2"
+        ],
+        "query": "Aillio LATAM headquarters San Salvador August 2026 Bullet Championship 2027; Perfect Daily Grind coffee news recap August 2026",
+        "freshness_hours": 20
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-04",
-      "changes": [
-        "standard: 53 avg views (70 videos)",
-        "Day performance: Sun=134, Sat=53, Tue=52, Wed=47, Mon=36, Fri=32, Thu=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-05",
       "changes": [
@@ -3760,6 +3701,14 @@
       "changes": [
         "standard: 12 avg views (79 videos)",
         "Day performance: Sat=30, Sun=18, Fri=13, Mon=9, Tue=6, Wed=6, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-10",
+      "changes": [
+        "standard: 11 avg views (79 videos)",
+        "Day performance: Sat=30, Sun=16, Fri=13, Mon=8, Tue=6, Wed=6, Thu=4"
       ],
       "recommendedTemplate": "standard"
     }
