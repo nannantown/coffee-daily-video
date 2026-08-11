@@ -1,42 +1,45 @@
 {
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "discovery": {
-    "method": "news-en",
-    "description": "平日 = news 中心が原則、直近14日は news-en が唯一 1 views を2回取れた method (avg 0.4)。連続禁止規定は 8/9 expert-blog で切れているため news-en を続投。今日は 8/10 に一般公衆へ開放されたばかりの Aillio LATAM 本部/ショールーム開所 (エルサルバドル・サンサルバドル市サンベニト地区、1,100 sq ft ≒ 約100平米、ライブ焙煎デモ・マスタークラス実施、2027 年に中南米初の Regional Aillio Bullet Championship 開催予定) を取り上げる。Perfect Daily Grind の 8/7 週次ラウンドアップと Global Coffee Report の追い記事で確認。日本語圏で未紹介、freshness_hours < 24。柱③業界ニュース x 機材ベンダー動向。Primary (家で淹れる/一部は自家焙煎マニア) と Secondary (小規模カフェ) の両ペルソナが憧れる Aillio Bullet ブランドを扱うことで、⑤OG入荷 の穴 (2週ゼロ) を『裏側の機材』ネタで補填する試みも兼ねる。過去14日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE在庫) と重複なし。",
+    "method": "market-data",
+    "description": "平日=ニュース中心 & news-en が 8/10-8/11 と 2 日連続だったため多様性ルールで today は連続禁止。①市況ニュース (25%目標) を補強すべく市場データ pillar に切替。8/7 (金) ICE 認証アラビカ在庫が 244,172 袋 = 2 年半ぶりの低水準に落ち、同日先物 9 月限 (KCU26) は +4.3% 335.55 セント/ポンド急騰。8/11 (月) は下院に転じ -0.97% で戻したが、認証在庫トレンド自体は 2.5 年ぶり水準で継続。Conab は 2026/27 収穫を 66.2M 袋 (+17.1%YoY, 過去最高)、USDA は 71.9M 袋 予想と『史上最大級の豊作』を打ち出しているのに、実物 (physical) の輸出が 7/15 時点で 64% (5 年平均 70%、昨年 77%) と遅れ、木の上の豆と船に載る豆の間で認証在庫だけが細っている『帳簿豊作/実物品薄』のパラドックスが本日のフック。日本の趣味層 (Primary) にとっては『秋以降にアラビカが安くなる』予想を店頭価格が裏切る背景説明として実用性が高い。過去 14 日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE 在庫←7/28 数値だが今回は 8/7 の更新値) と重複なし (7/28 の ICE 在庫は robusta / stock-arabica の相場変動フレーム、今回は certified stock 2.5yr low + 収穫パラドックスの新フレーム)。",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/",
-      "https://perfectdailygrind.com/2026/04/prf-el-salvador-2026-recap/",
-      "https://us.aillio.com/products/bullet-r1-v2"
+      "https://tradingeconomics.com/commodity/coffee",
+      "https://www.barchart.com/story/news/3761197/arabica-coffee-prices-undercut-as-brazil-harvest-expected-to-accelerate",
+      "https://www.cocoaintel.com/arabica-coffee-rebounds-sharply-as-tight-stocks-and-delayed-brazilian-harvest-support-prices-31-july-2026/",
+      "https://www.riotimesonline.com/brazil-coffee-2026-value-trap-record-harvest-explainer/",
+      "https://www.gcrmag.com/brazil-on-track-for-record-coffee-harvest-in-2026/",
+      "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/"
     ],
-    "query": "Aillio LATAM headquarters San Salvador August 2026 Bullet Championship 2027; Perfect Daily Grind coffee news recap August 2026",
-    "freshness_hours": 20
+    "query": "ICE certified arabica stocks 244172 bags August 7 2026 2.5 year low; September arabica futures KCU26 close August 11 2026; Brazil 2026/27 harvest 64% complete Conab USDA record 71.9M bags value trap paradox",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Aillioが中南米初の本部・体験ショールームをエルサルバドルに開設・8/10 一般開放、2027年に地域Bullet焙煎選手権も",
-      "description": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
-      "detail": "場所はエルサルバドルの首都サンサルバドル、約100平米の施設で、ライブ焙煎デモやマスタークラスを開催。2027年にはここで中南米初のBullet焙煎選手権も開かれます。デンマーク発のメーカーが産地の目の前に根を張る動きです。",
-      "narration": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
+      "title": "ICEアラビカ認証在庫が244,172袋・2年半ぶりの低水準、8/7先物9月限+4.3%へ 豊作予想もブラジル出荷遅く品薄扱い",
+      "description": "ブラジル過去最高の収穫予想なのに、8月7日にICEアラビカ在庫が2年半ぶりの低水準に落ちました。",
+      "detail": "認証在庫は244,172袋、先物9月限は同日4.3%急騰して1ポンド335セントを付けました。原因は、ブラジル収穫は数字では豊作でも実物の出荷が遅いこと。木の上の豆と船に載る豆の間で在庫が細り、市場は品薄扱いで反応しています。",
+      "narration": "今日のコーヒーニュース。ブラジル過去最高の収穫予想なのに、8月7日にICEアラビカ在庫が2年半ぶりの低水準に落ち、先物は急騰しました。",
       "tags": [
-        "業界ニュース",
-        "焙煎機",
-        "エルサルバドル"
+        "市況ニュース",
+        "アラビカ",
+        "ブラジル"
       ],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。人気の小型焙煎機Aillio Bulletが、中南米に初の拠点と体験ショールームを10日にオープンしました。",
-        "origin": "場所はエルサルバドルの首都サンサルバドル、約100平米の施設で、ライブ焙煎デモやマスタークラスを開催。2027年にはここで中南米初のBullet焙煎選手権も開かれます。デンマーク発のメーカーが産地の目の前に根を張る動きです。",
-        "recommend": "Bulletは家庭でも扱える1キロ機として国内でも人気。OGでも小型焙煎の話を発信していきます、EC準備中なのでフォローしてお待ちください。"
+        "hook": "今日のコーヒーニュース。ブラジル過去最高の収穫予想なのに、8月7日にICEアラビカ在庫が2年半ぶりの低水準に落ち、先物は急騰しました。",
+        "origin": "認証在庫は244,172袋、先物9月限は同日4.3%急騰して1ポンド335セントを付けました。原因は、ブラジル収穫は数字では豊作でも実物の出荷が遅いこと。木の上の豆と船に載る豆の間で在庫が細り、市場は品薄扱いで反応しています。",
+        "recommend": "店頭のアラビカ値上がりは秋まで続きそう。ブラジル依存の少ない産地の新豆を早めに押さえるのが賢い時期。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "Aillio中南米上陸",
-        "origin": "サンサル100平米",
-        "recommend": "国内焙煎士も熱視線"
+        "hook": "ICE在庫2年半ぶり安値",
+        "origin": "豊作予想と品薄の綱引き",
+        "recommend": "他産地の新豆を早押さえ"
       },
       "section_descriptions": {
-        "hook": "デンマーク発の人気小型焙煎機がLATAMへ本格進出",
-        "origin": "首都サンサルバドルに約100平米のショールーム開設",
-        "recommend": "家庭でも扱える1キロ機、国内焙煎士にも人気機種"
+        "hook": "ブラジル過去最高の豊作予想の裏で在庫が急減",
+        "origin": "認証在庫244,172袋、先物9月限が4.3%高",
+        "recommend": "エチオピアやコロンビアの新豆で価格上昇をヘッジ"
       }
     }
   ]
