@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "1hKS_ThngZU",
-      "videoUrl": "https://youtube.com/shorts/1hKS_ThngZU",
-      "date": "2026-05-13",
-      "title": "【コーヒー豆知識】エチオピア過去最高の豊作なのにウォッシュトが品薄になる理由｜2026/05/13 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 53,
-      "discovery": {
-        "method": "news-en",
-        "description": "Ecofin Agency 5/6 速報『Ethiopia Projects Record 694,000-Ton Coffee Harvest in 2025-26』を起点に、USDA FAS Coffee Annual ET2025-0014 (11.56M bags / 694,000t, +9%、輸出 7.8M bags +11.4%、Top destinations: Germany/Saudi/Belgium/US/South Korea/Japan) を一次情報として確認。Algrano『Ethiopia Coffee Harvest 2026: High cherry prices and a tighter washed outlook』と Trabocca『Ethiopia Harvest 2025/26』、Nordic Approach 産地レポートで、(a) チェリー価格が $0.45→$1.51/kg(220-250 ETB/kg)で 3-4 倍、(b) 農家が washed→natural へ転換し washed share が 40-45%→20% に半減、(c) 南部(Yirgacheffe/Sidamo/Guji)減収・西部(Limu/Kaffa)豊作、の 3 点を相互照合。Daily Coffee News(2025/06/09 と recent recap)で生産・消費・輸出全部増のトレンド確認。直近 2 日 (5/11 official-src / 5/12 news-en) のうち news-en 連続だが、5/12 は ①市況×②産地ブラジル、本日は ②産地エチオピア×Primary 直撃と角度が異なる。method 14日 avg は news-en 262views (TOP)、official-src 105、social-en 199 で TOP method の Exploit を継続。柱配分は直近14日で ③業界 6本と過多、②産地 3本 (Thailand/Brazil/Vietnam) に対しエチオピアは 5/3 China 関税(1294v)以来 10日空き、Primary 趣味層が一番買う産地で Pillar ②を補強。5/3『海外政策→日本店頭』の勝ち筋に対し、本日は『産地の処理転換→日本のイルガチェフェ・ウォッシュト棚事情』という具体的・実用的アングルで購買判断に直結。",
-        "sources": [
-          "https://www.ecofinagency.com/news-agriculture/0506-47158-ethiopia-projects-record-694-000-ton-coffee-harvest-in-2025-26",
-          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Addis+Ababa_Ethiopia_ET2025-0014",
-          "https://www.fas.usda.gov/data/ethiopia-coffee-annual-9",
-          "https://algrano.com/learn/ethiopia-coffee-harvest-report-2026",
-          "https://www.trabocca.com/coffee-knowledge/ethiopian-coffee/ethiopia-harvest-2025-26/",
-          "https://www.nordicapproach.no/post/ethiopia-coffee-harvest-2026",
-          "https://www.comunicaffe.com/usda-sees-world-coffee-production-for-2025-26-at-an-all-time-high-of-178-8-million-bags-2-consumption-at-a-record-173-9-million-1-3/"
-        ],
-        "query": "Ethiopia coffee harvest 2025/26 record 11.56 million bags USDA FAS; Ethiopia washed coffee shortage natural shift cherry prices 4x; Yirgacheffe Sidamo Guji lower yield 2026",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 12,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-27T01:32:03.893Z"
-      }
-    },
-    {
       "videoId": "Q6b2WoZcZ5g",
       "videoUrl": "https://youtube.com/shorts/Q6b2WoZcZ5g",
       "date": "2026-05-14",
@@ -3063,7 +3017,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3109,7 +3063,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3155,7 +3109,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3200,7 +3154,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3245,7 +3199,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3291,7 +3245,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3337,7 +3291,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3381,7 +3335,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3425,7 +3379,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-10T23:58:43.248Z"
+        "updatedAt": "2026-08-12T00:05:34.232Z"
       }
     },
     {
@@ -3467,19 +3421,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-12T00:05:34.232Z"
+      }
+    },
+    {
+      "videoId": "5h5nKrH1Tlk",
+      "videoUrl": "https://youtube.com/shorts/5h5nKrH1Tlk",
+      "date": "2026-08-12",
+      "title": "【コーヒー豆知識】ICEアラビカ認証在庫が244,172袋・2年半ぶりの低水準、8/7先物9月限+4.3%へ 豊作予想もブラジル出荷遅く品薄扱い｜2026/08/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 56,
+      "discovery": {
+        "method": "market-data",
+        "description": "平日=ニュース中心 & news-en が 8/10-8/11 と 2 日連続だったため多様性ルールで today は連続禁止。①市況ニュース (25%目標) を補強すべく市場データ pillar に切替。8/7 (金) ICE 認証アラビカ在庫が 244,172 袋 = 2 年半ぶりの低水準に落ち、同日先物 9 月限 (KCU26) は +4.3% 335.55 セント/ポンド急騰。8/11 (月) は下院に転じ -0.97% で戻したが、認証在庫トレンド自体は 2.5 年ぶり水準で継続。Conab は 2026/27 収穫を 66.2M 袋 (+17.1%YoY, 過去最高)、USDA は 71.9M 袋 予想と『史上最大級の豊作』を打ち出しているのに、実物 (physical) の輸出が 7/15 時点で 64% (5 年平均 70%、昨年 77%) と遅れ、木の上の豆と船に載る豆の間で認証在庫だけが細っている『帳簿豊作/実物品薄』のパラドックスが本日のフック。日本の趣味層 (Primary) にとっては『秋以降にアラビカが安くなる』予想を店頭価格が裏切る背景説明として実用性が高い。過去 14 日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE 在庫←7/28 数値だが今回は 8/7 の更新値) と重複なし (7/28 の ICE 在庫は robusta / stock-arabica の相場変動フレーム、今回は certified stock 2.5yr low + 収穫パラドックスの新フレーム)。",
+        "sources": [
+          "https://tradingeconomics.com/commodity/coffee",
+          "https://www.barchart.com/story/news/3761197/arabica-coffee-prices-undercut-as-brazil-harvest-expected-to-accelerate",
+          "https://www.cocoaintel.com/arabica-coffee-rebounds-sharply-as-tight-stocks-and-delayed-brazilian-harvest-support-prices-31-july-2026/",
+          "https://www.riotimesonline.com/brazil-coffee-2026-value-trap-record-harvest-explainer/",
+          "https://www.gcrmag.com/brazil-on-track-for-record-coffee-harvest-in-2026/",
+          "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/"
+        ],
+        "query": "ICE certified arabica stocks 244172 bags August 7 2026 2.5 year low; September arabica futures KCU26 close August 11 2026; Brazil 2026/27 harvest 64% complete Conab USDA record 71.9M bags value trap paradox",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-05",
-      "changes": [
-        "standard: 52 avg views (71 videos)",
-        "Day performance: Sun=134, Tue=52, Sat=47, Wed=47, Mon=36, Fri=33, Thu=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-06",
       "changes": [
@@ -3709,6 +3700,14 @@
       "changes": [
         "standard: 11 avg views (79 videos)",
         "Day performance: Sat=30, Sun=16, Fri=13, Mon=8, Tue=6, Wed=6, Thu=4"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-12",
+      "changes": [
+        "standard: 10 avg views (78 videos)",
+        "Day performance: Sat=30, Sun=16, Fri=13, Wed=6, Thu=4, Mon=3, Tue=3"
       ],
       "recommendedTemplate": "standard"
     }
