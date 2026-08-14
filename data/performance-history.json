@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "DkIosdfcozQ",
-      "videoUrl": "https://youtube.com/shorts/DkIosdfcozQ",
-      "date": "2026-05-15",
-      "title": "【コーヒー豆知識】AIが店長のスウェーデンのカフェ・ナプキン6000枚など想定外の発注続出｜2026/05/15 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "news-en",
-        "description": "Daily Coffee News (5/13) と PBS NewsHour (AP配信, 5/12) と Washington Times (5/12) で先週バズった『AI が経営する Andon Café』を 3 媒体でクロスチェック。AP/PBS と DCN の双方が Andon Labs (San Francisco, AI 安全研究スタートアップ、2023 創業) が 2026 年 4 月中旬にストックホルムで Andon Café を開業し、Google Gemini ベースの AI エージェント Mona に採用・仕入れ・在庫・シフト管理を委任、人間バリスタはドリンク提供のみという構図を確認。共通する具体ファクト=オープン以来の売上 $5,700 / 残予算 5,000ドル未満 (元資金 $21,000+)、ナプキン 6,000 枚・ゴム手袋 3,000 枚・救急箱 4 個・メニューにないトマト缶を発注、深夜のバリスタへの業務連絡がスウェーデンの労働規範に抵触、食中毒時の責任所在不明という倫理問題が指摘されている点。柱は ③業界・ビジネスニュース (技術 × 小規模カフェ運営) で、5-04 ブルーボトル売却 (189v) や 5-03 中国ゼロ関税 (1294v) の勝ち筋 = 海外発の固有名詞ニュースを『視聴者の自分ごと』に翻訳する型を踏襲。Primary (家で淹れる趣味層) には『好きなカフェが AI 化したら』、Secondary (小規模カフェ店主) には『自店オペレーションの示唆』として二層に刺さる構造。直近 2 日 (5-13 news-en, 5-14 social-en) と method 連続違反なし。WORST 化しつつある official-src は本日見送り。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/05/13/an-ai-cafe-operator-is-messaging-baristas-at-midnight-and-making-weird-purchasing-orders/",
-          "https://www.pbs.org/newshour/world/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
-          "https://www.washingtontimes.com/news/2026/may/12/5-questions-ai-run-andon-cafe-sweden/",
-          "https://www.foodmanufacturing.com/consumer-trends/news/22966476/the-barista-is-human-but-an-ai-agent-runs-this-experimental-swedish-cafe",
-          "https://andonlabs.com/blog/ai-cafe-stockholm"
-        ],
-        "query": "Andon Labs Mona AI cafe Stockholm Gemini barista coffee 2026 weird inventory midnight messaging",
-        "freshness_hours": 60
-      },
-      "stats": {
-        "views": 40,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
-      }
-    },
-    {
       "videoId": "zypYY2QZgm8",
       "videoUrl": "https://youtube.com/shorts/zypYY2QZgm8",
       "date": "2026-05-16",
@@ -3062,7 +3018,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3107,7 +3063,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3152,7 +3108,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3198,7 +3154,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3244,7 +3200,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3288,7 +3244,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3332,7 +3288,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3374,7 +3330,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3416,10 +3372,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 3,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-13T00:05:52.646Z"
+        "updatedAt": "2026-08-14T00:05:59.765Z"
       }
     },
     {
@@ -3468,19 +3424,58 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-14T00:05:59.765Z"
+      }
+    },
+    {
+      "videoId": "n2BSlbZR99Q",
+      "videoUrl": "https://youtube.com/shorts/n2BSlbZR99Q",
+      "date": "2026-08-14",
+      "title": "【コーヒー豆知識】ベトナム農家渡しロブスタ価格が歴史的高値圏1kg=10万ドン目前、コロンビア地震ショックとエルニーニョ懸念で相場全面高｜2026/08/14 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "market-data",
+        "description": "平日=ニュース中心運用。直近2日 (8/13 news-en コロンビア地震 / 8/12 market-data ICE認証在庫) から、method連続違反は避け(昨日news-enと変わる)、かつ直近14日のmethod別ヒットで唯一views>0を出した (8/12 market-data=3views、TOP performing method) を再度 exploit で選択。今日の目玉は世界2位のコーヒー生産国ベトナムの農家渡し (ロブスタ生豆) 現地価格が8月上旬時点で98,300〜99,000 VND/kg (円換算約600円/kg) と歴史的高値圏、10万VND/kgの心理的節目に迫っていること。背景ドライバーは (a) 8/10 コロンビアM7.4大地震によるアラビカ供給ショックがICEアラビカ9月限を3週間ぶり高値圏 (335セント台) まで押し上げ、(b) 2025-26 MYベトナムのロブスタ生産回復にも関わらずアジアEl Niño懸念 (6-8月発生見通し) が来期の生産減少不安を煽っている構図。ベトナム国内では8/12時点で報道各社が『100,000 VND/kg テスト』の見出しを一斉に打ち始めており、日本語圏では未報道 (英語ニュースに1-3日遅れる典型)。柱は ①市況ニュース (25%目標) + ②産地・ハーベスト (25%目標、直近14日で0本の欠乏補填継続) のダブル pillar。直近14日トピック (認証在庫8/7・Aillio LATAM・リベリカ・Lance Hedrick・Panama Geisha・Fairtrade・India-UK・Rabobank vs NOAA・Cooxupé・Nestlé・FoNC・コロンビア地震) と重複なし。freshness_hours=48 (Aug 12 データ→Aug 14 JST 発信)。Primary家淹れ層への実用示唆=『ロブスタもアラビカも相場高、缶コーヒーとスペシャルティ豆どちらも値上がり圧力継続。お気に入り銘柄は早めに確保』で締める。",
+        "sources": [
+          "https://www.vietnam.vn/en/gia-nong-san-hom-nay-12-8-2026-gia-ca-phe-trong-nuoc-thu-thach-moc-100-000-dong-gia-gao-neo-cao-phi-qua-kenh-dao-panama-tang-chua-tung-co",
+          "https://greentechexport.com/coffee-market/vietnam-coffee-market-august-2026/",
+          "https://english.vov.vn/en/economy/vietnam-cements-status-as-worlds-no2-coffee-producer-robusta-powerhouse-post1291673.vov",
+          "https://www.stonex.com/en-gb/insights/vietnam-s-export-surge-reinforces-its-growing-influence-in-the-global-coffee-market/",
+          "https://www.barchart.com/story/news/3786168/arabica-coffee-prices-rise-as-colombian-earthquake-disrupts-supplies",
+          "https://www.bloomberg.com/news/articles/2026-08-12/colombia-coffee-exports-partially-resume-after-quake",
+          "https://www.brecorder.com/news/40434375/arabica-coffee-rallies-to-three-week-high",
+          "https://www.gcrmag.com/colombia-coffee-exports-halted-following-earthquake/"
+        ],
+        "query": "Vietnam robusta farm-gate price August 2026 100000 VND kg record high El Nino arabica futures ICE Colombia earthquake 3-week high",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-07",
-      "changes": [
-        "standard: 51 avg views (73 videos)",
-        "Day performance: Sun=124, Tue=52, Sat=48, Wed=47, Fri=33, Mon=32, Thu=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-08",
       "changes": [
@@ -3710,6 +3705,14 @@
       "changes": [
         "standard: 10 avg views (78 videos)",
         "Day performance: Sat=30, Sun=16, Fri=13, Wed=5, Thu=4, Mon=3, Tue=3"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-14",
+      "changes": [
+        "standard: 10 avg views (78 videos)",
+        "Day performance: Sat=30, Sun=16, Fri=13, Wed=5, Mon=3, Tue=3, Thu=3"
       ],
       "recommendedTemplate": "standard"
     }
