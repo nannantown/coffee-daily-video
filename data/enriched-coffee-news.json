@@ -1,43 +1,43 @@
 {
-  "date": "2026-08-14",
+  "date": "2026-08-15",
   "discovery": {
-    "method": "market-data",
-    "description": "平日=ニュース中心運用。直近2日 (8/13 news-en コロンビア地震 / 8/12 market-data ICE認証在庫) から、method連続違反は避け(昨日news-enと変わる)、かつ直近14日のmethod別ヒットで唯一views>0を出した (8/12 market-data=3views、TOP performing method) を再度 exploit で選択。今日の目玉は世界2位のコーヒー生産国ベトナムの農家渡し (ロブスタ生豆) 現地価格が8月上旬時点で98,300〜99,000 VND/kg (円換算約600円/kg) と歴史的高値圏、10万VND/kgの心理的節目に迫っていること。背景ドライバーは (a) 8/10 コロンビアM7.4大地震によるアラビカ供給ショックがICEアラビカ9月限を3週間ぶり高値圏 (335セント台) まで押し上げ、(b) 2025-26 MYベトナムのロブスタ生産回復にも関わらずアジアEl Niño懸念 (6-8月発生見通し) が来期の生産減少不安を煽っている構図。ベトナム国内では8/12時点で報道各社が『100,000 VND/kg テスト』の見出しを一斉に打ち始めており、日本語圏では未報道 (英語ニュースに1-3日遅れる典型)。柱は ①市況ニュース (25%目標) + ②産地・ハーベスト (25%目標、直近14日で0本の欠乏補填継続) のダブル pillar。直近14日トピック (認証在庫8/7・Aillio LATAM・リベリカ・Lance Hedrick・Panama Geisha・Fairtrade・India-UK・Rabobank vs NOAA・Cooxupé・Nestlé・FoNC・コロンビア地震) と重複なし。freshness_hours=48 (Aug 12 データ→Aug 14 JST 発信)。Primary家淹れ層への実用示唆=『ロブスタもアラビカも相場高、缶コーヒーとスペシャルティ豆どちらも値上がり圧力継続。お気に入り銘柄は早めに確保』で締める。",
+    "method": "expert-blog",
+    "description": "土曜=エバーグリーン深掘り枠で、今週の相場ショック連発 (8/13 コロンビア M7.4 地震・8/14 ベトナム農家渡し 10 万ドン目前・8/05 Fairtrade 洗いアラビカ最低価格+11%) と自然接続する Primary 家淹れ層向け実用 TIP『相場高騰の今、買い増した豆を夏の高温多湿で痛める前に守る科学』を、Cotter & Hopfer (Penn State) 2018 年 Beverages 誌査読論文 + Barista Hustle『A Year in the Deep Freeze』+ Perfect Daily Grind 2025-09『Are we still freezing coffee?』の 3 系統エビデンスで組み立てる expert-blog。核心ハードナンバー 3 点: (a) 2018 年ペン州大 Cotter & Hopfer が 9 週間冷凍 vs 常温を消費者官能評価 + GC-MS で比較、深煎りは常温で香り成分損失が顕著、冷凍で明確に保持と結論、(b) 化学のアレニウス則 (温度 10℃ 低下で反応速度が約半分)、家庭冷凍庫 -18℃ は常温 20℃ 比で ΔT=38℃ = 約 (0.5)^3.8 ≈ 1/13.9 ≒ 約 16 倍長持ちの計算、(c) 単回冷凍 (single dose)・小分け密閉・凍ったまま挽く運用が Barista Hustle 検証で安定再現。Method 選定理由: 8/14 market-data / 8/13 news-en の連続違反回避、8/09 expert-blog から 6 日空き、直近 expert-blog 連続不振 (8/01 Hoffmann 0v・8/09 Lance Hedrick 0v・7/17 Lance Hedrick 0v) の共通問題『有名人名を並べたが具体行動接続が薄い』を、勝ちテンプレ『査読データ × 家で今すぐ試せる TIP』(5/23 UC Davis 水温 83v・5/16 差額 77v・6/07 焙煎度別ピーク日 10v) に軸戻しする改善型テスト投入。Pillar は ④焙煎士の一次情報 (直近 14 日 14% → 21%、目標 15% 帯へ回復) を主軸、③業界・ビジネスの過剰是正も兼ね、①市況ニュース (直近 50% 過剰) からの明示的スイッチ。日本の 8 月中旬は最高気温 32-35℃・湿度 70-80% で豆の劣化速度が最大化する季節性ピーク、Primary 家淹れ層の『買った豆を夏に痛めた』経験記憶を直撃。freshness_hours=336 (エバーグリーンだが、PDG 2025-09『Are we still freezing coffee?』を英語圏最新まとめとして採用、原論文は 2018 年でも 7 年後の 2025 年に PDG が再訪する実務トピックの回復基調で継続関心確立)。",
     "sources": [
-      "https://www.vietnam.vn/en/gia-nong-san-hom-nay-12-8-2026-gia-ca-phe-trong-nuoc-thu-thach-moc-100-000-dong-gia-gao-neo-cao-phi-qua-kenh-dao-panama-tang-chua-tung-co",
-      "https://greentechexport.com/coffee-market/vietnam-coffee-market-august-2026/",
-      "https://english.vov.vn/en/economy/vietnam-cements-status-as-worlds-no2-coffee-producer-robusta-powerhouse-post1291673.vov",
-      "https://www.stonex.com/en-gb/insights/vietnam-s-export-surge-reinforces-its-growing-influence-in-the-global-coffee-market/",
-      "https://www.barchart.com/story/news/3786168/arabica-coffee-prices-rise-as-colombian-earthquake-disrupts-supplies",
-      "https://www.bloomberg.com/news/articles/2026-08-12/colombia-coffee-exports-partially-resume-after-quake",
-      "https://www.brecorder.com/news/40434375/arabica-coffee-rallies-to-three-week-high",
-      "https://www.gcrmag.com/colombia-coffee-exports-halted-following-earthquake/"
+      "https://perfectdailygrind.com/2025/09/freezing-roasted-coffee-best-practices/",
+      "https://www.mdpi.com/2306-5710/4/3/68/htm",
+      "https://doi.org/10.3390/beverages4030068",
+      "https://www.semanticscholar.org/paper/The-Effects-of-Storage-Temperature-on-the-Aroma-of-Cotter-Hopfer/694653f3a0440724daba8adeb40ab71a2d9ee702",
+      "https://www.psu.edu/news/research/story/wake-and-smell-coffee-research-shows-freezing-beans-can-preserve-aroma",
+      "https://www.baristahustle.com/a-year-in-the-deep-freeze/",
+      "https://thebasicbarista.com/blogs/topics/freezing-coffee-beans-barista-basics",
+      "https://www.worldcoffeeportal.com/interview/cool-beans-james-hoffmanns-quest-for-perfect-cold-coffee/"
     ],
-    "query": "Vietnam robusta farm-gate price August 2026 100000 VND kg record high El Nino arabica futures ICE Colombia earthquake 3-week high",
-    "freshness_hours": 48
+    "query": "freezing coffee beans science Penn State Cotter Hopfer 2018 Beverages nine weeks arabica aroma dark roast; Barista Hustle deep freeze single dose 2024 2025; Perfect Daily Grind freezing roasted coffee 2025 best practices; Arrhenius 10 degrees rule reaction rate coffee staling home freezer -18",
+    "freshness_hours": 336
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ベトナム農家渡しロブスタ価格が歴史的高値圏1kg=10万ドン目前、コロンビア地震ショックとエルニーニョ懸念で相場全面高",
-      "description": "世界2位のコーヒー生産国ベトナムで、農家渡しのロブスタ価格が過去最高圏。1kg=10万ドン(約600円)の心理的節目に迫っています。",
-      "detail": "8月上旬のベトナム産地価格は9万8300〜9万9000ドン/kg、円換算で約600円と歴史的高値圏。国産の95%がロブスタで、缶コーヒーやインスタントの主原料です。背景はコロンビアM7.4地震によるアラビカ供給不安と、来期エルニーニョ懸念のダブルパンチ。ICEアラビカ9月限も3週間ぶり高値圏を維持しています。",
-      "narration": "今日のニュース。世界2位のコーヒー生産国ベトナムで、農家渡しの豆価格が歴史的高値圏、1kg=10万ドンに迫っています。",
-      "tags": ["市況ニュース", "ロブスタ", "ベトナム"],
+      "title": "夏の豆を守る科学・家庭冷凍庫で香りが約16倍長持ち、ペンシルベニア州立大の実験で証明",
+      "description": "今週も相場高騰が続くコーヒー。買い増した大切な豆を夏の高温多湿から守る科学的な保存法があります。冷凍で香りが約16倍長持ちします。",
+      "detail": "2018年のペンシルベニア州立大 Cotter & Hopfer 研究で、9週間冷凍した深煎り豆は常温品より香り成分の劣化が明確に小さいと Beverages 誌に報告。化学のアレニウス則で温度が10度下がると劣化速度が約半分、家庭冷凍庫-18度は常温20度と比べて約16倍長持ちの計算。運用は1回分ずつ小分け密閉・一度だけ凍らせる・凍ったまま挽くの3点セットが安定します。",
+      "narration": "今週も相場高騰が続くコーヒー。買い増した大切な豆、この夏ずっと美味しく飲めますか?実は正しく凍らせると香りが約16倍長持ちします。",
+      "tags": ["焙煎士の技", "豆の鮮度", "冷凍保存"],
       "narration_sections": {
-        "hook": "今日のニュース。世界2位のコーヒー生産国ベトナムで、農家渡しの豆価格が歴史的高値圏、1kg=10万ドンに迫っています。",
-        "origin": "8月上旬の農家渡し価格は9万8300〜9万9000ドン、1kg約600円と歴史的高値圏。ベトナムは国産の95%がロブスタで、缶コーヒーやインスタントの主原料。背景はコロンビア地震のアラビカ供給不安と来期エルニーニョ懸念で、ICE先物も3週間ぶり高値圏です。",
-        "recommend": "ロブスタもアラビカも相場高が続きそう。缶コーヒーもスペシャルティ豆も値上がり圧力が強く、お気に入りは早めに確保が安心ですよ。"
+        "hook": "今週も相場高騰が続くコーヒー。買い増した大切な豆、この夏ずっと美味しく飲めますか?実は正しく凍らせると香りが約16倍長持ちします。",
+        "origin": "2018年ペンシルベニア州立大の実験で、9週間冷凍した深煎りは常温品より香り成分の劣化が明確に小さいと報告されました。化学の法則で温度が10度下がると劣化速度が半分になり、冷凍庫マイナス18度は常温比で約16倍遅くなる計算です。",
+        "recommend": "1回分ずつ小分けにして密閉し、一度だけ凍らせるのがコツ。凍ったまま挽けて豆が均一に砕けます。今年の豆を来月も新鮮に楽しめますよ。"
       },
       "section_titles": {
-        "hook": "ベトナム価格が高値圏",
-        "origin": "1kg 10万ドン目前",
-        "recommend": "豆は早めの確保が吉"
+        "hook": "夏の豆は冷凍が正解",
+        "origin": "常温比で16倍長持ち",
+        "recommend": "小分け・一度だけ冷凍"
       },
       "section_descriptions": {
-        "hook": "世界2位ベトナム、農家渡し価格が10万ドン接近",
-        "origin": "地震とエルニーニョで相場全面高、アラビカも高値圏",
-        "recommend": "ロブスタもアラビカも値上がり圧力継続、豆確保を"
+        "hook": "相場高騰の今こそ、豆を長持ちさせる技を紹介",
+        "origin": "米大学の実験で立証、深煎りほど冷凍の効果が大きい",
+        "recommend": "密閉して一度だけ凍らせるのが最大のコツです"
       }
     }
   ]
