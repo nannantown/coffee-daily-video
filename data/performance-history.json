@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "zypYY2QZgm8",
-      "videoUrl": "https://youtube.com/shorts/zypYY2QZgm8",
-      "date": "2026-05-16",
-      "title": "【コーヒー豆知識】先物が下がっても豆が安くならない理由・差額の仕組み｜2026/05/16 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Perfect Daily Grind の 2026/04 記事『Why coffee roasters are explaining price increases』を起点に、今週のアラビカ先物 1 年半ぶり安値ニュース (5/12 #44) と先週末のラバッツァ再生農業 (5/6) の流れを焙煎士目線で繋ぐ週末エバーグリーン。柱は ④焙煎士の一次情報 × ①市況ニュースの橋渡し。視聴者の素朴な疑問『先物下がってるのに豆が値下がりしないのはなぜ』に差額(ディファレンシャル)の仕組みで答える。Primary (家で淹れる趣味層) を主ターゲットに、価格に対する納得感を深め『適正価値で選ぶ』姿勢を醸成。Sucafina の Differentials 解説と algrano の C-market 解説を裏取りソースに使用し、illycaffè 予想 (H2 2026 で C 価格 $2.80-3.00/lb 安定、それでも 5 年平均より上) も背景知識として参照。直近 2 日 (5-15 news-en, 5-14 social-en) と method 重複なし。expert-blog は過去 14 日で 1 投稿 85v、TOP3 圏内だが本数不足で再評価。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
-          "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
-          "https://algrano.com/learn/the-c-market-explained",
-          "https://perfectdailygrind.com/2026/01/why-higher-coffee-prices-dont-mean-higher-quality/",
-          "https://perfectdailygrind.com/2025/08/high-coffee-prices-favour-local-smaller-roasters/"
-        ],
-        "query": "why specialty coffee retail price doesn't drop when arabica C futures fall differential roaster costs",
-        "freshness_hours": 36
-      },
-      "stats": {
-        "views": 77,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-05-29T01:31:17.935Z"
-      }
-    },
-    {
       "videoId": "YqAVrlMFxZM",
       "videoUrl": "https://youtube.com/shorts/YqAVrlMFxZM",
       "date": "2026-05-17",
@@ -3063,7 +3019,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3108,7 +3064,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3154,7 +3110,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3200,7 +3156,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3244,7 +3200,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3288,7 +3244,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3330,7 +3286,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3375,7 +3331,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3424,7 +3380,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3471,7 +3427,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
+        "updatedAt": "2026-08-15T23:42:01.455Z"
       }
     },
     {
@@ -3518,19 +3474,52 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-15T23:42:01.455Z"
+      }
+    },
+    {
+      "videoId": "cqCQ_hJio9M",
+      "videoUrl": "https://youtube.com/shorts/cqCQ_hJio9M",
+      "date": "2026-08-16",
+      "title": "【コーヒー豆知識】家淹れの次の一手はグラインダー・PDG8/13にプロ全員一致の結論｜2026/08/16 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind が 2026-08-13 に公開した『What to upgrade first in your home coffee setup』を起点に、家淹れ Primary ペルソナ向けの日曜エバーグリーンとして『ミルを先に更新すべし』プロ合意を日本語に噛み砕く。過去14日でPrimary向けが2件連続0viewだった反省を踏まえ、単なる Tips ではなく英語業界メディアの一次記事を直接ソースに紐付け、鮮度感(≈65時間)を保った news-driven evergreen として構成。直近2日の method (8/15 expert-blog / 8/14 market-data) との重複回避。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/08/what-to-upgrade-first-home-coffee-setup/",
+          "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/"
+        ],
+        "query": "what to upgrade first home coffee setup perfect daily grind grinder priority 2026",
+        "freshness_hours": 65
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-09",
-      "changes": [
-        "standard: 50 avg views (75 videos)",
-        "Day performance: Sun=125, Sat=48, Tue=47, Wed=43, Mon=33, Fri=33, Thu=9"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-10",
       "changes": [
@@ -3760,6 +3749,14 @@
       "changes": [
         "standard: 9 avg views (78 videos)",
         "Day performance: Sat=30, Sun=16, Fri=10, Wed=5, Mon=3, Tue=3, Thu=3"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-15",
+      "changes": [
+        "standard: 9 avg views (79 videos)",
+        "Day performance: Sat=27, Sun=16, Fri=10, Wed=5, Mon=3, Tue=3, Thu=3"
       ],
       "recommendedTemplate": "standard"
     }
