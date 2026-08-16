@@ -1,41 +1,42 @@
 {
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind が 2026-08-13 に公開した『What to upgrade first in your home coffee setup』を起点に、家淹れ Primary ペルソナ向けの日曜エバーグリーンとして『ミルを先に更新すべし』プロ合意を日本語に噛み砕く。過去14日でPrimary向けが2件連続0viewだった反省を踏まえ、単なる Tips ではなく英語業界メディアの一次記事を直接ソースに紐付け、鮮度感(≈65時間)を保った news-driven evergreen として構成。直近2日の method (8/15 expert-blog / 8/14 market-data) との重複回避。",
+    "method": "market-data",
+    "description": "月曜朝、Barchart / Reuters 経由でブラジル2026/27収穫進捗の最新数値 (Safras & Mercado / CooxupeなどのBrazilian trader source経由) を確認。8/12時点で全体90%・アラビカ86%と、前年97%/95%・5年平均94%を明確に下回り、これがNYアラビカ先物を7月+5.8%まで押し上げた主因の一つとして機能中。9-10月のブラジル花芽時期にエルニーニョ雨不足懸念も重なり、月曜寄りの相場ネタとして価値が高い。直近2日はnews-en/expert-blog、TOP method のmarket-data (avg 1.33) を80/20のexploit側で継続使用、7/31クーシュペ (コニロン=ロブスタ) 遅延とは別の全体+アラビカ指標なので重複回避。",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/what-to-upgrade-first-home-coffee-setup/",
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-7-august-2026/"
+      "https://www.barchart.com/story/news/3855759/coffee-prices-see-support-from-slow-brazil-harvest",
+      "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-jump-slow-pace-182121228.html",
+      "https://www.brecorder.com/news/40434318/arabica-coffee-rallies-to-three-week-high-while-raw-sugar-hovers-near-10-month-peak"
     ],
-    "query": "what to upgrade first home coffee setup perfect daily grind grinder priority 2026",
-    "freshness_hours": 65
+    "query": "Brazil coffee harvest pace 2026/27 slow arabica Safras Mercado August 12",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "家淹れの次の一手はグラインダー・PDG8/13にプロ全員一致の結論",
-      "description": "8/13のPDG記事で、家のコーヒー・アップグレード優先順位はマシンより先にミルとプロが全員一致。",
-      "detail": "粒度がバラつくと細かい粉は過抽出、粗い粉は未抽出で味が濁ります。目安は約200ドルのミル更新が500ドルのマシン更新より体感が大きい。入門機はBaratza Encoreの40段階、その次はNiche Zero帯まで一気に世界が変わります。",
-      "narration": "家のコーヒー、次に何を買うか。8/13にPDGが世界の焙煎家の総意を発表。マシン更新より先に、グラインダーへ投資すべきです。",
+      "title": "ブラジル2026/27収穫が異例遅延・8/12時点で全体90%アラビカ86%、去年97%/95%から後退",
+      "description": "世界最大の産地ブラジルの2026/27収穫が8/12時点で全体90%、アラビカ86%と5年平均を下回りアラビカ相場を下支え。",
+      "detail": "去年同時期は全体97%・アラビカ95%、5年平均も94%まで進んでいた。新豆の到着遅れは7月のNYアラビカ先物を5.8%押し上げた。9-10月はブラジルの花芽時期でエルニーニョ雨不足の懸念も重なる。",
+      "narration": "月曜朝の一報、ブラジルの2026/27コーヒー収穫が今、異例に遅れています。8月12日時点で全体90%、去年より7ポイント遅い水準です。",
       "tags": [
-        "家淹れ",
-        "グラインダー",
-        "アップグレード"
+        "ブラジル",
+        "アラビカ",
+        "収穫遅延"
       ],
       "narration_sections": {
-        "hook": "家のコーヒー、次に何を買うか。8/13にPDGが世界の焙煎家の総意を発表。マシン更新より先に、グラインダーへ投資すべきです。",
-        "origin": "粒度がバラつくと細かい粉は過抽出、粗い粉は未抽出で味が濁ります。目安は約200ドルのミル更新が500ドルのマシン更新より体感が大きい。入門機はBaratza Encoreの40段階、その次はNiche Zero帯まで一気に世界が変わります。",
-        "recommend": "焙煎ではなく道具を見直す日曜。挽き目こそ味の司令塔で、10年使える一生モノの投資です。EC準備中、フォローしてお待ちください。"
+        "hook": "月曜朝の一報、ブラジルの2026/27コーヒー収穫が今、異例に遅れています。8月12日時点で全体90%、去年より7ポイント遅い水準です。",
+        "origin": "世界最大の産地ブラジル、8/12時点で全体90%、アラビカだけだと86%までしか進んでいません。去年同時期は97%と95%、5年平均も94%で明確に後退。新豆の到着遅れが7月のNYアラビカ先物を5.8%押し上げました。",
+        "recommend": "9-10月はブラジルの花芽時期、エルニーニョ雨不足の懸念も重なります。冬の新入荷は早めの確保が吉。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "次に買うのはミル",
-        "origin": "粒度こそ味の司令塔",
-        "recommend": "日曜は道具を見直す"
+        "hook": "ブラジル収穫遅延",
+        "origin": "去年97%→今年90%",
+        "recommend": "冬新入荷は早めに"
       },
       "section_descriptions": {
-        "hook": "PDGが8/13に出した家淹れの正解を紹介",
-        "origin": "200ドルのミル差が500ドルのマシン差を超える",
-        "recommend": "焙煎ではなく道具に投資する日曜のアップグレード"
+        "hook": "月曜朝ブラジル収穫が例年より遅く相場を下支え",
+        "origin": "アラビカ86%は去年比9ポイント遅い水準",
+        "recommend": "9-10月開花期のエルニーニョ懸念、冬の豆は早めに"
       }
     }
   ]
