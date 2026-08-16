@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "YqAVrlMFxZM",
-      "videoUrl": "https://youtube.com/shorts/YqAVrlMFxZM",
-      "date": "2026-05-17",
-      "title": "【コーヒー豆知識】世界大会の44%が選んだHario Switch・家でハイブリッド抽出が主役に｜2026/05/17 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "social-en",
-        "description": "Reddit/Threads/Lemmy で継続話題の『Hario Switch が AeroPress を凌ぎつつある』コミュニティ現象を、Perfect Daily Grind 2026-03 ハイブリッド復活記事と 2025 World Brewers Cup ファイナリスト 9 人中 4 人がハイブリッド採用というハードファクトで裏打ち。日曜エバーグリーン枠で Primary ペルソナ (家で淹れる趣味層・器具持ち) に器具更新文脈で刺す。直近 2 日 (5/16 expert-blog, 5/15 news-en) と method 重複なし。TOP3 method の social-en (avg 134.7v) を exploit。柱は ④焙煎士の一次情報枠を抽出士目線で実装、戦略にある『weekend evergreen はニュース駆動の背景接続』を体現。Tetsu Kasuya の 2025 New Hybrid レシピ (3:30 brew) を recommend で提示し『今すぐ家で試せる』動線まで作る。視聴者の財布軸 = 2 千円台で買える具体的提案。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/03/hybrid-coffee-brewers-making-comeback/",
-          "https://wcc.coffee/latest-news/meet-the-2025-world-brewers-cup-finalists",
-          "https://www.timer.coffee/recipes/hario-switch/2025-new-hybrid-hario-switch-recipe-by-tetsu-kasuya/",
-          "https://perfectdailygrind.com/2026/04/custom-brewers-coffee-competitions/",
-          "https://perfectdailygrind.com/2026/02/new-coffee-brewers-extraction-tools-baristas/",
-          "https://www.fissionandbloom.co.uk/blog/hario-switch-vs-aeropress-which-brewer-suits-your-coffee-style"
-        ],
-        "query": "Hario Switch hybrid brewer World Brewers Cup 2025 finalists Tetsu Kasuya new recipe immersion percolation home brewing trend",
-        "freshness_hours": 60
-      },
-      "stats": {
-        "views": 94,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-05-31T01:34:00.067Z"
-      }
-    },
-    {
       "videoId": "9fk3Lg8UUyA",
       "videoUrl": "https://youtube.com/shorts/9fk3Lg8UUyA",
       "date": "2026-05-18",
@@ -3019,7 +2974,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3064,7 +3019,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3110,7 +3065,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3156,7 +3111,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3200,7 +3155,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3244,7 +3199,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3286,7 +3241,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3331,7 +3286,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3380,7 +3335,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3427,7 +3382,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3474,7 +3429,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-15T23:42:01.455Z"
+        "updatedAt": "2026-08-16T23:41:12.840Z"
       }
     },
     {
@@ -3515,19 +3470,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-16T23:41:12.840Z"
+      }
+    },
+    {
+      "videoId": "n_hjp81Pkx0",
+      "videoUrl": "https://youtube.com/shorts/n_hjp81Pkx0",
+      "date": "2026-08-17",
+      "title": "【コーヒー豆知識】ブラジル2026/27収穫が異例遅延・8/12時点で全体90%アラビカ86%、去年97%/95%から後退｜2026/08/17 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 59,
+      "discovery": {
+        "method": "market-data",
+        "description": "月曜朝、Barchart / Reuters 経由でブラジル2026/27収穫進捗の最新数値 (Safras & Mercado / CooxupeなどのBrazilian trader source経由) を確認。8/12時点で全体90%・アラビカ86%と、前年97%/95%・5年平均94%を明確に下回り、これがNYアラビカ先物を7月+5.8%まで押し上げた主因の一つとして機能中。9-10月のブラジル花芽時期にエルニーニョ雨不足懸念も重なり、月曜寄りの相場ネタとして価値が高い。直近2日はnews-en/expert-blog、TOP method のmarket-data (avg 1.33) を80/20のexploit側で継続使用、7/31クーシュペ (コニロン=ロブスタ) 遅延とは別の全体+アラビカ指標なので重複回避。",
+        "sources": [
+          "https://www.barchart.com/story/news/3855759/coffee-prices-see-support-from-slow-brazil-harvest",
+          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-jump-slow-pace-182121228.html",
+          "https://www.brecorder.com/news/40434318/arabica-coffee-rallies-to-three-week-high-while-raw-sugar-hovers-near-10-month-peak"
+        ],
+        "query": "Brazil coffee harvest pace 2026/27 slow arabica Safras Mercado August 12",
+        "freshness_hours": 120
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-10",
-      "changes": [
-        "standard: 49 avg views (76 videos)",
-        "Day performance: Sun=125, Sat=48, Tue=47, Wed=43, Mon=33, Fri=33, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-13",
       "changes": [
@@ -3757,6 +3746,14 @@
       "changes": [
         "standard: 9 avg views (79 videos)",
         "Day performance: Sat=27, Sun=16, Fri=10, Wed=5, Mon=3, Tue=3, Thu=3"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-16",
+      "changes": [
+        "standard: 8 avg views (79 videos)",
+        "Day performance: Sat=21, Sun=14, Fri=10, Wed=5, Mon=3, Tue=3, Thu=3"
       ],
       "recommendedTemplate": "standard"
     }
