@@ -1,44 +1,42 @@
 {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 8/14 weekly recapで大きく報じられたEU PPWR (Packaging and Packaging Waste Regulation) の8/12施行トピックを、法律事務所解説 (Bergeson & Campbell, Gleiss Lutz) と業界メディア (Comunicaffe, Guala Dispensing) で裏取り。コーヒーのカプセルとポッドが正式に『包装』扱いへ、2028年2月からお茶バッグと使い捨てソフトカプセルは工業堆肥化必須、2030年までに全包装リサイクル可能義務・プラカプセル最低10%再生材。日本の焙煎所やEC事業者にも豆袋設計面で波及必至。80/20 exploit側で news-en (TOP2 method, avg 0.25) を選択、直近2日 market-data/market-data の連続を打ち切りコンテンツ柱③業界・ビジネス(20%)を補充。",
+    "method": "official-src",
+    "description": "World AeroPress Championship (WAC) 公式 8/14 発表『2026 大会が 18 シーズン目で初めてメキシコシティ開催に決定』を一次ソースに、Daily Coffee News 8/14 記事で内容裏取り。会場は Frontón Bucareli (メキシコシティ中心部 Colonia Centro)、開催日 12/6、競技は 1 人 5 分で 1 杯の AeroPress を淹れて審判が採点する形式、当日は 12 焙煎所が 30 銘柄を提供する試飲村 (Roasters Village) も併設。method 選定理由: news-en (8/18 EU PPWR) と market-data (8/17 ブラジル収穫遅延) が直近 2 日で連続使用済みのためロテ制約から除外、残る TOP method 候補として official-src を Explore/Exploit 兼務で採用 (8/6 エチオピア以来 13 日空き)。柱③業界・イベント (20%) + 柱④焙煎士/家庭抽出 (15%) のクロスで、直近 4 日 (8/12-14, 8/17) の相場・産地連投からリセット。Primary ペルソナ (家で淹れる趣味層) 直撃の家庭抽出アイコン AeroPress を主軸にすることで、家淹れ実践系素材の 14 日連続 0 views 打破を狙う。8/8 Best of Panama (news-en, 1view) と同型の『大会+具体地名+スコア/数値+期日』フォーマットで可読性優先、フックには『世界大会』『初のメキシコ』『18 年』『12 月 6 日』の具体語を並べる。CTA は強い購買誘導を避け、冬に公開される優勝レシピを家で 1 週間試すという習慣化 TIP で締め、EC 準備中フェーズ (フォロー貯金期) に整合。",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-14-august-2026/",
-      "https://www.comunicaffe.com/new-rules-under-the-packaging-and-packaging-waste-regulation-ppwr-enter-into-application-across-the-eu-today-capsules-and-pods-are-officially-classified-as-packaging/",
-      "https://www.lawbc.com/eu-packaging-and-packaging-waste-regulation-begins-to-apply-august-12-2026-public-comment-opportunities-underway/",
-      "https://news.gualadispensing.com/ppwr-and-coffee-capsule-packaging-recyclable-and-compostable-pods",
-      "https://www.gleisslutz.com/en/know-how/new-eu-packaging-regulation-key-requirements-august-2026"
+      "https://dailycoffeenews.com/2026/08/14/the-2026-world-aeropress-championship-heads-to-mexico-city/",
+      "https://worldaeropresschampionship.com/pages/wac26",
+      "https://worldaeropresschampionship.com/pages/mexico-2026"
     ],
-    "query": "EU PPWR coffee pod capsule packaging 2028 compostable August 12 2026",
-    "freshness_hours": 144
+    "query": "World AeroPress Championship 2026 Mexico City December 6 Fronton Bucareli first time Latin America 18 seasons Roasters Village",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "EU PPWR発効8/12・コーヒーのカプセルとポッドが正式に包装分類、2028年2月から使い捨てソフトカプセルとお茶バッグは工業堆肥化必須",
-      "description": "先週12日、EUで新しい包装ルールPPWRが動き出しました。コーヒーのカプセルとポッドが正式に『包装扱い』になったんです。",
-      "detail": "PPWRは焙煎豆袋やポッドを含む全パッケージが2030年までにリサイクル可能義務、プラカプセルは最低10%再生材、使い捨てソフトカプセルとお茶バッグは2028年2月から工業堆肥化必須。EU輸出組は今すぐ設計見直しが要る。",
-      "narration": "先週12日、EUで新しい包装ルールが動き出しました。コーヒーのカプセルとポッドが正式に『包装扱い』になったんです。",
+      "title": "世界アエロプレス選手権が18年目で初のメキシコシティ開催・12月6日、中南米初上陸で12焙煎所30銘柄の試飲村も併設",
+      "description": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。",
+      "detail": "会場はメキシコシティ中心部Frontón Bucareli、開催日は12月6日。競技は1人5分で豆・湯温・時間を自由に決めて1杯を淹れ、審判が味を採点。当日は12焙煎所が30銘柄を出す試飲村も併設。",
+      "narration": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。中南米への初上陸で、大会は12月6日に開催されます。",
       "tags": [
-        "EU規制",
-        "サステナ",
-        "パッケージ"
+        "アエロプレス",
+        "世界大会",
+        "メキシコ"
       ],
       "narration_sections": {
-        "hook": "先週12日、EUで新しい包装ルールが動き出しました。コーヒーのカプセルとポッドが正式に『包装扱い』になったんです。",
-        "origin": "PPWRという新規則で、焙煎豆袋やポッドを含む全パッケージが2030年までにリサイクル可能義務です。プラカプセルは最低10%が再生材、使い捨てソフトカプセルとお茶バッグは2028年2月から工業堆肥化が必須。EU輸出組は今すぐパッケージ設計の見直しが要ります。",
-        "recommend": "日本の焙煎所にも影響波及必至。豆袋のリサイクル素材選びが差別化になりそうです。EC準備中、フォローしてお待ちください。"
+        "hook": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。中南米への初上陸で、大会は12月6日に開催されます。",
+        "origin": "アエロプレスは、注射器のように空気圧で押し出す家庭用の抽出器具。競技は1人5分の制限時間で、豆と湯温、時間を自由に決めて1杯を淹れ、審判が味を採点します。会場はメキシコシティ中心部で、当日は12焙煎所が30銘柄を出す試飲村も併設。",
+        "recommend": "家1杯を極める競技なので、勝ちレシピは全世界に公開されるのが恒例。冬に公式サイトで結果を見て、優勝レシピを1週間試すのが密かなおすすめです。"
       },
       "section_titles": {
-        "hook": "EU新ルール発効",
-        "origin": "2028年2月の期限",
-        "recommend": "日本の豆袋にも波及"
+        "hook": "アエロプレス世界戦",
+        "origin": "5分で決まる家淹れ",
+        "recommend": "優勝レシピを試そう"
       },
       "section_descriptions": {
-        "hook": "8月12日、EU包装規則PPWRが動き出しました",
-        "origin": "豆袋・カプセル・2028年2月の堆肥化期限",
-        "recommend": "豆袋の素材選びが日本焙煎所の差別化に効く"
+        "hook": "世界大会が初のメキシコ開催へ、12月6日決定",
+        "origin": "5分で1杯、豆湯時間を自由設計、12焙煎所も参加",
+        "recommend": "冬に公開される勝ちレシピを家で1週間試すコツ"
       }
     }
   ]
