@@ -1,42 +1,38 @@
 {
-  "date": "2026-08-19",
+  "date": "2026-08-20",
   "discovery": {
-    "method": "official-src",
-    "description": "World AeroPress Championship (WAC) 公式 8/14 発表『2026 大会が 18 シーズン目で初めてメキシコシティ開催に決定』を一次ソースに、Daily Coffee News 8/14 記事で内容裏取り。会場は Frontón Bucareli (メキシコシティ中心部 Colonia Centro)、開催日 12/6、競技は 1 人 5 分で 1 杯の AeroPress を淹れて審判が採点する形式、当日は 12 焙煎所が 30 銘柄を提供する試飲村 (Roasters Village) も併設。method 選定理由: news-en (8/18 EU PPWR) と market-data (8/17 ブラジル収穫遅延) が直近 2 日で連続使用済みのためロテ制約から除外、残る TOP method 候補として official-src を Explore/Exploit 兼務で採用 (8/6 エチオピア以来 13 日空き)。柱③業界・イベント (20%) + 柱④焙煎士/家庭抽出 (15%) のクロスで、直近 4 日 (8/12-14, 8/17) の相場・産地連投からリセット。Primary ペルソナ (家で淹れる趣味層) 直撃の家庭抽出アイコン AeroPress を主軸にすることで、家淹れ実践系素材の 14 日連続 0 views 打破を狙う。8/8 Best of Panama (news-en, 1view) と同型の『大会+具体地名+スコア/数値+期日』フォーマットで可読性優先、フックには『世界大会』『初のメキシコ』『18 年』『12 月 6 日』の具体語を並べる。CTA は強い購買誘導を避け、冬に公開される優勝レシピを家で 1 週間試すという習慣化 TIP で締め、EC 準備中フェーズ (フォロー貯金期) に整合。",
+    "method": "market-data",
+    "description": "8/18 Tuesday 付 Barchart/Yahoo Finance/IndexBox で ICE アラビカ認証在庫が 229,214 袋 (2.75年ぶり低水準)、アラビカ先物が 6.5 ヶ月ぶり高値、ブラジル 26/27 収穫が 8/12 時点で全体 90%/アラビカ 86% と後ろ倒しの 3 点を確認。8/12 (4view) の ICE 在庫244,172袋ネタの直系続報として、TOP method の market-data を 3 日インターバル明けで exploit。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/14/the-2026-world-aeropress-championship-heads-to-mexico-city/",
-      "https://worldaeropresschampionship.com/pages/wac26",
-      "https://worldaeropresschampionship.com/pages/mexico-2026"
+      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-prices-jump-ice-155633675.html",
+      "https://www.indexbox.io/blog/brazil-coffee-prices-mixed-in-early-august-2026/",
+      "https://tradingeconomics.com/commodity/coffee/news/534864"
     ],
-    "query": "World AeroPress Championship 2026 Mexico City December 6 Fronton Bucareli first time Latin America 18 seasons Roasters Village",
-    "freshness_hours": 120
+    "query": "arabica coffee 229,214 bags 2.75-year low ICE 6.5-month high Brazil harvest 90% August 18 2026",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "世界アエロプレス選手権が18年目で初のメキシコシティ開催・12月6日、中南米初上陸で12焙煎所30銘柄の試飲村も併設",
-      "description": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。",
-      "detail": "会場はメキシコシティ中心部Frontón Bucareli、開催日は12月6日。競技は1人5分で豆・湯温・時間を自由に決めて1杯を淹れ、審判が味を採点。当日は12焙煎所が30銘柄を出す試飲村も併設。",
-      "narration": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。中南米への初上陸で、大会は12月6日に開催されます。",
-      "tags": [
-        "アエロプレス",
-        "世界大会",
-        "メキシコ"
-      ],
+      "title": "アラビカ先物が6.5ヶ月ぶり高値・ICE認証在庫229,214袋、ブラジル収穫90%止まりで家淹れの豆にも上振れ圧力",
+      "description": "アラビカ先物が今週6.5ヶ月ぶり高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力です。",
+      "detail": "背景はブラジル収穫の遅れです。8月12日時点で全体90%、去年の97%に比べ7ポイント遅延。世界最大産地の出荷が細り、ICE指定倉庫の在庫は8日前の244,172袋から2万袋近く減って2年9ヶ月ぶり低水準に落ち込みました。",
+      "narration": "知ってました?アラビカ先物が今週6.5ヶ月ぶりの高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力がかかっています。",
+      "tags": ["市況ニュース", "アラビカ相場", "ICE在庫"],
       "narration_sections": {
-        "hook": "今日のニュース、世界アエロプレス選手権が18年目で初めてメキシコシティ開催に決定です。中南米への初上陸で、大会は12月6日に開催されます。",
-        "origin": "アエロプレスは、注射器のように空気圧で押し出す家庭用の抽出器具。競技は1人5分の制限時間で、豆と湯温、時間を自由に決めて1杯を淹れ、審判が味を採点します。会場はメキシコシティ中心部で、当日は12焙煎所が30銘柄を出す試飲村も併設。",
-        "recommend": "家1杯を極める競技なので、勝ちレシピは全世界に公開されるのが恒例。冬に公式サイトで結果を見て、優勝レシピを1週間試すのが密かなおすすめです。"
+        "hook": "知ってました?アラビカ先物が今週6.5ヶ月ぶりの高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力がかかっています。",
+        "origin": "背景はブラジル収穫の遅れです。8月12日時点で全体90%、去年の97%に比べ7ポイント遅延。世界最大産地の出荷が細り、ICE指定倉庫の在庫は8日前の244,172袋から2万袋近く減って2年9ヶ月ぶり低水準に落ち込みました。",
+        "recommend": "当面は仕入れ価格の高止まりが続きそうです。焙煎所の入荷情報や産地ニュースを追いかけて、賢く選べる感覚を養っていきましょう。"
       },
       "section_titles": {
-        "hook": "アエロプレス世界戦",
-        "origin": "5分で決まる家淹れ",
-        "recommend": "優勝レシピを試そう"
+        "hook": "アラビカ6ヶ月高値",
+        "origin": "ICE在庫229,214袋",
+        "recommend": "家淹れの賢い備え方"
       },
       "section_descriptions": {
-        "hook": "世界大会が初のメキシコ開催へ、12月6日決定",
-        "origin": "5分で1杯、豆湯時間を自由設計、12焙煎所も参加",
-        "recommend": "冬に公開される勝ちレシピを家で1週間試すコツ"
+        "hook": "先物価格が6.5ヶ月ぶりに大幅上振れしました",
+        "origin": "在庫は229,214袋・収穫は90%止まり",
+        "recommend": "値上げ局面で家淹れを賢く守るコツ"
       }
     }
   ]
