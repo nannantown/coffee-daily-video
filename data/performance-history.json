@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "52AJSstlI6I",
-      "videoUrl": "https://youtube.com/shorts/52AJSstlI6I",
-      "date": "2026-05-20",
-      "title": "【コーヒー豆知識】カフェインだけ抜く新成分パラキサンチン・コーヒー業界に登場｜2026/05/20 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "The Conversation (大学研究者の論考媒体) と Daily Coffee News (5/18 配信) を一次ソースに、業界の新トピック『パラキサンチン (カフェインの代謝物が次世代覚醒成分として登場)』を採用。柱③業界・ビジネスニュース。直近2日 (5/19 official-src, 5/18 news-en) と method 重複回避し、TOP3 (expert-blog 80.5avg / social-en / official-src) から expert-blog を exploit。前回 expert-blog は 5/16 (76v) と 5/09 (85v) で安定。news-en の WORST 推移 (3週連続平均21v) を踏まえ、本日はニュース性を保ちつつ専門家解説の角度で当てに行く。フックは『副作用なき覚醒成分』の逆説型 (5/08 デカフェ同効果 131v / 5/09 焙煎度の逆説 85v の勝ち筋を再現)。固有名詞 (パラキサンチン / Update / カーダシアン) と数値 (200mg/日, 海外) で具体性担保。",
-        "sources": [
-          "https://theconversation.com/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks-276923",
-          "https://dailycoffeenews.com/2026/05/18/could-paraxanthine-replace-caffeine-what-we-know-about-the-new-stimulant-appearing-in-coffee-and-energy-drinks/",
-          "https://www.sciencealert.com/new-caffeine-alternative-promises-no-jitters-or-crash-heres-the-evidence",
-          "https://www.healthline.com/health-news/kim-kardashian-new-caffeine-free-energy-drink-paraxanthine"
-        ],
-        "query": "paraxanthine caffeine alternative coffee 2026 daily coffee news",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 24,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-03T02:04:50.167Z"
-      }
-    },
-    {
       "videoId": "lp9VQZr6_0g",
       "videoUrl": "https://youtube.com/shorts/lp9VQZr6_0g",
       "date": "2026-05-21",
@@ -2980,7 +2937,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3026,7 +2983,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3070,7 +3027,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3114,7 +3071,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3156,7 +3113,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3201,7 +3158,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3250,7 +3207,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3297,7 +3254,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3344,7 +3301,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3385,7 +3342,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3424,10 +3381,10 @@
         "freshness_hours": 120
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3471,7 +3428,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-18T23:44:07.880Z"
+        "updatedAt": "2026-08-19T23:44:22.299Z"
       }
     },
     {
@@ -3513,19 +3470,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-19T23:44:22.299Z"
+      }
+    },
+    {
+      "videoId": "BKvFQckBFUE",
+      "videoUrl": "https://youtube.com/shorts/BKvFQckBFUE",
+      "date": "2026-08-20",
+      "title": "【コーヒー豆知識】アラビカ先物が6.5ヶ月ぶり高値・ICE認証在庫229,214袋、ブラジル収穫90%止まりで家淹れの豆にも上振れ圧力｜2026/08/20 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "market-data",
+        "description": "8/18 Tuesday 付 Barchart/Yahoo Finance/IndexBox で ICE アラビカ認証在庫が 229,214 袋 (2.75年ぶり低水準)、アラビカ先物が 6.5 ヶ月ぶり高値、ブラジル 26/27 収穫が 8/12 時点で全体 90%/アラビカ 86% と後ろ倒しの 3 点を確認。8/12 (4view) の ICE 在庫244,172袋ネタの直系続報として、TOP method の market-data を 3 日インターバル明けで exploit。",
+        "sources": [
+          "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-prices-jump-ice-155633675.html",
+          "https://www.indexbox.io/blog/brazil-coffee-prices-mixed-in-early-august-2026/",
+          "https://tradingeconomics.com/commodity/coffee/news/534864"
+        ],
+        "query": "arabica coffee 229,214 bags 2.75-year low ICE 6.5-month high Brazil harvest 90% August 18 2026",
+        "freshness_hours": 30
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-15",
-      "changes": [
-        "standard: 48 avg views (78 videos)",
-        "Day performance: Sun=136, Sat=48, Tue=43, Wed=43, Mon=30, Fri=30, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-16",
       "changes": [
@@ -3755,6 +3746,14 @@
       "changes": [
         "standard: 7 avg views (79 videos)",
         "Day performance: Sat=21, Fri=10, Sun=6, Wed=5, Tue=3, Thu=3, Mon=3"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-19",
+      "changes": [
+        "standard: 7 avg views (79 videos)",
+        "Day performance: Sat=21, Fri=10, Sun=6, Wed=5, Thu=3, Mon=3, Tue=3"
       ],
       "recommendedTemplate": "standard"
     }
