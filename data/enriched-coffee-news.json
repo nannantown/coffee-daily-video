@@ -1,38 +1,38 @@
 {
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "discovery": {
-    "method": "market-data",
-    "description": "8/18 Tuesday 付 Barchart/Yahoo Finance/IndexBox で ICE アラビカ認証在庫が 229,214 袋 (2.75年ぶり低水準)、アラビカ先物が 6.5 ヶ月ぶり高値、ブラジル 26/27 収穫が 8/12 時点で全体 90%/アラビカ 86% と後ろ倒しの 3 点を確認。8/12 (4view) の ICE 在庫244,172袋ネタの直系続報として、TOP method の market-data を 3 日インターバル明けで exploit。",
+    "method": "news-en",
+    "description": "英語圏メディア Daily Coffee News (8/19付)、Global Coffee Report、IndexBox で UCC がベトナムでリジェネラティブ農業パイロットを開始したニュースを確認。日本語メディア未翻訳の速報を先取り。前 2 日 (8/20 market-data, 8/19 official-src) のロテ回避と、直近14日 avg views 2 位の news-en を Exploit。",
     "sources": [
-      "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-prices-jump-ice-155633675.html",
-      "https://www.indexbox.io/blog/brazil-coffee-prices-mixed-in-early-august-2026/",
-      "https://tradingeconomics.com/commodity/coffee/news/534864"
+      "https://dailycoffeenews.com/2026/08/19/ucc-launches-regenerative-coffee-pilot-in-vietnam/",
+      "https://www.gcrmag.com/ucc-launches-coffee-regeneration-program-in-vietnam",
+      "https://www.indexbox.io/blog/ucc-launches-regenerative-coffee-farming-pilot-in-vietnam/"
     ],
-    "query": "arabica coffee 229,214 bags 2.75-year low ICE 6.5-month high Brazil harvest 90% August 18 2026",
-    "freshness_hours": 30
+    "query": "UCC regenerative coffee Vietnam pilot program 2026 shade planting biochar",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "アラビカ先物が6.5ヶ月ぶり高値・ICE認証在庫229,214袋、ブラジル収穫90%止まりで家淹れの豆にも上振れ圧力",
-      "description": "アラビカ先物が今週6.5ヶ月ぶり高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力です。",
-      "detail": "背景はブラジル収穫の遅れです。8月12日時点で全体90%、去年の97%に比べ7ポイント遅延。世界最大産地の出荷が細り、ICE指定倉庫の在庫は8日前の244,172袋から2万袋近く減って2年9ヶ月ぶり低水準に落ち込みました。",
-      "narration": "知ってました?アラビカ先物が今週6.5ヶ月ぶりの高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力がかかっています。",
-      "tags": ["市況ニュース", "アラビカ相場", "ICE在庫"],
+      "title": "UCCがベトナムでリジェネラティブ農業パイロット開始・38農家にシェードツリー苗1,757本配布、2030年100%サステナ調達へ",
+      "description": "日本のUCCが8月19日、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
+      "detail": "パートナーはEcomのベトナム子会社Acom。シェードツリー植栽、カバークロップ、バイオ炭コンポストの3本柱で、38農家に苗1,757本を配布済み。2030年に自社ブランド100%サステナ調達、2040年カーボンニュートラルを狙います。",
+      "narration": "知ってました?日本のUCCが今週、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
+      "tags": ["業界ニュース", "サステナビリティ", "ベトナム産地"],
       "narration_sections": {
-        "hook": "知ってました?アラビカ先物が今週6.5ヶ月ぶりの高値。ICE認証在庫は229,214袋まで縮小し、家淹れの豆にも上振れ圧力がかかっています。",
-        "origin": "背景はブラジル収穫の遅れです。8月12日時点で全体90%、去年の97%に比べ7ポイント遅延。世界最大産地の出荷が細り、ICE指定倉庫の在庫は8日前の244,172袋から2万袋近く減って2年9ヶ月ぶり低水準に落ち込みました。",
-        "recommend": "当面は仕入れ価格の高止まりが続きそうです。焙煎所の入荷情報や産地ニュースを追いかけて、賢く選べる感覚を養っていきましょう。"
+        "hook": "知ってました?日本のUCCが今週、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
+        "origin": "パートナーはEcomのベトナム子会社Acom。シェードツリー、カバークロップ、バイオ炭コンポストの3本柱で、38農家に苗1,757本を配布済み。2030年に自社ブランド100%サステナ調達、2040年カーボンニュートラル狙いです。",
+        "recommend": "気候で揺れるロブスタ相場の未来は、こうした産地投資の量で決まります。焙煎所として動向を追い、皆さんに翻訳し続けます。"
       },
       "section_titles": {
-        "hook": "アラビカ6ヶ月高値",
-        "origin": "ICE在庫229,214袋",
-        "recommend": "家淹れの賢い備え方"
+        "hook": "UCC ベトナム再生農業",
+        "origin": "3本柱＋Acom提携",
+        "recommend": "産地投資が相場を作る"
       },
       "section_descriptions": {
-        "hook": "先物価格が6.5ヶ月ぶりに大幅上振れしました",
-        "origin": "在庫は229,214袋・収穫は90%止まり",
-        "recommend": "値上げ局面で家淹れを賢く守るコツ"
+        "hook": "日本のUCCがベトナムで8/19にパイロット発表",
+        "origin": "苗1,757本+バイオ炭+カバークロップ3本柱",
+        "recommend": "気候ストレス下でのロブスタ産地への戦略的布石"
       }
     }
   ]
