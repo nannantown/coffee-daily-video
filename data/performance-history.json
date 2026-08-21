@@ -2,53 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "UbKIzkTGTPo",
-      "videoUrl": "https://youtube.com/shorts/UbKIzkTGTPo",
-      "date": "2026-05-22",
-      "title": "【コーヒー豆知識】ブラジル初のスペシャルティ脱カフェ・8.4トンが日本へ出航｜2026/05/22 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 49,
-      "discovery": {
-        "method": "official-src",
-        "description": "Daily Coffee News の Weekly Coffee News (5/15 配信) を起点に、ブラジル・セラード地区の生産者協会 Expocacer (Cooperativa dos Cafeicultores do Cerrado) によるスペシャルティ・グレードのカフェインレスコーヒー日本向け輸出を一次情報化。協会発信を CNN Brasil / Revista Cultivar / Portal do Agronegócio / Conexão Safra / clickpetroleoegas 英語版でクロスチェックし、Mountain Water 製法は Descamex 公式と Belco の解説で裏取り。直近2日 (5/21 news-en, 5/20 expert-blog) と method 連続違反なし。WORST method の news-en は連続使用不可のため、TOP3 から official-src を Exploit。official-src の弱点 (硬い数値で跳ねない、5/19 WCR 6v) を回避するため『日本がリクエストし、ブラジルの産地が応えた』物語性を前面化 (5/11 ベトナム利き手 72v の成功要因を再現)。柱は②産地ハーベスト×処理 (脱カフェイン) で、直近③業界・健康ネタ偏重を是正。勝ちテンプレ『海外の動き→日本の生活直結』(5/03 中国ゼロ関税 1294v) を踏襲。鮮度注記: 一次イベント (5/6 出航・現地紙 5/7-8) は約2週間前で厳密には freshness>168 の原則 NG 圏だが、(a) 英語メディア初出 (DCN Weekly) が 5/15=168h で英語優先運用の discovery アンカー、(b)『史上初』のマイルストーン報道、(c) 当該コーヒーは現在も日本へ航海中 (東京着 6月見込み) でイベント進行中、の3点で限定的な例外として採用。freshness_hours は英語初出アンカーの 168 を記録。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/05/15/weekly-coffee-news-weber-opens-european-hq-new-cup-tasters-champ/",
-          "https://en.clickpetroleoegas.com.br/japan-asked-and-cerrado-mineiro-delivered-84-tons-of-special-decaffeinated-coffee-with-a-score-of-84-depart-from-santos-heading-to-tokyo-a-v-mhbb01/",
-          "https://www.cnnbrasil.com.br/agro/cooperativa-vende-primeiro-lote-de-cafe-especial-descafeinado-ao-japao/",
-          "https://revistacultivar.com.br/noticias/expocacer-exporta-cafe-naturalmente-descafeinado-ao-japao",
-          "https://www.portaldoagronegocio.com.br/agricultura/cafe/noticias/cooperativa-do-cerrado-mineiro-realiza-exportacao-inedita-de-cafe-especial-naturalmente-descafeinado-para-o-japao",
-          "https://conexaosafra.com/cafeicultura/cafe-brasileiro-naturalmente-descafeinado-ganha-espaco-no-japao/",
-          "https://www.belco.fr/blog/cafe/decafeination-descamex",
-          "https://en.descamex.com.mx/home"
-        ],
-        "query": "Expocacer Cerrado coffee growers cooperative first specialty naturally decaffeinated coffee export Japan 8.4 tonnes Yellow Bourbon score 84 Mountain Water process Descamex",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 75,
-        "likes": 2,
-        "comments": 0,
-        "updatedAt": "2026-06-05T01:35:57.738Z"
-      }
-    },
-    {
       "videoId": "goiUxHdKpTk",
       "videoUrl": "https://youtube.com/shorts/goiUxHdKpTk",
       "date": "2026-05-23",
@@ -2940,7 +2893,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -2984,7 +2937,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3028,7 +2981,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3070,7 +3023,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3115,7 +3068,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3164,7 +3117,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3211,7 +3164,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3258,7 +3211,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3299,7 +3252,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3341,7 +3294,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3385,7 +3338,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3427,7 +3380,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3469,7 +3422,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-20T23:48:01.221Z"
+        "updatedAt": "2026-08-21T23:45:53.643Z"
       }
     },
     {
@@ -3511,19 +3464,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-21T23:45:53.643Z"
+      }
+    },
+    {
+      "videoId": "0artPx-WA-s",
+      "videoUrl": "https://youtube.com/shorts/0artPx-WA-s",
+      "date": "2026-08-22",
+      "title": "【コーヒー豆知識】中央大が証明・カップの手触りだけでコーヒーの酸味の感じ方が変わる、92人サンドペーパー vs クラフト紙スリーブ実験｜2026/08/22 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "Daily Coffee News (8/19付) が報じた中央大学心理学部 Kubo & Ariga チームの多感覚転写実験を、Multisensory Research 誌の一次論文と CoffeeTalk のサマリでクロスチェック。土曜エバーグリーン枠で日本人研究者の感覚科学論文を家淹れ TIP に翻訳。直近 2 日 (8/21 news-en, 8/20 market-data) のロテ回避、expert-blog 4 週目継続 (Primary 直撃 TIP 路線で最終検証)。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/08/19/what-we-touch-with-our-hands-may-affect-what-we-taste-in-the-cup/",
+          "https://brill.com/view/journals/msr/aop/article-10.1163-22134808-bja10198/article-10.1163-22134808-bja10198.xml",
+          "https://coffeetalk.com/daily-dose/top-news/06-2026/110341/"
+        ],
+        "query": "tactile sensations coffee taste study Chuo University Kubo Ariga Multisensory Research",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-17",
-      "changes": [
-        "standard: 47 avg views (80 videos)",
-        "Day performance: Sun=136, Sat=48, Tue=43, Wed=40, Mon=30, Fri=30, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-18",
       "changes": [
@@ -3753,6 +3740,14 @@
       "changes": [
         "standard: 7 avg views (79 videos)",
         "Day performance: Sat=21, Fri=10, Sun=6, Wed=4, Thu=3, Mon=3, Tue=3"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-21",
+      "changes": [
+        "standard: 6 avg views (79 videos)",
+        "Day performance: Sat=21, Fri=9, Sun=6, Wed=4, Mon=3, Tue=3, Thu=2"
       ],
       "recommendedTemplate": "standard"
     }
