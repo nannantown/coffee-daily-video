@@ -1,38 +1,38 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-22",
   "discovery": {
-    "method": "news-en",
-    "description": "英語圏メディア Daily Coffee News (8/19付)、Global Coffee Report、IndexBox で UCC がベトナムでリジェネラティブ農業パイロットを開始したニュースを確認。日本語メディア未翻訳の速報を先取り。前 2 日 (8/20 market-data, 8/19 official-src) のロテ回避と、直近14日 avg views 2 位の news-en を Exploit。",
+    "method": "expert-blog",
+    "description": "Daily Coffee News (8/19付) が報じた中央大学心理学部 Kubo & Ariga チームの多感覚転写実験を、Multisensory Research 誌の一次論文と CoffeeTalk のサマリでクロスチェック。土曜エバーグリーン枠で日本人研究者の感覚科学論文を家淹れ TIP に翻訳。直近 2 日 (8/21 news-en, 8/20 market-data) のロテ回避、expert-blog 4 週目継続 (Primary 直撃 TIP 路線で最終検証)。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/19/ucc-launches-regenerative-coffee-pilot-in-vietnam/",
-      "https://www.gcrmag.com/ucc-launches-coffee-regeneration-program-in-vietnam",
-      "https://www.indexbox.io/blog/ucc-launches-regenerative-coffee-farming-pilot-in-vietnam/"
+      "https://dailycoffeenews.com/2026/08/19/what-we-touch-with-our-hands-may-affect-what-we-taste-in-the-cup/",
+      "https://brill.com/view/journals/msr/aop/article-10.1163-22134808-bja10198/article-10.1163-22134808-bja10198.xml",
+      "https://coffeetalk.com/daily-dose/top-news/06-2026/110341/"
     ],
-    "query": "UCC regenerative coffee Vietnam pilot program 2026 shade planting biochar",
-    "freshness_hours": 48
+    "query": "tactile sensations coffee taste study Chuo University Kubo Ariga Multisensory Research",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "UCCがベトナムでリジェネラティブ農業パイロット開始・38農家にシェードツリー苗1,757本配布、2030年100%サステナ調達へ",
-      "description": "日本のUCCが8月19日、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
-      "detail": "パートナーはEcomのベトナム子会社Acom。シェードツリー植栽、カバークロップ、バイオ炭コンポストの3本柱で、38農家に苗1,757本を配布済み。2030年に自社ブランド100%サステナ調達、2040年カーボンニュートラルを狙います。",
-      "narration": "知ってました?日本のUCCが今週、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
-      "tags": ["業界ニュース", "サステナビリティ", "ベトナム産地"],
+      "title": "中央大が証明・カップの手触りだけでコーヒーの酸味の感じ方が変わる、92人サンドペーパー vs クラフト紙スリーブ実験",
+      "description": "日本の中央大学が今週発表した実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わることが証明されました。",
+      "detail": "心理学部 Kubo & Ariga チームが Multisensory Research 誌に掲載。92人の被験者にネスレのリッチブレンドを68度で飲ませ、サンドペーパー製の粗いスリーブとクラフト紙製の滑らかなスリーブを装着したカップで飲み比べると、滑らかな方が酸味が明らかに弱く感じられました。",
+      "narration": "知ってました?日本の中央大学が今週発表した新しい実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わると証明されました。",
+      "tags": ["感覚科学", "家淹れ", "日本の研究"],
       "narration_sections": {
-        "hook": "知ってました?日本のUCCが今週、ベトナム産地でリジェネラティブ農業の実証を開始。世界2位のロブスタ産地の未来を左右する一手です。",
-        "origin": "パートナーはEcomのベトナム子会社Acom。シェードツリー、カバークロップ、バイオ炭コンポストの3本柱で、38農家に苗1,757本を配布済み。2030年に自社ブランド100%サステナ調達、2040年カーボンニュートラル狙いです。",
-        "recommend": "気候で揺れるロブスタ相場の未来は、こうした産地投資の量で決まります。焙煎所として動向を追い、皆さんに翻訳し続けます。"
+        "hook": "知ってました?日本の中央大学が今週発表した新しい実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わると証明されました。",
+        "origin": "92人の被験者にネスレのリッチブレンドを68度で飲んでもらう実験。サンドペーパーの粗いスリーブとクラフト紙の滑らかなスリーブを装着したカップで飲み比べると、滑らかな方が酸味が明らかに弱く感じられました。触覚が味に転写される多感覚効果と呼ばれます。",
+        "recommend": "家淹れでも、いつも同じ手触りのマグを選ぶだけで味の再現性がぐっと上がります。まずお気に入りの一杯を決めてみてください。"
       },
       "section_titles": {
-        "hook": "UCC ベトナム再生農業",
-        "origin": "3本柱＋Acom提携",
-        "recommend": "産地投資が相場を作る"
+        "hook": "手触りが変える酸味",
+        "origin": "92人のカップ実験",
+        "recommend": "同じマグで味安定"
       },
       "section_descriptions": {
-        "hook": "日本のUCCがベトナムで8/19にパイロット発表",
-        "origin": "苗1,757本+バイオ炭+カバークロップ3本柱",
-        "recommend": "気候ストレス下でのロブスタ産地への戦略的布石"
+        "hook": "中央大の新研究、カップ手触りで酸味の感じ方が変わる",
+        "origin": "92人にサンドペーパーとクラフト紙で飲み比べ実験",
+        "recommend": "同じ手触りのマグに絞ると味の再現性がぐっと上がる"
       }
     }
   ]
