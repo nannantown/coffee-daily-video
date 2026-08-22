@@ -1,38 +1,43 @@
 {
-  "date": "2026-08-22",
+  "date": "2026-08-23",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Daily Coffee News (8/19付) が報じた中央大学心理学部 Kubo & Ariga チームの多感覚転写実験を、Multisensory Research 誌の一次論文と CoffeeTalk のサマリでクロスチェック。土曜エバーグリーン枠で日本人研究者の感覚科学論文を家淹れ TIP に翻訳。直近 2 日 (8/21 news-en, 8/20 market-data) のロテ回避、expert-blog 4 週目継続 (Primary 直撃 TIP 路線で最終検証)。",
+    "method": "social-en",
+    "description": "全期間 avg views 2 位 (10.08) の social-en を 32 日休眠から exploit。Home-Barista.com Tips&Technique 掲示板の active スレッド『Soup - a low-pressure technique for extracting ultra-light roasts』(pg.7) と Clive Coffee『Espresso Trends 2026 and Beyond』記事の交差点から、家淹れコミュニティ発のスープショット (1:4 濃縮エスプレッソ) が 2026 年カフェメニューへ逆流している現象を発掘。土曜エバーグリーン枠だが『今トレンド』ラップで鮮度感を担保。Primary ペルソナ (家で淹れる趣味層) が今夜すぐ試したくなる導線 (浅煎り豆余り活用) を意識。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/19/what-we-touch-with-our-hands-may-affect-what-we-taste-in-the-cup/",
-      "https://brill.com/view/journals/msr/aop/article-10.1163-22134808-bja10198/article-10.1163-22134808-bja10198.xml",
-      "https://coffeetalk.com/daily-dose/top-news/06-2026/110341/"
+      "https://www.home-barista.com/tips/soup-low-pressure-technique-for-extracting-ultra-light-roasts-t100741-60.html",
+      "https://clivecoffee.com/blogs/learn/where-espresso-is-headed-2026-and-beyond"
     ],
-    "query": "tactile sensations coffee taste study Chuo University Kubo Ariga Multisensory Research",
-    "freshness_hours": 72
+    "query": "soup shot espresso concentrated 1:4 ratio home barista viral 2026",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "中央大が証明・カップの手触りだけでコーヒーの酸味の感じ方が変わる、92人サンドペーパー vs クラフト紙スリーブ実験",
-      "description": "日本の中央大学が今週発表した実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わることが証明されました。",
-      "detail": "心理学部 Kubo & Ariga チームが Multisensory Research 誌に掲載。92人の被験者にネスレのリッチブレンドを68度で飲ませ、サンドペーパー製の粗いスリーブとクラフト紙製の滑らかなスリーブを装着したカップで飲み比べると、滑らかな方が酸味が明らかに弱く感じられました。",
-      "narration": "知ってました?日本の中央大学が今週発表した新しい実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わると証明されました。",
-      "tags": ["感覚科学", "家淹れ", "日本の研究"],
+      "title": "家淹れ発『スープショット』が2026年カフェメニューへ逆流・18g→72gの比率1対4濃縮エスプレッソ",
+      "description": "海外の家淹れコミュニティが火を付けた1対4濃縮ショットが、Clive Coffeeの2026年トレンド予想に正式ノミネート。",
+      "detail": "浅煎り豆18gを72g抽出する比率1対4の薄い濃縮ショット。低圧でultra light roastの果実味だけを引き出す発想で、Home-Barista掲示板の熱スレッドがClive Coffeeの2026年主要エスプレッソトレンドに正式ノミネートされた。",
+      "narration": "実は今、海外の家淹れ勢が発案した『スープショット』が、2026年のカフェメニューに逆流しているのを皆さんご存じでしょうか",
+      "tags": [
+        "スープショット",
+        "家淹れ",
+        "浅煎りエスプレッソ",
+        "2026トレンド",
+        "HomeBarista"
+      ],
       "narration_sections": {
-        "hook": "知ってました?日本の中央大学が今週発表した新しい実験で、コーヒーカップの手触りが変わるだけで酸味の感じ方まで変わると証明されました。",
-        "origin": "92人の被験者にネスレのリッチブレンドを68度で飲んでもらう実験。サンドペーパーの粗いスリーブとクラフト紙の滑らかなスリーブを装着したカップで飲み比べると、滑らかな方が酸味が明らかに弱く感じられました。触覚が味に転写される多感覚効果と呼ばれます。",
-        "recommend": "家淹れでも、いつも同じ手触りのマグを選ぶだけで味の再現性がぐっと上がります。まずお気に入りの一杯を決めてみてください。"
+        "hook": "実は今、海外の家淹れ勢が発案した『スープショット』が、2026年のカフェメニューに逆流しているのを皆さんご存じでしょうか",
+        "origin": "浅煎り豆18gを入れて72g抽出する、比率1対4のうっすい濃縮ショット。低い圧でゆっくり抽出し、明るい果実の香りだけ引き出す発想で、Home-Barista発の熱スレがClive社の2026年主要トレンドに正式ノミネートされました",
+        "recommend": "浅煎り豆が余ってる方は、比率1対3.5から4で軽く長めに抽出してみてください。EC準備中、フォローしてお待ちください"
       },
       "section_titles": {
-        "hook": "手触りが変える酸味",
-        "origin": "92人のカップ実験",
-        "recommend": "同じマグで味安定"
+        "hook": "スープショットとは",
+        "origin": "1対4濃縮の中身",
+        "recommend": "今夜の家でお試し"
       },
       "section_descriptions": {
-        "hook": "中央大の新研究、カップ手触りで酸味の感じ方が変わる",
-        "origin": "92人にサンドペーパーとクラフト紙で飲み比べ実験",
-        "recommend": "同じ手触りのマグに絞ると味の再現性がぐっと上がる"
+        "hook": "家淹れ発の新エスプレッソがカフェに逆流中",
+        "origin": "浅煎り18gから72gの薄い濃縮に化ける発想",
+        "recommend": "余った浅煎り豆で軽く長めに抽出してみよう"
       }
     }
   ]
