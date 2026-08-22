@@ -2,48 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "goiUxHdKpTk",
-      "videoUrl": "https://youtube.com/shorts/goiUxHdKpTk",
-      "date": "2026-05-23",
-      "title": "【コーヒー豆知識】水温92度か96度か、UCデイビスが『同じ抽出収率なら味に差なし』と結論｜2026/05/23 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "土曜エバーグリーン枠で抽出科学の expert 領域をリサーチ。WebSearch で『coffee water temperature pour over taste science』系クエリを起点に、Coffee ad Astra (Jonathan Gagné) や SCA News の継続的な引用文脈経由で UC Davis Coffee Center の Batali et al. 2020 Nature Scientific Reports 論文に到達。直近2日 (5/22 official-src, 5/21 news-en) と method 連続違反なし、TOP method の expert-blog を Exploit (前回 5/20 から 3 日空き)。5/17 Hario Switch (social-en 91v) で温まった『家庭抽出への関心』を、勝ちテンプレ『意外性 + 家で試せる科学』(5/09 ポリフェノール 85v・5/16 先物差額 77v) で土曜に深掘り。柱④焙煎士・抽出科学で、直近の③業界・②産地への偏重を是正し Primary ペルソナ (家で淹れる趣味層) 直撃を狙う。",
-        "sources": [
-          "https://www.nature.com/articles/s41598-020-73341-4",
-          "https://coffeeadastra.com/",
-          "https://sca.coffee/sca-news/25/issue-15/how-hot-is-hot-enough-brew-temperature-sensory-profile-and-consumer-acceptance-of-brewed-coffee"
-        ],
-        "query": "coffee brew temperature sensory study fixed extraction Batali UC Davis Scientific Reports",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 83,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-06T01:27:26.139Z"
-      }
-    },
-    {
       "videoId": "Mvsc5QcbwH0",
       "videoUrl": "https://youtube.com/shorts/Mvsc5QcbwH0",
       "date": "2026-05-27",
@@ -2893,7 +2851,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -2937,7 +2895,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -2981,7 +2939,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3023,7 +2981,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3068,7 +3026,7 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3117,7 +3075,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3164,7 +3122,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3211,7 +3169,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3252,7 +3210,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3294,7 +3252,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3338,7 +3296,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3380,7 +3338,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3422,7 +3380,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3464,7 +3422,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-21T23:45:53.643Z"
+        "updatedAt": "2026-08-22T23:42:51.713Z"
       }
     },
     {
@@ -3506,19 +3464,52 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-22T23:42:51.713Z"
+      }
+    },
+    {
+      "videoId": "3kEzbrryT2w",
+      "videoUrl": "https://youtube.com/shorts/3kEzbrryT2w",
+      "date": "2026-08-23",
+      "title": "【コーヒー豆知識】家淹れ発『スープショット』が2026年カフェメニューへ逆流・18g→72gの比率1対4濃縮エスプレッソ｜2026/08/23 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 48,
+      "discovery": {
+        "method": "social-en",
+        "description": "全期間 avg views 2 位 (10.08) の social-en を 32 日休眠から exploit。Home-Barista.com Tips&Technique 掲示板の active スレッド『Soup - a low-pressure technique for extracting ultra-light roasts』(pg.7) と Clive Coffee『Espresso Trends 2026 and Beyond』記事の交差点から、家淹れコミュニティ発のスープショット (1:4 濃縮エスプレッソ) が 2026 年カフェメニューへ逆流している現象を発掘。土曜エバーグリーン枠だが『今トレンド』ラップで鮮度感を担保。Primary ペルソナ (家で淹れる趣味層) が今夜すぐ試したくなる導線 (浅煎り豆余り活用) を意識。",
+        "sources": [
+          "https://www.home-barista.com/tips/soup-low-pressure-technique-for-extracting-ultra-light-roasts-t100741-60.html",
+          "https://clivecoffee.com/blogs/learn/where-espresso-is-headed-2026-and-beyond"
+        ],
+        "query": "soup shot espresso concentrated 1:4 ratio home barista viral 2026",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-18",
-      "changes": [
-        "standard: 46 avg views (81 videos)",
-        "Day performance: Sun=136, Sat=48, Tue=43, Wed=40, Mon=30, Fri=28, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-19",
       "changes": [
@@ -3748,6 +3739,14 @@
       "changes": [
         "standard: 6 avg views (79 videos)",
         "Day performance: Sat=21, Fri=9, Sun=6, Wed=4, Mon=3, Tue=3, Thu=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-22",
+      "changes": [
+        "standard: 5 avg views (79 videos)",
+        "Day performance: Sat=19, Sun=6, Wed=4, Fri=4, Mon=3, Tue=3, Thu=2"
       ],
       "recommendedTemplate": "standard"
     }
