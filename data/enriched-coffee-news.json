@@ -1,43 +1,45 @@
 {
-  "date": "2026-08-23",
+  "date": "2026-08-24",
   "discovery": {
-    "method": "social-en",
-    "description": "全期間 avg views 2 位 (10.08) の social-en を 32 日休眠から exploit。Home-Barista.com Tips&Technique 掲示板の active スレッド『Soup - a low-pressure technique for extracting ultra-light roasts』(pg.7) と Clive Coffee『Espresso Trends 2026 and Beyond』記事の交差点から、家淹れコミュニティ発のスープショット (1:4 濃縮エスプレッソ) が 2026 年カフェメニューへ逆流している現象を発掘。土曜エバーグリーン枠だが『今トレンド』ラップで鮮度感を担保。Primary ペルソナ (家で淹れる趣味層) が今夜すぐ試したくなる導線 (浅煎り豆余り活用) を意識。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind 8/21 Coffee News Recap を起点に、Global Coffee Awards 欧州公式ページ (globalcoffeeawards.com/europe-competition) と Comunicaffe / Barista Magazine を横断参照。Bordeaux 大会 (2026-10-25〜28) の日程・4 部門 (Filter/Espresso/Flat White Dairy/Flat White Alt Milk) 構成・2025 王者 (Origin Coffee UK)・25 か国超の参加規模を確定。method 選定: 8/22 expert-blog, 8/23 social-en の直近 2 日連続違反なし。平日 news-en 優先ポリシーに準拠。TOP method (social-en / expert-blog) は連続違反ロック、trends はサンプル不足。news-en は全期間 28 本 avg 1.79 で構造的に弱い method だが、今日は『視聴者への次の一手ヒント (どの焙煎所の豆を狙うか)』を明示的にナレーションへ埋め込み、勝率テコ入れ実験も兼ねる。Pillar は ③業界・ビジネスニュース (20%) メイン、⑤OG 入荷・裏側 との橋渡し (家淹れの豆選び動機に接続)。Bordeaux はワインの都、コーヒー品質評価とワイン文化の融合という視覚的鮮度感を提供。",
     "sources": [
-      "https://www.home-barista.com/tips/soup-low-pressure-technique-for-extracting-ultra-light-roasts-t100741-60.html",
-      "https://clivecoffee.com/blogs/learn/where-espresso-is-headed-2026-and-beyond"
+      "https://perfectdailygrind.com/2026/08/coffee-news-recap-21-august-2026/",
+      "https://globalcoffeeawards.com/europe-competition/",
+      "https://globalcoffeeawards.com/winners-europe/",
+      "https://perfectdailygrind.com/events/global-coffee-awards-europe-2026/",
+      "https://www.comunicaffe.com/el-salvador-2026-global-coffee-awards-world-championship",
+      "https://perfectdailygrind.com/2025/11/global-coffee-awards-europe-winners-roasters/"
     ],
-    "query": "soup shot espresso concentrated 1:4 ratio home barista viral 2026",
-    "freshness_hours": 96
+    "query": "Global Coffee Awards Europe October 2026 Bordeaux categories winners Origin Coffee UK",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "家淹れ発『スープショット』が2026年カフェメニューへ逆流・18g→72gの比率1対4濃縮エスプレッソ",
-      "description": "海外の家淹れコミュニティが火を付けた1対4濃縮ショットが、Clive Coffeeの2026年トレンド予想に正式ノミネート。",
-      "detail": "浅煎り豆18gを72g抽出する比率1対4の薄い濃縮ショット。低圧でultra light roastの果実味だけを引き出す発想で、Home-Barista掲示板の熱スレッドがClive Coffeeの2026年主要エスプレッソトレンドに正式ノミネートされた。",
-      "narration": "実は今、海外の家淹れ勢が発案した『スープショット』が、2026年のカフェメニューに逆流しているのを皆さんご存じでしょうか",
+      "title": "GCA欧州大会がワイン都ボルドーで10月開催・25か国超の焙煎士が匿名審査",
+      "description": "スペシャリティ焙煎士のヨーロッパ王者を決める大会がボルドーで開催と発表。",
+      "detail": "Global Coffee Awards Europe 2026 は 10月25-28日、ワインの都ボルドーで 4 部門 25 か国超の焙煎士が匿名審査に挑戦。",
+      "narration": "今日のニュース。スペシャリティ焙煎士のヨーロッパ王者を決める大会が10月25-28日、ワインの都ボルドーで開催と発表されました。",
       "tags": [
-        "スープショット",
-        "家淹れ",
-        "浅煎りエスプレッソ",
-        "2026トレンド",
-        "HomeBarista"
+        "Global Coffee Awards",
+        "スペシャリティ",
+        "焙煎士"
       ],
       "narration_sections": {
-        "hook": "実は今、海外の家淹れ勢が発案した『スープショット』が、2026年のカフェメニューに逆流しているのを皆さんご存じでしょうか",
-        "origin": "浅煎り豆18gを入れて72g抽出する、比率1対4のうっすい濃縮ショット。低い圧でゆっくり抽出し、明るい果実の香りだけ引き出す発想で、Home-Barista発の熱スレがClive社の2026年主要トレンドに正式ノミネートされました",
-        "recommend": "浅煎り豆が余ってる方は、比率1対3.5から4で軽く長めに抽出してみてください。EC準備中、フォローしてお待ちください"
+        "hook": "今日のニュース。スペシャリティ焙煎士のヨーロッパ王者を決める大会が10月25-28日、ワインの都ボルドーで開催と発表されました。",
+        "origin": "グローバル・コーヒー・アワーズ欧州大会は、フィルター、エスプレッソ、乳あり・乳なしフラットホワイトの4部門で審査。25か国超の焙煎士が匿名審査に挑み、10月25-28日にボルドーで結果発表。2025年王者は英オリジン・コーヒーでした。",
+        "recommend": "入賞焙煎所の豆は日本の輸入業者経由で入手可能。10月の発表後、お好みの1袋を探してみてください。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "スープショットとは",
-        "origin": "1対4濃縮の中身",
-        "recommend": "今夜の家でお試し"
+        "hook": "欧州焙煎士頂上決戦",
+        "origin": "4部門で25か国審査",
+        "recommend": "入賞豆で家淹れ更新"
       },
       "section_descriptions": {
-        "hook": "家淹れ発の新エスプレッソがカフェに逆流中",
-        "origin": "浅煎り18gから72gの薄い濃縮に化ける発想",
-        "recommend": "余った浅煎り豆で軽く長めに抽出してみよう"
+        "hook": "10月25-28日、ワイン都ボルドーで開催",
+        "origin": "フィルター等4部門で25か国が匿名審査",
+        "recommend": "入賞焙煎所の豆は日本の輸入業者から入手可能"
       }
     }
   ]
