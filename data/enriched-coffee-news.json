@@ -1,48 +1,46 @@
 {
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "discovery": {
-    "method": "expert-blog",
-    "description": "World Coffee Portal 8/21 Week in Coffee recap を起点に、Inside Retail Asia 8/20、Nation Thailand、Bangkok Post、marketingoops、Brand Buffet、Thaiger、日本語圏の thaich.net / x-bomberth.com を横断参照。核心事実を確定: (1) Blue Bottle Coffee がタイに初出店、Central Park 店 8/21 オープン、EmQuartier フラッグシップ 8/24 オープン。(2) Central Park 店に 5 口タイプの Kyoto Style Espresso Tap Bar を導入、これは東南アジア初、米国と日本の一部店舗のみが持つ仕様。(3) タイは Blue Bottle にとって 7 カ国目 (米・日・韓・香港・中国・シンガポール・タイ)、4 月に Centurium Capital (Luckin 出資者) に 4 億ドルで買収された後の最初の大型グローバル動き。(4) EmQuartier 店は 200㎡超・80 席超のフルエクスペリエンス旗艦、フルポアオーバーバーと限定商品併設。method 選定: 直近 14 日で news-en 過投入 (n=6 avg 0.2) の構造的敗北を受け止め、90 日 TOP2 の expert-blog (avg 7.8) を Exploit。8/22 以来 3 日空き、8/23 (social-en) / 8/24 (news-en) の直近 2 日連続違反なし。Pillar ③業界・ビジネスニュース (20%) メインで ④焙煎士の一次情報 (15%) との橋渡し。Explore サブ提案 `japan-abroad` 初試験: 日本の京都/抽出美学が海外に輸出される『日本コーヒー文化の逆襲』フレーミングで、Primary 層 (家で淹れる趣味層) の『自分の淹れ方が世界水準』というプライド接続を狙う。フック語彙は 8/11-8/24 で多用した『今日のニュース』『開催』『発表』等を回避し、『日本発が世界標準に』の逆説フックで差別化。",
+    "method": "market-data",
+    "description": "Reuters / Comunicaffe / TradingView / Barchart / Cocoaintel / TradingEconomics 経由で 8/24 月曜のアラビカ・ロブスタ同時大幅高を確認。核心事実: (1) ICE 12 月限アラビカ +5.9% で 341.65¢/lb、2026 年 1 月下旬以来の高値。(2) 同日 ICE 11 月限ロブスタ +5.1% で $3,802、直近 2.5 週間ぶり高値。(3) ICE アラビカ認証在庫 226,242 袋、2 年 9 ヶ月ぶりの低水準を更新。(4) 上昇要因はブラジル 2026/27 年収穫の遅延 (Safras & Mercado 8/14 発表 8/12 時点で全体 90% / アラビカ 86%、去年 97%/95% から後退) と目先の受渡玉の逼迫。(5) 翌 8/25 火曜は -2.37% で調整、333.55¢/lb 前後。method 選定: 直近 14 日 Method 別平均 views で market-data が n=4 avg 1.75 (TOP1)。90 日 では social-en (9.31) / expert-blog (7.21) が上位だが 14 日窓で不振、market-data は 14 日窓で唯一 4v 級を出しており Exploit 対象。直近 2 日 (8/24 news-en / 8/25 expert-blog) と重複回避。前回 market-data 8/20 から 6 日空き、リフレッシュ十分。同じ『相場高値』テーマでも 8/20 は 6.5 ヶ月高値・在庫 229,214 袋の中盤トピックだった一方、今日は 1 日 +5.9% の急伸・在庫 226,242 袋・1 月来高値・両市場同時上昇と情報が更新。Pillar ①市況ニュース (25%) 継続、家淹れ層向けに『店頭転嫁ラグ』の実用示唆で締める。",
     "sources": [
-      "https://www.worldcoffeeportal.com/news/the-week-in-coffee-17-23-august-2026/",
-      "https://insideretail.asia/2026/08/20/blue-bottle-coffee-brews-up-thailand-expansion-with-bangkok-debut/",
-      "https://www.nationthailand.com/business/corporate/40070197",
-      "https://www.bangkokpost.com/life/social-and-lifestyle/3303147/blue-bottle-coffee-to-open-near-bangkoks-top-parks",
-      "https://thethaiger.com/guides/best-of/food/cafe/blue-bottle-coffee-central-park-bangkok",
-      "https://www.brandbuffet.in.th/2026/08/blue-bottle-coffee-at-central-park-first-time-in-thailand/",
-      "https://www.marketingoops.com/news/biz-news/blue-bottle-coffee-full-experience-flagship-cafe-emquartier/",
-      "https://www.thaich.net/news/20260823ar.htm",
-      "https://x-bomberth.com/20260823bluebottlecoffee/"
+      "https://www.comunicaffe.com/another-sharp-rise-in-the-coffee-markets-new-york-and-london-are-up-5-9-per-cent-and-5-1-per-cent-respectively/",
+      "https://www.tradingview.com/news/reuters.com,2026:newsml_L1N43U14G:0-arabica-coffee-jumps-amid-falling-exchange-stocks-brazil-harvest-woes/",
+      "https://www.barchart.com/futures/quotes/KCU26",
+      "https://www.cocoaintel.com/arabica-coffee-rebounds-sharply-as-tight-stocks-and-delayed-brazilian-harvest-support-prices-31-july-2026/",
+      "https://tradingeconomics.com/commodity/coffee"
     ],
-    "query": "Blue Bottle Coffee Thailand Bangkok first store Central Park EmQuartier Kyoto style espresso tap bar Southeast Asia Centurium August 2026",
-    "freshness_hours": 96
+    "query": "arabica coffee futures August 24 25 2026 5.9 percent 341.65 ICE stocks 226242 brazil harvest 90 percent",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブルーボトルがタイ初出店・京都スタイル抽出機を東南アジア初導入、日本発の抽出美学が世界標準へ",
-      "description": "ブルーボトルコーヒーがタイに初出店、日本の京都で磨かれた抽出システムを東南アジア初上陸で導入。",
-      "detail": "8月21日にバンコクのセントラルパーク店、8月24日にEmQuartier旗艦店を開業、5口の京都スタイル・エスプレッソ・タップバーを東南アジア初導入。",
-      "narration": "日本発が世界標準に。ブルーボトルコーヒーが8月21日タイに初出店、東南アジア初となる『京都スタイル』の抽出機を持ち込みました。",
+      "title": "NY・London同時+5%超 8/24アラビカ341.65¢で1月来高値・ICE在庫226,242袋",
+      "description": "8/24月曜、アラビカ+5.9%・ロブスタ+5.1%と両市場同時に急伸、アラビカは今年1月来の高値ゾーンへ。",
+      "detail": "ブラジル収穫が90%止まりで遅延、ICEアラビカ認証在庫は226,242袋と2年9ヶ月ぶり低水準を更新。翌8/25は-2.37%で一時調整。",
+      "narration": "1日で+5.9%です。8/24月曜、ニューヨーク先物のアラビカが急伸、341.65¢で1月来の高値になりました。同じ日ロンドンのロブスタも+5.1%です。",
       "tags": [
-        "ブルーボトル",
-        "京都スタイル",
-        "業界ニュース"
+        "アラビカ先物",
+        "ICE在庫",
+        "ブラジル収穫",
+        "コーヒー相場",
+        "家淹れ"
       ],
       "narration_sections": {
-        "hook": "日本発が世界標準に。ブルーボトルコーヒーが8月21日タイに初出店、東南アジア初となる『京都スタイル』の抽出機を持ち込みました。",
-        "origin": "バンコクのセントラルパーク店に、5つの抽出口を持つ京都スタイル・エスプレッソ・タップバーを設置。米国と日本の一部店舗にしかない仕様で、抽出の再現性がプロも唸る精度です。タイは7カ国目の進出先で、Luckin出資者に4億ドルで買われた後の最初の大型動きです。",
-        "recommend": "日本の京都で磨かれた抽出美学が世界標準になりつつあります。家で淹れる時も、工程を毎回同じにする京都流で味が安定しますよ。"
+        "hook": "1日で+5.9%です。8/24月曜、ニューヨーク先物のアラビカが急伸、341.65¢で1月来の高値になりました。同じ日ロンドンのロブスタも+5.1%です。",
+        "origin": "背景はブラジル2026/27年収穫の遅れです。8/12時点で全体90%、去年の97%から後退。加えてICEのアラビカ認証在庫が226,242袋と2年9ヶ月ぶりの低水準を更新。目先の受渡玉が薄く、投機筋が買い上げました。翌8/25は-2.37%で調整。",
+        "recommend": "店頭豆価格への転嫁は数ヶ月遅れます。今の在庫豆はまだ夏の相場を映すはず。気になる銘柄は早めに確保がおすすめです。"
       },
       "section_titles": {
-        "hook": "京都流が世界標準へ",
-        "origin": "5口タップバー導入",
-        "recommend": "家淹れも京都流で"
+        "hook": "先物+5.9%急伸",
+        "origin": "収穫遅れと在庫底",
+        "recommend": "店頭転嫁のタイミング"
       },
       "section_descriptions": {
-        "hook": "ブルーボトルがタイに初出店、京都仕様を持参",
-        "origin": "米日一部店舗のみの5口タップバー、東南アジア初",
-        "recommend": "毎回同じ工程を守る京都流で家淹れの味も安定"
+        "hook": "NY・Londonが同時に大幅高。1月来の高値ゾーンへ。",
+        "origin": "遅れるブラジル収穫と、底を割ったICE認証在庫。",
+        "recommend": "小売転嫁のラグを読んで、狙い銘柄は早めに確保。"
       }
     }
   ]
