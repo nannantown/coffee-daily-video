@@ -1,46 +1,47 @@
 {
-  "date": "2026-08-26",
+  "date": "2026-08-27",
   "discovery": {
-    "method": "market-data",
-    "description": "Reuters / Comunicaffe / TradingView / Barchart / Cocoaintel / TradingEconomics 経由で 8/24 月曜のアラビカ・ロブスタ同時大幅高を確認。核心事実: (1) ICE 12 月限アラビカ +5.9% で 341.65¢/lb、2026 年 1 月下旬以来の高値。(2) 同日 ICE 11 月限ロブスタ +5.1% で $3,802、直近 2.5 週間ぶり高値。(3) ICE アラビカ認証在庫 226,242 袋、2 年 9 ヶ月ぶりの低水準を更新。(4) 上昇要因はブラジル 2026/27 年収穫の遅延 (Safras & Mercado 8/14 発表 8/12 時点で全体 90% / アラビカ 86%、去年 97%/95% から後退) と目先の受渡玉の逼迫。(5) 翌 8/25 火曜は -2.37% で調整、333.55¢/lb 前後。method 選定: 直近 14 日 Method 別平均 views で market-data が n=4 avg 1.75 (TOP1)。90 日 では social-en (9.31) / expert-blog (7.21) が上位だが 14 日窓で不振、market-data は 14 日窓で唯一 4v 級を出しており Exploit 対象。直近 2 日 (8/24 news-en / 8/25 expert-blog) と重複回避。前回 market-data 8/20 から 6 日空き、リフレッシュ十分。同じ『相場高値』テーマでも 8/20 は 6.5 ヶ月高値・在庫 229,214 袋の中盤トピックだった一方、今日は 1 日 +5.9% の急伸・在庫 226,242 袋・1 月来高値・両市場同時上昇と情報が更新。Pillar ①市況ニュース (25%) 継続、家淹れ層向けに『店頭転嫁ラグ』の実用示唆で締める。",
+    "method": "news-en",
+    "description": "Daily Coffee News 8/25『Blank Street Raises $105 Million, Expands to LA』を起点に、Axios 8/24 (SEC filing S/1)・Global Coffee Report・Dealroom.co・Nation's Restaurant News・Yahoo Finance で数字と背景をクロスチェック。核心事実: (1) NY 発カフェ・マッチャチェーン Blank Street が 8/24 SEC 提出書類で総額 US$104,999,981 の株式ラウンド完了を公表、新規資金 US$75M + 既存株主向け二次流通 US$30M。(2) リード投資家は General Atlantic、既存出資者含む 6 投資家で完売。(3) 評価額は約 US$650M (Financial Times 報)、これは前回 Series A の US$25M (2021 年 10 月) から 5 年で 26 倍規模。(4) 資金用途はカリフォルニア西海岸初進出、Beverly Hills/West Hollywood/Malibu を第 1 弾に。(5) 追加でアイスクリーム SKU を投入、午後の客単価を狙う商品拡張。(6) 現在 NY・DC・ロンドン中心に 90 店超、小型店舗 (フットプリント 15-30 ㎡) と自動化・アプリ注文で高回転運営。method 選定: 直近 2 日 (8/25 expert-blog / 8/26 market-data) と重複回避、8/24 news-en 以来 3 日空き、戦略『平日=news-en 優先』原則に従い再投入。素材の 48-72h 高鮮度と数字インパクト ($650M 評価額) を頼りに構造敗北テンプレの打破を狙う。Pillar ③業界・ビジネスニュース (14 日で既に 36% と過剰) を敢えて厚くする決断は、Pillar ②産地の 168h 内一次公式ソース欠如という素材制約が主因。8/25 (ブルーボトル タイ = 老舗スペシャルティのアジア展開) と対称構図の VC 主導・大衆化・小型店高回転素材で被り回避。フックは『実は先週、650億円の評価額を付けられたカフェ』で数字先行、締めは Primary ペルソナ (家淹れ趣味層) 向けに『大衆化と真逆、焙煎士の顔が見える豆選び』で OG 差別化軸に軟接続。",
     "sources": [
-      "https://www.comunicaffe.com/another-sharp-rise-in-the-coffee-markets-new-york-and-london-are-up-5-9-per-cent-and-5-1-per-cent-respectively/",
-      "https://www.tradingview.com/news/reuters.com,2026:newsml_L1N43U14G:0-arabica-coffee-jumps-amid-falling-exchange-stocks-brazil-harvest-woes/",
-      "https://www.barchart.com/futures/quotes/KCU26",
-      "https://www.cocoaintel.com/arabica-coffee-rebounds-sharply-as-tight-stocks-and-delayed-brazilian-harvest-support-prices-31-july-2026/",
-      "https://tradingeconomics.com/commodity/coffee"
+      "https://dailycoffeenews.com/2026/08/25/blank-street-raises-105-million-expands-to-la/",
+      "https://www.axios.com/2026/08/24/blank-street-coffee-105-million",
+      "https://www.gcrmag.com/blank-street-raises-75-million-to-pursue-us-expansion",
+      "https://app.dealroom.co/news/note/blank-street-raises-75m-series-b-at-650m-valuation-for-west-coast-push",
+      "https://www.nrn.com/emerging-chains/blank-street-coffee-makes-its-west-coast-debut-in-los-angeles",
+      "https://finance.yahoo.com/small-business/articles/blank-street-coffee-makes-west-171250904.html"
     ],
-    "query": "arabica coffee futures August 24 25 2026 5.9 percent 341.65 ICE stocks 226242 brazil harvest 90 percent",
-    "freshness_hours": 48
+    "query": "Blank Street coffee $105 million equity deal General Atlantic $650M valuation West Coast Los Angeles expansion Beverly Hills ice cream August 2026",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "NY・London同時+5%超 8/24アラビカ341.65¢で1月来高値・ICE在庫226,242袋",
-      "description": "8/24月曜、アラビカ+5.9%・ロブスタ+5.1%と両市場同時に急伸、アラビカは今年1月来の高値ゾーンへ。",
-      "detail": "ブラジル収穫が90%止まりで遅延、ICEアラビカ認証在庫は226,242袋と2年9ヶ月ぶり低水準を更新。翌8/25は-2.37%で一時調整。",
-      "narration": "1日で+5.9%です。8/24月曜、ニューヨーク先物のアラビカが急伸、341.65¢で1月来の高値になりました。同じ日ロンドンのロブスタも+5.1%です。",
+      "title": "Blank Streetが1億500万ドル調達・NY発カフェが評価額650億円で9月から西海岸初出店",
+      "description": "8/24発表、General Atlantic主導で総額1億500万ドルの株式ラウンド完了、評価額は約650億円に。",
+      "detail": "うち7500万ドルが新規資金、9月からロサンゼルスのビバリーヒルズやマリブに初出店予定。小型店高回転・アプリ注文が武器、午後客用にアイスクリームも投入。",
+      "narration": "実は先週、あるカフェチェーンが650億円の評価額を付けられました。今度は西海岸へ進出です。ニューヨーク発のBlank Streetです。",
       "tags": [
-        "アラビカ先物",
-        "ICE在庫",
-        "ブラジル収穫",
-        "コーヒー相場",
-        "家淹れ"
+        "Blank Street",
+        "ロサンゼルス",
+        "カフェ業界",
+        "スタートアップ",
+        "General Atlantic"
       ],
       "narration_sections": {
-        "hook": "1日で+5.9%です。8/24月曜、ニューヨーク先物のアラビカが急伸、341.65¢で1月来の高値になりました。同じ日ロンドンのロブスタも+5.1%です。",
-        "origin": "背景はブラジル2026/27年収穫の遅れです。8/12時点で全体90%、去年の97%から後退。加えてICEのアラビカ認証在庫が226,242袋と2年9ヶ月ぶりの低水準を更新。目先の受渡玉が薄く、投機筋が買い上げました。翌8/25は-2.37%で調整。",
-        "recommend": "店頭豆価格への転嫁は数ヶ月遅れます。今の在庫豆はまだ夏の相場を映すはず。気になる銘柄は早めに確保がおすすめです。"
+        "hook": "実は先週、あるカフェチェーンが650億円の評価額を付けられました。今度は西海岸へ進出です。ニューヨーク発のBlank Streetです。",
+        "origin": "8/24発表、投資家General Atlantic主導で1億500万ドルを調達。うち7500万ドルが新規資金です。9月からロサンゼルスに出店予定、ビバリーヒルズやマリブが第一弾。競争が激しい西海岸で、小さな店舗と高い回転で挑みます。",
+        "recommend": "巨大チェーンの効率化とは真逆、焙煎士の顔と豆の個性がわかる1杯を選ぶ時代。今日も好きな1杯を丁寧に。"
       },
       "section_titles": {
-        "hook": "先物+5.9%急伸",
-        "origin": "収穫遅れと在庫底",
-        "recommend": "店頭転嫁のタイミング"
+        "hook": "650億円のカフェ",
+        "origin": "西海岸進出の資金",
+        "recommend": "個性で選ぶ1杯"
       },
       "section_descriptions": {
-        "hook": "NY・Londonが同時に大幅高。1月来の高値ゾーンへ。",
-        "origin": "遅れるブラジル収穫と、底を割ったICE認証在庫。",
-        "recommend": "小売転嫁のラグを読んで、狙い銘柄は早めに確保。"
+        "hook": "Blank Streetが1億500万ドルを調達、評価額650億円へ。",
+        "origin": "9月ロサンゼルス初出店、ビバリーヒルズやマリブが第一弾。",
+        "recommend": "大衆化と真逆、焙煎士の顔が見える豆選びが今の主流。"
       }
     }
   ]
