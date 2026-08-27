@@ -1,47 +1,46 @@
 {
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News 8/25『Blank Street Raises $105 Million, Expands to LA』を起点に、Axios 8/24 (SEC filing S/1)・Global Coffee Report・Dealroom.co・Nation's Restaurant News・Yahoo Finance で数字と背景をクロスチェック。核心事実: (1) NY 発カフェ・マッチャチェーン Blank Street が 8/24 SEC 提出書類で総額 US$104,999,981 の株式ラウンド完了を公表、新規資金 US$75M + 既存株主向け二次流通 US$30M。(2) リード投資家は General Atlantic、既存出資者含む 6 投資家で完売。(3) 評価額は約 US$650M (Financial Times 報)、これは前回 Series A の US$25M (2021 年 10 月) から 5 年で 26 倍規模。(4) 資金用途はカリフォルニア西海岸初進出、Beverly Hills/West Hollywood/Malibu を第 1 弾に。(5) 追加でアイスクリーム SKU を投入、午後の客単価を狙う商品拡張。(6) 現在 NY・DC・ロンドン中心に 90 店超、小型店舗 (フットプリント 15-30 ㎡) と自動化・アプリ注文で高回転運営。method 選定: 直近 2 日 (8/25 expert-blog / 8/26 market-data) と重複回避、8/24 news-en 以来 3 日空き、戦略『平日=news-en 優先』原則に従い再投入。素材の 48-72h 高鮮度と数字インパクト ($650M 評価額) を頼りに構造敗北テンプレの打破を狙う。Pillar ③業界・ビジネスニュース (14 日で既に 36% と過剰) を敢えて厚くする決断は、Pillar ②産地の 168h 内一次公式ソース欠如という素材制約が主因。8/25 (ブルーボトル タイ = 老舗スペシャルティのアジア展開) と対称構図の VC 主導・大衆化・小型店高回転素材で被り回避。フックは『実は先週、650億円の評価額を付けられたカフェ』で数字先行、締めは Primary ペルソナ (家淹れ趣味層) 向けに『大衆化と真逆、焙煎士の顔が見える豆選び』で OG 差別化軸に軟接続。",
+    "method": "official-src",
+    "description": "Daily Coffee News 8/26『Florida-Grown Coffee Gets Its First Serious Field Test』を起点に、Crop Science 誌掲載の UF (フロリダ大学) IFAS Tropical Research and Education Center Suela ら『First assessment of agronomical performance of Coffea arabica in the southern US conditions』を一次根拠として採用。核心事実: (1) UF IFAS TREC が 2022 年に 48 本のアラビカ苗を発芽させ、2023 年 5 月に副熱帯南フロリダの試験圃場へ定植、Fronton / Limani / Typica / Obatā の 4 品種を選定。(2) Fronton・Limani は安定収量・高耐熱性、Obatā は低〜中標高向けで生育旺盛かつ耐病性で選抜。(3) 4 品種すべてで 1 本当たり平均チェリー 3 kg 超、一部 Fronton 個体は 5 kg 近い実り。(4) 副熱帯 (subtropical) 条件でもアラビカが商業栽培『適切な管理があれば』可能と論文が結論。(5) 商業化ロードマップは即時スケールではなく farm-to-table + agrotourism 型ニアタームモデル。(6) 論文は Suela ら (UF Plant Breeding Graduate Program) 主著、Crop Science 誌 2026 年掲載。method 選定: 直近 2 日 (8/26 market-data / 8/27 news-en) と重複回避、8/19 official-src 以来 9 日空きで exploit 側、90 日 avg 3.42 (TOP3 method) の再投入。戦略『平日=ニュース系優先、news-en は英語一次ソース優先』原則にも合致 (Crop Science 査読論文は英語一次ソースの最上位)。Pillar ②産地・ハーベスト (14 日 14% と過小) の直接是正、直近 14 日で使ってこなかった『新産地の発見』というテンプレ破壊の切り口。連続 168h 内一次公式ソース欠如の反省を、査読論文 + DCN の 48h 内 recap でクリア。フックは『米フロリダの本気アラビカが査読入り』の意外性数字先行、締めは Primary ペルソナ (家淹れ趣味層) 向けに『産地地図は動き続ける、焙煎士が拾う一次情報を届け続ける』で OG 差別化軸 (焙煎士の一次情報発信) へ軟接続。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/25/blank-street-raises-105-million-expands-to-la/",
-      "https://www.axios.com/2026/08/24/blank-street-coffee-105-million",
-      "https://www.gcrmag.com/blank-street-raises-75-million-to-pursue-us-expansion",
-      "https://app.dealroom.co/news/note/blank-street-raises-75m-series-b-at-650m-valuation-for-west-coast-push",
-      "https://www.nrn.com/emerging-chains/blank-street-coffee-makes-its-west-coast-debut-in-los-angeles",
-      "https://finance.yahoo.com/small-business/articles/blank-street-coffee-makes-west-171250904.html"
+      "https://dailycoffeenews.com/2026/08/26/florida-grown-coffee-gets-its-first-serious-field-test/",
+      "https://acsess.onlinelibrary.wiley.com/doi/abs/10.1002/csc2.70270",
+      "https://blogs.ifas.ufl.edu/hosdept/2026/01/22/coffee-genomics-florida-breeding/",
+      "https://www.growingproduce.com/fruits/perking-up-new-progress-brews-around-growing-coffee-in-florida/",
+      "https://sprudge.com/americas-next-hotbed-for-coffee-production-is-florida-1180016.html"
     ],
-    "query": "Blank Street coffee $105 million equity deal General Atlantic $650M valuation West Coast Los Angeles expansion Beverly Hills ice cream August 2026",
-    "freshness_hours": 72
+    "query": "University of Florida IFAS TREC arabica Fronton Limani Typica Obatā first agronomical assessment southern US subtropical Crop Science 2026",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "Blank Streetが1億500万ドル調達・NY発カフェが評価額650億円で9月から西海岸初出店",
-      "description": "8/24発表、General Atlantic主導で総額1億500万ドルの株式ラウンド完了、評価額は約650億円に。",
-      "detail": "うち7500万ドルが新規資金、9月からロサンゼルスのビバリーヒルズやマリブに初出店予定。小型店高回転・アプリ注文が武器、午後客用にアイスクリームも投入。",
-      "narration": "実は先週、あるカフェチェーンが650億円の評価額を付けられました。今度は西海岸へ進出です。ニューヨーク発のBlank Streetです。",
+      "title": "米フロリダで作った本気のアラビカが査読論文入り・UFが4品種試験でFronton最高5kg近く実る",
+      "description": "Crop Science誌にUF論文掲載、副熱帯南フロリダでのアラビカ栽培に初の本格エビデンス。",
+      "detail": "48苗を2023年5月に定植、Fronton・Limani・Typica・Obatāの4品種を試験。全品種で1本平均チェリー3kg超、Frontonは最高5kg近く。適切な管理があれば副熱帯でもアラビカが育つと結論。",
+      "narration": "知ってました？アメリカのフロリダで作った本気のアラビカが、初めて査読論文で評価されました。産地地図が1本増えるかもしれない話です。",
       "tags": [
-        "Blank Street",
-        "ロサンゼルス",
-        "カフェ業界",
-        "スタートアップ",
-        "General Atlantic"
+        "フロリダ産コーヒー",
+        "米国産アラビカ",
+        "UF査読論文",
+        "副熱帯栽培",
+        "新産地"
       ],
       "narration_sections": {
-        "hook": "実は先週、あるカフェチェーンが650億円の評価額を付けられました。今度は西海岸へ進出です。ニューヨーク発のBlank Streetです。",
-        "origin": "8/24発表、投資家General Atlantic主導で1億500万ドルを調達。うち7500万ドルが新規資金です。9月からロサンゼルスに出店予定、ビバリーヒルズやマリブが第一弾。競争が激しい西海岸で、小さな店舗と高い回転で挑みます。",
-        "recommend": "巨大チェーンの効率化とは真逆、焙煎士の顔と豆の個性がわかる1杯を選ぶ時代。今日も好きな1杯を丁寧に。"
+        "hook": "知ってました？アメリカのフロリダで作った本気のアラビカが、初めて査読論文で評価されました。産地地図が1本増えるかもしれない話です。",
+        "origin": "フロリダ大学が2023年に苗を植えた圃場で、Fronton・Limani・Typica・Obatāの4品種を試験。全品種でチェリーが1本平均3kg超え、Frontonは最高5kg近くまで実りました。副熱帯でもアラビカが育つと査読で示された初の報告です。",
+        "recommend": "すぐ買える豆にはなりませんが、産地地図はまだ更新されます。焙煎士が拾う一次情報、当店もフォローしてお届けします。"
       },
       "section_titles": {
-        "hook": "650億円のカフェ",
-        "origin": "西海岸進出の資金",
-        "recommend": "個性で選ぶ1杯"
+        "hook": "フロリダのアラビカ",
+        "origin": "4品種の初回査読試験",
+        "recommend": "産地地図は動き続ける"
       },
       "section_descriptions": {
-        "hook": "Blank Streetが1億500万ドルを調達、評価額650億円へ。",
-        "origin": "9月ロサンゼルス初出店、ビバリーヒルズやマリブが第一弾。",
-        "recommend": "大衆化と真逆、焙煎士の顔が見える豆選びが今の主流。"
+        "hook": "副熱帯フロリダの本気アラビカが査読論文入り",
+        "origin": "UF・4品種3kg超え、Fronton最高5kg",
+        "recommend": "焙煎士が拾う新産地の一次情報を届け続けます"
       }
     }
   ]
