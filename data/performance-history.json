@@ -2,100 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "Mvsc5QcbwH0",
-      "videoUrl": "https://youtube.com/shorts/Mvsc5QcbwH0",
-      "date": "2026-05-27",
-      "title": "【コーヒー豆知識】インドネシアの来年の収穫が8%減・ロブスタ100万袋が長雨で消える｜2026/05/27 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 55,
-      "discovery": {
-        "method": "news-en",
-        "description": "Daily Coffee News 5/26 公開『Indonesia Coffee Report: Production Predicted to Drop 8% in 2026/27』を起点に、USDA FAS Indonesia Coffee Annual (2026-05) を一次情報として確認。CoffeeTalk / RFDTV / FNB Coffee で数字をクロスチェック。主要ファクト: 2026/27 緑豆生産 1138万袋(-8%)、ロブスタ 1000万袋(前年比-100万袋)、アラビカ 1.38M袋(横ばい)、輸出 700万袋(-11%)、国内消費 483万袋微増、原因はスマトラ南部とジャワ西部の過剰降雨で開花・着果期を直撃。日本はインドネシア・コーヒーの主要輸出先で、Sumatra Mandheling 系深煎り愛好家(Primary 趣味層)に直結する逆風。直近 2 日 (5/26 market-data メキシコ+54% / 5/25 official-src Barista League) を回避、平日=ニュース日かつ news-en の弱点 (5/13・5/18・5/21 不振) を『海外固有名詞+日本人の生活直結+昨日との対比ストーリー』で再挑戦。昨日メキシコ+54%↔今日インドネシア-100万袋という『世界ロブスタ生産地殻変動』2話完結シリーズで、PDCA 仮説『シリーズ化で固定視聴を育てる』を初検証。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
-          "https://www.fas.usda.gov/data/gain/2026/05/indonesia-coffee-annual",
-          "https://coffeetalk.com/daily-dose/from-origin/05-2026/110086/",
-          "https://www.rfdtv.com/indonesia-coffee-output-falls-as-weather-cuts-yields",
-          "https://apps.fas.usda.gov/psdonline/circulars/coffee.pdf",
-          "https://fnb.coffee/blog/coffee-export-by-country/"
-        ],
-        "query": "Indonesia coffee 2026/27 production drop 8% USDA Coffee Annual robusta arabica Sumatra Java rainfall; Indonesia coffee export Japan Mandheling top destinations",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 10,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-10T01:35:38.901Z"
-      }
-    },
-    {
-      "videoId": "fuTlHUBPVz4",
-      "videoUrl": "https://youtube.com/shorts/fuTlHUBPVz4",
-      "date": "2026-05-28",
-      "title": "【コーヒー豆知識】海外の値動きが日本の店頭に出るまで何ヶ月か・3〜6ヶ月の時差の正体｜2026/05/28 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "5/26 メキシコ・ロブスタ +54% (market-data) と 5/27 インドネシア -8% (news-en) で組み立てた『世界ロブスタ供給地殻変動』2 話シリーズの 3 話目=締めとして、『海外の値動きが日本の店頭に来るまで何ヶ月かかるか』を生豆物流 + 焙煎所サプライチェーン目線で解説する expert-blog。一次資料として Royal Coffee の Green Coffee Glossary (Contracts & Shipping)、Genuine Origin の Forward Buying ガイド、Sucafina の Differentials 解説、Those Coffee People の Japan 輸入実務、Perfect Daily Grind の roaster 価格改定/フォワード解説、Daily Coffee News 5/26 報の Indonesia USDA Coffee Annual、PDG 5/22 recap の EISA (ECOM) Brazil 50M bags forecast を統合参照。Method 選定根拠: 直近 14d で expert-blog が TOP1 avg 60.7v (5/16 77v / 5/23 82v / 5/20 23v)、直近 2 日 (5/27 news-en, 5/26 market-data) と連続違反なし、news-en は連続不振 + 連続違反でローテ除外、TOP1 自然 Exploit に該当。Pillar は ④焙煎士の一次情報 × ①市況の橋渡しで、5/16 (差額解説 77v) の勝ちテンプレを『時差解説』アングルで再現。Primary 趣味層 (家で淹れる人) が一番気にする『私の好きな豆はいつ値上がりするか』に査読/業界エビデンスで答える型を踏襲。",
-        "sources": [
-          "https://royalcoffee.com/green-coffee-glossary-contracts-shipping/",
-          "https://blog.genuineorigin.com/2021/10/how-to-buy-green-coffee-forward/",
-          "https://www.covoyacoffee.com/blog/how-to-buy-forward-using-contracts.html",
-          "https://thosecoffeepeople.com/importing-coffee-beans-into-japan-guide/",
-          "https://sucafina.com/na/news/understanding-differentials-and-the-ny-market",
-          "https://perfectdailygrind.com/2026/04/why-coffee-roasters-are-explaining-price-increases/",
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-          "https://dailycoffeenews.com/2026/05/26/indonesia-coffee-report-production-predicted-to-drop-8-in-2026-27/",
-          "https://www.investing.com/news/commodities-news/brazil-to-export-record-coffee-volume-el-nino-in-focus-trading-firm-says-4702049",
-          "https://www.coffee-rc.jp/news/detail/5"
-        ],
-        "query": "green coffee shipping time origin Japan months; roaster forward contract 3-12 months; specialty coffee retail price lag differential; coffee inventory roaster stock months; Japan import sea freight coffee weeks",
-        "freshness_hours": 36
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-11T01:58:41.448Z"
-      }
-    },
-    {
       "videoId": "weFQIp1gSHE",
       "videoUrl": "https://youtube.com/shorts/weFQIp1gSHE",
       "date": "2026-05-29",
@@ -3075,7 +2981,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3122,7 +3028,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3169,7 +3075,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3210,7 +3116,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3252,7 +3158,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3296,7 +3202,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3338,7 +3244,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3380,7 +3286,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3422,7 +3328,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3464,7 +3370,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3505,7 +3411,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3550,7 +3456,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3598,7 +3504,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
+        "updatedAt": "2026-08-27T04:36:33.893Z"
       }
     },
     {
@@ -3642,19 +3548,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-27T04:36:33.893Z"
+      }
+    },
+    {
+      "videoId": "cPs_g_vt0NI",
+      "videoUrl": "https://youtube.com/shorts/cPs_g_vt0NI",
+      "date": "2026-08-27",
+      "title": "【コーヒー豆知識】Blank Streetが1億500万ドル調達・NY発カフェが評価額650億円で9月から西海岸初出店｜2026/08/27 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 51,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News 8/25『Blank Street Raises $105 Million, Expands to LA』を起点に、Axios 8/24 (SEC filing S/1)・Global Coffee Report・Dealroom.co・Nation's Restaurant News・Yahoo Finance で数字と背景をクロスチェック。核心事実: (1) NY 発カフェ・マッチャチェーン Blank Street が 8/24 SEC 提出書類で総額 US$104,999,981 の株式ラウンド完了を公表、新規資金 US$75M + 既存株主向け二次流通 US$30M。(2) リード投資家は General Atlantic、既存出資者含む 6 投資家で完売。(3) 評価額は約 US$650M (Financial Times 報)、これは前回 Series A の US$25M (2021 年 10 月) から 5 年で 26 倍規模。(4) 資金用途はカリフォルニア西海岸初進出、Beverly Hills/West Hollywood/Malibu を第 1 弾に。(5) 追加でアイスクリーム SKU を投入、午後の客単価を狙う商品拡張。(6) 現在 NY・DC・ロンドン中心に 90 店超、小型店舗 (フットプリント 15-30 ㎡) と自動化・アプリ注文で高回転運営。method 選定: 直近 2 日 (8/25 expert-blog / 8/26 market-data) と重複回避、8/24 news-en 以来 3 日空き、戦略『平日=news-en 優先』原則に従い再投入。素材の 48-72h 高鮮度と数字インパクト ($650M 評価額) を頼りに構造敗北テンプレの打破を狙う。Pillar ③業界・ビジネスニュース (14 日で既に 36% と過剰) を敢えて厚くする決断は、Pillar ②産地の 168h 内一次公式ソース欠如という素材制約が主因。8/25 (ブルーボトル タイ = 老舗スペシャルティのアジア展開) と対称構図の VC 主導・大衆化・小型店高回転素材で被り回避。フックは『実は先週、650億円の評価額を付けられたカフェ』で数字先行、締めは Primary ペルソナ (家淹れ趣味層) 向けに『大衆化と真逆、焙煎士の顔が見える豆選び』で OG 差別化軸に軟接続。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/08/25/blank-street-raises-105-million-expands-to-la/",
+          "https://www.axios.com/2026/08/24/blank-street-coffee-105-million",
+          "https://www.gcrmag.com/blank-street-raises-75-million-to-pursue-us-expansion",
+          "https://app.dealroom.co/news/note/blank-street-raises-75m-series-b-at-650m-valuation-for-west-coast-push",
+          "https://www.nrn.com/emerging-chains/blank-street-coffee-makes-its-west-coast-debut-in-los-angeles",
+          "https://finance.yahoo.com/small-business/articles/blank-street-coffee-makes-west-171250904.html"
+        ],
+        "query": "Blank Street coffee $105 million equity deal General Atlantic $650M valuation West Coast Los Angeles expansion Beverly Hills ice cream August 2026",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-22",
-      "changes": [
-        "standard: 44 avg views (81 videos)",
-        "Day performance: Sun=136, Wed=40, Sat=39, Tue=37, Mon=30, Fri=28, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-23",
       "changes": [
@@ -3884,6 +3827,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=6, Wed=4, Fri=4, Mon=3, Thu=2, Tue=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-27",
+      "changes": [
+        "standard: 4 avg views (82 videos)",
+        "Day performance: Sat=12, Sun=6, Fri=4, Wed=3, Mon=3, Thu=2, Tue=2"
       ],
       "recommendedTemplate": "standard"
     }
