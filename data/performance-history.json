@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "weFQIp1gSHE",
-      "videoUrl": "https://youtube.com/shorts/weFQIp1gSHE",
-      "date": "2026-05-29",
-      "title": "【コーヒー豆知識】尿素肥料が前年比78%高騰・コーヒー生産費の上流が動いている｜2026/05/29 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "market-data",
-        "description": "World Bank 肥料価格指数 + Colombia FNC のコメントを尿素先物・農業マーケットデータから拾い、Perfect Daily Grind 5/22 recap の ICO 警告および Daily Coffee News の Iran 戦争コーヒー生産費レポートと突合。5/26 (Mexico Robusta +54% market-data) → 5/27 (Indonesia -8% news-en) → 5/28 (海外値動きの時差 expert-blog) で組み立てた『上流コスト 3 話シリーズ』を、相場側から生産費側に視点を切り替える 4 話目=締めとして展開。method 選定理由: 5/27 news-en / 5/28 expert-blog の直近 2 日連続違反を回避、TOP3 method (social-en / official-src) は今日のシリーズ閉じには素材が合わず、商品市況データを一次根拠とする本ストーリーには market-data が最も整合。5/26 と method 連続使用にならず 3 日空きあり、Pillar ①市況 25% + Pillar ②産地・生産費 25% にダブルヒット。",
-        "sources": [
-          "https://blogs.worldbank.org/en/opendata/fertilizer-prices-surge-as-strait-of-hormuz-disruptions-tighten-",
-          "https://dailycoffeenews.com/2026/05/05/the-war-in-iran-is-making-coffee-production-more-expensive/",
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-22-may-2026/",
-          "https://www.riotimesonline.com/colombia-fertilizer-crisis-hormuz-prices-food-inflation/",
-          "https://www.cnbc.com/2026/03/25/fertilizer-price-iran-war-food-security-inflation-urea-potash-nitrogen-farmers.html"
-        ],
-        "query": "urea fertilizer price Colombia FNC coffee 2026 Strait of Hormuz",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 8,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-12T01:43:01.314Z"
-      }
-    },
-    {
       "videoId": "zSRYWT7RKZQ",
       "videoUrl": "https://youtube.com/shorts/zSRYWT7RKZQ",
       "date": "2026-05-31",
@@ -3028,7 +2984,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3075,7 +3031,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3116,7 +3072,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3158,7 +3114,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3202,7 +3158,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3244,7 +3200,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3286,7 +3242,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3328,7 +3284,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3370,7 +3326,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3411,7 +3367,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3456,7 +3412,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3504,7 +3460,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3548,7 +3504,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-27T04:36:33.893Z"
+        "updatedAt": "2026-08-28T06:59:19.278Z"
       }
     },
     {
@@ -3593,19 +3549,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-28T06:59:19.278Z"
+      }
+    },
+    {
+      "videoId": "LmZ1fmLZDLE",
+      "videoUrl": "https://youtube.com/shorts/LmZ1fmLZDLE",
+      "date": "2026-08-28",
+      "title": "【コーヒー豆知識】米フロリダで作った本気のアラビカが査読論文入り・UFが4品種試験でFronton最高5kg近く実る｜2026/08/28 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "official-src",
+        "description": "Daily Coffee News 8/26『Florida-Grown Coffee Gets Its First Serious Field Test』を起点に、Crop Science 誌掲載の UF (フロリダ大学) IFAS Tropical Research and Education Center Suela ら『First assessment of agronomical performance of Coffea arabica in the southern US conditions』を一次根拠として採用。核心事実: (1) UF IFAS TREC が 2022 年に 48 本のアラビカ苗を発芽させ、2023 年 5 月に副熱帯南フロリダの試験圃場へ定植、Fronton / Limani / Typica / Obatā の 4 品種を選定。(2) Fronton・Limani は安定収量・高耐熱性、Obatā は低〜中標高向けで生育旺盛かつ耐病性で選抜。(3) 4 品種すべてで 1 本当たり平均チェリー 3 kg 超、一部 Fronton 個体は 5 kg 近い実り。(4) 副熱帯 (subtropical) 条件でもアラビカが商業栽培『適切な管理があれば』可能と論文が結論。(5) 商業化ロードマップは即時スケールではなく farm-to-table + agrotourism 型ニアタームモデル。(6) 論文は Suela ら (UF Plant Breeding Graduate Program) 主著、Crop Science 誌 2026 年掲載。method 選定: 直近 2 日 (8/26 market-data / 8/27 news-en) と重複回避、8/19 official-src 以来 9 日空きで exploit 側、90 日 avg 3.42 (TOP3 method) の再投入。戦略『平日=ニュース系優先、news-en は英語一次ソース優先』原則にも合致 (Crop Science 査読論文は英語一次ソースの最上位)。Pillar ②産地・ハーベスト (14 日 14% と過小) の直接是正、直近 14 日で使ってこなかった『新産地の発見』というテンプレ破壊の切り口。連続 168h 内一次公式ソース欠如の反省を、査読論文 + DCN の 48h 内 recap でクリア。フックは『米フロリダの本気アラビカが査読入り』の意外性数字先行、締めは Primary ペルソナ (家淹れ趣味層) 向けに『産地地図は動き続ける、焙煎士が拾う一次情報を届け続ける』で OG 差別化軸 (焙煎士の一次情報発信) へ軟接続。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/08/26/florida-grown-coffee-gets-its-first-serious-field-test/",
+          "https://acsess.onlinelibrary.wiley.com/doi/abs/10.1002/csc2.70270",
+          "https://blogs.ifas.ufl.edu/hosdept/2026/01/22/coffee-genomics-florida-breeding/",
+          "https://www.growingproduce.com/fruits/perking-up-new-progress-brews-around-growing-coffee-in-florida/",
+          "https://sprudge.com/americas-next-hotbed-for-coffee-production-is-florida-1180016.html"
+        ],
+        "query": "University of Florida IFAS TREC arabica Fronton Limani Typica Obatā first agronomical assessment southern US subtropical Crop Science 2026",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-23",
-      "changes": [
-        "standard: 42 avg views (81 videos)",
-        "Day performance: Sun=136, Sat=39, Tue=37, Mon=30, Fri=28, Wed=27, Thu=8"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-24",
       "changes": [
@@ -3835,6 +3827,14 @@
       "changes": [
         "standard: 4 avg views (82 videos)",
         "Day performance: Sat=12, Sun=6, Fri=4, Wed=3, Mon=3, Thu=2, Tue=2"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-28",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=6, Fri=4, Mon=3, Wed=3, Tue=2, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
