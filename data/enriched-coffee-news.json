@@ -1,47 +1,41 @@
 {
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News 8/28『Hawaii Coffee Farms Face Long Recovery After Hurricane Lala』を起点に、Hawaii Tribune-Herald / West Hawaii Today 8/25 現地報道、Hawaii Public Radio 8/27 続報、KHON2 州被害集計を交差参照。核心事実: (1) 8/15 に熱帯低気圧 Lala がハワイ島南方を通過、南部地区に暴風雨・洪水。 (2) カウ (Ka'ū) 地区のコーヒー主産地 Wood Valley / Pear Tree / Cloud Rest で樹木倒伏・防風林崩壊・温室/納屋損壊。 (3) 州の集計では 8/24 時点で 70 農家・牧場主が 320 エーカー (約 130 ha) で 320 万ドル超 (=約 5 億円弱) の損失を自己申告。 (4) 州は 8/20 に連邦から 600 万ドル (約 9 億円) 緊急支援を承認済み。 (5) 収穫直前 (2026 産アラビカ) の直撃で当年収量喪失、加えて落葉 (defoliation) で光合成低下・来年以降の芽花・葉生成が減退する long-tail 影響。 (6) Ka'u 協同組合代表『皆に大きな損失、木が地面に倒れている』とコメント (Hawaii Tribune-Herald 引用)。 (7) ハワイ産スペシャルティは Kona / Ka'u で日本市場でも希少ロット認知あり、Primary ペルソナ (家淹れ趣味層) との接点強い産地。method 選定: 昨日 PDCA で計画した『8/29 土曜 social-en 本命化』は Reddit / X アクセス不可 (egress blocked) により social 系の新鮮ソース検証を確立できず、Pillar ②産地・ハーベスト (14 日実績 14% と 25% 目標に対する連続不足) 是正の緊急度が method 最適化より上位と判断。news-en は 14 日 avg 0.00 の敗北ゾーンだが、素材の質 (国内 US 産地 × 気象災害 × 希少 Ka'u × 具体金額) が過去 14 日に不在で、Pillar ②の再教育コストとして許容。連続違反回避 (8/28 official-src → 8/29 news-en、直近 2 日連続 news-en ではない) と freshness 24-96h 内 5 ソース確保でクリア。フックは『収穫直前直撃』の時制先行、締めは Primary 家淹れ層向けに『産地の顔を知って一杯の価値を深める』で暗定 CTA『EC 準備中』へ軟接続。",
+    "method": "expert-blog",
+    "description": "日曜=エバーグリーン枠。14d Method 集計で expert-blog は avg 0.50/n=2 と直近不振だが 90d TOP2 (n=13 avg 7.46 max 43) で Exploit 妥当、直近 2 日 (8/28 official-src / 8/29 news-en) と連続違反なし。素材は BOCC26 (Best of Congo Cooperatives 2026、9/1-3 auction) を African Coffee Connect / Pact Coffee blog 系の一次発信を軸に、DCN 8/26 速報・Comunicaffe・bestofcongocooperatives.com公式でクロス参照。第 3 回大会、東部キブ地方から 34 ロット、うち 14 ロットが 9/1-3 の国際オークション、18 ロットが国内オファーシート、平均標高 1,570m、開始価格 1kg 13 ドル。処理法は洗浄・ナチュラル・アネロビック発酵まで多様化、女性農家・若年層・少数民族バトゥワ (Batwa) の区画も新設。前回 2024 年は Muungano 農園が 1kg 25.79 ドルでコンゴ史上最高値。Pillar ②産地・ハーベスト (14d 21% 目標 25% 継続不足 6 週目) の是正、副軸で ③業界・ビジネス (14d 36% 過剰) も新興産地オークション形式で差別化。DRC は日本の家淹れ Primary ペルソナに未経験度が高く『次に来る産地』フレーミングで注目度に寄せる Sunday evergreen news-adjacent 型を試験。フック語彙『明日9月1日から3日』時制先行、勝ち筋テンプレ (急騰/突破/過去最高) は回避継続で 7/26 (Manner IPO 復活) 型を踏襲。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/28/hawaii-coffee-farms-face-long-recovery-after-hurricane-lala/",
-      "https://www.hawaiitribune-herald.com/2026/08/25/hawaii-news/its-going-to-be-a-big-loss-lala-devastates-kau-coffee-farms-right-before-harvest-time/",
-      "https://www.westhawaiitoday.com/2026/08/25/hawaii-news/its-going-to-be-a-big-loss-lala-devastates-kau-coffee-farms-right-before-harvest-time/",
-      "https://www.hawaiipublicradio.org/local-news/2026-08-27/lala-took-toll-on-hawaii-island-coffee-farms",
-      "https://www.westhawaiitoday.com/2026/08/20/hawaii-news/lawmakers-assess-lala-damage-6m-in-emergency-funds-okd/",
-      "https://www.khon2.com/local-news/hurricane-lala-devastates-crops/"
+      "https://dailycoffeenews.com/2026/08/26/high-scoring-microlots-head-to-best-of-congo-cooperatives-auction/",
+      "https://www.africancoffeeconnect.com/news/best-of-congo-cooperatives-2026-bocc26-competition-amp-auction",
+      "https://www.pactcoffee.com/blog/entering-the-new-era-for-congolese-coffee-with-the-best-of-congo-competition",
+      "https://www.comunicaffe.com/best-of-congo-cooperatives-2026-london-congolese-coffee-competition",
+      "https://bestofcongocooperatives.com/",
+      "https://thecooperator.news/best-of-congo-cooperatives-launches-2026-coffee-competition-and-auction/"
     ],
-    "query": "Hurricane Lala Hawaii Ka'u coffee farms damage losses 2026 harvest DCN Wood Valley Pear Tree Cloud Rest federal emergency funds",
-    "freshness_hours": 24
+    "query": "Best of Congo Cooperatives 2026 BOCC26 auction September 1-3 Kivu 34 microlots women Batwa Muungano record price",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ハリケーンLalaがハワイ島カウのコーヒー農園を収穫直前に直撃・8/24時点で70農家320万ドル超損失、連邦600万ドル緊急支援",
-      "description": "8/15の暴風雨で名産地Ka'uが大被害、州の8/24集計で被害拡大中。",
-      "detail": "8/15ハリケーンLalaがハワイ島南方を通過。8/24時点で70農家が320エーカーで320万ドル超の損失を自己申告、州は連邦から600万ドル緊急支援を承認。カウ産地(Wood Valley・Pear Tree・Cloud Rest)を中心に木が倒れ、落葉で来年以降の収量も懸念。",
-      "narration": "知ってました?8月15日のハリケーンLalaがハワイ島カウ地区のコーヒー農園を直撃、収穫直前に木が根ごと倒れる大被害です。",
-      "tags": [
-        "ハワイコーヒー",
-        "カウ産地",
-        "ハリケーンLala",
-        "産地ニュース",
-        "スペシャルティコーヒー"
-      ],
+      "title": "コンゴ産スペシャルティが9月1日から世界競売・キブ34ロット、前回2024はムーンガノが1kg25.79ドルでコンゴ史上最高値",
+      "description": "明日9月1日から3日、コンゴのスペシャルティコーヒーが世界の焙煎所に競売されます。",
+      "detail": "東部キブ地方、標高1,570mの34ロット。洗浄・ナチュラル・アネロビック発酵まで揃い、女性農家や少数民族バトゥワの区画も参加。開始価格は1kg13ドル、前回2024年はムーンガノ農園が1kg25.79ドルでコンゴ史上最高値をつけました。",
+      "narration": "知ってました?明日9月1日から3日、東アフリカのコンゴでスペシャルティコーヒーが世界の焙煎所に競売されます。第3回、注目度が急上昇中です。",
+      "tags": ["コンゴ", "スペシャルティ", "オークション"],
       "narration_sections": {
-        "hook": "知ってました?8月15日のハリケーンLalaがハワイ島カウ地区のコーヒー農園を直撃、収穫直前に木が根ごと倒れる大被害です。",
-        "origin": "州の集計では8月24日時点で70農家が320エーカーで320万ドル超の損失を自己申告、連邦は600万ドル緊急支援を承認しました。カウ協同組合は『皆に大きな損失、木が地面に倒れている』と発表、落葉で来年以降の収量にも懸念が広がっています。",
-        "recommend": "カウやコナはハワイ発の希少ロットです。産地の顔を思い浮かべて一杯を淹れると、味の理解が深まります。EC準備中、フォローしてお待ちください。"
+        "hook": "知ってました?明日9月1日から3日、東アフリカのコンゴでスペシャルティコーヒーが世界の焙煎所に競売されます。第3回、注目度が急上昇中です。",
+        "origin": "舞台は東部キブ地方、標高1,570mの34ロット。洗浄・ナチュラル・アネロビック発酵まで揃い、女性農家や少数民族バトゥワの区画も参加。開始価格は1kg13ドル、前回2024年はムーンガノ農園が1kg25.79ドルでコンゴ史上最高値をつけました。",
+        "recommend": "日本ではまだ珍しいコンゴ産、産地の急成長を追いかける一歩に。焙煎所の入荷情報をぜひチェックしてください。"
       },
       "section_titles": {
-        "hook": "Lalaでカウ直撃",
-        "origin": "70農家320万ドル損失",
-        "recommend": "カウの一杯を味わう"
+        "hook": "明日コンゴ産競売",
+        "origin": "キブ地方34ロット",
+        "recommend": "焙煎所を要チェック"
       },
       "section_descriptions": {
-        "hook": "収穫直前にカウの農園が壊滅的被害を受けた",
-        "origin": "州集計320万ドル超、連邦は600万ドル支援",
-        "recommend": "ハワイの希少ロットを産地を知って淹れよう"
+        "hook": "9月1日〜3日、コンゴから世界へ34ロット",
+        "origin": "洗浄・ナチュラル・アネロビックまで揃い女性区画も",
+        "recommend": "まだ珍しいコンゴ産、産地の変化を追う"
       }
     }
   ]
