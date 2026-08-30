@@ -2,53 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "zSRYWT7RKZQ",
-      "videoUrl": "https://youtube.com/shorts/zSRYWT7RKZQ",
-      "date": "2026-05-31",
-      "title": "【コーヒー豆知識】ロブスタはマズいの常識が崩れた・Fine Robustaが85点超え、SCA新評価CVAも公式採用｜2026/05/31 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "今週の生産ニュース連発(5/26 メキシコ・ロブスタ+54%、5/27 インドネシア-8%、5/29 尿素+78%)を受け、量側の話題が飽和したタイミングで『質』側の革命を掘る。SCA が 2024 年に CVA(Coffee Value Assessment)を正式採用、その中で従来100点法に居場所がなかった Fine Robusta / Liberica / ハイブリッドが公式に評価対象として取り込まれた流れを、Daily Coffee News (2024-11-05) / SCA 公式 / Qahwa World / Ethio Coffee の業界ブログ群を横断して確認。Fine Robusta の閾値(カップ80点以上、欠点豆ほぼゼロ、ベトナム産2024年85.42点達成)も同時に確認。method 選定理由: 直近2日 (5/30 social-en / 5/29 market-data) の連続違反回避、TOP2 method (expert-blog 14d 平均45.75v、最高82v) の再投入、土日エバーグリーン枠で今週ニュースの裏側を深掘りする戦略 §運用フォーマットの趣旨に合致。Pillar ③業界・ビジネスニュース (20%) + ②産地 (25%) のクロス。news-en (WORST 15.5v) 凍結検討対象なので素材は news 系でも分類は expert-blog に寄せる。",
-        "sources": [
-          "https://sca.coffee/sca-news/sca-new-cva-cupping-standards",
-          "https://sca.coffee/value-assessment",
-          "https://dailycoffeenews.com/2024/11/05/sca-officially-adopts-new-cupping-forms-and-standards/",
-          "https://qahwaworld.com/coffee-reflections/evolved-q-grader-coffee-value-assessment-2025/",
-          "https://www.ethiocoffee.co/insights/new-sca-coffee-value-assessment",
-          "https://www.helenacoffee.vn/what-is-fine-robusta-facts-everyone-should-know-about-fine-robusta-helena-jsc/",
-          "https://hello5coffee.com/what-is-fine-robusta/",
-          "https://database.coffeeinstitute.org/coffees/robusta"
-        ],
-        "query": "fine robusta Q-grading CVA 2026 SCA descriptors specialty",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 7,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-14T01:41:23.028Z"
-      }
-    },
-    {
       "videoId": "-oU9flYGbAc",
       "videoUrl": "https://youtube.com/shorts/-oU9flYGbAc",
       "date": "2026-06-01",
@@ -3072,7 +3025,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3114,7 +3067,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3158,7 +3111,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3200,7 +3153,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3242,7 +3195,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3284,7 +3237,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3326,7 +3279,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3367,7 +3320,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3412,7 +3365,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3457,10 +3410,10 @@
         "freshness_hours": 96
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3504,7 +3457,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3546,10 +3499,10 @@
         "freshness_hours": 72
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
+        "updatedAt": "2026-08-30T01:23:52.804Z"
       }
     },
     {
@@ -3593,19 +3546,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-30T01:23:52.804Z"
+      }
+    },
+    {
+      "videoId": "5WNWKdw5Cn4",
+      "videoUrl": "https://youtube.com/shorts/5WNWKdw5Cn4",
+      "date": "2026-08-30",
+      "title": "【コーヒー豆知識】コンゴ産スペシャルティが9月1日から世界競売・キブ34ロット、前回2024はムーンガノが1kg25.79ドルでコンゴ史上最高値｜2026/08/30 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 54,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "日曜=エバーグリーン枠。14d Method 集計で expert-blog は avg 0.50/n=2 と直近不振だが 90d TOP2 (n=13 avg 7.46 max 43) で Exploit 妥当、直近 2 日 (8/28 official-src / 8/29 news-en) と連続違反なし。素材は BOCC26 (Best of Congo Cooperatives 2026、9/1-3 auction) を African Coffee Connect / Pact Coffee blog 系の一次発信を軸に、DCN 8/26 速報・Comunicaffe・bestofcongocooperatives.com公式でクロス参照。第 3 回大会、東部キブ地方から 34 ロット、うち 14 ロットが 9/1-3 の国際オークション、18 ロットが国内オファーシート、平均標高 1,570m、開始価格 1kg 13 ドル。処理法は洗浄・ナチュラル・アネロビック発酵まで多様化、女性農家・若年層・少数民族バトゥワ (Batwa) の区画も新設。前回 2024 年は Muungano 農園が 1kg 25.79 ドルでコンゴ史上最高値。Pillar ②産地・ハーベスト (14d 21% 目標 25% 継続不足 6 週目) の是正、副軸で ③業界・ビジネス (14d 36% 過剰) も新興産地オークション形式で差別化。DRC は日本の家淹れ Primary ペルソナに未経験度が高く『次に来る産地』フレーミングで注目度に寄せる Sunday evergreen news-adjacent 型を試験。フック語彙『明日9月1日から3日』時制先行、勝ち筋テンプレ (急騰/突破/過去最高) は回避継続で 7/26 (Manner IPO 復活) 型を踏襲。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/08/26/high-scoring-microlots-head-to-best-of-congo-cooperatives-auction/",
+          "https://www.africancoffeeconnect.com/news/best-of-congo-cooperatives-2026-bocc26-competition-amp-auction",
+          "https://www.pactcoffee.com/blog/entering-the-new-era-for-congolese-coffee-with-the-best-of-congo-competition",
+          "https://www.comunicaffe.com/best-of-congo-cooperatives-2026-london-congolese-coffee-competition",
+          "https://bestofcongocooperatives.com/",
+          "https://thecooperator.news/best-of-congo-cooperatives-launches-2026-coffee-competition-and-auction/"
+        ],
+        "query": "Best of Congo Cooperatives 2026 BOCC26 auction September 1-3 Kivu 34 microlots women Batwa Muungano record price",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-24",
-      "changes": [
-        "standard: 42 avg views (82 videos)",
-        "Day performance: Sun=136, Sat=39, Tue=37, Mon=30, Fri=28, Wed=27, Thu=7"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-27",
       "changes": [
@@ -3835,6 +3825,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=6, Fri=4, Mon=3, Wed=3, Tue=2, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-30",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=6, Mon=3, Wed=3, Fri=3, Tue=2, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
