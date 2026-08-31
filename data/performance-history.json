@@ -2,54 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-oU9flYGbAc",
-      "videoUrl": "https://youtube.com/shorts/-oU9flYGbAc",
-      "date": "2026-06-01",
-      "title": "【コーヒー豆知識】Googleで『コーヒー 値上げ』検索が急増中・でも海外卸は今年20%下落の謎｜2026/06/01 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "trends",
-        "description": "5/29 PDCA で計画した『6/1 月曜 強制 Explore: trends / news-ja / social-ja の未投入 method 投入』を実行。Google Trends 日本での『コーヒー 値上げ』検索が 2026 年春以降高止まり、3 月 UCC・キーコーヒー 10〜30% 改定、5 月コーヒー流通センター生豆改定で再加速の構図を起点に題材化。一方、海外アラビカ先物は $2.70/lb で 2024 年 11 月以来の安値、ブラジル Conab が 2026/27 を記録の 6,670 万袋 (+18% YoY、Arabica +28%) と予想、PDG 5/29 リキャップでも『speculators が $2.7B のロング解消』と報じる『上流急落 vs 店頭急騰』の矛盾を、検索データという視聴者の関心軸から逆照射。直近 2 日 (5/30 social-en, 5/31 expert-blog) と method 連続違反なし、news-en (WORST 3 連続 1/19/5v) を経由せず素材を trends にラベル替えする 6 月運用方針の第 1 弾。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/05/coffee-news-recap-29-may-2026/",
-          "https://think.ing.com/articles/brazil-crop-recovery-to-push-coffee-prices-lower/",
-          "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
-          "https://tradingeconomics.com/commodity/coffee",
-          "https://www.gcrmag.com/arabica-coffee-futures-fall-following-bumper-brazil-crop-estimate",
-          "https://www.coffee-rc.jp/news/detail/5",
-          "https://www.ucc.co.jp/company/news/2025/rel251222.html",
-          "https://www.keycoffee.co.jp/news/detail/news_251212",
-          "https://koyo-coffee.com/coffee-price-increase-2026/"
-        ],
-        "query": "コーヒー 値上げ Google Trends 2026 / arabica futures May 2026 / Brazil Conab 26/27 forecast 66.7 million bags / illycaffe stock listing",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 9,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
-      }
-    },
-    {
       "videoId": "9hhXPHWXt3w",
       "videoUrl": "https://youtube.com/shorts/9hhXPHWXt3w",
       "date": "2026-06-02",
@@ -3067,7 +3019,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3111,7 +3063,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3153,7 +3105,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3195,7 +3147,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3237,7 +3189,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3279,7 +3231,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3320,7 +3272,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3365,7 +3317,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3413,7 +3365,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3457,7 +3409,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3502,7 +3454,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3546,7 +3498,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-30T01:23:52.804Z"
+        "updatedAt": "2026-08-31T01:25:56.680Z"
       }
     },
     {
@@ -3591,19 +3543,56 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-08-31T01:25:56.680Z"
+      }
+    },
+    {
+      "videoId": "YPXpB0hZhqM",
+      "videoUrl": "https://youtube.com/shorts/YPXpB0hZhqM",
+      "date": "2026-08-31",
+      "title": "【コーヒー豆知識】グアテマラ アンティグア｜2026/08/31 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 41,
+      "discovery": {
+        "method": "expert-blog",
+        "description": "日曜=エバーグリーン枠。14d Method 集計で expert-blog は avg 0.50/n=2 と直近不振だが 90d TOP2 (n=13 avg 7.46 max 43) で Exploit 妥当、直近 2 日 (8/28 official-src / 8/29 news-en) と連続違反なし。素材は BOCC26 (Best of Congo Cooperatives 2026、9/1-3 auction) を African Coffee Connect / Pact Coffee blog 系の一次発信を軸に、DCN 8/26 速報・Comunicaffe・bestofcongocooperatives.com公式でクロス参照。第 3 回大会、東部キブ地方から 34 ロット、うち 14 ロットが 9/1-3 の国際オークション、18 ロットが国内オファーシート、平均標高 1,570m、開始価格 1kg 13 ドル。処理法は洗浄・ナチュラル・アネロビック発酵まで多様化、女性農家・若年層・少数民族バトゥワ (Batwa) の区画も新設。前回 2024 年は Muungano 農園が 1kg 25.79 ドルでコンゴ史上最高値。Pillar ②産地・ハーベスト (14d 21% 目標 25% 継続不足 6 週目) の是正、副軸で ③業界・ビジネス (14d 36% 過剰) も新興産地オークション形式で差別化。DRC は日本の家淹れ Primary ペルソナに未経験度が高く『次に来る産地』フレーミングで注目度に寄せる Sunday evergreen news-adjacent 型を試験。フック語彙『明日9月1日から3日』時制先行、勝ち筋テンプレ (急騰/突破/過去最高) は回避継続で 7/26 (Manner IPO 復活) 型を踏襲。",
+        "sources": [
+          "https://dailycoffeenews.com/2026/08/26/high-scoring-microlots-head-to-best-of-congo-cooperatives-auction/",
+          "https://www.africancoffeeconnect.com/news/best-of-congo-cooperatives-2026-bocc26-competition-amp-auction",
+          "https://www.pactcoffee.com/blog/entering-the-new-era-for-congolese-coffee-with-the-best-of-congo-competition",
+          "https://www.comunicaffe.com/best-of-congo-cooperatives-2026-london-congolese-coffee-competition",
+          "https://bestofcongocooperatives.com/",
+          "https://thecooperator.news/best-of-congo-cooperatives-launches-2026-coffee-competition-and-auction/"
+        ],
+        "query": "Best of Congo Cooperatives 2026 BOCC26 auction September 1-3 Kivu 34 microlots women Batwa Muungano record price",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-27",
-      "changes": [
-        "standard: 41 avg views (82 videos)",
-        "Day performance: Sun=136, Sat=39, Tue=37, Mon=30, Wed=27, Fri=23, Thu=7"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-28",
       "changes": [
@@ -3833,6 +3822,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=6, Mon=3, Wed=3, Fri=3, Tue=2, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-08-31",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=5, Mon=3, Wed=3, Fri=3, Tue=2, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
