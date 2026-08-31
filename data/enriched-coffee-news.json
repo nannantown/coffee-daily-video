@@ -1,41 +1,38 @@
 {
-  "date": "2026-08-30",
+  "date": "2026-09-01",
   "discovery": {
-    "method": "expert-blog",
-    "description": "日曜=エバーグリーン枠。14d Method 集計で expert-blog は avg 0.50/n=2 と直近不振だが 90d TOP2 (n=13 avg 7.46 max 43) で Exploit 妥当、直近 2 日 (8/28 official-src / 8/29 news-en) と連続違反なし。素材は BOCC26 (Best of Congo Cooperatives 2026、9/1-3 auction) を African Coffee Connect / Pact Coffee blog 系の一次発信を軸に、DCN 8/26 速報・Comunicaffe・bestofcongocooperatives.com公式でクロス参照。第 3 回大会、東部キブ地方から 34 ロット、うち 14 ロットが 9/1-3 の国際オークション、18 ロットが国内オファーシート、平均標高 1,570m、開始価格 1kg 13 ドル。処理法は洗浄・ナチュラル・アネロビック発酵まで多様化、女性農家・若年層・少数民族バトゥワ (Batwa) の区画も新設。前回 2024 年は Muungano 農園が 1kg 25.79 ドルでコンゴ史上最高値。Pillar ②産地・ハーベスト (14d 21% 目標 25% 継続不足 6 週目) の是正、副軸で ③業界・ビジネス (14d 36% 過剰) も新興産地オークション形式で差別化。DRC は日本の家淹れ Primary ペルソナに未経験度が高く『次に来る産地』フレーミングで注目度に寄せる Sunday evergreen news-adjacent 型を試験。フック語彙『明日9月1日から3日』時制先行、勝ち筋テンプレ (急騰/突破/過去最高) は回避継続で 7/26 (Manner IPO 復活) 型を踏襲。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind 8/28 週次ラウンドアップで拾ったロイター調査を、iandmsmith 週報と Investing.com で数値裏取り。相場ネタだが『アナリスト集約予想』としてニュース記事化されているため news-en に分類。",
     "sources": [
-      "https://dailycoffeenews.com/2026/08/26/high-scoring-microlots-head-to-best-of-congo-cooperatives-auction/",
-      "https://www.africancoffeeconnect.com/news/best-of-congo-cooperatives-2026-bocc26-competition-amp-auction",
-      "https://www.pactcoffee.com/blog/entering-the-new-era-for-congolese-coffee-with-the-best-of-congo-competition",
-      "https://www.comunicaffe.com/best-of-congo-cooperatives-2026-london-congolese-coffee-competition",
-      "https://bestofcongocooperatives.com/",
-      "https://thecooperator.news/best-of-congo-cooperatives-launches-2026-coffee-competition-and-auction/"
+      "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
+      "https://www.iandmsmith.com/market-reports/coffee-market-report-485-3-2-2-3-2/",
+      "https://www.investing.com/news/commodities-news/arabica-coffee-prices-seen-falling-30-by-end2025-reuters-poll-3867446"
     ],
-    "query": "Best of Congo Cooperatives 2026 BOCC26 auction September 1-3 Kivu 34 microlots women Batwa Muungano record price",
+    "query": "Reuters poll arabica coffee $3 per pound year end 2026 forecast robusta $3900 tonne",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コンゴ産スペシャルティが9月1日から世界競売・キブ34ロット、前回2024はムーンガノが1kg25.79ドルでコンゴ史上最高値",
-      "description": "明日9月1日から3日、コンゴのスペシャルティコーヒーが世界の焙煎所に競売されます。",
-      "detail": "東部キブ地方、標高1,570mの34ロット。洗浄・ナチュラル・アネロビック発酵まで揃い、女性農家や少数民族バトゥワの区画も参加。開始価格は1kg13ドル、前回2024年はムーンガノ農園が1kg25.79ドルでコンゴ史上最高値をつけました。",
-      "narration": "知ってました?明日9月1日から3日、東アフリカのコンゴでスペシャルティコーヒーが世界の焙煎所に競売されます。第3回、注目度が急上昇中です。",
-      "tags": ["コンゴ", "スペシャルティ", "オークション"],
+      "title": "ロイター最新調査でアラビカ年末3ドル予想・26/27年度は8.2百万袋の余剰、ブラジル+17%で相場に重し",
+      "description": "アラビカ先物は年末までに今より約1割下落の見立て",
+      "detail": "26/27年度の世界コーヒー生産は8.2百万袋余剰、ブラジルは7,500万袋(+17%)で過去最大級。ロブスタも1トン3,900ドル程度への戻りが本命視。",
+      "narration": "豆の高値、そろそろ天井か。ロイター最新調査で、アラビカ先物は年末までにポンド3ドル前後、今より約1割は下がる見通しです。",
+      "tags": ["市況", "アラビカ", "ブラジル収穫"],
       "narration_sections": {
-        "hook": "知ってました?明日9月1日から3日、東アフリカのコンゴでスペシャルティコーヒーが世界の焙煎所に競売されます。第3回、注目度が急上昇中です。",
-        "origin": "舞台は東部キブ地方、標高1,570mの34ロット。洗浄・ナチュラル・アネロビック発酵まで揃い、女性農家や少数民族バトゥワの区画も参加。開始価格は1kg13ドル、前回2024年はムーンガノ農園が1kg25.79ドルでコンゴ史上最高値をつけました。",
-        "recommend": "日本ではまだ珍しいコンゴ産、産地の急成長を追いかける一歩に。焙煎所の入荷情報をぜひチェックしてください。"
+        "hook": "豆の高値、そろそろ天井か。ロイター最新調査で、アラビカ先物は年末までにポンド3ドル前後、今より約1割は下がる見通しです。",
+        "origin": "今週まとまったアナリスト予想では、26/27年度の世界コーヒー生産は8.2百万袋の余剰見通し。特にブラジル収穫が前年比+17%の7,500万袋と過去最大級で、これが相場の重しになる公算です。ロブスタも1トン3,900ドル程度への戻りが本命視されています。",
+        "recommend": "もし予想通りなら家淹れ派には朗報。ただ在庫は依然低水準で、値下がり実感は数ヶ月ラグ想定。EC準備中です、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "明日コンゴ産競売",
-        "origin": "キブ地方34ロット",
-        "recommend": "焙煎所を要チェック"
+        "hook": "豆価格ピーク説浮上",
+        "origin": "余剰8.2百万袋",
+        "recommend": "家淹れ派には朗報"
       },
       "section_descriptions": {
-        "hook": "9月1日〜3日、コンゴから世界へ34ロット",
-        "origin": "洗浄・ナチュラル・アネロビックまで揃い女性区画も",
-        "recommend": "まだ珍しいコンゴ産、産地の変化を追う"
+        "hook": "ロイター最新調査:アラビカ年末3ドル、今より約1割下落の予想",
+        "origin": "26/27年度は8.2百万袋余剰、ブラジル+17%",
+        "recommend": "予想通りなら家淹れ派に朗報。ラグは数ヶ月"
       }
     }
   ]
