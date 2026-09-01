@@ -1,38 +1,40 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 8/28 週次ラウンドアップで拾ったロイター調査を、iandmsmith 週報と Investing.com で数値裏取り。相場ネタだが『アナリスト集約予想』としてニュース記事化されているため news-en に分類。",
+    "method": "official-src",
+    "description": "ブラジル ESALQ/USP 系農業経済研究センター Cepea の 26/27 アラビカ品質警告(6月豪雨の後追い分析)を、Sucafina 北米週報・CropGPT・The AgriBiz・StoneX 経由で複数裏取り。産地機関の一次分析を英語トレードメディアが引用する構図で official-src に分類。直近 official-src 使用は 8/28 で 4 日空き。TOP3 method のうち social-en は Reddit egress 不可、expert-blog は 8/30 直近使用のため、TOP3 内で無理のない選択肢として本日 official-src を採用。",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
-      "https://www.iandmsmith.com/market-reports/coffee-market-report-485-3-2-2-3-2/",
-      "https://www.investing.com/news/commodities-news/arabica-coffee-prices-seen-falling-30-by-end2025-reuters-poll-3867446"
+      "https://sucafina.com/na/news/brazil-2026-27-late-harvest-update",
+      "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
+      "https://cropgpt.ai/brazil-rains-delay-2026-27-coffee-harvest-lift-prices-amid-quality-concerns",
+      "https://www.stonex.com/en/insights/brazil-coffee-crop-survey-1st-estimate-for-2026-27/",
+      "https://www.theagribiz.com/international/brazil-coffee-harvest-delays-fuel-price-swings-as-market-watches-quality/"
     ],
-    "query": "Reuters poll arabica coffee $3 per pound year end 2026 forecast robusta $3900 tonne",
-    "freshness_hours": 96
+    "query": "brazil arabica 2026/27 harvest quality lower rain drying weakest specialty grade Cepea",
+    "freshness_hours": 72
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ロイター最新調査でアラビカ年末3ドル予想・26/27年度は8.2百万袋の余剰、ブラジル+17%で相場に重し",
-      "description": "アラビカ先物は年末までに今より約1割下落の見立て",
-      "detail": "26/27年度の世界コーヒー生産は8.2百万袋余剰、ブラジルは7,500万袋(+17%)で過去最大級。ロブスタも1トン3,900ドル程度への戻りが本命視。",
-      "narration": "豆の高値、そろそろ天井か。ロイター最新調査で、アラビカ先物は年末までにポンド3ドル前後、今より約1割は下がる見通しです。",
-      "tags": ["市況", "アラビカ", "ブラジル収穫"],
+      "title": "ブラジル26/27アラビカが近年最低クラス品質の可能性・Cepea警告、6月豪雨で果実落下と乾燥不良",
+      "description": "現地Cepeaがブラジル今年産アラビカの品質低下を警告",
+      "detail": "6月の記録的豪雨でミナス南部・セラード・モジアナで果実落下、収穫は昨年比で大きく遅れ、乾燥工程でも水分過多で豆にダメージ。低品位豆の比率が例年以上に膨らむ公算。",
+      "narration": "今日のニュース。ブラジルの2026/27年産アラビカの品質が『近年最低』の可能性、現地研究機関Cepeaが警告してます。",
+      "tags": ["ブラジル", "産地ニュース", "アラビカ品質", "Cepea", "ハーベスト"],
       "narration_sections": {
-        "hook": "豆の高値、そろそろ天井か。ロイター最新調査で、アラビカ先物は年末までにポンド3ドル前後、今より約1割は下がる見通しです。",
-        "origin": "今週まとまったアナリスト予想では、26/27年度の世界コーヒー生産は8.2百万袋の余剰見通し。特にブラジル収穫が前年比+17%の7,500万袋と過去最大級で、これが相場の重しになる公算です。ロブスタも1トン3,900ドル程度への戻りが本命視されています。",
-        "recommend": "もし予想通りなら家淹れ派には朗報。ただ在庫は依然低水準で、値下がり実感は数ヶ月ラグ想定。EC準備中です、フォローしてお待ちください。"
+        "hook": "今日のニュース。ブラジルの2026/27年産アラビカの品質が『近年最低』の可能性、現地研究機関Cepeaが警告してます。",
+        "origin": "背景は6月の記録的豪雨。ミナス南部・セラード・モジアナで果実落下、収穫は昨年比で大きく遅れ、乾燥工程でも水分過多で豆の内部にダメージが出ています。低品位豆の比率が例年以上に膨らむとされ、スペシャルティ級の良質ロット供給がタイトになる公算が濃厚とのこと",
+        "recommend": "焙煎所目線では、ブラジル系の浅煎り・ミディアム向け良豆は早めの押さえが賢明。OGはEC準備中、更新をお待ちください"
       },
       "section_titles": {
-        "hook": "豆価格ピーク説浮上",
-        "origin": "余剰8.2百万袋",
-        "recommend": "家淹れ派には朗報"
+        "hook": "ブラジル品質警報",
+        "origin": "6月豪雨のダメージ",
+        "recommend": "焙煎所と家淹れ視点"
       },
       "section_descriptions": {
-        "hook": "ロイター最新調査:アラビカ年末3ドル、今より約1割下落の予想",
-        "origin": "26/27年度は8.2百万袋余剰、ブラジル+17%",
-        "recommend": "予想通りなら家淹れ派に朗報。ラグは数ヶ月"
+        "hook": "今日のコーヒーニュース。現地Cepeaの警告",
+        "origin": "6月の豪雨が収穫と乾燥に与えたダメージを整理",
+        "recommend": "焙煎所目線での押さえどころと家淹れへの示唆"
       }
     }
   ]
