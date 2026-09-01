@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "9hhXPHWXt3w",
-      "videoUrl": "https://youtube.com/shorts/9hhXPHWXt3w",
-      "date": "2026-06-02",
-      "title": "【コーヒー豆知識】タンザニア産コーヒーが過去最高更新へ・キリマンジャロ周辺の再生投資で来年+10.3%｜2026/06/02 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "official-src",
-        "description": "Daily Coffee News が 6/01 (昨日) カバーした USDA Foreign Agricultural Service の Tanzania Coffee Annual 2026/27 を起点に題材化。USDA FAS = 戦略 §推奨ソースの official-src 本流で、freshness ~24h と速報性最強。Pillar ② 産地・ハーベスト (25%) は 5/27 インドネシアから 6 日空きで、アフリカ産地ニュースとしては 5/19 WCR から 14 日ぶり。直近 2 日 (5/31 expert-blog, 6/01 trends) と method 連続違反なし、直近 14d Method 平均 TOP1 (41v、5/22 ブラジル脱カフェ 74v) の Exploit 投入。news-en (WORST 3 連続) を経由せず素材を official-src 本流から直接持ち込む 6 月運用方針。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/06/01/tanzania-coffee-report-production-rising-amid-farm-investments/",
-          "https://www.fas.usda.gov/data/tanzania-coffee-annual-7",
-          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Dar+Es+Salaam_Tanzania_TZ2025-0004.pdf",
-          "https://www.foodbusinessmea.com/tanzania-coffee-production-set-for-record-growth-in-2026-27/",
-          "https://www.ecofinagency.com/news-agriculture/2005-55755-tanzania-s-coffee-industry-targets-another-record-harvest-in-2026-27"
-        ],
-        "query": "Tanzania coffee production forecast 1.6 million bags 2026/27 USDA / Tanzania coffee 2026/27 USDA FAS report Arabica Robusta export Kilimanjaro",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 14,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-15T01:44:35.094Z"
-      }
-    },
-    {
       "videoId": "-vd8_n5w3xs",
       "videoUrl": "https://youtube.com/shorts/-vd8_n5w3xs",
       "date": "2026-06-03",
@@ -3063,7 +3019,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.233Z"
       }
     },
     {
@@ -3105,7 +3061,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3147,7 +3103,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3189,7 +3145,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3231,7 +3187,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3272,7 +3228,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3317,7 +3273,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3365,7 +3321,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3409,7 +3365,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3454,7 +3410,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3498,7 +3454,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3543,7 +3499,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-08-31T01:25:56.680Z"
+        "updatedAt": "2026-09-01T01:56:23.234Z"
       }
     },
     {
@@ -3588,19 +3544,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-01T01:56:23.234Z"
+      }
+    },
+    {
+      "videoId": "hCoDgLgWl2A",
+      "videoUrl": "https://youtube.com/shorts/hCoDgLgWl2A",
+      "date": "2026-09-01",
+      "title": "【コーヒー豆知識】ロイター最新調査でアラビカ年末3ドル予想・26/27年度は8.2百万袋の余剰、ブラジル+17%で相場に重し｜2026/09/01 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 56,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind 8/28 週次ラウンドアップで拾ったロイター調査を、iandmsmith 週報と Investing.com で数値裏取り。相場ネタだが『アナリスト集約予想』としてニュース記事化されているため news-en に分類。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
+          "https://www.iandmsmith.com/market-reports/coffee-market-report-485-3-2-2-3-2/",
+          "https://www.investing.com/news/commodities-news/arabica-coffee-prices-seen-falling-30-by-end2025-reuters-poll-3867446"
+        ],
+        "query": "Reuters poll arabica coffee $3 per pound year end 2026 forecast robusta $3900 tonne",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-28",
-      "changes": [
-        "standard: 41 avg views (81 videos)",
-        "Day performance: Sun=149, Sat=39, Tue=37, Wed=27, Mon=25, Fri=23, Thu=7"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-29",
       "changes": [
@@ -3830,6 +3820,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=5, Mon=3, Wed=3, Fri=3, Tue=2, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-01",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Tue=2, Mon=2, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
