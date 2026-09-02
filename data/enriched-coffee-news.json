@@ -1,40 +1,39 @@
 {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "discovery": {
-    "method": "official-src",
-    "description": "ブラジル ESALQ/USP 系農業経済研究センター Cepea の 26/27 アラビカ品質警告(6月豪雨の後追い分析)を、Sucafina 北米週報・CropGPT・The AgriBiz・StoneX 経由で複数裏取り。産地機関の一次分析を英語トレードメディアが引用する構図で official-src に分類。直近 official-src 使用は 8/28 で 4 日空き。TOP3 method のうち social-en は Reddit egress 不可、expert-blog は 8/30 直近使用のため、TOP3 内で無理のない選択肢として本日 official-src を採用。",
+    "method": "news-en",
+    "description": "Daily Coffee News (Roast Magazine) 9/1公開の英語一次記事 'April Coffee Springs a Manual Grinder Into Production' を確認、Kickstarter 公式キャンペーンページと FLTR Magazine の Patrik Rolf インタビューで裏取り。平日 news-en 優先ルール、直近2日は news-en→official-src と入れ替わっており本日 news-en は3連続にならず。Primary persona (家淹れ趣味層) 直撃の器具ローンチ、著名焙煎士の人物名前面フックで検証。",
     "sources": [
-      "https://sucafina.com/na/news/brazil-2026-27-late-harvest-update",
-      "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
-      "https://cropgpt.ai/brazil-rains-delay-2026-27-coffee-harvest-lift-prices-amid-quality-concerns",
-      "https://www.stonex.com/en/insights/brazil-coffee-crop-survey-1st-estimate-for-2026-27/",
-      "https://www.theagribiz.com/international/brazil-coffee-harvest-delays-fuel-price-swings-as-market-watches-quality/"
+      "https://dailycoffeenews.com/2026/09/01/april-coffee-springs-a-manual-grinder-into-production/",
+      "https://www.kickstarter.com/projects/aprilhandgrinder/april-hand-grinder-designed-around-taste",
+      "https://fltrmagazine.com/2026/08/25/patrik-rolf-april-hand-grinder-kickstarter-interview/",
+      "https://www.aprilcoffeeroasters.com/pages/aprilgrinder"
     ],
-    "query": "brazil arabica 2026/27 harvest quality lower rain drying weakest specialty grade Cepea",
-    "freshness_hours": 72
+    "query": "april coffee hand grinder kickstarter patrik rolf timemore 48mm launch september 2026",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ブラジル26/27アラビカが近年最低クラス品質の可能性・Cepea警告、6月豪雨で果実落下と乾燥不良",
-      "description": "現地Cepeaがブラジル今年産アラビカの品質低下を警告",
-      "detail": "6月の記録的豪雨でミナス南部・セラード・モジアナで果実落下、収穫は昨年比で大きく遅れ、乾燥工程でも水分過多で豆にダメージ。低品位豆の比率が例年以上に膨らむ公算。",
-      "narration": "今日のニュース。ブラジルの2026/27年産アラビカの品質が『近年最低』の可能性、現地研究機関Cepeaが警告してます。",
-      "tags": ["ブラジル", "産地ニュース", "アラビカ品質", "Cepea", "ハーベスト"],
+      "title": "April Coffeeのパトリック・ロルフが自作ハンドミル『April Hand Grinder 01』を9/1 Kickstarter公開・Timemore協業48mm円錐刃で浅煎りの透明感狙う",
+      "description": "デンマークの人気焙煎士が自作ハンドミルをKickstarter公開",
+      "detail": "48ミリコニカル刃、Timemore協業、950g全金属製、外部ダイヤル調整、コペンハーゲン家具の意匠。浅煎り家淹れの透明感を狙った設計。",
+      "narration": "知ってました？デンマークの人気焙煎士パトリック・ロルフが、9月1日に自作ハンドグラインダーをKickstarterで公開したんです。",
+      "tags": ["April Coffee", "ハンドグラインダー", "Patrik Rolf", "Timemore", "浅煎り家淹れ"],
       "narration_sections": {
-        "hook": "今日のニュース。ブラジルの2026/27年産アラビカの品質が『近年最低』の可能性、現地研究機関Cepeaが警告してます。",
-        "origin": "背景は6月の記録的豪雨。ミナス南部・セラード・モジアナで果実落下、収穫は昨年比で大きく遅れ、乾燥工程でも水分過多で豆の内部にダメージが出ています。低品位豆の比率が例年以上に膨らむとされ、スペシャルティ級の良質ロット供給がタイトになる公算が濃厚とのこと",
-        "recommend": "焙煎所目線では、ブラジル系の浅煎り・ミディアム向け良豆は早めの押さえが賢明。OGはEC準備中、更新をお待ちください"
+        "hook": "知ってました？デンマークの人気焙煎士パトリック・ロルフが、9月1日に自作ハンドグラインダーをKickstarterで公開したんです。",
+        "origin": "新作『エイプリル・ハンドグラインダー01』はTimemore社と共同開発。48ミリの円錐刃で、浅煎りの甘さや透明感を引き出す設計です。重さ950グラムの全金属製、外部ダイヤルで挽き目調整でき、北欧家具から着想した外観です。",
+        "recommend": "浅煎りを家できっちり挽きたい方は要チェック。OGも浅煎りの魅力を発信中、EC準備中ですのでフォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ブラジル品質警報",
-        "origin": "6月豪雨のダメージ",
-        "recommend": "焙煎所と家淹れ視点"
+        "hook": "焙煎士が作るミル",
+        "origin": "浅煎りに全振り設計",
+        "recommend": "家淹れ派に朗報です"
       },
       "section_descriptions": {
-        "hook": "今日のコーヒーニュース。現地Cepeaの警告",
-        "origin": "6月の豪雨が収穫と乾燥に与えたダメージを整理",
-        "recommend": "焙煎所目線での押さえどころと家淹れへの示唆"
+        "hook": "デンマーク発、焙煎士自作のハンドミル公開",
+        "origin": "48mm刃・950gで浅煎りの透明感を狙う",
+        "recommend": "浅煎りをきっちり挽きたい家淹れ派に薦めたい"
       }
     }
   ]
