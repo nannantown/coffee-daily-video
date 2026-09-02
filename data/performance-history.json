@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-vd8_n5w3xs",
-      "videoUrl": "https://youtube.com/shorts/-vd8_n5w3xs",
-      "date": "2026-06-03",
-      "title": "【コーヒー豆知識】米でスペシャルティが2年連続首位・全米調査でレギュラー42%を47%が上回る｜2026/06/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "market-data",
-        "description": "NCA + SCA の Spring 2026 Specialty Coffee Report (NCDT 派生、1850 人全米調査) を Daily Coffee News が 6/02 18:00 ET 公開した記事を起点に題材化。米コーヒー協会公式データ = 本来 official-src だが、6/02 PDCA で official-src 連投 2 日違反回避と、news-en 6 月凍結ルールの代替再ラベル指定 (trends/market-data/official-src/expert-blog) に従い market-data に再ラベル。market-data の定義を「商品市況・為替・指標データ」から消費者市場指標 (NCDT) 含めて運用拡張する初回試験投入。Pillar ③ 業界・ビジネス (20%) は 5/31 Fine Robusta 以来 3 日空き、Pillar ② 産地 6 日中 3 日占有から方向転換。直近 2 日 (6/01 trends, 6/02 official-src) と method 連続違反なし、5/29 market-data から 5 日空き、freshness ~22h で 6/02 official-src 24h と同等の速報性。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/06/02/specialty-coffee-holds-lead-over-traditional-coffee-in-the-u-s/",
-          "https://www.ncausa.org/Market-Research/Specialty-Coffee-Report",
-          "https://sca.coffee/sca-news/2025-national-coffee-data-trends-report-available",
-          "https://stir-tea-coffee.com/tea-coffee-news/us-specialty-coffee-consumption-surpasses-traditional-coffee/",
-          "https://www.gcrmag.com/us-report-highlights-growing-interest-in-specialty-coffee/"
-        ],
-        "query": "NCA SCA 2026 Specialty Coffee Report 47% past day traditional 42% espresso based cold specialty growth NCDT 1850 adults",
-        "freshness_hours": 22
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-17T01:59:23.550Z"
-      }
-    },
-    {
       "videoId": "m5WDEsKDfOA",
       "videoUrl": "https://youtube.com/shorts/m5WDEsKDfOA",
       "date": "2026-06-04",
@@ -3061,7 +3017,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.103Z"
       }
     },
     {
@@ -3103,7 +3059,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3145,7 +3101,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3187,7 +3143,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3228,7 +3184,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3273,7 +3229,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3321,7 +3277,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3365,7 +3321,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3410,7 +3366,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3454,7 +3410,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3499,7 +3455,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3544,7 +3500,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-01T01:56:23.234Z"
+        "updatedAt": "2026-09-02T01:10:12.104Z"
       }
     },
     {
@@ -3586,19 +3542,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-02T01:10:12.104Z"
+      }
+    },
+    {
+      "videoId": "KYWZk4-YJ88",
+      "videoUrl": "https://youtube.com/shorts/KYWZk4-YJ88",
+      "date": "2026-09-02",
+      "title": "【コーヒー豆知識】ブラジル26/27アラビカが近年最低クラス品質の可能性・Cepea警告、6月豪雨で果実落下と乾燥不良｜2026/09/02 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "official-src",
+        "description": "ブラジル ESALQ/USP 系農業経済研究センター Cepea の 26/27 アラビカ品質警告(6月豪雨の後追い分析)を、Sucafina 北米週報・CropGPT・The AgriBiz・StoneX 経由で複数裏取り。産地機関の一次分析を英語トレードメディアが引用する構図で official-src に分類。直近 official-src 使用は 8/28 で 4 日空き。TOP3 method のうち social-en は Reddit egress 不可、expert-blog は 8/30 直近使用のため、TOP3 内で無理のない選択肢として本日 official-src を採用。",
+        "sources": [
+          "https://sucafina.com/na/news/brazil-2026-27-late-harvest-update",
+          "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
+          "https://cropgpt.ai/brazil-rains-delay-2026-27-coffee-harvest-lift-prices-amid-quality-concerns",
+          "https://www.stonex.com/en/insights/brazil-coffee-crop-survey-1st-estimate-for-2026-27/",
+          "https://www.theagribiz.com/international/brazil-coffee-harvest-delays-fuel-price-swings-as-market-watches-quality/"
+        ],
+        "query": "brazil arabica 2026/27 harvest quality lower rain drying weakest specialty grade Cepea",
+        "freshness_hours": 72
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-29",
-      "changes": [
-        "standard: 40 avg views (81 videos)",
-        "Day performance: Sun=149, Sat=39, Tue=29, Wed=27, Mon=25, Fri=23, Thu=7"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-30",
       "changes": [
@@ -3828,6 +3820,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Tue=2, Mon=2, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-02",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Mon=2, Thu=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
