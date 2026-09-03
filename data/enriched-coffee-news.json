@@ -1,39 +1,42 @@
 {
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News (Roast Magazine) 9/1公開の英語一次記事 'April Coffee Springs a Manual Grinder Into Production' を確認、Kickstarter 公式キャンペーンページと FLTR Magazine の Patrik Rolf インタビューで裏取り。平日 news-en 優先ルール、直近2日は news-en→official-src と入れ替わっており本日 news-en は3連続にならず。Primary persona (家淹れ趣味層) 直撃の器具ローンチ、著名焙煎士の人物名前面フックで検証。",
+    "method": "market-data",
+    "description": "9/2 のアラビカ先物急騰 (12月限 +5.89%) と ICE 認証在庫が 1999 年以来の 26 年ぶり低水準に沈む足元強気材料を、Reuters/PDG 8/28 recap と barchart / cocoaintel の 9 月序盤市況で確認。同時に Marex 75.9M / Sucafina 75.4M / StoneX 75.3M・USDA 71.9M と 2026/27 ブラジル記録的豊作予想が並び、Rabobank は年末までに $2.50-3.00 (現水準比 -3 割) を予想。単発の値動き報道 (8/20 6.5ヶ月ぶり高値 0v・8/26 341.65¢ 0v) が連続 0v で終わった反省を踏まえ、market-data の subtype として『短期強気 vs 長期弱気の綱引き構造』テンプレを新規投入。直近 2 日 (9/3 news-en, 9/2 official-src) と method 連続違反なし、market-data は 8/26 以来 9 日空き。Pillar ①市況 14d 過少寄りへ寄与、③業界 36% 過多の分散も兼ねる。",
     "sources": [
-      "https://dailycoffeenews.com/2026/09/01/april-coffee-springs-a-manual-grinder-into-production/",
-      "https://www.kickstarter.com/projects/aprilhandgrinder/april-hand-grinder-designed-around-taste",
-      "https://fltrmagazine.com/2026/08/25/patrik-rolf-april-hand-grinder-kickstarter-interview/",
-      "https://www.aprilcoffeeroasters.com/pages/aprilgrinder"
+      "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
+      "https://www.cocoaintel.com/coffee-futures-advance-as-technical-buying-returns-and-supply-concerns-persist/",
+      "https://cropgpt.ai/global-coffee-ice-certified-stock-depletion-and-brazilian-harvest-delays",
+      "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
+      "https://www.fas.usda.gov/data/gain-report/2026/06/Coffee%20Annual_Brasilia_Brazil_BR2026-0025.pdf",
+      "https://www.stonex.com/en-us/insights/brazil-harvest-pressures-coffee-market-as-arabica-futures-fall-to-19-month-lows/",
+      "https://www.barchart.com/story/news/3956273/arabica-coffee-settles-higher-on-supply-concerns"
     ],
-    "query": "april coffee hand grinder kickstarter patrik rolf timemore 48mm launch september 2026",
+    "query": "arabica coffee futures September 2 3 2026 ICE certified stocks 26 year low Brazil harvest Rabobank forecast fall by third year end",
     "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "April Coffeeのパトリック・ロルフが自作ハンドミル『April Hand Grinder 01』を9/1 Kickstarter公開・Timemore協業48mm円錐刃で浅煎りの透明感狙う",
-      "description": "デンマークの人気焙煎士が自作ハンドミルをKickstarter公開",
-      "detail": "48ミリコニカル刃、Timemore協業、950g全金属製、外部ダイヤル調整、コペンハーゲン家具の意匠。浅煎り家淹れの透明感を狙った設計。",
-      "narration": "知ってました？デンマークの人気焙煎士パトリック・ロルフが、9月1日に自作ハンドグラインダーをKickstarterで公開したんです。",
-      "tags": ["April Coffee", "ハンドグラインダー", "Patrik Rolf", "Timemore", "浅煎り家淹れ"],
+      "title": "ICEアラビカ認証在庫が1999年以来の26年ぶり低水準・9/2先物+5.9%急騰、でもRabobankは年末3割安予測で市場は綱引き相場",
+      "description": "アラビカの在庫は1999年以来の低水準、しかし年末には3割安予測もあり相場は綱引き状態",
+      "detail": "9月2日、12月限アラビカ先物は+5.89%急騰。ICE認証在庫は約22万袋で通常水準の半分以下。ブラジル収穫遅れが下支え。ただRabobankは来期記録的豊作を受け年末までに現水準比3割安を予測。",
+      "narration": "今日のコーヒー先物ニュース。ICEのアラビカ認証在庫が、1999年以来という26年ぶりの低水準まで減っています。",
+      "tags": ["アラビカ先物", "ICE在庫", "ブラジル収穫", "Rabobank予測", "26年ぶり低水準"],
       "narration_sections": {
-        "hook": "知ってました？デンマークの人気焙煎士パトリック・ロルフが、9月1日に自作ハンドグラインダーをKickstarterで公開したんです。",
-        "origin": "新作『エイプリル・ハンドグラインダー01』はTimemore社と共同開発。48ミリの円錐刃で、浅煎りの甘さや透明感を引き出す設計です。重さ950グラムの全金属製、外部ダイヤルで挽き目調整でき、北欧家具から着想した外観です。",
-        "recommend": "浅煎りを家できっちり挽きたい方は要チェック。OGも浅煎りの魅力を発信中、EC準備中ですのでフォローしてお待ちください。"
+        "hook": "今日のコーヒー先物ニュース。ICEのアラビカ認証在庫が、1999年以来という26年ぶりの低水準まで減っています。",
+        "origin": "一昨日9月2日、12月限のアラビカ先物は5.9%急騰。ICE在庫は約22万袋で、通常水準の半分以下。ブラジル収穫の遅れで、市場に届く豆が足りません。ただ大手Rabobankは、来期の記録的豊作を受け年末までに3割安を予測しています。",
+        "recommend": "短期は高値、長期は下落の綱引き。OGは仕入れタイミングも見ながら情報発信していきます。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "焙煎士が作るミル",
-        "origin": "浅煎りに全振り設計",
-        "recommend": "家淹れ派に朗報です"
+        "hook": "在庫26年ぶり低水準",
+        "origin": "収穫遅れで先物急騰",
+        "recommend": "短期高値・長期下落"
       },
       "section_descriptions": {
-        "hook": "デンマーク発、焙煎士自作のハンドミル公開",
-        "origin": "48mm刃・950gで浅煎りの透明感を狙う",
-        "recommend": "浅煎りをきっちり挽きたい家淹れ派に薦めたい"
+        "hook": "ICEアラビカ在庫が1999年以来の枯渇水準に",
+        "origin": "9/2先物+5.9%、Rabobankは年末3割安予想",
+        "recommend": "短期強気と長期弱気の綱引き相場に要注目"
       }
     }
   ]
