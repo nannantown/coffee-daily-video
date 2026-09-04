@@ -2,94 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "m5WDEsKDfOA",
-      "videoUrl": "https://youtube.com/shorts/m5WDEsKDfOA",
-      "date": "2026-06-04",
-      "title": "【コーヒー豆知識】米トップ焙煎所が選んだ2026年の豆・グッドフード賞13焙煎所中ほぼエチオピア｜2026/06/04 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Daily Coffee News 6/03『13 Coffee Roasters Win 2026 Good Food Awards』を起点に、Good Food Foundation 公式 Winners ページ (2026 Coffee 部門) と BevNET 6/02 配信の Specialty Food Association プレスリリースをクロスチェック。6/2 発表の 2026 Good Food Awards Coffee 部門で米国 13 焙煎所 / 15 銘柄が受賞、1200 を超える応募から選定、受賞豆はエチオピア中心という結果を、焙煎士目線で『今年米トップ焙煎所が選んだ豆ヒント』に翻訳する expert-blog 再ラベル運用。news-en 6 月凍結方針継続、TOP method (中央値 14.5、平均 29) の Exploit として 5/31 から 3 日空きで再投入。直近 2 日 (6/02 official-src, 6/03 market-data) と method 連続違反なし。Pillar ③ 業界・ビジネスを主軸とし結論部のみエチオピアの固有名詞を Primary 層への家飲み行動接続として置く設計で、過剰だった Pillar ② 産地 (直近 14d 36%) からの分散調整。subtype 仮説: 5/20 パラキサンチン (23v) / 5/23 UC デイビス水温 (83v) の家飲み行動接続型 (`-home` 内部運用ノート) を踏襲し、5/28 海外値動き時差 (4v) / 5/31 Fine Robusta CVA (7v) のメタ説明型 (`-meta`) を回避する初の試験投入。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/06/03/13-coffee-roasters-win-2026-good-food-awards/",
-          "https://goodfoodfdn.org/awards/winners/2026/coffee/",
-          "https://www.bevnet.com/pr/2026/06/02/specialty-food-association-announces-the-2026-good-food-awards-winners",
-          "https://dailycoffeenews.com/2026/01/30/20-u-s-roasters-named-2026-good-food-awards-coffee-finalists/",
-          "https://goodfoodfdn.org/awards/finalists/"
-        ],
-        "query": "Good Food Awards 2026 coffee winners 13 roasters 15 coffees Ethiopia Crimson Magnolia June 2 announcement",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-18T02:00:33.216Z"
-      }
-    },
-    {
-      "videoId": "a7vhex8lj8k",
-      "videoUrl": "https://youtube.com/shorts/a7vhex8lj8k",
-      "date": "2026-06-05",
-      "title": "【コーヒー豆知識】ブラジル来年7190万袋でアラビカ4ヶ月ぶり安値・USDA最新予測｜2026/06/05 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "official-src",
-        "description": "USDA FAS Brazil Coffee Annual (GAIN レポート、2026 年 6 月発表) を起点に、Daily Coffee News 6/04 解説、Conab 公式 (66.7M バッグ予測、2026/02 発表) をクロスチェック。USDA は来期 71.9M バッグ (+14.1%)、アラビカ 47.5M バッグ (+25%)、輸出 49.07M バッグ (+29.6%) を予測、アラビカ先物が 4 ヶ月ぶり安値に達した供給要因を一次データから翻訳。official-src は直近 14d Method 中央値 TOP1 (42.5、n=2 確定) で、6/04 PDCA の subtype 暫定保留・6/03 market-data 再ラベル失敗を受け、本来の official-src 定義 (産地機関・公的機関の一次データ) に直球で戻る運用。直近 2 日 (6/03 market-data, 6/04 expert-blog) と連続違反なし、6/02 から 3 日空き。Pillar ① 市況へ意図的スイッチし、直近 4 日 (5/31 ③ / 6/03 ③ / 6/04 ③) の業界連投と Pillar ② 14d 36% 過密の両方を回避。素材タイプ仮説『過去最大級の数字を含む産地機関一次データは 60-80v 帯を再現』を 5/22 ブラジル脱カフェ 75v ライン踏襲で検証。",
-        "sources": [
-          "https://www.fas.usda.gov/data/gain/2026/06/brazil-coffee-annual",
-          "https://dailycoffeenews.com/2026/06/04/brazil-coffee-report-record-crop-and-exports-expected-for-2026-27/",
-          "https://www.comunicaffe.com/brazil-brazil-conab-forecasts-a-record-harvest-of-66-2-million-17-for-the-2026-27-season/",
-          "https://www.gcrmag.com/conab-shares-2026-brazilian-coffee-production-estimates/",
-          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-retreat-expectations-bumper-182149963.html"
-        ],
-        "query": "USDA FAS Brazil Coffee Annual 2026/27 71.9 million bags arabica 47.5 export 49.07 record crop June release",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 10,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-19T02:13:38.728Z"
-      }
-    },
-    {
       "videoId": "-rkdUvTWlZo",
       "videoUrl": "https://youtube.com/shorts/-rkdUvTWlZo",
       "date": "2026-06-06",
@@ -3098,10 +3010,10 @@
         "freshness_hours": 48
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3143,7 +3055,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3184,7 +3096,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3229,7 +3141,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3277,7 +3189,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3321,7 +3233,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3366,7 +3278,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3410,7 +3322,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3455,7 +3367,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3500,7 +3412,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3542,7 +3454,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-02T01:10:12.104Z"
+        "updatedAt": "2026-09-04T01:07:59.563Z"
       }
     },
     {
@@ -3583,6 +3495,52 @@
         "freshness_hours": 72
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-04T01:07:59.563Z"
+      }
+    },
+    {
+      "videoId": "CCwFYZV_l8Y",
+      "videoUrl": "https://youtube.com/shorts/CCwFYZV_l8Y",
+      "date": "2026-09-04",
+      "title": "【コーヒー豆知識】ICEアラビカ認証在庫が1999年以来の26年ぶり低水準・9/2先物+5.9%急騰、でもRabobankは年末3割安予測で市場は綱引き相場｜2026/09/04 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "market-data",
+        "description": "9/2 のアラビカ先物急騰 (12月限 +5.89%) と ICE 認証在庫が 1999 年以来の 26 年ぶり低水準に沈む足元強気材料を、Reuters/PDG 8/28 recap と barchart / cocoaintel の 9 月序盤市況で確認。同時に Marex 75.9M / Sucafina 75.4M / StoneX 75.3M・USDA 71.9M と 2026/27 ブラジル記録的豊作予想が並び、Rabobank は年末までに $2.50-3.00 (現水準比 -3 割) を予想。単発の値動き報道 (8/20 6.5ヶ月ぶり高値 0v・8/26 341.65¢ 0v) が連続 0v で終わった反省を踏まえ、market-data の subtype として『短期強気 vs 長期弱気の綱引き構造』テンプレを新規投入。直近 2 日 (9/3 news-en, 9/2 official-src) と method 連続違反なし、market-data は 8/26 以来 9 日空き。Pillar ①市況 14d 過少寄りへ寄与、③業界 36% 過多の分散も兼ねる。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
+          "https://www.cocoaintel.com/coffee-futures-advance-as-technical-buying-returns-and-supply-concerns-persist/",
+          "https://cropgpt.ai/global-coffee-ice-certified-stock-depletion-and-brazilian-harvest-delays",
+          "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
+          "https://www.fas.usda.gov/data/gain-report/2026/06/Coffee%20Annual_Brasilia_Brazil_BR2026-0025.pdf",
+          "https://www.stonex.com/en-us/insights/brazil-harvest-pressures-coffee-market-as-arabica-futures-fall-to-19-month-lows/",
+          "https://www.barchart.com/story/news/3956273/arabica-coffee-settles-higher-on-supply-concerns"
+        ],
+        "query": "arabica coffee futures September 2 3 2026 ICE certified stocks 26 year low Brazil harvest Rabobank forecast fall by third year end",
+        "freshness_hours": 48
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3591,14 +3549,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-30",
-      "changes": [
-        "standard: 36 avg views (81 videos)",
-        "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=23, Thu=7, Wed=7"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-07-31",
       "changes": [
@@ -3828,6 +3778,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Mon=2, Thu=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-04",
+      "changes": [
+        "standard: 4 avg views (81 videos)",
+        "Day performance: Sat=12, Sun=5, Fri=3, Wed=3, Mon=2, Thu=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
