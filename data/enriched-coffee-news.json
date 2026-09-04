@@ -1,42 +1,38 @@
 {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "discovery": {
-    "method": "market-data",
-    "description": "9/2 のアラビカ先物急騰 (12月限 +5.89%) と ICE 認証在庫が 1999 年以来の 26 年ぶり低水準に沈む足元強気材料を、Reuters/PDG 8/28 recap と barchart / cocoaintel の 9 月序盤市況で確認。同時に Marex 75.9M / Sucafina 75.4M / StoneX 75.3M・USDA 71.9M と 2026/27 ブラジル記録的豊作予想が並び、Rabobank は年末までに $2.50-3.00 (現水準比 -3 割) を予想。単発の値動き報道 (8/20 6.5ヶ月ぶり高値 0v・8/26 341.65¢ 0v) が連続 0v で終わった反省を踏まえ、market-data の subtype として『短期強気 vs 長期弱気の綱引き構造』テンプレを新規投入。直近 2 日 (9/3 news-en, 9/2 official-src) と method 連続違反なし、market-data は 8/26 以来 9 日空き。Pillar ①市況 14d 過少寄りへ寄与、③業界 36% 過多の分散も兼ねる。",
+    "method": "news-en",
+    "description": "Daily Coffee News 週次ラウンドアップ 09/04 版で紹介された Wiley 誌の新研究を起点に、原論文と英語業界紙の解説記事へ辿った",
     "sources": [
-      "https://perfectdailygrind.com/2026/08/coffee-news-recap-28-august-2026/",
-      "https://www.cocoaintel.com/coffee-futures-advance-as-technical-buying-returns-and-supply-concerns-persist/",
-      "https://cropgpt.ai/global-coffee-ice-certified-stock-depletion-and-brazilian-harvest-delays",
-      "https://www.comunicaffe.com/coffee-futures-set-to-fall-by-a-third-by-the-end-of-2026-say-analysts/",
-      "https://www.fas.usda.gov/data/gain-report/2026/06/Coffee%20Annual_Brasilia_Brazil_BR2026-0025.pdf",
-      "https://www.stonex.com/en-us/insights/brazil-harvest-pressures-coffee-market-as-arabica-futures-fall-to-19-month-lows/",
-      "https://www.barchart.com/story/news/3956273/arabica-coffee-settles-higher-on-supply-concerns"
+      "https://dailycoffeenews.com/2026/09/04/weekly-coffee-news-colombia-earthquake-support-brewing-for-equity/",
+      "https://onlinelibrary.wiley.com/doi/10.1002/sd.71568",
+      "https://coffeetalk.com/daily-dose/top-news/08-2026/110838/"
     ],
-    "query": "arabica coffee futures September 2 3 2026 ICE certified stocks 26 year low Brazil harvest Rabobank forecast fall by third year end",
-    "freshness_hours": 48
+    "query": "robusta climate resilience study 2026 Sustainable Development Aaron Davis",
+    "freshness_hours": 30
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ICEアラビカ認証在庫が1999年以来の26年ぶり低水準・9/2先物+5.9%急騰、でもRabobankは年末3割安予測で市場は綱引き相場",
-      "description": "アラビカの在庫は1999年以来の低水準、しかし年末には3割安予測もあり相場は綱引き状態",
-      "detail": "9月2日、12月限アラビカ先物は+5.89%急騰。ICE認証在庫は約22万袋で通常水準の半分以下。ブラジル収穫遅れが下支え。ただRabobankは来期記録的豊作を受け年末までに現水準比3割安を予測。",
-      "narration": "今日のコーヒー先物ニュース。ICEのアラビカ認証在庫が、1999年以来という26年ぶりの低水準まで減っています。",
-      "tags": ["アラビカ先物", "ICE在庫", "ブラジル収穫", "Rabobank予測", "26年ぶり低水準"],
+      "title": "ロブスタは気候変動に強い神話崩壊・キュー植物園デイビス博士が査読論文で「ネット神話」と断言",
+      "description": "定説を真っ向から否定する新研究がこの夏発表",
+      "detail": "英国王立キュー植物園のデイビス博士がSustainable Development誌で発表。ロブスタは高温耐性はあるが干ばつに極端に弱く、ブラジル・ベトナム・インドは灌漑前提でしか栽培成立していない。代替として excelsa・liberica など未活用種の可能性を示唆。",
+      "narration": "「ロブスタ種は気候変動に強い」と最近よく耳にしますよね。実はこの定説を真っ向から否定する研究論文が、この夏発表されました。",
+      "tags": ["業界ニュース", "気候変動", "品種"],
       "narration_sections": {
-        "hook": "今日のコーヒー先物ニュース。ICEのアラビカ認証在庫が、1999年以来という26年ぶりの低水準まで減っています。",
-        "origin": "一昨日9月2日、12月限のアラビカ先物は5.9%急騰。ICE在庫は約22万袋で、通常水準の半分以下。ブラジル収穫の遅れで、市場に届く豆が足りません。ただ大手Rabobankは、来期の記録的豊作を受け年末までに3割安を予測しています。",
-        "recommend": "短期は高値、長期は下落の綱引き。OGは仕入れタイミングも見ながら情報発信していきます。EC準備中、フォローしてお待ちください。"
+        "hook": "「ロブスタ種は気候変動に強い」と最近よく耳にしますよね。実はこの定説を真っ向から否定する研究論文が、この夏発表されました。",
+        "origin": "英国王立キュー植物園のデイビス博士がSustainable Development誌で発表。ロブスタは高温耐性こそあれど干ばつに弱く、ブラジルやベトナムでも灌漑なしでは十分に育たないと指摘。「ネット上の神話」と断言しています。",
+        "recommend": "気候変動下ではエクセルサやリベリカなど、代替品種の可能性にも注目です。産地選びの目線が変わる一本ですね。"
       },
       "section_titles": {
-        "hook": "在庫26年ぶり低水準",
-        "origin": "収穫遅れで先物急騰",
-        "recommend": "短期高値・長期下落"
+        "hook": "ロブスタ神話崩壊",
+        "origin": "キュー植物園の警告",
+        "recommend": "代替品種に注目集まる"
       },
       "section_descriptions": {
-        "hook": "ICEアラビカ在庫が1999年以来の枯渇水準に",
-        "origin": "9/2先物+5.9%、Rabobankは年末3割安予想",
-        "recommend": "短期強気と長期弱気の綱引き相場に要注目"
+        "hook": "気候変動対策の常識が覆る新研究が世界で話題",
+        "origin": "高温には強くても干ばつには極端に弱い実態",
+        "recommend": "エクセルサやリベリカが次代の主役候補として浮上"
       }
     }
   ]
