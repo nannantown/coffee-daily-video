@@ -1,38 +1,37 @@
 {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "discovery": {
-    "method": "news-en",
-    "description": "Daily Coffee News 週次ラウンドアップ 09/04 版で紹介された Wiley 誌の新研究を起点に、原論文と英語業界紙の解説記事へ辿った",
+    "method": "expert-blog",
+    "description": "Perfect Daily Grind 2026年09月最新記事「家コーヒー装備を一つの系として組む」を土曜エバーグリーン枠で採用。今週09-03のApril Hand Grinder 01ニュースを家淹れ実践論に接続。",
     "sources": [
-      "https://dailycoffeenews.com/2026/09/04/weekly-coffee-news-colombia-earthquake-support-brewing-for-equity/",
-      "https://onlinelibrary.wiley.com/doi/10.1002/sd.71568",
-      "https://coffeetalk.com/daily-dose/top-news/08-2026/110838/"
+      "https://perfectdailygrind.com/2026/09/curate-exceptional-home-coffee-setup/",
+      "https://perfectdailygrind.com/2026/08/what-to-upgrade-first-home-coffee-setup/"
     ],
-    "query": "robusta climate resilience study 2026 Sustainable Development Aaron Davis",
-    "freshness_hours": 30
+    "query": "Perfect Daily Grind September 2026 home brewing technique",
+    "freshness_hours": 120
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ロブスタは気候変動に強い神話崩壊・キュー植物園デイビス博士が査読論文で「ネット神話」と断言",
-      "description": "定説を真っ向から否定する新研究がこの夏発表",
-      "detail": "英国王立キュー植物園のデイビス博士がSustainable Development誌で発表。ロブスタは高温耐性はあるが干ばつに極端に弱く、ブラジル・ベトナム・インドは灌漑前提でしか栽培成立していない。代替として excelsa・liberica など未活用種の可能性を示唆。",
-      "narration": "「ロブスタ種は気候変動に強い」と最近よく耳にしますよね。実はこの定説を真っ向から否定する研究論文が、この夏発表されました。",
-      "tags": ["業界ニュース", "気候変動", "品種"],
+      "title": "家淹れは一つの系として設計せよ・PDG最新記事の要点3つと9/1のApril Coffee初グラインダー",
+      "description": "英PDGが家淹れは「一つの系」として組むべきと発信。核はやはりグラインダーです。",
+      "detail": "PDGは要点を3つ挙げます。1つ目はグラインダー、粒度均一で抽出安定。9/1にはApril Coffeeも初ハンドグラインダーをKickstarter公開。2つ目は水質、硬水過多だと味がぼやけます。3つ目は注入前のダマを崩すWDTツールです。",
+      "narration": "家の機材、バラバラで揃えていませんか?英PDG今週の記事は「家淹れは一つの系として設計すべき」と断言。核はやはり味を左右するグラインダーです。",
+      "tags": ["家淹れ", "グラインダー", "WDT"],
       "narration_sections": {
-        "hook": "「ロブスタ種は気候変動に強い」と最近よく耳にしますよね。実はこの定説を真っ向から否定する研究論文が、この夏発表されました。",
-        "origin": "英国王立キュー植物園のデイビス博士がSustainable Development誌で発表。ロブスタは高温耐性こそあれど干ばつに弱く、ブラジルやベトナムでも灌漑なしでは十分に育たないと指摘。「ネット上の神話」と断言しています。",
-        "recommend": "気候変動下ではエクセルサやリベリカなど、代替品種の可能性にも注目です。産地選びの目線が変わる一本ですね。"
+        "hook": "家の機材、バラバラで揃えていませんか?英PDG今週の記事は「家淹れは一つの系として設計すべき」と断言。核はやはり味を左右するグラインダーです。",
+        "origin": "PDGは3点挙げてます。1つ目はグラインダー、粒度均一で抽出安定。9/1にはApril Coffeeも初ハンドグラインダーをKickstarter公開。2つ目は水質、硬水過多だと味がぼやけます。3つ目は注入前ダマを崩すWDTツールです。",
+        "recommend": "まずグラインダーから見直しを。単一豆量りきりの単発方式が浅煎り豆と好相性です。EC準備中、フォローしてお待ちください。"
       },
       "section_titles": {
-        "hook": "ロブスタ神話崩壊",
-        "origin": "キュー植物園の警告",
-        "recommend": "代替品種に注目集まる"
+        "hook": "家淹れは一つの系",
+        "origin": "PDGの3点セット",
+        "recommend": "まずはグラインダー"
       },
       "section_descriptions": {
-        "hook": "気候変動対策の常識が覆る新研究が世界で話題",
-        "origin": "高温には強くても干ばつには極端に弱い実態",
-        "recommend": "エクセルサやリベリカが次代の主役候補として浮上"
+        "hook": "英PDG最新記事が説く家淹れ設計の新セオリー",
+        "origin": "グラインダー・水質・WDTツールの3点セット解説",
+        "recommend": "今日から始める家の味を跳ねさせる第一歩の一手"
       }
     }
   ]
