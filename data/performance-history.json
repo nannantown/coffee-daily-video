@@ -2,53 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "-rkdUvTWlZo",
-      "videoUrl": "https://youtube.com/shorts/-rkdUvTWlZo",
-      "date": "2026-06-06",
-      "title": "【コーヒー豆知識】米でアイスエスプレッソが過去最高ペース・家アイスラテは『氷で薄めない』が正解｜2026/06/06 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 52,
-      "discovery": {
-        "method": "social-en",
-        "description": "土曜エバーグリーン枠で、Reddit r/espresso と TikTok の『家アイスラテ・冷たいエスプレッソ』コンテンツが夏前に再加速している現象を起点に、NCA 6/02 公表の最新 NCDT 2026 Specialty Coffee Report (Daily Coffee News 6/02・SCA・Comunicaffe で照合) で『直近1週間に冷たいエスプレッソを飲んだ人 38%、前年比+6pt、アイスラテ17%・アイスモカ11%、エスプレッソ系直近24h は 29% で記録更新』というハードファクトで裏付け。さらに Origin Coffee (英) が 6/3 に発表した Cold Brew Espresso Concentrate Launch と Sprudge / Tasting Table の TikTok コーヒー特集で『SNS で見るアイスラテ熱が公式調査で実証された』ストーリーを形成。5/8 NR4A1 (131v) と 5/17 Hario Switch (94v) で勝った『SNS で広がるトピック → 一次データで補強 → 家で試せる具体 TIPS で締める』社会的検証テンプレを踏襲。method 選定: 直近 2 日 (6/04 expert-blog, 6/05 official-src) と連続違反なし、5/30 Brezi 以来 7 日空き、TOP method 候補 (中央値ベースでは official-src 14 / expert-blog 7 / market-data 5.5、social-en は 5/30 未着で n 不足だが過去ヒット 5/8 131v・5/17 94v の振れ幅が大きく Exploit 候補)。Pillar は ③業界・ビジネスニュース (NCDT データ) ×④焙煎士の一次情報 (家庭抽出 TIP) のクロスで、直近14日 ② 過多 36% / ③ 過多 29% / ① 軽微不足 21% / ④ 目標内 14% に対し ④ を厚めにすることで分布是正。6/03 (market-data 3v) で扱った NCDT データのうち別軸 (cold espresso) を社会的角度で再導入する戦略的再利用、6/03 と Pillar/Method/角度すべて被らない設計。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/06/02/specialty-coffee-holds-lead-over-traditional-coffee-in-the-u-s/",
-          "https://www.ncausa.org/Market-Research/Specialty-Coffee-Report",
-          "https://sca.coffee/sca-news/2025-national-coffee-data-trends-report-available",
-          "https://www.comunicaffe.com/nca-survey-consumption-of-specialty-coffee-among-daily-coffee-drinkers-still-outstrips-that-of-traditional-coffee-in-the-u-s/",
-          "https://www.teaandcoffee.net/news/39402/origin-coffee-launches-cold-brew-espresso-concentrate-and-specialty-coffee-capsules/",
-          "https://www.tastingtable.com/1919137/tiktok-coffee-drinks-worth-trying/",
-          "https://www.reddit.com/r/espresso/",
-          "https://www.bevindustry.com/articles/96766-specialty-coffee-consumption-reaches-13-year-high-study-shows"
-        ],
-        "query": "NCA NCDT 2026 cold espresso 38% past week +6 points cold latte 17% cold mocha 11%; reddit r/espresso iced latte home brewing summer 2026; TikTok iced coffee viral trend coffee ice cube tip",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 12,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-20T01:35:12.463Z"
-      }
-    },
-    {
       "videoId": "yG0lbA_ow80",
       "videoUrl": "https://youtube.com/shorts/yG0lbA_ow80",
       "date": "2026-06-07",
@@ -3055,7 +3008,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3096,7 +3049,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3141,7 +3094,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3189,7 +3142,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3233,7 +3186,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3278,7 +3231,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3322,7 +3275,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3367,7 +3320,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3412,7 +3365,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3454,7 +3407,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3498,7 +3451,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-04T01:07:59.563Z"
+        "updatedAt": "2026-09-05T01:10:34.878Z"
       }
     },
     {
@@ -3544,19 +3497,53 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-05T01:10:34.878Z"
+      }
+    },
+    {
+      "videoId": "HMEYpS-LZWA",
+      "videoUrl": "https://youtube.com/shorts/HMEYpS-LZWA",
+      "date": "2026-09-05",
+      "title": "【コーヒー豆知識】ロブスタは気候変動に強い神話崩壊・キュー植物園デイビス博士が査読論文で「ネット神話」と断言｜2026/09/05 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "精製方法",
+        "精製方法",
+        "精製方法"
+      ],
+      "durationSeconds": 46,
+      "discovery": {
+        "method": "news-en",
+        "description": "Daily Coffee News 週次ラウンドアップ 09/04 版で紹介された Wiley 誌の新研究を起点に、原論文と英語業界紙の解説記事へ辿った",
+        "sources": [
+          "https://dailycoffeenews.com/2026/09/04/weekly-coffee-news-colombia-earthquake-support-brewing-for-equity/",
+          "https://onlinelibrary.wiley.com/doi/10.1002/sd.71568",
+          "https://coffeetalk.com/daily-dose/top-news/08-2026/110838/"
+        ],
+        "query": "robusta climate resilience study 2026 Sustainable Development Aaron Davis",
+        "freshness_hours": 30
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-07-31",
-      "changes": [
-        "standard: 36 avg views (81 videos)",
-        "Day performance: Sun=149, Sat=39, Tue=29, Mon=25, Fri=23, Wed=7, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-02",
       "changes": [
@@ -3786,6 +3773,14 @@
       "changes": [
         "standard: 4 avg views (81 videos)",
         "Day performance: Sat=12, Sun=5, Fri=3, Wed=3, Mon=2, Thu=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-05",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=12, Sun=5, Wed=3, Mon=2, Fri=2, Tue=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
