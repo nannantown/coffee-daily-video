@@ -1,37 +1,43 @@
 {
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "discovery": {
-    "method": "expert-blog",
-    "description": "Perfect Daily Grind 2026年09月最新記事「家コーヒー装備を一つの系として組む」を土曜エバーグリーン枠で採用。今週09-03のApril Hand Grinder 01ニュースを家淹れ実践論に接続。",
+    "method": "news-en",
+    "description": "Perfect Daily Grind の 9/4 News Recap で Mahlkönig Home の初エスプレッソマシン Xenia Brew-by-Sync (9/1 独・丁発売) を確認、Mahlkönig 公式 newsroom を一次ソースとし Daily Coffee News・Sprudge・World Coffee Portal・Refreshment Magazine・Comunicaffe でクロスチェック。プロ用グラインダー本家 (EK43 / X54 で知られる) が創業以来初めて機械側に参戦する業界節目ニュース。14d Method TOP1 (news-en avg 1.00/n=4) を Exploit、直近 2 日 (09-05 news-en, 09-06 expert-blog) との連続選定は『3 日内 2 回目』の trade-off だが、平日ニュース優先原則 + 家淹れ Primary 層直撃の家庭向けプロダクトローンチという素材強度で正当化 (6/25 に同型 trade-off 実装済み)。Pillar ③ 業界・ビジネスニュース、家淹れ Primary 層が実際に欲しくなる/憧れる製品系ネタは 2 週間空白だった配分是正も同時実現。",
     "sources": [
-      "https://perfectdailygrind.com/2026/09/curate-exceptional-home-coffee-setup/",
-      "https://perfectdailygrind.com/2026/08/what-to-upgrade-first-home-coffee-setup/"
+      "https://perfectdailygrind.com/2026/09/coffee-news-recap-4-september-2026/",
+      "https://www.mahlkoenig.com/blogs/news/introducing-xenia-brew-by-sync-home-espresso-machine",
+      "https://dailycoffeenews.com/2025/10/27/mahlkonig-launches-xenia-home-espresso-machine-and-e64-ws-grinder/",
+      "https://sprudge.com/mahlkonig-enters-the-home-espresso-machine-market-with-the-new-xenia-457171.html",
+      "https://www.worldcoffeeportal.com/news/mahlkonig-makes-move-into-the-home-espresso-machine-market/",
+      "https://www.refreshmentmag.com/news/mahlk%C3%B6nig-enters-home-espresso-market-with-xenia-launch",
+      "https://www.mahlkoenig.us/blogs/news/mahlkonig-expands-into-home-espresso-machines",
+      "https://kaffeemacher.de/en/blogs/kaffeewissen/grind-by-sync"
     ],
-    "query": "Perfect Daily Grind September 2026 home brewing technique",
-    "freshness_hours": 120
+    "query": "Mahlkonig Xenia Brew-by-Sync espresso machine 2026 September 1 launch Germany Denmark dual boiler pressure profiling Grind-by-Sync E64 WS 2999 euro",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "家淹れは一つの系として設計せよ・PDG最新記事の要点3つと9/1のApril Coffee初グラインダー",
-      "description": "英PDGが家淹れは「一つの系」として組むべきと発信。核はやはりグラインダーです。",
-      "detail": "PDGは要点を3つ挙げます。1つ目はグラインダー、粒度均一で抽出安定。9/1にはApril Coffeeも初ハンドグラインダーをKickstarter公開。2つ目は水質、硬水過多だと味がぼやけます。3つ目は注入前のダマを崩すWDTツールです。",
-      "narration": "家の機材、バラバラで揃えていませんか?英PDG今週の記事は「家淹れは一つの系として設計すべき」と断言。核はやはり味を左右するグラインダーです。",
-      "tags": ["家淹れ", "グラインダー", "WDT"],
+      "title": "マールケーニヒが初のエスプレッソマシン『ゼニア』発売・9/1独丁で52万円、専用ミルと通信し自動で挽き目を調整",
+      "description": "プロ用グラインダーの老舗が創業以来初めて機械側に参戦。家淹れ愛好家が最も気になる、ミルと機械が会話する新技術です。",
+      "detail": "機種名はゼニア、9月1日にドイツとデンマークで先行発売、価格は約52万円。ダブルボイラーに4つのヒーターを内蔵し温度が安定、圧力と流量と温度を細かく制御、スケールも内蔵。目玉は専用ミルと通信し、抽出データから自動で挽き目を微調整する新技術です。",
+      "narration": "今日のニュース。プロ用グラインダーの老舗マールケーニヒが、初のエスプレッソマシンを出しました。ミルの本家がとうとう機械側にも参戦です。",
+      "tags": ["エスプレッソ", "家淹れ", "マールケーニヒ", "ゼニア", "新機種", "業界ニュース"],
       "narration_sections": {
-        "hook": "家の機材、バラバラで揃えていませんか?英PDG今週の記事は「家淹れは一つの系として設計すべき」と断言。核はやはり味を左右するグラインダーです。",
-        "origin": "PDGは3点挙げてます。1つ目はグラインダー、粒度均一で抽出安定。9/1にはApril Coffeeも初ハンドグラインダーをKickstarter公開。2つ目は水質、硬水過多だと味がぼやけます。3つ目は注入前ダマを崩すWDTツールです。",
-        "recommend": "まずグラインダーから見直しを。単一豆量りきりの単発方式が浅煎り豆と好相性です。EC準備中、フォローしてお待ちください。"
+        "hook": "今日のニュース。プロ用グラインダーの老舗マールケーニヒが、初のエスプレッソマシンを出しました。ミルの本家がとうとう機械側にも参戦です。",
+        "origin": "機種名はゼニアで、9月1日にドイツとデンマークで先行発売、価格は約52万円。ダブルボイラーに4つのヒーターを内蔵し温度が安定、圧力と流量と温度を細かく制御、スケールも内蔵。目玉は専用ミルと通信し、抽出データから自動で挽き目を微調整する新技術です。",
+        "recommend": "家淹れエスプレッソが工場のような再現性に近づく時代。焙煎士としては、ミルと機械の会話が味の再現にどう効くか注目です。"
       },
       "section_titles": {
-        "hook": "家淹れは一つの系",
-        "origin": "PDGの3点セット",
-        "recommend": "まずはグラインダー"
+        "hook": "老舗ミル本家、機械参戦",
+        "origin": "新機種ゼニアの中身",
+        "recommend": "家淹れが変わる時代"
       },
       "section_descriptions": {
-        "hook": "英PDG最新記事が説く家淹れ設計の新セオリー",
-        "origin": "グラインダー・水質・WDTツールの3点セット解説",
-        "recommend": "今日から始める家の味を跳ねさせる第一歩の一手"
+        "hook": "グラインダーの巨匠マールケーニヒが動きます",
+        "origin": "9/1発売のゼニア、価格と主要機能を整理",
+        "recommend": "ミルと機械が会話する家淹れの新時代"
       }
     }
   ]
