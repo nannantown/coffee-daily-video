@@ -2,55 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "lxAYsYUVHGs",
-      "videoUrl": "https://youtube.com/shorts/lxAYsYUVHGs",
-      "date": "2026-06-08",
-      "title": "【コーヒー豆知識】ベトナムでロブスタ先物が急騰・USDAは来期も増産予想なのに中央高原の乾燥で市場が逆走｜2026/06/08 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 56,
-      "discovery": {
-        "method": "news-en",
-        "description": "月曜=平日ニュース日、戦略 §運用フォーマット『news-en 優先』原則に従い 5/27 インドネシア -8% (10v) 以来 12 日空きで news-en を再投入。USDA FAS Vietnam Coffee Annual (2026/27 32.5M 袋予想・うち Robusta 31.4M・前期比+2.5%) を Comunicaffe で確認し、Barchart / Nasdaq の Robusta 先物ロンドン市場 6 月初動向 ($3,456/ton、5 月中旬以来高値、+1.7%)、Vietdata / Helena Coffee の Central Highlands 降雨 -10〜40% / 既に 25/26 期作の 15-20% 損失見込みデータ、Beverage Daily の Vietnam coffee turmoil 報道をクロスソースで統合。核心は『USDA は来期も微増の楽観予想なのに、市場は逆に Robusta 先物を急騰させている。理由は中央高原の異常乾燥と 6-12 月のエルニーニョ到来予報』という逆説的市況ストーリー。5/26 メキシコ +54% (market-data 未着) / 5/27 インドネシア -8% (news-en 10v) / 5/29 尿素 +78% (market-data 8v) / 6/05 ブラジル +14% (official-src 8v) で組み立てた『世界供給地殻変動マルチ章シリーズ』の Vietnam 章として位置付け、ベトナム=世界最大ロブスタ産地の現状追加でシリーズ完成度を上げる。Pillar ① 市況を主柱、② 産地を副次扱いで直近 ② 36% / ③ 27% 過多の分散是正、Primary 層 (家で淹れる趣味層) が一番気にする『値段がなぜ上がるのか』に上流の天候・需給から答える。直近 2 日 (6/06 social-en, 6/07 expert-blog) と method 連続違反なし。フック語彙は『過去最高』『最高水準』を回避 (6/02-6/05 で 4 日連続使用済み)、『急上昇』『急騰』『逆に』で 6/07 PDCA の語彙鮮度ルールを実践。OG 接続は『日本のインスタント・大手チェーンのブレンドはベトナム産が主役』『秋にかけて店頭価格チェック、スペシャルティの相対割安感も注目』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
-        "sources": [
-          "https://www.comunicaffe.com/vietnam-usda-cy-2025-26-production-up-to-31-7-million-bags-el-nino-looms-over-cy-2026-27",
-          "https://www.fas.usda.gov/data/vietnam-coffee-annual-10",
-          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Annual_Hanoi_Vietnam_VM2025-0018.pdf",
-          "https://www.barchart.com/story/news/2091067/robusta-coffee-rallies-on-dry-conditions-in-vietnam",
-          "https://www.nasdaq.com/articles/hot-and-dry-weather-vietnam-boosts-robusta-coffee-prices",
-          "https://www.vietdata.vn/post/concerned-about-drought-reducing-production-in-vietnam-robusta-coffee-prices-reached-a-new-peak",
-          "https://www.helenacoffee.vn/coffee-price-forecast-2026-2027-part-1/",
-          "https://www.beveragedaily.com/Article/2026/03/06/vietnam-coffee-turmoil-set-to-hit-global-prices/",
-          "https://www.sorafutures.com/archives/43447",
-          "https://tradingeconomics.com/commodity/coffee"
-        ],
-        "query": "Vietnam Central Highlands drought June 2026 robusta futures rally USDA Vietnam Coffee Annual 31.7 32.5 million bags El Nino 2026/27; robusta London $3456 per ton 1.7% rally mid-May high; Dak Lak Gia Lai Lam Dong rainfall 10-40% deficit 15-20% crop loss",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-22T01:59:10.766Z"
-      }
-    },
-    {
       "videoId": "NQiEifCgW3g",
       "videoUrl": "https://youtube.com/shorts/NQiEifCgW3g",
       "date": "2026-06-09",
@@ -3047,7 +2998,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3095,7 +3046,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3139,7 +3090,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3184,7 +3135,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3228,7 +3179,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3273,7 +3224,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3318,7 +3269,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3360,7 +3311,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3404,7 +3355,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3450,7 +3401,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3492,7 +3443,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-06T01:09:15.770Z"
+        "updatedAt": "2026-09-07T01:10:16.422Z"
       }
     },
     {
@@ -3533,19 +3484,58 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-07T01:10:16.422Z"
+      }
+    },
+    {
+      "videoId": "7W1HdceRVYs",
+      "videoUrl": "https://youtube.com/shorts/7W1HdceRVYs",
+      "date": "2026-09-07",
+      "title": "【コーヒー豆知識】マールケーニヒが初のエスプレッソマシン『ゼニア』発売・9/1独丁で52万円、専用ミルと通信し自動で挽き目を調整｜2026/09/07 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "焙煎",
+        "焙煎",
+        "焙煎"
+      ],
+      "durationSeconds": 52,
+      "discovery": {
+        "method": "news-en",
+        "description": "Perfect Daily Grind の 9/4 News Recap で Mahlkönig Home の初エスプレッソマシン Xenia Brew-by-Sync (9/1 独・丁発売) を確認、Mahlkönig 公式 newsroom を一次ソースとし Daily Coffee News・Sprudge・World Coffee Portal・Refreshment Magazine・Comunicaffe でクロスチェック。プロ用グラインダー本家 (EK43 / X54 で知られる) が創業以来初めて機械側に参戦する業界節目ニュース。14d Method TOP1 (news-en avg 1.00/n=4) を Exploit、直近 2 日 (09-05 news-en, 09-06 expert-blog) との連続選定は『3 日内 2 回目』の trade-off だが、平日ニュース優先原則 + 家淹れ Primary 層直撃の家庭向けプロダクトローンチという素材強度で正当化 (6/25 に同型 trade-off 実装済み)。Pillar ③ 業界・ビジネスニュース、家淹れ Primary 層が実際に欲しくなる/憧れる製品系ネタは 2 週間空白だった配分是正も同時実現。",
+        "sources": [
+          "https://perfectdailygrind.com/2026/09/coffee-news-recap-4-september-2026/",
+          "https://www.mahlkoenig.com/blogs/news/introducing-xenia-brew-by-sync-home-espresso-machine",
+          "https://dailycoffeenews.com/2025/10/27/mahlkonig-launches-xenia-home-espresso-machine-and-e64-ws-grinder/",
+          "https://sprudge.com/mahlkonig-enters-the-home-espresso-machine-market-with-the-new-xenia-457171.html",
+          "https://www.worldcoffeeportal.com/news/mahlkonig-makes-move-into-the-home-espresso-machine-market/",
+          "https://www.refreshmentmag.com/news/mahlk%C3%B6nig-enters-home-espresso-market-with-xenia-launch",
+          "https://www.mahlkoenig.us/blogs/news/mahlkonig-expands-into-home-espresso-machines",
+          "https://kaffeemacher.de/en/blogs/kaffeewissen/grind-by-sync"
+        ],
+        "query": "Mahlkonig Xenia Brew-by-Sync espresso machine 2026 September 1 launch Germany Denmark dual boiler pressure profiling Grind-by-Sync E64 WS 2999 euro",
+        "freshness_hours": 144
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-03",
-      "changes": [
-        "standard: 20 avg views (81 videos)",
-        "Day performance: Sat=39, Tue=29, Mon=25, Fri=22, Sun=20, Wed=7, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-05",
       "changes": [
@@ -3775,6 +3765,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=5, Wed=3, Mon=2, Fri=2, Tue=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-07",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=11, Sun=4, Wed=3, Mon=2, Fri=2, Tue=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
