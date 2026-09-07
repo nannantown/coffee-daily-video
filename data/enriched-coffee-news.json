@@ -1,43 +1,42 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind の 9/4 News Recap で Mahlkönig Home の初エスプレッソマシン Xenia Brew-by-Sync (9/1 独・丁発売) を確認、Mahlkönig 公式 newsroom を一次ソースとし Daily Coffee News・Sprudge・World Coffee Portal・Refreshment Magazine・Comunicaffe でクロスチェック。プロ用グラインダー本家 (EK43 / X54 で知られる) が創業以来初めて機械側に参戦する業界節目ニュース。14d Method TOP1 (news-en avg 1.00/n=4) を Exploit、直近 2 日 (09-05 news-en, 09-06 expert-blog) との連続選定は『3 日内 2 回目』の trade-off だが、平日ニュース優先原則 + 家淹れ Primary 層直撃の家庭向けプロダクトローンチという素材強度で正当化 (6/25 に同型 trade-off 実装済み)。Pillar ③ 業界・ビジネスニュース、家淹れ Primary 層が実際に欲しくなる/憧れる製品系ネタは 2 週間空白だった配分是正も同時実現。",
+    "method": "news-ja",
+    "description": "9/6 の World Coffee Portal 週報『The Week in Coffee 31 Aug-6 Sep 2026』でジョリビーの上場先変更ニュースを発見。日本語一次確認として日経『フィリピン外食大手ジョリビー、海外事業会社を香港上場へ』(9/1) を primary source に採用、WCP 英文記事および Jollibee 公式 IR で内容をクロスチェック。傘下に Coffee Bean & Tea Leaf・Compose Coffee・Highlands Coffee を持つコーヒー企業として、日本の視聴者に認知度の高いブランドが絡む海外 M&A/上場ニュースは、これまで Blank Street ($105M 調達, 08-27 v=1) や Chobani-La Colombe 系案件で仮説視してきた『具体金額 x 日本認知ブランド x 業界構造ニュース』のパターンに合致。Method-PDCA 面: news-en が 09-05/09-07 と 2 日連続採用ののち 09-08 に 3 日連続採用は多様性を損なうため回避。14 日内未使用の news-ja を Explore として初起用し、英語で走ったニュースを日本語ビジネス媒体が翻訳・要約している場合の情報の届き方を測定する。Pillar ③ 業界・ビジネスニュース (target 20%) を補充。",
     "sources": [
-      "https://perfectdailygrind.com/2026/09/coffee-news-recap-4-september-2026/",
-      "https://www.mahlkoenig.com/blogs/news/introducing-xenia-brew-by-sync-home-espresso-machine",
-      "https://dailycoffeenews.com/2025/10/27/mahlkonig-launches-xenia-home-espresso-machine-and-e64-ws-grinder/",
-      "https://sprudge.com/mahlkonig-enters-the-home-espresso-machine-market-with-the-new-xenia-457171.html",
-      "https://www.worldcoffeeportal.com/news/mahlkonig-makes-move-into-the-home-espresso-machine-market/",
-      "https://www.refreshmentmag.com/news/mahlk%C3%B6nig-enters-home-espresso-market-with-xenia-launch",
-      "https://www.mahlkoenig.us/blogs/news/mahlkonig-expands-into-home-espresso-machines",
-      "https://kaffeemacher.de/en/blogs/kaffeewissen/grind-by-sync"
+      "https://www.nikkei.com/article/DGXZQOGM0154L0R00C26A9000000/",
+      "https://www.worldcoffeeportal.com/news/jollibee-group-drops-us-listing-plan-in-favour-of-hong-kong/",
+      "https://www.worldcoffeeportal.com/news/the-week-in-coffee-31-august-6-september-2026/",
+      "https://www.jollibeegroup.com/news/jollibee-group-announces-continued-momentum-in-coffee-and-tea-and-chinese-cuisine-segments/",
+      "https://www.gmanetwork.com/news/money/companies/978701/jollibee-says-says-preliminary-work-underway-for-highlands-coffee-s-vietnam-ipo/story/",
+      "https://qsrmedia.com/news/jollibee-clarifies-news-report-moving-listing-hong-kong",
+      "https://en.sedaily.com/international/2026/06/06/philippines-jollibee-eyes-hong-kong-listing-over-us"
     ],
-    "query": "Mahlkonig Xenia Brew-by-Sync espresso machine 2026 September 1 launch Germany Denmark dual boiler pressure profiling Grind-by-Sync E64 WS 2999 euro",
-    "freshness_hours": 144
+    "query": "ジョリビー 香港 上場 コーヒービーン 2026年9月 / Jollibee Coffee Bean Hong Kong listing Compose Highlands September 2026",
+    "freshness_hours": 168
   },
   "articles": [
     {
       "rank": 1,
-      "title": "マールケーニヒが初のエスプレッソマシン『ゼニア』発売・9/1独丁で52万円、専用ミルと通信し自動で挽き目を調整",
-      "description": "プロ用グラインダーの老舗が創業以来初めて機械側に参戦。家淹れ愛好家が最も気になる、ミルと機械が会話する新技術です。",
-      "detail": "機種名はゼニア、9月1日にドイツとデンマークで先行発売、価格は約52万円。ダブルボイラーに4つのヒーターを内蔵し温度が安定、圧力と流量と温度を細かく制御、スケールも内蔵。目玉は専用ミルと通信し、抽出データから自動で挽き目を微調整する新技術です。",
-      "narration": "今日のニュース。プロ用グラインダーの老舗マールケーニヒが、初のエスプレッソマシンを出しました。ミルの本家がとうとう機械側にも参戦です。",
-      "tags": ["エスプレッソ", "家淹れ", "マールケーニヒ", "ゼニア", "新機種", "業界ニュース"],
+      "title": "ジョリビー、コーヒービーン等17ブランドの海外事業を香港上場へ大転換・9/1発表で1月の米国計画を7ヶ月で白紙化",
+      "description": "コーヒービーン&ティーリーフを傘下に持つ比外食最大手が9/1、海外事業の上場先を米国から香港へ180度変更。",
+      "detail": "Jollibee Foods は 2026/1 に発表していた海外事業スピンオフ会社の米国上場計画を白紙化し、9/1 に上場先を香港取引所 (HKEX) に切り替えると発表。新会社『Jollibee Foods International』を設立、2027 年末までの上場を目指す。傘下ブランドは Compose Coffee (韓国発ドライブスルー)、Highlands Coffee (ベトナム最大手)、Coffee Bean & Tea Leaf (米LA発、日本にも進出) を含む 17 ブランド、世界 5,800 店超。国際部門 CEO も同時任命。転換理由は香港 IPO 市場の活況とアジアでの認知度強化。",
+      "narration": "知ってました？コーヒービーン&ティーリーフを持つ比ジョリビーが、9月1日、海外事業の上場先を米国から香港へ大転換しました。",
+      "tags": ["業界ニュース", "M&A", "アジア資本"],
       "narration_sections": {
-        "hook": "今日のニュース。プロ用グラインダーの老舗マールケーニヒが、初のエスプレッソマシンを出しました。ミルの本家がとうとう機械側にも参戦です。",
-        "origin": "機種名はゼニアで、9月1日にドイツとデンマークで先行発売、価格は約52万円。ダブルボイラーに4つのヒーターを内蔵し温度が安定、圧力と流量と温度を細かく制御、スケールも内蔵。目玉は専用ミルと通信し、抽出データから自動で挽き目を微調整する新技術です。",
-        "recommend": "家淹れエスプレッソが工場のような再現性に近づく時代。焙煎士としては、ミルと機械の会話が味の再現にどう効くか注目です。"
+        "hook": "知ってました？コーヒービーン&ティーリーフを持つ比ジョリビーが、9月1日、海外事業の上場先を米国から香港へ大転換しました。",
+        "origin": "フィリピン外食最大手が、Compose、Highlands、コーヒービーン等17ブランド5800店の海外事業を新会社に分社、2027年末までに香港上場を目指すと発表。1月に決めた米国上場計画を、香港市場の活況を理由に7ヶ月で白紙化した形です。",
+        "recommend": "アジアで動くコーヒー資本の流れは、産地から店舗、日本の輸入価格まで巻き込みます。毎朝の情報を一緒に押さえていきましょう。"
       },
       "section_titles": {
-        "hook": "老舗ミル本家、機械参戦",
-        "origin": "新機種ゼニアの中身",
-        "recommend": "家淹れが変わる時代"
+        "hook": "ジョリビー方針転換",
+        "origin": "17ブランド分社化",
+        "recommend": "アジア資本の潮流"
       },
       "section_descriptions": {
-        "hook": "グラインダーの巨匠マールケーニヒが動きます",
-        "origin": "9/1発売のゼニア、価格と主要機能を整理",
-        "recommend": "ミルと機械が会話する家淹れの新時代"
+        "hook": "米国上場計画を7ヶ月で撤回し香港へ180度変更",
+        "origin": "17ブランド5800店を新会社に分社、2027年香港上場へ",
+        "recommend": "産地から店舗、日本の輸入まで巻き込む変化を押さえよう"
       }
     }
   ]
