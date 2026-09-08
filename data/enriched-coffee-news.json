@@ -1,42 +1,39 @@
 {
-  "date": "2026-09-08",
+  "date": "2026-09-09",
   "discovery": {
-    "method": "news-ja",
-    "description": "9/6 の World Coffee Portal 週報『The Week in Coffee 31 Aug-6 Sep 2026』でジョリビーの上場先変更ニュースを発見。日本語一次確認として日経『フィリピン外食大手ジョリビー、海外事業会社を香港上場へ』(9/1) を primary source に採用、WCP 英文記事および Jollibee 公式 IR で内容をクロスチェック。傘下に Coffee Bean & Tea Leaf・Compose Coffee・Highlands Coffee を持つコーヒー企業として、日本の視聴者に認知度の高いブランドが絡む海外 M&A/上場ニュースは、これまで Blank Street ($105M 調達, 08-27 v=1) や Chobani-La Colombe 系案件で仮説視してきた『具体金額 x 日本認知ブランド x 業界構造ニュース』のパターンに合致。Method-PDCA 面: news-en が 09-05/09-07 と 2 日連続採用ののち 09-08 に 3 日連続採用は多様性を損なうため回避。14 日内未使用の news-ja を Explore として初起用し、英語で走ったニュースを日本語ビジネス媒体が翻訳・要約している場合の情報の届き方を測定する。Pillar ③ 業界・ビジネスニュース (target 20%) を補充。",
+    "method": "official-src",
+    "description": "コロンビア連盟(FNC)月次生産統計と代表発言を確認、Cepea/USDA/現地報道でクロスチェック",
     "sources": [
-      "https://www.nikkei.com/article/DGXZQOGM0154L0R00C26A9000000/",
-      "https://www.worldcoffeeportal.com/news/jollibee-group-drops-us-listing-plan-in-favour-of-hong-kong/",
-      "https://www.worldcoffeeportal.com/news/the-week-in-coffee-31-august-6-september-2026/",
-      "https://www.jollibeegroup.com/news/jollibee-group-announces-continued-momentum-in-coffee-and-tea-and-chinese-cuisine-segments/",
-      "https://www.gmanetwork.com/news/money/companies/978701/jollibee-says-says-preliminary-work-underway-for-highlands-coffee-s-vietnam-ipo/story/",
-      "https://qsrmedia.com/news/jollibee-clarifies-news-report-moving-listing-hong-kong",
-      "https://en.sedaily.com/international/2026/06/06/philippines-jollibee-eyes-hong-kong-listing-over-us"
+      "https://www.investing.com/news/commodities-news/colombia-coffee-output-drops-12-in-august-on-weather-delays-93CH-4889955",
+      "https://federaciondecafeteros.org/estadisticas-cafeteras/",
+      "https://kfgo.com/2026/08/21/el-nino-not-quake-to-hit-colombian-coffee-harvest-sector-leader-says/",
+      "https://www.gcrmag.com/against-the-odds-where-coffee-production-is-booming/"
     ],
-    "query": "ジョリビー 香港 上場 コーヒービーン 2026年9月 / Jollibee Coffee Bean Hong Kong listing Compose Highlands September 2026",
-    "freshness_hours": 168
+    "query": "FNC Colombia coffee production August 2026 Bahamon El Nino",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ジョリビー、コーヒービーン等17ブランドの海外事業を香港上場へ大転換・9/1発表で1月の米国計画を7ヶ月で白紙化",
-      "description": "コーヒービーン&ティーリーフを傘下に持つ比外食最大手が9/1、海外事業の上場先を米国から香港へ180度変更。",
-      "detail": "Jollibee Foods は 2026/1 に発表していた海外事業スピンオフ会社の米国上場計画を白紙化し、9/1 に上場先を香港取引所 (HKEX) に切り替えると発表。新会社『Jollibee Foods International』を設立、2027 年末までの上場を目指す。傘下ブランドは Compose Coffee (韓国発ドライブスルー)、Highlands Coffee (ベトナム最大手)、Coffee Bean & Tea Leaf (米LA発、日本にも進出) を含む 17 ブランド、世界 5,800 店超。国際部門 CEO も同時任命。転換理由は香港 IPO 市場の活況とアジアでの認知度強化。",
-      "narration": "知ってました？コーヒービーン&ティーリーフを持つ比ジョリビーが、9月1日、海外事業の上場先を米国から香港へ大転換しました。",
-      "tags": ["業界ニュース", "M&A", "アジア資本"],
+      "title": "コロンビア8月生産が前年比12%減の速報・FNCが発表、豪雨とエルニーニョで通年1250万袋の見通し",
+      "description": "コロンビア連盟が発表した8月生産は109万袋で前年比12%減、2ヶ月連続の減少",
+      "detail": "8月生産109万袋で2ヶ月連続減、輸出も10%減。原因は年初の豪雨と迫るエルニーニョ。バハモン代表は通年で前年比8%減の1250万袋を予想、ペソ高も農家利益を圧迫",
+      "narration": "先週金曜、コロンビア連盟が発表した8月の生産は、まさかの前年比12%減。あなたが飲んでいるあの一本にも、じわりと影響するかもしれません",
+      "tags": ["コロンビア", "産地", "ハーベスト"],
       "narration_sections": {
-        "hook": "知ってました？コーヒービーン&ティーリーフを持つ比ジョリビーが、9月1日、海外事業の上場先を米国から香港へ大転換しました。",
-        "origin": "フィリピン外食最大手が、Compose、Highlands、コーヒービーン等17ブランド5800店の海外事業を新会社に分社、2027年末までに香港上場を目指すと発表。1月に決めた米国上場計画を、香港市場の活況を理由に7ヶ月で白紙化した形です。",
-        "recommend": "アジアで動くコーヒー資本の流れは、産地から店舗、日本の輸入価格まで巻き込みます。毎朝の情報を一緒に押さえていきましょう。"
+        "hook": "先週金曜、コロンビア連盟が発表した8月の生産は、まさかの前年比12%減。あなたが飲んでいるあの一本にも、じわりと影響するかもしれません",
+        "origin": "8月生産は109万袋で、2ヶ月連続の減少。輸出も105万袋で10%減。原因は年初の豪雨と、これから強まるエルニーニョ気候。連盟のバハモン代表は、年間でも1250万袋、前年比8%減の見通し。ペソ高も農家の手取りを削り、業界には二重苦です",
+        "recommend": "コロンビアは日本人に馴染み深い産地。良質なスペシャルティロットが希少化する前に、気に入りの一本は早めの確保も選択肢です"
       },
       "section_titles": {
-        "hook": "ジョリビー方針転換",
-        "origin": "17ブランド分社化",
-        "recommend": "アジア資本の潮流"
+        "hook": "8月生産12%減",
+        "origin": "エルニーニョ直撃",
+        "recommend": "気に入り豆の確保"
       },
       "section_descriptions": {
-        "hook": "米国上場計画を7ヶ月で撤回し香港へ180度変更",
-        "origin": "17ブランド5800店を新会社に分社、2027年香港上場へ",
-        "recommend": "産地から店舗、日本の輸入まで巻き込む変化を押さえよう"
+        "hook": "連盟発表・8月の生産が前年比12%減の速報",
+        "origin": "豪雨とエルニーニョで通年8%減の見通しに",
+        "recommend": "馴染みの産地から良質ロットが希少化するかも"
       }
     }
   ]
