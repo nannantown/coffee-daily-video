@@ -2,52 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "NQiEifCgW3g",
-      "videoUrl": "https://youtube.com/shorts/NQiEifCgW3g",
-      "date": "2026-06-09",
-      "title": "【コーヒー豆知識】コロンビアの副収穫期『ミタカ』が2ヶ月遅れで今ようやくピーク・USDAは来期7.2%増回復予想｜2026/06/09 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "焙煎",
-        "焙煎",
-        "焙煎"
-      ],
-      "durationSeconds": 53,
-      "discovery": {
-        "method": "official-src",
-        "description": "火曜=平日ニュース日、14d Method TOP1 official-src (avg 12.0、6/02 タンザニア 14v / 6/05 ブラジル 10v) を 4 日空きで再投入。素材は USDA FAS Colombia Coffee Semi-annual (MY 2026/27 生産 13.4M 袋 +7.2%、輸出 13.4M、輸出先 1 位米国・2 位 EU・3 位日本、Fedecafé 肥料支援) を一次データに、Daily Coffee News 6/02 配信記事、StoneX / Eleva Finca の Mitaca 副収穫期 2 ヶ月遅延 (本来 4 月ピーク → 6 月にずれ込み)・今期生産 28-33% 減データをクロスソースで統合。直近 90 日でコロンビア未投入の地理空白を埋め、5/26 メキシコ / 5/27 インドネシア / 6/02 タンザニア / 6/05 ブラジル / 6/08 ベトナムに続く『世界供給地殻変動マルチ章シリーズ』第 7 章 (南米第 2 位編)。Pillar ② 産地・ハーベスト を主柱、直近 14d ① 33% / ② 25% の偏りを ② 27% 帯へ揺り戻し。コロンビアは日本人最なじみ三大ブランドの 1 つでキリマンジャロ・モカと並び Primary 層 (家で淹れる趣味層) 直撃。6/02 タンザニア 14v との類比で『日本人になじみある産地 + 構造的回復ストーリー + 公式機関 (FNC/Fedecafé) の支援アクション』の三点セットでテンプレ再現を狙う。フック語彙『過去最高』『最高水準』は引き続き回避 (6/02-6/05 4 日連続使用後 6/06-6/08 で休眠維持)、『回復』『2ヶ月遅れ』『なじみ深い』で語彙差別化。直近 2 日 (6/07 expert-blog、6/08 news-en) と method 連続違反なし。OG 接続は『コロンビアは日本人になじみ深い豆。値段はまだ高止まりですが、来年は供給回復で買いやすくなりそう。秋以降の入荷を要チェック』で締め、強い CTA はせず焙煎士の知識発信という差別化軸で『フォローして待つ価値』を積む。",
-        "sources": [
-          "https://www.fas.usda.gov/data/colombia-coffee-semi-annual-10",
-          "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee+Semi-annual_Bogota_Colombia_CO2025-0035.pdf",
-          "https://dailycoffeenews.com/2026/06/02/colombia-coffee-report-production-expected-to-rise-7-2-on-better-weather/",
-          "https://www.elevafinca.com/post/colombia-origin-update",
-          "https://www.stonex.com/en/market-intelligence/colombia-picks-main-harvest-amid-production-drop-of-up-to-40pct/",
-          "https://sucafina.com/emea/news/colombia-2025-26-harvest-update",
-          "https://federaciondecafeteros.org/?lang=en"
-        ],
-        "query": "USDA FAS Colombia Coffee Semi-annual MY 2026/27 13.4 million bags 7.2% production rebound; Colombia mitaca harvest delayed June 2026 peak; Fedecafe FNC fertilizer support; Colombia 2025/26 production drop 28-33%; US EU Japan top destinations",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-23T01:29:01.778Z"
-      }
-    },
-    {
       "videoId": "_-2WXElOIhg",
       "videoUrl": "https://youtube.com/shorts/_-2WXElOIhg",
       "date": "2026-06-10",
@@ -3046,7 +3000,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3090,7 +3044,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3135,7 +3089,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3179,7 +3133,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3224,7 +3178,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3269,7 +3223,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3311,7 +3265,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3355,7 +3309,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3401,7 +3355,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3443,7 +3397,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3484,7 +3438,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-07T01:10:16.422Z"
+        "updatedAt": "2026-09-08T01:16:06.236Z"
       }
     },
     {
@@ -3528,6 +3482,52 @@
         "freshness_hours": 144
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-08T01:16:06.236Z"
+      }
+    },
+    {
+      "videoId": "f3Ckjedfsds",
+      "videoUrl": "https://youtube.com/shorts/f3Ckjedfsds",
+      "date": "2026-09-08",
+      "title": "【コーヒー豆知識】ジョリビー、コーヒービーン等17ブランドの海外事業を香港上場へ大転換・9/1発表で1月の米国計画を7ヶ月で白紙化｜2026/09/08 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "焙煎",
+        "焙煎",
+        "焙煎"
+      ],
+      "durationSeconds": 50,
+      "discovery": {
+        "method": "news-ja",
+        "description": "9/6 の World Coffee Portal 週報『The Week in Coffee 31 Aug-6 Sep 2026』でジョリビーの上場先変更ニュースを発見。日本語一次確認として日経『フィリピン外食大手ジョリビー、海外事業会社を香港上場へ』(9/1) を primary source に採用、WCP 英文記事および Jollibee 公式 IR で内容をクロスチェック。傘下に Coffee Bean & Tea Leaf・Compose Coffee・Highlands Coffee を持つコーヒー企業として、日本の視聴者に認知度の高いブランドが絡む海外 M&A/上場ニュースは、これまで Blank Street ($105M 調達, 08-27 v=1) や Chobani-La Colombe 系案件で仮説視してきた『具体金額 x 日本認知ブランド x 業界構造ニュース』のパターンに合致。Method-PDCA 面: news-en が 09-05/09-07 と 2 日連続採用ののち 09-08 に 3 日連続採用は多様性を損なうため回避。14 日内未使用の news-ja を Explore として初起用し、英語で走ったニュースを日本語ビジネス媒体が翻訳・要約している場合の情報の届き方を測定する。Pillar ③ 業界・ビジネスニュース (target 20%) を補充。",
+        "sources": [
+          "https://www.nikkei.com/article/DGXZQOGM0154L0R00C26A9000000/",
+          "https://www.worldcoffeeportal.com/news/jollibee-group-drops-us-listing-plan-in-favour-of-hong-kong/",
+          "https://www.worldcoffeeportal.com/news/the-week-in-coffee-31-august-6-september-2026/",
+          "https://www.jollibeegroup.com/news/jollibee-group-announces-continued-momentum-in-coffee-and-tea-and-chinese-cuisine-segments/",
+          "https://www.gmanetwork.com/news/money/companies/978701/jollibee-says-says-preliminary-work-underway-for-highlands-coffee-s-vietnam-ipo/story/",
+          "https://qsrmedia.com/news/jollibee-clarifies-news-report-moving-listing-hong-kong",
+          "https://en.sedaily.com/international/2026/06/06/philippines-jollibee-eyes-hong-kong-listing-over-us"
+        ],
+        "query": "ジョリビー 香港 上場 コーヒービーン 2026年9月 / Jollibee Coffee Bean Hong Kong listing Compose Highlands September 2026",
+        "freshness_hours": 168
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -3536,14 +3536,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-05",
-      "changes": [
-        "standard: 17 avg views (81 videos)",
-        "Day performance: Sat=39, Tue=29, Fri=22, Sun=20, Mon=9, Wed=7, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-07",
       "changes": [
@@ -3773,6 +3765,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=4, Wed=3, Mon=2, Fri=2, Tue=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-08",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=11, Sun=4, Wed=3, Fri=2, Mon=2, Tue=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
