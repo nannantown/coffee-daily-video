@@ -1,39 +1,39 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "discovery": {
-    "method": "official-src",
-    "description": "コロンビア連盟(FNC)月次生産統計と代表発言を確認、Cepea/USDA/現地報道でクロスチェック",
+    "method": "news-en",
+    "description": "英語業界メディア(World Coffee Portal / BusinessCloud / 92 Degrees 公式)で9月上旬速報を確認、UKスペシャルティ×大手スーパー参入という業界的な意外性で選定",
     "sources": [
-      "https://www.investing.com/news/commodities-news/colombia-coffee-output-drops-12-in-august-on-weather-delays-93CH-4889955",
-      "https://federaciondecafeteros.org/estadisticas-cafeteras/",
-      "https://kfgo.com/2026/08/21/el-nino-not-quake-to-hit-colombian-coffee-harvest-sector-leader-says/",
-      "https://www.gcrmag.com/against-the-odds-where-coffee-production-is-booming/"
+      "https://www.worldcoffeeportal.com/news/uk-specialty-coffee-group-92-degrees-bags-major-supermarket-cafe-deal/",
+      "https://businesscloud.co.uk/news/92-degrees-founder-sets-100m-valuation-target/",
+      "https://92degrees.coffee/pages/location",
+      "https://www.thegrocer.co.uk/news/costa-coffee-and-sainsburys-to-open-14-more-supermarket-cafes-in-2026/718596.article"
     ],
-    "query": "FNC Colombia coffee production August 2026 Bahamon El Nino",
-    "freshness_hours": 96
+    "query": "92 Degrees Sainsbury coffee deal cafe rollout stores announcement",
+    "freshness_hours": 24
   },
   "articles": [
     {
       "rank": 1,
-      "title": "コロンビア8月生産が前年比12%減の速報・FNCが発表、豪雨とエルニーニョで通年1250万袋の見通し",
-      "description": "コロンビア連盟が発表した8月生産は109万袋で前年比12%減、2ヶ月連続の減少",
-      "detail": "8月生産109万袋で2ヶ月連続減、輸出も10%減。原因は年初の豪雨と迫るエルニーニョ。バハモン代表は通年で前年比8%減の1250万袋を予想、ペソ高も農家利益を圧迫",
-      "narration": "先週金曜、コロンビア連盟が発表した8月の生産は、まさかの前年比12%減。あなたが飲んでいるあの一本にも、じわりと影響するかもしれません",
-      "tags": ["コロンビア", "産地", "ハーベスト"],
+      "title": "英スペシャルティ焙煎所『92 Degrees』が大手スーパー Sainsbury's のカフェ枠を獲得・独立系の異例参入",
+      "description": "リバプール発の独立スペシャルティ焙煎所が英2位スーパーのカフェに入る、業界的にも異例の提携",
+      "detail": "9月上旬速報。Sainsbury's は英2位、店舗600超で既にコスタ50店提携。そこにスペシャルティが割り込む形。92 Degrees は 2015 年リバプール創業、現在 22 店舗。小さな独立系ロースターがスーパー内に入るのは UK 業界内で異例中の異例",
+      "narration": "今朝の海外ニュース。イギリスの人気スペシャルティ焙煎所『92 Degrees』が、大手スーパー内カフェの契約を獲得しました",
+      "tags": ["業界ニュース", "イギリス", "スペシャルティ"],
       "narration_sections": {
-        "hook": "先週金曜、コロンビア連盟が発表した8月の生産は、まさかの前年比12%減。あなたが飲んでいるあの一本にも、じわりと影響するかもしれません",
-        "origin": "8月生産は109万袋で、2ヶ月連続の減少。輸出も105万袋で10%減。原因は年初の豪雨と、これから強まるエルニーニョ気候。連盟のバハモン代表は、年間でも1250万袋、前年比8%減の見通し。ペソ高も農家の手取りを削り、業界には二重苦です",
-        "recommend": "コロンビアは日本人に馴染み深い産地。良質なスペシャルティロットが希少化する前に、気に入りの一本は早めの確保も選択肢です"
+        "hook": "今朝の海外ニュース。イギリスの人気スペシャルティ焙煎所『92 Degrees』が、大手スーパー内カフェの契約を獲得しました",
+        "origin": "舞台はセインズベリーズ、店舗数600超のイギリス2位。既にコスタが50店入っているところにスペシャルティが割り込みます。92 Degreesは2015年リバプール創業、現在22店舗。小さな独立系がスーパーに入るのは異例中の異例です",
+        "recommend": "スペシャルティが日常の売り場へ。裏を返せば、家で淹れる一杯の価値も上がる時代。産地・焙煎日で選ぶ楽しみを大事にしていきましょう"
       },
       "section_titles": {
-        "hook": "8月生産12%減",
-        "origin": "エルニーニョ直撃",
-        "recommend": "気に入り豆の確保"
+        "hook": "スペシャルティ躍進",
+        "origin": "独立系の異例参入",
+        "recommend": "家淹れの価値上昇"
       },
       "section_descriptions": {
-        "hook": "連盟発表・8月の生産が前年比12%減の速報",
-        "origin": "豪雨とエルニーニョで通年8%減の見通しに",
-        "recommend": "馴染みの産地から良質ロットが希少化するかも"
+        "hook": "イギリス発、独立スペシャルティ焙煎所が快挙",
+        "origin": "セインズベリー600店、コスタと並んで存在感",
+        "recommend": "家で淹れる一杯の意味も、静かに変わっていく"
       }
     }
   ]
