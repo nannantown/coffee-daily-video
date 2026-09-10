@@ -2,50 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "PM0NGAcBxcg",
-      "videoUrl": "https://youtube.com/shorts/PM0NGAcBxcg",
-      "date": "2026-06-11",
-      "title": "【コーヒー豆知識】Luckin Coffeeが世界店舗3.5万突破・非コーヒー飲料の累計売上3,000億円超え｜2026/06/11 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "品種",
-        "品種",
-        "品種"
-      ],
-      "durationSeconds": 47,
-      "discovery": {
-        "method": "news-en",
-        "description": "木曜=平日ニュース日。14d Method TOP1 (trends 9.0/n=1, official-src 9.0/n=3, expert-blog 6.25/n=4) のうち official-src は前日 6/09 使用で連続不可、trends は 6/01 で 10 日空きあるが今日は大型ビジネスニュースの素材力が圧倒的。WORST だった news-en (n=1, v=2、6/08 ベトナム先物) を Explore 枠で再挑戦。前回失敗原因はコモディティ先物の専門用語過多と判断、今日は『世界最大級チェーンの巨大数字』というコンシューマー寄り素材で再評価。素材は 6/8 PR Newswire 経由公表の Luckin Coffee マイルストーン: 世界店舗数 35,000 突破、非コーヒー飲料の累計売上が RMB20B (= 約 US$2.9B / 約3,000億円) 超え (5/31 時点)。Comunicaffe / Global Coffee Report / Branding in Asia / The Manila Times / Food Business MEA / VIR (Vietnam) 等が同日〜翌日でカバー、業界全体で話題化中。看板の Coconut Latte は累計 21 億杯、Jasmine Milk Tea / Orange Americano など 22 商品が累計 1 億杯超え。コーヒー豆は Brazil / Ethiopia / Indonesia から調達継続を併せて公表。Pillar ③ 業界・ビジネスニュース (14d で 3 本 21%) を補強、6/02 タンザニア過去最高 (v=14)、6/05 ブラジル7190万袋 (v=10)、6/01 値上げ検索急増 (v=9) の『大型数字ヒック勝ち筋』テンプレを継承。Primary 層 (家で淹れる趣味層) へは『巨大チェーンの多角化と、家淹れスペシャルティの個性深掘りは真逆ベクトル』というフレーミングで自家焙煎の差別化軸を裏打ち、強い CTA は避け『産地・品種を深掘るスペシャルティ志向が刺さる時代』で締め。直近 2 日 (6/10 social-en、6/09 official-src) と method 連続違反なし。news-en 自体は 6/08 以来 3 日空き。フック語彙『過去最高』『最高水準』休眠継続、『3,000億円超え』『3.5万店突破』の数字インパクト主導で着地。",
-        "sources": [
-          "https://www.comunicaffe.com/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/",
-          "https://www.gcrmag.com/luckin-coffee-shares-performance-milestones/",
-          "https://www.brandinginasia.com/luckin-coffee-global-store-count-surpasses-35000-locations/",
-          "https://www.manilatimes.net/2026/06/08/tmt-newswire/pr-newswire/luckin-coffee-surpasses-rmb20-billion-in-non-coffee-beverage-sales-expands-global-store-network-beyond-35000/2360649",
-          "https://www.foodbusinessmea.com/luckin-coffee-surpasses-35000-stores-as-non-coffee-sales-top-us2-9b/"
-        ],
-        "query": "Luckin Coffee June 2026 non-coffee beverage RMB 20 billion 35000 stores milestone announcement",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 2,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-25T01:31:27.897Z"
-      }
-    },
-    {
       "videoId": "fIPW7FFGrzE",
       "videoUrl": "https://youtube.com/shorts/fIPW7FFGrzE",
       "date": "2026-06-12",
@@ -3047,7 +3003,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.742Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3091,7 +3047,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.742Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3136,7 +3092,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.742Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3181,7 +3137,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.742Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3223,7 +3179,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.742Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3267,7 +3223,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3313,7 +3269,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3355,7 +3311,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3396,7 +3352,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3443,7 +3399,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3489,7 +3445,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-09T01:21:04.743Z"
+        "updatedAt": "2026-09-10T01:14:50.048Z"
       }
     },
     {
@@ -3532,19 +3488,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-10T01:14:50.048Z"
+      }
+    },
+    {
+      "videoId": "5GFSvGc9fFY",
+      "videoUrl": "https://youtube.com/shorts/5GFSvGc9fFY",
+      "date": "2026-09-10",
+      "title": "【コーヒー豆知識】英スペシャルティ焙煎所『92 Degrees』が大手スーパー Sainsbury's のカフェ枠を獲得・独立系の異例参入｜2026/09/10 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 49,
+      "discovery": {
+        "method": "news-en",
+        "description": "英語業界メディア(World Coffee Portal / BusinessCloud / 92 Degrees 公式)で9月上旬速報を確認、UKスペシャルティ×大手スーパー参入という業界的な意外性で選定",
+        "sources": [
+          "https://www.worldcoffeeportal.com/news/uk-specialty-coffee-group-92-degrees-bags-major-supermarket-cafe-deal/",
+          "https://businesscloud.co.uk/news/92-degrees-founder-sets-100m-valuation-target/",
+          "https://92degrees.coffee/pages/location",
+          "https://www.thegrocer.co.uk/news/costa-coffee-and-sainsburys-to-open-14-more-supermarket-cafes-in-2026/718596.article"
+        ],
+        "query": "92 Degrees Sainsbury coffee deal cafe rollout stores announcement",
+        "freshness_hours": 24
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-08",
-      "changes": [
-        "standard: 13 avg views (79 videos)",
-        "Day performance: Sat=35, Sun=20, Fri=13, Mon=9, Tue=6, Wed=6, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-09",
       "changes": [
@@ -3774,6 +3765,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=4, Wed=3, Fri=2, Mon=2, Thu=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-10",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=11, Sun=4, Fri=2, Mon=2, Thu=1, Wed=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
