@@ -1,39 +1,39 @@
 {
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "discovery": {
-    "method": "news-en",
-    "description": "英語業界メディア(World Coffee Portal / BusinessCloud / 92 Degrees 公式)で9月上旬速報を確認、UKスペシャルティ×大手スーパー参入という業界的な意外性で選定",
+    "method": "market-data",
+    "description": "ICE arabica 在庫27年ぶり低水準(9/3=22.3万袋)とNOAA最新エルニーニョ予測(継続97%/強度81%)を掛け合わせ、9-10月ブラジル開花期=2027/28クロップの分岐点、という時間依存の市況リスクを選定",
     "sources": [
-      "https://www.worldcoffeeportal.com/news/uk-specialty-coffee-group-92-degrees-bags-major-supermarket-cafe-deal/",
-      "https://businesscloud.co.uk/news/92-degrees-founder-sets-100m-valuation-target/",
-      "https://92degrees.coffee/pages/location",
-      "https://www.thegrocer.co.uk/news/costa-coffee-and-sainsburys-to-open-14-more-supermarket-cafes-in-2026/718596.article"
+      "https://www.stonex.com/en-us/insights/el-nino-keeps-brazil-s-coffee-growers-watching-the-sky-for-the-rain/",
+      "https://www.comunicaffe.com/coffee-markets-on-the-decline-arabica-dips-below-3-and-robusta-hits-its-lowest-since-june-while-el-nino-looms-large-again/",
+      "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/",
+      "https://www.ebc.com/forex/el-nino-coffee-prices-2026"
     ],
-    "query": "92 Degrees Sainsbury coffee deal cafe rollout stores announcement",
-    "freshness_hours": 24
+    "query": "El Nino coffee Brazil flowering September 2026 NOAA arabica ICE stocks",
+    "freshness_hours": 48
   },
   "articles": [
     {
       "rank": 1,
-      "title": "英スペシャルティ焙煎所『92 Degrees』が大手スーパー Sainsbury's のカフェ枠を獲得・独立系の異例参入",
-      "description": "リバプール発の独立スペシャルティ焙煎所が英2位スーパーのカフェに入る、業界的にも異例の提携",
-      "detail": "9月上旬速報。Sainsbury's は英2位、店舗600超で既にコスタ50店提携。そこにスペシャルティが割り込む形。92 Degrees は 2015 年リバプール創業、現在 22 店舗。小さな独立系ロースターがスーパー内に入るのは UK 業界内で異例中の異例",
-      "narration": "今朝の海外ニュース。イギリスの人気スペシャルティ焙煎所『92 Degrees』が、大手スーパー内カフェの契約を獲得しました",
-      "tags": ["業界ニュース", "イギリス", "スペシャルティ"],
+      "title": "9-10月ブラジル開花期にエルニーニョ継続97%予測直撃・アラビカ2027/28クロップの分岐点、ICE在庫は27年ぶり低水準",
+      "description": "9-10月はブラジルで来年分アラビカの花付きが決まる時期。NOAAは強いエルニーニョの継続確率97%を提示し、ICE在庫も27年ぶり低水準まで薄い",
+      "detail": "NOAA最新予測でエルニーニョは2027年初春まで97%継続、10-12月に『非常に強い』確率81%。同時期はブラジルで花付きが決まる季節。ICE arabica在庫は9月3日時点で22.3万袋と27年ぶり低水準。相場は8/24高値から-13.5%も、開花期次第で再び上放れる下地",
+      "narration": "今朝の海外ニュース。ブラジルは今、コーヒーの木が翌年分の花を咲かせる大切な開花期。そこに強いエルニーニョの気配が近づいています",
+      "tags": ["市況ニュース", "エルニーニョ", "ブラジル開花期"],
       "narration_sections": {
-        "hook": "今朝の海外ニュース。イギリスの人気スペシャルティ焙煎所『92 Degrees』が、大手スーパー内カフェの契約を獲得しました",
-        "origin": "舞台はセインズベリーズ、店舗数600超のイギリス2位。既にコスタが50店入っているところにスペシャルティが割り込みます。92 Degreesは2015年リバプール創業、現在22店舗。小さな独立系がスーパーに入るのは異例中の異例です",
-        "recommend": "スペシャルティが日常の売り場へ。裏を返せば、家で淹れる一杯の価値も上がる時代。産地・焙煎日で選ぶ楽しみを大事にしていきましょう"
+        "hook": "今朝の海外ニュース。ブラジルは今、コーヒーの木が翌年分の花を咲かせる大切な開花期。そこに強いエルニーニョの気配が近づいています",
+        "origin": "NOAAの最新予測でエルニーニョ継続確率は97%、10月から12月に非常に強い水準になる確率が81%。9月から10月はブラジルで来年分の花付きが決まる時間帯。ICE在庫も9月3日で22万3千袋、27年ぶり低水準まで薄い状態",
+        "recommend": "来年のアラビカの値段は今この数週の雨で決まります。気になる豆は焙煎日を確認して早めに確保しておくのが賢い動き。入荷情報もフォローでどうぞ"
       },
       "section_titles": {
-        "hook": "スペシャルティ躍進",
-        "origin": "独立系の異例参入",
-        "recommend": "家淹れの価値上昇"
+        "hook": "開花期エルニーニョ",
+        "origin": "NOAA97%継続",
+        "recommend": "来年相場は今決定"
       },
       "section_descriptions": {
-        "hook": "イギリス発、独立スペシャルティ焙煎所が快挙",
-        "origin": "セインズベリー600店、コスタと並んで存在感",
-        "recommend": "家で淹れる一杯の意味も、静かに変わっていく"
+        "hook": "ブラジルは今、来年分の花を咲かせる大切な時期",
+        "origin": "NOAAが2027年初春まで97%継続と予測",
+        "recommend": "今の雨がそのまま来年一杯の値段になります"
       }
     }
   ]
