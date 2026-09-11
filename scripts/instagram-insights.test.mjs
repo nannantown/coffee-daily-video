@@ -9,6 +9,7 @@ import {
   updateInstagramStats,
   GraphError,
   resolveBudgetMs,
+  orderForRefresh,
 } from "./instagram-insights.mjs";
 
 test("toJstDate converts IG +0000 timestamps to the JST calendar date", () => {
@@ -287,7 +288,8 @@ function slowRoutes(count, insightsHandler) {
 test("updateInstagramStats stops at the overall time budget and keeps previous values", async () => {
   const clock = { t: 0 };
   const { history, routes } = slowRoutes(8, () => ({ data: [{ name: "views", values: [{ value: 5 }] }] }));
-  history.videos[7].instagram = { mediaId: "m7", views: 99, updatedAt: null };
+  // Newest-first: the oldest entry (09-01) is among the skipped ones.
+  history.videos[0].instagram = { mediaId: "m0", views: 99, updatedAt: null };
   const base = fakeFetch(routes);
   const fetchImpl = async (url, init) => {
     clock.t += 30_000; // every Graph call takes 30s
@@ -306,7 +308,8 @@ test("updateInstagramStats stops at the overall time budget and keeps previous v
   assert.equal(result.stopReason, "budget");
   assert.equal(result.skipped, 5);
   assert.ok(clock.t <= 180_000, "never starts a request past the deadline");
-  assert.equal(history.videos[7].instagram.views, 99, "skipped entry keeps previous value");
+  assert.equal(history.videos[0].instagram.views, 99, "skipped entry keeps previous value");
+  assert.equal(history.videos[7].instagram.views, 5, "newest entry fetched first");
   assert.ok(logs.some((l) => l.includes("stopped early (time budget")));
 });
 
@@ -354,4 +357,51 @@ test("code 10 / subcode 2108006 (media predates business account) is not a permi
     new GraphError({ message: "x", code: 10, error_subcode: 2108006 }).isPermissionError,
     false
   );
+});
+
+test("orderForRefresh: recent window first (newest first), then backfill", () => {
+  const items = ["2026-06-13", "2026-09-10", "2026-07-01", "2026-09-01", "2026-08-30"].map((date) => ({
+    video: { date },
+  }));
+  const order = orderForRefresh(items, "2026-08-28").map((i) => i.video.date);
+  assert.deepEqual(order, ["2026-09-10", "2026-09-01", "2026-08-30", "2026-07-01", "2026-06-13"]);
+});
+
+test("when the budget runs out, recent entries are fetched before the backfill", async () => {
+  const clock = { t: 0 };
+  // History order is oldest first, like performance-history.json.
+  const dates = ["2026-06-13", "2026-06-14", "2026-06-15", "2026-09-09", "2026-09-10"];
+  const routes = {
+    "/me/permissions": PERMS_OK,
+    "/page1": { access_token: "page-token" },
+    "/ig1/media": {
+      data: dates
+        .map((d, i) => ({ id: `m${i}`, media_product_type: "REELS", timestamp: `${d}T01:00:00+0000` }))
+        .reverse(),
+    },
+  };
+  const fetched = [];
+  dates.forEach((d, i) => {
+    routes[`/m${i}/insights`] = () => {
+      fetched.push(d);
+      return { data: [{ name: "views", values: [{ value: 7 }] }] };
+    };
+  });
+  const base = fakeFetch(routes);
+  const history = { videos: dates.map((date) => ({ date })) };
+  const result = await updateInstagramStats(history, ENV, {
+    fetchImpl: async (url, init) => {
+      clock.t += 10_000;
+      return base(url, init);
+    },
+    clock: () => clock.t,
+    budgetMs: 50_000, // 3 setup calls + 2 insights calls
+    now: new Date("2026-09-11T00:00:00Z"),
+    log: () => {},
+  });
+  assert.deepEqual(fetched, ["2026-09-10", "2026-09-09"]);
+  assert.equal(result.stopReason, "budget");
+  assert.equal(history.videos[4].instagram.views, 7);
+  assert.equal(history.videos[0].instagram.views, null);
+  assert.equal(history.videos[0].instagram.mediaId, "m0", "backfill entries still get their mediaId");
 });

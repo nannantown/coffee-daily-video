@@ -203,6 +203,19 @@ export function matchReelsToVideos(videos, reels) {
   return { assignments, unmatched };
 }
 
+/**
+ * Refresh order: entries inside the recent window (date >= cutoffDate)
+ * first, then the backfill; newest first within each group. Keeps a
+ * large first-run backfill or failing old posts from eating the budget
+ * before the last 14 days are fetched.
+ */
+export function orderForRefresh(items, cutoffDate) {
+  const newestFirst = (a, b) => (a.video.date < b.video.date ? 1 : a.video.date > b.video.date ? -1 : 0);
+  const recent = items.filter((i) => i.video.date >= cutoffDate).sort(newestFirst);
+  const older = items.filter((i) => i.video.date < cutoffDate).sort(newestFirst);
+  return [...recent, ...older];
+}
+
 /** Whether insights should be (re)fetched for this entry. */
 export function needsRefresh(video, cutoffDate) {
   return video.date >= cutoffDate || !video.instagram?.updatedAt;
@@ -278,6 +291,9 @@ export async function updateInstagramStats(history, env, opts = {}) {
   let transientStreak = 0;
   let skipped = 0;
   let stopReason = null;
+
+  // Pass 1: set every entry's mediaId (carrying previous metrics over).
+  const toRefresh = [];
   for (const video of videos) {
     const reel = assignments.get(video);
     if (!reel) {
@@ -288,7 +304,11 @@ export async function updateInstagramStats(history, env, opts = {}) {
     video.instagram = { mediaId: reel.id, permalink: reel.permalink ?? previous?.permalink ?? null };
     for (const name of INSIGHT_METRICS) video.instagram[name] = previous?.[name] ?? null;
     video.instagram.updatedAt = previous?.updatedAt ?? null;
-    if (!needsRefresh(video, cutoffDate)) continue;
+    if (needsRefresh(video, cutoffDate)) toRefresh.push({ video, reel });
+  }
+
+  // Pass 2: fetch insights, spending the budget on what matters most.
+  for (const { video, reel } of orderForRefresh(toRefresh, cutoffDate)) {
     if (!stopReason && clock() >= deadline) stopReason = "budget";
     if (stopReason) {
       skipped++;
