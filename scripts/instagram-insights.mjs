@@ -28,7 +28,13 @@ export const REQUIRED_SCOPES = [
   "pages_read_engagement",
 ];
 
-const MEDIA_FIELDS = "id,media_product_type,timestamp,permalink,caption";
+const REQUEST_TIMEOUT_MS = 20_000;
+
+// Stop calling /insights once this many in a row were refused for
+// permission reasons with nothing collected — the rest would fail the same.
+const PERMISSION_FAILURE_LIMIT = 3;
+
+const MEDIA_FIELDS ="id,media_product_type,timestamp,permalink,caption";
 
 // Graph API error codes meaning "token lacks permission" rather than a
 // transient/data problem: 10 = permission denied, 190 = invalid/expired
@@ -53,7 +59,8 @@ export function createGraphClient(fetchImpl = fetch, base = GRAPH_API_BASE) {
   return async function graphGet(path, params = {}) {
     const url = path.startsWith("http") ? new URL(path) : new URL(`${base}${path}`);
     for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
-    const res = await fetchImpl(url);
+    // Bounded wait: this runs before rendering in the 15-min daily job.
+    const res = await fetchImpl(url, { signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
     const data = await res.json();
     if (data.error) throw new GraphError(data.error);
     return data;
@@ -122,11 +129,20 @@ export function matchReelsToVideos(videos, reels) {
   const claimed = new Set();
 
   // Entries that already know their mediaId (recorded at upload time).
+  // A stored id missing from the listing means the post was deleted
+  // (delete-instagram-post.yml → retry-today-instagram.yml): drop it and
+  // fall through to date matching so the replacement Reel is picked up.
+  const stale = new Map();
   for (const video of videos) {
     const id = video.instagram?.mediaId;
     if (!id) continue;
+    const reel = byId.get(id);
+    if (!reel) {
+      stale.set(video, id);
+      continue;
+    }
     claimed.add(id);
-    assignments.set(video, byId.get(id) ?? { id });
+    assignments.set(video, reel);
   }
 
   const reelsByDate = new Map();
@@ -140,14 +156,20 @@ export function matchReelsToVideos(videos, reels) {
   for (const video of videos) {
     if (assignments.has(video)) continue;
     const candidates = reelsByDate.get(video.date) ?? [];
+    const staleNote = stale.has(video)
+      ? `stored mediaId ${stale.get(video)} no longer listed (deleted?); `
+      : "";
     if (candidates.length === 1) {
       assignments.set(video, candidates[0]);
     } else if (candidates.length === 0) {
-      unmatched.push({ date: video.date, reason: "no REELS published on this JST date" });
+      unmatched.push({
+        date: video.date,
+        reason: `${staleNote}no REELS published on this JST date`,
+      });
     } else {
       unmatched.push({
         date: video.date,
-        reason: `ambiguous: ${candidates.length} REELS on this JST date (${candidates
+        reason: `${staleNote}ambiguous: ${candidates.length} REELS on this JST date (${candidates
           .map((c) => c.id)
           .join(", ")})`,
       });
@@ -218,6 +240,7 @@ export async function updateInstagramStats(history, env, opts = {}) {
   let updated = 0;
   let failed = 0;
   let permissionFailures = 0;
+  let skipped = 0;
   for (const video of videos) {
     const reel = assignments.get(video);
     if (!reel) {
@@ -229,6 +252,10 @@ export async function updateInstagramStats(history, env, opts = {}) {
     for (const name of INSIGHT_METRICS) video.instagram[name] = previous?.[name] ?? null;
     video.instagram.updatedAt = previous?.updatedAt ?? null;
     if (!needsRefresh(video, cutoffDate)) continue;
+    if (updated === 0 && permissionFailures >= PERMISSION_FAILURE_LIMIT) {
+      skipped++;
+      continue;
+    }
 
     try {
       const metrics = await fetchInsights(graphGet, reel.id, [pageToken, userToken]);
@@ -242,10 +269,15 @@ export async function updateInstagramStats(history, env, opts = {}) {
     }
   }
 
+  if (skipped > 0) {
+    log(`  IG: skipped ${skipped} insights calls after ${permissionFailures} permission refusals`);
+  }
+
   return {
     matched: assignments.size,
     updated,
     failed,
+    skipped,
     permissionDenied: failed > 0 && updated === 0 && permissionFailures === failed,
     missingScopes: missing,
     unmatched,

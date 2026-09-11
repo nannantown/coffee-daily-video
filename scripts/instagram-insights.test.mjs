@@ -221,3 +221,47 @@ test("listReels follows paging until the window is covered", async () => {
   assert.equal(history.videos[0].instagram.mediaId, "old");
   assert.equal(history.videos[1].instagram.mediaId, "new");
 });
+
+test("matchReelsToVideos re-matches by date when the stored mediaId was deleted", () => {
+  const videos = [
+    { date: "2026-09-10", instagram: { mediaId: "deleted" } },
+    { date: "2026-09-09", instagram: { mediaId: "gone" } },
+  ];
+  const reels = [{ id: "retry", timestamp: "2026-09-10T02:00:00+0000" }];
+  const { assignments, unmatched } = matchReelsToVideos(videos, reels);
+  assert.equal(assignments.get(videos[0]).id, "retry");
+  assert.equal(assignments.has(videos[1]), false);
+  assert.match(unmatched[0].reason, /stored mediaId gone no longer listed/);
+});
+
+test("updateInstagramStats stops calling insights after repeated permission refusals", async () => {
+  const dates = ["2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09"];
+  const history = { videos: dates.map((date) => ({ date })) };
+  const routes = {
+    "/me/permissions": PERMS_OK,
+    "/page1": { access_token: "page-token" },
+    "/ig1/media": {
+      data: dates.map((d, i) => ({
+        id: `m${i}`,
+        media_product_type: "REELS",
+        timestamp: `${d}T01:00:00+0000`,
+      })),
+    },
+  };
+  let insightsCalls = 0;
+  for (let i = 0; i < dates.length; i++) {
+    routes[`/m${i}/insights`] = () => {
+      insightsCalls++;
+      return { error: { message: "(#10) denied", code: 10 } };
+    };
+  }
+  const result = await updateInstagramStats(history, ENV, {
+    fetchImpl: fakeFetch(routes),
+    now: new Date("2026-09-11T00:00:00Z"),
+    log: () => {},
+  });
+  assert.equal(insightsCalls, 3 * 2, "3 videos x (page token + user token)");
+  assert.equal(result.skipped, 2);
+  assert.equal(result.permissionDenied, true);
+  assert.ok(history.videos.every((v) => v.instagram?.mediaId), "mediaIds still restored");
+});
