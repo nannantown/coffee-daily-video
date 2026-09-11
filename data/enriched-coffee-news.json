@@ -1,39 +1,40 @@
 {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "discovery": {
-    "method": "market-data",
-    "description": "ICE arabica 在庫27年ぶり低水準(9/3=22.3万袋)とNOAA最新エルニーニョ予測(継続97%/強度81%)を掛け合わせ、9-10月ブラジル開花期=2027/28クロップの分岐点、という時間依存の市況リスクを選定",
+    "method": "news-ja",
+    "description": "土曜だが英語圏で今週報じられた『% アラビカのスイス Zurich 進出発表』を日本発ブランドの海外展開ストーリーとして日本オーディエンス向けに再構成。9月8日の公式Instagram告知を起点に、Perfect Daily Grind と World Coffee Portal、Zurich 地元紙(20 Minuten / Luzerner Zeitung)、Wikipedia の店舗数データを突き合わせ。柱③業界ニュースだが、日本発の焙煎ブランドが世界で戦える証拠として物語化",
     "sources": [
-      "https://www.stonex.com/en-us/insights/el-nino-keeps-brazil-s-coffee-growers-watching-the-sky-for-the-rain/",
-      "https://www.comunicaffe.com/coffee-markets-on-the-decline-arabica-dips-below-3-and-robusta-hits-its-lowest-since-june-while-el-nino-looms-large-again/",
-      "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/",
-      "https://www.ebc.com/forex/el-nino-coffee-prices-2026"
+      "https://perfectdailygrind.com/2026/09/coffee-news-recap-11-september-2026/",
+      "https://www.worldcoffeeportal.com/news/japans-arabica-to-enter-fifth-european-market/",
+      "https://www.20min.ch/story/-arabica-japanische-cafe-kette-kommt-wohl-bald-in-die-schweiz-103629511",
+      "https://www.luzernerzeitung.ch/wirtschaft/japanische-kaffeekette-arabica-kommt-in-die-schweiz-ld.4226268",
+      "https://en.wikipedia.org/wiki/%25_Arabica"
     ],
-    "query": "El Nino coffee Brazil flowering September 2026 NOAA arabica ICE stocks",
-    "freshness_hours": 48
+    "query": "% Arabica Zurich Switzerland launch September 2026 Kenneth Shoji fifth European market",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "9-10月ブラジル開花期にエルニーニョ継続97%予測直撃・アラビカ2027/28クロップの分岐点、ICE在庫は27年ぶり低水準",
-      "description": "9-10月はブラジルで来年分アラビカの花付きが決まる時期。NOAAは強いエルニーニョの継続確率97%を提示し、ICE在庫も27年ぶり低水準まで薄い",
-      "detail": "NOAA最新予測でエルニーニョは2027年初春まで97%継続、10-12月に『非常に強い』確率81%。同時期はブラジルで花付きが決まる季節。ICE arabica在庫は9月3日時点で22.3万袋と27年ぶり低水準。相場は8/24高値から-13.5%も、開花期次第で再び上放れる下地",
-      "narration": "今朝の海外ニュース。ブラジルは今、コーヒーの木が翌年分の花を咲かせる大切な開花期。そこに強いエルニーニョの気配が近づいています",
-      "tags": ["市況ニュース", "エルニーニョ", "ブラジル開花期"],
+      "title": "京都発%アラビカがスイス Zurich 進出発表・9月8日『Coming Soon』告知、世界243店で欧州5カ国目",
+      "description": "京都本社の日本発チェーン%アラビカがスイス初出店を発表。9月8日にZurichで『Coming Soon』を告知し、欧州5カ国目の市場へ",
+      "detail": "創業者 Kenneth Shoji は2011年に福島の家を失い香港へ移住、2013年に%アラビカを開業。現在世界243店に拡大するも国内はわずか7店(京都3、東京2、ニセコ1、香港以外はほぼ海外)。今回の Zurich 出店は仏英独蘭に続く欧州5カ国目、地元Vicafeやスターバックスと直接対決する構図。9月8日の公式Instagramで『Coming Soon』を告知、正式オープンはQ4予定",
+      "narration": "%アラビカがスイスに進出を発表。京都本社の日本発チェーンが9月8日にズーリッヒで『Coming Soon』を告知、世界243店の勢いが欧州へ加速中です",
+      "tags": ["業界ニュース", "%アラビカ", "海外展開"],
       "narration_sections": {
-        "hook": "今朝の海外ニュース。ブラジルは今、コーヒーの木が翌年分の花を咲かせる大切な開花期。そこに強いエルニーニョの気配が近づいています",
-        "origin": "NOAAの最新予測でエルニーニョ継続確率は97%、10月から12月に非常に強い水準になる確率が81%。9月から10月はブラジルで来年分の花付きが決まる時間帯。ICE在庫も9月3日で22万3千袋、27年ぶり低水準まで薄い状態",
-        "recommend": "来年のアラビカの値段は今この数週の雨で決まります。気になる豆は焙煎日を確認して早めに確保しておくのが賢い動き。入荷情報もフォローでどうぞ"
+        "hook": "%アラビカがスイスに進出を発表。京都本社の日本発チェーンが9月8日にズーリッヒで『Coming Soon』を告知、世界243店の勢いが欧州へ加速中です",
+        "origin": "創業者Kenneth Shojiは2011年に福島の家を失い香港へ移住、2013年に%アラビカを開業。今や世界243店に成長、うち国内はわずか7店。今回のスイス出店は欧州で5カ国目、スタバや現地Vicafeと真っ向勝負です",
+        "recommend": "日本発のスペシャルティが世界で戦える時代です。Open Groundも同じ土俵を目指して焙煎中、EC準備中フォローでお待ちください"
       },
       "section_titles": {
-        "hook": "開花期エルニーニョ",
-        "origin": "NOAA97%継続",
-        "recommend": "来年相場は今決定"
+        "hook": "アラビカ欧州5国目",
+        "origin": "10年で世界243店",
+        "recommend": "日本発が世界で戦う"
       },
       "section_descriptions": {
-        "hook": "ブラジルは今、来年分の花を咲かせる大切な時期",
-        "origin": "NOAAが2027年初春まで97%継続と予測",
-        "recommend": "今の雨がそのまま来年一杯の値段になります"
+        "hook": "京都発%アラビカが9月8日にスイス進出を発表",
+        "origin": "創業者Kenneth Shojiの半生と世界243店の勢い",
+        "recommend": "日本発スペシャルティの躍進、OGも焙煎中"
       }
     }
   ]
