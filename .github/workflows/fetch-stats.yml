@@ -3,35 +3,66 @@ name: Fetch Stats (manual)
 # Refreshes data/performance-history.json (YouTube stats + Instagram Reels
 # insights) without rendering or posting anything. Manual trigger only —
 # used to verify IG insights collection. Never posts to any SNS.
+#
+# Coexistence with daily-video.yml (which also commits the history file and
+# must never be delayed or cancelled): this workflow does NOT share a
+# concurrency group with it. Instead it steps aside — if a daily run is
+# queued or in progress at start or right before pushing, it exits cleanly
+# without committing.
 on:
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
-  group: performance-history
+  group: fetch-stats
   cancel-in-progress: false
 
 jobs:
   fetch-stats:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
 
     steps:
+      - name: Refuse non-main refs
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "fetch-stats must be dispatched on main (got ${GITHUB_REF})."
+          exit 1
+
+      - name: Skip if a daily run is active (start)
+        id: daily_start
+        run: |
+          active=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow daily-video.yml \
+            --limit 20 --json status --jq '[.[] | select(.status != "completed")] | length')
+          echo "active=$active" >> "$GITHUB_OUTPUT"
+          if [ "$active" != "0" ]; then
+            echo "daily-video.yml has $active queued/in-progress run(s); skipping."
+          fi
+
       - name: Checkout
+        if: steps.daily_start.outputs.active == '0'
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node.js
+        if: steps.daily_start.outputs.active == '0'
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
       - name: Install dependencies
+        if: steps.daily_start.outputs.active == '0'
         run: npm ci
 
       - name: Fetch stats
+        if: steps.daily_start.outputs.active == '0'
         run: |
           mkdir -p output
           node scripts/fetch-stats.mjs
@@ -47,7 +78,14 @@ jobs:
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
 
       - name: Commit performance history
+        if: steps.daily_start.outputs.active == '0'
         run: |
+          active=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow daily-video.yml \
+            --limit 20 --json status --jq '[.[] | select(.status != "completed")] | length')
+          if [ "$active" != "0" ]; then
+            echo "daily-video.yml started meanwhile ($active run(s)); not pushing."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/performance-history.json
@@ -57,4 +95,4 @@ jobs:
           fi
           git commit -m "Update performance history (manual fetch-stats) [skip ci]"
           git pull --rebase origin main
-          git push
+          git push origin HEAD:main

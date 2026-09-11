@@ -43,7 +43,13 @@ function main() {
 
   // Instagram Media ID written by upload-instagram.mjs (absent if IG skipped/failed;
   // fetch-stats.mjs then restores it by date-matching)
-  const igResult = readJSON(join(outputDir, "instagram-result.json"));
+  // A corrupt file must not cost the day's whole entry (incl. YouTube videoId).
+  let igResult = null;
+  try {
+    igResult = readJSON(join(outputDir, "instagram-result.json"));
+  } catch (err) {
+    console.error(`record-upload: unreadable instagram-result.json (${err.message}), instagram: null`);
+  }
 
   // Calculate total duration
   let durationSeconds = 0;

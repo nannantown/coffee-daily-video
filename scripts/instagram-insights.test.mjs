@@ -8,6 +8,7 @@ import {
   needsRefresh,
   updateInstagramStats,
   GraphError,
+  resolveBudgetMs,
 } from "./instagram-insights.mjs";
 
 test("toJstDate converts IG +0000 timestamps to the JST calendar date", () => {
@@ -264,4 +265,93 @@ test("updateInstagramStats stops calling insights after repeated permission refu
   assert.equal(result.skipped, 2);
   assert.equal(result.permissionDenied, true);
   assert.ok(history.videos.every((v) => v.instagram?.mediaId), "mediaIds still restored");
+});
+
+function slowRoutes(count, insightsHandler) {
+  const dates = Array.from({ length: count }, (_, i) => `2026-09-${String(i + 1).padStart(2, "0")}`);
+  const routes = {
+    "/me/permissions": PERMS_OK,
+    "/page1": { access_token: "page-token" },
+    "/ig1/media": {
+      data: dates.map((d, i) => ({
+        id: `m${i}`,
+        media_product_type: "REELS",
+        timestamp: `${d}T01:00:00+0000`,
+      })),
+    },
+  };
+  for (let i = 0; i < count; i++) routes[`/m${i}/insights`] = insightsHandler;
+  return { history: { videos: dates.map((date) => ({ date })) }, routes };
+}
+
+test("updateInstagramStats stops at the overall time budget and keeps previous values", async () => {
+  const clock = { t: 0 };
+  const { history, routes } = slowRoutes(8, () => ({ data: [{ name: "views", values: [{ value: 5 }] }] }));
+  history.videos[7].instagram = { mediaId: "m7", views: 99, updatedAt: null };
+  const base = fakeFetch(routes);
+  const fetchImpl = async (url, init) => {
+    clock.t += 30_000; // every Graph call takes 30s
+    return base(url, init);
+  };
+  const logs = [];
+  const result = await updateInstagramStats(history, ENV, {
+    fetchImpl,
+    clock: () => clock.t,
+    budgetMs: 180_000,
+    now: new Date("2026-09-11T00:00:00Z"),
+    log: (m) => logs.push(m),
+  });
+  // 3 setup calls (90s) + 3 insights calls (90s) = budget
+  assert.equal(result.updated, 3);
+  assert.equal(result.stopReason, "budget");
+  assert.equal(result.skipped, 5);
+  assert.ok(clock.t <= 180_000, "never starts a request past the deadline");
+  assert.equal(history.videos[7].instagram.views, 99, "skipped entry keeps previous value");
+  assert.ok(logs.some((l) => l.includes("stopped early (time budget")));
+});
+
+test("resolveBudgetMs honours IG_INSIGHTS_BUDGET_MS and defaults to 90s", () => {
+  assert.equal(resolveBudgetMs({}), 90_000);
+  assert.equal(resolveBudgetMs({ IG_INSIGHTS_BUDGET_MS: "30000" }), 30_000);
+  assert.equal(resolveBudgetMs({ IG_INSIGHTS_BUDGET_MS: "abc" }), 90_000);
+});
+
+test("updateInstagramStats stops after 3 consecutive timeouts/network errors", async () => {
+  let calls = 0;
+  const { history, routes } = slowRoutes(6, () => {
+    calls++;
+    throw new TypeError("fetch failed");
+  });
+  const result = await updateInstagramStats(history, ENV, {
+    fetchImpl: fakeFetch(routes),
+    now: new Date("2026-09-11T00:00:00Z"),
+    log: () => {},
+  });
+  assert.equal(calls, 3, "network errors are not retried with the user token");
+  assert.equal(result.stopReason, "transient");
+  assert.equal(result.skipped, 3);
+  assert.equal(result.permissionDenied, false);
+});
+
+test("a success resets the consecutive-failure streak", async () => {
+  let n = 0;
+  const { history, routes } = slowRoutes(6, () => {
+    n++;
+    if (n % 3 === 0) return { data: [{ name: "views", values: [{ value: 1 }] }] };
+    throw new TypeError("fetch failed");
+  });
+  const result = await updateInstagramStats(history, ENV, {
+    fetchImpl: fakeFetch(routes),
+    now: new Date("2026-09-11T00:00:00Z"),
+    log: () => {},
+  });
+  assert.equal(result.stopReason, null);
+  assert.equal(result.updated, 2);
+});
+
+test("code 10 / subcode 2108006 (media predates business account) is not a permission error", () => {
+  assert.equal(
+    new GraphError({ message: "x", code: 10, error_subcode: 2108006 }).isPermissionError,
+    false
+  );
 });

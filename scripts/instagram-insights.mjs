@@ -28,18 +28,28 @@ export const REQUIRED_SCOPES = [
   "pages_read_engagement",
 ];
 
+// fetch-stats runs synchronously before rendering/posting inside the
+// 15-min daily job, so the whole IG step gets a wall-clock budget
+// (env IG_INSIGHTS_BUDGET_MS overrides) and each request is capped by
+// both REQUEST_TIMEOUT_MS and the remaining budget.
+export const DEFAULT_BUDGET_MS = 90_000;
 const REQUEST_TIMEOUT_MS = 20_000;
 
-// Stop calling /insights once this many in a row were refused for
-// permission reasons with nothing collected — the rest would fail the same.
+// Stop calling /insights once this many in a row failed the same way —
+// the rest would fail too: permission refusals with nothing collected, or
+// consecutive timeouts / network errors.
 const PERMISSION_FAILURE_LIMIT = 3;
+const TRANSIENT_FAILURE_LIMIT = 3;
 
-const MEDIA_FIELDS ="id,media_product_type,timestamp,permalink,caption";
+const MEDIA_FIELDS = "id,media_product_type,timestamp,permalink,caption";
 
 // Graph API error codes meaning "token lacks permission" rather than a
 // transient/data problem: 10 = permission denied, 190 = invalid/expired
-// token, 200-299 = permission errors.
+// token, 200-299 = permission errors. Code 10 with subcode 2108006 means
+// the media predates the business-account conversion — a per-media data
+// limit, not a token problem.
 const PERMISSION_ERROR_CODES = new Set([10, 190]);
+const MEDIA_PREDATES_BUSINESS_SUBCODE = 2108006;
 
 export class GraphError extends Error {
   constructor(error) {
@@ -49,18 +59,33 @@ export class GraphError extends Error {
   }
 
   get isPermissionError() {
+    if (this.code === 10 && this.subcode === MEDIA_PREDATES_BUSINESS_SUBCODE) return false;
     return (
       PERMISSION_ERROR_CODES.has(this.code) || (this.code >= 200 && this.code < 300)
     );
   }
 }
 
-export function createGraphClient(fetchImpl = fetch, base = GRAPH_API_BASE) {
+export class BudgetExceededError extends Error {
+  constructor() {
+    super("IG insights time budget exhausted");
+  }
+}
+
+export function resolveBudgetMs(env = {}) {
+  const value = Number(env.IG_INSIGHTS_BUDGET_MS);
+  return Number.isFinite(value) && value > 0 ? value : DEFAULT_BUDGET_MS;
+}
+
+export function createGraphClient(fetchImpl = fetch, opts = {}) {
+  const { base = GRAPH_API_BASE, deadline = Infinity, clock = Date.now } = opts;
   return async function graphGet(path, params = {}) {
+    const remaining = deadline - clock();
+    if (remaining <= 0) throw new BudgetExceededError();
     const url = path.startsWith("http") ? new URL(path) : new URL(`${base}${path}`);
     for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
-    // Bounded wait: this runs before rendering in the 15-min daily job.
-    const res = await fetchImpl(url, { signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
+    const timeout = Math.max(1, Math.ceil(Math.min(REQUEST_TIMEOUT_MS, remaining)));
+    const res = await fetchImpl(url, { signal: AbortSignal.timeout(timeout) });
     const data = await res.json();
     if (data.error) throw new GraphError(data.error);
     return data;
@@ -204,13 +229,23 @@ async function fetchInsights(graphGet, mediaId, tokens) {
 
 /**
  * Mutates `history.videos[*].instagram`. Throws only on setup failures
- * (permissions lookup / page token / media list); per-video insight
- * failures are logged and counted.
+ * (permissions lookup / page token / media list, including running out of
+ * budget there) — history is untouched in that case. Per-video insight
+ * failures are logged and counted; once the budget is spent or failures
+ * repeat, the remaining entries keep their previous values.
  */
 export async function updateInstagramStats(history, env, opts = {}) {
-  const { fetchImpl = fetch, now = new Date(), refreshDays = 14, log = console.log } = opts;
+  const {
+    fetchImpl = fetch,
+    now = new Date(),
+    refreshDays = 14,
+    log = console.log,
+    clock = Date.now,
+    budgetMs = resolveBudgetMs(env),
+  } = opts;
   const { INSTAGRAM_ACCESS_TOKEN: userToken, INSTAGRAM_USER_ID, FACEBOOK_PAGE_ID } = env;
-  const graphGet = createGraphClient(fetchImpl);
+  const deadline = clock() + budgetMs;
+  const graphGet = createGraphClient(fetchImpl, { deadline, clock });
 
   const permissions = await graphGet("/me/permissions", { access_token: userToken });
   const missing = missingScopes(permissions);
@@ -240,7 +275,9 @@ export async function updateInstagramStats(history, env, opts = {}) {
   let updated = 0;
   let failed = 0;
   let permissionFailures = 0;
+  let transientStreak = 0;
   let skipped = 0;
+  let stopReason = null;
   for (const video of videos) {
     const reel = assignments.get(video);
     if (!reel) {
@@ -252,7 +289,8 @@ export async function updateInstagramStats(history, env, opts = {}) {
     for (const name of INSIGHT_METRICS) video.instagram[name] = previous?.[name] ?? null;
     video.instagram.updatedAt = previous?.updatedAt ?? null;
     if (!needsRefresh(video, cutoffDate)) continue;
-    if (updated === 0 && permissionFailures >= PERMISSION_FAILURE_LIMIT) {
+    if (!stopReason && clock() >= deadline) stopReason = "budget";
+    if (stopReason) {
       skipped++;
       continue;
     }
@@ -262,15 +300,32 @@ export async function updateInstagramStats(history, env, opts = {}) {
       for (const name of INSIGHT_METRICS) video.instagram[name] = metrics[name] ?? null;
       video.instagram.updatedAt = now.toISOString();
       updated++;
+      transientStreak = 0;
     } catch (err) {
       failed++;
-      if (err.isPermissionError) permissionFailures++;
       log(`  IG: insights failed for ${video.date} (${reel.id}): ${err.message}`);
+      if (err instanceof BudgetExceededError) {
+        stopReason = "budget";
+      } else if (err.isPermissionError) {
+        permissionFailures++;
+        if (updated === 0 && permissionFailures >= PERMISSION_FAILURE_LIMIT) {
+          stopReason = "permission";
+        }
+      } else if (!(err instanceof GraphError)) {
+        // Timeout / network error (not a Graph-level answer for this media)
+        transientStreak++;
+        if (transientStreak >= TRANSIENT_FAILURE_LIMIT) stopReason = "transient";
+      }
     }
   }
 
-  if (skipped > 0) {
-    log(`  IG: skipped ${skipped} insights calls after ${permissionFailures} permission refusals`);
+  if (stopReason) {
+    const why = {
+      budget: `time budget of ${Math.round(budgetMs / 1000)}s spent`,
+      permission: `${permissionFailures} permission refusals`,
+      transient: `${TRANSIENT_FAILURE_LIMIT} consecutive timeouts/network errors`,
+    }[stopReason];
+    log(`  IG: stopped early (${why}); ${skipped} entries keep previous values`);
   }
 
   return {
@@ -278,6 +333,7 @@ export async function updateInstagramStats(history, env, opts = {}) {
     updated,
     failed,
     skipped,
+    stopReason,
     permissionDenied: failed > 0 && updated === 0 && permissionFailures === failed,
     missingScopes: missing,
     unmatched,

@@ -13,13 +13,6 @@ on:
 permissions:
   contents: write
 
-# Shared with fetch-stats.yml: both commit data/performance-history.json,
-# and this job's push is non-blocking, so a concurrent manual fetch-stats
-# run could otherwise silently drop today's history entry.
-concurrency:
-  group: performance-history
-  cancel-in-progress: false
-
 jobs:
   generate-video:
     runs-on: ubuntu-latest

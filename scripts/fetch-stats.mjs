@@ -206,7 +206,8 @@ async function fetchInstagramStats(history) {
     const result = await updateInstagramStats(history, process.env);
     console.log(
       `  IG: matched ${result.matched}, updated ${result.updated}, failed ${result.failed}, ` +
-        `unmatched ${result.unmatched.length}`
+        `skipped ${result.skipped}, unmatched ${result.unmatched.length}` +
+        (result.stopReason ? `, stopped early: ${result.stopReason}` : "")
     );
     if (result.permissionDenied) {
       console.error(
