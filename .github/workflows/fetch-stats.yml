@@ -1,0 +1,60 @@
+name: Fetch Stats (manual)
+
+# Refreshes data/performance-history.json (YouTube stats + Instagram Reels
+# insights) without rendering or posting anything. Manual trigger only —
+# used to verify IG insights collection. Never posts to any SNS.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: performance-history
+  cancel-in-progress: false
+
+jobs:
+  fetch-stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch stats
+        run: |
+          mkdir -p output
+          node scripts/fetch-stats.mjs
+        env:
+          TZ: Asia/Tokyo
+          # Fail the run when IG insights could not be collected at all
+          FETCH_STATS_STRICT_IG: "1"
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+
+      - name: Commit performance history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/performance-history.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update performance history (manual fetch-stats) [skip ci]"
+          git pull --rebase origin main
+          git push
