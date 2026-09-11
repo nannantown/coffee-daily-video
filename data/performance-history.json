@@ -2,51 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "fIPW7FFGrzE",
-      "videoUrl": "https://youtube.com/shorts/fIPW7FFGrzE",
-      "date": "2026-06-12",
-      "title": "【コーヒー豆知識】豪UNSWが超音波エスプレッソを発表・常温水で2.5分抽出・電力75%削減｜2026/06/12 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "official-src",
-        "description": "金曜=平日ニュース日。14d Method 集計で official-src が avg 9.67/n=3 で TOP1、直近使用は 6/09 (3 日空き) で連続違反なし。trends は TOP2 (9.0/n=1) ながら素材が単発、social-en (8.0/n=2) は直近 6/10 で 2 日連続違反、news-en (1.5/n=2) は 6/11 (Luckin) と直近で連続違反かつ WORST 域。今日は UNSW Sydney School of Chemical Engineering の査読論文 (Dr. Francisco Trujillo 主導、6/01 オンライン公開 in Journal of Food Engineering) を一次出典として official-src で攻める。素材は『超音波エスプレッソ (Ultrasonic Espresso)』: 標準ポルタフィルター・バスケットを超音波リアクター化し、常温水で 2.5〜3 分抽出、カフェイン/オイル/フレーバー成分を音響キャビテーション (acoustic cavitation) で引き出す方式。論文は 18.03% 抽出収率 (325μm 粒度) を達成、消費電力 75% 削減、100 人ブラインドテストで通常エスプレッソと識別不可と報告。WO2025/118023A1 で UNSW が特許出願中。報道は UNSW 公式 newsroom (6/09)、Daily Coffee News (6/10)、Comunicaffe、TechXplore、SmartCompany、BeanScene、CityNews Canberra、Digital Trends 等で広範に拡散、freshness ~72h で 168h 制約クリア。Pillar ③業界・ビジネスニュース (14d 比率 21% → 22%、目標 20% 近傍維持)。④焙煎士の一次情報 (14d 1 本 7%) との橋渡しにもなり、家淹れ層の知的好奇心を刺激しつつ『新方式が普及してもスペシャリティ豆の個性を引き出す技術』に着地。NG パターン回避: コーヒーあるある×、雑学×、出典不明×、freshness>168 ×、産地タグ使い回し ×。フック語彙は『常温の水で』『時代が来ました』で勝ち筋テンプレ (急増/突破/過去最高) と差別化、技術ニュースは数字インパクト『75%省エネ』『2.5〜3 分』『100 人ブラインドで区別不能』で支える。Primary 層への接続は『カフェの電気代を下げる技術』→『スペシャリティ豆の風味を引き出す抽出の選択肢が増える』で OG の差別化軸を裏打ち、強い CTA は控えて『EC 準備中フォロー』ニュアンスは bio 任せ。",
-        "sources": [
-          "https://www.unsw.edu.au/newsroom/news/2026/06/New-way-making-espresso",
-          "https://dailycoffeenews.com/2026/06/10/researchers-say-ultrasonic-brewing-can-match-espresso-reduce-energy/",
-          "https://www.comunicaffe.com/australian-researchers-brew-espresso-using-an-ultrasonic-machine-saving-over-75-in-energy/",
-          "https://techxplore.com/news/2026-06-espresso-coffee-world.html",
-          "https://www.smartcompany.com.au/technology/ultrasonic-espresso-slash-coffee-costs-for-cafes-unsw/",
-          "https://www.beanscenemag.com.au/creating-a-new-way-to-brew-coffee"
-        ],
-        "query": "UNSW Sydney ultrasonic espresso Francisco Trujillo Journal of Food Engineering June 2026 room temperature 75% energy",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 8,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-26T01:34:58.697Z"
-      }
-    },
-    {
       "videoId": "JwV7Y9ty_2c",
       "videoUrl": "https://youtube.com/shorts/JwV7Y9ty_2c",
       "date": "2026-06-13",
@@ -3047,7 +3002,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3092,7 +3047,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3137,7 +3092,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3179,7 +3134,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3223,7 +3178,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3269,7 +3224,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3311,7 +3266,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3352,7 +3307,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3399,7 +3354,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3445,7 +3400,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3488,7 +3443,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-10T01:14:50.048Z"
+        "updatedAt": "2026-09-11T01:17:04.576Z"
       }
     },
     {
@@ -3531,19 +3486,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-11T01:17:04.576Z"
+      }
+    },
+    {
+      "videoId": "D2U6XIa2PL0",
+      "videoUrl": "https://youtube.com/shorts/D2U6XIa2PL0",
+      "date": "2026-09-11",
+      "title": "【コーヒー豆知識】9-10月ブラジル開花期にエルニーニョ継続97%予測直撃・アラビカ2027/28クロップの分岐点、ICE在庫は27年ぶり低水準｜2026/09/11 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "知識",
+        "知識",
+        "知識"
+      ],
+      "durationSeconds": 55,
+      "discovery": {
+        "method": "market-data",
+        "description": "ICE arabica 在庫27年ぶり低水準(9/3=22.3万袋)とNOAA最新エルニーニョ予測(継続97%/強度81%)を掛け合わせ、9-10月ブラジル開花期=2027/28クロップの分岐点、という時間依存の市況リスクを選定",
+        "sources": [
+          "https://www.stonex.com/en-us/insights/el-nino-keeps-brazil-s-coffee-growers-watching-the-sky-for-the-rain/",
+          "https://www.comunicaffe.com/coffee-markets-on-the-decline-arabica-dips-below-3-and-robusta-hits-its-lowest-since-june-while-el-nino-looms-large-again/",
+          "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/",
+          "https://www.ebc.com/forex/el-nino-coffee-prices-2026"
+        ],
+        "query": "El Nino coffee Brazil flowering September 2026 NOAA arabica ICE stocks",
+        "freshness_hours": 48
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-09",
-      "changes": [
-        "standard: 12 avg views (79 videos)",
-        "Day performance: Sat=30, Sun=18, Fri=13, Mon=9, Tue=6, Wed=6, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-10",
       "changes": [
@@ -3773,6 +3763,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=4, Fri=2, Mon=2, Thu=1, Wed=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-11",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=11, Sun=4, Fri=2, Mon=2, Wed=1, Thu=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
