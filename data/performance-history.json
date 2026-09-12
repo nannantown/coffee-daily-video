@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "JwV7Y9ty_2c",
-      "videoUrl": "https://youtube.com/shorts/JwV7Y9ty_2c",
-      "date": "2026-06-13",
-      "title": "【コーヒー豆知識】大阪aoma coffee青野浩史式V60・1対16で淹れ方は固定、味は挽き目だけで動かす｜2026/06/13 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "土曜=エバーグリーン日。14d Method 集計で expert-blog は avg 7.0/n=3 と安定 TOP4、最後使用は 6/07 で 6 日空き(連続違反なし)。直近で過剰使用の official-src (4 本) と WORST 域の news-en (2 本 avg 1.5) を回避し、Pillar 内訳の偏り(③業界 38% で過剰、④焙煎士の一次情報 8% で目標 15% の半分)を是正するため、国内焙煎士の一次情報を直接届ける expert-blog を選択。素材は Kurasu Kyoto が公開した 6 月の Partner Roaster 特集『aoma coffee, Osaka | June 2026 Kurasu Partner Roaster』(6/09 公開、freshness ≈ 96h で 168h 制約クリア)。大阪・本町の焙煎士 青野浩史(Hiroshi Aono、2020 年 7 月開業) の家庭向けレシピと哲学を抽出: HARIO V60 で『コーヒー 13g 対 お湯 208g、1 対 16 の黄金比』。最大の主張は『同じ手順を毎回貫く』ことで、豆が変わっても淹れ方は固定し、味を調整したい時だけ挽き目を動かす一点集中型。背景には京都『整える(ととのえる)』の感性と元・染色職人としての職人気質。家で淹れる Primary 層が今日からそのまま真似できる粒度。Pillar ④焙煎士の一次情報(14d 8% → 15% へ寄与)。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○、freshness 96h○、産地タグ使い回し× (タグは焙煎士・V60・家淹れで動的)。フックは『土曜は焙煎士の話』+『シンプルすぎて逆に効きます』で勝ち筋の意外性テンプレ。連続トピックの英語企業ニュース(6/11 Luckin / 6/12 UNSW)と差別化し、視聴者の手元に確実に届くレシピで Primary 層の信頼を積み上げる。Explore サブ提案として `partner-roaster-feature` を pdca に記録。",
-        "sources": [
-          "https://kurasu.kyoto/blogs/kurasu-journal/aoma-coffee-osaka-june-2026-kurasu-partner-roaster",
-          "https://typica.coffee/en/narratives/roasters/aoma-coffee/",
-          "https://danielfooddiary.com/2025/01/10/aomacoffee/",
-          "https://kurasu.kyoto/blogs/kurasu-journal/kurasu-vlog-aoma-coffee-osaka-interview-with-aono-san"
-        ],
-        "query": "Kurasu June 2026 Partner Roaster aoma coffee Osaka Hiroshi Aono V60 13g 208g recipe philosophy",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 12,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-06-27T01:27:44.090Z"
-      }
-    },
-    {
       "videoId": "TMC5Et0uVt4",
       "videoUrl": "https://youtube.com/shorts/TMC5Et0uVt4",
       "date": "2026-06-14",
@@ -3047,7 +3004,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3092,7 +3049,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3134,7 +3091,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3178,7 +3135,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3224,7 +3181,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3266,7 +3223,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3307,7 +3264,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3354,7 +3311,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3400,7 +3357,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3443,7 +3400,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3486,7 +3443,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-11T01:17:04.576Z"
+        "updatedAt": "2026-09-12T01:18:57.064Z"
       }
     },
     {
@@ -3529,19 +3486,55 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-12T01:18:57.064Z"
+      }
+    },
+    {
+      "videoId": "Seb08gKXyuk",
+      "videoUrl": "https://youtube.com/shorts/Seb08gKXyuk",
+      "date": "2026-09-12",
+      "title": "【コーヒー豆知識】京都発%アラビカがスイス Zurich 進出発表・9月8日『Coming Soon』告知、世界243店で欧州5カ国目｜2026/09/12 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "news-ja",
+        "description": "土曜だが英語圏で今週報じられた『% アラビカのスイス Zurich 進出発表』を日本発ブランドの海外展開ストーリーとして日本オーディエンス向けに再構成。9月8日の公式Instagram告知を起点に、Perfect Daily Grind と World Coffee Portal、Zurich 地元紙(20 Minuten / Luzerner Zeitung)、Wikipedia の店舗数データを突き合わせ。柱③業界ニュースだが、日本発の焙煎ブランドが世界で戦える証拠として物語化",
+        "sources": [
+          "https://perfectdailygrind.com/2026/09/coffee-news-recap-11-september-2026/",
+          "https://www.worldcoffeeportal.com/news/japans-arabica-to-enter-fifth-european-market/",
+          "https://www.20min.ch/story/-arabica-japanische-cafe-kette-kommt-wohl-bald-in-die-schweiz-103629511",
+          "https://www.luzernerzeitung.ch/wirtschaft/japanische-kaffeekette-arabica-kommt-in-die-schweiz-ld.4226268",
+          "https://en.wikipedia.org/wiki/%25_Arabica"
+        ],
+        "query": "% Arabica Zurich Switzerland launch September 2026 Kenneth Shoji fifth European market",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-10",
-      "changes": [
-        "standard: 11 avg views (79 videos)",
-        "Day performance: Sat=30, Sun=16, Fri=13, Mon=8, Tue=6, Wed=6, Thu=4"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-12",
       "changes": [
@@ -3771,6 +3764,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=4, Fri=2, Mon=2, Wed=1, Thu=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-12",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=11, Sun=4, Mon=2, Fri=2, Wed=1, Thu=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
