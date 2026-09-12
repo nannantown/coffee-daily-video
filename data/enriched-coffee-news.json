@@ -1,40 +1,39 @@
 {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "discovery": {
-    "method": "news-ja",
-    "description": "土曜だが英語圏で今週報じられた『% アラビカのスイス Zurich 進出発表』を日本発ブランドの海外展開ストーリーとして日本オーディエンス向けに再構成。9月8日の公式Instagram告知を起点に、Perfect Daily Grind と World Coffee Portal、Zurich 地元紙(20 Minuten / Luzerner Zeitung)、Wikipedia の店舗数データを突き合わせ。柱③業界ニュースだが、日本発の焙煎ブランドが世界で戦える証拠として物語化",
+    "method": "social-en",
+    "description": "World Brewers Cup 2026 選手コミュニティで議論される『V60 湯温を92-96度から91-94度へ下げる』新潮流を、Perfect Daily Grind 9月最新記事『How filter coffee became specialty's favourite drink』と NCA Spring 2026 データで裏付けて、日本の家淹れ層向けにすぐ試せる1度下げの実践TIPに翻訳",
     "sources": [
-      "https://perfectdailygrind.com/2026/09/coffee-news-recap-11-september-2026/",
-      "https://www.worldcoffeeportal.com/news/japans-arabica-to-enter-fifth-european-market/",
-      "https://www.20min.ch/story/-arabica-japanische-cafe-kette-kommt-wohl-bald-in-die-schweiz-103629511",
-      "https://www.luzernerzeitung.ch/wirtschaft/japanische-kaffeekette-arabica-kommt-in-die-schweiz-ld.4226268",
-      "https://en.wikipedia.org/wiki/%25_Arabica"
+      "https://perfectdailygrind.com/2026/09/how-filter-coffee-became-specialty-favourite/",
+      "https://perfectdailygrind.com/2026/09/curate-exceptional-home-coffee-setup/",
+      "https://www.ovalware.com/blogs/oval-blog/what-the-2026-world-brewers-cup-teaches-us-about-better-pour-over-at-home",
+      "https://wcc.coffee/world-barista-championship"
     ],
-    "query": "% Arabica Zurich Switzerland launch September 2026 Kenneth Shoji fifth European market",
+    "query": "world brewers cup 2026 pour over temperature 91 94 clarity filter coffee comeback specialty",
     "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "京都発%アラビカがスイス Zurich 進出発表・9月8日『Coming Soon』告知、世界243店で欧州5カ国目",
-      "description": "京都本社の日本発チェーン%アラビカがスイス初出店を発表。9月8日にZurichで『Coming Soon』を告知し、欧州5カ国目の市場へ",
-      "detail": "創業者 Kenneth Shoji は2011年に福島の家を失い香港へ移住、2013年に%アラビカを開業。現在世界243店に拡大するも国内はわずか7店(京都3、東京2、ニセコ1、香港以外はほぼ海外)。今回の Zurich 出店は仏英独蘭に続く欧州5カ国目、地元Vicafeやスターバックスと直接対決する構図。9月8日の公式Instagramで『Coming Soon』を告知、正式オープンはQ4予定",
-      "narration": "%アラビカがスイスに進出を発表。京都本社の日本発チェーンが9月8日にズーリッヒで『Coming Soon』を告知、世界243店の勢いが欧州へ加速中です",
-      "tags": ["業界ニュース", "%アラビカ", "海外展開"],
+      "title": "世界大会選手が湯温を92度から91度台に下げる新潮流・PDG9月記事とNCA最新データでフィルターコーヒー回帰が加速",
+      "description": "海外の大会選手コミュニティで湯温を1度下げて味の輪郭を立てる潮流、Perfect Daily Grindの9月最新記事も裏付け",
+      "detail": "World Brewers Cup 2026 出場者のコミュニティ発信で、これまで92-96度が主流だったV60等の湯温を91-94度に下げる動きが加速中。香りは少し弱まるが味の輪郭とバランスが立つのが理由。Perfect Daily Grind 9月最新記事『How filter coffee became specialty's favourite drink』もフィルター回帰を報じ、NCA Spring 2026データでは週次スペシャルティ消費が58%まで拡大",
+      "narration": "知ってました?世界大会の選手が湯温を92度から91度台に下げる新潮流。海外の家淹れ界隈でフィルターコーヒー回帰が加速中です",
+      "tags": ["家淹れTIP", "V60", "湯温"],
       "narration_sections": {
-        "hook": "%アラビカがスイスに進出を発表。京都本社の日本発チェーンが9月8日にズーリッヒで『Coming Soon』を告知、世界243店の勢いが欧州へ加速中です",
-        "origin": "創業者Kenneth Shojiは2011年に福島の家を失い香港へ移住、2013年に%アラビカを開業。今や世界243店に成長、うち国内はわずか7店。今回のスイス出店は欧州で5カ国目、スタバや現地Vicafeと真っ向勝負です",
-        "recommend": "日本発のスペシャルティが世界で戦える時代です。Open Groundも同じ土俵を目指して焙煎中、EC準備中フォローでお待ちください"
+        "hook": "知ってました?世界大会の選手が湯温を92度から91度台に下げる新潮流。海外の家淹れ界隈でフィルターコーヒー回帰が加速中です",
+        "origin": "Perfect Daily Grindの9月最新記事によると、大会選手が湯温を92-96度から91-94度に落とす動きが加速中。香りは少し弱まるが味の輪郭とバランスが立ち、米NCAデータでも週次スペシャルティ消費は58%へ拡大しています",
+        "recommend": "V60でいつも95度の方は、次の一杯だけ92度に下げて味の透明感を試してみてください。EC準備中、フォローでお待ちください"
       },
       "section_titles": {
-        "hook": "アラビカ欧州5国目",
-        "origin": "10年で世界243店",
-        "recommend": "日本発が世界で戦う"
+        "hook": "選手は91度台へ",
+        "origin": "PDG9月記事の裏付け",
+        "recommend": "次の一杯は92度で"
       },
       "section_descriptions": {
-        "hook": "京都発%アラビカが9月8日にスイス進出を発表",
-        "origin": "創業者Kenneth Shojiの半生と世界243店の勢い",
-        "recommend": "日本発スペシャルティの躍進、OGも焙煎中"
+        "hook": "世界大会選手が湯温を92度から91度台に下げる新潮流",
+        "origin": "PDG最新記事とNCAデータで見えるフィルター回帰",
+        "recommend": "V60でいつもの95度を92度に下げて味の透明感を確認"
       }
     }
   ]
