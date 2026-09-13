@@ -1,39 +1,40 @@
 {
-  "date": "2026-09-13",
+  "date": "2026-09-14",
   "discovery": {
-    "method": "social-en",
-    "description": "World Brewers Cup 2026 選手コミュニティで議論される『V60 湯温を92-96度から91-94度へ下げる』新潮流を、Perfect Daily Grind 9月最新記事『How filter coffee became specialty's favourite drink』と NCA Spring 2026 データで裏付けて、日本の家淹れ層向けにすぐ試せる1度下げの実践TIPに翻訳",
+    "method": "news-en",
+    "description": "Perfect Daily Grind 9/11 週次リキャップと Food Business MEA / SoftPower Uganda / Uganda Broadcasting Corp の英語一次ソースで、9月7日にウガンダとGVCC(韓国釜山)が締結した年3,500トンの独占供給契約を確認。釜山を加工ハブに日本・東南アジアへ再配送する構想が明記されており、日本の焙煎所視点で「新しいアジア域内ルート」として翻訳",
     "sources": [
-      "https://perfectdailygrind.com/2026/09/how-filter-coffee-became-specialty-favourite/",
-      "https://perfectdailygrind.com/2026/09/curate-exceptional-home-coffee-setup/",
-      "https://www.ovalware.com/blogs/oval-blog/what-the-2026-world-brewers-cup-teaches-us-about-better-pour-over-at-home",
-      "https://wcc.coffee/world-barista-championship"
+      "https://perfectdailygrind.com/2026/09/coffee-news-recap-11-september-2026/",
+      "https://www.foodbusinessmea.com/uganda-targets-3500-tonnes-of-annual-coffee-exports-to-south-korea/",
+      "https://softpower.ug/uganda-signs-coffee-export-deal-with-south-korean-firm/",
+      "https://ubc.go.ug/2026/09/08/uganda-signs-coffee-export-deal-with-south-korean-firm",
+      "https://www.ugbulletin.co.ug/uganda-secures-south-korea-coffee-deal-as-first-consignment-heads-to-busan/"
     ],
-    "query": "world brewers cup 2026 pour over temperature 91 94 clarity filter coffee comeback specialty",
-    "freshness_hours": 96
+    "query": "Uganda South Korea coffee deal Besmark GVCC 3500 tonnes Busan hub Japan redistribution",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "世界大会選手が湯温を92度から91度台に下げる新潮流・PDG9月記事とNCA最新データでフィルターコーヒー回帰が加速",
-      "description": "海外の大会選手コミュニティで湯温を1度下げて味の輪郭を立てる潮流、Perfect Daily Grindの9月最新記事も裏付け",
-      "detail": "World Brewers Cup 2026 出場者のコミュニティ発信で、これまで92-96度が主流だったV60等の湯温を91-94度に下げる動きが加速中。香りは少し弱まるが味の輪郭とバランスが立つのが理由。Perfect Daily Grind 9月最新記事『How filter coffee became specialty's favourite drink』もフィルター回帰を報じ、NCA Spring 2026データでは週次スペシャルティ消費が58%まで拡大",
-      "narration": "知ってました?世界大会の選手が湯温を92度から91度台に下げる新潮流。海外の家淹れ界隈でフィルターコーヒー回帰が加速中です",
-      "tags": ["家淹れTIP", "V60", "湯温"],
+      "title": "ウガンダ豆が韓国釜山ハブ経由で日本へ・9月7日GVCC社と年3,500トンの独占供給契約、アフリカ最大の輸出国が新アジアルート始動",
+      "description": "9月7日、ウガンダの Besmark 社と韓国 GVCC 社が独占供給契約を締結。釜山を加工ハブに日本と東南アジアへ再配送する新ルートが動き出しました",
+      "detail": "9月7日、ウガンダの Besmark Coffee Company と韓国 GVCC Co.(釜山)が MoU を締結。Besmark が独占供給、GVCC が韓国市場の独占流通を担う契約で、GVCC CEO の Soo-jung Lim 氏は1日20トンコンテナを輸入して年間3,500トン規模を目指すと表明。釜山を加工ハブとして日本と東南アジアへ再配送する構想で、初回2コンテナは既に出荷中。ウガンダは2025年にエチオピアを抜きアフリカ最大の輸出国に成長しており、アフリカ-アジア間の貿易ルート再編を示唆する動き",
+      "narration": "今日のコーヒーニュース。9月7日、ウガンダのコーヒー豆が韓国釜山を経由して日本にも入る前例のない新ルートが動き出しました。",
+      "tags": ["コーヒーニュース", "ウガンダ", "業界動向"],
       "narration_sections": {
-        "hook": "知ってました?世界大会の選手が湯温を92度から91度台に下げる新潮流。海外の家淹れ界隈でフィルターコーヒー回帰が加速中です",
-        "origin": "Perfect Daily Grindの9月最新記事によると、大会選手が湯温を92-96度から91-94度に落とす動きが加速中。香りは少し弱まるが味の輪郭とバランスが立ち、米NCAデータでも週次スペシャルティ消費は58%へ拡大しています",
-        "recommend": "V60でいつも95度の方は、次の一杯だけ92度に下げて味の透明感を試してみてください。EC準備中、フォローでお待ちください"
+        "hook": "今日のコーヒーニュース。9月7日、ウガンダのコーヒー豆が韓国釜山を経由して日本にも入る前例のない新ルートが動き出しました。",
+        "origin": "9月7日にウガンダのベスマーク社と韓国GVCC社が締結、ベスマークが独占供給、GVCCが韓国市場の独占流通を担います。1日20トンコンテナ、年3,500トンが目標。釜山を加工ハブに日本と東南アジアへ再配送する構想で、既に初回2コンテナが出荷中です。",
+        "recommend": "ウガンダは2025年にエチオピアを抜きアフリカ最大の輸出国。今後アジア市場でアフリカ産スペシャルティの露出が増えそうです。"
       },
       "section_titles": {
-        "hook": "選手は91度台へ",
-        "origin": "PDG9月記事の裏付け",
-        "recommend": "次の一杯は92度で"
+        "hook": "韓国経由の新ルート",
+        "origin": "独占供給と流通の詳細",
+        "recommend": "アジア再配送の意味"
       },
       "section_descriptions": {
-        "hook": "世界大会選手が湯温を92度から91度台に下げる新潮流",
-        "origin": "PDG最新記事とNCAデータで見えるフィルター回帰",
-        "recommend": "V60でいつもの95度を92度に下げて味の透明感を確認"
+        "hook": "9月7日締結の新ルート、日本市場への道筋を紹介",
+        "origin": "年3,500トン目標と釜山ハブの構想を解説",
+        "recommend": "アジア域内でアフリカ豆の露出が変わる背景"
       }
     }
   ]
