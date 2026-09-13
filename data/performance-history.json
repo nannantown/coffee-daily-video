@@ -2,49 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "TMC5Et0uVt4",
-      "videoUrl": "https://youtube.com/shorts/TMC5Et0uVt4",
-      "date": "2026-06-14",
-      "title": "【コーヒー豆知識】海外で再ブーム『抽出チル』・最初40%を金属に落とすだけで香り40%増、最新研究で球は常温OK｜2026/06/14 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 48,
-      "discovery": {
-        "method": "social-en",
-        "description": "土曜=エバーグリーン日。14d Method 集計で social-en は avg 9.0/n=2 で TOP1 同率、最後使用は 6/10 で 4 日空き(連続違反なし)。直近2日が expert-blog (6/13) → official-src (6/12) で多様性的にも切替必須。Reddit/X 直接アクセス不可のため、海外コーヒー系メディアが報じた『コミュニティ駆動の再話題化』を二次ソースで拾う方針。Perfect Daily Grind が 2026-06-09 に公開した『First espresso, now filter coffee: Revisiting extract chilling』が完璧素材。Hugh Kelly(3 度 Australian Barista Champion、ONA Coffee)が 2021 WBC で世界デビューさせた『抽出チル(Extract Chilling)』が、Nucleus Coffee Tools の最新研究と Basic Barista の YouTube 解説を経て、いま filter コーヒー界隈で再ブーム化。技法は『espresso/filter の最初の 40% を冷えた金属球の上に落とす』だけで、揮発する香り成分を最大 40% 多く残せる。さらに直近の追試で『球を冷凍しなくても常温で同等の効果』と判明、家ブリュワーは特殊器具なしで再現可能に。柱は④焙煎士の一次情報系テクニック (Saturday evergreen)、Primary 層が今夜の一杯ですぐ試せる粒度。NG パターン回避: 雑学×、コーヒーあるある×、出典明示○ (PDG/Nucleus/Basic Barista)、freshness 120h○、産地タグ使い回し× (タグは抽出/技法/家淹れで動的)。前日(6/13)の青野式 V60 が『シンプルさで効かせる』日本焙煎士視点だったので、今日は『海外最新テクで遊ぶ』対比軸でセッションを構成。Explore サブ提案 `competition-circuit-buzz`: WBC/Brewers Cup 競技者発のテクが海外メディアで再評価される瞬間を拾うパターン、今回が初回実装。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/06/extract-chilling-filter-coffee-espresso/",
-          "https://nucleuscoffeetools.com/news/how-much-of-an-extraction-should-you-chill/",
-          "https://thebasicbarista.com/en-us/pages/extract-chilling-coffee",
-          "https://perfectdailygrind.com/2022/06/exploring-extract-chilling-in-coffee/"
-        ],
-        "query": "extract chilling filter coffee 2026 Hugh Kelly Nucleus 40% volatile aroma room temperature sphere",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 11,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-06-28T01:31:42.139Z"
-      }
-    },
-    {
       "videoId": "vnMIX4x-tOo",
       "videoUrl": "https://youtube.com/shorts/vnMIX4x-tOo",
       "date": "2026-06-15",
@@ -3004,7 +2961,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3049,7 +3006,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3091,7 +3048,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3135,7 +3092,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3181,7 +3138,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3223,7 +3180,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3264,7 +3221,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3311,7 +3268,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3357,7 +3314,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3400,7 +3357,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3443,7 +3400,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3486,7 +3443,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-12T01:18:57.064Z"
+        "updatedAt": "2026-09-13T01:15:19.786Z"
       }
     },
     {
@@ -3530,19 +3487,54 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
+        "updatedAt": "2026-09-13T01:15:19.786Z"
+      }
+    },
+    {
+      "videoId": "66ePWsqhFv4",
+      "videoUrl": "https://youtube.com/shorts/66ePWsqhFv4",
+      "date": "2026-09-13",
+      "title": "【コーヒー豆知識】世界大会選手が湯温を92度から91度台に下げる新潮流・PDG9月記事とNCA最新データでフィルターコーヒー回帰が加速｜2026/09/13 #Shorts",
+      "titleTemplate": "standard",
+      "hashtags": [
+        "コーヒー",
+        "Coffee",
+        "コーヒー豆知識",
+        "スペシャルティコーヒー",
+        "カフェ",
+        "珈琲",
+        "CoffeeLovers",
+        "コーヒー好き",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "産地",
+        "産地",
+        "産地"
+      ],
+      "durationSeconds": 53,
+      "discovery": {
+        "method": "social-en",
+        "description": "World Brewers Cup 2026 選手コミュニティで議論される『V60 湯温を92-96度から91-94度へ下げる』新潮流を、Perfect Daily Grind 9月最新記事『How filter coffee became specialty's favourite drink』と NCA Spring 2026 データで裏付けて、日本の家淹れ層向けにすぐ試せる1度下げの実践TIPに翻訳",
+        "sources": [
+          "https://perfectdailygrind.com/2026/09/how-filter-coffee-became-specialty-favourite/",
+          "https://perfectdailygrind.com/2026/09/curate-exceptional-home-coffee-setup/",
+          "https://www.ovalware.com/blogs/oval-blog/what-the-2026-world-brewers-cup-teaches-us-about-better-pour-over-at-home",
+          "https://wcc.coffee/world-barista-championship"
+        ],
+        "query": "world brewers cup 2026 pour over temperature 91 94 clarity filter coffee comeback specialty",
+        "freshness_hours": 96
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
         "updatedAt": null
       }
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-12",
-      "changes": [
-        "standard: 10 avg views (78 videos)",
-        "Day performance: Sat=30, Sun=16, Fri=13, Wed=6, Thu=4, Mon=3, Tue=3"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-13",
       "changes": [
@@ -3772,6 +3764,14 @@
       "changes": [
         "standard: 3 avg views (80 videos)",
         "Day performance: Sat=11, Sun=4, Mon=2, Fri=2, Wed=1, Thu=1, Tue=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-13",
+      "changes": [
+        "standard: 3 avg views (80 videos)",
+        "Day performance: Sat=10, Sun=4, Mon=2, Fri=2, Wed=1, Thu=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
