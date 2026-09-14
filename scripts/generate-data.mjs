@@ -173,7 +173,7 @@ async function main() {
   const file = readJSON(contentPath);
   const outputPath = join(outputDir, "trending-data.json");
 
-  if (!contentArg && file && !file.format && file.date === today) {
+  if (!contentArg && !forceFallback && file && !file.format && file.date === today) {
     console.log("Legacy news content for today (no `format`) → news explainer\n");
     const data = buildLegacyNewsData(file, today);
     writeFileSync(outputPath, JSON.stringify(data, null, 2));

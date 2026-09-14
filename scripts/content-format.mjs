@@ -391,7 +391,8 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
 
   // Card 1 = hook + bean + all key numbers, so the first frame is already
   // the "save this" recipe (numbers first, like AI Trend Daily's TOP5).
-  const titleNarration = pick(nar.title, `${r.hook}。今日の一杯は、${spokenBean}を${method.label}で。`);
+  const withMethod = r.hook.includes(method.label) ? "" : `を${method.label}で`;
+  const titleNarration = pick(nar.title, `${r.hook}。今日の一杯は、${spokenBean}${withMethod}。`);
   const numbersNarration = pick(
     nar.numbers,
     `豆${n.dose_g}グラムに、${r.method === "cold-brew" ? "水" : "お湯"}${n.water_g}グラム` +
