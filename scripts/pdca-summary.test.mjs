@@ -5,12 +5,18 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   addDays,
+  cycle,
+  decideMode,
   groupBySaved,
+  hasJudgementOnOrAfter,
   igMetrics,
   median,
+  parseStatusModes,
+  previousModes,
   rankBySaved,
   recentRows,
   renderMarkdown,
+  rotation,
   summarize,
   trialStatus,
   verdict,
@@ -19,6 +25,7 @@ import {
 } from "./pdca-summary.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
+const lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
 
 function video(date, { yt = 0, ig = { views: 10, reach: 8, saved: 0, shares: 0 }, content = null } = {}) {
   return {
@@ -30,16 +37,32 @@ function video(date, { yt = 0, ig = { views: 10, reach: 8, saved: 0, shares: 0 }
   };
 }
 
-const recipe = (beanId, method, angle = "trouble") => ({
+const recipe = (beanName, method, angle = "trouble") => ({
   format: "recipe",
   trial: "coffee-trial-1-recipe-card",
   fallback: false,
-  beanId,
-  beanName: beanId,
+  beanId: beanName,
+  beanName,
   method,
   scene: "hot",
   angle,
   tipProblems: [],
+});
+
+const report = (date, igMode, ytMode, extra = "") => ({
+  date,
+  text: [
+    `# PDCA レポート — ${date}`,
+    "",
+    "## ジャンル試行の状態",
+    "",
+    "| アカウント | 試行 # | 開始日 | 経過日 | 判定窓 (n) | 判定指標の現在値 | モード | 次の判定日 |",
+    "|---|---|---|---|---|---|---|---|",
+    `| IG @open_ground_coffee_roasters | #1 | 2026-09-15 | Day 2 / 14 | 09-15..09-16 (n=1) | views 中央値 3 / 保存合計 0 | ${igMode} | 2026-09-29 |`,
+    `| YT OPEN GROUND coffee roasters | #1 | 2026-09-15 | Day 2 / 14 | 09-15..09-16 (n=1) | views 中央値 0 | ${ytMode} | 2026-09-29 |`,
+    "",
+    extra,
+  ].join("\n"),
 });
 
 test("median and date helpers", () => {
@@ -74,7 +97,7 @@ test("verdict thresholds are applied top to bottom and need n ≥ 7", () => {
     ig: { n, viewsMedian: igMedian, savedSum: saved },
     yt: { n, viewsMedian: ytMedian },
   });
-  assert.equal(verdict("ig", stats(5, 0, 0, 6)), "判定保留（データ不足）");
+  assert.equal(verdict("ig", stats(5, 0, 0, 6)), "判定保留");
   assert.equal(verdict("ig", stats(9, 4, 0)), "配信死亡");
   assert.equal(verdict("ig", stats(9, 5, 0)), "続行");
   assert.equal(verdict("ig", stats(49, 0, 0)), "切替候補");
@@ -84,77 +107,143 @@ test("verdict thresholds are applied top to bottom and need n ≥ 7", () => {
   assert.equal(verdict("yt", stats(0, 0, 20)), "続行");
 });
 
-test("before the first recipe post the report shows trial #0 on its 14-day cycle", () => {
-  const history = { videos: [video("2026-09-10"), video("2026-09-11")] };
-  const s = trialStatus(history, "2026-09-20");
-  assert.equal(s.trial, 0);
-  assert.equal(s.judgeDate, "2026-09-28");
-  assert.equal(s.day, 6);
-  assert.equal(s.stats.from, "2026-09-07");
-  assert.equal(trialStatus(history, "2026-09-14").isJudgeDay, true);
+test("cycle matches the genre-experiment worked example (S = 2026-09-14)", () => {
+  const S = "2026-09-14";
+  const F = "2026-04-20";
+  assert.equal(cycle({ S, F, today: "2026-09-13" }).status, "未開始");
+  const d0 = cycle({ S, F, today: "2026-09-14" });
+  assert.deepEqual([d0.status, d0.from, d0.to, d0.next], ["Day 1 / 14", "2026-09-01", "2026-09-14", "2026-09-28"]);
+  const d1 = cycle({ S, F, today: "2026-09-15" });
+  assert.deepEqual([d1.status, d1.from, d1.to, d1.next], ["Day 2 / 14", "2026-09-02", "2026-09-15", "2026-09-28"]);
+  const j = cycle({ S, F, today: "2026-09-28" });
+  assert.deepEqual([j.status, j.isJudgeDay, j.from, j.to, j.next], ["判定日", true, "2026-09-14", "2026-09-27", "2026-10-12"]);
+  const after = cycle({ S, F, today: "2026-09-29" });
+  assert.deepEqual([after.status, after.next, after.lastJudge], ["Day 2 / 14", "2026-10-12", "2026-09-28"]);
+  // a new type: F = S caps the window at the first post
+  const t1 = cycle({ S: "2026-09-15", F: "2026-09-15", today: "2026-09-17" });
+  assert.deepEqual([t1.status, t1.from, t1.to, t1.next], ["Day 3 / 14", "2026-09-15", "2026-09-17", "2026-09-29"]);
 });
 
-test("trial #1 starts at the first recipe-card post: window start..start+13, judged on start+14", () => {
+test("mode: parsed from the previous report, carried over, changed only on judgement days", () => {
+  const md = report("2026-09-16", "**配信死亡モード**（2026-09-14〜）", "通常").text;
+  assert.deepEqual(parseStatusModes(md), { ig: "配信死亡モード（2026-09-14〜）", yt: "通常" });
+  assert.equal(parseStatusModes("# old report without the section"), null);
+
+  const prev = previousModes([report("2026-09-10", "通常", "通常"), report("2026-09-16", "切替候補", "通常")], "2026-09-17");
+  assert.deepEqual([prev.source, prev.ig, prev.yt], ["docs/pdca/2026-09-16.md", "切替候補", "通常"]);
+  const intro = previousModes([{ date: "2026-09-14", text: "# no table" }], "2026-09-15");
+  assert.deepEqual([intro.ig, intro.yt], ["配信死亡モード（2026-09-14〜）", "配信死亡モード（2026-09-14〜）"]);
+
+  assert.equal(decideMode("配信死亡", "配信死亡モード（2026-09-14〜）", "2026-09-29"), "配信死亡モード（2026-09-14〜）");
+  assert.equal(decideMode("配信死亡", "通常", "2026-09-29"), "配信死亡モード（2026-09-29〜）");
+  assert.equal(decideMode("切替候補", "通常", "2026-09-29"), "切替候補");
+  assert.equal(decideMode("続行", "配信死亡モード（2026-09-14〜）", "2026-09-29"), "通常");
+  assert.equal(decideMode("判定保留", "切替候補", "2026-09-29"), "切替候補");
+});
+
+test("trial #1 starts at the first recipe-card post and is judged on S + 14 with the carried-over mode", () => {
   const videos = [video("2026-09-14")];
   for (let i = 0; i < 16; i++) {
-    videos.push(video(addDays("2026-09-15", i), { ig: { views: 20, reach: 10, saved: 1 }, content: recipe("b", "v60") }));
+    videos.push(video(addDays("2026-09-15", i), { ig: { views: 60, reach: 40, saved: 1 }, yt: 3, content: recipe("b", "v60") }));
   }
   const history = { videos };
-  const mid = trialStatus(history, "2026-09-21");
-  assert.equal(mid.trial, 1);
-  assert.equal(mid.start, "2026-09-15");
-  assert.equal(mid.day, 7);
-  assert.equal(mid.judgeDate, "2026-09-29");
-  assert.equal(mid.isJudgeDay, false);
-  assert.equal(mid.stats.to, "2026-09-21");
+
+  const before = trialStatus(history, "2026-09-14", { reports: [] });
+  assert.equal(before.trial, 0);
+
+  const mid = trialStatus(history, "2026-09-21", { reports: [] });
+  assert.deepEqual([mid.trial, mid.S, mid.F, mid.cycle.status, mid.cycle.next], [1, "2026-09-15", "2026-09-15", "Day 7 / 14", "2026-09-29"]);
+  assert.equal(mid.accounts.ig.mode, "配信死亡モード（2026-09-14〜）", "a new trial inherits the previous mode");
+  assert.equal(mid.judge, null);
   assert.equal(mid.baseline.to, "2026-09-14");
 
-  const judge = trialStatus(history, "2026-09-29");
-  assert.equal(judge.isJudgeDay, true);
-  assert.equal(judge.stats.to, "2026-09-28");
-  assert.equal(judge.stats.ig.n, 14);
-  assert.equal(judge.stats.ig.savedSum, 14);
-  assert.equal(verdict("ig", judge.stats), "続行");
+  const judge = trialStatus(history, "2026-09-29", { reports: [] });
+  assert.equal(judge.cycle.isJudgeDay, true);
+  assert.deepEqual([judge.stats.from, judge.stats.to, judge.stats.ig.n, judge.stats.ig.savedSum], ["2026-09-15", "2026-09-28", 14, 14]);
+  assert.equal(judge.accounts.ig.judgeVerdict, "続行");
+  assert.equal(judge.accounts.ig.mode, "通常");
+  assert.equal(judge.accounts.yt.judgeVerdict, "配信死亡");
+  assert.equal(judge.accounts.yt.mode, "配信死亡モード（2026-09-14〜）");
+
+  // the day after: no judgement recorded in reports → delayed judgement for 09-29
+  const late = trialStatus(history, "2026-09-30", { reports: [report("2026-09-29", "通常", "通常")] });
+  assert.equal(late.judge.delayed, true);
+  assert.equal(late.judge.date, "2026-09-29");
+  const recorded = trialStatus(history, "2026-09-30", {
+    reports: [report("2026-09-29", "通常", "配信死亡モード（2026-09-14〜）", "## ジャンル判定\n- IG: 続行")],
+  });
+  assert.equal(recorded.judge, null);
+  assert.equal(recorded.accounts.ig.mode, "通常");
+  assert.equal(hasJudgementOnOrAfter([report("2026-09-29", "通常", "通常", "## ジャンル判定")], "2026-09-29"), true);
 });
 
-test("rankings use IG saves, skip provisional days and videos without IG values", () => {
+test("caution when today's numbers are in the dead zone but the mode is not", () => {
+  const videos = [];
+  for (let i = 0; i < 10; i++) {
+    videos.push(video(addDays("2026-09-15", i), { ig: { views: 1, reach: 1, saved: 0 }, yt: 0, content: recipe("b", "v60") }));
+  }
+  const s = trialStatus({ videos }, "2026-09-26", { reports: [report("2026-09-25", "通常", "通常")] });
+  assert.equal(s.accounts.ig.mode, "通常");
+  assert.equal(s.accounts.ig.caution, true);
+  assert.match(renderMarkdown(summarize({ videos }, { today: "2026-09-26", reports: [report("2026-09-25", "通常", "通常")], lineup })), /注意: IG @open_ground_coffee_roasters は判定窓で配信死亡の域/);
+});
+
+test("rankings use IG saves from the type's first post on, skip provisional days and missing IG values", () => {
   const history = {
     videos: [
-      video("2026-09-10", { ig: { views: 50, reach: 40, saved: 1 }, content: recipe("a", "v60") }),
-      video("2026-09-11", { ig: { views: 5, reach: 5, saved: 3 }, content: recipe("b", "aeropress") }),
-      video("2026-09-12", { ig: { views: 90, reach: 80, saved: 0 }, content: recipe("a", "v60") }),
-      video("2026-09-13", { ig: null, content: recipe("c", "v60") }),
-      video("2026-09-14", { ig: { views: 99, reach: 90, saved: 9 }, content: recipe("c", "v60") }), // provisional
+      video("2026-09-14", { ig: { views: 500, reach: 400, saved: 50 } }), // legacy news, before F
+      video("2026-09-15", { ig: { views: 50, reach: 40, saved: 1 }, content: recipe("a", "v60") }),
+      video("2026-09-16", { ig: { views: 5, reach: 5, saved: 3 }, content: recipe("b", "aeropress") }),
+      video("2026-09-17", { ig: { views: 90, reach: 80, saved: 0 }, content: recipe("a", "v60") }),
+      video("2026-09-18", { ig: null, content: recipe("c", "v60") }),
+      video("2026-09-19", { ig: { views: 99, reach: 90, saved: 9 }, content: recipe("c", "v60") }), // provisional
     ],
   };
-  const rows = recentRows(history, "2026-09-15", 14, 2);
-  assert.equal(rows[0].date, "2026-09-14");
+  const rows = recentRows(history, "2026-09-20", 14, 2);
+  assert.equal(rows[0].date, "2026-09-19");
   assert.equal(rows[0].provisional, true);
-  assert.equal(rows.find((r) => r.date === "2026-09-12").provisional, false);
-  const { top, worst, n } = rankBySaved(rows);
-  assert.equal(n, 3);
-  assert.deepEqual(top.map((r) => r.date), ["2026-09-11", "2026-09-10", "2026-09-12"]);
-  assert.equal(worst[0].date, "2026-09-12");
+  assert.equal(rows.find((r) => r.date === "2026-09-17").provisional, false);
 
-  const byMethod = groupBySaved(rows, (r) => r.method);
-  assert.deepEqual(byMethod.map((g) => [g.key, g.n, g.savedSum]), [
+  const s = summarize(history, { today: "2026-09-20", lineup });
+  assert.equal(s.status.F, "2026-09-15");
+  assert.deepEqual(s.ranking.top.map((r) => r.date), ["2026-09-16", "2026-09-15", "2026-09-17"]);
+  assert.equal(s.ranking.worst[0].date, "2026-09-17");
+  assert.deepEqual(s.byMethod.map((g) => [g.key, g.n, g.savedSum]), [
     ["エアロプレス", 1, 3],
     ["V60", 2, 1],
   ]);
+  assert.equal(rankBySaved(rows).n, 4, "without the F filter the legacy post would be compared too");
+  assert.equal(groupBySaved(rows, (r) => r.format).length, 2);
 });
 
-test("markdown: status section first, IG saves as the primary column", () => {
-  const history = { videos: [video("2026-09-10", { ig: { views: 7, reach: 6, saved: 2 }, content: recipe("a", "v60") })] };
-  const md = renderMarkdown(summarize(history, { today: "2026-09-15" }));
-  assert.ok(md.startsWith("## ジャンル試行の状態"));
-  assert.match(md, /\| \*\*IG 保存\*\* \|/);
-  assert.match(md, /TOP 3 \/ WORST 3（IG 保存数/);
-  assert.match(md, /### 抽出法/);
+test("rotation lists unused beans, methods and angles first", () => {
+  const rows = [
+    { bean: "ブルンジ マバンザ", method: "V60", angle: "悩み起点" },
+    { bean: "ブルンジ マバンザ", method: "V60", angle: "季節" },
+  ];
+  const r = rotation(rows, lineup);
+  assert.equal(r.bean.at(-1).key, "ブルンジ マバンザ");
+  assert.equal(r.bean.at(-1).n, 2);
+  assert.equal(r.bean[0].n, 0);
+  assert.equal(r.method.at(-1).key, "V60");
+  assert.equal(r.bean.length, lineup.beans.filter((b) => b.status !== "retired").length);
+});
+
+test("markdown: status section first in the shared format, dead-mode policy, IG saves primary", () => {
+  const history = { videos: [video("2026-09-15", { ig: { views: 7, reach: 6, saved: 2 }, content: recipe("a", "v60") })] };
+  const out = renderMarkdown(summarize(history, { today: "2026-09-17", reports: [], lineup }));
+  assert.ok(out.startsWith("## ジャンル試行の状態"));
+  assert.match(out, /\| アカウント \| 試行 # \| 開始日 \| 経過日 \| 判定窓 \(n\) \| 判定指標の現在値 \| モード \| 次の判定日 \|/);
+  assert.match(out, /\| IG @open_ground_coffee_roasters \| #1 \| 2026-09-15 \| Day 3 \/ 14 \| 09-15\.\.09-17 \(n=1\) \| views 中央値 7 \/ 保存合計 2 \| 配信死亡モード（2026-09-14〜） \| 2026-09-29 \|/);
+  assert.match(out, /性能データで選ばない（2 アカウントとも配信死亡モード）/);
+  assert.match(out, /実行中: 試行 #1/);
+  assert.match(out, /\| \*\*IG 保存\*\* \|/);
+  assert.match(out, /## ローテーション/);
 });
 
 test("real history file: summary renders without throwing (values change daily, so nothing is pinned)", () => {
   const history = JSON.parse(readFileSync(join(rootDir, "data", "performance-history.json"), "utf-8"));
-  const md = renderMarkdown(summarize(history, { today: "2026-09-14" }));
-  assert.match(md, /\| IG @open_ground_coffee_roasters \|/);
-  assert.match(md, /\| YT @MindBrewLab \|/);
+  const out = renderMarkdown(summarize(history, { today: "2026-09-14", reports: [], lineup }));
+  assert.match(out, /\| IG @open_ground_coffee_roasters \| #0 \| 2026-09-14 \| Day 1 \/ 14 \| 09-01\.\.09-14/);
+  assert.match(out, /\| YT OPEN GROUND coffee roasters \|/);
 });
