@@ -1,16 +1,36 @@
 /**
- * Full pipeline: scrape → generate data → generate audio → render video
- * Usage: node scripts/pipeline.mjs
+ * Full pipeline: stats → content → audio → render → post → record
+ *
+ * Usage:
+ *   node scripts/pipeline.mjs                                   # production (daily-video.yml)
+ *   DRY_RUN=true node scripts/pipeline.mjs                      # verification: no stats fetch, no posting, no history write
+ *   DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/recipe.sample.json
+ *   DRY_RUN=true node scripts/pipeline.mjs --fallback           # render the house-recipe fallback
+ *
+ * Content formats (see scripts/content-format.mjs): 「今日の一杯」recipe cards
+ * and the Sunday news TOP5 render with the CoffeeCardsVideo composition; a
+ * legacy content JSON without `format` still renders the CoffeeVideo news
+ * explainer.
  */
 
 import { execSync } from "child_process";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { computeCardTimeline, jstDateParts, TIMELINE } from "./content-format.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
+
+const dryRun = process.env.DRY_RUN === "true" || process.argv.includes("--dry-run");
+const contentArg = process.argv.find((a) => a.startsWith("--content="));
+const fallbackArg = process.argv.includes("--fallback") ? "--fallback" : "";
+const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg].filter(Boolean).join(" ");
+
+// Instagram rejects Reels over 60s; re-synthesize faster before giving up.
+const FASTER_RATES = ["+25%", "+35%"];
+const HARD_LIMIT_SECONDS = 59.5;
 
 function run(cmd) {
   console.log(`\n>>> ${cmd}\n`);
@@ -25,23 +45,55 @@ function runSafe(cmd, label) {
   }
 }
 
+function readOutput(name) {
+  return JSON.parse(readFileSync(join(outputDir, name), "utf-8"));
+}
+
+function cardTimeline(data) {
+  return computeCardTimeline(readOutput("audio-durations.json"), data.slides.length);
+}
+
+/** Keep the card video under Instagram's 60-second limit. Returns the final data + timeline. */
+function enforceDurationLimit(data) {
+  let timeline = cardTimeline(data);
+  for (const rate of FASTER_RATES) {
+    if (timeline.seconds <= TIMELINE.maxSeconds) return { data, timeline };
+    console.log(`\n  ${timeline.seconds.toFixed(1)}s > ${TIMELINE.maxSeconds}s → re-synthesize narration at ${rate}`);
+    run(`node scripts/generate-audio.mjs --data=output/trending-data.json --rate=${rate}`);
+    timeline = cardTimeline(data);
+  }
+  if (timeline.seconds > TIMELINE.maxSeconds) {
+    console.log(`\n  still ${timeline.seconds.toFixed(1)}s → short template narration`);
+    run(`node scripts/generate-data.mjs ${generateDataArgs} --template-narration`);
+    data = readOutput("trending-data.json");
+    run(`node scripts/generate-audio.mjs --data=output/trending-data.json --rate=${FASTER_RATES[0]}`);
+    timeline = cardTimeline(data);
+  }
+  if (timeline.seconds > HARD_LIMIT_SECONDS) {
+    throw new Error(`Card video is ${timeline.seconds.toFixed(1)}s (> ${HARD_LIMIT_SECONDS}s) even with template narration`);
+  }
+  return { data, timeline };
+}
+
 function main() {
   mkdirSync(outputDir, { recursive: true });
+  const dateStr = jstDateParts().compact;
 
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
+  if (dryRun) {
+    console.log("=== DRY RUN: no stats fetch, no SNS posting, no performance-history write ===");
+  } else {
+    // Step 0: Fetch past video stats & generate optimization hints
+    console.log("=== Step 0: Fetch Stats & Optimize ===");
+    runSafe("node scripts/fetch-stats.mjs", "fetch-stats");
+  }
 
-  // Step 0: Fetch past video stats & generate optimization hints
-  console.log("=== Step 0: Fetch Stats & Optimize ===");
-  runSafe("node scripts/fetch-stats.mjs", "fetch-stats");
-
-  // Step 1: Scrape Coffee News
-  console.log("=== Step 1: Scrape Coffee News ===");
+  // Step 1: Evergreen knowledge topic (only used by the legacy news explainer)
+  console.log("=== Step 1: Legacy Knowledge Topic ===");
   run("node scripts/scrape-coffee-news.mjs");
 
-  // Step 2: Generate Japanese data
+  // Step 2: Content → narration + slides
   console.log("\n=== Step 2: Generate Data ===");
-  run("node scripts/generate-data.mjs");
+  run(`node scripts/generate-data.mjs ${generateDataArgs}`);
 
   // Step 3: Generate TTS audio + BGM
   console.log("\n=== Step 3: Generate Audio ===");
@@ -50,25 +102,35 @@ function main() {
 
   // Step 4: Build input props for Remotion
   console.log("\n=== Step 4: Build Input Props ===");
-  const trendingData = JSON.parse(
-    readFileSync(join(outputDir, "trending-data.json"), "utf-8")
-  );
-  const audioDurations = JSON.parse(
-    readFileSync(join(outputDir, "audio-durations.json"), "utf-8")
-  );
-  const subtitles = JSON.parse(
-    readFileSync(join(outputDir, "subtitles.json"), "utf-8")
-  );
-
-  const inputProps = {
-    projects: trendingData.projects,
-    audioDurations,
-    subtitles,
-  };
+  let data = readOutput("trending-data.json");
+  const isCards = Boolean(data.format);
+  let inputProps;
+  if (isCards) {
+    const limited = enforceDurationLimit(data);
+    data = limited.data;
+    inputProps = {
+      format: data.format,
+      slides: data.slides,
+      ending: data.ending,
+      timeline: {
+        slides: limited.timeline.slides,
+        ending: limited.timeline.ending,
+        total: limited.timeline.total,
+      },
+    };
+    console.log(`  ${data.format}: ${data.slides.length} slides + ending, ${limited.timeline.seconds.toFixed(1)}s`);
+  } else {
+    inputProps = {
+      projects: data.projects,
+      audioDurations: readOutput("audio-durations.json"),
+      subtitles: readOutput("subtitles.json"),
+    };
+  }
+  const compositionId = isCards ? "CoffeeCardsVideo" : "CoffeeVideo";
 
   const propsPath = join(outputDir, "input-props.json");
   writeFileSync(propsPath, JSON.stringify(inputProps));
-  console.log(`Input props → ${propsPath}`);
+  console.log(`Input props → ${propsPath} (${compositionId})`);
 
   // Step 5: Render video (to intermediate file — Remotion emits yuvj420p
   //         despite Config.setPixelFormat("yuv420p"); Instagram Reels rejects
@@ -77,7 +139,7 @@ function main() {
   const rawFile = `output/coffee-${dateStr}.raw.mp4`;
   const outputFile = `output/coffee-${dateStr}.mp4`;
   console.log(`\n=== Step 5: Render Video → ${rawFile} ===`);
-  run(`npx remotion render CoffeeVideo "${rawFile}" --props="${propsPath}"`);
+  run(`npx remotion render ${compositionId} "${rawFile}" --props="${propsPath}"`);
 
   console.log(`\n=== Step 5b: Normalize to yuv420p → ${outputFile} ===`);
   run(
@@ -85,18 +147,28 @@ function main() {
   );
   run(`rm -f "${rawFile}"`);
 
-  // Step 5c: Render cover image (frame 60 = ~2s into opening, all fade-ins
-  //          complete: date + brand title + divider + subtitle all visible).
-  //          Uploaded to GitHub Release and passed as cover_url to IG so the
-  //          profile-grid thumbnail shows branded content, not a black frame.
-  //          Non-blocking: if still render fails, pipeline continues and IG
+  // Step 5c: Render cover image. Cards: frame 45 = first card with hook,
+  //          bean and all numbers faded in. Legacy: frame 60 (~2s into the
+  //          hook). Uploaded to the GitHub Release and passed as cover_url to
+  //          IG so the grid thumbnail is not a black frame. Non-blocking: IG
   //          falls back to thumb_offset=7000ms.
   const coverFile = `output/coffee-${dateStr}-cover.jpg`;
+  const coverFrame = isCards ? 45 : 60;
   console.log(`\n=== Step 5c: Render Cover Image → ${coverFile} ===`);
   runSafe(
-    `npx remotion still CoffeeVideo "${coverFile}" --frame=60 --props="${propsPath}"`,
+    `npx remotion still ${compositionId} "${coverFile}" --frame=${coverFrame} --props="${propsPath}"`,
     "render-cover"
   );
+
+  if (dryRun) {
+    console.log(`\n=== Dry run: captions + slide previews (nothing is posted) ===`);
+    run("node scripts/generate-caption.mjs");
+    if (isCards) {
+      runSafe(`node scripts/render-previews.mjs --props="${propsPath}" --out=output/previews`, "render-previews");
+    }
+    console.log(`\n=== Done (dry run)! ${outputFile} ===`);
+    return;
+  }
 
   // Step 6: Post to SNS (optional - skips if credentials not configured)
   const snsEnabled = process.env.SNS_POST_ENABLED === "true";

@@ -1,34 +1,61 @@
 /**
- * Transform coffee news into narration-ready data.
- * Input:  output/raw-coffee-news.json
- * Output: output/trending-data.json
+ * Build output/trending-data.json (narration + slide data) for today's video.
+ *
+ * data/enriched-coffee-news.json is written by the morning routine:
+ *   - `format: "recipe" | "news-top5"` → 「今日の一杯」recipe cards / Sunday news TOP5
+ *   - no `format`, dated today          → legacy news explainer (3 sections)
+ *   - missing / stale / invalid         → bean-of-the-day house recipe from data/coffee-lineup.json
+ *
+ * Options:
+ *   --content=<path>       render another content file, date check skipped (dry runs / samples)
+ *   --template-narration   drop the routine's narration and use the short templates
+ *                          (the pipeline's 60-second guard uses this as a last resort)
  */
 
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
+import {
+  buildCardsData,
+  fallbackRecipeContent,
+  jstDateParts,
+  narrationLength,
+  validateDailyContent,
+  withTemplateNarration,
+} from "./content-format.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const enrichedPath = join(rootDir, "data", "enriched-coffee-news.json");
+const lineupPath = join(rootDir, "data", "coffee-lineup.json");
 
-function loadEnrichedData() {
-  if (!existsSync(enrichedPath)) return null;
+const contentArg = process.argv.find((a) => a.startsWith("--content="))?.slice("--content=".length);
+const templateNarration = process.argv.includes("--template-narration");
+const forceFallback = process.argv.includes("--fallback");
+
+function readJSON(path) {
+  if (!existsSync(path)) return null;
   try {
-    const enriched = JSON.parse(readFileSync(enrichedPath, "utf-8"));
-    const today = new Date();
-    const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-    if (enriched.date !== todayStr) return null;
-    const map = {};
-    for (const a of enriched.articles || []) {
-      map[a.rank] = a;
-    }
-    console.log(`  Loaded enriched data for ${Object.keys(map).length} articles`);
-    return map;
-  } catch {
+    return JSON.parse(readFileSync(path, "utf-8"));
+  } catch (err) {
+    console.error(`  Unreadable ${path}: ${err.message}`);
     return null;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Legacy news explainer (content JSON without `format`)
+// ---------------------------------------------------------------------------
+
+function loadEnrichedData(enriched, todayStr) {
+  if (!enriched || enriched.date !== todayStr) return null;
+  const map = {};
+  for (const a of enriched.articles || []) {
+    map[a.rank] = a;
+  }
+  console.log(`  Loaded enriched data for ${Object.keys(map).length} articles`);
+  return map;
 }
 
 function generateSections(article, enriched, dateJpSpoken) {
@@ -45,7 +72,7 @@ function generateSections(article, enriched, dateJpSpoken) {
   const hookBase = ns?.hook
     || `今日のコーヒー豆知識。${article.title}。${article.description}`;
 
-  const sections = [
+  return [
     {
       key: "hook",
       name: st.hook || `${article.title}`,
@@ -72,20 +99,11 @@ function generateSections(article, enriched, dateJpSpoken) {
           : `ぜひ一度試してみてください。`),
     },
   ];
-  return sections;
 }
 
-async function main() {
-  const rawPath = join(outputDir, "raw-coffee-news.json");
-  const raw = JSON.parse(readFileSync(rawPath, "utf-8"));
-
-  const enrichedMap = loadEnrichedData();
-  if (enrichedMap) {
-    console.log("Using Claude-enriched descriptions!\n");
-  } else {
-    console.log("Using raw article data.\n");
-  }
-
+function buildLegacyNewsData(enrichedFile, todayStr) {
+  const raw = JSON.parse(readFileSync(join(outputDir, "raw-coffee-news.json"), "utf-8"));
+  const enrichedMap = loadEnrichedData(enrichedFile, todayStr);
   const article = raw[0]; // Single topic per day
   const enriched = enrichedMap?.[article.rank];
 
@@ -115,7 +133,7 @@ async function main() {
     ...(i === 0 ? { date: dateDisplay } : {}),
   }));
 
-  const data = {
+  return {
     // Intentionally no openingNarration: the brand-intro title call was
     // hurting IG Reels / YT Shorts retention. Viewers bounce during the
     // "OPEN GROUND Coffee" sting, so the video now opens straight into
@@ -124,11 +142,60 @@ async function main() {
     endingNarration: "以上、今日のコーヒー豆知識でした。フォローといいねで、毎日のコーヒー情報をチェックしましょう。",
     projects,
     topicTitle: source.title,
+    discovery: enrichedFile?.discovery || null,
   };
+}
 
+// ---------------------------------------------------------------------------
+// Card formats
+// ---------------------------------------------------------------------------
+
+function chooseCardContent(file, lineup, today) {
+  if (!file) {
+    console.log(`  No content file → house recipe fallback`);
+    return fallbackRecipeContent(lineup, today);
+  }
+  const { errors, warnings } = validateDailyContent(file, lineup, contentArg ? {} : { today });
+  for (const w of warnings) console.log(`  warning: ${w}`);
+  if (errors.length === 0) return file;
+  console.error(`  Content rejected (${errors.length} error(s)) → house recipe fallback`);
+  for (const e of errors) console.error(`    - ${e}`);
+  return fallbackRecipeContent(lineup, today);
+}
+
+function displayDate(iso) {
+  return iso.replace(/-/g, ".");
+}
+
+async function main() {
+  const today = jstDateParts().iso;
+  const contentPath = contentArg ? resolve(contentArg) : enrichedPath;
+  const file = readJSON(contentPath);
   const outputPath = join(outputDir, "trending-data.json");
+
+  if (!contentArg && file && !file.format && file.date === today) {
+    console.log("Legacy news content for today (no `format`) → news explainer\n");
+    const data = buildLegacyNewsData(file, today);
+    writeFileSync(outputPath, JSON.stringify(data, null, 2));
+    console.log(`\nGenerated ${data.projects.length} sections → ${outputPath}`);
+    return;
+  }
+
+  const lineup = JSON.parse(readFileSync(lineupPath, "utf-8"));
+  let content = forceFallback
+    ? fallbackRecipeContent(lineup, today)
+    : chooseCardContent(file?.format || contentArg ? file : null, lineup, today);
+  if (templateNarration) {
+    console.log("  --template-narration: using template narration");
+    content = withTemplateNarration(content);
+  }
+
+  const data = buildCardsData(content, lineup, { dateDisplay: displayDate(content.date) });
   writeFileSync(outputPath, JSON.stringify(data, null, 2));
-  console.log(`\nGenerated ${projects.length} articles → ${outputPath}`);
+  console.log(
+    `Format: ${data.format}${data.fallback ? " (fallback: house recipe)" : ""} — "${data.topicTitle}"`
+  );
+  console.log(`  ${data.slides.length} slides + ending, narration ${narrationLength(data)} chars → ${outputPath}`);
 }
 
 main().catch((err) => {

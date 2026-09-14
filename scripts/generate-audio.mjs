@@ -26,6 +26,11 @@ const voiceName =
     ? "ja-JP-KeitaNeural"
     : "ja-JP-NanamiNeural";
 
+// Speaking rate (Edge TTS prosody). The pipeline raises it when the card
+// video would exceed Instagram's 60-second limit.
+const rateArg = process.argv.find((a) => a.startsWith("--rate="))?.split("=")[1];
+const speakingRate = /^[+-]\d{1,2}%$/.test(rateArg || "") ? rateArg : "+15%";
+
 // Default narrations (fallback when no --data is provided)
 const defaultNarrations = [
   {
@@ -80,7 +85,7 @@ async function synthesize(text, outputPath) {
     try {
       const comm = new Communicate(text, {
         voice: voiceName,
-        rate: "+15%",
+        rate: speakingRate,
         pitch: "+0Hz",
       });
 
@@ -116,7 +121,7 @@ async function main() {
 
   const narrations = loadNarrations();
 
-  console.log(`Voice: ${voiceName}`);
+  console.log(`Voice: ${voiceName} (rate ${speakingRate})`);
   console.log(`Output: ${audioDir}\n`);
 
   const durations = {};
