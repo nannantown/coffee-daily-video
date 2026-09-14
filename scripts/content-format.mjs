@@ -656,8 +656,9 @@ export function buildCardCaptions(data, lineup, dateStr) {
     const nums = [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time].filter(Boolean).join("・");
     title = `【今日の一杯】${t.beanName}×${t.methodLabel}｜${nums}`;
   }
+  // YouTube Data API: snippet.title ≤ 100 characters, "<" and ">" not allowed.
   const suffix = " #Shorts";
-  title = `${clampChars(title, YT_TITLE_MAX - charLen(suffix))}${suffix}`;
+  title = `${clampChars(title.replace(/</g, "＜").replace(/>/g, "＞"), YT_TITLE_MAX - charLen(suffix))}${suffix}`;
 
   const ytDescription = [...body, "", hashtags.join(" "), "", ...cta].join("\n");
   const instagram = [...body, "", hashtags.join(" "), "", ...cta].join("\n");

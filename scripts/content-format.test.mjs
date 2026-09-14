@@ -187,6 +187,11 @@ test("captions end with the fixed sales CTA; YouTube title fits 100 chars", () =
   assert.ok(caps.youtube.tags.includes("今日の一杯"));
   assert.equal(caps.youtube.titleTemplate, "recipe");
 
+  const news5 = clone(newsSample);
+  news5.newsTop5.items[0].headline = "<速報> 価格が上昇";
+  const bracketTitle = buildCardCaptions(buildCardsData(news5, lineup, {}), lineup, jst).youtube.title;
+  assert.doesNotMatch(bracketTitle, /[<>]/, "YouTube rejects < and > in titles");
+
   const longLineup = clone(lineup);
   longLineup.beans.find((b) => b.id === recipeSample.recipe.beanId).displayName = "長".repeat(120);
   const longData = buildCardsData(recipeSample, longLineup, {});
