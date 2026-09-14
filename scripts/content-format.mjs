@@ -43,9 +43,9 @@ export const ANGLES = {
 // padding 40px → 840px text width; CJK glyph ≈ 1em). Body text never goes
 // below 30px, so long strings must be shortened, not shrunk.
 export const LIMITS = {
-  hook: 24, // 46px, up to 2 lines
-  grind: 8,
-  stepAction: 10, // 36px in a row with time + amount
+  hook: 16, // 80px title, up to 2 lines
+  grind: 4, // 48px inside a 3-column number tile
+  stepAction: 8, // 44px in a row with time + amount
   tasteNote: 10,
   tasteSummary: 24,
   tipProblem: 10, // pill, 36px
@@ -317,15 +317,27 @@ function pick(custom, fallback) {
   return typeof custom === "string" && custom.trim() ? custom.trim() : fallback;
 }
 
+/**
+ * Six number tiles for the first card (3x2 grid). Iced pour-over shows the
+ * ice amount instead of the ratio (the ratio stays in the caption).
+ */
 export function recipeNumberTiles(recipe) {
   const n = recipe.numbers;
   const coldBrew = recipe.method === "cold-brew";
-  return [
+  const tiles = [
     { label: "豆", value: String(n.dose_g), unit: "g" },
     { label: coldBrew ? "水" : "お湯", value: String(n.water_g), unit: "g" },
-    isNum(n.temp_c) ? { label: "湯温", value: String(n.temp_c), unit: "℃" } : { label: "水温", value: "冷水", unit: "" },
-    { label: coldBrew ? "抽出" : "時間", value: String(n.time).replace(/h$/, ""), unit: HOURS_RE.test(String(n.time)) ? "時間" : "" },
   ];
+  if (recipe.scene === "iced" && !coldBrew && isNum(n.ice_g) && n.ice_g > 0) {
+    tiles.push({ label: "氷", value: String(n.ice_g), unit: "g" });
+  }
+  tiles.push(isNum(n.temp_c) ? { label: "湯温", value: String(n.temp_c), unit: "℃" } : { label: "水温", value: "冷水", unit: "" });
+  const hours = String(n.time).match(HOURS_RE);
+  tiles.push({ label: coldBrew ? "抽出" : "時間", value: hours ? hours[1] : String(n.time), unit: hours ? "時間" : "" });
+  tiles.push({ label: "挽き目", value: n.grind, unit: "" });
+  const ratio = ratioLabel(n);
+  if (tiles.length < 6 && ratio) tiles.push({ label: "比率", value: ratio, unit: "" });
+  return tiles;
 }
 
 // ---------------------------------------------------------------------------
@@ -375,8 +387,19 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
   const nar = r.narration || {};
   const beanName = bean.displayName || bean.name;
   const spokenBean = bean.spokenName || beanName;
-  const ratio = ratioLabel(n);
   const iced = r.scene === "iced";
+
+  // Card 1 = hook + bean + all key numbers, so the first frame is already
+  // the "save this" recipe (numbers first, like AI Trend Daily's TOP5).
+  const titleNarration = pick(nar.title, `${r.hook}。今日の一杯は、${spokenBean}を${method.label}で。`);
+  const numbersNarration = pick(
+    nar.numbers,
+    `豆${n.dose_g}グラムに、${r.method === "cold-brew" ? "水" : "お湯"}${n.water_g}グラム` +
+      (iced && isNum(n.ice_g) && r.method !== "cold-brew" ? `、氷${n.ice_g}グラム` : "") +
+      "。" +
+      (isNum(n.temp_c) ? `${n.temp_c}度で、` : "") +
+      `${speakTime(n.time)}です。`
+  );
 
   const slides = [
     {
@@ -389,23 +412,8 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
       methodLabel: method.label,
       sceneLabel: SCENES[r.scene],
       hook: r.hook,
-      narration: pick(nar.title, `今日の一杯は、${spokenBean}。${r.hook}。`),
-    },
-    {
-      kind: "recipe-numbers",
-      heading: "レシピ",
       tiles: recipeNumberTiles(r),
-      info: [
-        { label: "挽き目", value: n.grind },
-        ...(ratio ? [{ label: "比率", value: ratio }] : []),
-        ...(iced && isNum(n.ice_g) ? [{ label: "氷", value: `${n.ice_g}g` }] : []),
-      ],
-      narration: pick(
-        nar.numbers,
-        `豆${n.dose_g}グラムに、${r.method === "cold-brew" ? "水" : "お湯"}${n.water_g}グラム。` +
-          (isNum(n.temp_c) ? `湯温は${n.temp_c}度、` : "") +
-          `${speakTime(n.time)}で仕上げます。`
-      ),
+      narration: `${titleNarration}${numbersNarration}`,
     },
     {
       kind: "recipe-steps",
@@ -545,17 +553,20 @@ export function withTemplateNarration(content) {
 export const TIMELINE = {
   fps: 30,
   padFrames: 15, // 0.5s after narration
+  minFirstSlideSec: 6, // hook + bean + six numbers
   minSlideSec: 4.5, // dense cards need reading time even if narration is short
   endingExtraFrames: 30,
   minEndingSec: 3.5,
+  maxSeconds: 58, // IG Reels rejects > 60s (ProcessingFailedError)
 };
 
 export function computeCardTimeline(audioDurations, slideCount, opts = TIMELINE) {
-  const { fps, padFrames, minSlideSec, endingExtraFrames, minEndingSec } = { ...TIMELINE, ...opts };
+  const { fps, padFrames, minFirstSlideSec, minSlideSec, endingExtraFrames, minEndingSec } = { ...TIMELINE, ...opts };
   const slides = [];
   for (let i = 1; i <= slideCount; i++) {
     const sec = audioDurations?.[`project-${i}`] || 0;
-    slides.push(Math.max(Math.ceil(sec * fps) + padFrames, Math.ceil(minSlideSec * fps)));
+    const minSec = i === 1 ? minFirstSlideSec : minSlideSec;
+    slides.push(Math.max(Math.ceil(sec * fps) + padFrames, Math.ceil(minSec * fps)));
   }
   const endingSec = audioDurations?.ending || 0;
   const ending = Math.max(Math.ceil(endingSec * fps) + endingExtraFrames, Math.ceil(minEndingSec * fps));
@@ -587,20 +598,19 @@ function hashtagsFor(data) {
 
 function recipeBodyLines(data) {
   const r = data.recipe;
-  const numbers = data.slides.find((s) => s.kind === "recipe-numbers");
+  const title = data.slides.find((s) => s.kind === "recipe-title");
   const steps = data.slides.find((s) => s.kind === "recipe-steps");
   const taste = data.slides.find((s) => s.kind === "recipe-taste");
   const tips = data.slides.find((s) => s.kind === "recipe-tips");
-  const title = data.slides[0];
-  const tileText = numbers.tiles.map((t) => `${t.label} ${t.value}${t.unit}`).join(" / ");
-  const infoText = numbers.info.map((i) => `${i.label} ${i.value}`).join(" / ");
+  const tileText = title.tiles.map((t) => `${t.label} ${t.value}${t.unit}`).join(" / ");
+  const ratio = ratioLabel(r.numbers);
+  const hasRatio = title.tiles.some((t) => t.label === "比率");
   return [
     `【今日の一杯】${title.beanFullName || title.beanName} × ${title.methodLabel}（${title.sceneLabel}）`,
-    r ? title.hook : "",
+    title.hook,
     "",
     "■ レシピ",
-    tileText,
-    infoText,
+    tileText + (!hasRatio && ratio ? ` / 比率 ${ratio}` : ""),
     "",
     "■ 手順",
     ...steps.steps.map((s) => `${s.time} ${s.action}${s.amount ? ` ${s.amount}まで` : ""}`),
