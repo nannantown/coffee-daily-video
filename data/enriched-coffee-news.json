@@ -1,40 +1,40 @@
 {
-  "date": "2026-09-14",
+  "date": "2026-09-15",
   "discovery": {
-    "method": "news-en",
-    "description": "Perfect Daily Grind 9/11 週次リキャップと Food Business MEA / SoftPower Uganda / Uganda Broadcasting Corp の英語一次ソースで、9月7日にウガンダとGVCC(韓国釜山)が締結した年3,500トンの独占供給契約を確認。釜山を加工ハブに日本・東南アジアへ再配送する構想が明記されており、日本の焙煎所視点で「新しいアジア域内ルート」として翻訳",
+    "method": "market-data",
+    "description": "9月11日ロイター発の商社オラム・ICE認証在庫大量認証準備報道と、9月14日のアラビカ12月限清算値(barchart / tradingeconomics / Helena Coffee)をクロスチェック。26年ぶり低水準の認証在庫が倍増する可能性と、直後の相場下落を市況PDCAとして日本の焙煎所・家淹れ層に翻訳",
     "sources": [
-      "https://perfectdailygrind.com/2026/09/coffee-news-recap-11-september-2026/",
-      "https://www.foodbusinessmea.com/uganda-targets-3500-tonnes-of-annual-coffee-exports-to-south-korea/",
-      "https://softpower.ug/uganda-signs-coffee-export-deal-with-south-korean-firm/",
-      "https://ubc.go.ug/2026/09/08/uganda-signs-coffee-export-deal-with-south-korean-firm",
-      "https://www.ugbulletin.co.ug/uganda-secures-south-korea-coffee-deal-as-first-consignment-heads-to-busan/"
+      "https://www.investing.com/news/stock-market-news/coffee-traders-big-shipments-are-set-to-boost-exchange-stocks-and-weigh-on-prices-4898038",
+      "https://www.ksl.com/article/51622842/coffee-traders-big-shipments-are-set-to-boost-exchange-stocks-and-weigh-on-prices",
+      "https://www.gdnonline.com/Details/1406124",
+      "https://www.helenacoffee.vn/coffee-prices-today-september-14/",
+      "https://www.barchart.com/futures/quotes/KCU26"
     ],
-    "query": "Uganda South Korea coffee deal Besmark GVCC 3500 tonnes Busan hub Japan redistribution",
-    "freshness_hours": 144
+    "query": "Olam arabica coffee ICE certify December 2026 bags Brazil warehouse stocks",
+    "freshness_hours": 96
   },
   "articles": [
     {
       "rank": 1,
-      "title": "ウガンダ豆が韓国釜山ハブ経由で日本へ・9月7日GVCC社と年3,500トンの独占供給契約、アフリカ最大の輸出国が新アジアルート始動",
-      "description": "9月7日、ウガンダの Besmark 社と韓国 GVCC 社が独占供給契約を締結。釜山を加工ハブに日本と東南アジアへ再配送する新ルートが動き出しました",
-      "detail": "9月7日、ウガンダの Besmark Coffee Company と韓国 GVCC Co.(釜山)が MoU を締結。Besmark が独占供給、GVCC が韓国市場の独占流通を担う契約で、GVCC CEO の Soo-jung Lim 氏は1日20トンコンテナを輸入して年間3,500トン規模を目指すと表明。釜山を加工ハブとして日本と東南アジアへ再配送する構想で、初回2コンテナは既に出荷中。ウガンダは2025年にエチオピアを抜きアフリカ最大の輸出国に成長しており、アフリカ-アジア間の貿易ルート再編を示唆する動き",
-      "narration": "今日のコーヒーニュース。9月7日、ウガンダのコーヒー豆が韓国釜山を経由して日本にも入る前例のない新ルートが動き出しました。",
-      "tags": ["コーヒーニュース", "ウガンダ", "業界動向"],
+      "title": "商社オラムがブラジル産アラビカ15-20万袋をICE認証在庫へ・9月11日ロイター報、26年ぶり低水準の認証在庫を倍増候補で9/14の12月限は3.3%下落",
+      "description": "9月11日、ロイターがコーヒー市況の分岐点となる大ニュースを報じました。認証在庫が倍増する可能性と、9月14日の相場反応を解説します",
+      "detail": "ロイター(9/11)によると、大手コーヒー商社オラムがブラジル産アラビカ15万〜20万袋をICEのDec契約に振り分けるべく認証準備中。現在のICE認証アラビカ在庫は約21万9千袋で、これは1999年以来26年ぶりの低水準。オラム分だけで在庫がほぼ倍増する規模で、供給不足を根拠に支えられていたアラビカ相場の重石を外す可能性があります。実際9月14日、ニューヨークのアラビカ12月限は9.9セント(3.3%)安の285.7セント/lb、翌3月限も3.5%安で終了。ICE認証在庫の約7割はベルギー・アントワープ保管で、ここに大量搬入されれば実需筋の仕入コスト・小売価格に数週間で波及する可能性が高い状況です",
+      "narration": "アラビカ豆の相場、そろそろ下がるかもしれません。9月11日ロイター発、来月以降のコーヒー価格を動かす大きな動きがあったのでご紹介します",
+      "tags": ["コーヒーニュース", "市況", "アラビカ"],
       "narration_sections": {
-        "hook": "今日のコーヒーニュース。9月7日、ウガンダのコーヒー豆が韓国釜山を経由して日本にも入る前例のない新ルートが動き出しました。",
-        "origin": "9月7日にウガンダのベスマーク社と韓国GVCC社が締結、ベスマークが独占供給、GVCCが韓国市場の独占流通を担います。1日20トンコンテナ、年3,500トンが目標。釜山を加工ハブに日本と東南アジアへ再配送する構想で、既に初回2コンテナが出荷中です。",
-        "recommend": "ウガンダは2025年にエチオピアを抜きアフリカ最大の輸出国。今後アジア市場でアフリカ産スペシャルティの露出が増えそうです。"
+        "hook": "アラビカ豆の相場、そろそろ下がるかもしれません。9月11日ロイター発、来月以降のコーヒー価格を動かす大きな動きがあったのでご紹介します",
+        "origin": "大手商社オラムが、ブラジル産アラビカを15万から20万袋、ICE認証在庫に振り分ける準備中と報道。現在の認証在庫は21万9千袋で26年ぶりの低水準ですが、実現すれば一気に倍増する規模で、供給不足の重石を外す可能性があります",
+        "recommend": "実際9月14日にはアラビカ12月限が3.3%下がり2.86ドルまで下落しました。焙煎所の仕入れに直接効く相場変動、注目ですね"
       },
       "section_titles": {
-        "hook": "韓国経由の新ルート",
-        "origin": "独占供給と流通の詳細",
-        "recommend": "アジア再配送の意味"
+        "hook": "アラビカ相場が転機か",
+        "origin": "オラム認証在庫の衝撃",
+        "recommend": "9月14日の答え合わせ"
       },
       "section_descriptions": {
-        "hook": "9月7日締結の新ルート、日本市場への道筋を紹介",
-        "origin": "年3,500トン目標と釜山ハブの構想を解説",
-        "recommend": "アジア域内でアフリカ豆の露出が変わる背景"
+        "hook": "ロイター9月11日報、市況を動かす大きな一手",
+        "origin": "在庫21万袋が倍増する可能性、供給不足に転機",
+        "recommend": "12月限が3.3%下落、仕入れコストに直結"
       }
     }
   ]
