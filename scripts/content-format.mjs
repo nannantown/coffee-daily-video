@@ -162,8 +162,17 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
     errors.push(`${prefix}.method "${recipe.method}" must be one of ${Object.keys(METHODS).join(", ")}`);
   }
   if (!SCENES[recipe.scene]) errors.push(`${prefix}.scene must be "hot" or "iced"`);
+  if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
   if (!ANGLES[recipe.angle]) {
     errors.push(`${prefix}.angle must be one of ${Object.keys(ANGLES).join(", ")}`);
+  }
+  if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
+  const sources = Array.isArray(recipe.sources) ? recipe.sources : [];
+  sources.forEach((u, i) => {
+    if (!/^https?:\/\//.test(String(u))) errors.push(`${prefix}.sources[${i}] must be an http(s) URL`);
+  });
+  if (recipe.angle === "expert" && sources.length === 0) {
+    errors.push(`${prefix}.sources is required when angle is "expert" (link the recipe it adapts)`);
   }
   checkLen(errors, `${prefix}.hook`, recipe.hook, LIMITS.hook);
 
@@ -584,7 +593,24 @@ export function clampChars(text, max) {
   return chars.length <= max ? chars.join("") : `${chars.slice(0, max - 1).join("")}…`;
 }
 
+// YouTube Data API videos resource: snippet.title ≤ 100 characters,
+// snippet.description ≤ 5000 bytes, neither may contain "<" or ">".
+// Instagram IG User Media: caption ≤ 2200 characters, 30 hashtags, 20 @ tags.
 const YT_TITLE_MAX = 100;
+const YT_DESCRIPTION_MAX_BYTES = 5000;
+const IG_CAPTION_MAX_CHARS = 2200;
+
+export function youtubeSafe(text) {
+  return String(text).replace(/</g, "＜").replace(/>/g, "＞");
+}
+
+/** Join body + tail, dropping body lines from the end until it fits — the sales CTA tail always stays last. */
+export function fitWithTail(bodyLines, tailLines, measure, max) {
+  const body = [...bodyLines];
+  const text = () => [...body, ...tailLines].join("\n");
+  while (body.length > 0 && measure(text()) > max) body.pop();
+  return text();
+}
 
 function hashtagsFor(data) {
   if (data.format === "news-top5") {
@@ -656,12 +682,18 @@ export function buildCardCaptions(data, lineup, dateStr) {
     const nums = [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time].filter(Boolean).join("・");
     title = `【今日の一杯】${t.beanName}×${t.methodLabel}｜${nums}`;
   }
-  // YouTube Data API: snippet.title ≤ 100 characters, "<" and ">" not allowed.
   const suffix = " #Shorts";
-  title = `${clampChars(title.replace(/</g, "＜").replace(/>/g, "＞"), YT_TITLE_MAX - charLen(suffix))}${suffix}`;
+  title = `${clampChars(youtubeSafe(title), YT_TITLE_MAX - charLen(suffix))}${suffix}`;
 
-  const ytDescription = [...body, "", hashtags.join(" "), "", ...cta].join("\n");
-  const instagram = [...body, "", hashtags.join(" "), "", ...cta].join("\n");
+  const bodyWithTags = [...body, "", hashtags.join(" ")];
+  const tail = ["", ...cta];
+  const ytDescription = fitWithTail(
+    bodyWithTags.map(youtubeSafe),
+    tail.map(youtubeSafe),
+    (s) => Buffer.byteLength(s, "utf8"),
+    YT_DESCRIPTION_MAX_BYTES
+  );
+  const instagram = fitWithTail(bodyWithTags, tail, charLen, IG_CAPTION_MAX_CHARS);
 
   return {
     youtube: {

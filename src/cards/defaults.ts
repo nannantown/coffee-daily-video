@@ -2,9 +2,10 @@ import type { CoffeeCardsProps } from "./types";
 
 // Studio preview only (`npx remotion studio`). The pipeline always passes
 // real props built by scripts/content-format.mjs.
+// No `withAudio` here on purpose: Remotion merges defaultProps under the
+// input props, so a default of false would silently mute production renders.
 export const defaultCardsProps: CoffeeCardsProps = {
   format: "recipe",
-  withAudio: false,
   slides: [
     {
       kind: "recipe-title",

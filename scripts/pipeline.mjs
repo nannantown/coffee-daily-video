@@ -13,7 +13,7 @@
  * explainer.
  */
 
-import { execSync } from "child_process";
+import { execSync, spawnSync } from "child_process";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -23,14 +23,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 
-const dryRun = process.env.DRY_RUN === "true" || process.argv.includes("--dry-run");
 const contentArg = process.argv.find((a) => a.startsWith("--content="));
 const fallbackArg = process.argv.includes("--fallback") ? "--fallback" : "";
 const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg].filter(Boolean).join(" ");
+// Samples and forced fallbacks are for verification only — never posted.
+const dryRun =
+  process.env.DRY_RUN === "true" || process.argv.includes("--dry-run") || Boolean(contentArg || fallbackArg);
 
 // Instagram rejects Reels over 60s; re-synthesize faster before giving up.
 const FASTER_RATES = ["+25%", "+35%"];
 const HARD_LIMIT_SECONDS = 59.5;
+const SILENCE_DB = -50;
 
 function run(cmd) {
   console.log(`\n>>> ${cmd}\n`);
@@ -42,6 +45,36 @@ function runSafe(cmd, label) {
     run(cmd);
   } catch (err) {
     console.error(`${label} failed (non-blocking): ${err.message}`);
+  }
+}
+
+/**
+ * Refuse to post a video without narration: no audio stream, or a mean volume
+ * that is effectively silence (narration + BGM measures around -20 dB).
+ */
+function assertAudible(file) {
+  const probe = spawnSync(
+    "ffprobe",
+    ["-v", "error", "-select_streams", "a", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file],
+    { cwd: rootDir, encoding: "utf-8" }
+  );
+  if (!String(probe.stdout || "").includes("audio")) {
+    throw new Error(`${file} has no audio stream`);
+  }
+  const detect = spawnSync(
+    "ffmpeg",
+    ["-hide_banner", "-nostats", "-i", file, "-vn", "-af", "volumedetect", "-f", "null", "-"],
+    { cwd: rootDir, encoding: "utf-8" }
+  );
+  const match = /mean_volume:\s*(-?[\d.]+|-inf) dB/.exec(String(detect.stderr || ""));
+  if (!match) {
+    console.log("  audio check: mean volume not measurable (continuing)");
+    return;
+  }
+  const meanDb = match[1] === "-inf" ? -Infinity : Number(match[1]);
+  console.log(`  audio check: mean_volume ${meanDb} dB`);
+  if (meanDb < SILENCE_DB) {
+    throw new Error(`${file} is silent (mean_volume ${meanDb} dB < ${SILENCE_DB} dB) — narration/BGM missing`);
   }
 }
 
@@ -81,6 +114,9 @@ function main() {
 
   if (dryRun) {
     console.log("=== DRY RUN: no stats fetch, no SNS posting, no performance-history write ===");
+    if (process.env.DRY_RUN !== "true" && (contentArg || fallbackArg)) {
+      console.log("    (--content / --fallback always run as a dry run)");
+    }
   } else {
     // Step 0: Fetch past video stats & generate optimization hints
     console.log("=== Step 0: Fetch Stats & Optimize ===");
@@ -110,6 +146,7 @@ function main() {
     data = limited.data;
     inputProps = {
       format: data.format,
+      withAudio: true,
       slides: data.slides,
       ending: data.ending,
       timeline: {
@@ -146,6 +183,7 @@ function main() {
     `ffmpeg -y -i "${rawFile}" -c:v libx264 -pix_fmt yuv420p -profile:v high -level 4.0 -crf 20 -preset fast -c:a copy -movflags +faststart "${outputFile}"`
   );
   run(`rm -f "${rawFile}"`);
+  assertAudible(outputFile);
 
   // Step 5c: Render cover image. Cards: frame 45 = first card with hook,
   //          bean and all numbers faded in. Legacy: frame 60 (~2s into the

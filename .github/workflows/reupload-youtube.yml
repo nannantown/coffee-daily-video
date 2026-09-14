@@ -44,10 +44,21 @@ jobs:
       - name: Regenerate captions for upload
         env:
           TZ: Asia/Tokyo
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
         run: |
-          node scripts/scrape-coffee-news.mjs
-          node scripts/generate-data.mjs
-          node scripts/generate-caption.mjs
+          # Prefer the captions archived with the original post; regenerate
+          # only for releases created before the archive existed.
+          CAPTIONS_ASSET="${ASSET_NAME%.mp4}-captions.json"
+          if gh release download "$RELEASE_TAG" -p "$CAPTIONS_ASSET" -D output/ --clobber; then
+            cp "output/$CAPTIONS_ASSET" output/captions.json
+            echo "Using archived captions ($CAPTIONS_ASSET)"
+          else
+            node scripts/scrape-coffee-news.mjs
+            node scripts/generate-data.mjs
+            node scripts/generate-caption.mjs
+          fi
           cat output/captions.json | head -20
 
       - name: Attempt to delete old YouTube video (non-blocking)

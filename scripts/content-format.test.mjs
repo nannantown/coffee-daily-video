@@ -78,6 +78,16 @@ test("validation rejects content the cards cannot show", () => {
     [(c) => (c.recipe.taste.acidity = 6), "taste.acidity"],
     [(c) => (c.recipe.narration.tips = "あ".repeat(200)), "narration is"],
     [(c) => (c.format = "news"), "format must be"],
+    [(c) => (c.recipe.angle = "expert"), "sources is required"],
+    [(c) => (c.recipe.sources = ["not-a-url"]), "sources[0]"],
+    [
+      (c) => {
+        c.recipe.method = "cold-brew";
+        c.recipe.numbers.temp_c = null;
+        c.recipe.numbers.time = "10h";
+      },
+      'must be "iced" for cold-brew',
+    ],
   ];
   for (const [mutate, expected] of cases) {
     const c = clone(recipeSample);
@@ -189,8 +199,19 @@ test("captions end with the fixed sales CTA; YouTube title fits 100 chars", () =
 
   const news5 = clone(newsSample);
   news5.newsTop5.items[0].headline = "<速報> 価格が上昇";
-  const bracketTitle = buildCardCaptions(buildCardsData(news5, lineup, {}), lineup, jst).youtube.title;
-  assert.doesNotMatch(bracketTitle, /[<>]/, "YouTube rejects < and > in titles");
+  const bracketCaps = buildCardCaptions(buildCardsData(news5, lineup, {}), lineup, jst);
+  assert.doesNotMatch(bracketCaps.youtube.title, /[<>]/, "YouTube rejects < and > in titles");
+  assert.doesNotMatch(bracketCaps.youtube.description, /[<>]/, "YouTube rejects < and > in descriptions");
+  assert.match(bracketCaps.instagram, /<速報>/, "Instagram keeps the original text");
+
+  // limits: YT description ≤ 5000 bytes, IG caption ≤ 2200 chars, CTA still last
+  const huge = clone(newsSample);
+  huge.newsTop5.items.forEach((it, i) => (it.url = `https://example.com/${"長い記事".repeat(300)}/${i}`));
+  const hugeCaps = buildCardCaptions(buildCardsData(huge, lineup, {}), lineup, jst);
+  assert.ok(Buffer.byteLength(hugeCaps.youtube.description, "utf8") <= 5000);
+  assert.ok(charLen(hugeCaps.instagram) <= 2200);
+  assert.ok(hugeCaps.youtube.description.endsWith(cta.join("\n")));
+  assert.ok(hugeCaps.instagram.endsWith(cta.join("\n")));
 
   const longLineup = clone(lineup);
   longLineup.beans.find((b) => b.id === recipeSample.recipe.beanId).displayName = "長".repeat(120);

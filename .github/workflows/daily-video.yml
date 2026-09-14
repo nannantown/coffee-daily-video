@@ -4,9 +4,10 @@ name: Daily Coffee Video
 #   - production: the schedule (and dispatch on main without dry_run) renders
 #     today's video, posts to YouTube + Instagram and commits
 #     data/performance-history.json.
-#   - verification (dry run): dispatch on any ref other than main, or with
-#     dry_run=true. Renders the video, cover, captions and slide previews into
-#     an artifact. No stats fetch, no SNS posting, no commit.
+#   - verification (dry run): dispatch on any ref other than main, with
+#     dry_run=true, or with sample other than "today" (samples are never
+#     posted). Renders the video, cover, captions and slide previews into an
+#     artifact. No stats fetch, no SNS posting, no commit.
 #       gh workflow run daily-video.yml --ref <branch> -f sample=recipe
 
 on:
@@ -67,9 +68,10 @@ jobs:
           DRY_RUN_INPUT: ${{ inputs.dry_run }}
           SAMPLE: ${{ inputs.sample }}
         run: |
-          if [ "${GITHUB_REF}" != "refs/heads/main" ] || [ "${DRY_RUN_INPUT}" = "true" ]; then
+          # Samples / forced fallback are never posted, even on main.
+          if [ "${GITHUB_REF}" != "refs/heads/main" ] || [ "${DRY_RUN_INPUT}" = "true" ] || { [ -n "${SAMPLE}" ] && [ "${SAMPLE}" != "today" ]; }; then
             echo "dry_run=true" >> "$GITHUB_OUTPUT"
-            echo "Verification mode on ${GITHUB_REF}: no posting, no commit."
+            echo "Verification mode on ${GITHUB_REF} (sample=${SAMPLE:-today}): no posting, no commit."
           else
             echo "dry_run=false" >> "$GITHUB_OUTPUT"
           fi
