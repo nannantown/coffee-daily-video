@@ -40,7 +40,7 @@ export const NewsCover: React.FC<{ slide: NewsCoverSlide }> = ({ slide }) => (
 );
 
 export const NewsItem: React.FC<{ slide: NewsItemSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label="今週のニュース" accent={COLORS.sky} right={page}>
+  <SlideShell label="今週のニュース" accent={COLORS.sky} right={page} center>
     <Reveal delay={2} style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
       <span style={{ fontSize: TYPE.rank, fontWeight: 900, lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{slide.rank}</span>
       <span style={{ fontSize: 56, fontWeight: 800, color: COLORS.textSub }}>位</span>
