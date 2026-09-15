@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(__dirname, "..", "output");
@@ -79,16 +80,18 @@ function generateTitle(data, dateStr, hints) {
   const template = hints?.recommendedTitleTemplate || "standard";
   const topicTitle = data.topicTitle || data.projects[0]?.name || "コーヒー";
 
+  // Only the topic is shortened: YouTube rejects titles over 100 characters
+  // or containing < > (the 2026-09-15 upload failed on a 106-character title).
   switch (template) {
     case "highlight":
-      return `${topicTitle}｜今日のコーヒー豆知識｜${dateStr.full} #Shorts`;
+      return youtubeTitle("", topicTitle, `｜今日のコーヒー豆知識｜${dateStr.full} #Shorts`);
 
     case "emoji":
-      return `Coffee Daily｜${topicTitle}｜${dateStr.full} #Shorts`;
+      return youtubeTitle("Coffee Daily｜", topicTitle, `｜${dateStr.full} #Shorts`);
 
     case "standard":
     default:
-      return `【コーヒー豆知識】${topicTitle}｜${dateStr.full} #Shorts`;
+      return youtubeTitle("【コーヒー豆知識】", topicTitle, `｜${dateStr.full} #Shorts`);
   }
 }
 
@@ -123,7 +126,7 @@ function generateYouTubeCaption(data, dateStr, hints) {
   return {
     title,
     titleTemplate,
-    description: lines.join("\n"),
+    description: youtubeSafe(lines.join("\n")),
     tags: hashtags.map((h) => h.replace("#", "")),
     categoryId: "26", // Howto & Style
   };
