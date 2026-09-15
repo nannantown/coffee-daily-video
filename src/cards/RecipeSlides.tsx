@@ -17,9 +17,11 @@ const TILE_WIDTH = (1080 - SPACE.margin * 2 - TILE_GAP * (TILE_COLUMNS - 1)) / T
 
 /**
  * Value size by what has to fit in the tile's 205px inner width: short
- * numbers at 80, longer numbers (1:12.5, 1200g) at 60, words (中細挽き) at 48.
+ * numbers at 80, longer numbers (1200g) and ratios (1対15 — written with 対 so
+ * it never reads as a time like 2:30) at 60, words (中細挽き) at 48.
  */
 export function tileValueSize(value: string, unit: string): number {
+  if (value.includes("対")) return 60;
   const numeric = /^[\d.:,+-]+$/.test(value);
   if (!numeric) return TYPE.emphasis;
   return value.length + (unit === "g" || unit === "℃" ? 1 : 0) <= 4 ? TYPE.title : 60;
@@ -43,7 +45,7 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
         justifyContent: "space-between",
       }}
     >
-      <div style={{ fontSize: TYPE.bodyMin, fontWeight: 700, color: COLORS.textMuted }}>{tile.label}</div>
+      <div style={{ fontSize: TYPE.aux, fontWeight: 700, color: COLORS.textMuted }}>{tile.label}</div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 4, whiteSpace: "nowrap" }}>
         <span
           style={{
@@ -62,18 +64,14 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
   );
 };
 
+// The method + scene pills sit in their own row under the header: next to the
+// date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
 export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) => (
-  <SlideShell
-    label={slide.heading}
-    right={slide.date}
-    brand
-    extra={
-      <>
-        <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
-        <Pill accent={slide.sceneLabel === "アイス" ? COLORS.sage : COLORS.terracotta}>{slide.sceneLabel}</Pill>
-      </>
-    }
-  >
+  <SlideShell label={slide.heading} right={slide.date} brand>
+    <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
+      <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
+      <Pill accent={slide.sceneLabel === "アイス" ? COLORS.sage : COLORS.terracotta}>{slide.sceneLabel}</Pill>
+    </Reveal>
     <Reveal delay={3}>
       <div style={{ fontSize: TYPE.title, fontWeight: 900, lineHeight: 1.18, letterSpacing: "-1px", ...PHRASE_BREAK }}>
         {slide.hook}
@@ -144,7 +142,7 @@ export const RecipeSteps: React.FC<{ slide: RecipeStepsSlide; page: string }> = 
               {step.amount ? (
                 <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
                   <span style={{ fontSize: 56, fontWeight: 900, fontVariantNumeric: "tabular-nums" }}>{step.amount}</span>
-                  <span style={{ fontSize: TYPE.bodyMin, fontWeight: 600, color: COLORS.textMuted }}>まで</span>
+                  <span style={{ fontSize: TYPE.aux, fontWeight: 600, color: COLORS.textMuted }}>まで</span>
                 </div>
               ) : null}
             </div>

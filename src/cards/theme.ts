@@ -40,17 +40,20 @@ export const SPACE = {
   actionColumnClearance: 80,
 };
 
-// Typography scale (px on the 1080x1920 canvas). Body copy never below 30.
+// Typography scale (px on the 1080x1920 canvas). Body copy never below 40px
+// (≈30pt); auxiliary lines (tile labels, date / page, source, brand footer)
+// never below 30px.
 export const TYPE = {
   hero: 96, // recipe numbers / news key number
   rank: 160,
   title: 80,
   emphasis: 48,
-  heading: 36,
-  pill: 36,
-  body: 34,
-  bodyMin: 30,
-  footer: 24,
+  heading: 40,
+  pill: 40,
+  body: 40,
+  bodyMin: 40,
+  aux: 32,
+  footer: 30,
 };
 
 // Japanese phrase-aware line breaking (Chromium, needs lang="ja" ancestor).

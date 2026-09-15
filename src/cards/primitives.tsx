@@ -124,11 +124,13 @@ export const SlideShell: React.FC<{
       {right ? (
         <div
           style={{
-            fontSize: TYPE.bodyMin,
+            fontSize: TYPE.aux,
             fontWeight: 600,
             color: COLORS.textMuted,
             fontVariantNumeric: "tabular-nums",
             letterSpacing: "2px",
+            whiteSpace: "nowrap",
+            flexShrink: 0,
           }}
         >
           {right}

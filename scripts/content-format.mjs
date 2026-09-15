@@ -604,7 +604,8 @@ export function recipeNumberTiles(recipe) {
   tiles.push({ label: coldBrew ? "抽出" : "時間", value: hours ? hours[1] : String(n.time), unit: hours ? "時間" : "" });
   tiles.push({ label: "挽き目", value: n.grind, unit: "" });
   const ratio = ratioLabel(n);
-  if (tiles.length < 6 && ratio) tiles.push({ label: "比率", value: ratio, unit: "" });
+  // "1対15", never "1:15" — next to a "2:30" time tile a colon ratio reads as a time.
+  if (tiles.length < 6 && ratio) tiles.push({ label: "比率", value: ratio.replace(":", "対"), unit: "" });
   return tiles;
 }
 

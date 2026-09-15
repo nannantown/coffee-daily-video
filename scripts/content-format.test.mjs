@@ -280,7 +280,7 @@ test("number tiles: hot shows ratio, iced shows ice instead", () => {
     "湯温:93℃",
     "時間:2:30",
     "挽き目:中細挽き",
-    "比率:1:15",
+    "比率:1対15",
   ]);
   const iced = lineup.beans.find((b) => b.houseRecipe.scene === "iced" && b.houseRecipe.method !== "cold-brew");
   const labels = recipeNumberTiles(iced.houseRecipe).map((t) => t.label);
