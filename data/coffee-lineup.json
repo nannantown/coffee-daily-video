@@ -86,7 +86,7 @@
         "scene": "hot",
         "angle": "method",
         "hook": "紅茶のような軽さをプレスで",
-        "numbers": { "dose_g": 15, "water_g": 250, "temp_c": 94, "grind": "粗挽き", "time": "4:00" },
+        "numbers": { "dose_g": 15, "water_g": 250, "temp_c": 94, "grind": "粗挽き", "time": "4:30" },
         "steps": [
           { "time": "0:00", "action": "お湯を注ぐ", "pour_to_g": 250 },
           { "time": "0:30", "action": "やさしく混ぜる" },
@@ -193,7 +193,7 @@
         },
         "tips": [
           { "problem": "香りが弱い時", "fix": "湯温を2℃上げて92℃に" },
-          { "problem": "渋い時", "fix": "押す時間を30秒かけて" },
+          { "problem": "渋い時", "fix": "湯温を2℃下げて88℃に" },
           { "problem": "薄い時", "fix": "浸す時間を30秒延ばす" }
         ]
       }

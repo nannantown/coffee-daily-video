@@ -29,6 +29,7 @@ const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const enrichedPath = join(rootDir, "data", "enriched-coffee-news.json");
 const lineupPath = join(rootDir, "data", "coffee-lineup.json");
+const historyPath = join(rootDir, "data", "performance-history.json");
 
 const contentArg = process.argv.find((a) => a.startsWith("--content="))?.slice("--content=".length);
 const templateNarration = process.argv.includes("--template-narration");
@@ -150,17 +151,35 @@ function buildLegacyNewsData(enrichedFile, todayStr) {
 // Card formats
 // ---------------------------------------------------------------------------
 
+/** The last posted recipe before today ({ beanId, method }), so the fallback does not repeat it. */
+function previousRecipe(today) {
+  const history = readJSON(historyPath);
+  const videos = Array.isArray(history?.videos) ? history.videos : [];
+  const last = videos
+    .filter((v) => typeof v?.date === "string" && v.date < today)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .at(-1);
+  return last?.content?.beanId ? { beanId: last.content.beanId, method: last.content.method } : null;
+}
+
+function houseRecipe(lineup, today) {
+  const previous = previousRecipe(today);
+  const content = fallbackRecipeContent(lineup, today, previous);
+  if (previous) console.log(`  (previous post: ${previous.beanId} × ${previous.method} → not repeated)`);
+  return content;
+}
+
 function chooseCardContent(file, lineup, today) {
   if (!file) {
     console.log(`  No content file → house recipe fallback`);
-    return fallbackRecipeContent(lineup, today);
+    return houseRecipe(lineup, today);
   }
   const { errors, warnings } = validateDailyContent(file, lineup, contentArg ? {} : { today });
   for (const w of warnings) console.log(`  warning: ${w}`);
   if (errors.length === 0) return file;
   console.error(`  Content rejected (${errors.length} error(s)) → house recipe fallback`);
   for (const e of errors) console.error(`    - ${e}`);
-  return fallbackRecipeContent(lineup, today);
+  return houseRecipe(lineup, today);
 }
 
 function displayDate(iso) {
@@ -173,7 +192,10 @@ async function main() {
   const file = readJSON(contentPath);
   const outputPath = join(outputDir, "trending-data.json");
 
-  if (!contentArg && !forceFallback && file && !file.format && file.date === today) {
+  // A card JSON that only forgot `format` must not take the legacy path — it
+  // goes through validation (and falls back to the house recipe) instead.
+  const looksLikeCards = Boolean(file && (file.format || file.recipe || file.newsTop5));
+  if (!contentArg && !forceFallback && file && !looksLikeCards && file.date === today) {
     console.log("Legacy news content for today (no `format`) → news explainer\n");
     const data = buildLegacyNewsData(file, today);
     writeFileSync(outputPath, JSON.stringify(data, null, 2));
@@ -183,8 +205,8 @@ async function main() {
 
   const lineup = JSON.parse(readFileSync(lineupPath, "utf-8"));
   let content = forceFallback
-    ? fallbackRecipeContent(lineup, today)
-    : chooseCardContent(file?.format || contentArg ? file : null, lineup, today);
+    ? houseRecipe(lineup, today)
+    : chooseCardContent(looksLikeCards || contentArg ? file : null, lineup, today);
   if (templateNarration) {
     console.log("  --template-narration: using template narration");
     content = withTemplateNarration(content);

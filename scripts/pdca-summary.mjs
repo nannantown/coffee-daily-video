@@ -44,7 +44,7 @@ export const TRIALS = {
     label: "#1",
     genre: "「今日の一杯」レシピカード型 + 日曜ニュース TOP5",
     trialId: TRIAL_ID,
-    plannedStart: "2026-09-15",
+    plannedStart: "2026-09-16",
   },
 };
 

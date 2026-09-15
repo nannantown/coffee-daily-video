@@ -20,9 +20,11 @@ import {
   resolveCtaMode,
   salesCtaLines,
   speakTime,
+  timeSeconds,
   toSpokenJa,
   validateDailyContent,
   withTemplateNarration,
+  youtubeTitle,
 } from "./content-format.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -248,4 +250,69 @@ test("performance-history content record", () => {
   assert.equal(news.format, "news-top5");
   assert.equal(news.headlines.length, 5);
   assert.equal(contentRecord({ projects: [] }), null);
+});
+
+test("youtubeTitle shortens only the middle so the title fits 100 characters", () => {
+  // 2026-09-15: this legacy title was 106 characters and YouTube rejected the upload.
+  const topic =
+    "<速報>商社オラムがブラジル産アラビカ15-20万袋をICE認証在庫へ・9/11ロイター報、26年低水準を倍増候補で9/14の12月限は3.3%下落、市場関係者の見方";
+  assert.ok(charLen(topic) > 72);
+  const title = youtubeTitle("【コーヒー豆知識】", topic, "｜2026/09/15 #Shorts");
+  assert.equal(charLen(title), 100);
+  assert.ok(title.startsWith("【コーヒー豆知識】＜速報＞商社オラム"));
+  assert.ok(title.endsWith("…｜2026/09/15 #Shorts"));
+  assert.ok(!/[<>]/.test(title));
+  assert.equal(youtubeTitle("【今日の一杯】", "ルワンダ フムレ×フレンチプレス", "｜豆15g #Shorts"), "【今日の一杯】ルワンダ フムレ×フレンチプレス｜豆15g #Shorts");
+  for (const c of [buildCardCaptions(buildCardsData(recipeSample, lineup, {}), lineup, jst), buildCardCaptions(buildCardsData(newsSample, lineup, {}), lineup, jst)]) {
+    assert.ok(charLen(c.youtube.title) <= 100 && c.youtube.title.endsWith(" #Shorts"));
+  }
+});
+
+test("news-top5 is rejected on a weekday; a recipe on a Sunday is only a warning", () => {
+  const mondayNews = { ...clone(newsSample), date: "2026-09-21" };
+  assert.ok(validateDailyContent(mondayNews, lineup).errors.some((e) => e.includes("Sunday only")));
+  const bean = lineup.beans[0];
+  const sundayRecipe = { date: "2026-09-20", format: "recipe", recipe: { ...clone(bean.houseRecipe), beanId: bean.id } };
+  const result = validateDailyContent(sundayRecipe, lineup);
+  assert.deepEqual(result.errors, []);
+  assert.ok(result.warnings.length > 0);
+});
+
+test("recipe numbers: time format per method, ordered step times, increasing pours", () => {
+  assert.equal(timeSeconds("2:30"), 150);
+  assert.equal(timeSeconds("10h"), 36000);
+  assert.equal(timeSeconds("2分"), null);
+  const errorsFor = (method, mutate) => {
+    const bean = lineup.beans.find((b) => b.houseRecipe.method === method);
+    const content = { date: "2026-09-15", format: "recipe", recipe: { ...clone(bean.houseRecipe), beanId: bean.id } };
+    mutate(content.recipe);
+    return validateDailyContent(content, lineup).errors;
+  };
+  const has = (errors, text) => errors.some((e) => e.includes(text));
+  assert.deepEqual(errorsFor("v60", () => {}), []);
+  assert.ok(has(errorsFor("v60", (r) => { r.numbers.time = "3h"; }), "numbers.time"));
+  assert.ok(has(errorsFor("v60", (r) => { r.steps[2].pour_to_g = r.steps[1].pour_to_g - 10; }), "must be more than"));
+  assert.ok(has(errorsFor("v60", (r) => { r.steps.forEach((s) => delete s.pour_to_g); }), "at least one pour_to_g"));
+  assert.ok(has(errorsFor("v60", (r) => { [r.steps[1].time, r.steps[2].time] = [r.steps[2].time, r.steps[1].time]; }), "earlier than"));
+  assert.ok(has(errorsFor("v60", (r) => { r.steps.at(-1).time = "9:59"; }), "after numbers.time"));
+  assert.deepEqual(errorsFor("cold-brew", () => {}), []);
+  assert.ok(has(errorsFor("cold-brew", (r) => { r.numbers.time = "8:00"; }), "for cold-brew"));
+  assert.ok(has(errorsFor("cold-brew", (r) => { r.numbers.ice_g = 200; }), "ice_g must be omitted"));
+});
+
+test("cold brew with a water temperature is labelled 水温, not 湯温", () => {
+  const bean = lineup.beans.find((b) => b.houseRecipe.method === "cold-brew");
+  const tiles = recipeNumberTiles({ ...clone(bean.houseRecipe), numbers: { ...bean.houseRecipe.numbers, temp_c: 20 } });
+  assert.ok(tiles.some((t) => t.label === "水温" && t.value === "20"));
+  assert.ok(!tiles.some((t) => t.label === "湯温"));
+});
+
+test("the fallback house recipe does not repeat the previous post's bean or method", () => {
+  const day = "2026-09-15";
+  const first = fallbackRecipeContent(lineup, day);
+  const next = fallbackRecipeContent(lineup, day, { beanId: first.recipe.beanId, method: first.recipe.method });
+  assert.notEqual(next.recipe.beanId, first.recipe.beanId);
+  assert.notEqual(next.recipe.method, first.recipe.method);
+  assert.deepEqual(validateDailyContent(next, lineup, { today: day }).errors, []);
+  assert.equal(fallbackRecipeContent(lineup, day, null).recipe.beanId, first.recipe.beanId);
 });

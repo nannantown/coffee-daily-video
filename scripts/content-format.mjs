@@ -97,6 +97,15 @@ export function isValidTime(t) {
   return TIME_RE.test(String(t ?? "")) || HOURS_RE.test(String(t ?? ""));
 }
 
+/** "2:30" → 150, "10h" → 36000, anything else → null. */
+export function timeSeconds(t) {
+  const s = String(t ?? "");
+  const h = s.match(HOURS_RE);
+  if (h) return Math.round(Number(h[1]) * 3600);
+  const m = s.match(TIME_RE);
+  return m ? Number(m[1]) * 60 + Number(m[2]) : null;
+}
+
 function isNum(v) {
   return typeof v === "number" && Number.isFinite(v);
 }
@@ -188,8 +197,13 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
   if (recipe.scene === "iced" && !coldBrew && (!isNum(n.ice_g) || n.ice_g <= 0)) {
     errors.push(`${prefix}.numbers.ice_g is required for iced recipes`);
   }
+  if (coldBrew && n.ice_g != null) errors.push(`${prefix}.numbers.ice_g must be omitted for cold-brew (the ratio is water ÷ beans)`);
   if (n.ice_g != null && (!isNum(n.ice_g) || n.ice_g < 0 || n.ice_g > 600)) errors.push(`${prefix}.numbers.ice_g must be 0-600`);
-  if (!isValidTime(n.time)) errors.push(`${prefix}.numbers.time must be "m:ss" or "<hours>h" (got "${n.time}")`);
+  // Cold brew steeps for hours ("10h"); every other method is "m:ss" — a cold
+  // brew "8:00" would be printed and read aloud as 8 minutes.
+  if (coldBrew ? !HOURS_RE.test(String(n.time ?? "")) : !TIME_RE.test(String(n.time ?? ""))) {
+    errors.push(`${prefix}.numbers.time must be ${coldBrew ? '"<hours>h" for cold-brew' : '"m:ss"'} (got "${n.time}")`);
+  }
   checkLen(errors, `${prefix}.numbers.grind`, n.grind, LIMITS.grind);
   if (isNum(n.dose_g) && isNum(n.water_g) && n.dose_g > 0) {
     const ratio = (n.water_g + (n.ice_g || 0)) / n.dose_g;
@@ -200,17 +214,34 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
   if (!Array.isArray(steps) || steps.length < 1 || steps.length > 5) {
     errors.push(`${prefix}.steps must have 1-5 items`);
   } else {
-    let maxPour = null;
+    const totalSec = timeSeconds(n.time);
+    let prevSec = null;
+    let lastPour = null;
     steps.forEach((s, i) => {
-      if (!isValidTime(s?.time)) errors.push(`${prefix}.steps[${i}].time must be "m:ss" or "<hours>h"`);
+      const sec = timeSeconds(s?.time);
+      if (sec == null) {
+        errors.push(`${prefix}.steps[${i}].time must be "m:ss" or "<hours>h"`);
+      } else {
+        if (prevSec != null && sec < prevSec) errors.push(`${prefix}.steps[${i}].time ${s.time} is earlier than the step before it`);
+        if (totalSec != null && sec > totalSec) errors.push(`${prefix}.steps[${i}].time ${s.time} is after numbers.time ${n.time}`);
+        prevSec = sec;
+      }
       checkLen(errors, `${prefix}.steps[${i}].action`, s?.action, LIMITS.stepAction);
       if (s?.pour_to_g != null) {
-        if (!isNum(s.pour_to_g) || s.pour_to_g <= 0) errors.push(`${prefix}.steps[${i}].pour_to_g must be a positive number`);
-        else maxPour = Math.max(maxPour ?? 0, s.pour_to_g);
+        if (!isNum(s.pour_to_g) || s.pour_to_g <= 0) {
+          errors.push(`${prefix}.steps[${i}].pour_to_g must be a positive number`);
+        } else {
+          if (lastPour != null && s.pour_to_g <= lastPour) {
+            errors.push(`${prefix}.steps[${i}].pour_to_g ${s.pour_to_g}g must be more than the pour before it (${lastPour}g) — it is the scale total`);
+          }
+          lastPour = s.pour_to_g;
+        }
       }
     });
-    if (maxPour != null && isNum(n.water_g) && Math.abs(maxPour - n.water_g) > 2) {
-      errors.push(`${prefix}.steps: last pour_to_g (${maxPour}g) must equal numbers.water_g (${n.water_g}g)`);
+    if (lastPour == null) {
+      errors.push(`${prefix}.steps need at least one pour_to_g (the scale total after pouring)`);
+    } else if (isNum(n.water_g) && Math.abs(lastPour - n.water_g) > 2) {
+      errors.push(`${prefix}.steps: last pour_to_g (${lastPour}g) must equal numbers.water_g (${n.water_g}g)`);
     }
   }
 
@@ -281,7 +312,10 @@ export function validateDailyContent(content, lineup, { today } = {}) {
     return { errors, warnings };
   }
   if (DATE_RE.test(String(content.date ?? "")) && content.format !== expectedFormatFor(content.date)) {
-    warnings.push(`${content.date} is normally "${expectedFormatFor(content.date)}" (got "${content.format}")`);
+    // Mon–Sat are always recipe cards; the news TOP5 is Sunday-only (a recipe
+    // on a Sunday is allowed).
+    if (content.format === "news-top5") errors.push(`news-top5 is Sunday only (${content.date} must be "recipe")`);
+    else warnings.push(`${content.date} is normally "${expectedFormatFor(content.date)}" (got "${content.format}")`);
   }
   if (content.format === "recipe") validateRecipe(content.recipe, lineup, errors);
   if (content.format === "news-top5") validateNewsTop5(content, errors);
@@ -305,10 +339,20 @@ export function dayIndex(isoDate) {
   return Math.floor(d.getTime() / 86_400_000);
 }
 
-export function fallbackRecipeContent(lineup, isoDate) {
+/**
+ * The house recipe of the day's bean (rotates by date). `previous` is the last
+ * posted recipe ({ beanId, method }): beans that would repeat its bean or
+ * method on consecutive days are skipped when another bean is available.
+ */
+export function fallbackRecipeContent(lineup, isoDate, previous = null) {
   const beans = (lineup?.beans || []).filter((b) => b.status !== "retired" && b.houseRecipe);
   if (beans.length === 0) throw new Error("data/coffee-lineup.json has no bean with a houseRecipe");
-  const bean = beans[((dayIndex(isoDate) % beans.length) + beans.length) % beans.length];
+  const start = ((dayIndex(isoDate) % beans.length) + beans.length) % beans.length;
+  const rotated = beans.map((_, i) => beans[(start + i) % beans.length]);
+  const bean =
+    rotated.find((b) => b.id !== previous?.beanId && b.houseRecipe.method !== previous?.method) ||
+    rotated.find((b) => b.id !== previous?.beanId) ||
+    rotated[0];
   return {
     date: isoDate,
     format: "recipe",
@@ -340,7 +384,11 @@ export function recipeNumberTiles(recipe) {
   if (recipe.scene === "iced" && !coldBrew && isNum(n.ice_g) && n.ice_g > 0) {
     tiles.push({ label: "氷", value: String(n.ice_g), unit: "g" });
   }
-  tiles.push(isNum(n.temp_c) ? { label: "湯温", value: String(n.temp_c), unit: "℃" } : { label: "水温", value: "冷水", unit: "" });
+  tiles.push(
+    isNum(n.temp_c)
+      ? { label: coldBrew ? "水温" : "湯温", value: String(n.temp_c), unit: "℃" }
+      : { label: "水温", value: "冷水", unit: "" }
+  );
   const hours = String(n.time).match(HOURS_RE);
   tiles.push({ label: coldBrew ? "抽出" : "時間", value: hours ? hours[1] : String(n.time), unit: hours ? "時間" : "" });
   tiles.push({ label: "挽き目", value: n.grind, unit: "" });
@@ -499,11 +547,11 @@ export function buildNewsTop5Slides(content, { dateDisplay = "", shop } = {}) {
   ];
   const ending = {
     kind: "news-cta",
-    heading: "平日は「今日の一杯」レシピ",
+    heading: "月〜土は「今日の一杯」レシピ",
     beanName: "",
     lead: "OPEN GROUND の豆で、毎朝お届け",
     lines: ctaSlideLines(shop),
-    narration: pick(nar.cta, "平日は、オープングラウンドの豆で今日の一杯レシピをお届けします。"),
+    narration: pick(nar.cta, "月曜から土曜は、オープングラウンドの豆で今日の一杯レシピをお届けします。"),
   };
   return { slides, ending, topicTitle: `今週のコーヒーニュースTOP5：${items[0].headline}` };
 }
@@ -604,6 +652,18 @@ export function youtubeSafe(text) {
   return String(text).replace(/</g, "＜").replace(/>/g, "＞");
 }
 
+/**
+ * YouTube title = fixed head + variable middle + fixed tail. Only the middle
+ * is shortened, so the title fits 100 characters and the date / #Shorts tail
+ * survives (2026-09-15: a 106-character title failed the whole upload).
+ */
+export function youtubeTitle(head, middle, tail) {
+  const h = youtubeSafe(head);
+  const t = youtubeSafe(tail);
+  const room = Math.max(1, YT_TITLE_MAX - charLen(h) - charLen(t));
+  return `${h}${clampChars(youtubeSafe(middle), room)}${t}`;
+}
+
 /** Join body + tail, dropping body lines from the end until it fits — the sales CTA tail always stays last. */
 export function fitWithTail(bodyLines, tailLines, measure, max) {
   const body = [...bodyLines];
@@ -663,7 +723,7 @@ function newsBodyLines(data) {
   if (urls.length) {
     lines.push("", "出典:", ...urls);
   }
-  lines.push("", "平日は Open Ground の豆で「今日の一杯」レシピをお届けします。");
+  lines.push("", "月〜土は Open Ground の豆で「今日の一杯」レシピをお届けします。");
   return lines;
 }
 
@@ -675,15 +735,13 @@ export function buildCardCaptions(data, lineup, dateStr) {
 
   let title;
   if (data.format === "news-top5") {
-    title = `【今週のコーヒーニュースTOP5】${data.slides[1]?.headline || ""}ほか｜${dateStr.slash}`;
+    title = youtubeTitle("【今週のコーヒーニュースTOP5】", data.slides[1]?.headline || "", `ほか｜${dateStr.slash} #Shorts`);
   } else {
     const t = data.slides[0];
     const n = data.recipe.numbers;
     const nums = [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time].filter(Boolean).join("・");
-    title = `【今日の一杯】${t.beanName}×${t.methodLabel}｜${nums}`;
+    title = youtubeTitle("【今日の一杯】", `${t.beanName}×${t.methodLabel}`, `｜${nums} #Shorts`);
   }
-  const suffix = " #Shorts";
-  title = `${clampChars(youtubeSafe(title), YT_TITLE_MAX - charLen(suffix))}${suffix}`;
 
   const bodyWithTags = [...body, "", hashtags.join(" ")];
   const tail = ["", ...cta];
