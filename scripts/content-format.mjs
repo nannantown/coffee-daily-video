@@ -86,7 +86,7 @@ export const METHOD_BOUNDS = {
   chemex: { ratio: [12, 18], time: [180, 420], water: [250, 1200] },
   clever: { ratio: [12, 18], time: [120, 360], water: [150, 500] },
   "french-press": { ratio: [12, 18], time: [180, 900], water: [150, 1000] },
-  aeropress: { ratio: [10, 18], time: [45, 300], water: [60, 600] },
+  aeropress: { ratio: [10, 20], time: [45, 300], water: [60, 600] }, // e.g. 11g / 200g = 1:18.2
   "cold-brew": { ratio: [5, 15], time: [COLD_BREW.minHours * 3600, COLD_BREW.maxHours * 3600], water: [150, 1200] },
   "moka-pot": { ratio: [5, 12], time: [90, 480], water: [60, 500] },
 };
@@ -100,17 +100,31 @@ export const ICED_BOUNDS = { ratio: [10, 16], iceShare: [0.25, 0.6] };
 // tag characters / Hangul fillers (Unicode DerivedCoreProperties).
 const INVISIBLE_RE = /[\p{Cc}\p{Cf}\p{Zl}\p{Zp}\p{Default_Ignorable_Code_Point}]/u;
 const MENTION_RE = /[@#]/u;
-const URL_RE =
-  /[a-z][a-z0-9+.-]*:\/\/|www\.|[\p{L}\p{N}-]+\.(?:com|net|org|info|biz|io|co|jp|me|ly|gl|gg|to|tv|cc|xyz|app|dev|link|shop|site|online|ai|us|uk)(?![\p{L}\p{N}])/iu;
+const URL_SCHEME_RE = /[a-z][a-z0-9+.-]*:\/\/|www\./i;
+// Well-known TLDs in any case ("SHOP.DE"); the label needs 2+ characters so
+// brand names like "J.CO" are not domains.
+const KNOWN_DOMAIN_RE =
+  /[\p{L}\p{N}-]{2,}\.(?:com|net|org|info|biz|io|co|jp|me|ly|gl|gg|to|tv|cc|xyz|app|dev|link|shop|store|site|online|ai|us|uk|de|fr|it|es|nl|eu|ch|be|se|ru|cn|kr|tw|hk|sg|au|nz|ca|br|in|coffee|cafe|club|top|vip|live|life|world|today|news|blog|page|space|website|tech|fun|icu|work|art|pro|asia|tokyo|click|market)(?![\p{L}\p{N}])/iu;
+// Any lowercase Latin "label.tld" ("evil.example", "bean-sale.store"); written
+// case-sensitively so abbreviations like "Mr.Brown" / "St.Louis" stay text.
+const LOWER_DOMAIN_RE = /[a-z0-9][a-z0-9-]*\.[a-z]{2,}(?![a-z0-9])/u;
 
 /** Why a text may not be published (null = fine): invisible/control characters, @ / #, URLs or domains. */
 export function unsafeTextReason(value) {
   const s = String(value ?? "").normalize("NFKC");
-  if (INVISIBLE_RE.test(s)) return "a line break, control, zero-width or other invisible character";
+  if (INVISIBLE_RE.test(s)) return "a line break, control, zero-width, emoji variation selector or other invisible character";
   if (MENTION_RE.test(s)) return '"@" or "#" (mentions and hashtags become links)';
-  if (URL_RE.test(s)) return "a URL or domain name";
+  if (URL_SCHEME_RE.test(s) || KNOWN_DOMAIN_RE.test(s) || LOWER_DOMAIN_RE.test(s)) return "a URL or domain name";
   return null;
 }
+
+// Own properties only: "constructor" / "__proto__" must not pass a table lookup.
+const own = (table, key) => (typeof key === "string" && Object.hasOwn(table, key) ? table[key] : undefined);
+
+// Cold brew texts that describe an unsafe steep: room temperature (not when
+// negated: 常温に置かず), no fridge, or more than 24 hours.
+const COLD_BREW_UNSAFE_RE =
+  /(?:常温|室温)(?:で|のまま|に置(?!か[ずな]))|冷蔵庫に入れ(?:ない|ず)|冷蔵(?:しない|せず)|(?<!\d)(?:2[5-9]|[3-9]\d|\d{3,})時間/u;
 
 /** An https URL without whitespace, invisible characters or quotes/brackets. */
 export function isSafeHttpsUrl(value) {
@@ -264,7 +278,8 @@ function recipeTexts(recipe, prefix) {
     add(`${prefix}.tips[${i}].fix`, t?.fix);
   });
   const nar = recipe.narration && typeof recipe.narration === "object" ? recipe.narration : {};
-  for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration.${k}`, v);
+  // keys are untrusted too: quoted, so a key cannot carry a line break into the log
+  for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration[${quote(k)}]`, v);
   return out;
 }
 
@@ -282,12 +297,12 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
       `${prefix}.beanId "${bean.id}" has status "${bean.status}" in data/coffee-lineup.json — only "confirmed" beans are posted (the owner confirms beans by PR)`
     );
   }
-  if (!METHODS[recipe.method]) {
+  if (!own(METHODS, recipe.method)) {
     errors.push(`${prefix}.method ${quote(recipe.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
   }
-  if (!SCENES[recipe.scene]) errors.push(`${prefix}.scene must be "hot" or "iced"`);
+  if (!own(SCENES, recipe.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
-  if (!ANGLES[recipe.angle]) {
+  if (!own(ANGLES, recipe.angle)) {
     errors.push(`${prefix}.angle must be one of ${Object.keys(ANGLES).join(", ")}`);
   }
   if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
@@ -303,8 +318,8 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
   const n = recipe.numbers || {};
   const coldBrew = recipe.method === "cold-brew";
   const iced = recipe.scene === "iced" && !coldBrew;
-  const bounds = METHOD_BOUNDS[recipe.method];
-  const methodName = METHODS[recipe.method]?.label || recipe.method;
+  const bounds = own(METHOD_BOUNDS, recipe.method);
+  const methodName = own(METHODS, recipe.method)?.label || String(recipe.method);
   if (!isNum(n.dose_g) || n.dose_g < 5 || n.dose_g > 80) errors.push(`${prefix}.numbers.dose_g must be 5-80`);
   if (!isNum(n.water_g) || n.water_g < 20 || n.water_g > 1200) {
     errors.push(`${prefix}.numbers.water_g must be 20-1200`);
@@ -324,6 +339,7 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
     errors.push(`${prefix}.numbers.ice_g is required for iced recipes`);
   }
   if (coldBrew && n.ice_g != null) errors.push(`${prefix}.numbers.ice_g must be omitted for cold-brew (the ratio is water ÷ beans)`);
+  if (recipe.scene === "hot" && n.ice_g != null && n.ice_g !== 0) errors.push(`${prefix}.numbers.ice_g is only for iced recipes`);
   if (n.ice_g != null && (!isNum(n.ice_g) || n.ice_g < 0 || n.ice_g > 600)) errors.push(`${prefix}.numbers.ice_g must be 0-600`);
   // Cold brew steeps for hours ("10h"); every other method is "m:ss" — a cold
   // brew "8:00" would be printed and read aloud as 8 minutes.
@@ -390,13 +406,15 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
   }
   if (coldBrew) {
     for (const [label, value] of recipeTexts(recipe, prefix)) {
-      if (/常温|室温/u.test(value)) errors.push(`${label} must not steep cold brew at room temperature (常温/室温): ${quote(value)}`);
+      if (COLD_BREW_UNSAFE_RE.test(value)) {
+        errors.push(`${label} describes an unsafe cold brew steep (room temperature, no fridge or over 24 hours): ${quote(value)}`);
+      }
     }
   }
   const nar = recipe.narration;
   if (nar != null && (typeof nar !== "object" || Array.isArray(nar))) errors.push(`${prefix}.narration must be an object`);
   for (const [label, value] of recipeTexts(recipe, prefix)) {
-    if (label.startsWith(`${prefix}.narration.`)) checkText(errors, label, value);
+    if (label.startsWith(`${prefix}.narration[`)) checkText(errors, label, value);
   }
 
   const t = recipe.taste || {};
@@ -468,9 +486,10 @@ const LEGACY_ARTICLE_KEYS = ["title", "description", "narration"];
 /**
  * A JSON without `format` / `recipe` / `newsTop5` is rendered as the legacy
  * news explainer only if it has the legacy keys; otherwise it is rejected
- * (it would skip every card check). Legacy text may use hashtags in its body,
- * so only the title (YouTube title + caption head) gets the URL / @ / # check;
- * invisible characters are rejected everywhere.
+ * (it would skip every card check). Every legacy text that reaches the YouTube
+ * title / description or the IG caption (title, description, detail, section
+ * titles and descriptions — scripts/generate-caption.mjs) gets the URL / @ / #
+ * check; invisible characters are rejected in every string.
  */
 export function validateLegacyContent(content) {
   const errors = [];
@@ -489,12 +508,20 @@ export function validateLegacyContent(content) {
     for (const k of LEGACY_ARTICLE_KEYS) {
       if (typeof a?.[k] !== "string" || !a[k].trim()) errors.push(`${p}.${k} is required`);
     }
-    checkText(errors, `${p}.title`, a?.title);
+    for (const k of ["title", "description", "detail"]) checkText(errors, `${p}.${k}`, a?.[k]);
+    // tags are printed as "キーワード: …" in the third section → captions
+    if (Array.isArray(a?.tags)) a.tags.forEach((t, j) => checkText(errors, `${p}.tags[${j}]`, t));
+    for (const group of ["section_titles", "section_descriptions"]) {
+      const g = a?.[group];
+      if (g && typeof g === "object") {
+        for (const [k, v] of Object.entries(g)) checkText(errors, `${p}.${group}[${quote(k)}]`, v);
+      }
+    }
     const walk = (v, path) => {
       if (typeof v === "string") {
         if (INVISIBLE_RE.test(v.normalize("NFKC"))) errors.push(`${path} contains an invisible or control character`);
       } else if (v && typeof v === "object") {
-        for (const [k, child] of Object.entries(v)) walk(child, `${path}.${k}`);
+        for (const [k, child] of Object.entries(v)) walk(child, `${path}[${quote(k)}]`);
       }
     };
     walk(a, p);

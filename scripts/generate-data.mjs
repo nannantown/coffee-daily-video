@@ -53,7 +53,7 @@ function actionsWarning(title, details = []) {
   const summary = process.env.GITHUB_STEP_SUMMARY;
   if (summary) {
     const oneLine = (s) => String(s).replace(/[\r\n]+/g, " ");
-    appendFileSync(summary, [`### ⚠️ ${oneLine(title)}`, "", ...details.map((d) => `- ${oneLine(d)}`), "", ""].join("\n"));
+    appendFileSync(summary, [`### 警告: ${oneLine(title)}`, "", ...details.map((d) => `- ${oneLine(d)}`), "", ""].join("\n"));
   }
 }
 
@@ -184,6 +184,15 @@ function previousRecipe(today) {
   return last?.content?.beanId ? { beanId: last.content.beanId, method: last.content.method } : null;
 }
 
+/** Validation must never stop the post: a crash on odd input counts as "rejected". */
+function safely(validate) {
+  try {
+    return validate();
+  } catch (err) {
+    return { errors: [`validation crashed: ${JSON.stringify(String(err?.message ?? err))}`], warnings: [] };
+  }
+}
+
 /** The house recipe of a postable bean, or null when no bean may be posted (none confirmed yet). */
 function houseRecipe(lineup, today) {
   const previous = previousRecipe(today);
@@ -209,7 +218,7 @@ function chooseCardContent(file, lineup, today) {
     console.log(`  No content for today → house recipe fallback`);
     return fallbackTo(lineup, today, "No content for today");
   }
-  const { errors, warnings } = validateDailyContent(file, lineup, { ...(contentArg ? {} : { today }), allowCandidate });
+  const { errors, warnings } = safely(() => validateDailyContent(file, lineup, { ...(contentArg ? {} : { today }), allowCandidate }));
   for (const w of warnings) console.log(`  warning: ${w}`);
   if (errors.length === 0) return file;
   console.error(`  Content rejected (${errors.length} error(s)) → house recipe fallback`);
@@ -238,7 +247,7 @@ async function main() {
   const looksLikeCards = Boolean(file && (file.format || file.recipe || file.newsTop5));
   let legacyErrors = null;
   if (!contentArg && !forceFallback && file && !looksLikeCards && file.date === today) {
-    const { errors } = validateLegacyContent(file);
+    const { errors } = safely(() => validateLegacyContent(file));
     if (errors.length === 0) {
       console.log("Legacy news content for today (no `format`) → news explainer\n");
       writeLegacy(file);

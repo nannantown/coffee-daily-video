@@ -18,6 +18,7 @@ import {
   renderMarkdown,
   rotation,
   summarize,
+  trialStart,
   trialStatus,
   verdict,
   windowStats,
@@ -250,12 +251,36 @@ test("rotation lists unused beans, methods and angles first", () => {
     { bean: "ブルンジ マバンザ", method: "V60", angle: "悩み起点" },
     { bean: "ブルンジ マバンザ", method: "V60", angle: "季節" },
   ];
-  const r = rotation(rows, lineup);
+  const confirmed = structuredClone(lineup);
+  for (const b of confirmed.beans) b.status = "confirmed";
+  const r = rotation(rows, confirmed);
   assert.equal(r.bean.at(-1).key, "ブルンジ マバンザ");
   assert.equal(r.bean.at(-1).n, 2);
   assert.equal(r.bean[0].n, 0);
   assert.equal(r.method.at(-1).key, "V60");
-  assert.equal(r.bean.length, lineup.beans.filter((b) => b.status !== "retired").length);
+  assert.equal(r.bean.length, confirmed.beans.length);
+
+  // candidate beans would be rejected by the validator → not offered in the rotation
+  const partly = structuredClone(confirmed);
+  partly.beans[1].status = "candidate"; // not used in rows
+  assert.ok(!rotation(rows, partly).bean.some((b) => b.key === (partly.beans[1].displayName || partly.beans[1].name)));
+  assert.equal(rotation(rows, partly).bean.length, confirmed.beans.length - 1);
+});
+
+test("trial #1 starts at the first recipe post, not at a Sunday news TOP5; 直近 14 日 = today − 14..today − 1", () => {
+  const news = { format: "news-top5", trial: "coffee-trial-1-recipe-card", fallback: false, headlines: [] };
+  const videos = [
+    video("2026-09-20", { content: news }),
+    video("2026-09-21"),
+    video("2026-09-22"),
+  ];
+  assert.equal(trialStart(videos), null, "news alone does not start the trial");
+  assert.equal(trialStatus({ videos }, "2026-09-23").trial, 0);
+  videos.push(video("2026-09-23", { content: recipe("a", "v60") }));
+  assert.equal(trialStart(videos), "2026-09-23");
+
+  const rows = recentRows({ videos: [video("2026-09-09"), video("2026-09-10"), video("2026-09-23"), video("2026-09-24")] }, "2026-09-24", 14, 2);
+  assert.deepEqual(rows.map((row) => row.date), ["2026-09-23", "2026-09-10"]);
 });
 
 test("markdown: status section first in the shared format, dead-mode policy, IG saves primary", () => {

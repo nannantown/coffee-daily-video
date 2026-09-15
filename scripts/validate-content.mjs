@@ -41,7 +41,14 @@ try {
 }
 const lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
 
-const { errors, warnings } = validateDailyContent(content, lineup, { ...(skipDate ? {} : { today }), allowCandidate });
+let result;
+try {
+  result = validateDailyContent(content, lineup, { ...(skipDate ? {} : { today }), allowCandidate });
+} catch (err) {
+  console.error(`NG: validation crashed on ${contentPath}: ${JSON.stringify(String(err?.message ?? err))}`);
+  process.exit(1);
+}
+const { errors, warnings } = result;
 for (const w of warnings) console.log(`warning: ${w}`);
 if (!skipDate && content?.format && content.format !== expectedFormatFor(today)) {
   console.log(`warning: today (${today}) expects "${expectedFormatFor(today)}"`);

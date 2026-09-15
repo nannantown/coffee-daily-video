@@ -134,7 +134,8 @@ function main() {
   console.log(`  Languages: ${entry.languages.join(", ")}`);
   console.log(`  Instagram: ${entry.instagram ? entry.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);
   if (entry.discovery) {
-    console.log(`  Discovery: ${entry.discovery.method} (${entry.discovery.description || "no description"})`);
+    // routine-written (web-derived) text: quoted so it cannot start a new log line
+    console.log(`  Discovery: ${JSON.stringify(entry.discovery.method ?? null)} (${JSON.stringify(entry.discovery.description || "no description")})`);
   } else {
     console.log(`  Discovery: null (no metadata in enriched file)`);
   }

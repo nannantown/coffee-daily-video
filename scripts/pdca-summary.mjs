@@ -24,7 +24,7 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-import { METHODS, ANGLES, TRIAL_ID, jstDateParts } from "./content-format.mjs";
+import { METHODS, ANGLES, TRIAL_ID, jstDateParts, postableBeans } from "./content-format.mjs";
 
 export const ACCOUNTS = {
   ig: "IG @open_ground_coffee_roasters",
@@ -146,8 +146,16 @@ export function cycle({ S, F, today }) {
   };
 }
 
+/**
+ * Trial #1 starts at its first recipe-card post. A Sunday news TOP5 alone
+ * does not start it: while no bean is confirmed, Mon-Sat still post the old
+ * explainer, and the 14-day verdict would measure the old genre.
+ */
 export function trialStart(videos, trialId = TRIAL_ID) {
-  const dates = videos.filter((v) => v.content?.trial === trialId).map((v) => v.date).sort();
+  const dates = videos
+    .filter((v) => v.content?.trial === trialId && v.content?.format === "recipe")
+    .map((v) => v.date)
+    .sort();
   return dates[0] || null;
 }
 
@@ -283,10 +291,16 @@ export function videoRow(video, today, provisionalDays = 2) {
   };
 }
 
+/**
+ * "直近 14 日" = the 14 days before today (today − 14..today − 1) — the genre
+ * rule's comparison window, separate from the judgement window (and today's
+ * video is not posted yet when the morning routine runs).
+ */
 export function recentRows(history, today, days = 14, provisionalDays = 2) {
-  const from = addDays(today, -(days - 1));
+  const from = addDays(today, -days);
+  const to = addDays(today, -1);
   return (history?.videos || [])
-    .filter((v) => v.date >= from && v.date <= today)
+    .filter((v) => v.date >= from && v.date <= to)
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .map((v) => videoRow(v, today, provisionalDays));
 }
@@ -340,7 +354,8 @@ export function rotation(rows, lineup) {
     }
     return [...m.entries()].map(([key, n]) => ({ key, n })).sort((a, b) => a.n - b.n);
   };
-  const beans = (lineup?.beans || []).filter((b) => b.status !== "retired").map((b) => b.displayName || b.name);
+  // Only beans that may be posted (confirmed) — a candidate would be rejected by the validator.
+  const beans = postableBeans(lineup).map((b) => b.displayName || b.name);
   return {
     bean: count((r) => r.bean, beans),
     method: count((r) => r.method, Object.values(METHODS).map((m) => m.label)),

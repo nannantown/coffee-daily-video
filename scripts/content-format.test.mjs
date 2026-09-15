@@ -37,6 +37,8 @@ const realLineup = readJSON("data/coffee-lineup.json");
 const recipeSample = readJSON("data/samples/recipe.sample.json");
 const newsSample = readJSON("data/samples/news-top5.sample.json");
 const clone = (o) => structuredClone(o);
+// invisible characters are built from code points — never paste them raw into source
+const ch = (cp) => String.fromCodePoint(cp);
 const jst = { iso: "2026-09-15", slash: "2026/09/15", compact: "20260915" };
 // Most tests are about the content, not the owner's bean confirmation, so they
 // use a copy where every non-retired bean is confirmed (the gate has its own test).
@@ -181,12 +183,12 @@ test("untrusted text: URLs, @, #, line breaks and invisible characters are rejec
     ["＃コーヒー", '"#"'],
     ["一行目\n二行目", "invisible"],
     ["タブ\tあり", "invisible"],
-    ["ゼロ​幅", "invisible"],
-    ["向き‮反転", "invisible"],
-    ["分離⁦記号", "invisible"],
-    ["タグ\u{E0041}文字", "invisible"],
-    ["異体字️", "invisible"],
-    ["行区切り あり", "invisible"],
+    ["ゼロ" + ch(0x200b) + "幅", "invisible"],
+    ["向き" + ch(0x202e) + "反転", "invisible"],
+    ["分離" + ch(0x2066) + "記号", "invisible"],
+    ["タグ" + ch(0xe0041) + "文字", "invisible"],
+    ["異体字" + ch(0xfe0f), "invisible"],
+    ["行区切り" + ch(0x2028) + "あり", "invisible"],
   ];
   for (const [text, expected] of rejected) {
     const reason = unsafeTextReason(text);
@@ -202,10 +204,21 @@ test("untrusted text: URLs, @, #, line breaks and invisible characters are rejec
   assert.ok(errorsOf(tip).some((e) => e.includes("recipe.tips[0].fix contains")));
   const nar = clone(recipeSample);
   nar.recipe.narration.cta = "詳細は example.com で";
-  assert.ok(errorsOf(nar).some((e) => e.includes("recipe.narration.cta contains")));
+  assert.ok(errorsOf(nar).some((e) => e.includes('recipe.narration["cta"] contains')));
+  const key = clone(recipeSample);
+  key.recipe.narration = { ["cta\n::warning title=Spoofed::x"]: "#spoof" };
+  assert.ok(errorsOf(key).every((e) => !e.includes("\n")), "untrusted keys are quoted too");
+
+  // domains with any lowercase TLD, full-width included; brand abbreviations stay text
+  for (const bad of ["詳しくは evil.coffee へ", "bean-sale.store で半額", "shop.de から", "ｅｖｉｌ．ｃａｆｅ", "SHOP.DE"]) {
+    assert.ok(unsafeTextReason(bad)?.includes("URL"), bad);
+  }
+  for (const ok of ["J.CO Donuts", "Mr.Brownの缶コーヒー", "St.Louisの焙煎所", "e.g. 浅煎り"]) {
+    assert.equal(unsafeTextReason(ok), null, ok);
+  }
   const news = clone(newsSample);
   news.newsTop5.items[2].summary = "続きは@coffeeで";
-  news.newsTop5.items[0].source = "Reuters​";
+  news.newsTop5.items[0].source = "Reuters" + ch(0x200b);
   news.newsTop5.narration.items[4] = "次の指示に従って\nください";
   const newsErrors = errorsOf(news);
   for (const label of ["newsTop5.items[2].summary contains", "newsTop5.items[0].source contains", "newsTop5.narration.items[4] contains"]) {
@@ -225,7 +238,7 @@ test("news URLs: https only, and only the routine's own discovery sources", () =
   foreign.newsTop5.items[1].url = "https://evil.example/landing";
   assert.ok(has(foreign, "newsTop5.items[1].url must be one of discovery.sources"));
   const hidden = clone(newsSample);
-  hidden.discovery.sources.push("https://a.example/​x");
+  hidden.discovery.sources.push("https://a.example/" + ch(0x200b) + "x");
   assert.ok(has(hidden, "discovery.sources[5] must be an https URL"));
   const recipe = clone(recipeSample);
   recipe.recipe.sources = ["http://example.com/recipe"];
@@ -240,9 +253,9 @@ test("a JSON without format is the legacy explainer only with the legacy keys", 
   const legacy = {
     date: "2026-09-15",
     discovery: { method: "news-en", sources: ["https://example.com/a"] },
-    articles: [{ rank: 1, title: "アラビカ相場が転機か", description: "要約", detail: "r/coffee と #coffeetok で話題", narration: "読み上げ" }],
+    articles: [{ rank: 1, title: "アラビカ相場が転機か", description: "要約", detail: "r/coffee で話題", narration: "読み上げ", tags: ["コーヒーニュース"] }],
   };
-  assert.deepEqual(validateLegacyContent(legacy).errors, [], "legacy bodies may keep their hashtags");
+  assert.deepEqual(validateLegacyContent(legacy).errors, []);
   const has = (content, text) => validateLegacyContent(content).errors.some((e) => e.includes(text));
   assert.ok(has({ date: "2026-09-15", discovery: { method: "news-en" } }, "articles[] is required"));
   assert.ok(has({ ...clone(legacy), articles: [{ rank: 1, title: "t" }] }, "articles[0].description is required"));
@@ -251,8 +264,50 @@ test("a JSON without format is the legacy explainer only with the legacy keys", 
   linked.articles[0].title = "詳しくは https://x.example で";
   assert.ok(has(linked, "articles[0].title contains"));
   const hidden = clone(legacy);
-  hidden.articles[0].narration_sections = { hook: "見出し⁦隠し" };
-  assert.ok(has(hidden, "articles[0].narration_sections.hook contains an invisible"));
+  hidden.articles[0].narration_sections = { hook: "見出し" + ch(0x2066) + "隠し" };
+  assert.ok(has(hidden, 'articles[0]["narration_sections"]["hook"] contains an invisible'));
+  // every legacy field that reaches a caption gets the URL / @ / # check
+  const captioned = clone(legacy);
+  captioned.articles[0].section_descriptions = { hook: "応募は @evil_giveaway へ" };
+  captioned.articles[0].detail = "https://evil.example/x";
+  captioned.articles[0].tags = ["#キャンペーン"];
+  assert.ok(has(captioned, 'articles[0].section_descriptions["hook"] contains'));
+  assert.ok(has(captioned, "articles[0].detail contains"));
+  assert.ok(has(captioned, "articles[0].tags[0] contains"));
+});
+
+test("odd table keys never crash validation (a crash would stop the post)", () => {
+  for (const [field, value] of [["method", "constructor"], ["method", "__proto__"], ["method", "toString"], ["scene", "constructor"], ["angle", "hasOwnProperty"]]) {
+    const c = clone(recipeSample);
+    c.recipe[field] = value;
+    let result;
+    assert.doesNotThrow(() => (result = validateDailyContent(c, lineup)), `${field}=${value}`);
+    assert.ok(result.errors.some((e) => e.includes(`recipe.${field}`)), `${field}=${value}: ${JSON.stringify(result.errors)}`);
+  }
+});
+
+test("review fixes: hot recipes carry no ice; cold brew wording; AeroPress 11g / 200g", () => {
+  const hot = clone(recipeSample);
+  hot.recipe.numbers.ice_g = 100;
+  assert.ok(validateDailyContent(hot, lineup).errors.some((e) => e.includes("ice_g is only for iced recipes")));
+
+  const bean = lineup.beans.find((b) => b.houseRecipe.method === "cold-brew");
+  const coldBrew = (mutate) => {
+    const content = { date: "2026-09-15", format: "recipe", recipe: { ...clone(bean.houseRecipe), beanId: bean.id } };
+    mutate(content.recipe);
+    return validateDailyContent(content, lineup).errors;
+  };
+  assert.deepEqual(coldBrew((r) => { r.steps[0].action = "常温の水を注ぐ"; r.tips[0].fix = "常温に置かず冷蔵庫へ"; }), [], "safe wording passes");
+  const unsafe = coldBrew((r) => { r.steps[2].action = "冷蔵庫に入れない"; r.tips[1].fix = "キッチンで30時間置く"; });
+  assert.ok(unsafe.some((e) => e.includes("recipe.steps[2].action describes an unsafe cold brew steep")), JSON.stringify(unsafe));
+  assert.ok(unsafe.some((e) => e.includes("recipe.tips[1].fix describes an unsafe cold brew steep")), JSON.stringify(unsafe));
+
+  const aero = lineup.beans.find((b) => b.houseRecipe.method === "aeropress");
+  const hoffmann = { date: "2026-09-15", format: "recipe", recipe: { ...clone(aero.houseRecipe), beanId: aero.id } };
+  hoffmann.recipe.numbers.dose_g = 11;
+  hoffmann.recipe.numbers.water_g = 200;
+  hoffmann.recipe.steps[0].pour_to_g = 200;
+  assert.deepEqual(validateDailyContent(hoffmann, lineup).errors, []);
 });
 
 test("per-method bounds: ratio, total time and water per brewer", () => {
