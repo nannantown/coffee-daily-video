@@ -18,7 +18,7 @@
 | YT OPEN GROUND coffee roasters (@OpenGroundCoffee) | #0 | 同上 | 2026-09-14 | 2026-04-20 | 配信死亡（09-01..09-14: views 中央値 0, n=12） |
 
 - 試行 #0 = 2026-04-20（平日ニュース + 週末エバーグリーンの導入）からの型。S はルール導入日（判定サイクルの起点）、F はその型を始めた日。#0 の「経過日」は判定サイクル上の日数で、型そのものは F から続いている
-- **試行 #1「今日の一杯」レシピカード型**（下の節）は、この変更の main 統合後の**最初の新型投稿日**を S = F とし、最初の判定日 = S + 14。台帳（sns-hub とこの表）への #1 行の記入は、ルールどおり**初回投稿日の当日以降**に人間が sns-hub の台帳とこの表を同じ日に書き換える（未来の日付は書かない）。記入前でも `scripts/pdca-summary.mjs` は `performance-history.json` の `content.trial = "coffee-trial-1-recipe-card"` が最初に付いた日を S = F として #1 を集計する
+- **試行 #1「今日の一杯」レシピカード型**（下の節）は、この変更の main 統合後の**最初の新型投稿日**を S = F とし、最初の判定日 = S + 14。台帳（sns-hub とこの表）への #1 行の記入は、ルールどおり**初回投稿日の当日以降**に人間が sns-hub の台帳とこの表を同じ日に書き換える（未来の日付は書かない）。記入前でも `scripts/pdca-summary.mjs` は `performance-history.json` で `content.trial = "coffee-trial-1-recipe-card"` の**レシピ投稿**（`content.format = "recipe"`）が最初に付いた日を S = F として #1 を集計する（日曜ニュースだけでは始まらない）
 
 ### 判定窓・経過日・次の判定日と集計
 
