@@ -41,9 +41,16 @@ try {
 }
 const lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
 
+// allowed news hosts for news-top5 (missing → news rejected, fail closed)
+let newsSources = null;
+try {
+  newsSources = JSON.parse(readFileSync(join(rootDir, "data", "news-sources.json"), "utf-8"));
+} catch {
+  console.log("warning: data/news-sources.json is not readable — news-top5 will be rejected");
+}
 let result;
 try {
-  result = validateDailyContent(content, lineup, { ...(skipDate ? {} : { today }), allowCandidate });
+  result = validateDailyContent(content, lineup, { ...(skipDate ? {} : { today }), allowCandidate, newsSources });
 } catch (err) {
   console.error(`NG: validation crashed on ${contentPath}: ${JSON.stringify(String(err?.message ?? err))}`);
   process.exit(1);

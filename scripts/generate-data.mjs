@@ -35,6 +35,7 @@ const outputDir = join(rootDir, "output");
 const enrichedPath = join(rootDir, "data", "enriched-coffee-news.json");
 const lineupPath = join(rootDir, "data", "coffee-lineup.json");
 const historyPath = join(rootDir, "data", "performance-history.json");
+const newsSourcesPath = join(rootDir, "data", "news-sources.json");
 
 const contentArg = process.argv.find((a) => a.startsWith("--content="))?.slice("--content=".length);
 const templateNarration = process.argv.includes("--template-narration");
@@ -207,9 +208,14 @@ function houseRecipe(lineup, today) {
   }
 }
 
+// Why the day's content could not be posted, kept for the final warning when
+// there is no house recipe to fall back to either.
+let lastRejection = null;
+
 function fallbackTo(lineup, today, reason, details = []) {
   const content = houseRecipe(lineup, today);
   if (content) actionsWarning(`${reason} → house recipe (${content.recipe.beanId} × ${content.recipe.method})`, details);
+  else lastRejection = { reason, details };
   return content;
 }
 
@@ -218,7 +224,11 @@ function chooseCardContent(file, lineup, today) {
     console.log(`  No content for today → house recipe fallback`);
     return fallbackTo(lineup, today, "No content for today");
   }
-  const { errors, warnings } = safely(() => validateDailyContent(file, lineup, { ...(contentArg ? {} : { today }), allowCandidate }));
+  // allowed news hosts; missing / unreadable → null → news-top5 rejected (fail closed)
+  const newsSources = readJSON(newsSourcesPath);
+  const { errors, warnings } = safely(() =>
+    validateDailyContent(file, lineup, { ...(contentArg ? {} : { today }), allowCandidate, newsSources })
+  );
   for (const w of warnings) console.log(`  warning: ${w}`);
   if (errors.length === 0) return file;
   console.error(`  Content rejected (${errors.length} error(s)) → house recipe fallback`);
@@ -267,6 +277,7 @@ async function main() {
   if (!content) {
     // Keep posting without advertising an unconfirmed bean.
     actionsWarning("No confirmed bean in data/coffee-lineup.json → legacy evergreen explainer (no bean promoted)", [
+      ...(lastRejection ? [`${lastRejection.reason}:`, ...lastRejection.details] : []),
       'Set the beans the owner confirmed to status "confirmed" by PR to start the recipe cards',
     ]);
     console.log("No postable bean → legacy evergreen explainer\n");

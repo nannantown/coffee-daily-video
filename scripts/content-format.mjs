@@ -151,6 +151,35 @@ export function unsafeSteepReason(value) {
   return null;
 }
 
+function allowedNewsHosts(newsSources) {
+  const list = Array.isArray(newsSources) ? newsSources : newsSources?.hosts;
+  return (Array.isArray(list) ? list : [])
+    .map((h) => String(typeof h === "string" ? h : (h?.host ?? "")).toLowerCase())
+    .filter((h) => /^[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}$/u.test(h));
+}
+
+/**
+ * Why a news URL may not be published (null = fine). The routine writes both
+ * the item URLs and discovery.sources, so neither is trusted: https only, no
+ * user name / password, no port, no IP address, and the host (or a subdomain
+ * of it) must be an allowed news site in data/news-sources.json.
+ */
+export function newsUrlProblem(value, newsSources) {
+  if (!isSafeHttpsUrl(value)) return "must be an https URL";
+  const authority = value.slice("https://".length).split(/[/?#]/u)[0];
+  if (authority.includes("@")) return "must not carry a user name or password";
+  if (authority.startsWith("[")) return "must not be an IP address";
+  if (authority.includes(":")) return "must not set a port";
+  const host = new URL(value).hostname.toLowerCase();
+  if (/^\d+(?:\.\d+){3}$/u.test(host)) return "must not be an IP address";
+  const hosts = allowedNewsHosts(newsSources);
+  if (hosts.length === 0) return "cannot be checked (data/news-sources.json is not loaded)";
+  if (!hosts.some((h) => host === h || host.endsWith(`.${h}`))) {
+    return `host ${JSON.stringify(host)} is not an allowed news site (data/news-sources.json)`;
+  }
+  return null;
+}
+
 /** An https URL without whitespace, invisible characters or quotes/brackets. */
 export function isSafeHttpsUrl(value) {
   if (typeof value !== "string" || !/^https:\/\//.test(value)) return false;
@@ -462,14 +491,15 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
   }
 }
 
-function validateNewsTop5(content, errors) {
+function validateNewsTop5(content, errors, newsSources) {
   const d = content.discovery;
   const sources = d && Array.isArray(d.sources) ? d.sources : [];
   if (sources.length === 0) {
     errors.push("discovery.sources is required for news-top5");
   }
   sources.forEach((u, i) => {
-    if (!isSafeHttpsUrl(u)) errors.push(`discovery.sources[${i}] must be an https URL`);
+    const problem = newsUrlProblem(u, newsSources);
+    if (problem) errors.push(`discovery.sources[${i}] ${problem}`);
   });
   if (d && isNum(d.freshness_hours) && d.freshness_hours > 168) {
     errors.push(`discovery.freshness_hours ${d.freshness_hours} > 168 (news older than a week)`);
@@ -491,9 +521,10 @@ function validateNewsTop5(content, errors) {
       checkLen(errors, `${p}.number`, item.number, LIMITS.newsNumber);
       if (item.numberLabel != null) checkLen(errors, `${p}.numberLabel`, item.numberLabel, LIMITS.newsNumberLabel);
     }
-    // The URL is printed in the captions: only an https link the routine
-    // actually listed as a discovery source may be published.
-    if (!isSafeHttpsUrl(item?.url)) errors.push(`${p}.url must be an https URL`);
+    // The URL is printed in the captions: only an allowed news site, and only
+    // a link the routine also listed as a discovery source.
+    const problem = newsUrlProblem(item?.url, newsSources);
+    if (problem) errors.push(`${p}.url ${problem}`);
     else if (!sources.includes(item.url)) errors.push(`${p}.url must be one of discovery.sources`);
   });
   const nar = block.narration && typeof block.narration === "object" ? block.narration : {};
@@ -557,7 +588,11 @@ export function validateLegacyContent(content) {
  * errors → the content cannot be rendered as-is (routine must fix; the
  * pipeline falls back to a house recipe). warnings → rendered anyway.
  */
-export function validateDailyContent(content, lineup, { today, allowCandidate = false } = {}) {
+/**
+ * opts.newsSources: data/news-sources.json (allowed news hosts). Without it a
+ * news-top5 is rejected (fail closed).
+ */
+export function validateDailyContent(content, lineup, { today, allowCandidate = false, newsSources = null } = {}) {
   const errors = [];
   const warnings = [];
   if (!content || typeof content !== "object") {
@@ -576,7 +611,7 @@ export function validateDailyContent(content, lineup, { today, allowCandidate = 
     else warnings.push(`${content.date} is normally "${expectedFormatFor(content.date)}" (got "${content.format}")`);
   }
   if (content.format === "recipe") validateRecipe(content.recipe, lineup, errors, "recipe", { allowCandidate });
-  if (content.format === "news-top5") validateNewsTop5(content, errors);
+  if (content.format === "news-top5") validateNewsTop5(content, errors, newsSources);
 
   if (errors.length === 0) {
     const data = buildCardsData(content, lineup, { dateDisplay: "" });

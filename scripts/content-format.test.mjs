@@ -8,6 +8,7 @@ import {
   NoPostableBeanError,
   TIMELINE,
   isSafeHttpsUrl,
+  newsUrlProblem,
   unsafeSteepReason,
   unsafeTextReason,
   validateLegacyContent,
@@ -37,6 +38,7 @@ const readJSON = (rel) => JSON.parse(readFileSync(join(rootDir, rel), "utf-8"));
 const realLineup = readJSON("data/coffee-lineup.json");
 const recipeSample = readJSON("data/samples/recipe.sample.json");
 const newsSample = readJSON("data/samples/news-top5.sample.json");
+const newsSources = readJSON("data/news-sources.json");
 const clone = (o) => structuredClone(o);
 // invisible characters are built from code points — never paste them raw into source
 const ch = (cp) => String.fromCodePoint(cp);
@@ -87,7 +89,7 @@ test("lineup shop: EC not public yet → DM call to action", () => {
 
 test("samples validate", () => {
   assert.deepEqual(validateDailyContent(recipeSample, lineup).errors, []);
-  assert.deepEqual(validateDailyContent(newsSample, lineup).errors, []);
+  assert.deepEqual(validateDailyContent(newsSample, lineup, { newsSources }).errors, []);
 });
 
 test("Sunday is news TOP5, other days are recipes", () => {
@@ -228,18 +230,44 @@ test("untrusted text: URLs, @, #, line breaks and invisible characters are rejec
   assert.ok(newsErrors.every((e) => !e.includes("\n")), "untrusted values are quoted, never a raw line break in the log");
 });
 
-test("news URLs: https only, and only the routine's own discovery sources", () => {
-  const has = (content, text) => validateDailyContent(content, lineup).errors.some((e) => e.includes(text));
+test("news URLs: allowed news hosts only (data/news-sources.json), https, no credentials / port / IP, and listed in discovery.sources", () => {
+  const has = (content, text) => validateDailyContent(content, lineup, { newsSources }).errors.some((e) => e.includes(text));
+  assert.deepEqual(validateDailyContent(newsSample, lineup, { newsSources }).errors, []);
+  assert.ok(validateDailyContent(newsSample, lineup).errors.some((e) => e.includes("data/news-sources.json is not loaded")), "fail closed without the allowlist");
+
   const http = clone(newsSample);
   http.newsTop5.items[0].url = http.newsTop5.items[0].url.replace("https://", "http://");
   http.discovery.sources[0] = http.newsTop5.items[0].url;
   assert.ok(has(http, "newsTop5.items[0].url must be an https URL"));
   assert.ok(has(http, "discovery.sources[0] must be an https URL"));
+
+  // the routine writes discovery.sources too, so listing a URL there is not enough
+  for (const bad of ["https://evil.example/buy", "https://reuters.com.evil.example/x", "https://notreuters.com/x"]) {
+    const c = clone(newsSample);
+    c.newsTop5.items[1].url = bad;
+    c.discovery.sources.push(bad);
+    assert.ok(has(c, "newsTop5.items[1].url host"), bad);
+    assert.ok(has(c, "discovery.sources[5] host"), bad);
+  }
+  for (const [bad, text] of [
+    ["https://user:pw@evil.example/", "user name or password"],
+    ["https://reuters.com@evil.example/", "user name or password"],
+    ["https://www.reuters.com:8443/markets", "port"],
+    ["https://www.reuters.com:443/markets", "port"],
+    ["https://127.0.0.1/x", "IP address"],
+    ["https://2130706433/x", "IP address"],
+    ["https://[::1]/x", "IP address"],
+  ]) {
+    assert.equal(newsUrlProblem(bad, newsSources)?.includes(text), true, `${bad} → ${newsUrlProblem(bad, newsSources)}`);
+  }
+  assert.equal(newsUrlProblem("https://www.reuters.com/markets/commodities/x", newsSources), null, "subdomains of an allowed host");
+  assert.equal(newsUrlProblem("https://WWW.PerfectDailyGrind.com/2026/09/x/", newsSources), null, "host names compare case-insensitively");
+
   const foreign = clone(newsSample);
-  foreign.newsTop5.items[1].url = "https://evil.example/landing";
+  foreign.newsTop5.items[1].url = "https://www.reuters.com/markets/not-in-sources";
   assert.ok(has(foreign, "newsTop5.items[1].url must be one of discovery.sources"));
   const hidden = clone(newsSample);
-  hidden.discovery.sources.push("https://a.example/" + ch(0x200b) + "x");
+  hidden.discovery.sources.push("https://www.reuters.com/" + ch(0x200b) + "x");
   assert.ok(has(hidden, "discovery.sources[5] must be an https URL"));
   const recipe = clone(recipeSample);
   recipe.recipe.sources = ["http://example.com/recipe"];
