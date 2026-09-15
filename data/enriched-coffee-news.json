@@ -1,40 +1,41 @@
 {
-  "date": "2026-09-15",
+  "date": "2026-09-16",
   "discovery": {
-    "method": "market-data",
-    "description": "9月11日ロイター発の商社オラム・ICE認証在庫大量認証準備報道と、9月14日のアラビカ12月限清算値(barchart / tradingeconomics / Helena Coffee)をクロスチェック。26年ぶり低水準の認証在庫が倍増する可能性と、直後の相場下落を市況PDCAとして日本の焙煎所・家淹れ層に翻訳",
+    "method": "news-ja",
+    "description": "36Kr Japan と Investing.com Japan がロイター/ブルームバーグの英語一次報を日本語で速報した『ムバダラがラッキンコーヒーへ約10億ドル出資』(9月10日発表) を、9月14日の PDG コーヒー週次サマリと Semafor / Mubadala 公式リリースでクロスチェック。中東政府系ファンドが中国の激安コーヒー戦略に賭けた資金移動と、スペシャルティ焙煎所への含意を日本の家淹れ層・カフェ店主に翻訳",
     "sources": [
-      "https://www.investing.com/news/stock-market-news/coffee-traders-big-shipments-are-set-to-boost-exchange-stocks-and-weigh-on-prices-4898038",
-      "https://www.ksl.com/article/51622842/coffee-traders-big-shipments-are-set-to-boost-exchange-stocks-and-weigh-on-prices",
-      "https://www.gdnonline.com/Details/1406124",
-      "https://www.helenacoffee.vn/coffee-prices-today-september-14/",
-      "https://www.barchart.com/futures/quotes/KCU26"
+      "https://36kr.jp/501562/",
+      "https://news.yahoo.co.jp/articles/65eec99ef8db6d3a7875546466894966295de728",
+      "https://jp.investing.com/news/stock-market-news/article-1675400",
+      "https://www.semafor.com/article/09/10/2026/abu-dhabis-mubadala-takes-stake-in-chinas-luckin-coffee-with-1b-deal",
+      "https://www.mubadala.com/en/news/mubadala-announces-significant-minority-investment-in-luckin-coffee",
+      "https://dailycoffeenews.com/2026/09/10/mubadala-plans-minority-stake-in-luckin-in-1-billion-deal/"
     ],
-    "query": "Olam arabica coffee ICE certify December 2026 bags Brazil warehouse stocks",
-    "freshness_hours": 96
+    "query": "ムバダラ ラッキン コーヒー 出資 1500億 9月 / Mubadala Luckin $1bn stake September 2026",
+    "freshness_hours": 144
   },
   "articles": [
     {
       "rank": 1,
-      "title": "商社オラムがブラジル産アラビカ15-20万袋をICE認証在庫へ・9月11日ロイター報、26年ぶり低水準の認証在庫を倍増候補で9/14の12月限は3.3%下落",
-      "description": "9月11日、ロイターがコーヒー市況の分岐点となる大ニュースを報じました。認証在庫が倍増する可能性と、9月14日の相場反応を解説します",
-      "detail": "ロイター(9/11)によると、大手コーヒー商社オラムがブラジル産アラビカ15万〜20万袋をICEのDec契約に振り分けるべく認証準備中。現在のICE認証アラビカ在庫は約21万9千袋で、これは1999年以来26年ぶりの低水準。オラム分だけで在庫がほぼ倍増する規模で、供給不足を根拠に支えられていたアラビカ相場の重石を外す可能性があります。実際9月14日、ニューヨークのアラビカ12月限は9.9セント(3.3%)安の285.7セント/lb、翌3月限も3.5%安で終了。ICE認証在庫の約7割はベルギー・アントワープ保管で、ここに大量搬入されれば実需筋の仕入コスト・小売価格に数週間で波及する可能性が高い状況です",
-      "narration": "アラビカ豆の相場、そろそろ下がるかもしれません。9月11日ロイター発、来月以降のコーヒー価格を動かす大きな動きがあったのでご紹介します",
-      "tags": ["コーヒーニュース", "市況", "アラビカ"],
+      "title": "UAEアブダビ政府系ムバダラがラッキンコーヒーへ約10億ドル出資・9/10発表、経済持分9.3%と取締役1名指名権、店舗36000超・顧客5億人の激安チェーンに中東マネー流入",
+      "description": "9月10日、中東の政府系ファンドが中国の激安コーヒーチェーンに1500億円規模を投じました。ラッキンの規模感と、スペシャルティ焙煎所への含意を解説します",
+      "detail": "UAEアブダビの政府系ファンド、ムバダラ・インベストメントが9月10日、中国最大級のコーヒーチェーン、ラッキンコーヒーへ支配株主センチュリウム・キャピタルと共に総額約10億ドル(約1500億円)の戦略的少数持分投資を発表。ムバダラは経済的持分の約9.3%を取得し、5%を下回らない限り取締役1名の指名権を確保します。ラッキンは2017年設立で世界店舗数36,000超、2026年6月時点で顧客数約5億人。2020年に不正会計で米国上場を廃止したものの2022年にOTC市場で復活し、1杯200-300円台の激安戦略で中国スタバを店舗数で抜いた成長企業。ムバダラは2015年以降中国に200億ドル超を投じており、中東マネーが中国の消費者向けコーヒー市場に本格的に賭けた象徴的な案件です。日本の焙煎所・スペシャルティ業界にとっては、激安×大規模資本の圧力がアジアで一段と強まる中、豆の物語や焙煎士の顔で差別化する重要性を再認識させるニュースです",
+      "narration": "1500億円が中国のコーヒーに流れた話です。9月10日、アブダビ政府系ファンドが世界最大級チェーン、ラッキンコーヒーへ大型出資を発表しました",
+      "tags": ["コーヒーニュース", "ラッキン", "業界"],
       "narration_sections": {
-        "hook": "アラビカ豆の相場、そろそろ下がるかもしれません。9月11日ロイター発、来月以降のコーヒー価格を動かす大きな動きがあったのでご紹介します",
-        "origin": "大手商社オラムが、ブラジル産アラビカを15万から20万袋、ICE認証在庫に振り分ける準備中と報道。現在の認証在庫は21万9千袋で26年ぶりの低水準ですが、実現すれば一気に倍増する規模で、供給不足の重石を外す可能性があります",
-        "recommend": "実際9月14日にはアラビカ12月限が3.3%下がり2.86ドルまで下落しました。焙煎所の仕入れに直接効く相場変動、注目ですね"
+        "hook": "1500億円が中国のコーヒーに流れた話です。9月10日、アブダビ政府系ファンドが世界最大級チェーン、ラッキンコーヒーへ大型出資を発表しました",
+        "origin": "投資したのはUAEアブダビ政府系のムバダラ・インベストメント。約10億ドルを出資し、経済的持分9.3%と取締役1名の指名権を確保。ラッキンは店舗36000超、顧客5億人、20年に不正会計で上場廃止も22年に再上場した激安戦略チェーンです",
+        "recommend": "中東マネーが選んだのは中国の激安。ここに勝てるのは、焙煎士の顔が見えて豆の物語で選ばれるスペシャルティだけです"
       },
       "section_titles": {
-        "hook": "アラビカ相場が転機か",
-        "origin": "オラム認証在庫の衝撃",
-        "recommend": "9月14日の答え合わせ"
+        "hook": "1500億円が中国へ",
+        "origin": "ムバダラの9.3%",
+        "recommend": "スペシャルティの答え"
       },
       "section_descriptions": {
-        "hook": "ロイター9月11日報、市況を動かす大きな一手",
-        "origin": "在庫21万袋が倍増する可能性、供給不足に転機",
-        "recommend": "12月限が3.3%下落、仕入れコストに直結"
+        "hook": "アブダビ政府系がラッキンへ大型出資、9月10日発表",
+        "origin": "約10億ドル、経済持分9.3%と取締役1名の指名権",
+        "recommend": "激安戦略に対抗する道は焙煎士の顔と豆の物語です"
       }
     }
   ]
