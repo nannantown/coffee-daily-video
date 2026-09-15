@@ -10,7 +10,8 @@
  *
  * data/enriched-coffee-news.json keeps its file name (the cross-account PDCA
  * routine and record-upload read it), but a `format` field now selects the
- * content type. A file without `format` is the legacy news explainer.
+ * content type. A file without `format` (and without `recipe` / `newsTop5`)
+ * is the legacy news explainer.
  */
 
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
