@@ -11,7 +11,12 @@
  * data/enriched-coffee-news.json keeps its file name (the cross-account PDCA
  * routine and record-upload read it), but a `format` field now selects the
  * content type. A file without `format` (and without `recipe` / `newsTop5`)
- * is the legacy news explainer.
+ * is the legacy news explainer only when it has the legacy keys
+ * (validateLegacyContent); anything else is rejected like invalid cards.
+ *
+ * The morning routine writes this JSON after reading the web and its PR is
+ * merged without a human review, so every text that reaches a card, caption,
+ * title or narration is validated as untrusted input (unsafeTextReason).
  */
 
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
@@ -63,6 +68,60 @@ export const LIMITS = {
   newsSource: 30,
   narrationTotal: 260, // IG Reels rejects > 60s videos
 };
+
+// Cold brew is a food-safety case: it steeps for hours, so it must steep in
+// the fridge (1-10℃) for 6-24 hours and the steps must say so. A room
+// temperature steep over several days must never validate.
+export const COLD_BREW = { minHours: 6, maxHours: 24, minTempC: 1, maxTempC: 10, fridgeWord: "冷蔵庫" };
+
+// Sanity bounds per method — wider than the routine prompt's guideline ranges
+// (docs/routine-prompt.md 2a-4), so a creative but brewable recipe passes and
+// a broken one does not. ratio = (water + ice) ÷ beans, time in seconds,
+// water = what is poured into the brewer (hot water, or cold water for cold brew).
+const POUR_OVER_BOUNDS = { ratio: [12, 18], time: [90, 360], water: [100, 600] };
+export const METHOD_BOUNDS = {
+  v60: POUR_OVER_BOUNDS,
+  "kalita-wave": POUR_OVER_BOUNDS,
+  origami: POUR_OVER_BOUNDS,
+  chemex: { ratio: [12, 18], time: [180, 420], water: [250, 1200] },
+  clever: { ratio: [12, 18], time: [120, 360], water: [150, 500] },
+  "french-press": { ratio: [12, 18], time: [180, 900], water: [150, 1000] },
+  aeropress: { ratio: [10, 18], time: [45, 300], water: [60, 600] },
+  "cold-brew": { ratio: [5, 15], time: [COLD_BREW.minHours * 3600, COLD_BREW.maxHours * 3600], water: [150, 1200] },
+  "moka-pot": { ratio: [5, 12], time: [90, 480], water: [60, 500] },
+};
+// Iced (flash-brewed onto ice, not cold brew): the ice is part of the ratio.
+export const ICED_BOUNDS = { ratio: [10, 16], iceShare: [0.25, 0.6] };
+
+// Untrusted text checks, applied after NFKC so full-width look-alikes
+// (＠ ＃ ｗｗｗ． ｈｔｔｐｓ：／／) count too. Written with escapes and property
+// classes only — never paste raw invisible characters into this file.
+// Default_Ignorable_Code_Point covers zero-width / bidi / variation selectors /
+// tag characters / Hangul fillers (Unicode DerivedCoreProperties).
+const INVISIBLE_RE = /[\p{Cc}\p{Cf}\p{Zl}\p{Zp}\p{Default_Ignorable_Code_Point}]/u;
+const MENTION_RE = /[@#]/u;
+const URL_RE =
+  /[a-z][a-z0-9+.-]*:\/\/|www\.|[\p{L}\p{N}-]+\.(?:com|net|org|info|biz|io|co|jp|me|ly|gl|gg|to|tv|cc|xyz|app|dev|link|shop|site|online|ai|us|uk)(?![\p{L}\p{N}])/iu;
+
+/** Why a text may not be published (null = fine): invisible/control characters, @ / #, URLs or domains. */
+export function unsafeTextReason(value) {
+  const s = String(value ?? "").normalize("NFKC");
+  if (INVISIBLE_RE.test(s)) return "a line break, control, zero-width or other invisible character";
+  if (MENTION_RE.test(s)) return '"@" or "#" (mentions and hashtags become links)';
+  if (URL_RE.test(s)) return "a URL or domain name";
+  return null;
+}
+
+/** An https URL without whitespace, invisible characters or quotes/brackets. */
+export function isSafeHttpsUrl(value) {
+  if (typeof value !== "string" || !/^https:\/\//.test(value)) return false;
+  if (INVISIBLE_RE.test(value.normalize("NFKC")) || /[\s<>"'`\\]/u.test(value)) return false;
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
 
 const TIME_RE = /^(\d{1,2}):([0-5]\d)$/;
 const HOURS_RE = /^(\d{1,2}(?:\.\d)?)h$/;
@@ -140,8 +199,22 @@ export function expectedFormatFor(isoDate) {
   return d.getUTCDay() === 0 ? "news-top5" : "recipe";
 }
 
+/** Any bean that is not retired (rendering and captions — validation decides what may be posted). */
 export function findBean(lineup, beanId) {
   return (lineup?.beans || []).find((b) => b.id === beanId && b.status !== "retired") || null;
+}
+
+/**
+ * Beans that may be posted: status "confirmed" (the owner confirmed it by PR).
+ * "candidate" beans are allowed only in dry runs (allowCandidate), so an
+ * unconfirmed bean is never advertised.
+ */
+export function isPostableBean(bean, { allowCandidate = false } = {}) {
+  return Boolean(bean) && (bean.status === "confirmed" || (allowCandidate && bean.status === "candidate"));
+}
+
+export function postableBeans(lineup, opts = {}) {
+  return (lineup?.beans || []).filter((b) => isPostableBean(b, opts));
 }
 
 export function ratioLabel(numbers) {
@@ -156,25 +229,61 @@ export function ratioLabel(numbers) {
 // Validation
 // ---------------------------------------------------------------------------
 
+// Values are echoed with JSON.stringify so a line break inside an untrusted
+// value cannot start a new log line (GitHub Actions reads "::command::" lines).
+const quote = (v) => JSON.stringify(String(v ?? ""));
+
+function checkText(errors, label, value) {
+  if (typeof value !== "string") return;
+  const reason = unsafeTextReason(value);
+  if (reason) errors.push(`${label} contains ${reason}: ${quote(value)}`);
+}
+
 function checkLen(errors, label, value, max) {
   if (typeof value !== "string" || value.trim() === "") {
     errors.push(`${label} is required`);
   } else if (charLen(value) > max) {
-    errors.push(`${label} is ${charLen(value)} chars (max ${max}): "${value}"`);
+    errors.push(`${label} is ${charLen(value)} chars (max ${max}): ${quote(value)}`);
   }
+  checkText(errors, label, value);
 }
 
-export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
+const fmtSec = (sec) => (sec >= 3600 ? `${sec / 3600}h` : `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`);
+
+/** Every text of a recipe that reaches the cards, captions or narration: [label, value]. */
+function recipeTexts(recipe, prefix) {
+  const out = [];
+  const add = (label, v) => typeof v === "string" && out.push([label, v]);
+  add(`${prefix}.hook`, recipe.hook);
+  add(`${prefix}.numbers.grind`, recipe.numbers?.grind);
+  (Array.isArray(recipe.steps) ? recipe.steps : []).forEach((s, i) => add(`${prefix}.steps[${i}].action`, s?.action));
+  (Array.isArray(recipe.taste?.notes) ? recipe.taste.notes : []).forEach((v, i) => add(`${prefix}.taste.notes[${i}]`, v));
+  add(`${prefix}.taste.summary`, recipe.taste?.summary);
+  (Array.isArray(recipe.tips) ? recipe.tips : []).forEach((t, i) => {
+    add(`${prefix}.tips[${i}].problem`, t?.problem);
+    add(`${prefix}.tips[${i}].fix`, t?.fix);
+  });
+  const nar = recipe.narration && typeof recipe.narration === "object" ? recipe.narration : {};
+  for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration.${k}`, v);
+  return out;
+}
+
+export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allowCandidate = false } = {}) {
   if (!recipe || typeof recipe !== "object") {
     errors.push(`${prefix} block is required`);
     return;
   }
-  if (!findBean(lineup, recipe.beanId)) {
-    const ids = (lineup?.beans || []).filter((b) => b.status !== "retired").map((b) => b.id);
-    errors.push(`${prefix}.beanId "${recipe.beanId}" is not in data/coffee-lineup.json (${ids.join(", ")})`);
+  const bean = findBean(lineup, recipe.beanId);
+  if (!bean) {
+    const ids = postableBeans(lineup, { allowCandidate }).map((b) => b.id);
+    errors.push(`${prefix}.beanId ${quote(recipe.beanId)} is not in data/coffee-lineup.json (${ids.join(", ") || "no postable bean"})`);
+  } else if (!isPostableBean(bean, { allowCandidate })) {
+    errors.push(
+      `${prefix}.beanId "${bean.id}" has status "${bean.status}" in data/coffee-lineup.json — only "confirmed" beans are posted (the owner confirms beans by PR)`
+    );
   }
   if (!METHODS[recipe.method]) {
-    errors.push(`${prefix}.method "${recipe.method}" must be one of ${Object.keys(METHODS).join(", ")}`);
+    errors.push(`${prefix}.method ${quote(recipe.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
   }
   if (!SCENES[recipe.scene]) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
@@ -184,7 +293,7 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
   if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
   const sources = Array.isArray(recipe.sources) ? recipe.sources : [];
   sources.forEach((u, i) => {
-    if (!/^https?:\/\//.test(String(u))) errors.push(`${prefix}.sources[${i}] must be an http(s) URL`);
+    if (!isSafeHttpsUrl(u)) errors.push(`${prefix}.sources[${i}] must be an https URL`);
   });
   if (recipe.angle === "expert" && sources.length === 0) {
     errors.push(`${prefix}.sources is required when angle is "expert" (link the recipe it adapts)`);
@@ -192,35 +301,61 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
   checkLen(errors, `${prefix}.hook`, recipe.hook, LIMITS.hook);
 
   const n = recipe.numbers || {};
-  if (!isNum(n.dose_g) || n.dose_g < 5 || n.dose_g > 80) errors.push(`${prefix}.numbers.dose_g must be 5-80`);
-  if (!isNum(n.water_g) || n.water_g < 20 || n.water_g > 1200) errors.push(`${prefix}.numbers.water_g must be 20-1200`);
   const coldBrew = recipe.method === "cold-brew";
+  const iced = recipe.scene === "iced" && !coldBrew;
+  const bounds = METHOD_BOUNDS[recipe.method];
+  const methodName = METHODS[recipe.method]?.label || recipe.method;
+  if (!isNum(n.dose_g) || n.dose_g < 5 || n.dose_g > 80) errors.push(`${prefix}.numbers.dose_g must be 5-80`);
+  if (!isNum(n.water_g) || n.water_g < 20 || n.water_g > 1200) {
+    errors.push(`${prefix}.numbers.water_g must be 20-1200`);
+  } else if (bounds && (n.water_g < bounds.water[0] || n.water_g > bounds.water[1])) {
+    errors.push(`${prefix}.numbers.water_g ${n.water_g}g is outside ${bounds.water[0]}-${bounds.water[1]}g for ${methodName}`);
+  }
   if (coldBrew) {
-    if (n.temp_c != null && (!isNum(n.temp_c) || n.temp_c > 30)) errors.push(`${prefix}.numbers.temp_c must be null or ≤30 for cold-brew`);
+    if (!isNum(n.temp_c) || n.temp_c < COLD_BREW.minTempC || n.temp_c > COLD_BREW.maxTempC) {
+      errors.push(
+        `${prefix}.numbers.temp_c must be ${COLD_BREW.minTempC}-${COLD_BREW.maxTempC} for cold-brew (the fridge temperature — never steep at room temperature)`
+      );
+    }
   } else if (!isNum(n.temp_c) || n.temp_c < 60 || n.temp_c > 100) {
     errors.push(`${prefix}.numbers.temp_c must be 60-100`);
   }
-  if (recipe.scene === "iced" && !coldBrew && (!isNum(n.ice_g) || n.ice_g <= 0)) {
+  if (iced && (!isNum(n.ice_g) || n.ice_g <= 0)) {
     errors.push(`${prefix}.numbers.ice_g is required for iced recipes`);
   }
   if (coldBrew && n.ice_g != null) errors.push(`${prefix}.numbers.ice_g must be omitted for cold-brew (the ratio is water ÷ beans)`);
   if (n.ice_g != null && (!isNum(n.ice_g) || n.ice_g < 0 || n.ice_g > 600)) errors.push(`${prefix}.numbers.ice_g must be 0-600`);
   // Cold brew steeps for hours ("10h"); every other method is "m:ss" — a cold
   // brew "8:00" would be printed and read aloud as 8 minutes.
+  const totalSec = timeSeconds(n.time);
   if (coldBrew ? !HOURS_RE.test(String(n.time ?? "")) : !TIME_RE.test(String(n.time ?? ""))) {
-    errors.push(`${prefix}.numbers.time must be ${coldBrew ? '"<hours>h" for cold-brew' : '"m:ss"'} (got "${n.time}")`);
+    errors.push(`${prefix}.numbers.time must be ${coldBrew ? '"<hours>h" for cold-brew' : '"m:ss"'} (got ${quote(n.time)})`);
+  } else if (coldBrew && (totalSec < COLD_BREW.minHours * 3600 || totalSec > COLD_BREW.maxHours * 3600)) {
+    errors.push(`${prefix}.numbers.time must be ${COLD_BREW.minHours}h-${COLD_BREW.maxHours}h for cold-brew (steep in the fridge)`);
+  } else if (bounds && !coldBrew && (totalSec < bounds.time[0] || totalSec > bounds.time[1])) {
+    errors.push(`${prefix}.numbers.time ${n.time} is outside ${fmtSec(bounds.time[0])}-${fmtSec(bounds.time[1])} for ${methodName}`);
   }
   checkLen(errors, `${prefix}.numbers.grind`, n.grind, LIMITS.grind);
-  if (isNum(n.dose_g) && isNum(n.water_g) && n.dose_g > 0) {
-    const ratio = (n.water_g + (n.ice_g || 0)) / n.dose_g;
-    if (ratio < 2 || ratio > 20) errors.push(`${prefix}.numbers ratio 1:${ratio.toFixed(1)} is outside 1:2-1:20`);
+  if (isNum(n.dose_g) && isNum(n.water_g) && n.dose_g > 0 && bounds) {
+    const total = n.water_g + (iced && isNum(n.ice_g) ? n.ice_g : 0);
+    const ratio = total / n.dose_g;
+    const [lo, hi] = iced ? ICED_BOUNDS.ratio : bounds.ratio;
+    if (ratio < lo || ratio > hi) {
+      errors.push(`${prefix}.numbers ratio 1:${ratio.toFixed(1)} is outside 1:${lo}-1:${hi} for ${iced ? `iced ${methodName}` : methodName}`);
+    }
+    if (iced && isNum(n.ice_g) && n.ice_g > 0) {
+      const share = n.ice_g / total;
+      const [slo, shi] = ICED_BOUNDS.iceShare;
+      if (share < slo || share > shi) {
+        errors.push(`${prefix}.numbers.ice_g is ${Math.round(share * 100)}% of water + ice (keep it ${slo * 100}-${shi * 100}%)`);
+      }
+    }
   }
 
   const steps = recipe.steps;
   if (!Array.isArray(steps) || steps.length < 1 || steps.length > 5) {
     errors.push(`${prefix}.steps must have 1-5 items`);
   } else {
-    const totalSec = timeSeconds(n.time);
     let prevSec = null;
     let lastPour = null;
     steps.forEach((s, i) => {
@@ -249,6 +384,19 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
     } else if (isNum(n.water_g) && Math.abs(lastPour - n.water_g) > 2) {
       errors.push(`${prefix}.steps: last pour_to_g (${lastPour}g) must equal numbers.water_g (${n.water_g}g)`);
     }
+    if (coldBrew && !steps.some((s) => String(s?.action ?? "").includes(COLD_BREW.fridgeWord))) {
+      errors.push(`${prefix}.steps must say "${COLD_BREW.fridgeWord}" for cold-brew (e.g. "冷蔵庫で寝かせる") — it steeps in the fridge`);
+    }
+  }
+  if (coldBrew) {
+    for (const [label, value] of recipeTexts(recipe, prefix)) {
+      if (/常温|室温/u.test(value)) errors.push(`${label} must not steep cold brew at room temperature (常温/室温): ${quote(value)}`);
+    }
+  }
+  const nar = recipe.narration;
+  if (nar != null && (typeof nar !== "object" || Array.isArray(nar))) errors.push(`${prefix}.narration must be an object`);
+  for (const [label, value] of recipeTexts(recipe, prefix)) {
+    if (label.startsWith(`${prefix}.narration.`)) checkText(errors, label, value);
   }
 
   const t = recipe.taste || {};
@@ -274,11 +422,24 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe") {
 }
 
 function validateNewsTop5(content, errors) {
+  const d = content.discovery;
+  const sources = d && Array.isArray(d.sources) ? d.sources : [];
+  if (sources.length === 0) {
+    errors.push("discovery.sources is required for news-top5");
+  }
+  sources.forEach((u, i) => {
+    if (!isSafeHttpsUrl(u)) errors.push(`discovery.sources[${i}] must be an https URL`);
+  });
+  if (d && isNum(d.freshness_hours) && d.freshness_hours > 168) {
+    errors.push(`discovery.freshness_hours ${d.freshness_hours} > 168 (news older than a week)`);
+  }
+
   const block = content.newsTop5;
   if (!block || !Array.isArray(block.items) || block.items.length !== 5) {
     errors.push("newsTop5.items must have exactly 5 items");
     return;
   }
+  if (block.weekLabel != null) checkText(errors, "newsTop5.weekLabel", block.weekLabel);
   block.items.forEach((item, i) => {
     const p = `newsTop5.items[${i}]`;
     if (item?.rank !== i + 1) errors.push(`${p}.rank must be ${i + 1}`);
@@ -289,15 +450,56 @@ function validateNewsTop5(content, errors) {
       checkLen(errors, `${p}.number`, item.number, LIMITS.newsNumber);
       if (item.numberLabel != null) checkLen(errors, `${p}.numberLabel`, item.numberLabel, LIMITS.newsNumberLabel);
     }
-    if (!/^https?:\/\//.test(String(item?.url ?? ""))) errors.push(`${p}.url must be an http(s) URL`);
+    // The URL is printed in the captions: only an https link the routine
+    // actually listed as a discovery source may be published.
+    if (!isSafeHttpsUrl(item?.url)) errors.push(`${p}.url must be an https URL`);
+    else if (!sources.includes(item.url)) errors.push(`${p}.url must be one of discovery.sources`);
   });
-  const d = content.discovery;
-  if (!d || !Array.isArray(d.sources) || d.sources.length === 0) {
-    errors.push("discovery.sources is required for news-top5");
+  const nar = block.narration && typeof block.narration === "object" ? block.narration : {};
+  checkText(errors, "newsTop5.narration.intro", nar.intro);
+  checkText(errors, "newsTop5.narration.cta", nar.cta);
+  (Array.isArray(nar.items) ? nar.items : []).forEach((v, i) => checkText(errors, `newsTop5.narration.items[${i}]`, v));
+}
+
+// Keys the legacy news explainer (the pre-trial routine, still bundled in the
+// trigger as the rollback path) always writes.
+const LEGACY_ARTICLE_KEYS = ["title", "description", "narration"];
+
+/**
+ * A JSON without `format` / `recipe` / `newsTop5` is rendered as the legacy
+ * news explainer only if it has the legacy keys; otherwise it is rejected
+ * (it would skip every card check). Legacy text may use hashtags in its body,
+ * so only the title (YouTube title + caption head) gets the URL / @ / # check;
+ * invisible characters are rejected everywhere.
+ */
+export function validateLegacyContent(content) {
+  const errors = [];
+  if (!content || typeof content !== "object") return { errors: ["content is not an object"] };
+  if (!DATE_RE.test(String(content.date ?? ""))) errors.push(`date must be YYYY-MM-DD (got ${quote(content.date)})`);
+  if (typeof content.discovery?.method !== "string" || !content.discovery.method.trim()) {
+    errors.push("discovery.method is required (legacy news explainer)");
   }
-  if (d && isNum(d.freshness_hours) && d.freshness_hours > 168) {
-    errors.push(`discovery.freshness_hours ${d.freshness_hours} > 168 (news older than a week)`);
+  if (!Array.isArray(content.articles) || content.articles.length === 0) {
+    errors.push("articles[] is required (legacy news explainer) — or set format to recipe / news-top5");
+    return { errors };
   }
+  content.articles.forEach((a, i) => {
+    const p = `articles[${i}]`;
+    if (!Number.isInteger(a?.rank)) errors.push(`${p}.rank must be an integer`);
+    for (const k of LEGACY_ARTICLE_KEYS) {
+      if (typeof a?.[k] !== "string" || !a[k].trim()) errors.push(`${p}.${k} is required`);
+    }
+    checkText(errors, `${p}.title`, a?.title);
+    const walk = (v, path) => {
+      if (typeof v === "string") {
+        if (INVISIBLE_RE.test(v.normalize("NFKC"))) errors.push(`${path} contains an invisible or control character`);
+      } else if (v && typeof v === "object") {
+        for (const [k, child] of Object.entries(v)) walk(child, `${path}.${k}`);
+      }
+    };
+    walk(a, p);
+  });
+  return { errors };
 }
 
 /**
@@ -305,16 +507,16 @@ function validateNewsTop5(content, errors) {
  * errors → the content cannot be rendered as-is (routine must fix; the
  * pipeline falls back to a house recipe). warnings → rendered anyway.
  */
-export function validateDailyContent(content, lineup, { today } = {}) {
+export function validateDailyContent(content, lineup, { today, allowCandidate = false } = {}) {
   const errors = [];
   const warnings = [];
   if (!content || typeof content !== "object") {
     return { errors: ["content is not an object"], warnings };
   }
-  if (!DATE_RE.test(String(content.date ?? ""))) errors.push(`date must be YYYY-MM-DD (got "${content.date}")`);
-  if (today && content.date !== today) errors.push(`date ${content.date} is not today (${today})`);
+  if (!DATE_RE.test(String(content.date ?? ""))) errors.push(`date must be YYYY-MM-DD (got ${quote(content.date)})`);
+  if (today && content.date !== today) errors.push(`date ${quote(content.date)} is not today (${today})`);
   if (!FORMATS.includes(content.format)) {
-    errors.push(`format must be one of ${FORMATS.join(", ")} (got "${content.format}")`);
+    errors.push(`format must be one of ${FORMATS.join(", ")} (got ${quote(content.format)})`);
     return { errors, warnings };
   }
   if (DATE_RE.test(String(content.date ?? "")) && content.format !== expectedFormatFor(content.date)) {
@@ -323,7 +525,7 @@ export function validateDailyContent(content, lineup, { today } = {}) {
     if (content.format === "news-top5") errors.push(`news-top5 is Sunday only (${content.date} must be "recipe")`);
     else warnings.push(`${content.date} is normally "${expectedFormatFor(content.date)}" (got "${content.format}")`);
   }
-  if (content.format === "recipe") validateRecipe(content.recipe, lineup, errors);
+  if (content.format === "recipe") validateRecipe(content.recipe, lineup, errors, "recipe", { allowCandidate });
   if (content.format === "news-top5") validateNewsTop5(content, errors);
 
   if (errors.length === 0) {
@@ -350,9 +552,15 @@ export function dayIndex(isoDate) {
  * posted recipe ({ beanId, method }): beans that would repeat its bean or
  * method on consecutive days are skipped when another bean is available.
  */
-export function fallbackRecipeContent(lineup, isoDate, previous = null) {
-  const beans = (lineup?.beans || []).filter((b) => b.status !== "retired" && b.houseRecipe);
-  if (beans.length === 0) throw new Error("data/coffee-lineup.json has no bean with a houseRecipe");
+export class NoPostableBeanError extends Error {}
+
+export function fallbackRecipeContent(lineup, isoDate, previous = null, { allowCandidate = false } = {}) {
+  const beans = postableBeans(lineup, { allowCandidate }).filter((b) => b.houseRecipe);
+  if (beans.length === 0) {
+    throw new NoPostableBeanError(
+      `data/coffee-lineup.json has no ${allowCandidate ? "confirmed or candidate" : "confirmed"} bean with a houseRecipe`
+    );
+  }
   const start = ((dayIndex(isoDate) % beans.length) + beans.length) % beans.length;
   const rotated = beans.map((_, i) => beans[(start + i) % beans.length]);
   const bean =
@@ -390,11 +598,8 @@ export function recipeNumberTiles(recipe) {
   if (recipe.scene === "iced" && !coldBrew && isNum(n.ice_g) && n.ice_g > 0) {
     tiles.push({ label: "氷", value: String(n.ice_g), unit: "g" });
   }
-  tiles.push(
-    isNum(n.temp_c)
-      ? { label: coldBrew ? "水温" : "湯温", value: String(n.temp_c), unit: "℃" }
-      : { label: "水温", value: "冷水", unit: "" }
-  );
+  // Cold brew shows where it steeps (the fridge) — its temperature is the fridge's.
+  tiles.push({ label: coldBrew ? "冷蔵庫" : "湯温", value: isNum(n.temp_c) ? String(n.temp_c) : "—", unit: isNum(n.temp_c) ? "℃" : "" });
   const hours = String(n.time).match(HOURS_RE);
   tiles.push({ label: coldBrew ? "抽出" : "時間", value: hours ? hours[1] : String(n.time), unit: hours ? "時間" : "" });
   tiles.push({ label: "挽き目", value: n.grind, unit: "" });
@@ -431,11 +636,12 @@ export function ctaSlideLines(shop) {
   return ["ご購入・卸のご相談は DM へ", shop?.instagram || "@open_ground_coffee_roasters"];
 }
 
-export function salesCtaLines(shop) {
+/** beanIntroduced: false on days that introduce no bean (the Sunday news TOP5). */
+export function salesCtaLines(shop, { beanIntroduced = true } = {}) {
   const name = shop?.name || "Open Ground Coffee Roasters";
   const ig = shop?.instagram || "@open_ground_coffee_roasters";
   const mode = resolveCtaMode(shop);
-  const lines = ["――", `紹介した豆は ${name} で販売中です。`];
+  const lines = ["――", beanIntroduced ? `紹介した豆は ${name} で販売中です。` : `${name} の自家焙煎豆を販売しています。`];
   if (mode === "ec-url") lines.push(`ご購入はこちら → ${shop.ecUrl}`);
   else if (mode === "profile-link") lines.push(`ご購入はプロフィールのリンクから → ${ig}`);
   else lines.push(`ご購入・卸のご相談は Instagram の DM（${ig}）からお気軽にどうぞ。`);
@@ -456,13 +662,13 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
   // the "save this" recipe (numbers first, like AI Trend Daily's TOP5).
   const withMethod = r.hook.includes(method.label) ? "" : `を${method.label}で`;
   const titleNarration = pick(nar.title, `${r.hook}。今日の一杯は、${spokenBean}${withMethod}。`);
+  const coldBrew = r.method === "cold-brew";
   const numbersNarration = pick(
     nar.numbers,
-    `豆${n.dose_g}グラムに、${r.method === "cold-brew" ? "水" : "お湯"}${n.water_g}グラム` +
-      (iced && isNum(n.ice_g) && r.method !== "cold-brew" ? `、氷${n.ice_g}グラム` : "") +
+    `豆${n.dose_g}グラムに、${coldBrew ? "水" : "お湯"}${n.water_g}グラム` +
+      (iced && isNum(n.ice_g) && !coldBrew ? `、氷${n.ice_g}グラム` : "") +
       "。" +
-      (isNum(n.temp_c) ? `${n.temp_c}度で、` : "") +
-      `${speakTime(n.time)}です。`
+      (coldBrew ? `冷蔵庫で${speakTime(n.time)}です。` : `${n.temp_c}度で、${speakTime(n.time)}です。`)
   );
 
   const slides = [
@@ -713,7 +919,7 @@ export function buildCardCaptions(data, lineup, dateStr) {
   const shop = lineup?.shop || {};
   const hashtags = hashtagsFor(data);
   const body = data.format === "news-top5" ? newsBodyLines(data) : recipeBodyLines(data);
-  const cta = salesCtaLines(shop);
+  const cta = salesCtaLines(shop, { beanIntroduced: data.format !== "news-top5" });
 
   let title;
   if (data.format === "news-top5") {
@@ -721,7 +927,13 @@ export function buildCardCaptions(data, lineup, dateStr) {
   } else {
     const t = data.slides[0];
     const n = data.recipe.numbers;
-    const nums = [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time].filter(Boolean).join("・");
+    const nums = (
+      data.recipe.method === "cold-brew"
+        ? [`豆${n.dose_g}g`, `冷蔵庫${n.time}`]
+        : [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time]
+    )
+      .filter(Boolean)
+      .join("・");
     title = youtubeTitle("【今日の一杯】", `${t.beanName}×${t.methodLabel}`, `｜${nums} #Shorts`);
   }
 

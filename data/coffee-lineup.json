@@ -223,11 +223,12 @@
         "scene": "iced",
         "angle": "season",
         "hook": "夜でも飲める水出しデカフェ",
-        "numbers": { "dose_g": 50, "water_g": 500, "temp_c": null, "grind": "粗挽き", "time": "10h" },
+        "numbers": { "dose_g": 50, "water_g": 500, "temp_c": 5, "grind": "粗挽き", "time": "10h" },
         "steps": [
           { "time": "0:00", "action": "水を注ぐ", "pour_to_g": 500 },
           { "time": "0:30", "action": "やさしく混ぜる" },
-          { "time": "10h", "action": "濾して完成" }
+          { "time": "0:45", "action": "冷蔵庫で寝かせる" },
+          { "time": "10h", "action": "濾して冷蔵保存" }
         ],
         "taste": {
           "notes": ["ラズベリー", "プラム", "マンゴー"],

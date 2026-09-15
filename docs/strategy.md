@@ -168,7 +168,7 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 
 ### 豆マスタ（`data/coffee-lineup.json`）
 
-EC の商品テーブルで公開中（is_active）の 5 種。`status: candidate` はオーナー確認待ち → PR で `confirmed` にする。ルーチンは必ずここから選び、`scripts/validate-content.mjs` がマスタ外の豆を弾く。
+EC の商品テーブルで公開中（is_active）の 5 種。`status: candidate` はオーナー確認待ち → PR で `confirmed` にする。ルーチンは必ずここから選び、`scripts/validate-content.mjs` がマスタ外の豆を弾く。**本番で投稿できるのは `confirmed` の豆だけ**（`candidate` はドライランでだけ使える）。confirmed の豆が 1 つも無い朝は、豆を紹介しない旧型の豆知識で投稿を続け、Actions に警告を出す（未確認の豆を宣伝しない・投稿は止めない）。
 
 | id | 商品名 | 焙煎 | ラベル | 標準レシピ（ルーチン失敗時の代替） |
 |---|---|---|---|---|
@@ -176,7 +176,7 @@ EC の商品テーブルで公開中（is_active）の 5 種。`status: candidat
 | `rwanda-humure` | ルワンダ フムレ ウォッシュド | 浅煎り | CHESTNUT & TEA | フレンチプレス 15g / 250g / 94℃ / 4:30 |
 | `ethiopia-yirgacheffe-kochere` | エチオピア イルガチェフェ コチャレ ウォッシュド | 浅煎り | CITRUS & FLORAL | V60 急冷アイス 20g / 150g + 氷 100g / 93℃ / 2:15 |
 | `china-dehong-east-fermentation` | 中国 デーホン イーストファーメンテーション ハニー | 浅煎り | LYCHEE & OOLONG TEA | エアロプレス 15g / 220g / 90℃ / 2:00 |
-| `decaf-nicaragua-gold-mountain` | デカフェ ニカラグア ゴールドマウンテン ナチュラル | 中煎り | CANE SUGAR & TOAST | 水出し 50g / 500g / 10 時間 |
+| `decaf-nicaragua-gold-mountain` | デカフェ ニカラグア ゴールドマウンテン ナチュラル | 中煎り | CANE SUGAR & TOAST | 水出し 50g / 500g / 冷蔵庫で 10 時間 |
 
 ルーチンが失敗した朝（JSON が無い / 日付が古い / 検証 NG）は、日付で決まる豆の標準レシピで自動投稿する（型は崩さない）。
 
@@ -344,13 +344,21 @@ IG insights は最大 48 時間遅れる。前日・前々日の IG 値は暫定
 }
 ```
 
-`format` の無い JSON（旧型ニュース）も当日付なら従来のニュース解説として描画される（切り戻し用）。`recipe` / `newsTop5` を持つのに `format` だけ書き忘れた JSON は旧型扱いにせず、検証 NG → 標準レシピになる。
+`format` の無い JSON（旧型ニュース）は、当日付で**旧型の必須キー**（`discovery.method`、`articles[]` の `rank` / `title` / `description` / `narration`）が揃っているときだけ従来のニュース解説として描画される（切り戻し用）。揃っていない JSON や、`recipe` / `newsTop5` を持つのに `format` だけ書き忘れた JSON は旧型扱いにせず、検証 NG → 標準レシピになる。
+
+朝ルーチンは Web を読んで書き、その PR は人の目を通らずに自動マージされるので、**原稿は信用しない入力として検証する**:
+
+- 水出しは食品衛生のため **冷蔵庫（1〜10℃）で 6〜24 時間**、手順に「冷蔵庫」が必須。「常温」「室温」で浸ける記述は NG
+- テキスト欄（フック・手順・味・コツ・ナレーション・見出し・要約・出典名）に URL・ドメイン名・`@`・`#`・改行・見えない文字（ゼロ幅・向き制御など）があれば NG（全角の `＠` `＃` などは NFKC 正規化してから判定）
+- ニュースの `url` は `https://` だけで、`discovery.sources` に並べた URL のどれかでなければ NG（キャプションに載る URL はルーチンが出典として挙げたものだけ）
+- 抽出法ごとの安全枠（比率・総時間・湯量）の外は NG（範囲は `docs/routine-prompt.md` 2a-4 と `scripts/content-format.mjs` の `METHOD_BOUNDS`）
+- 代替投稿（標準レシピ・旧型の豆知識）になった日は、Actions の警告と実行サマリーに理由が出る
 
 ## 検証とロールバック
 
 - 検証（投稿しない）: `gh workflow run daily-video.yml --ref <branch> -f sample=recipe`（`news-top5` / `fallback` / `today` も可）。main 以外の ref、`dry_run=true`、`sample` が `today` 以外のときは常に検証モードで、動画・カバー・キャプション・カード画像を artifact に出す。ローカルは `DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/recipe.sample.json`
 - 投稿した動画のキャプションは GitHub Release に `coffee-YYYYMMDD-captions.json` として残り、再投稿ワークフローはそれを使う（レシピの数値が動画とずれない）
-- 試行を打ち切る場合: `docs/routine-prompt.md` の Routine Prompt を旧型の JSON を書く内容に戻せば、パイプラインは `format` の無い JSON を旧ニュース解説として描画する
+- 試行を打ち切る場合: `docs/routine-prompt.md` の Routine Prompt を旧型の JSON を書く内容に戻せば、パイプラインは旧型の必須キーが揃った `format` の無い JSON を旧ニュース解説として描画する
 
 ## TBD（オーナー確認）
 

@@ -3,7 +3,10 @@
  *
  * Usage:
  *   node scripts/validate-content.mjs                                  # data/enriched-coffee-news.json, date must be today (JST)
- *   node scripts/validate-content.mjs data/samples/recipe.sample.json --no-date-check
+ *   node scripts/validate-content.mjs data/samples/recipe.sample.json --no-date-check --allow-candidate
+ *
+ * Production rules by default: only beans with status "confirmed" in
+ * data/coffee-lineup.json pass. --allow-candidate is for dry runs and samples.
  *
  * Exit 0 = renderable as-is. Exit 1 = fix the listed errors (the pipeline
  * would otherwise fall back to the bean-of-the-day house recipe).
@@ -26,6 +29,7 @@ const args = process.argv.slice(2);
 const pathArg = args.find((a) => !a.startsWith("--"));
 const contentPath = resolve(pathArg || join(rootDir, "data", "enriched-coffee-news.json"));
 const skipDate = args.includes("--no-date-check");
+const allowCandidate = args.includes("--allow-candidate");
 const today = jstDateParts().iso;
 
 let content;
@@ -37,7 +41,7 @@ try {
 }
 const lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
 
-const { errors, warnings } = validateDailyContent(content, lineup, skipDate ? {} : { today });
+const { errors, warnings } = validateDailyContent(content, lineup, { ...(skipDate ? {} : { today }), allowCandidate });
 for (const w of warnings) console.log(`warning: ${w}`);
 if (!skipDate && content?.format && content.format !== expectedFormatFor(today)) {
   console.log(`warning: today (${today}) expects "${expectedFormatFor(today)}"`);

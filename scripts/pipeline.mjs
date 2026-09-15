@@ -25,10 +25,14 @@ const outputDir = join(rootDir, "output");
 
 const contentArg = process.argv.find((a) => a.startsWith("--content="));
 const fallbackArg = process.argv.includes("--fallback") ? "--fallback" : "";
-const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg].filter(Boolean).join(" ");
 // Samples and forced fallbacks are for verification only — never posted.
 const dryRun =
   process.env.DRY_RUN === "true" || process.argv.includes("--dry-run") || Boolean(contentArg || fallbackArg);
+// Beans still "candidate" in data/coffee-lineup.json may be rendered in a dry
+// run, never posted.
+const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg, dryRun ? "--allow-candidate" : ""]
+  .filter(Boolean)
+  .join(" ");
 
 // Instagram rejects Reels over 60s; re-synthesize faster before giving up.
 const FASTER_RATES = ["+25%", "+35%"];

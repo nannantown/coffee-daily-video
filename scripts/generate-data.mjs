@@ -3,24 +3,29 @@
  *
  * data/enriched-coffee-news.json is written by the morning routine:
  *   - `format: "recipe" | "news-top5"` → 「今日の一杯」recipe cards / Sunday news TOP5
- *   - no `format`, dated today          → legacy news explainer (3 sections)
+ *   - no card keys, dated today, legacy keys present → legacy news explainer (3 sections)
  *   - missing / stale / invalid         → bean-of-the-day house recipe from data/coffee-lineup.json
+ *   - no confirmed bean to fall back to → legacy evergreen explainer (no bean is promoted)
+ * Every fallback is also reported as a GitHub Actions warning + job summary.
  *
  * Options:
  *   --content=<path>       render another content file, date check skipped (dry runs / samples)
  *   --template-narration   drop the routine's narration and use the short templates
  *                          (the pipeline's 60-second guard uses this as a last resort)
+ *   --allow-candidate      beans still "candidate" in the lineup may be used (dry runs only)
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, appendFileSync } from "fs";
 import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import {
+  NoPostableBeanError,
   buildCardsData,
   fallbackRecipeContent,
   jstDateParts,
   narrationLength,
   validateDailyContent,
+  validateLegacyContent,
   withTemplateNarration,
 } from "./content-format.mjs";
 
@@ -34,6 +39,23 @@ const historyPath = join(rootDir, "data", "performance-history.json");
 const contentArg = process.argv.find((a) => a.startsWith("--content="))?.slice("--content=".length);
 const templateNarration = process.argv.includes("--template-narration");
 const forceFallback = process.argv.includes("--fallback");
+const allowCandidate = process.argv.includes("--allow-candidate");
+
+// GitHub Actions workflow command escaping (data vs. property values).
+const escData = (s) => String(s).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
+const escProp = (s) => escData(s).replace(/:/g, "%3A").replace(/,/g, "%2C");
+
+/** A fallback day is shown as a warning annotation and in the job summary, not only in the log. */
+function actionsWarning(title, details = []) {
+  if (process.env.GITHUB_ACTIONS === "true") {
+    console.log(`::warning title=${escProp(title)}::${escData([title, ...details].join(" / "))}`);
+  }
+  const summary = process.env.GITHUB_STEP_SUMMARY;
+  if (summary) {
+    const oneLine = (s) => String(s).replace(/[\r\n]+/g, " ");
+    appendFileSync(summary, [`### ⚠️ ${oneLine(title)}`, "", ...details.map((d) => `- ${oneLine(d)}`), "", ""].join("\n"));
+  }
+}
 
 function readJSON(path) {
   if (!existsSync(path)) return null;
@@ -162,24 +184,37 @@ function previousRecipe(today) {
   return last?.content?.beanId ? { beanId: last.content.beanId, method: last.content.method } : null;
 }
 
+/** The house recipe of a postable bean, or null when no bean may be posted (none confirmed yet). */
 function houseRecipe(lineup, today) {
   const previous = previousRecipe(today);
-  const content = fallbackRecipeContent(lineup, today, previous);
-  if (previous) console.log(`  (previous post: ${previous.beanId} × ${previous.method} → not repeated)`);
+  try {
+    const content = fallbackRecipeContent(lineup, today, previous, { allowCandidate });
+    if (previous) console.log(`  (previous post: ${previous.beanId} × ${previous.method} → not repeated)`);
+    return content;
+  } catch (err) {
+    if (!(err instanceof NoPostableBeanError)) throw err;
+    console.error(`  ${err.message}`);
+    return null;
+  }
+}
+
+function fallbackTo(lineup, today, reason, details = []) {
+  const content = houseRecipe(lineup, today);
+  if (content) actionsWarning(`${reason} → house recipe (${content.recipe.beanId} × ${content.recipe.method})`, details);
   return content;
 }
 
 function chooseCardContent(file, lineup, today) {
   if (!file) {
-    console.log(`  No content file → house recipe fallback`);
-    return houseRecipe(lineup, today);
+    console.log(`  No content for today → house recipe fallback`);
+    return fallbackTo(lineup, today, "No content for today");
   }
-  const { errors, warnings } = validateDailyContent(file, lineup, contentArg ? {} : { today });
+  const { errors, warnings } = validateDailyContent(file, lineup, { ...(contentArg ? {} : { today }), allowCandidate });
   for (const w of warnings) console.log(`  warning: ${w}`);
   if (errors.length === 0) return file;
   console.error(`  Content rejected (${errors.length} error(s)) → house recipe fallback`);
   for (const e of errors) console.error(`    - ${e}`);
-  return houseRecipe(lineup, today);
+  return fallbackTo(lineup, today, `Content rejected (${errors.length} error(s))`, errors.slice(0, 5));
 }
 
 function displayDate(iso) {
@@ -191,22 +226,44 @@ async function main() {
   const contentPath = contentArg ? resolve(contentArg) : enrichedPath;
   const file = readJSON(contentPath);
   const outputPath = join(outputDir, "trending-data.json");
-
-  // A card JSON that only forgot `format` must not take the legacy path — it
-  // goes through validation (and falls back to the house recipe) instead.
-  const looksLikeCards = Boolean(file && (file.format || file.recipe || file.newsTop5));
-  if (!contentArg && !forceFallback && file && !looksLikeCards && file.date === today) {
-    console.log("Legacy news content for today (no `format`) → news explainer\n");
-    const data = buildLegacyNewsData(file, today);
+  const writeLegacy = (enriched) => {
+    const data = buildLegacyNewsData(enriched, today);
     writeFileSync(outputPath, JSON.stringify(data, null, 2));
     console.log(`\nGenerated ${data.projects.length} sections → ${outputPath}`);
-    return;
+  };
+
+  // A card JSON that only forgot `format` must not take the legacy path — it
+  // goes through validation (and falls back to the house recipe) instead. A
+  // JSON without card keys is the legacy explainer only with the legacy keys.
+  const looksLikeCards = Boolean(file && (file.format || file.recipe || file.newsTop5));
+  let legacyErrors = null;
+  if (!contentArg && !forceFallback && file && !looksLikeCards && file.date === today) {
+    const { errors } = validateLegacyContent(file);
+    if (errors.length === 0) {
+      console.log("Legacy news content for today (no `format`) → news explainer\n");
+      writeLegacy(file);
+      return;
+    }
+    console.error(`  Legacy content rejected (${errors.length} error(s)) → house recipe fallback`);
+    for (const e of errors) console.error(`    - ${e}`);
+    legacyErrors = errors;
   }
 
   const lineup = JSON.parse(readFileSync(lineupPath, "utf-8"));
-  let content = forceFallback
-    ? houseRecipe(lineup, today)
-    : chooseCardContent(looksLikeCards || contentArg ? file : null, lineup, today);
+  let content;
+  if (forceFallback) content = houseRecipe(lineup, today);
+  else if (legacyErrors) content = fallbackTo(lineup, today, `Content without format rejected (${legacyErrors.length} error(s))`, legacyErrors.slice(0, 5));
+  else content = chooseCardContent(looksLikeCards || contentArg ? file : null, lineup, today);
+
+  if (!content) {
+    // Keep posting without advertising an unconfirmed bean.
+    actionsWarning("No confirmed bean in data/coffee-lineup.json → legacy evergreen explainer (no bean promoted)", [
+      'Set the beans the owner confirmed to status "confirmed" by PR to start the recipe cards',
+    ]);
+    console.log("No postable bean → legacy evergreen explainer\n");
+    writeLegacy(null);
+    return;
+  }
   if (templateNarration) {
     console.log("  --template-narration: using template narration");
     content = withTemplateNarration(content);
