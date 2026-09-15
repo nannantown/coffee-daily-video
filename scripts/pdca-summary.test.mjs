@@ -141,6 +141,35 @@ test("mode: parsed from the previous report, carried over, changed only on judge
   assert.equal(decideMode("判定保留", "切替候補", "2026-09-29"), "切替候補");
 });
 
+test("mode §d-1: reports without a readable status table are skipped, per account", () => {
+  const stub = { date: "2026-09-12", text: "# PDCA レポート — 2026-09-12\n\n- ジャンル試行: 未導入\n- ルーチン失敗" };
+  const prev = previousModes([report("2026-09-10", "切替候補", "通常"), stub], "2026-09-13");
+  assert.deepEqual([prev.source, prev.ig, prev.yt], ["docs/pdca/2026-09-10.md", "切替候補", "通常"]);
+
+  const ytUnreadable = report("2026-09-11", "通常", "判読不能");
+  const mixed = previousModes([report("2026-09-10", "切替候補", "切替候補"), ytUnreadable, stub], "2026-09-13");
+  assert.deepEqual([mixed.ig, mixed.yt], ["通常", "切替候補"]);
+  assert.equal(mixed.source, "IG = docs/pdca/2026-09-11.md / YT = docs/pdca/2026-09-10.md");
+
+  // The carried-over mode survives a failed day instead of resetting to the intro verdict.
+  const s = trialStatus({ videos: [] }, "2026-09-16", {
+    reports: [report("2026-09-14", "通常", "通常"), { date: "2026-09-15", text: "# no table" }],
+  });
+  assert.deepEqual([s.accounts.ig.mode, s.accounts.yt.mode, s.prevSource], ["通常", "通常", "docs/pdca/2026-09-14.md"]);
+});
+
+test("policy: the alive account with n < 7 falls back to rotation; trial #1 before its first post is 準備中", () => {
+  const reports = [report("2026-09-17", "配信死亡モード（2026-09-14〜）", "通常")];
+  const few = ["2026-09-15", "2026-09-16", "2026-09-17"].map((d) => video(d, { yt: 30 }));
+  const out = renderMarkdown(summarize({ videos: few }, { today: "2026-09-18", reports, lineup }));
+  assert.match(out, /性能データで選ばない（IG @open_ground_coffee_roasters は配信死亡モード、YT OPEN GROUND coffee roasters は判定窓の n=3 < 7）/);
+  assert.match(out, /- IG \/ YT 共通: 準備中: 試行 #1/);
+
+  const enough = Array.from({ length: 8 }, (_, i) => video(addDays("2026-09-10", i), { yt: 30 }));
+  const out2 = renderMarkdown(summarize({ videos: enough }, { today: "2026-09-18", reports, lineup }));
+  assert.match(out2, /今日の豆・抽出法・切り口の方針: YT OPEN GROUND coffee roasters の指標だけで選ぶ/);
+});
+
 test("trial #1 starts at the first recipe-card post and is judged on S + 14 with the carried-over mode", () => {
   const videos = [video("2026-09-14")];
   for (let i = 0; i < 16; i++) {

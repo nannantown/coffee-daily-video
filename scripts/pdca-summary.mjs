@@ -44,7 +44,7 @@ export const TRIALS = {
     label: "#1",
     genre: "「今日の一杯」レシピカード型 + 日曜ニュース TOP5",
     trialId: TRIAL_ID,
-    plannedStart: "2026-09-16",
+    plannedStart: "2026-09-17",
   },
 };
 
@@ -177,15 +177,27 @@ export function parseStatusModes(markdown) {
   return modes.ig || modes.yt ? modes : null;
 }
 
-/** reports: [{ date: "YYYY-MM-DD", text }] */
+/**
+ * reports: [{ date: "YYYY-MM-DD", text }]
+ * Genre rule §d-1: the previous mode comes from the latest report before today
+ * whose status table has a readable mode for that account. Reports without it
+ * (routine failures, "未導入" stubs, a missing row) are skipped, and only when
+ * none is left does the ledger's intro verdict apply.
+ */
 export function previousModes(reports, today) {
-  const prev = reports.filter((r) => r.date < today).sort((a, b) => (a.date < b.date ? 1 : -1))[0];
-  const parsed = prev ? parseStatusModes(prev.text) : null;
   const intro = TRIALS[0].introMode;
+  const parsed = reports
+    .filter((r) => r.date < today)
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .map((r) => ({ date: r.date, modes: parseStatusModes(r.text) || {} }));
+  const latest = (platform) => parsed.find((r) => r.modes[platform]) || null;
+  const ig = latest("ig");
+  const yt = latest("yt");
+  const src = (r) => (r ? `docs/pdca/${r.date}.md` : "台帳の導入時の判定");
   return {
-    source: parsed ? `docs/pdca/${prev.date}.md` : "台帳の導入時の判定",
-    ig: parsed?.ig || intro,
-    yt: parsed?.yt || intro,
+    source: src(ig) === src(yt) ? src(ig) : `IG = ${src(ig)} / YT = ${src(yt)}`,
+    ig: ig ? ig.modes.ig : intro,
+    yt: yt ? yt.modes.yt : intro,
   };
 }
 
@@ -370,13 +382,22 @@ function metricCell(platform, stats) {
     : `views 中央値 ${fmt(stats.yt.viewsMedian)}`;
 }
 
-function methodPolicy(accounts) {
+const ROTATION_RULE =
+  "豆・抽出法・切り口は下の「ローテーション」で使用回数が少ないものから、曜日の型と「同じ豆・抽出法を 2 日連続にしない」を守って選ぶ";
+
+export function methodPolicy(s) {
+  const { accounts, stats } = s;
   const dead = ["ig", "yt"].filter((p) => accounts[p].mode.startsWith("配信死亡モード"));
   if (dead.length === 2) {
-    return "性能データで選ばない（2 アカウントとも配信死亡モード）— 豆・抽出法・切り口は下の「ローテーション」で使用回数が少ないものから、曜日の型と「同じ豆・抽出法を 2 日連続にしない」を守って選ぶ";
+    return `性能データで選ばない（2 アカウントとも配信死亡モード）— ${ROTATION_RULE}`;
   }
   if (dead.length === 1) {
     const alive = dead[0] === "ig" ? "yt" : "ig";
+    const n = stats ? stats[alive].n : 0;
+    if (n < THRESHOLDS.minN) {
+      // The alive account cannot be compared either → same as both dead.
+      return `性能データで選ばない（${accounts[dead[0]].label} は配信死亡モード、${accounts[alive].label} は判定窓の n=${n} < ${THRESHOLDS.minN}）— ${ROTATION_RULE}`;
+    }
     return `${accounts[alive].label} の指標だけで選ぶ（${accounts[dead[0]].label} は配信死亡モード）`;
   }
   return "通常 — 豆・抽出法・切り口は IG 保存数で比べて決める（YT は別に参考）";
@@ -405,7 +426,7 @@ function statusSection(s) {
   for (const p of ["ig", "yt"]) {
     if (s.accounts[p].caution) lines.push(`- 注意: ${s.accounts[p].label} は判定窓で配信死亡の域（モードの変更は次の判定日）`);
   }
-  lines.push(`- 今日の豆・抽出法・切り口の方針: ${methodPolicy(s.accounts)}`);
+  lines.push(`- 今日の豆・抽出法・切り口の方針: ${methodPolicy(s)}`);
   lines.push(`- 前回モードの出どころ: ${s.prevSource}`);
   if (s.trial === 0) {
     lines.push(`- 試行 #1（レシピカード型）はまだ初回投稿がない（予定 ${TRIALS[1].plannedStart}）。初回投稿の翌朝から S = F = 初回投稿日で集計する`);
@@ -445,6 +466,11 @@ function experimentSection(s) {
   if (!deadAccounts.length) return [];
   if (s.trial >= 1 && s.cycle.d < 14) {
     return ["## 構造実験の提案", "", `- IG / YT 共通: 実行中: 試行 #1（${TRIALS[1].genre}）${s.cycle.status}`, ""];
+  }
+  if (s.trial === 0) {
+    // This script ships with trial #1, so on main it is merged and waiting for
+    // its first post: no new proposals until it runs (genre rule, 準備中).
+    return ["## 構造実験の提案", "", `- IG / YT 共通: 準備中: 試行 #1（${TRIALS[1].genre}）`, ""];
   }
   return ["## 構造実験の提案", "", "- （配信死亡モードのアカウントについて、何を変えるか / 何で測るか / 14 日後の合格ライン をルーチンが書く）", ""];
 }

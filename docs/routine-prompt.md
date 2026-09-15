@@ -29,7 +29,7 @@
 
 **重要**: 書き出す `data/enriched-coffee-news.json` は約 1 時間後に走る `daily-video.yml` が読む当日コンテンツ。`date` が今日（JST）でない / `node scripts/validate-content.mjs` が NG のとき、パイプラインはその JSON を捨てて豆マスタの標準レシピ（`houseRecipe`）で投稿する。
 
-## 型は曜日で決まる
+### 型は曜日で決まる
 
 | 曜日（JST） | `format` | 中身 |
 |---|---|---|
@@ -40,16 +40,16 @@
 
 動画は文字カード 5 枚（recipe: 今日の一杯＋数値 6 つ → 手順 → 味わい → 悩み別のコツ → 保存＋販売導線）/ 7 枚（news-top5: 表紙 → 1〜5 位 → 締め）。販売導線は最後のカードとキャプション末尾に自動で固定で入る（`coffee-lineup.json` の `shop`）ので、原稿に購入の呼びかけを書く必要はない。
 
-## 手順
+### 手順
 
-### 0. 日付
+#### 0. 日付
 
 ```bash
 TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
 DOW=$(TZ=Asia/Tokyo date +%u)   # 7 = 日曜 → news-top5、それ以外 → recipe
 ```
 
-### 0.5. 読むもの（必須）
+#### 0.5. 読むもの（必須）
 
 - `docs/strategy.md` — **冒頭の「ジャンル実験」節を最優先**（試行台帳・判定窓・閾値・モードの決め方・配信死亡モード中の振る舞い・レポート節）。続いて「ジャンル試行 #1」、型・NG パターン・KPI
 - `data/coffee-lineup.json` — 紹介してよい豆。`status: "retired"` は使わない。各豆の `flavor` / `labelFlavor` は実物のラベル表記
@@ -57,7 +57,7 @@ DOW=$(TZ=Asia/Tokyo date +%u)   # 7 = 日曜 → news-top5、それ以外 → re
 
 戦略ファイル自体（「ジャンル実験」節の台帳・閾値を含む）は書き換えない。改善提案は `docs/pdca/$TODAY.md` 末尾の「戦略更新提案」に書く。
 
-### 1. PDCA（必須）— ジャンル試行の状態 → IG 保存数
+#### 1. PDCA（必須）— ジャンル試行の状態 → IG 保存数
 
 ```bash
 node scripts/pdca-summary.mjs > /tmp/pdca-summary.md
@@ -70,7 +70,7 @@ node scripts/pdca-summary.mjs > /tmp/pdca-summary.md
 1. `# PDCA レポート — YYYY-MM-DD (曜)`
 2. `/tmp/pdca-summary.md` の中身を貼り、次だけ書き足す
    - **「ジャンル判定（下書き…）」が出た日**（判定日・遅延判定）: 見出しを `## ジャンル判定` にし、切替候補・配信死亡のアカウントには次ジャンル候補を 2〜3 案（豆の購入に繋がる型に限る。例: レシピ、焙煎の裏側、産地×味の比較、商品ができるまで）書き足す
-   - **「構造実験の提案」が出た日**: 「実行中: 試行 #1 …」の行はそのまま（最初の判定日まで追加の提案はしない）。「（…ルーチンが書く）」の行は、何を変えるか / 何で測るか / 14 日後の合格ライン の提案に書き換える。**提案はレポートに書くだけで、当日の JSON には反映しない**
+   - **「構造実験の提案」が出た日**: 「実行中: 試行 #1 …」「準備中: 試行 #1 …」の行はそのまま（最初の判定日まで追加の提案はしない。同じ案を毎朝書き直さない）。「（…ルーチンが書く）」の行は、何を変えるか / 何で測るか / 14 日後の合格ライン の提案に書き換える。**提案はレポートに書くだけで、当日の JSON には反映しない**
    - モード列が前回のレポートと食い違って見えるときは、`docs/strategy.md`「ジャンル実験」節の「モードの決め方」で確かめて直す
 3. `## 気づき` — 保存が付いた回と付かなかった回の違いを、豆 / 抽出法 / 切り口 / 悩みの種類 / ホット・アイスで言葉にする。YT views は参考値として別に書き、IG と足さない
 4. `## 今日の Action`（3 つまで）
@@ -80,10 +80,10 @@ node scripts/pdca-summary.mjs > /tmp/pdca-summary.md
 
 - **性能データで選ばない（2 アカウントとも配信死亡モード）** → 「ローテーション」で使用回数が少ないものから選ぶ（同数なら豆マスタ・抽出法一覧の上から）。TOP / WORST と軸別の表は参考表示のみ
 - **通常** → IG 保存数の TOP / WORST・軸別で、保存が付いた軸を続け、2 週続けて保存 0 の軸は切り口を変える（型の初回投稿日 F 以降の回だけで比べる。pdca-summary は F 以降で集計済み）
-- **片方だけ配信死亡モード** → 生きている側のアカウントの指標だけで比べる
+- **片方だけ配信死亡モード** → 生きている側のアカウントの指標だけで比べる（生きている側も判定窓の n < 7 なら、上と同じくローテーション。pdca-summary の方針行がそう出る）
 - どのモードでも: **同じ豆・同じ抽出法を 2 日連続で使わない。7 日で全ラインナップを 1 回以上**
 
-### 2a. recipe の日（月〜土）
+#### 2a. recipe の日（月〜土）
 
 1. **豆を選ぶ** — 上の方針とローテーション制約で決める
 2. **抽出法と温度帯を選ぶ** — 豆の個性に合わせる（浅煎りの華やか系 → V60 / ORIGAMI / エアロプレス、コク・甘さ系 → フレンチプレス / クレバー、デカフェ・夜 → 水出し）。暑い時期（〜9 月）はアイス（急冷式・水出し）を週 2 回まで
@@ -107,7 +107,7 @@ node scripts/pdca-summary.mjs > /tmp/pdca-summary.md
 6. **悩み別のコツ** — 2〜3 個。`problem`（例: 酸っぱい時 / 苦い時 / 薄い時 / 氷で薄まる時 / 渋い時 / 粉っぽい時 / 香りが弱い時）に対して、**数字で直せる具体策**（例: 「湯温を2℃上げて95℃に」「挽き目を1段細かくする」「豆を2g増やして22gに」）
 7. **フック `hook`**（16 文字以内）— 悩みか効果を先に。豆の名前はカードに別で出るので入れなくてよい
 
-### 2b. news-top5 の日（日曜）
+#### 2b. news-top5 の日（日曜）
 
 1. 月〜日の 7 日間に出たコーヒーニュースを**英語ソース優先**で探す（日本語メディアは英語を翻訳して 1〜3 日遅れる）。`discovery.method` の選び方も上の方針行に従う（配信死亡モードなら直近の使用回数が少ない method）
    - 英語: Perfect Daily Grind / Daily Coffee News (Roast Magazine) / SCA News / Reuters・Bloomberg（Arabica futures, Coffee C）/ World Coffee Research / Global Coffee Report / World Coffee Portal / Reddit r/Coffee
@@ -116,7 +116,7 @@ node scripts/pdca-summary.mjs > /tmp/pdca-summary.md
 3. 各項目: `headline`（26 文字以内）/ `number`（8 文字以内、例 `"-12%"` `"3,500t"`。数字がなければ空文字）+ `numberLabel`（10 文字以内）/ `summary`（40 文字以内）/ `source`（30 文字以内）/ `url`（必須）
 4. `discovery` ブロック必須（method は strategy.md の Discovery Methods タグ）
 
-### 3. `data/enriched-coffee-news.json` を書く
+#### 3. `data/enriched-coffee-news.json` を書く
 
 recipe の日（この例はそのまま検証を通る。`data/samples/recipe.sample.json` と同じ）:
 
@@ -164,7 +164,7 @@ recipe の日（この例はそのまま検証を通る。`data/samples/recipe.s
 
 日曜は `data/samples/news-top5.sample.json` と同じ形（`format: "news-top5"`、`discovery`、`newsTop5.weekLabel`、`newsTop5.items` をちょうど 5 件、`newsTop5.narration` の `intro` / `items`（5 件）/ `cta`）。見本の見出し・URL は過去のニュースなので使い回さない。
 
-### 4. 検証（必須）
+#### 4. 検証（必須）
 
 ```bash
 node scripts/validate-content.mjs
@@ -172,7 +172,7 @@ node scripts/validate-content.mjs
 
 `OK:` が出るまで直す。`NG:` のまま commit しない（パイプラインが標準レシピに差し替える）。
 
-### 5. main に反映（PR 経由で確実にマージ）
+#### 5. main に反映（PR 経由で確実にマージ）
 
 この env では `git push origin main` が silent fail する（2026-04-19 以降に確認）。必ず session branch → PR → 即 squash merge。
 
@@ -193,14 +193,14 @@ gh pr create --base main --head "$BRANCH" \
 gh pr merge "$BRANCH" --squash --admin --delete-branch
 
 git fetch origin main --quiet
-git show origin/main:data/enriched-coffee-news.json | grep -q "\"date\": \"$TODAY\"" \
+git show origin/main:data/enriched-coffee-news.json | grep -Eq "\"date\"[[:space:]]*:[[:space:]]*\"$TODAY\"" \
   && echo "OK: main updated with today's content" \
   || echo "WARN: main did NOT receive today's content — investigate manually"
 ```
 
 失敗時（`gh pr merge` が非ゼロ終了など）は最終レポートに必ず明記する。
 
-## 文体ルール
+### 文体ルール
 
 - 自然な話し言葉、です・ます調。数字はアラビア数字
 - 単位は `15g` `93℃` `2:30` と書いてよい（読み上げ時に「15グラム」「93度」「2分30秒」へ自動変換）。**比率は「1対15」と書く**（`1:15` は時刻と区別できない）
