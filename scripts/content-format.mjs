@@ -100,21 +100,29 @@ export const ICED_BOUNDS = { ratio: [10, 16], iceShare: [0.25, 0.6] };
 // tag characters / Hangul fillers (Unicode DerivedCoreProperties).
 const INVISIBLE_RE = /[\p{Cc}\p{Cf}\p{Zl}\p{Zp}\p{Default_Ignorable_Code_Point}]/u;
 const MENTION_RE = /[@#]/u;
-const URL_SCHEME_RE = /[a-z][a-z0-9+.-]*:\/\/|www\./i;
-// Well-known TLDs in any case ("SHOP.DE"); the label needs 2+ characters so
-// brand names like "J.CO" are not domains.
-const KNOWN_DOMAIN_RE =
-  /[\p{L}\p{N}-]{2,}\.(?:com|net|org|info|biz|io|co|jp|me|ly|gl|gg|to|tv|cc|xyz|app|dev|link|shop|store|site|online|ai|us|uk|de|fr|it|es|nl|eu|ch|be|se|ru|cn|kr|tw|hk|sg|au|nz|ca|br|in|coffee|cafe|club|top|vip|live|life|world|today|news|blog|page|space|website|tech|fun|icu|work|art|pro|asia|tokyo|click|market)(?![\p{L}\p{N}])/iu;
-// Any lowercase Latin "label.tld" ("evil.example", "bean-sale.store"); written
-// case-sensitively so abbreviations like "Mr.Brown" / "St.Louis" stay text.
-const LOWER_DOMAIN_RE = /[a-z0-9][a-z0-9-]*\.[a-z]{2,}(?![a-z0-9])/u;
+const URL_SCHEME_RE = /[a-z][a-z0-9+.-]*:\/\/|www\./iu;
+// "label.tld" in any case (evil.coffee / EXAMPLE.COM / shop.de / .onion). Checked
+// on a copy where the ideographic full stop counts as a dot (example。com; NFKC
+// already maps the half-width and full-width stops). Abbreviations such as
+// "Mr.Brown" are rejected too — the routine rewrites them; a missed link is worse.
+const ANY_DOMAIN_RE = /[a-z0-9][a-z0-9-]*\.[a-z]{2,}(?![a-z0-9])/iu;
+// spaced dots ("bit . ly/abc") — well-known TLDs only, so "coffee. Then" stays text
+const SPACED_DOMAIN_RE =
+  /[a-z0-9-]+(?:\s+\.\s*|\s*\.\s+)(?:com|net|org|info|biz|io|co|jp|me|ly|gl|gg|to|tv|cc|xyz|app|dev|link|shop|store|site|online|ai|us|uk|de|fr|cn|kr|ru|onion|coffee|cafe)(?![a-z0-9])/iu;
+// internationalized names (例え.テスト / 東京.jp) — ASCII dot only, since the
+// ideographic full stop ends every Japanese sentence
+const IDN_DOMAIN_RE = /[\p{L}\p{N}-]+\.[\p{L}\p{M}]{2,}/u;
+const IDEOGRAPHIC_STOP_RE = /\u{3002}/gu;
 
 /** Why a text may not be published (null = fine): invisible/control characters, @ / #, URLs or domains. */
 export function unsafeTextReason(value) {
   const s = String(value ?? "").normalize("NFKC");
   if (INVISIBLE_RE.test(s)) return "a line break, control, zero-width, emoji variation selector or other invisible character";
   if (MENTION_RE.test(s)) return '"@" or "#" (mentions and hashtags become links)';
-  if (URL_SCHEME_RE.test(s) || KNOWN_DOMAIN_RE.test(s) || LOWER_DOMAIN_RE.test(s)) return "a URL or domain name";
+  const dotted = s.replace(IDEOGRAPHIC_STOP_RE, ".");
+  if (URL_SCHEME_RE.test(dotted) || ANY_DOMAIN_RE.test(dotted) || SPACED_DOMAIN_RE.test(dotted) || IDN_DOMAIN_RE.test(s)) {
+    return "a URL or domain name";
+  }
   return null;
 }
 
@@ -817,7 +825,12 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
   };
 }
 
-export function buildNewsTop5Slides(content, { dateDisplay = "", shop } = {}) {
+/**
+ * recipesLive: at least one bean is confirmed, so Mon-Sat really post recipe
+ * cards. While none is, the Sunday ending must not promise them (and the
+ * routine's own cta narration, which may promise them, is not used).
+ */
+export function buildNewsTop5Slides(content, { dateDisplay = "", shop, recipesLive = true } = {}) {
   const block = content.newsTop5;
   const nar = block.narration || {};
   const items = block.items;
@@ -843,14 +856,23 @@ export function buildNewsTop5Slides(content, { dateDisplay = "", shop } = {}) {
       narration: pick(narItems[i], `${it.rank}位、${it.headline}。`),
     })),
   ];
-  const ending = {
-    kind: "news-cta",
-    heading: "月〜土は「今日の一杯」レシピ",
-    beanName: "",
-    lead: "OPEN GROUND の豆で、毎朝お届け",
-    lines: ctaSlideLines(shop),
-    narration: pick(nar.cta, "月曜から土曜は、オープングラウンドの豆で今日の一杯レシピをお届けします。"),
-  };
+  const ending = recipesLive
+    ? {
+        kind: "news-cta",
+        heading: "月〜土は「今日の一杯」レシピ",
+        beanName: "",
+        lead: "OPEN GROUND の豆で、毎朝お届け",
+        lines: ctaSlideLines(shop),
+        narration: pick(nar.cta, "月曜から土曜は、オープングラウンドの豆で今日の一杯レシピをお届けします。"),
+      }
+    : {
+        kind: "news-cta",
+        heading: "毎週日曜は、世界のコーヒーニュース",
+        beanName: "",
+        lead: "OPEN GROUND の自家焙煎豆",
+        lines: ctaSlideLines(shop),
+        narration: "毎週日曜は、世界のコーヒーニュースをお届けします。",
+      };
   return { slides, ending, topicTitle: `今週のコーヒーニュースTOP5：${items[0].headline}` };
 }
 
@@ -859,9 +881,11 @@ export function buildNewsTop5Slides(content, { dateDisplay = "", shop } = {}) {
  * the slides so scripts/generate-audio.mjs keeps producing project-N.mp3.
  */
 export function buildCardsData(content, lineup, { dateDisplay = "" } = {}) {
+  // what production shows: confirmed beans only (a dry run's candidates do not count)
+  const recipesLive = postableBeans(lineup).length > 0;
   const built =
     content.format === "news-top5"
-      ? buildNewsTop5Slides(content, { dateDisplay, shop: lineup?.shop })
+      ? buildNewsTop5Slides(content, { dateDisplay, shop: lineup?.shop, recipesLive })
       : buildRecipeSlides(content, lineup, { dateDisplay });
   for (const s of [...built.slides, built.ending]) s.narration = toSpokenJa(s.narration);
   const projects = built.slides.map((s, i) => ({
@@ -876,6 +900,7 @@ export function buildCardsData(content, lineup, { dateDisplay = "" } = {}) {
   }));
   return {
     format: content.format,
+    recipesLive,
     trial: content.trial || TRIAL_ID,
     fallback: Boolean(content.fallback),
     date: content.date,
@@ -997,7 +1022,12 @@ function newsBodyLines(data) {
   if (urls.length) {
     lines.push("", "出典:", ...urls);
   }
-  lines.push("", "月〜土は Open Ground の豆で「今日の一杯」レシピをお届けします。");
+  lines.push(
+    "",
+    data.recipesLive === false
+      ? "毎週日曜は、世界のコーヒーニュースをお届けします。"
+      : "月〜土は Open Ground の豆で「今日の一杯」レシピをお届けします。"
+  );
   return lines;
 }
 

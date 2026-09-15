@@ -197,7 +197,7 @@ test("untrusted text: URLs, @, #, line breaks and invisible characters are rejec
     const reason = unsafeTextReason(text);
     assert.ok(reason && reason.includes(expected), `${JSON.stringify(text)} → ${reason}`);
   }
-  for (const ok of ["湯温を2℃上げて95℃に", "比率は1対15", "No.1の産地", "3.5%上昇", "Perfect Daily Grind", "U.S.の関税", "-12%"]) {
+  for (const ok of ["湯温を2℃上げて95℃に", "比率は1対15", "No.1の産地", "3.5%上昇", "Perfect Daily Grind", "-12%", "V60で淹れる。次は"]) {
     assert.equal(unsafeTextReason(ok), null, ok);
   }
 
@@ -213,10 +213,24 @@ test("untrusted text: URLs, @, #, line breaks and invisible characters are rejec
   assert.ok(errorsOf(key).every((e) => !e.includes("\n")), "untrusted keys are quoted too");
 
   // domains with any lowercase TLD, full-width included; brand abbreviations stay text
-  for (const bad of ["詳しくは evil.coffee へ", "bean-sale.store で半額", "shop.de から", "ｅｖｉｌ．ｃａｆｅ", "SHOP.DE"]) {
+  for (const bad of [
+    "詳しくは evil.coffee へ",
+    "bean-sale.store で半額",
+    "shop.de から",
+    "ｅｖｉｌ．ｃａｆｅ",
+    "SHOP.DE",
+    "EXAMPLE.COM",
+    "example\u{3002}com",
+    "example" + ch(0xff61) + "com",
+    "bit . ly/abc",
+    "例え.テスト",
+    "abcdefghij.onion",
+    "U.S.の関税",
+    "Mr.Brownの缶コーヒー",
+  ]) {
     assert.ok(unsafeTextReason(bad)?.includes("URL"), bad);
   }
-  for (const ok of ["J.CO Donuts", "Mr.Brownの缶コーヒー", "St.Louisの焙煎所", "e.g. 浅煎り"]) {
+  for (const ok of ["e.g. 浅煎り", "coffee. Then", "3.5kgの豆", "Ver.2"]) {
     assert.equal(unsafeTextReason(ok), null, ok);
   }
   const news = clone(newsSample);
@@ -344,6 +358,23 @@ test("steep safety wording: every recipe text, after NFKC (review round 2 exampl
   const hot = clone(recipeSample);
   hot.recipe.tips[2].fix = "常温で一晩置いて水出し";
   assert.ok(validateDailyContent(hot, lineup).errors.some((e) => e.includes("recipe.tips[2].fix describes an unsafe steep")));
+});
+
+test("Sunday news does not promise Mon-Sat recipe cards while no bean is confirmed", () => {
+  const unconfirmed = clone(lineup);
+  for (const b of unconfirmed.beans) b.status = "candidate";
+  const data = buildCardsData(newsSample, unconfirmed, {});
+  assert.equal(data.recipesLive, false);
+  assert.doesNotMatch(`${data.ending.heading} ${data.ending.lead} ${data.ending.narration}`, /今日の一杯|月〜土|月曜から土曜|レシピ/);
+  const caps = buildCardCaptions(data, unconfirmed, jst);
+  assert.doesNotMatch(caps.instagram, /今日の一杯|月〜土/);
+  assert.doesNotMatch(caps.youtube.description, /今日の一杯|月〜土/);
+  assert.ok(caps.instagram.endsWith(salesCtaLines(unconfirmed.shop, { beanIntroduced: false }).join("\n")), "the sales CTA stays last");
+
+  const live = buildCardsData(newsSample, lineup, {});
+  assert.equal(live.recipesLive, true);
+  assert.match(live.ending.heading, /今日の一杯/);
+  assert.match(buildCardCaptions(live, lineup, jst).instagram, /月〜土は Open Ground の豆で「今日の一杯」レシピ/);
 });
 
 test("odd table keys never crash validation (a crash would stop the post)", () => {
