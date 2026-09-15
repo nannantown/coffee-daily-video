@@ -13,6 +13,11 @@
  * content type. A file without `format` is the legacy news explainer.
  */
 
+import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
+
+// The YouTube limits live in youtube-limits.mjs (shared with the legacy captions).
+export { youtubeSafe, youtubeTitle };
+
 export const TRIAL_ID = "coffee-trial-1-recipe-card";
 export const FORMATS = ["recipe", "news-top5"];
 
@@ -636,33 +641,9 @@ export function computeCardTimeline(audioDurations, slideCount, opts = TIMELINE)
 // Captions (sales CTA fixed at the end)
 // ---------------------------------------------------------------------------
 
-export function clampChars(text, max) {
-  const chars = Array.from(String(text));
-  return chars.length <= max ? chars.join("") : `${chars.slice(0, max - 1).join("")}…`;
-}
-
-// YouTube Data API videos resource: snippet.title ≤ 100 characters,
-// snippet.description ≤ 5000 bytes, neither may contain "<" or ">".
 // Instagram IG User Media: caption ≤ 2200 characters, 30 hashtags, 20 @ tags.
-const YT_TITLE_MAX = 100;
-const YT_DESCRIPTION_MAX_BYTES = 5000;
+// (YouTube title/description limits: youtube-limits.mjs.)
 const IG_CAPTION_MAX_CHARS = 2200;
-
-export function youtubeSafe(text) {
-  return String(text).replace(/</g, "＜").replace(/>/g, "＞");
-}
-
-/**
- * YouTube title = fixed head + variable middle + fixed tail. Only the middle
- * is shortened, so the title fits 100 characters and the date / #Shorts tail
- * survives (2026-09-15: a 106-character title failed the whole upload).
- */
-export function youtubeTitle(head, middle, tail) {
-  const h = youtubeSafe(head);
-  const t = youtubeSafe(tail);
-  const room = Math.max(1, YT_TITLE_MAX - charLen(h) - charLen(t));
-  return `${h}${clampChars(youtubeSafe(middle), room)}${t}`;
-}
 
 /** Join body + tail, dropping body lines from the end until it fits — the sales CTA tail always stays last. */
 export function fitWithTail(bodyLines, tailLines, measure, max) {
