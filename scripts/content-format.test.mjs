@@ -9,6 +9,7 @@ import {
   TIMELINE,
   isSafeHttpsUrl,
   newsUrlProblem,
+  kanjiNumber,
   unsafeSteepReason,
   unsafeTextReason,
   validateLegacyContent,
@@ -377,6 +378,58 @@ test("Sunday news does not promise Mon-Sat recipe cards while no bean is confirm
   assert.match(buildCardCaptions(live, lineup, jst).instagram, /月〜土は Open Ground の豆で「今日の一杯」レシピ/);
 });
 
+test("steep safety wording, review round 3: negated fridge, 24 hours or more, kanji numbers, steeping words", () => {
+  const rejected = [
+    // required 1: a negation after the fridge word in the same sentence
+    "冷蔵庫には入れず一晩",
+    "冷蔵庫には入れません",
+    "冷蔵庫に入れなくてOK",
+    "冷蔵庫NG",
+    "冷蔵庫の外で12時間",
+    "冷蔵庫から出して8時間置く",
+    // required 2: 24 hours or more, kanji hours and days
+    "24時間以上浸ける",
+    "24時間超",
+    "24時間を超えて寝かせる",
+    "24時間オーバーでもOK",
+    "\u{FF12}\u{FF14}時間以上",
+    "三十時間",
+    "二十五時間浸ける",
+    "一昼夜おく",
+    "二日",
+    "半日浸ける",
+    "一日冷蔵庫で寝かせる",
+    // recommended 4: steeping words without the fridge in the same sentence, any recipe
+    "水出しは一晩でOK",
+    "翌朝まで置く",
+    "テーブルで8時間",
+  ];
+  for (const text of rejected) assert.ok(unsafeSteepReason(text), `${text} must be rejected`);
+
+  const allowed = [
+    "冷蔵庫でひと晩寝かせる",
+    "冷蔵庫で10時間抽出します",
+    "冷蔵庫に必ず入れる",
+    "まず冷蔵庫で冷やす",
+    "冷蔵庫で作る水出しデカフェ",
+    "冷蔵庫で甘みを引き出す",
+    "二十四時間",
+    "十二時間冷蔵庫で",
+    "一日の始まりに",
+    // recommended 6: storage / pouring at room temperature
+    "粉は常温で保存",
+    "常温の水を注ぐ",
+  ];
+  for (const text of allowed) assert.equal(unsafeSteepReason(text), null, text);
+
+  assert.deepEqual([kanjiNumber("三十"), kanjiNumber("二十四"), kanjiNumber("十二"), kanjiNumber("百二十"), kanjiNumber("二四"), kanjiNumber("三杯")], [30, 24, 12, 120, 24, null]);
+
+  // wired into validation for a non-cold-brew recipe too
+  const hot = clone(recipeSample);
+  hot.recipe.narration.tips = "冷蔵庫には入れずキッチンで一晩置くと水出しになります。";
+  assert.ok(validateDailyContent(hot, lineup).errors.some((e) => e.includes('recipe.narration["tips"] describes an unsafe steep')));
+});
+
 test("odd table keys never crash validation (a crash would stop the post)", () => {
   for (const [field, value] of [["method", "constructor"], ["method", "__proto__"], ["method", "toString"], ["scene", "constructor"], ["angle", "hasOwnProperty"]]) {
     const c = clone(recipeSample);
@@ -402,7 +455,8 @@ test("review fixes: hot recipes carry no ice; cold brew wording; AeroPress 11g /
   const unsafe = coldBrew((r) => { r.steps[2].action = "冷蔵庫に入れない"; r.tips[1].fix = "キッチンで30時間置く"; });
   assert.ok(unsafe.some((e) => e.includes("recipe.steps[2].action describes an unsafe steep")), JSON.stringify(unsafe));
   assert.ok(unsafe.some((e) => e.includes("recipe.tips[1].fix describes an unsafe steep")), JSON.stringify(unsafe));
-  assert.ok(coldBrew((r) => { r.steps[0].action = "常温の水を注ぐ"; }).some((e) => e.includes("recipe.steps[0].action describes an unsafe steep")), "常温 needs 冷蔵庫 in the same sentence");
+  assert.deepEqual(coldBrew((r) => { r.steps[0].action = "常温の水を注ぐ"; }), [], "pouring room-temperature water is not a steep");
+  assert.ok(coldBrew((r) => { r.tips[0].fix = "常温の水を注いで一晩"; }).some((e) => e.includes("recipe.tips[0].fix describes an unsafe steep")));
 
   const aero = lineup.beans.find((b) => b.houseRecipe.method === "aeropress");
   const hoffmann = { date: "2026-09-15", format: "recipe", recipe: { ...clone(aero.houseRecipe), beanId: aero.id } };

@@ -222,7 +222,7 @@
         "method": "cold-brew",
         "scene": "iced",
         "angle": "season",
-        "hook": "夜でも飲める水出しデカフェ",
+        "hook": "冷蔵庫で作る水出しデカフェ",
         "numbers": { "dose_g": 50, "water_g": 500, "temp_c": 5, "grind": "粗挽き", "time": "10h" },
         "steps": [
           { "time": "0:00", "action": "水を注ぐ", "pour_to_g": 500 },

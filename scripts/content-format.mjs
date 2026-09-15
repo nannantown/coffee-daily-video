@@ -134,27 +134,62 @@ const own = (table, key) => (typeof key === "string" && Object.hasOwn(table, key
 //   always unsafe : 常温で / 室温のまま / 常温に置く (not 常温に置かず), a negated fridge
 //   unless the same sentence says the fridge (冷蔵): 常温 / 室温 / キッチン / 置いたまま / 一晩 …
 //   never         : durations in days (2日 / 一日半 / 3 days) or over 24 hours (30時間 / 48h)
+// Allowed on purpose (not a steep): storing beans / grounds and pouring water at room temperature.
+const STEEP_ALLOWED_RE = /(?:常温|室温)(?:で|に|の)?(?:保存|保管)|(?:常温|室温)の(?:水|お湯|湯)を?注/gu;
 const STEEP_ALWAYS_UNSAFE_RE =
-  /(?:常温|室温)(?:で|のまま|に置(?!か[ずな]))|冷蔵庫?(?:に|へ|で|は|を)?(?:入れ(?:ない|ず)|でなく|ではなく|じゃなく|不要|いらず|いらない|使わ(?:ない|ず)|しない|せず|なし|無し|抜き)|(?:no|without)\s+(?:fridge|refrigerat)/iu;
+  /(?:常温|室温)(?:で|のまま|に置(?!か[ずな]))|(?:no|without|not in|out of)\s+(?:the\s+)?(?:fridge|refrigerat)/iu;
+const FRIDGE_WORD_RE = /冷蔵|fridge|refrigerat/iu;
+// A negation anywhere after the fridge word in the same sentence cancels it:
+// 冷蔵庫には入れず / 入れません / 入れなくてOK / 冷蔵庫NG / 冷蔵庫の外で / 冷蔵庫から出して.
+// (必ず / まず are not negations; 抽出する / 引き出す are not "taking out".)
+const FRIDGE_NEGATED_RE =
+  /(?:冷蔵|fridge|refrigerat).*?(?:(?<![必ま])ず(?!っ)|ません|ない|なく|NG|ダメ|だめ|禁止|外|(?:から|を)(?:取り)?出(?:して|す|し)|不要|いら|無し|なし|抜き|以外|使わ|避け|\bnot\b|\bnever\b)/iu;
+// Steeping words that need the fridge in the same sentence (every recipe, not only cold brew).
 const STEEP_OUTSIDE_RE =
-  /常温|室温|キッチン|台所|置いたまま|置きっぱなし|出しっぱなし|放置|一晩|ひと晩|一夜|夜通し|オーバーナイト|overnight|room\s*temp/iu;
-const FRIDGE_RE = /冷蔵|fridge|refrigerat/iu;
-const STEEP_DAYS_RE =
-  /(?<![\d\u{6708}])\d+(?:\.\d+)?\s*日|[一二三四五六七八九十数何半丸]+日(?:間|半|以上|ほど|くらい|程度|かけ|置|浸|寝|漬|中|$)|\d\s*days?\b|\bdays?\b/iu;
-const STEEP_HOURS_RE = /(\d+(?:\.\d+)?)\s*(?:時間|hours?|hrs?|h)(?![a-z])/giu;
+  /常温|室温|キッチン|台所|テーブル|机|棚|置いたまま|置きっぱなし|出しっぱなし|放置|一晩|ひと晩|一夜|一昼夜|夜通し|翌朝|オーバーナイト|水出し|overnight|room\s*temp|cold\s*brew/iu;
+const STEEP_WORD_RE = /浸け|浸す|漬け|漬ける|つけ|置|寝か|ねか|抽出|水出し|冷蔵|放置|steep|soak/iu;
+// Durations in days are never a recipe (per sentence): 2日 / 1.5日 / 3 days, 一日半 / 一昼夜 /
+// 二日 at the end, 半日浸ける; a kanji day count next to a steeping word (一日冷蔵庫で).
+// Dates (9月20日) and 一日の始まり are not durations.
+const DAYS_ARABIC_RE = /(?<![\d\u{6708}])\d+(?:\.\d+)?\s*日|\d\s*days?\b|\bdays?\b/iu;
+const DAYS_KANJI_CONTEXT_RE = /[〇零一二三四五六七八九十百数何半丸]+日(?:間|半|以上|ほど|くらい|程度|かけ|置|浸|寝|漬|中|$)|一昼夜|昼夜/u;
+const DAYS_KANJI_RE = /[〇零一二三四五六七八九十百数何半丸]+日/u;
+// Hours, Arabic or kanji (30時間 / 三十時間 / 48h), and "at least 24" (24時間以上 / 超 / を超え / オーバー).
+const STEEP_HOURS_RE =
+  /(\d+(?:\.\d+)?|[〇零一二三四五六七八九十百]+)\s*(?:時間|hours?|hrs?|h)(?![a-z])(\s*(?:以上|超|を?超え|オーバー|over|より長|\+))?/giu;
 // sentence ends: 。 ! ? line breaks, and "." before a space / the end (not decimals)
 const SENTENCE_END_RE = /[\u{3002}!?\n]|\.(?=\s|$)/u;
 
+const KANJI_DIGITS = { 〇: 0, 零: 0, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+
+/** 三十 → 30, 二十四 → 24, 十二 → 12, 百二十 → 120, 二四 → 24; null if it is not a kanji number. */
+export function kanjiNumber(text) {
+  let total = 0;
+  let current = 0;
+  for (const c of String(text ?? "")) {
+    if (Object.hasOwn(KANJI_DIGITS, c)) current = current * 10 + KANJI_DIGITS[c];
+    else if (c === "十") [total, current] = [total + (current || 1) * 10, 0];
+    else if (c === "百") [total, current] = [total + (current || 1) * 100, 0];
+    else return null;
+  }
+  return total + current;
+}
+
 /** Why a recipe text describes an unsafe steep (null = fine). */
 export function unsafeSteepReason(value) {
-  const s = String(value ?? "").normalize("NFKC");
+  const s = String(value ?? "").normalize("NFKC").replace(STEEP_ALLOWED_RE, "\u{25A1}");
   if (STEEP_ALWAYS_UNSAFE_RE.test(s)) return "room temperature or no fridge";
-  if (STEEP_DAYS_RE.test(s)) return "a duration in days";
   for (const m of s.matchAll(STEEP_HOURS_RE)) {
-    if (Number(m[1]) > 24) return "more than 24 hours";
+    const hours = /^\d/u.test(m[1]) ? Number(m[1]) : kanjiNumber(m[1]);
+    if (hours != null && (hours > 24 || (hours >= 24 && m[2]))) return "24 hours or more";
   }
   for (const sentence of s.split(SENTENCE_END_RE)) {
-    if (STEEP_OUTSIDE_RE.test(sentence) && !FRIDGE_RE.test(sentence)) return "outside the fridge (say 冷蔵庫 in the same sentence)";
+    const fridge = FRIDGE_WORD_RE.test(sentence);
+    if (fridge && FRIDGE_NEGATED_RE.test(sentence)) return "a negated fridge (冷蔵庫に入れない / 冷蔵庫の外 …)";
+    if (DAYS_ARABIC_RE.test(sentence) || DAYS_KANJI_CONTEXT_RE.test(sentence) || (DAYS_KANJI_RE.test(sentence) && STEEP_WORD_RE.test(sentence))) {
+      return "a duration in days";
+    }
+    if (STEEP_OUTSIDE_RE.test(sentence) && !fridge) return "outside the fridge (say 冷蔵庫 in the same sentence)";
   }
   return null;
 }
