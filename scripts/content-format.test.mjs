@@ -8,6 +8,7 @@ import {
   NoPostableBeanError,
   TIMELINE,
   isSafeHttpsUrl,
+  unsafeSteepReason,
   unsafeTextReason,
   validateLegacyContent,
   buildCardCaptions,
@@ -276,6 +277,47 @@ test("a JSON without format is the legacy explainer only with the legacy keys", 
   assert.ok(has(captioned, "articles[0].tags[0] contains"));
 });
 
+test("steep safety wording: every recipe text, after NFKC (review round 2 examples)", () => {
+  const rejected = [
+    "常温に一晩おく",
+    "室温一晩でもOK",
+    "常温OKの水出し",
+    "キッチンに置いたまま一晩",
+    "2日浸ける",
+    "48h",
+    "一日半",
+    "\u{FF13}\u{FF10}時間",
+    "常温で一晩置いて水出し",
+    "3 days in the fridge",
+    "冷蔵庫でなく常温で",
+    "24.5時間浸ける",
+  ];
+  for (const text of rejected) assert.ok(unsafeSteepReason(text), `${text} must be rejected`);
+  for (const ok of ["冷蔵庫でひと晩寝かせる", "常温に置かず冷蔵庫へ", "濾して冷蔵保存", "抽出を12時間に延ばす", "湯温を2℃上げて95℃に", "毎日の一杯に", "一日の始まりに"]) {
+    assert.equal(unsafeSteepReason(ok), null, ok);
+  }
+
+  const cold = lineup.beans.find((b) => b.houseRecipe.method === "cold-brew");
+  const coldErrors = (mutate) => {
+    const content = { date: "2026-09-15", format: "recipe", recipe: { ...clone(cold.houseRecipe), beanId: cold.id } };
+    mutate(content.recipe);
+    return validateDailyContent(content, lineup).errors;
+  };
+  for (const [where, mutate] of [
+    ["recipe.tips[0].fix", (r) => (r.tips[0].fix = "常温に一晩おく")],
+    ["recipe.hook", (r) => (r.hook = "常温OKの水出し")],
+    ["narration[\"steps\"]", (r) => (r.narration = { steps: "キッチンに置いたまま一晩で完成です。" })],
+    ["recipe.tips[1].fix", (r) => (r.tips[1].fix = "2日浸ける")],
+    ["recipe.tips[2].fix", (r) => (r.tips[2].fix = "\u{FF13}\u{FF10}時間浸ける")],
+  ]) {
+    assert.ok(coldErrors(mutate).some((e) => e.includes(where) && e.includes("unsafe steep")), where);
+  }
+  // a non-cold-brew recipe that slips a cold brew step into a tip
+  const hot = clone(recipeSample);
+  hot.recipe.tips[2].fix = "常温で一晩置いて水出し";
+  assert.ok(validateDailyContent(hot, lineup).errors.some((e) => e.includes("recipe.tips[2].fix describes an unsafe steep")));
+});
+
 test("odd table keys never crash validation (a crash would stop the post)", () => {
   for (const [field, value] of [["method", "constructor"], ["method", "__proto__"], ["method", "toString"], ["scene", "constructor"], ["angle", "hasOwnProperty"]]) {
     const c = clone(recipeSample);
@@ -297,10 +339,11 @@ test("review fixes: hot recipes carry no ice; cold brew wording; AeroPress 11g /
     mutate(content.recipe);
     return validateDailyContent(content, lineup).errors;
   };
-  assert.deepEqual(coldBrew((r) => { r.steps[0].action = "常温の水を注ぐ"; r.tips[0].fix = "常温に置かず冷蔵庫へ"; }), [], "safe wording passes");
+  assert.deepEqual(coldBrew((r) => { r.tips[0].fix = "常温に置かず冷蔵庫へ"; r.tips[1].fix = "冷蔵庫でひと晩寝かせる"; }), [], "safe wording passes");
   const unsafe = coldBrew((r) => { r.steps[2].action = "冷蔵庫に入れない"; r.tips[1].fix = "キッチンで30時間置く"; });
-  assert.ok(unsafe.some((e) => e.includes("recipe.steps[2].action describes an unsafe cold brew steep")), JSON.stringify(unsafe));
-  assert.ok(unsafe.some((e) => e.includes("recipe.tips[1].fix describes an unsafe cold brew steep")), JSON.stringify(unsafe));
+  assert.ok(unsafe.some((e) => e.includes("recipe.steps[2].action describes an unsafe steep")), JSON.stringify(unsafe));
+  assert.ok(unsafe.some((e) => e.includes("recipe.tips[1].fix describes an unsafe steep")), JSON.stringify(unsafe));
+  assert.ok(coldBrew((r) => { r.steps[0].action = "常温の水を注ぐ"; }).some((e) => e.includes("recipe.steps[0].action describes an unsafe steep")), "常温 needs 冷蔵庫 in the same sentence");
 
   const aero = lineup.beans.find((b) => b.houseRecipe.method === "aeropress");
   const hoffmann = { date: "2026-09-15", format: "recipe", recipe: { ...clone(aero.houseRecipe), beanId: aero.id } };

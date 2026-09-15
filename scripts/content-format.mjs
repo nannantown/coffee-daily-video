@@ -121,10 +121,35 @@ export function unsafeTextReason(value) {
 // Own properties only: "constructor" / "__proto__" must not pass a table lookup.
 const own = (table, key) => (typeof key === "string" && Object.hasOwn(table, key) ? table[key] : undefined);
 
-// Cold brew texts that describe an unsafe steep: room temperature (not when
-// negated: 常温に置かず), no fridge, or more than 24 hours.
-const COLD_BREW_UNSAFE_RE =
-  /(?:常温|室温)(?:で|のまま|に置(?!か[ずな]))|冷蔵庫に入れ(?:ない|ず)|冷蔵(?:しない|せず)|(?<!\d)(?:2[5-9]|[3-9]\d|\d{3,})時間/u;
+// Steeping safety wording, checked in every text of every recipe after NFKC
+// (a non-cold-brew tip can still say "常温で一晩置いて水出し").
+//   always unsafe : 常温で / 室温のまま / 常温に置く (not 常温に置かず), a negated fridge
+//   unless the same sentence says the fridge (冷蔵): 常温 / 室温 / キッチン / 置いたまま / 一晩 …
+//   never         : durations in days (2日 / 一日半 / 3 days) or over 24 hours (30時間 / 48h)
+const STEEP_ALWAYS_UNSAFE_RE =
+  /(?:常温|室温)(?:で|のまま|に置(?!か[ずな]))|冷蔵庫?(?:に|へ|で|は|を)?(?:入れ(?:ない|ず)|でなく|ではなく|じゃなく|不要|いらず|いらない|使わ(?:ない|ず)|しない|せず|なし|無し|抜き)|(?:no|without)\s+(?:fridge|refrigerat)/iu;
+const STEEP_OUTSIDE_RE =
+  /常温|室温|キッチン|台所|置いたまま|置きっぱなし|出しっぱなし|放置|一晩|ひと晩|一夜|夜通し|オーバーナイト|overnight|room\s*temp/iu;
+const FRIDGE_RE = /冷蔵|fridge|refrigerat/iu;
+const STEEP_DAYS_RE =
+  /(?<![\d\u{6708}])\d+(?:\.\d+)?\s*日|[一二三四五六七八九十数何半丸]+日(?:間|半|以上|ほど|くらい|程度|かけ|置|浸|寝|漬|中|$)|\d\s*days?\b|\bdays?\b/iu;
+const STEEP_HOURS_RE = /(\d+(?:\.\d+)?)\s*(?:時間|hours?|hrs?|h)(?![a-z])/giu;
+// sentence ends: 。 ! ? line breaks, and "." before a space / the end (not decimals)
+const SENTENCE_END_RE = /[\u{3002}!?\n]|\.(?=\s|$)/u;
+
+/** Why a recipe text describes an unsafe steep (null = fine). */
+export function unsafeSteepReason(value) {
+  const s = String(value ?? "").normalize("NFKC");
+  if (STEEP_ALWAYS_UNSAFE_RE.test(s)) return "room temperature or no fridge";
+  if (STEEP_DAYS_RE.test(s)) return "a duration in days";
+  for (const m of s.matchAll(STEEP_HOURS_RE)) {
+    if (Number(m[1]) > 24) return "more than 24 hours";
+  }
+  for (const sentence of s.split(SENTENCE_END_RE)) {
+    if (STEEP_OUTSIDE_RE.test(sentence) && !FRIDGE_RE.test(sentence)) return "outside the fridge (say 冷蔵庫 in the same sentence)";
+  }
+  return null;
+}
 
 /** An https URL without whitespace, invisible characters or quotes/brackets. */
 export function isSafeHttpsUrl(value) {
@@ -404,12 +429,10 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
       errors.push(`${prefix}.steps must say "${COLD_BREW.fridgeWord}" for cold-brew (e.g. "冷蔵庫で寝かせる") — it steeps in the fridge`);
     }
   }
-  if (coldBrew) {
-    for (const [label, value] of recipeTexts(recipe, prefix)) {
-      if (COLD_BREW_UNSAFE_RE.test(value)) {
-        errors.push(`${label} describes an unsafe cold brew steep (room temperature, no fridge or over 24 hours): ${quote(value)}`);
-      }
-    }
+  // every recipe, not only cold-brew: a hot recipe's tip can describe a cold brew too
+  for (const [label, value] of recipeTexts(recipe, prefix)) {
+    const reason = unsafeSteepReason(value);
+    if (reason) errors.push(`${label} describes an unsafe steep (${reason}): ${quote(value)}`);
   }
   const nar = recipe.narration;
   if (nar != null && (typeof nar !== "object" || Array.isArray(nar))) errors.push(`${prefix}.narration must be an object`);
