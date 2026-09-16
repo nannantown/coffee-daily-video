@@ -59,7 +59,7 @@ DOW=$(TZ=Asia/Tokyo date +%u)   # 7 = 日曜 → news-top5、それ以外 → re
 #### 0.5. 読むもの（必須）
 
 - `docs/strategy.md` — **冒頭の「ジャンル実験」節を最優先**（試行台帳・判定窓・閾値・モードの決め方・配信死亡モード中の振る舞い・レポート節）。続いて「ジャンル試行 #1」、型・NG パターン・KPI
-- `data/coffee-lineup.json` — 紹介してよい豆は **`status: "confirmed"` の豆だけ**（`candidate` はオーナー確認待ちで、本番の検証で NG / `retired` は使わない）。各豆の `flavor` / `labelFlavor` は実物のラベル表記
+- `data/coffee-lineup.json` — 紹介してよい豆は **`status: "confirmed"` の豆だけ**（`candidate` はオーナー確認待ちで、本番の検証で NG / `retired` は使わない）。各豆の `flavor` / `labelFlavor` は実物のラベル表記（袋のラベルが正。`flavor` と標準レシピの `taste.notes` はその日本語表記。2026-09-16 オーナー確認済み: 5 種すべて `confirmed`）
 - **confirmed の豆が 1 つも無い日**（`node -e 'const l=require("./data/coffee-lineup.json");console.log(l.beans.filter((b)=>b.status==="confirmed").length)'` が 0）:
   - **月〜土**: `data/enriched-coffee-news.json` は**書かない・触らない**（前日の内容のまま）。手順 1 の `docs/pdca/$TODAY.md` だけ書き、「今日の Action」に「豆の確定待ち（原稿なし）」と書く。手順 2〜4 は飛ばして手順 5 へ（手順 5 は原稿の date が今日でないのを見て、レポートだけの PR にする。パイプラインは豆を紹介しない旧型の豆知識で投稿する）
   - **日曜**: news-top5 は豆を紹介しないので通常どおり書く

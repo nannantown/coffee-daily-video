@@ -310,6 +310,8 @@ export function expectedFormatFor(isoDate) {
   return d.getUTCDay() === 0 ? "news-top5" : "recipe";
 }
 
+// Flavor wording: the bag label (`labelFlavor`) is the source of truth; a bean's `flavor`
+// and houseRecipe.taste.notes are its Japanese wording (owner decision 2026-09-16).
 /** Any bean that is not retired (rendering and captions — validation decides what may be posted). */
 export function findBean(lineup, beanId) {
   return (lineup?.beans || []).find((b) => b.id === beanId && b.status !== "retired") || null;
