@@ -1,11 +1,35 @@
 name: Daily Coffee Video
 
+# Two modes:
+#   - production: the schedule (and dispatch on main without dry_run) renders
+#     today's video, posts to YouTube + Instagram and commits
+#     data/performance-history.json.
+#   - verification (dry run): dispatch on any ref other than main, with
+#     dry_run=true, or with sample other than "today" (samples are never
+#     posted). Renders the video, cover, captions and slide previews into an
+#     artifact. No stats fetch, no SNS posting, no commit.
+#       gh workflow run daily-video.yml --ref <branch> -f sample=recipe
+
 on:
   schedule:
     # 23:00 UTC = 08:00 JST
     # 23:30 UTC = 08:30 JST (30min after AI Trend Daily)
     - cron: "30 23 * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Verification only (always on for refs other than main): artifact, no posting, no commit"
+        type: boolean
+        default: false
+      sample:
+        description: "Content for verification: today = data/enriched-coffee-news.json, recipe / news-top5 = data/samples, fallback = house recipe"
+        type: choice
+        options:
+          - today
+          - recipe
+          - news-top5
+          - fallback
+        default: today
   push:
     paths:
       - '.recovery-trigger'
@@ -38,11 +62,32 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Decide mode
+        id: mode
+        env:
+          DRY_RUN_INPUT: ${{ inputs.dry_run }}
+          SAMPLE: ${{ inputs.sample }}
+        run: |
+          # Samples / forced fallback are never posted, even on main.
+          if [ "${GITHUB_REF}" != "refs/heads/main" ] || [ "${DRY_RUN_INPUT}" = "true" ] || { [ -n "${SAMPLE}" ] && [ "${SAMPLE}" != "today" ]; }; then
+            echo "dry_run=true" >> "$GITHUB_OUTPUT"
+            echo "Verification mode on ${GITHUB_REF} (sample=${SAMPLE:-today}): no posting, no commit."
+          else
+            echo "dry_run=false" >> "$GITHUB_OUTPUT"
+          fi
+          case "${SAMPLE}" in
+            recipe) echo "args=--content=data/samples/recipe.sample.json" >> "$GITHUB_OUTPUT" ;;
+            news-top5) echo "args=--content=data/samples/news-top5.sample.json" >> "$GITHUB_OUTPUT" ;;
+            fallback) echo "args=--fallback" >> "$GITHUB_OUTPUT" ;;
+            *) echo "args=" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - name: Run pipeline
-        run: node scripts/pipeline.mjs
+        run: node scripts/pipeline.mjs ${{ steps.mode.outputs.args }}
         env:
           TZ: Asia/Tokyo
-          SNS_POST_ENABLED: ${{ secrets.SNS_POST_ENABLED }}
+          DRY_RUN: ${{ steps.mode.outputs.dry_run }}
+          SNS_POST_ENABLED: ${{ steps.mode.outputs.dry_run != 'true' && secrets.SNS_POST_ENABLED || 'false' }}
           # YouTube
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -55,6 +100,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit performance history
+        if: steps.mode.outputs.dry_run != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -65,8 +111,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload video artifact
+        if: steps.mode.outputs.dry_run != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: coffee-video-${{ github.run_number }}
           path: output/coffee-*.mp4
+          retention-days: 30
+
+      - name: Upload verification artifact
+        if: steps.mode.outputs.dry_run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coffee-dryrun-${{ github.run_number }}
+          path: |
+            output/coffee-*.mp4
+            output/coffee-*-cover.jpg
+            output/captions.json
+            output/trending-data.json
+            output/previews/*.png
           retention-days: 30

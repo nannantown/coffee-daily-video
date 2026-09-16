@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildCardCaptions, jstDateParts } from "./content-format.mjs";
 import { youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -155,9 +156,31 @@ function generateInstagramCaption(data, dateStr, hints) {
   return lines.join("\n");
 }
 
+function writeCardCaptions(data) {
+  // 「今日の一杯」/ news TOP5: captions end with the fixed sales CTA from
+  // data/coffee-lineup.json `shop`. YouTube-views-based optimization hints
+  // are not applied (they were learned on the legacy news format).
+  const lineup = JSON.parse(readFileSync(join(__dirname, "..", "data", "coffee-lineup.json"), "utf-8"));
+  const jst = jstDateParts();
+  const captions = {
+    date: { full: jst.slash, compact: jst.compact },
+    format: data.format,
+    ...buildCardCaptions(data, lineup, jst),
+  };
+  const outputPath = join(outputDir, "captions.json");
+  writeFileSync(outputPath, JSON.stringify(captions, null, 2));
+  console.log(`Captions → ${outputPath}`);
+  console.log(`  YouTube title: ${captions.youtube.title}`);
+  console.log(`  Instagram: ${captions.instagram.length} chars (ends with the sales CTA)`);
+}
+
 function main() {
   const dataPath = join(outputDir, "trending-data.json");
   const data = JSON.parse(readFileSync(dataPath, "utf-8"));
+  if (data.format) {
+    writeCardCaptions(data);
+    return;
+  }
   const dateStr = getDateStr();
 
   // Load optimization hints (from fetch-stats.mjs, if available)

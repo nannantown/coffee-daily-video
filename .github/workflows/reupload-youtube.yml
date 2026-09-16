@@ -13,6 +13,11 @@ on:
       asset_name:
         description: "mp4 asset filename (e.g., coffee-20260425.mp4)"
         required: true
+      regenerate_captions:
+        description: "Ignore the captions archived in the release and rebuild them from the repo's content JSON (only correct on the same JST day as the post)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -44,10 +49,23 @@ jobs:
       - name: Regenerate captions for upload
         env:
           TZ: Asia/Tokyo
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          REGENERATE_CAPTIONS: ${{ inputs.regenerate_captions }}
         run: |
-          node scripts/scrape-coffee-news.mjs
-          node scripts/generate-data.mjs
-          node scripts/generate-caption.mjs
+          # Prefer the captions archived with the original post; regenerate for
+          # releases created before the archive existed, or when asked to
+          # (e.g. the archived captions themselves were rejected).
+          CAPTIONS_ASSET="${ASSET_NAME%.mp4}-captions.json"
+          if [ "$REGENERATE_CAPTIONS" != "true" ] && gh release download "$RELEASE_TAG" -p "$CAPTIONS_ASSET" -D output/ --clobber; then
+            cp "output/$CAPTIONS_ASSET" output/captions.json
+            echo "Using archived captions ($CAPTIONS_ASSET)"
+          else
+            node scripts/scrape-coffee-news.mjs
+            node scripts/generate-data.mjs
+            node scripts/generate-caption.mjs
+          fi
           cat output/captions.json | head -20
 
       - name: Attempt to delete old YouTube video (non-blocking)

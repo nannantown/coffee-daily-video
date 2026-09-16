@@ -34,12 +34,18 @@ const POLL_INTERVAL_MS = 5000;
 const POLL_MAX_ATTEMPTS = 60;
 
 // Thumbnail is taken from this offset (ms) within the video.
-// Default 7000ms lands on the first content card, past the ~4.5s opening —
-// avoids the near-black fade-in at frame 0 that IG picks otherwise.
+// Legacy news video: 7000ms lands on the first content card, past the ~4.5s
+// opening — avoids the near-black fade-in at frame 0 that IG picks otherwise.
+// Card formats (captions.json has `format`): 1500ms = first card with every
+// element faded in (the news TOP5 cover lasts only ~6s, so 7000ms would show #1).
 const DEFAULT_THUMB_OFFSET_MS = 7000;
-const THUMB_OFFSET_MS = Number(
-  process.env.INSTAGRAM_THUMB_OFFSET_MS ?? DEFAULT_THUMB_OFFSET_MS
-);
+const CARD_THUMB_OFFSET_MS = 1500;
+let THUMB_OFFSET_MS = DEFAULT_THUMB_OFFSET_MS;
+
+function resolveThumbOffsetMs(captions) {
+  if (process.env.INSTAGRAM_THUMB_OFFSET_MS) return Number(process.env.INSTAGRAM_THUMB_OFFSET_MS);
+  return captions?.format ? CARD_THUMB_OFFSET_MS : DEFAULT_THUMB_OFFSET_MS;
+}
 
 async function graphPost(path, params) {
   const url = new URL(`${GRAPH_API_BASE}${path}`);
@@ -246,6 +252,8 @@ async function main() {
   );
   const caption = captions.instagram;
   console.log(`  Caption: ${caption.substring(0, 80)}...`);
+  THUMB_OFFSET_MS = resolveThumbOffsetMs(captions);
+  console.log(`  Thumb offset: ${THUMB_OFFSET_MS}ms${captions.format ? ` (${captions.format} cards)` : ""}`);
 
   console.log("  Deriving Page Access Token...");
   const pageToken = await derivePageAccessToken(

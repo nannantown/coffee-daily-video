@@ -15,7 +15,7 @@
  */
 
 import { execSync } from "child_process";
-import { existsSync, readFileSync } from "fs";
+import { copyFileSync, existsSync, readFileSync } from "fs";
 import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
 
@@ -65,7 +65,17 @@ async function createGitHubRelease(videoPath, coverPath) {
   const title = `Coffee Daily ${dateStr}`;
   const videoFileName = basename(videoPath);
   const coverFileName = coverPath ? basename(coverPath) : null;
-  const coverArg = coverPath && existsSync(coverPath) ? ` "${coverPath}"` : "";
+  // Also archive the exact captions that were posted, so retry / re-upload
+  // workflows reuse them instead of regenerating from a later content JSON
+  // (recipe numbers in the caption must match the video).
+  const captionsSrc = join(outputDir, "captions.json");
+  const captionsAsset = join(outputDir, `coffee-${dateStr}-captions.json`);
+  let captionsArg = "";
+  if (existsSync(captionsSrc)) {
+    copyFileSync(captionsSrc, captionsAsset);
+    captionsArg = ` "${captionsAsset}"`;
+  }
+  const coverArg = (coverPath && existsSync(coverPath) ? ` "${coverPath}"` : "") + captionsArg;
 
   console.log(`\nCreating GitHub Release: ${tag}`);
 

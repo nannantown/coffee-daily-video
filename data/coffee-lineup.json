@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "status": "confirmed",
+  "updatedAt": "2026-09-16",
+  "note": "「今日の一杯」レシピカードで紹介してよい豆のマスタ。毎朝ルーチンは recipe.beanId をここの id から必ず選ぶ。status: confirmed = 確定（2026-09-16 オーナー確認: 5 種すべて販売中、retired なし）/ candidate = オーナー確認待ち（PR で confirmed に変える）/ retired = 紹介しない（売り切れ・終売は PR で retired に）。味の表記は袋のラベル（labelFlavor）が正で、flavor と houseRecipe.taste.notes はその日本語表記（EC 商品データ・仕入れ資料の表記は使わない。2026-09-16 オーナー決定）。出所: openground-ec の商品テーブル ec_products で is_active=true の 5 件（2026-09-14 読み取り、Figma のラベルメモと一致）。houseRecipe はルーチンが失敗した朝に使う標準レシピ（数値は 2026-09-16 にオーナー確認済み、後日変更可）。",
+  "shop": {
+    "name": "Open Ground Coffee Roasters",
+    "brand": "OPEN GROUND",
+    "instagram": "@open_ground_coffee_roasters",
+    "ecUrl": "https://open-ground.co",
+    "ecPublic": false,
+    "ctaMode": "dm",
+    "ctaNote": "EC は 2026-09-14 時点で非公開（COMING SOON）、IG プロフィールにはリンクがなく「豆の購入や卸しはDMで」と案内している。公開後は ecPublic: true + ctaMode: \"ec-url\" に変えると、キャプション末尾と最後のスライドが URL 誘導に切り替わる。"
+  },
+  "beans": [
+    {
+      "id": "burundi-mabanza",
+      "status": "confirmed",
+      "name": "ブルンジ マバンザ ウォッシュド",
+      "displayName": "ブルンジ マバンザ",
+      "spokenName": "ブルンジ、マバンザ",
+      "origin": "ブルンジ",
+      "region": "マバンザ ミュイヤマ",
+      "farm": "Mabanza Washing Station",
+      "variety": "レッドブルボン",
+      "process": "フリーウォッシュド",
+      "processShort": "ウォッシュド",
+      "altitude": "1,500-1,700m",
+      "roast": "浅煎り",
+      "flavor": ["レッドフルーツ", "キャラメル"],
+      "labelFlavor": "RED FRUITS & CARAMEL",
+      "prices": [
+        { "grams": 100, "yen": 1000 },
+        { "grams": 200, "yen": 1800 }
+      ],
+      "ecSlug": "burundi-mabanza",
+      "houseRecipe": {
+        "method": "v60",
+        "scene": "hot",
+        "angle": "bean",
+        "hook": "キャラメルの甘さを引き出すV60",
+        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細挽き", "time": "2:45" },
+        "steps": [
+          { "time": "0:00", "action": "蒸らし", "pour_to_g": 40 },
+          { "time": "0:40", "action": "2投目", "pour_to_g": 120 },
+          { "time": "1:10", "action": "3投目", "pour_to_g": 180 },
+          { "time": "1:40", "action": "4投目", "pour_to_g": 240 },
+          { "time": "2:45", "action": "落ち切り" }
+        ],
+        "taste": {
+          "notes": ["レッドフルーツ", "キャラメル"],
+          "summary": "甘さの奥に赤い果実の酸",
+          "acidity": 3,
+          "sweetness": 4,
+          "body": 3
+        },
+        "tips": [
+          { "problem": "酸っぱい時", "fix": "挽き目を1段細かくする" },
+          { "problem": "苦い時", "fix": "湯温を2℃下げて90℃に" },
+          { "problem": "薄い時", "fix": "豆を1g増やして16gに" }
+        ]
+      }
+    },
+    {
+      "id": "rwanda-humure",
+      "status": "confirmed",
+      "name": "ルワンダ フムレ ウォッシュド",
+      "displayName": "ルワンダ フムレ",
+      "spokenName": "ルワンダ、フムレ",
+      "origin": "ルワンダ",
+      "region": "ガツィボ郡 フムレ",
+      "farm": "Humure Hill（Baho Coffee）",
+      "variety": "レッドブルボン",
+      "process": "ウォッシュド",
+      "processShort": "ウォッシュド",
+      "roast": "浅煎り",
+      "flavor": ["栗", "紅茶"],
+      "labelFlavor": "CHESTNUT & TEA",
+      "prices": [
+        { "grams": 100, "yen": 1000 },
+        { "grams": 200, "yen": 1800 }
+      ],
+      "ecSlug": "rwanda-humure",
+      "houseRecipe": {
+        "method": "french-press",
+        "scene": "hot",
+        "angle": "method",
+        "hook": "紅茶のような軽さをプレスで",
+        "numbers": { "dose_g": 15, "water_g": 250, "temp_c": 94, "grind": "粗挽き", "time": "4:30" },
+        "steps": [
+          { "time": "0:00", "action": "お湯を注ぐ", "pour_to_g": 250 },
+          { "time": "0:30", "action": "やさしく混ぜる" },
+          { "time": "4:00", "action": "表面をすくう" },
+          { "time": "4:30", "action": "プレスする" }
+        ],
+        "taste": {
+          "notes": ["栗", "紅茶"],
+          "summary": "栗の甘さに、紅茶のような軽さ",
+          "acidity": 3,
+          "sweetness": 3,
+          "body": 4
+        },
+        "tips": [
+          { "problem": "粉っぽい時", "fix": "最後の20gは注がずに残す" },
+          { "problem": "渋い時", "fix": "挽き目を1段粗くする" },
+          { "problem": "ぬるい時", "fix": "器具とカップを先に温める" }
+        ]
+      }
+    },
+    {
+      "id": "ethiopia-yirgacheffe-kochere",
+      "status": "confirmed",
+      "name": "エチオピア イルガチェフェ コチャレ ウォッシュド",
+      "displayName": "イルガチェフェ コチャレ",
+      "spokenName": "イルガチェフェ、コチャレ",
+      "origin": "エチオピア",
+      "region": "イルガチェフェ コチャレ",
+      "variety": "在来種",
+      "process": "ウォッシュド G-1",
+      "processShort": "ウォッシュド",
+      "roast": "浅煎り",
+      "flavor": ["シトラス", "フローラル"],
+      "labelFlavor": "CITRUS & FLORAL",
+      "prices": [
+        { "grams": 100, "yen": 1100 },
+        { "grams": 200, "yen": 2000 }
+      ],
+      "ecSlug": "ethiopia-yirgacheffe-kochere",
+      "houseRecipe": {
+        "method": "v60",
+        "scene": "iced",
+        "angle": "season",
+        "hook": "氷で薄まらない急冷アイス",
+        "numbers": { "dose_g": 20, "water_g": 150, "ice_g": 100, "temp_c": 93, "grind": "細挽き", "time": "2:15" },
+        "steps": [
+          { "time": "0:00", "action": "蒸らし", "pour_to_g": 40 },
+          { "time": "0:40", "action": "2投目", "pour_to_g": 100 },
+          { "time": "1:10", "action": "3投目", "pour_to_g": 150 },
+          { "time": "2:15", "action": "氷ごと混ぜる" }
+        ],
+        "taste": {
+          "notes": ["シトラス", "フローラル"],
+          "summary": "レモンティーのような爽快感",
+          "acidity": 4,
+          "sweetness": 3,
+          "body": 2
+        },
+        "tips": [
+          { "problem": "氷で薄まる時", "fix": "豆を2g増やして22gに" },
+          { "problem": "酸っぱい時", "fix": "湯温を2℃上げて95℃に" },
+          { "problem": "香りが弱い時", "fix": "注ぐ高さを低くゆっくり" }
+        ]
+      }
+    },
+    {
+      "id": "china-dehong-east-fermentation",
+      "status": "confirmed",
+      "name": "中国 デーホン イーストファーメンテーション ハニー",
+      "displayName": "中国 デーホン",
+      "spokenName": "中国、デーホン",
+      "origin": "中国",
+      "region": "雲南省 徳宏（デーホン）",
+      "farm": "Yuan Yi Yuan Farm（Mountain Mover）",
+      "variety": "カティモール P4",
+      "process": "イーストファーメンテーション ハニー（酵母発酵）",
+      "processShort": "酵母発酵ハニー",
+      "roast": "浅煎り",
+      "flavor": ["ライチ", "ウーロン茶"],
+      "labelFlavor": "LYCHEE & OOLONG TEA",
+      "prices": [
+        { "grams": 100, "yen": 1500 },
+        { "grams": 200, "yen": 2700 }
+      ],
+      "ecSlug": "china-dehong-east-fermentation",
+      "houseRecipe": {
+        "method": "aeropress",
+        "scene": "hot",
+        "angle": "bean",
+        "hook": "ライチの香りを閉じ込める",
+        "numbers": { "dose_g": 15, "water_g": 220, "temp_c": 90, "grind": "中細挽き", "time": "2:00" },
+        "steps": [
+          { "time": "0:00", "action": "お湯を注ぐ", "pour_to_g": 220 },
+          { "time": "0:15", "action": "10回混ぜる" },
+          { "time": "1:30", "action": "ゆっくり押す" },
+          { "time": "2:00", "action": "抽出完了" }
+        ],
+        "taste": {
+          "notes": ["ライチ", "ウーロン茶"],
+          "summary": "ウーロン茶のような長い余韻",
+          "acidity": 3,
+          "sweetness": 4,
+          "body": 2
+        },
+        "tips": [
+          { "problem": "香りが弱い時", "fix": "湯温を2℃上げて92℃に" },
+          { "problem": "渋い時", "fix": "湯温を2℃下げて88℃に" },
+          { "problem": "薄い時", "fix": "浸す時間を30秒延ばす" }
+        ]
+      }
+    },
+    {
+      "id": "decaf-nicaragua-gold-mountain",
+      "status": "confirmed",
+      "name": "デカフェ ニカラグア ゴールドマウンテン ナチュラル",
+      "displayName": "デカフェ ニカラグア",
+      "spokenName": "デカフェ、ニカラグア",
+      "origin": "ニカラグア",
+      "region": "ヒノテガ",
+      "farm": "Gold Mountain",
+      "variety": "ブルボン・カツアイ ほか",
+      "process": "カーボニックマセレーション＋ナチュラル（スイスウォーター式デカフェ）",
+      "processShort": "ナチュラル・デカフェ",
+      "roast": "中煎り",
+      "flavor": ["きび糖", "トースト"],
+      "labelFlavor": "CANE SUGAR & TOAST",
+      "prices": [
+        { "grams": 100, "yen": 1250 },
+        { "grams": 200, "yen": 2200 }
+      ],
+      "ecSlug": "decaf-nicaragua-gold-mountain",
+      "houseRecipe": {
+        "method": "cold-brew",
+        "scene": "iced",
+        "angle": "season",
+        "hook": "冷蔵庫で作る水出しデカフェ",
+        "numbers": { "dose_g": 50, "water_g": 500, "temp_c": 5, "grind": "粗挽き", "time": "10h" },
+        "steps": [
+          { "time": "0:00", "action": "水を注ぐ", "pour_to_g": 500 },
+          { "time": "0:30", "action": "やさしく混ぜる" },
+          { "time": "0:45", "action": "冷蔵庫で寝かせる" },
+          { "time": "10h", "action": "濾して冷蔵保存" }
+        ],
+        "taste": {
+          "notes": ["きび糖", "トースト"],
+          "summary": "カフェインレスでも、きび糖の甘さ",
+          "acidity": 2,
+          "sweetness": 4,
+          "body": 3
+        },
+        "tips": [
+          { "problem": "濃すぎる時", "fix": "氷か水で好みの濃さに割る" },
+          { "problem": "味がぼやける時", "fix": "抽出を12時間に延ばす" },
+          { "problem": "雑味が出る時", "fix": "濾す時に粉を絞らない" }
+        ]
+      }
+    }
+  ]
+}

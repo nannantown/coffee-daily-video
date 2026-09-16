@@ -47,10 +47,20 @@ jobs:
       - name: Generate captions
         env:
           TZ: Asia/Tokyo
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.date.outputs.date }}
         run: |
-          node scripts/scrape-coffee-news.mjs
-          node scripts/generate-data.mjs
-          node scripts/generate-caption.mjs
+          # Prefer the captions archived with the original post (the recipe
+          # numbers in the caption must match the video). Releases created
+          # before the archive existed fall back to regenerating.
+          if gh release download "v${DATE}" -p "coffee-${DATE}-captions.json" -D output/ --clobber; then
+            cp "output/coffee-${DATE}-captions.json" output/captions.json
+            echo "Using archived captions from release v${DATE}"
+          else
+            node scripts/scrape-coffee-news.mjs
+            node scripts/generate-data.mjs
+            node scripts/generate-caption.mjs
+          fi
 
       - name: Upload to Instagram (resumable)
         env:
