@@ -1,39 +1,39 @@
 {
-  "date": "2026-09-17",
+  "date": "2026-09-18",
   "format": "recipe",
   "trial": "coffee-trial-1-recipe-card",
   "recipe": {
-    "beanId": "burundi-mabanza",
-    "method": "v60",
+    "beanId": "rwanda-humure",
+    "method": "kalita-wave",
     "scene": "hot",
-    "angle": "trouble",
-    "hook": "浅煎りの甘さが弱い時のV60",
-    "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 93, "grind": "中細挽き", "time": "3:00" },
+    "angle": "season",
+    "hook": "秋の朝に紅茶みたいな一杯",
+    "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細挽き", "time": "3:00" },
     "steps": [
-      { "time": "0:00", "action": "蒸らし", "pour_to_g": 45 },
+      { "time": "0:00", "action": "蒸らし", "pour_to_g": 40 },
       { "time": "0:45", "action": "2投目", "pour_to_g": 120 },
-      { "time": "1:15", "action": "3投目", "pour_to_g": 180 },
-      { "time": "1:50", "action": "4投目", "pour_to_g": 240 },
+      { "time": "1:30", "action": "3投目", "pour_to_g": 200 },
+      { "time": "2:15", "action": "4投目", "pour_to_g": 240 },
       { "time": "3:00", "action": "落ち切り" }
     ],
     "taste": {
-      "notes": ["レッドフルーツ", "キャラメル", "甘い余韻"],
-      "summary": "赤い果実の後に甘い余韻",
+      "notes": ["栗", "紅茶", "甘い余韻"],
+      "summary": "紅茶の軽さと栗の甘い余韻",
       "acidity": 3,
-      "sweetness": 4,
+      "sweetness": 3,
       "body": 3
     },
     "tips": [
-      { "problem": "甘さが弱い時", "fix": "湯温を2℃上げて95℃に" },
-      { "problem": "苦い時", "fix": "挽き目を1段粗くする" },
-      { "problem": "薄い時", "fix": "豆を1g増やして16gに" }
+      { "problem": "落ちが遅い時", "fix": "挽き目を1段粗くする" },
+      { "problem": "薄い時", "fix": "豆を1g増やして16gに" },
+      { "problem": "苦い時", "fix": "湯温を2℃下げて90℃に" }
     ],
     "narration": {
-      "title": "浅煎りの甘さが弱いと感じる人へ。今日の一杯は、ブルンジ、マバンザをV60で。",
-      "numbers": "豆15gに、お湯240g。湯温は93℃、3:00で落とし切ります。",
-      "steps": "注ぎは4回。最初の蒸らしを45秒しっかり取るのがコツです。",
-      "taste": "レッドフルーツの甘酸っぱさから、キャラメルの余韻が広がります。",
-      "tips": "甘さが弱い時は湯温を2℃上げて95℃に。苦い時は挽き目を1段粗く。",
+      "title": "涼しくなる朝に、紅茶みたいな一杯を。今日はルワンダ、フムレをカリタウェーブで。",
+      "numbers": "豆15gに、お湯240g。湯温は92℃、3:00で落とし切ります。",
+      "steps": "注ぎは4回。40gの蒸らしをしっかり取り、細く長く注ぎます。",
+      "taste": "栗のような甘さのあとに、紅茶みたいな軽さが残ります。",
+      "tips": "落ちが遅い時は挽き目を1段粗く。薄い時は豆を1g増やして16gに。",
       "cta": "この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。"
     }
   }
