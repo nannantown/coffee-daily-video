@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "3M5Z08TDQVE",
-      "videoUrl": "https://youtube.com/shorts/3M5Z08TDQVE",
-      "date": "2026-06-19",
-      "title": "【コーヒー豆知識】ホルムズ海峡再開合意でコーヒー先物が急落・月曜の急騰から金曜はアラビカ3.15%安・ロブスタ2.19%安｜2026/06/19 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 55,
-      "discovery": {
-        "method": "market-data",
-        "description": "今週の Coffee C 先物の急変動 (月曜急騰→金曜急落) を Barchart / Comunicaffe / CNN / CNBC / FoodIngredientsFirst でクロス参照して再構成。米イランが 6/17 夜にホルムズ海峡の 60 日間無料通航 MOU を署名 (6/19 スイスで正式締結予定)、それを受けて 6/18 引けで 7 月限アラビカが -3.15%、ロブスタが -2.19% と急落。月曜は逆に Brazil ミナス・サンパウロの雨で収穫遅れ + ICE 認証在庫 396,171 袋 (前年同期 859,389 袋の 46% 水準) で急騰しており、1 週間で 360° ターンの値動き。Rabobank は Q4 2026 にアラビカ $2.50-3.00 (今より約 3 割安) を予測、Vietnam ロブスタ輸出も Jan-Apr +15.8% YoY と弱気材料が積み上がる構造。14d で market-data 投入ゼロ、5/29 (8v) / 6/03 (4v) の弱勝ち枠を Explore 比率で再投入。Pillar ① 市況 14d 15% の不足を直撃是正、Pillar ③ 31% 過多も同時分散。news-en は 14d WORST (avg 5.00) で凍結継続、6/17 ニカラグア 0v 未着、6/18 official-src と直近 2 日 method 連続違反なし。素材タイプ仮説『1 週間で市場が 360° ターンした急変動を Mon vs Fri の温度差で語る weekly-market-recap』を新パターンとして検証する位置づけ。",
-        "sources": [
-          "https://www.barchart.com/story/news/2521587/tighter-supplies-and-brazil-harvest-delays-boost-coffee-prices",
-          "https://www.comunicaffe.com/coffee-prices-rebound-in-the-first-session-of-the-week-rabobank-forecasts-arabica-futures-to-fall-by-a-third-in-the-fourth-quarter-of-2026/",
-          "https://www.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel",
-          "https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html",
-          "https://www.foodingredientsfirst.com/news/coffee-prices-surplus-hormuz-disruption.html",
-          "https://finance.yahoo.com/markets/commodities/articles/coffee-prices-continue-higher-brazil-185524160.html"
-        ],
-        "query": "arabica robusta futures Hormuz Brazil rain ICE stocks June 17 18 2026",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-03T01:08:44.664Z"
-      },
-      "instagram": {
-        "mediaId": "18327479377268536",
-        "permalink": "https://www.instagram.com/reel/DZwBdGuDrD2/",
-        "views": 13,
-        "reach": 13,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "gA14Yi9D5IA",
       "videoUrl": "https://youtube.com/shorts/gA14Yi9D5IA",
       "date": "2026-06-20",
@@ -3745,7 +3689,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "17908903419531656",
@@ -3756,7 +3700,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -3798,7 +3742,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18108412852886394",
@@ -3809,7 +3753,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -3850,7 +3794,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "17908838277530223",
@@ -3861,7 +3805,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -3908,7 +3852,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18418140130155381",
@@ -3919,7 +3863,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -3965,7 +3909,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18014554076944501",
@@ -3976,7 +3920,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4019,7 +3963,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -4030,7 +3974,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4073,7 +4017,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
@@ -4084,7 +4028,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4127,7 +4071,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -4138,7 +4082,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4182,7 +4126,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -4193,7 +4137,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4236,7 +4180,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
@@ -4247,7 +4191,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4291,7 +4235,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
@@ -4302,7 +4246,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4347,7 +4291,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-17T01:34:06.574Z"
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
@@ -4358,7 +4302,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-17T01:34:06.575Z"
+        "updatedAt": "2026-09-18T01:21:30.538Z"
       }
     },
     {
@@ -4406,10 +4350,69 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-09-18T01:21:30.537Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
+        "permalink": "https://www.instagram.com/reel/DdXsaaQjixm/",
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-18T01:21:30.538Z"
+      }
+    },
+    {
+      "videoId": "R-xoDdW5Xo4",
+      "videoUrl": "https://youtube.com/shorts/R-xoDdW5Xo4",
+      "date": "2026-09-18",
+      "title": "【今日の一杯】ルワンダ フムレ×カリタウェーブ｜豆15g・92℃・3:00 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "カリタウェーブ",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 39,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": false,
+        "beanId": "rwanda-humure",
+        "beanName": "ルワンダ フムレ",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "angle": "season",
+        "tipProblems": [
+          "落ちが遅い時",
+          "薄い時",
+          "苦い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18073991681460719",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4422,14 +4425,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-17",
-      "changes": [
-        "standard: 7 avg views (79 videos)",
-        "Day performance: Sat=21, Fri=10, Sun=6, Wed=5, Mon=3, Tue=3, Thu=3"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-18",
       "changes": [
@@ -4659,6 +4654,15 @@
       "changes": [
         "standard: 2 avg views (80 videos)",
         "Day performance: Sat=10, Sun=3, Fri=2, Thu=1, Mon=1, Tue=1, Wed=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-18",
+      "changes": [
+        "standard: 2 avg views (79 videos)",
+        "recipe: 0 avg views (1 videos)",
+        "Day performance: Sat=10, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
