@@ -2,65 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "gA14Yi9D5IA",
-      "videoUrl": "https://youtube.com/shorts/gA14Yi9D5IA",
-      "date": "2026-06-20",
-      "title": "【コーヒー豆知識】豆は凍らせて挽くと粒度が揃う・英Bath大学2016研究を海外コーヒー界隈が再評価中｜2026/06/20 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "social-en",
-        "description": "Saturday social-en 専用枠の試験運用 1 本目。r/Coffee / r/espresso / James Hoffmann TikTok・YouTube・Facebook を横断、Reddit と coffee 系 Substack で 2025-2026 にかけて再評価が続く『豆を凍らせて挽く』技法を Bath 大学 Hendon et al. 2016 (Nature Scientific Reports) 査読論文で補強。一次論文は室温 20℃ / 家庭用冷凍庫 -19℃ / ドライアイス -79℃ / 液体窒素 -196℃ の 4 温度で同一豆を挽き比べ、温度が低いほど粒径分布が狭まり微粉が減少。家庭用冷凍庫 -19℃ でも明確な効果が確認され、Hoffmann も『small-portion vacuum-seal + 凍ったまま挽く』を推奨。Manchester Coffee Archive / 80plushome Substack / Barista Hustle 解説で 2024-2026 のコミュニティ再評価をクロスチェック。Saturday エバーグリーン枠で Pillar ④ 焙煎士一次情報・抽出科学軸、6/19 ホルムズ先物急落 (market-data) との接続軸として『物流費圧が剥がれる値下げ局面で手元の豆を最大限活用する技術』に位置付け。social-en は 14d TOP1 (avg 12.0、3 本連続 10v 以上)、最終使用 6/14 (6 日空き) で連続違反なし。news-en 凍結維持、土曜エバーグリーン × social-en 駆動の勝ち筋テンプレ『査読論文 × 家庭再現粒度』を継続検証。",
-        "sources": [
-          "https://www.nature.com/articles/srep24483",
-          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4834475/",
-          "https://www.tiktok.com/@jameshoffmanncoffee/video/7071301438164471046",
-          "https://www.tiktok.com/@jameshoffmanncoffee/video/6925723746384792838",
-          "https://www.facebook.com/jameshoffmanncoffee/videos/how-to-guide-the-best-way-to-freeze-coffee-beans/1627262214111253/",
-          "https://x.com/jimseven/status/1242836113779240961",
-          "https://manchestercoffeearchive.com/freezing-coffee/",
-          "https://80plushome.substack.com/p/should-you-grind-frozen-coffee",
-          "https://www.baristahustle.com/the-grinder-paper-explained/"
-        ],
-        "query": "freezing coffee beans grind particle size distribution Bath Hendon 2016; James Hoffmann freeze coffee beans single dose grind frozen 2025 2026; r/Coffee freezer storage debate vacuum",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 38,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-04T01:05:34.520Z"
-      },
-      "instagram": {
-        "mediaId": "18115870637496204",
-        "permalink": "https://www.instagram.com/reel/DZyh1Ejiapb/",
-        "views": 68,
-        "reach": 62,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "mXVZeHTqvH0",
       "videoUrl": "https://youtube.com/shorts/mXVZeHTqvH0",
       "date": "2026-06-21",
@@ -3742,7 +3683,7 @@
         "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18108412852886394",
@@ -3753,7 +3694,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -3794,7 +3735,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "17908838277530223",
@@ -3805,7 +3746,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -3852,7 +3793,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18418140130155381",
@@ -3863,7 +3804,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -3909,7 +3850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18014554076944501",
@@ -3920,7 +3861,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -3963,7 +3904,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -3974,7 +3915,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4017,7 +3958,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
@@ -4028,7 +3969,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4071,7 +4012,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -4082,7 +4023,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4126,7 +4067,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -4137,7 +4078,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4180,7 +4121,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
@@ -4191,7 +4132,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4235,7 +4176,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
@@ -4246,7 +4187,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4288,10 +4229,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
@@ -4302,7 +4243,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4347,10 +4288,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-18T01:21:30.537Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
@@ -4361,7 +4302,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-18T01:21:30.538Z"
+        "updatedAt": "2026-09-19T01:20:56.415Z"
       }
     },
     {
@@ -4406,13 +4347,72 @@
         ]
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-19T01:20:56.415Z"
+      },
+      "instagram": {
+        "mediaId": "18073991681460719",
+        "permalink": "https://www.instagram.com/reel/DdaPwo9ksPl/",
+        "views": 4,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-19T01:20:56.415Z"
+      }
+    },
+    {
+      "videoId": "qAhwjW2WdR0",
+      "videoUrl": "https://youtube.com/shorts/qAhwjW2WdR0",
+      "date": "2026-09-19",
+      "title": "【今日の一杯】ブルンジ マバンザ×V60｜豆15g・92℃・2:45 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "V60",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 38,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": true,
+        "beanId": "burundi-mabanza",
+        "beanName": "ブルンジ マバンザ",
+        "method": "v60",
+        "scene": "hot",
+        "angle": "bean",
+        "tipProblems": [
+          "酸っぱい時",
+          "苦い時",
+          "薄い時"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
         "updatedAt": null
       },
       "instagram": {
-        "mediaId": "18073991681460719",
+        "mediaId": "18141506812584981",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4425,14 +4425,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-18",
-      "changes": [
-        "standard: 7 avg views (79 videos)",
-        "Day performance: Sat=21, Fri=10, Sun=6, Wed=5, Tue=3, Thu=3, Mon=3"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-19",
       "changes": [
@@ -4662,6 +4654,15 @@
       "changes": [
         "standard: 2 avg views (79 videos)",
         "recipe: 0 avg views (1 videos)",
+        "Day performance: Sat=10, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-19",
+      "changes": [
+        "standard: 2 avg views (78 videos)",
+        "recipe: 2 avg views (2 videos)",
         "Day performance: Sat=10, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
