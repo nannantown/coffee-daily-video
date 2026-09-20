@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "mXVZeHTqvH0",
-      "videoUrl": "https://youtube.com/shorts/mXVZeHTqvH0",
-      "date": "2026-06-21",
-      "title": "【コーヒー豆知識】Lance Hedrickの新V60レシピ『ワン&ダン2026』が海外で話題・15g/225g/96度の固定処方でどの豆でも淹れる｜2026/06/21 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 55,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "Lance Hedrick の YouTube『One & Done 2026』を起点に、Beanbook と Lamose のレシピ集約サイトでパラメータをクロスチェック",
-        "sources": [
-          "https://www.youtube.com/watch?v=oDnPHPVUorA",
-          "https://beanbook.app/recipes/4805bdac-4f99-406b-9294-86740e774a27",
-          "https://www.lamose.com/blogs/recipes/lance-hedricks-pour-over-masterclass-v60-technique",
-          "https://www.cup-timer.com/en/barista/lance-hedrick"
-        ],
-        "query": "Lance Hedrick coffee tutorial June 2026 One and Done V60",
-        "freshness_hours": 168
-      },
-      "stats": {
-        "views": 10,
-        "likes": 1,
-        "comments": 0,
-        "updatedAt": "2026-07-05T01:12:42.502Z"
-      },
-      "instagram": {
-        "mediaId": "18407213275151326",
-        "permalink": "https://www.instagram.com/reel/DZ1JMSTjgNK/",
-        "views": 9,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "gk3O_IaEFpo",
       "videoUrl": "https://youtube.com/shorts/gk3O_IaEFpo",
       "date": "2026-06-22",
@@ -3735,7 +3681,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "17908838277530223",
@@ -3746,7 +3692,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -3793,7 +3739,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18418140130155381",
@@ -3804,7 +3750,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -3850,7 +3796,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18014554076944501",
@@ -3861,7 +3807,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -3904,7 +3850,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -3915,7 +3861,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -3958,7 +3904,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
@@ -3969,7 +3915,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4012,7 +3958,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -4023,7 +3969,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4067,7 +4013,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -4078,7 +4024,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4121,7 +4067,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
@@ -4132,7 +4078,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4176,7 +4122,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
@@ -4187,7 +4133,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4232,7 +4178,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
@@ -4243,7 +4189,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4291,7 +4237,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
@@ -4302,7 +4248,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4350,7 +4296,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
@@ -4361,7 +4307,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-19T01:20:56.415Z"
+        "updatedAt": "2026-09-20T01:20:33.236Z"
       }
     },
     {
@@ -4409,10 +4355,69 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-09-20T01:20:33.235Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
+        "permalink": "https://www.instagram.com/reel/Ddc0fEmiBLx/",
+        "views": 15,
+        "reach": 12,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 1,
+        "updatedAt": "2026-09-20T01:20:33.236Z"
+      }
+    },
+    {
+      "videoId": "nX8rvVaxkaA",
+      "videoUrl": "https://youtube.com/shorts/nX8rvVaxkaA",
+      "date": "2026-09-20",
+      "title": "【今日の一杯】ルワンダ フムレ×フレンチプレス｜豆15g・94℃・4:30 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "フレンチプレス",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 39,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": true,
+        "beanId": "rwanda-humure",
+        "beanName": "ルワンダ フムレ",
+        "method": "french-press",
+        "scene": "hot",
+        "angle": "method",
+        "tipProblems": [
+          "粉っぽい時",
+          "渋い時",
+          "ぬるい時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18070537547733178",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4425,14 +4430,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-19",
-      "changes": [
-        "standard: 7 avg views (79 videos)",
-        "Day performance: Sat=21, Fri=10, Sun=6, Wed=5, Thu=3, Mon=3, Tue=3"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-20",
       "changes": [
@@ -4664,6 +4661,21 @@
         "standard: 2 avg views (78 videos)",
         "recipe: 2 avg views (2 videos)",
         "Day performance: Sat=10, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-20",
+      "changes": [
+        "今日の一杯: 0.5x avg views → drop",
+        "コーヒーレシピ: 0.5x avg views → drop",
+        "自家焙煎: 0.5x avg views → drop",
+        "コーヒー豆: 0.5x avg views → drop",
+        "おうちカフェ: 0.5x avg views → drop",
+        "OpenGroundCoffee: 0.5x avg views → drop",
+        "standard: 2 avg views (77 videos)",
+        "recipe: 1 avg views (3 videos)",
+        "Day performance: Sat=6, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
