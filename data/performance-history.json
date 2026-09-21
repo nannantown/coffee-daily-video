@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "gk3O_IaEFpo",
-      "videoUrl": "https://youtube.com/shorts/gk3O_IaEFpo",
-      "date": "2026-06-22",
-      "title": "【コーヒー豆知識】アラビカ先物に綱引き・ブラジル冷波で霜リスク再燃の一方、USDAは26/27期に過去最大級の7,190万袋を予想｜2026/06/22 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 57,
-      "discovery": {
-        "method": "market-data",
-        "description": "tradingeconomics の coffee 商品面 と Sucafina/StoneX のプロ用市況レポートで、ブラジル冷波 × USDA 26/27 期豊作見通し × ICE 認定在庫直近最低 の三層綱引きを照合",
-        "sources": [
-          "https://tradingeconomics.com/commodity/coffee",
-          "https://sucafina.com/na/news/brazil-2026-27-harvest-update",
-          "https://www.stonex.com/en-us/insights/arabica-futures-higher-as-ice-certified-stocks-drop-to-22-year-low/",
-          "https://qahwaworld.com/news/brazil-coffee-crop-frost-risk-2026/",
-          "https://royalcoffee.com/brazil-weather-update/"
-        ],
-        "query": "arabica futures Brazil frost June 2026 USDA 2026/27 harvest forecast ICE certified stocks",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-06T01:13:59.884Z"
-      },
-      "instagram": {
-        "mediaId": "18429491173193298",
-        "permalink": "https://www.instagram.com/reel/DZ3uLPrAeKW/",
-        "views": 16,
-        "reach": 16,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "i9sRwxTJBDw",
       "videoUrl": "https://youtube.com/shorts/i9sRwxTJBDw",
       "date": "2026-06-23",
@@ -3739,7 +3684,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18418140130155381",
@@ -3750,7 +3695,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -3796,7 +3741,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18014554076944501",
@@ -3807,7 +3752,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -3850,7 +3795,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -3861,7 +3806,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -3904,7 +3849,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
@@ -3915,7 +3860,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -3958,7 +3903,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -3969,7 +3914,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4013,7 +3958,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -4024,7 +3969,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4067,18 +4012,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
         "permalink": "https://www.instagram.com/reel/DdNXIn5j-LD/",
-        "views": 1,
-        "reach": 1,
+        "views": 2,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4122,18 +4067,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
         "permalink": "https://www.instagram.com/reel/DdP8O37Ccp-/",
-        "views": 6,
-        "reach": 5,
+        "views": 7,
+        "reach": 6,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4178,18 +4123,18 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
         "permalink": "https://www.instagram.com/reel/DdVHRHrCmq1/",
-        "views": 0,
-        "reach": 0,
+        "views": 2,
+        "reach": 1,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4237,18 +4182,18 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
         "permalink": "https://www.instagram.com/reel/DdXsaaQjixm/",
-        "views": 5,
-        "reach": 4,
+        "views": 6,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4293,21 +4238,21 @@
         ]
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
         "permalink": "https://www.instagram.com/reel/DdaPwo9ksPl/",
-        "views": 4,
-        "reach": 5,
+        "views": 5,
+        "reach": 6,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4355,18 +4300,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-20T01:20:33.235Z"
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
         "permalink": "https://www.instagram.com/reel/Ddc0fEmiBLx/",
-        "views": 15,
-        "reach": 12,
+        "views": 20,
+        "reach": 15,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-20T01:20:33.236Z"
+        "updatedAt": "2026-09-21T01:18:56.232Z"
       }
     },
     {
@@ -4414,10 +4359,70 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-09-21T01:18:56.231Z"
       },
       "instagram": {
         "mediaId": "18070537547733178",
+        "permalink": "https://www.instagram.com/reel/DdfZPdqjG-_/",
+        "views": 34,
+        "reach": 33,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-21T01:18:56.232Z"
+      }
+    },
+    {
+      "videoId": "43-JP0v7rAA",
+      "videoUrl": "https://youtube.com/shorts/43-JP0v7rAA",
+      "date": "2026-09-21",
+      "title": "【今日の一杯】イルガチェフェ コチャレ×V60｜豆20g・93℃・2:15 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "V60",
+        "アイスコーヒー",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 40,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": true,
+        "beanId": "ethiopia-yirgacheffe-kochere",
+        "beanName": "イルガチェフェ コチャレ",
+        "method": "v60",
+        "scene": "iced",
+        "angle": "season",
+        "tipProblems": [
+          "氷で薄まる時",
+          "酸っぱい時",
+          "香りが弱い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18291185986295663",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4430,14 +4435,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-20",
-      "changes": [
-        "standard: 7 avg views (79 videos)",
-        "Day performance: Sat=21, Fri=10, Sun=6, Wed=4, Thu=3, Mon=3, Tue=3"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-21",
       "changes": [
@@ -4676,6 +4673,21 @@
         "standard: 2 avg views (77 videos)",
         "recipe: 1 avg views (3 videos)",
         "Day performance: Sat=6, Sun=3, Fri=2, Mon=1, Tue=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-21",
+      "changes": [
+        "今日の一杯: 0.6x avg views → drop",
+        "コーヒーレシピ: 0.6x avg views → drop",
+        "自家焙煎: 0.6x avg views → drop",
+        "コーヒー豆: 0.6x avg views → drop",
+        "おうちカフェ: 0.6x avg views → drop",
+        "OpenGroundCoffee: 0.6x avg views → drop",
+        "standard: 2 avg views (76 videos)",
+        "recipe: 1 avg views (4 videos)",
+        "Day performance: Sat=6, Fri=2, Sun=2, Mon=1, Tue=1, Wed=1, Thu=1"
       ],
       "recommendedTemplate": "standard"
     }
