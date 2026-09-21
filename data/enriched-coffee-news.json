@@ -1,39 +1,39 @@
 {
-  "date": "2026-09-18",
+  "date": "2026-09-22",
   "format": "recipe",
   "trial": "coffee-trial-1-recipe-card",
   "recipe": {
-    "beanId": "rwanda-humure",
-    "method": "kalita-wave",
+    "beanId": "china-dehong-east-fermentation",
+    "method": "origami",
     "scene": "hot",
-    "angle": "season",
-    "hook": "秋の朝に紅茶みたいな一杯",
-    "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細挽き", "time": "3:00" },
+    "angle": "bean",
+    "hook": "ライチの香りを引き出す",
+    "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 91, "grind": "中細挽き", "time": "3:00" },
     "steps": [
-      { "time": "0:00", "action": "蒸らし", "pour_to_g": 40 },
-      { "time": "0:45", "action": "2投目", "pour_to_g": 120 },
-      { "time": "1:30", "action": "3投目", "pour_to_g": 200 },
-      { "time": "2:15", "action": "4投目", "pour_to_g": 240 },
+      { "time": "0:00", "action": "蒸らし", "pour_to_g": 45 },
+      { "time": "0:45", "action": "2投目", "pour_to_g": 110 },
+      { "time": "1:20", "action": "3投目", "pour_to_g": 170 },
+      { "time": "1:50", "action": "4投目", "pour_to_g": 225 },
       { "time": "3:00", "action": "落ち切り" }
     ],
     "taste": {
-      "notes": ["栗", "紅茶", "甘い余韻"],
-      "summary": "紅茶の軽さと栗の甘い余韻",
+      "notes": ["ライチ", "ウーロン茶"],
+      "summary": "ライチの甘さに、ウーロン茶の余韻",
       "acidity": 3,
-      "sweetness": 3,
-      "body": 3
+      "sweetness": 4,
+      "body": 2
     },
     "tips": [
-      { "problem": "落ちが遅い時", "fix": "挽き目を1段粗くする" },
-      { "problem": "薄い時", "fix": "豆を1g増やして16gに" },
-      { "problem": "苦い時", "fix": "湯温を2℃下げて90℃に" }
+      { "problem": "香りが弱い時", "fix": "湯温を2℃上げて93℃に" },
+      { "problem": "渋い時", "fix": "湯温を2℃下げて89℃に" },
+      { "problem": "薄い時", "fix": "豆を1g増やして16gに" }
     ],
     "narration": {
-      "title": "涼しくなる朝に、紅茶みたいな一杯を。今日はルワンダ、フムレをカリタウェーブで。",
-      "numbers": "豆15gに、お湯240g。湯温は92℃、3:00で落とし切ります。",
-      "steps": "注ぎは4回。40gの蒸らしをしっかり取り、細く長く注ぎます。",
-      "taste": "栗のような甘さのあとに、紅茶みたいな軽さが残ります。",
-      "tips": "落ちが遅い時は挽き目を1段粗く。薄い時は豆を1g増やして16gに。",
+      "title": "ライチの香りをもっと引き出したい人へ。今日は中国、デーホンをオリガミで淹れます。",
+      "numbers": "豆15gに、お湯225g。湯温は91℃、3:00で落とし切ります。",
+      "steps": "注ぎは4回。蒸らしをしっかり45秒とって、香りを一気に立ち上げます。",
+      "taste": "ライチの甘さが弾け、ウーロン茶のような余韻が長く続きます。",
+      "tips": "香りが弱い時は湯温を2℃上げて93℃に。渋い時は2℃下げます。",
       "cta": "この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。"
     }
   }
