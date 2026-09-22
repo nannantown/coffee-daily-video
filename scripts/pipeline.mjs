@@ -5,12 +5,10 @@
  *   node scripts/pipeline.mjs                                   # production (daily-video.yml)
  *   DRY_RUN=true node scripts/pipeline.mjs                      # verification: no stats fetch, no posting, no history write
  *   DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/brew-lesson.sample.json
- *   DRY_RUN=true node scripts/pipeline.mjs --fallback           # render the house-recipe fallback
+ *   DRY_RUN=true node scripts/pipeline.mjs --fallback           # render the evergreen lesson of the day
  *
- * Content formats (see scripts/content-format.mjs): 「今日の一杯」recipe cards
- * and the Sunday news TOP5 render with the CoffeeCardsVideo composition; a
- * legacy content JSON without `format` still renders the CoffeeVideo news
- * explainer.
+ * There is one content format (see scripts/content-format.mjs): `brew-lesson`,
+ * rendered by the CoffeeCardsVideo composition.
  */
 
 import { execSync, spawnSync } from "child_process";

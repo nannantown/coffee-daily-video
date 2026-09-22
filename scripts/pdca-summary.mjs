@@ -283,7 +283,7 @@ export function videoRow(video, today, provisionalDays = 2) {
   return {
     date: video.date,
     format,
-    topic: c?.topic || c?.beanName || "—",
+    topic: c?.topic ?? "—",
     pillar: c?.pillar ? PILLARS[c.pillar] || c.pillar : "—",
     method: c?.method ? METHODS[c.method]?.label || c.method : "—",
     fallback: Boolean(c?.fallback),
