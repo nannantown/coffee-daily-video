@@ -2,65 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "i9sRwxTJBDw",
-      "videoUrl": "https://youtube.com/shorts/i9sRwxTJBDw",
-      "date": "2026-06-23",
-      "title": "【コーヒー豆知識】コーヒー第3の品種リベリカが大復活・リベリアが90億円規模の20年計画｜2026/06/23 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "news-en",
-        "description": "Perfect Daily Grind の 6/19 News Recap 『Liberia to revive coffee production』を起点に、JR Farms × リベリア農業省の 60M USD・20 年パートナーシップ (6/8 締結) を Liberia Ministry of Agriculture 公式・The New Dawn Liberia・Comunicaffe・Global Coffee Report・Food Business MEA・Punch Nigeria でクロスチェック。さらに Wikipedia (Coffea liberica) と Perfect Daily Grind 既存解説で『コーヒー第3の品種 Liberica=世界生産1.5%未満』の希少性データを補強。14d Method 集計で news-en は TOP3 (avg 5.33/n=3)、最終使用 6/17 で 5 日空きの Exploit。Pillar ② 産地・ハーベスト (14d 15% で目標 25% に対し不足) を是正、6/09 コロンビア・6/17 ニカラグアと産地重複なしの西アフリカ。勝ち筋テンプレ『驚き視点+一次ソース』を social-en 以外で再現する試行: 『コーヒーには第3の品種があった』という Primary 層の知識ギャップを突くアングル。OG 接続は『数年後リベリカが店頭に並ぶかも・入荷情報チェックを』で強い CTA 回避、焙煎士の知識発信という差別化軸でフォロー価値を積む。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/06/coffee-news-recap-19-june-2026/",
-          "https://www.thenewdawnliberia.com/moa-secures-us60-million-investment-to-revive-liberias-coffee-sector/",
-          "https://www.foodbusinessmea.com/jr-farms-signs-us60m-coffee-partnership-with-liberia-to-revive-sector/",
-          "https://www.gcrmag.com/liberian-government-signs-landmark-coffee-partnership",
-          "https://www.comunicaffe.com/liberia-to-launch-coffee-liberica-under-faos-global-one-country-one-priority-product-initiative/",
-          "https://www.moa.gov.lr/media/press-releases/liberia-launch-coffee-liberica-under-faos-global-one-country-one-priority",
-          "https://independent.ng/liberia-nigerian-firm-seal-60m-pact-to-revive-coffee-industry-create-300000-jobs/",
-          "https://en.wikipedia.org/wiki/Coffea_liberica",
-          "https://perfectdailygrind.com/2020/11/what-is-coffea-liberica/"
-        ],
-        "query": "Liberia revive coffee production June 2026 JR Farms 60 million partnership Coffea Liberica third species FAO One Country One Priority Product",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-07T01:14:07.108Z"
-      },
-      "instagram": {
-        "mediaId": "18332291122271947",
-        "permalink": "https://www.instagram.com/reel/DZ6PgYFiEw0/",
-        "views": 8,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "R94pCAonJwI",
       "videoUrl": "https://youtube.com/shorts/R94pCAonJwI",
       "date": "2026-06-24",
@@ -3741,7 +3682,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18014554076944501",
@@ -3752,7 +3693,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -3795,7 +3736,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -3806,7 +3747,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -3849,7 +3790,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
@@ -3860,7 +3801,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -3903,7 +3844,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -3914,7 +3855,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -3958,7 +3899,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -3969,7 +3910,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4012,7 +3953,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
@@ -4023,7 +3964,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4067,7 +4008,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
@@ -4078,7 +4019,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4120,10 +4061,10 @@
         "freshness_hours": 144
       },
       "stats": {
-        "views": 1,
+        "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
@@ -4134,7 +4075,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4179,10 +4120,10 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
@@ -4193,7 +4134,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4241,7 +4182,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
@@ -4252,7 +4193,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4300,7 +4241,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
@@ -4311,7 +4252,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4359,7 +4300,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-21T01:18:56.231Z"
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18070537547733178",
@@ -4370,7 +4311,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-21T01:18:56.232Z"
+        "updatedAt": "2026-09-22T01:41:25.857Z"
       }
     },
     {
@@ -4419,10 +4360,69 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-09-22T01:41:25.856Z"
       },
       "instagram": {
         "mediaId": "18291185986295663",
+        "permalink": "https://www.instagram.com/reel/Ddh924akiAe/",
+        "views": 21,
+        "reach": 18,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-22T01:41:25.857Z"
+      }
+    },
+    {
+      "videoId": "eJk8lyti0PQ",
+      "videoUrl": "https://youtube.com/shorts/eJk8lyti0PQ",
+      "date": "2026-09-22",
+      "title": "【今日の一杯】中国 デーホン×ORIGAMI｜豆15g・91℃・3:00 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "オリガミドリッパー",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 39,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": false,
+        "beanId": "china-dehong-east-fermentation",
+        "beanName": "中国 デーホン",
+        "method": "origami",
+        "scene": "hot",
+        "angle": "bean",
+        "tipProblems": [
+          "香りが弱い時",
+          "渋い時",
+          "薄い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17985764535076749",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4435,14 +4435,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-21",
-      "changes": [
-        "standard: 6 avg views (79 videos)",
-        "Day performance: Sat=21, Fri=9, Sun=6, Wed=4, Mon=3, Tue=3, Thu=2"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-22",
       "changes": [
@@ -4688,6 +4680,22 @@
         "standard: 2 avg views (76 videos)",
         "recipe: 1 avg views (4 videos)",
         "Day performance: Sat=6, Fri=2, Sun=2, Mon=1, Tue=1, Wed=1, Thu=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-22",
+      "changes": [
+        "今日の一杯: 0.3x avg views → drop",
+        "コーヒーレシピ: 0.3x avg views → drop",
+        "V60: 0.2x avg views → drop",
+        "自家焙煎: 0.3x avg views → drop",
+        "コーヒー豆: 0.3x avg views → drop",
+        "おうちカフェ: 0.3x avg views → drop",
+        "OpenGroundCoffee: 0.3x avg views → drop",
+        "standard: 2 avg views (75 videos)",
+        "recipe: 1 avg views (5 videos)",
+        "Day performance: Sat=6, Fri=2, Sun=2, Tue=1, Wed=1, Thu=1, Mon=1"
       ],
       "recommendedTemplate": "standard"
     }
