@@ -23,6 +23,17 @@ export const COLORS = {
 
 export const ACCENTS = [COLORS.caramel, COLORS.sage, COLORS.terracotta, COLORS.sky];
 
+/**
+ * How a card separates from the background now that it has no outline.
+ *
+ * `surface` is only 1.05:1 against the background once the key light lifts
+ * it, so the fill alone cannot hold the edge — but putting the hairline back
+ * reinstates the outlined-box look that read as templated in the first place.
+ * A cast shadow does the same job the way a physical object would, and it
+ * tracks the light instead of fighting it.
+ */
+export const CARD_SHADOW = "0 12px 28px rgba(0,0,0,0.45)";
+
 // 1080x1920 spacing: outer margin 80, card padding 40, section 80/100.
 // Content lives between y=180 and y=1560: IG Reels / YT Shorts overlay the
 // top bar and the bottom ~360px (caption, channel, audio). Rows that reach

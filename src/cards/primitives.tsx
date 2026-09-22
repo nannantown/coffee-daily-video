@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { Atmosphere, Drift, useCutIn } from "./atmosphere";
+import { Atmosphere, Drift, DRIFT_MAX, useCutIn } from "./atmosphere";
 import { ACCENTS, COLORS, FONT_FAMILY, SPACE, TYPE } from "./theme";
 
 /** Solid label chip: opaque fill, white text, color carried by the border. */
@@ -168,10 +168,13 @@ export const SlideShell: React.FC<{
           <div
             style={{
               position: "absolute",
-              top: SPACE.contentTop,
-              left: SPACE.margin,
-              right: SPACE.margin,
-              bottom: 1920 - SPACE.contentBottom,
+              // Inset by the drift budget on every side, so that at full
+              // drift the column is back on the documented safe-area bounds
+              // instead of DRIFT_MAX past them.
+              top: SPACE.contentTop + DRIFT_MAX,
+              left: SPACE.margin + DRIFT_MAX,
+              right: SPACE.margin + DRIFT_MAX,
+              bottom: 1920 - SPACE.contentBottom + DRIFT_MAX,
               display: "flex",
               flexDirection: "column",
               justifyContent: center ? "center" : "flex-start",
@@ -179,8 +182,10 @@ export const SlideShell: React.FC<{
           >
             {children}
           </div>
+          {/* Inside Drift: the footer is part of the frame and should travel
+              with the column, not sit still while the content slides. */}
+          {brand ? <Brand /> : null}
         </Drift>
-        {brand ? <Brand /> : null}
       </AbsoluteFill>
     </AbsoluteFill>
   );

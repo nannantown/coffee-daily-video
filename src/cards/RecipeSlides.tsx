@@ -1,8 +1,8 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { Atmosphere } from "./atmosphere";
+import { Atmosphere, Drift, DRIFT_MAX, useCutIn } from "./atmosphere";
 import { AccentLine, Brand, Pill, Reveal, SlideShell } from "./primitives";
-import { ACCENTS, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
+import { ACCENTS, CARD_SHADOW, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type {
   CtaEnding,
   NumberTile,
@@ -36,12 +36,14 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
         width: TILE_WIDTH,
         height: 220,
         boxSizing: "border-box",
-        // No outer outline: the accent rule on top plus the surface fill
-        // already separate the tile. Outlining every box was one of the
-        // template tells (docs/video-style.md §1, cause 5).
+        // No outer outline — outlining every box was one of the template
+        // tells (docs/video-style.md §1, cause 5). The edge is carried by the
+        // cast shadow instead; the fill alone is only 1.05:1 against the
+        // background where the key light falls on it.
         background: COLORS.surface,
         borderTop: `6px solid ${accent}`,
         borderRadius: 24,
+        boxShadow: CARD_SHADOW,
         padding: `28px ${SPACE.cardPad}px`,
         display: "flex",
         flexDirection: "column",
@@ -203,7 +205,10 @@ export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string; inde
   </SlideShell>
 );
 
-const TIP_ACCENTS = [COLORS.terracotta, COLORS.sky, COLORS.sage];
+// No sky: RecipeTips is slide index 3, whose header pill takes ACCENTS[3] =
+// sky. A tip card in the same colour as the header implies a grouping that
+// isn't there.
+const TIP_ACCENTS = [COLORS.terracotta, COLORS.caramel, COLORS.sage];
 
 export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
   <SlideShell label={slide.heading} right={page} center index={index}>
@@ -215,6 +220,7 @@ export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?
               background: COLORS.surface,
               borderLeft: `8px solid ${TIP_ACCENTS[i % TIP_ACCENTS.length]}`,
               borderRadius: 28,
+              boxShadow: CARD_SHADOW,
               padding: SPACE.cardPad,
               paddingRight: SPACE.cardPad + SPACE.actionColumnClearance,
             }}
@@ -238,11 +244,21 @@ export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?
   </SlideShell>
 );
 
-/** Last segment: save prompt + fixed sales line (bean name for recipes). */
-export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ ending, index = 0 }) => (
+/**
+ * Last segment: save prompt + fixed sales line (bean name for recipes).
+ *
+ * Doesn't use SlideShell (no label/page header), so it has to opt into the
+ * cut-in and the drift by hand — otherwise the video's final 6 seconds are
+ * still a frozen frame arrived at by a hard cut, which is the whole defect.
+ */
+export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ ending, index = 0 }) => {
+  const cutIn = useCutIn();
+  return (
   <AbsoluteFill lang="ja" style={{ background: COLORS.bg, fontFamily: FONT_FAMILY, color: COLORS.text }}>
     <Atmosphere index={index} />
-    <div style={{ position: "absolute", top: SPACE.top, left: SPACE.margin, right: SPACE.margin }}>
+    <AbsoluteFill style={{ opacity: cutIn }}>
+    <Drift index={index}>
+    <div style={{ position: "absolute", top: SPACE.top + DRIFT_MAX, left: SPACE.margin + DRIFT_MAX, right: SPACE.margin + DRIFT_MAX }}>
       <Reveal>
         <Pill accent={COLORS.caramel}>{ending.kind === "recipe-cta" ? "保存がおすすめ" : "毎週日曜"}</Pill>
       </Reveal>
@@ -255,6 +271,7 @@ export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ endi
             background: COLORS.surface,
             borderLeft: `8px solid ${COLORS.caramel}`,
             borderRadius: 28,
+            boxShadow: CARD_SHADOW,
             padding: 48,
             paddingRight: 48 + SPACE.actionColumnClearance,
           }}
@@ -274,5 +291,8 @@ export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ endi
       </Reveal>
     </div>
     <Brand />
+    </Drift>
+    </AbsoluteFill>
   </AbsoluteFill>
-);
+  );
+};

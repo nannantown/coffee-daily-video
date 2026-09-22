@@ -14,6 +14,10 @@ import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
  * `y` stays inside 14-56%: content lives between y=180 and y=1560 and its mass
  * sits in the upper half, so a light lower than that just illuminates the
  * empty band the platforms cover anyway and leaves the copy in shadow.
+ *
+ * Seven entries, not six, so neither shipping format wraps onto its own first
+ * slide: the recipe day is 5 segments and the Sunday news day is 7, and the
+ * CTA takes the index after the last slide (6 on Sunday).
  */
 const LIGHT_POSITIONS = [
   { x: 24, y: 16, drift: 1 },
@@ -22,7 +26,17 @@ const LIGHT_POSITIONS = [
   { x: 72, y: 20, drift: -1 },
   { x: 46, y: 38, drift: 1 },
   { x: 20, y: 44, drift: -1 },
+  { x: 62, y: 48, drift: 1 },
 ];
+
+/**
+ * Maximum travel of `Drift`, in px. `SlideShell` insets the content column by
+ * this much on every side and the drift then spends exactly that budget, so
+ * the column at full drift lands back on the documented safe-area bounds
+ * rather than 8px past them (theme.ts SPACE: margin 80, contentBottom 1560,
+ * actionColumnClearance 80 — those numbers are hard platform limits).
+ */
+export const DRIFT_MAX = 8;
 
 /**
  * One 180px grayscale noise tile, rendered once by Chromium and then repeated.
@@ -105,14 +119,16 @@ export const Atmosphere: React.FC<{ index?: number }> = ({ index = 0 }) => {
  *
  * Rate is per-frame rather than normalised to the slide length, because a
  * Series.Sequence cannot read its own duration — over the 135-300 frame range
- * slides actually run, that lands between 5px and 12px of travel.
+ * slides actually run, that lands between 3.6px and DRIFT_MAX of travel.
+ * Neither component may exceed DRIFT_MAX: that is the budget SlideShell
+ * reserved by insetting the column.
  */
 export const Drift: React.FC<{ index?: number; children: React.ReactNode }> = ({
   index = 0,
   children,
 }) => {
   const frame = useCurrentFrame();
-  const travel = interpolate(frame, [0, 300], [0, 12], { extrapolateRight: "clamp" });
+  const travel = interpolate(frame, [0, 300], [0, DRIFT_MAX], { extrapolateRight: "clamp" });
   const dir = index % 3;
   const x = dir === 0 ? -travel : dir === 1 ? travel * 0.4 : travel * 0.7;
   const y = dir === 0 ? travel * 0.5 : dir === 1 ? -travel : travel * 0.3;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Pill, Reveal, SlideShell } from "./primitives";
-import { COLORS, PHRASE_BREAK, SPACE, TYPE } from "./theme";
+import { CARD_SHADOW, COLORS, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type { NewsCoverSlide, NewsItemSlide } from "./types";
 
 export const NewsCover: React.FC<{ slide: NewsCoverSlide; index?: number }> = ({ slide, index = 0 }) => (
@@ -59,6 +59,7 @@ export const NewsItem: React.FC<{ slide: NewsItemSlide; page: string; index?: nu
             background: COLORS.surface,
             borderTop: `6px solid ${COLORS.caramel}`,
             borderRadius: 28,
+            boxShadow: CARD_SHADOW,
             padding: SPACE.cardPad,
           }}
         >
