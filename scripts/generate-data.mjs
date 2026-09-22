@@ -88,11 +88,31 @@ function safely(validate) {
   }
 }
 
+/**
+ * The evergreen lesson of the day, validated like any other content: a lesson
+ * edited into the pack without running the tests must not reach a viewer. A
+ * rejected lesson is dropped from the pack and the next one in the rotation is
+ * tried; if none validates the job fails rather than posting something wrong.
+ */
 function evergreenLesson(today) {
   const previous = previousLesson(today);
-  const content = fallbackLessonContent(JSON.parse(readFileSync(lessonsPath, "utf-8")), today, previous);
-  if (previous) console.log(`  (previous post: ${previous.pillar} × ${previous.method} → not repeated)`);
-  return content;
+  const pack = JSON.parse(readFileSync(lessonsPath, "utf-8"));
+  let lessons = Array.isArray(pack.lessons) ? pack.lessons : [];
+  const rejected = [];
+  while (lessons.length > 0) {
+    const content = fallbackLessonContent({ lessons }, today, previous);
+    const { errors } = safely(() => validateDailyContent({ ...content, date: today }, {}));
+    if (errors.length === 0) {
+      if (previous) console.log(`  (previous post: ${previous.pillar} × ${previous.method} → not repeated)`);
+      if (rejected.length > 0) {
+        actionsWarning(`${rejected.length} lesson(s) in data/brew-lessons.json are invalid and were skipped`, rejected.slice(0, 5));
+      }
+      return content;
+    }
+    rejected.push(`${content.lesson.pillar} / ${content.lesson.hook}: ${errors[0]}`);
+    lessons = lessons.filter((l) => l !== content.lesson);
+  }
+  throw new Error(`data/brew-lessons.json has no valid lesson: ${rejected.join(" | ")}`);
 }
 
 function fallbackTo(today, reason, details = []) {

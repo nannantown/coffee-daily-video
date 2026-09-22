@@ -185,9 +185,15 @@ function main() {
     "render-cover"
   );
 
+  // Step 5d: Brand guard on what was actually built — no bean, no origin, no
+  //          shop, no sales line may reach a viewer (owner decision 2026-09-22).
+  //          Runs before posting AND on dry runs, so a bad day is caught here.
+  console.log(`\n=== Step 5d: Brand Guard ===`);
+  run("node scripts/generate-caption.mjs");
+  run("node scripts/check-published.mjs");
+
   if (dryRun) {
-    console.log(`\n=== Dry run: captions + slide previews (nothing is posted) ===`);
-    run("node scripts/generate-caption.mjs");
+    console.log(`\n=== Dry run: slide previews (nothing is posted) ===`);
     runSafe(`node scripts/render-previews.mjs --props="${propsPath}" --out=output/previews`, "render-previews");
     console.log(`\n=== Done (dry run)! ${outputFile} ===`);
     return;
