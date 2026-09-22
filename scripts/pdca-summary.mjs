@@ -485,26 +485,39 @@ function experimentSection(s) {
     return ["## 構造実験の提案", "", `- IG / YT 共通: 実行中: 試行 #2（${TRIALS[2].genre}）${s.cycle.status}`, ""];
   }
   if (s.trial === 0) {
-    // This script ships with trial #1, so on main it is merged and waiting for
-    // its first post: no new proposals until it runs (genre rule, 準備中).
+    // Trial #2 is merged and waiting for its first post: no new proposals until
+    // it runs (genre rule (d)5, 準備中).
     return ["## 構造実験の提案", "", `- IG / YT 共通: 準備中: 試行 #2（${TRIALS[2].genre}）`, ""];
   }
   return ["## 構造実験の提案", "", "- （配信死亡モードのアカウントについて、何を変えるか / 何で測るか / 14 日後の合格ライン をルーチンが書く）", ""];
 }
 
+/** The title with its 【…】 prefix and ｜… suffix stripped, capped for the table. */
+function titleTopic(title) {
+  const t = String(title ?? "").replace(/^【[^】]*】/, "").replace(/｜.*$/, "");
+  return Array.from(t).slice(0, 28).join("");
+}
+
 export function rowTopic(r) {
   if (r.format === "抽出メモ") return `${r.pillar}「${r.topic}」×${r.method}${r.fallback ? "［常備ネタ］" : ""}`;
-  if (r.format === "ニュース（旧型）" || r.format === "レシピ（旧）") {
-    const t = r.title.replace(/^【[^】]*】/, "").replace(/｜.*$/, "");
-    return `旧型ニュース「${Array.from(t).slice(0, 28).join("")}」`;
-  }
+  // Retired formats keep their own labels: a recipe-card post is not a news
+  // post, and its fallback was the house recipe, not the evergreen pack.
+  if (r.format === "レシピ（旧）") return `旧レシピ「${titleTopic(r.title)}」${r.fallback ? "［標準レシピ］" : ""}`;
+  if (r.format === "ニュースTOP5（旧）") return `旧ニュースTOP5「${titleTopic(r.title)}」`;
+  if (r.format === "ニュース（旧型）") return `旧型ニュース「${titleTopic(r.title)}」`;
   return r.format;
+}
+
+/** The fallback marker depends on what that format fell back to. */
+function fallbackMark(r) {
+  if (!r.fallback) return "";
+  return r.format === "抽出メモ" ? "（常備）" : "（代替）";
 }
 
 function rowLine(r) {
   const ig = r.ig;
   const mark = r.provisional ? "（暫定）" : "";
-  return `| ${r.date}${mark} | ${r.format}${r.fallback ? "（常備）" : ""} | ${md(r.pillar)} | ${md(r.method)} | ${md(r.topic)} | ${ig ? ig.saved : "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
+  return `| ${r.date}${mark} | ${r.format}${fallbackMark(r)} | ${md(r.pillar)} | ${md(r.method)} | ${md(r.topic)} | ${ig ? ig.saved : "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
 }
 
 function groupTable(title, groups) {

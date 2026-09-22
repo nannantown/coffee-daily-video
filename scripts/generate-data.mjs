@@ -4,8 +4,9 @@
  * data/enriched-coffee-news.json is written by the morning routine:
  *   - `format: "brew-lesson"`, dated today, valid → that lesson
  *   - missing / stale / invalid                   → the evergreen lesson of the
- *     day from data/brew-lessons.json (rotates by date, never repeats the
- *     previous day's pillar or method)
+ *     day from data/brew-lessons.json (plain date rotation: one cycle of the
+ *     pack with no repeat, and the pack's order keeps consecutive days on
+ *     different pillars)
  * Every fallback is also reported as a GitHub Actions warning + job summary.
  *
  * There is no bean in this pipeline: the growth phase teaches brewing and
@@ -68,15 +69,22 @@ function readJSON(path) {
   }
 }
 
-/** The last posted lesson before today ({ pillar, method }), so the fallback does not repeat it. */
-function previousLesson(today) {
+/** Topics posted in the last `days` days, newest first — the fallback's safety net. */
+function recentTopics(today, days = 7) {
   const history = readJSON(historyPath);
   const videos = Array.isArray(history?.videos) ? history.videos : [];
-  const last = videos
-    .filter((v) => typeof v?.date === "string" && v.date < today)
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .at(-1);
-  return last?.content?.pillar ? { pillar: last.content.pillar, method: last.content.method } : null;
+  return videos
+    .filter((v) => typeof v?.date === "string" && v.date < today && v.date >= addDays(today, -days))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((v) => v.content?.topic)
+    .filter(Boolean);
+}
+
+/** `iso` shifted by `delta` days (JST dates are plain calendar dates here). */
+function addDays(iso, delta) {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + delta);
+  return d.toISOString().slice(0, 10);
 }
 
 /** Validation must never stop the post: a crash on odd input counts as "rejected". */
@@ -95,15 +103,15 @@ function safely(validate) {
  * tried; if none validates the job fails rather than posting something wrong.
  */
 function evergreenLesson(today) {
-  const previous = previousLesson(today);
+  const recent = recentTopics(today);
   const pack = JSON.parse(readFileSync(lessonsPath, "utf-8"));
   let lessons = Array.isArray(pack.lessons) ? pack.lessons : [];
   const rejected = [];
   while (lessons.length > 0) {
-    const content = fallbackLessonContent({ lessons }, today, previous);
+    const content = fallbackLessonContent({ lessons }, today, recent);
     const { errors } = safely(() => validateDailyContent({ ...content, date: today }, {}));
     if (errors.length === 0) {
-      if (previous) console.log(`  (previous post: ${previous.pillar} × ${previous.method} → not repeated)`);
+      if (recent.length > 0) console.log(`  (last ${recent.length} posted topic(s) skipped in the rotation)`);
       if (rejected.length > 0) {
         actionsWarning(`${rejected.length} lesson(s) in data/brew-lessons.json are invalid and were skipped`, rejected.slice(0, 5));
       }

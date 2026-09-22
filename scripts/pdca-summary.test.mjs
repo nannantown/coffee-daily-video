@@ -15,12 +15,14 @@ import {
   previousModes,
   rankBySaved,
   recentRows,
+  rowTopic,
   renderMarkdown,
   rotation,
   summarize,
   trialStart,
   trialStatus,
   verdict,
+  videoRow,
   windowStats,
   ytViews,
 } from "./pdca-summary.mjs";
@@ -256,6 +258,37 @@ test("rotation lists the unused pillars and methods first", () => {
   assert.equal(r.pillar[0].n, 0);
   assert.equal(r.method.at(-1).key, "V60");
   assert.equal(r.pillar.length, Object.keys(PILLARS).length);
+});
+
+test("retired formats keep their own label — a recipe post is not a news post", () => {
+  const legacyRecipe = video("2026-09-19", {
+    content: { format: "recipe", trial: "coffee-trial-1-recipe-card", fallback: false, beanName: "b", method: "v60" },
+  });
+  legacyRecipe.title = "【今日の一杯】ブルンジ マバンザ×V60｜豆15g #Shorts";
+  const r = videoRow(legacyRecipe, "2026-09-23");
+  assert.equal(r.format, "レシピ（旧）");
+  assert.match(rowTopic(r), /^旧レシピ「ブルンジ マバンザ×V60」$/);
+
+  // ...and its fallback was the house recipe, not the evergreen pack
+  const fellBack = videoRow({ ...legacyRecipe, content: { ...legacyRecipe.content, fallback: true } }, "2026-09-23");
+  assert.match(rowTopic(fellBack), /［標準レシピ］$/);
+  assert.ok(!rowTopic(fellBack).includes("常備"));
+
+  const news = videoRow(
+    { ...legacyRecipe, content: { format: "news-top5", trial: "x", fallback: false } },
+    "2026-09-23"
+  );
+  assert.equal(news.format, "ニュースTOP5（旧）");
+  assert.match(rowTopic(news), /^旧ニュースTOP5「/);
+
+  // the current format still reads as itself
+  const lesson = videoRow(video("2026-09-23", { content: recipe("苦味が引いて酸が立つ", "v60") }), "2026-09-23");
+  assert.equal(lesson.format, "抽出メモ");
+  assert.match(rowTopic(lesson), /^湯温「苦味が引いて酸が立つ」×V60$/);
+  assert.match(
+    rowTopic(videoRow(video("2026-09-23", { content: { ...recipe("x", "v60"), fallback: true } }), "2026-09-23")),
+    /［常備ネタ］$/
+  );
 });
 
 test("trial #2 starts at the first brewing lesson, not at a legacy recipe post; 直近 14 日 = today − 14..today − 1", () => {

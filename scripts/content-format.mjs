@@ -569,21 +569,30 @@ export function dayIndex(isoDate) {
 export class NoLessonError extends Error {}
 
 /**
- * The evergreen lesson of the day from data/brew-lessons.json, rotated by date.
- * `previous` is the last posted lesson ({ pillar, method }): a lesson that
- * would repeat its pillar or method on consecutive days is skipped when
- * another one is available. The pack is a plain data file with no beans in it,
- * so a routine outage still posts generic knowledge (owner decision 2026-09-22).
+ * The evergreen lesson of the day from data/brew-lessons.json.
+ *
+ * The pick is the plain date rotation, `dayIndex % lessons.length`. That is a
+ * bijection over one cycle, so it alone guarantees "one lesson a day, no repeat
+ * for a full cycle". The "don't repeat yesterday's pillar" rule is baked into
+ * the *order* of the pack instead of being applied here (see its `note`):
+ * filtering at pick time pushed the choice off its rotation slot, and a slot
+ * skipped today is a slot re-visited in two days — which made the same lesson
+ * come back every other day.
+ *
+ * `recentTopics` is only a safety net for when the pack is edited or reordered
+ * between posts: a topic posted in the last few days is skipped, and the scan
+ * moves on by one slot. Pass the newest first; an empty list is the normal case.
+ *
+ * The pack is a plain data file with no beans in it, so a routine outage still
+ * posts generic knowledge (owner decision 2026-09-22).
  */
-export function fallbackLessonContent(pack, isoDate, previous = null) {
+export function fallbackLessonContent(pack, isoDate, recentTopics = []) {
   const lessons = Array.isArray(pack?.lessons) ? pack.lessons : [];
   if (lessons.length === 0) throw new NoLessonError("data/brew-lessons.json has no lessons");
   const start = ((dayIndex(isoDate) % lessons.length) + lessons.length) % lessons.length;
   const rotated = lessons.map((_, i) => lessons[(start + i) % lessons.length]);
-  const lesson =
-    rotated.find((l) => l.pillar !== previous?.pillar && l.method !== previous?.method) ||
-    rotated.find((l) => l.pillar !== previous?.pillar) ||
-    rotated[0];
+  const recent = new Set((Array.isArray(recentTopics) ? recentTopics : []).filter(Boolean));
+  const lesson = rotated.find((l) => !recent.has(l.topic)) || rotated[0];
   return { date: isoDate, format: "brew-lesson", trial: TRIAL_ID, fallback: true, lesson };
 }
 

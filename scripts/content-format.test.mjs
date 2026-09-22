@@ -133,27 +133,74 @@ test("the caption asks for a save and a follow, and never for a sale", () => {
 // Fallback: a missing routine still posts generic knowledge
 // ---------------------------------------------------------------------------
 
-test("the fallback rotates deterministically and does not repeat the day before", () => {
+const addDays = (iso, n) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+};
+
+/**
+ * Walk `days` consecutive days the way production does: each day's pick feeds
+ * the next day's `recentTopics` (newest first, a 7-day window), exactly like
+ * generate-data.mjs reads performance-history. A filter that pushes the pick
+ * off its rotation slot shows up here as a repeat two days later.
+ */
+function runRotation(days, from = "2026-09-23", window = 7) {
+  const posted = [];
+  for (let i = 0; i < days; i++) {
+    const iso = addDays(from, i);
+    const recent = posted.slice(-window).map((l) => l.topic).reverse();
+    posted.push({ ...fallbackLessonContent(pack, iso, recent).lesson, iso });
+  }
+  return posted;
+}
+
+test("the fallback is deterministic and every day is a valid, product-free lesson", () => {
   const a = fallbackLessonContent(pack, "2026-09-23");
-  const b = fallbackLessonContent(pack, "2026-09-23");
-  assert.deepEqual(a, b);
+  assert.deepEqual(a, fallbackLessonContent(pack, "2026-09-23"));
   assert.equal(a.fallback, true);
   assert.equal(a.format, "brew-lesson");
   assert.equal(a.trial, TRIAL_ID);
-  assert.notEqual(fallbackLessonContent(pack, "2026-09-24").lesson.hook, a.lesson.hook);
 
-  const previous = { pillar: a.lesson.pillar, method: a.lesson.method };
-  const next = fallbackLessonContent(pack, "2026-09-23", previous);
-  assert.notEqual(next.lesson.pillar, previous.pillar);
-  assert.notEqual(next.lesson.method, previous.method);
-
-  // a fallback day is a lesson day: it validates and names nothing we sell
   for (let i = 0; i < 21; i++) {
-    const iso = `2026-10-${String(i + 1).padStart(2, "0")}`;
+    const iso = addDays("2026-10-01", i);
     const content = fallbackLessonContent(pack, iso);
     content.date = iso;
     assert.deepEqual(errorsOf(content), [], iso);
   }
+});
+
+test("chaining the previous days never brings a lesson back inside one cycle", () => {
+  const n = pack.lessons.length;
+  const run = runRotation(n * 3);
+
+  // no repeat inside any window of one full cycle
+  for (let i = 0; i < run.length; i++) {
+    const window = run.slice(Math.max(0, i - (n - 1)), i);
+    assert.ok(
+      !window.some((l) => l.topic === run[i].topic),
+      `${run[i].iso} repeats "${run[i].topic}" within ${n} days`
+    );
+  }
+  // and the whole pack really is used, not a handful of it
+  assert.equal(new Set(run.slice(0, n).map((l) => l.topic)).size, n);
+});
+
+test("consecutive fallback days teach different pillars (the pack's order guarantees it)", () => {
+  const run = runRotation(pack.lessons.length * 2 + 1);
+  for (let i = 1; i < run.length; i++) {
+    assert.notEqual(run[i].pillar, run[i - 1].pillar, `${run[i].iso} repeats the pillar of the day before`);
+  }
+  // V60 is 9 of 17 lessons, so the method can only avoid repeating once per
+  // cycle at most — assert the bound rather than a clean alternation.
+  const sameMethod = run.slice(1).filter((l, i) => l.method === run[i].method).length;
+  assert.ok(sameMethod <= Math.ceil(run.length / pack.lessons.length), `method repeated on ${sameMethod} consecutive pairs`);
+});
+
+test("a recently posted topic is skipped when the pack is reordered under us", () => {
+  const first = fallbackLessonContent(pack, "2026-09-23").lesson;
+  const next = fallbackLessonContent(pack, "2026-09-23", [first.topic]);
+  assert.notEqual(next.lesson.topic, first.topic);
 });
 
 test("an empty pack is an error, never a silent bean day", () => {
