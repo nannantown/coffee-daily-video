@@ -1,7 +1,8 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
+import { Atmosphere, Drift, useCutIn } from "./atmosphere";
 import { AccentLine, Brand, Pill, Reveal, SlideShell } from "./primitives";
-import { ACCENTS, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
+import { ACCENTS, CARD_SHADOW, COLORS, DRIFT_MAX, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type {
   CtaEnding,
   NumberTile,
@@ -12,8 +13,14 @@ import type {
 } from "./types";
 
 const TILE_COLUMNS = 3;
-const TILE_GAP = 32;
-const TILE_WIDTH = (1080 - SPACE.margin * 2 - TILE_GAP * (TILE_COLUMNS - 1)) / TILE_COLUMNS;
+// Must match the column SlideShell actually gives us, which is inset by
+// DRIFT_MAX on each side; using the bare margin overflows by 16px and the
+// three tiles wrap to two columns. The gap went 32 -> 24 to pay for the
+// inset, which lands TILE_WIDTH back on exactly its pre-drift value (285.33,
+// 205px inner) — the width tileValueSize below is tuned against.
+const TILE_GAP = 24;
+const TILE_WIDTH =
+  (1080 - (SPACE.margin + DRIFT_MAX) * 2 - TILE_GAP * (TILE_COLUMNS - 1)) / TILE_COLUMNS;
 
 /**
  * Value size by what has to fit in the tile's 205px inner width: short
@@ -35,10 +42,14 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
         width: TILE_WIDTH,
         height: 220,
         boxSizing: "border-box",
+        // No outer outline — outlining every box was one of the template
+        // tells (docs/video-style.md §1, cause 5). The edge is carried by the
+        // cast shadow instead; the fill alone is only 1.05:1 against the
+        // background where the key light falls on it.
         background: COLORS.surface,
-        border: `2px solid ${COLORS.hairline}`,
         borderTop: `6px solid ${accent}`,
         borderRadius: 24,
+        boxShadow: CARD_SHADOW,
         padding: `28px ${SPACE.cardPad}px`,
         display: "flex",
         flexDirection: "column",
@@ -66,8 +77,8 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
 
 // The method + scene pills sit in their own row under the header: next to the
 // date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
-export const LessonTitle: React.FC<{ slide: LessonTitleSlide }> = ({ slide }) => (
-  <SlideShell label={slide.heading} right={slide.date} brand>
+export const LessonTitle: React.FC<{ slide: LessonTitleSlide; index?: number }> = ({ slide, index = 0 }) => (
+  <SlideShell label={slide.heading} right={slide.date} brand index={index}>
     <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
       <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
       <Pill accent={slide.sceneLabel === "アイス" ? COLORS.sage : COLORS.terracotta}>{slide.sceneLabel}</Pill>
@@ -93,12 +104,12 @@ export const LessonTitle: React.FC<{ slide: LessonTitleSlide }> = ({ slide }) =>
   </SlideShell>
 );
 
-export const LessonSteps: React.FC<{ slide: LessonStepsSlide; page: string }> = ({ slide, page }) => {
+export const LessonSteps: React.FC<{ slide: LessonStepsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => {
   const rowHeight = slide.steps.length > 4 ? 190 : 230;
   const timeWidth = 190;
   const dotColumn = 84;
   return (
-    <SlideShell label={slide.heading} right={page} center>
+    <SlideShell label={slide.heading} right={page} center index={index}>
       <div style={{ position: "relative", paddingRight: SPACE.actionColumnClearance }}>
         {/* timeline rail — caramel, while all step text is white */}
         <div
@@ -177,8 +188,8 @@ const Meter: React.FC<{ label: string; value: number }> = ({ label, value }) => 
   </div>
 );
 
-export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label={slide.heading} right={page} center>
+export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label={slide.heading} right={page} center index={index}>
     <Reveal delay={4} style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textMuted }}>
       味の変化
     </Reveal>
@@ -200,18 +211,22 @@ export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string }> = 
   </SlideShell>
 );
 
-const TIP_ACCENTS = [COLORS.terracotta, COLORS.sky, COLORS.sage];
+// No sky: RecipeTips is slide index 3, whose header pill takes ACCENTS[3] =
+// sky. A tip card in the same colour as the header implies a grouping that
+// isn't there.
+const TIP_ACCENTS = [COLORS.terracotta, COLORS.caramel, COLORS.sage];
 
-export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label={slide.heading} right={page} center>
+export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label={slide.heading} right={page} center index={index}>
     <div style={{ display: "flex", flexDirection: "column", gap: SPACE.gutter }}>
       {slide.tips.map((tip, i) => (
         <Reveal key={tip.problem} delay={4 + i * 6}>
           <div
             style={{
               background: COLORS.surface,
-              border: `2px solid ${COLORS.hairline}`,
+              borderLeft: `8px solid ${TIP_ACCENTS[i % TIP_ACCENTS.length]}`,
               borderRadius: 28,
+              boxShadow: CARD_SHADOW,
               padding: SPACE.cardPad,
               paddingRight: SPACE.cardPad + SPACE.actionColumnClearance,
             }}
@@ -235,10 +250,21 @@ export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string }> = ({
   </SlideShell>
 );
 
-/** Last segment: the day's takeaway + the save / follow prompt (no product, ever). */
-export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
+/**
+ * Last segment: the day's takeaway + the save / follow prompt (no product, ever).
+ *
+ * Doesn't use SlideShell (no label/page header), so it has to opt into the
+ * cut-in and the drift by hand — otherwise the video's final 6 seconds are
+ * still a frozen frame arrived at by a hard cut, which is the whole defect.
+ */
+export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ ending, index = 0 }) => {
+  const cutIn = useCutIn();
+  return (
   <AbsoluteFill lang="ja" style={{ background: COLORS.bg, fontFamily: FONT_FAMILY, color: COLORS.text }}>
-    <div style={{ position: "absolute", top: SPACE.top, left: SPACE.margin, right: SPACE.margin }}>
+    <Atmosphere index={index} />
+    <AbsoluteFill style={{ opacity: cutIn }}>
+    <Drift index={index}>
+    <div style={{ position: "absolute", top: SPACE.top + DRIFT_MAX, left: SPACE.margin + DRIFT_MAX, right: SPACE.margin + DRIFT_MAX }}>
       <Reveal>
         <Pill accent={COLORS.caramel}>保存がおすすめ</Pill>
       </Reveal>
@@ -249,9 +275,9 @@ export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
         <div
           style={{
             background: COLORS.surface,
-            border: `2px solid ${COLORS.hairline}`,
             borderLeft: `8px solid ${COLORS.caramel}`,
             borderRadius: 28,
+            boxShadow: CARD_SHADOW,
             padding: 48,
             paddingRight: 48 + SPACE.actionColumnClearance,
           }}
@@ -271,5 +297,8 @@ export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
       </Reveal>
     </div>
     <Brand />
+    </Drift>
+    </AbsoluteFill>
   </AbsoluteFill>
-);
+  );
+};

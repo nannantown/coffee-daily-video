@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { COLORS, FONT_FAMILY, SPACE, TYPE } from "./theme";
+import { Atmosphere, Drift, useCutIn } from "./atmosphere";
+import { ACCENTS, COLORS, DRIFT_MAX, FONT_FAMILY, SPACE, TYPE } from "./theme";
 
 /** Solid label chip: opaque fill, white text, color carried by the border. */
 export const Pill: React.FC<{
@@ -28,7 +29,13 @@ export const Pill: React.FC<{
   </div>
 );
 
-/** Fade + rise entrance, `delay` in frames from the start of the slide. */
+/**
+ * Fade + rise entrance, `delay` in frames from the start of the slide.
+ *
+ * The spring is detuned by `delay` so stacked elements do not all ride the
+ * exact same curve — when every item on a slide settles identically the eye
+ * reads it as one animated PNG rather than a sequence of decisions.
+ */
 export const Reveal: React.FC<{
   delay?: number;
   children: React.ReactNode;
@@ -43,7 +50,7 @@ export const Reveal: React.FC<{
   const y = spring({
     frame: Math.max(0, frame - delay),
     fps,
-    config: { damping: 16, stiffness: 120 },
+    config: { damping: 15 + (delay % 5), stiffness: 108 + (delay % 7) * 6 },
     from: 24,
     to: 0,
   });
@@ -75,7 +82,8 @@ export const Brand: React.FC = () => (
   <div
     style={{
       position: "absolute",
-      left: SPACE.margin,
+      // Inset like the content column: Brand sits inside Drift too.
+      left: SPACE.margin + DRIFT_MAX,
       top: SPACE.contentBottom - 80,
       fontSize: TYPE.footer,
       fontWeight: 600,
@@ -87,7 +95,16 @@ export const Brand: React.FC = () => (
   </div>
 );
 
-/** Background, header (label pill + page/date) and the content column. */
+/**
+ * Background, header (label pill + page/date) and the content column.
+ *
+ * `index` is the slide's position in the video. Everything it drives exists
+ * for one reason: before it, two completely different recipes rendered to
+ * pixel-identical frames (docs/video-style.md §1, causes 1 and 4). It varies
+ * the header side, the accent and the key-light position so consecutive cuts
+ * no longer share a silhouette. Labels stay solid pills and lines still never
+ * share a colour with the text beside them — those are owner rules, not style.
+ */
 export const SlideShell: React.FC<{
   label: string;
   accent?: string;
@@ -96,61 +113,81 @@ export const SlideShell: React.FC<{
   /** vertically center the content inside the safe band (cards with little content) */
   center?: boolean;
   brand?: boolean;
+  index?: number;
   children: React.ReactNode;
-}> = ({ label, accent = COLORS.caramel, right, extra, center = false, brand = false, children }) => (
-  <AbsoluteFill
-    lang="ja"
-    style={{
-      background: COLORS.bg,
-      fontFamily: FONT_FAMILY,
-      color: COLORS.text,
-    }}
-  >
-    <div
+}> = ({ label, accent, right, extra, center = false, brand = false, index = 0, children }) => {
+  const cutIn = useCutIn();
+  const slideAccent = accent ?? ACCENTS[index % ACCENTS.length];
+  // Mirror the header every other cut. The header sits at y=180, well clear of
+  // the action-button column, so either side is safe.
+  const mirrored = index % 2 === 1;
+
+  return (
+    <AbsoluteFill
+      lang="ja"
       style={{
-        position: "absolute",
-        top: SPACE.top,
-        left: SPACE.margin,
-        right: SPACE.margin,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        background: COLORS.bg,
+        fontFamily: FONT_FAMILY,
+        color: COLORS.text,
       }}
     >
-      <Reveal style={{ display: "flex", gap: 16 }}>
-        <Pill accent={accent}>{label}</Pill>
-        {extra}
-      </Reveal>
-      {right ? (
+      <Atmosphere index={index} />
+      <AbsoluteFill style={{ opacity: cutIn }}>
         <div
           style={{
-            fontSize: TYPE.aux,
-            fontWeight: 600,
-            color: COLORS.textMuted,
-            fontVariantNumeric: "tabular-nums",
-            letterSpacing: "2px",
-            whiteSpace: "nowrap",
-            flexShrink: 0,
+            position: "absolute",
+            top: SPACE.top,
+            left: SPACE.margin,
+            right: SPACE.margin,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexDirection: mirrored ? "row-reverse" : "row",
           }}
         >
-          {right}
+          <Reveal style={{ display: "flex", gap: 16 }}>
+            <Pill accent={slideAccent}>{label}</Pill>
+            {extra}
+          </Reveal>
+          {right ? (
+            <div
+              style={{
+                fontSize: TYPE.aux,
+                fontWeight: 600,
+                color: COLORS.textMuted,
+                fontVariantNumeric: "tabular-nums",
+                letterSpacing: "2px",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
+            >
+              {right}
+            </div>
+          ) : null}
         </div>
-      ) : null}
-    </div>
-    <div
-      style={{
-        position: "absolute",
-        top: SPACE.contentTop,
-        left: SPACE.margin,
-        right: SPACE.margin,
-        bottom: 1920 - SPACE.contentBottom,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: center ? "center" : "flex-start",
-      }}
-    >
-      {children}
-    </div>
-    {brand ? <Brand /> : null}
-  </AbsoluteFill>
-);
+        <Drift index={index}>
+          <div
+            style={{
+              position: "absolute",
+              // Inset by the drift budget on every side, so that at full
+              // drift the column is back on the documented safe-area bounds
+              // instead of DRIFT_MAX past them.
+              top: SPACE.contentTop + DRIFT_MAX,
+              left: SPACE.margin + DRIFT_MAX,
+              right: SPACE.margin + DRIFT_MAX,
+              bottom: 1920 - SPACE.contentBottom + DRIFT_MAX,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: center ? "center" : "flex-start",
+            }}
+          >
+            {children}
+          </div>
+          {/* Inside Drift: the footer is part of the frame and should travel
+              with the column, not sit still while the content slides. */}
+          {brand ? <Brand /> : null}
+        </Drift>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};

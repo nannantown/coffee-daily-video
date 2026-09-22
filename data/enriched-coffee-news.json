@@ -1,39 +1,39 @@
 {
-  "date": "2026-09-22",
+  "date": "2026-09-24",
   "format": "recipe",
   "trial": "coffee-trial-1-recipe-card",
   "recipe": {
-    "beanId": "china-dehong-east-fermentation",
-    "method": "origami",
+    "beanId": "ethiopia-yirgacheffe-kochere",
+    "method": "chemex",
     "scene": "hot",
-    "angle": "bean",
-    "hook": "ライチの香りを引き出す",
-    "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 91, "grind": "中細挽き", "time": "3:00" },
+    "angle": "expert",
+    "hook": "花の香りが澄むケメックス",
+    "sources": ["https://www.chemexcoffeemaker.com/"],
+    "numbers": { "dose_g": 30, "water_g": 500, "temp_c": 93, "grind": "中粗挽き", "time": "4:00" },
     "steps": [
-      { "time": "0:00", "action": "蒸らし", "pour_to_g": 45 },
-      { "time": "0:45", "action": "2投目", "pour_to_g": 110 },
-      { "time": "1:20", "action": "3投目", "pour_to_g": 170 },
-      { "time": "1:50", "action": "4投目", "pour_to_g": 225 },
-      { "time": "3:00", "action": "落ち切り" }
+      { "time": "0:00", "action": "蒸らし", "pour_to_g": 60 },
+      { "time": "0:45", "action": "2投目", "pour_to_g": 300 },
+      { "time": "1:30", "action": "3投目", "pour_to_g": 500 },
+      { "time": "4:00", "action": "落ち切り" }
     ],
     "taste": {
-      "notes": ["ライチ", "ウーロン茶"],
-      "summary": "ライチの甘さに、ウーロン茶の余韻",
-      "acidity": 3,
-      "sweetness": 4,
+      "notes": ["シトラス", "フローラル", "甘い余韻"],
+      "summary": "紅茶のように澄んだ甘さ",
+      "acidity": 4,
+      "sweetness": 3,
       "body": 2
     },
     "tips": [
-      { "problem": "香りが弱い時", "fix": "湯温を2℃上げて93℃に" },
-      { "problem": "渋い時", "fix": "湯温を2℃下げて89℃に" },
-      { "problem": "薄い時", "fix": "豆を1g増やして16gに" }
+      { "problem": "酸っぱい時", "fix": "湯温を2℃上げて95℃に" },
+      { "problem": "苦い時", "fix": "湯温を2℃下げて91℃に" },
+      { "problem": "薄い時", "fix": "豆を2g増やして32gに" }
     ],
     "narration": {
-      "title": "ライチの香りをもっと引き出したい人へ。今日は中国、デーホンをオリガミで淹れます。",
-      "numbers": "豆15gに、お湯225g。湯温は91℃、3:00で落とし切ります。",
-      "steps": "注ぎは4回。蒸らしをしっかり45秒とって、香りを一気に立ち上げます。",
-      "taste": "ライチの甘さが弾け、ウーロン茶のような余韻が長く続きます。",
-      "tips": "香りが弱い時は湯温を2℃上げて93℃に。渋い時は2℃下げます。",
+      "title": "花の香りが澄む一杯を、ケメックスで。今日は、イルガチェフェ、コチャレを淹れます。",
+      "numbers": "豆30gに、お湯500g。93℃で4:00です。",
+      "steps": "ケメックス公式の3投レシピを応用。60gで蒸らし、300g、500gまで注ぎ切ります。",
+      "taste": "レモンと花のような香りが、紅茶のように澄んで残ります。",
+      "tips": "酸っぱい時は湯温を2℃上げて95℃に。苦い時は逆に91℃へ。",
       "cta": "この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。"
     }
   }

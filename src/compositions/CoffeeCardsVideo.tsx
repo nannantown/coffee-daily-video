@@ -10,16 +10,20 @@ import {
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
 
-const SlideView: React.FC<{ slide: CardSlide; page: string }> = ({ slide, page }) => {
+const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = ({
+  slide,
+  page,
+  index,
+}) => {
   switch (slide.kind) {
     case "lesson-title":
-      return <LessonTitle slide={slide} />;
+      return <LessonTitle slide={slide} index={index} />;
     case "lesson-steps":
-      return <LessonSteps slide={slide} page={page} />;
+      return <LessonSteps slide={slide} page={page} index={index} />;
     case "lesson-taste":
-      return <LessonTaste slide={slide} page={page} />;
+      return <LessonTaste slide={slide} page={page} index={index} />;
     case "lesson-tips":
-      return <LessonTips slide={slide} page={page} />;
+      return <LessonTips slide={slide} page={page} index={index} />;
     default:
       return null;
   }
@@ -39,12 +43,12 @@ export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = ({ slides, ending, t
       <Series>
         {slides.map((slide, i) => (
           <Series.Sequence key={`${slide.kind}-${i}`} durationInFrames={timeline.slides[i] ?? 150}>
-            <SlideView slide={slide} page={`${i + 1} / ${pages}`} />
+            <SlideView slide={slide} page={`${i + 1} / ${pages}`} index={i} />
             {withAudio ? <Audio src={staticFile(`audio/project-${i + 1}.mp3`)} volume={1} /> : null}
           </Series.Sequence>
         ))}
         <Series.Sequence durationInFrames={timeline.ending}>
-          <CtaSlide ending={ending} />
+          <CtaSlide ending={ending} index={slides.length} />
           {withAudio ? <Audio src={staticFile("audio/ending.mp3")} volume={1} /> : null}
         </Series.Sequence>
       </Series>
