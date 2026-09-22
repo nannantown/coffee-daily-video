@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { DRIFT_MAX } from "./theme";
 
 /**
  * The "AI-generated" tell these fix (docs/video-style.md §1, causes 2-4):
@@ -29,14 +30,6 @@ const LIGHT_POSITIONS = [
   { x: 62, y: 48, drift: 1 },
 ];
 
-/**
- * Maximum travel of `Drift`, in px. `SlideShell` insets the content column by
- * this much on every side and the drift then spends exactly that budget, so
- * the column at full drift lands back on the documented safe-area bounds
- * rather than 8px past them (theme.ts SPACE: margin 80, contentBottom 1560,
- * actionColumnClearance 80 — those numbers are hard platform limits).
- */
-export const DRIFT_MAX = 8;
 
 /**
  * One 180px grayscale noise tile, rendered once by Chromium and then repeated.

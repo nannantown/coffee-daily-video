@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { Atmosphere, Drift, DRIFT_MAX, useCutIn } from "./atmosphere";
-import { ACCENTS, COLORS, FONT_FAMILY, SPACE, TYPE } from "./theme";
+import { Atmosphere, Drift, useCutIn } from "./atmosphere";
+import { ACCENTS, COLORS, DRIFT_MAX, FONT_FAMILY, SPACE, TYPE } from "./theme";
 
 /** Solid label chip: opaque fill, white text, color carried by the border. */
 export const Pill: React.FC<{
@@ -82,7 +82,8 @@ export const Brand: React.FC = () => (
   <div
     style={{
       position: "absolute",
-      left: SPACE.margin,
+      // Inset like the content column: Brand sits inside Drift too.
+      left: SPACE.margin + DRIFT_MAX,
       top: SPACE.contentBottom - 80,
       fontSize: TYPE.footer,
       fontWeight: 600,

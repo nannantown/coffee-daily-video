@@ -1,8 +1,8 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { Atmosphere, Drift, DRIFT_MAX, useCutIn } from "./atmosphere";
+import { Atmosphere, Drift, useCutIn } from "./atmosphere";
 import { AccentLine, Brand, Pill, Reveal, SlideShell } from "./primitives";
-import { ACCENTS, CARD_SHADOW, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
+import { ACCENTS, CARD_SHADOW, COLORS, DRIFT_MAX, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type {
   CtaEnding,
   NumberTile,
@@ -13,8 +13,14 @@ import type {
 } from "./types";
 
 const TILE_COLUMNS = 3;
-const TILE_GAP = 32;
-const TILE_WIDTH = (1080 - SPACE.margin * 2 - TILE_GAP * (TILE_COLUMNS - 1)) / TILE_COLUMNS;
+// Must match the column SlideShell actually gives us, which is inset by
+// DRIFT_MAX on each side; using the bare margin overflows by 16px and the
+// three tiles wrap to two columns. The gap went 32 -> 24 to pay for the
+// inset, which lands TILE_WIDTH back on exactly its pre-drift value (285.33,
+// 205px inner) — the width tileValueSize below is tuned against.
+const TILE_GAP = 24;
+const TILE_WIDTH =
+  (1080 - (SPACE.margin + DRIFT_MAX) * 2 - TILE_GAP * (TILE_COLUMNS - 1)) / TILE_COLUMNS;
 
 /**
  * Value size by what has to fit in the tile's 205px inner width: short

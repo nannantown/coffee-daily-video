@@ -39,6 +39,17 @@ export const CARD_SHADOW = "0 12px 28px rgba(0,0,0,0.45)";
 // top bar and the bottom ~360px (caption, channel, audio). Rows that reach
 // y>1000 keep 80px extra right padding so the action-button column
 // (x≈930-1060) never covers text.
+/**
+ * Maximum travel of the per-slide drift (atmosphere.tsx `Drift`), in px.
+ *
+ * Lives here rather than with the motion code because it is a layout
+ * constraint: the content column is inset by this much on every side so that
+ * a fully drifted slide lands back exactly on the margins above, instead of
+ * DRIFT_MAX past them. Anything computing a width from `SPACE.margin` has to
+ * subtract it too — see TILE_WIDTH in RecipeSlides.tsx.
+ */
+export const DRIFT_MAX = 8;
+
 export const SPACE = {
   margin: 80,
   cardPad: 40,
