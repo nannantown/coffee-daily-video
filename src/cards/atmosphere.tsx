@@ -43,10 +43,13 @@ const GRAIN_TILE = `data:image/svg+xml;utf8,${encodeURIComponent(
  * Film grain: the tile is re-offset periodically, which is what makes it
  * shimmer rather than look like a static texture.
  *
- * Held for 2 frames (the "on twos" of hand-drawn animation, and what real
- * film grain looks like at 30fps). Re-offsetting every single frame doubles
- * the temporal noise the encoder has to carry — at CRF 20 that took the
- * output from 3.2MB to 12MB, and those bits come out of the text.
+ * Held for 2 frames — the "on twos" of hand-drawn animation, and close to
+ * what film grain reads like at 30fps. Also halves the temporal noise the
+ * encoder carries, though measurement showed that is not what drives the
+ * file size: a 42s render goes 3.2MB -> 13MB either way, because the light
+ * and the drift mean no block of the frame is ever static any more. 13MB is
+ * ~2.5 Mbps at 1080x1920/30, which is comfortably inside what Reels and
+ * Shorts want — the old 3.2MB was only that small because it was a slideshow.
  */
 const Grain: React.FC = () => {
   const step = Math.floor(useCurrentFrame() / 2);
