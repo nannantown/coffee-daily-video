@@ -3,8 +3,8 @@
  *
  * Reads data/performance-history.json (IG values come from fetch-stats.mjs →
  * instagram-insights.mjs: `instagram.saved` / `views` / `reach` / `shares`),
- * the previous docs/pdca report (for the carried-over mode) and
- * data/coffee-lineup.json, then prints Markdown for docs/pdca/YYYY-MM-DD.md:
+ * the previous docs/pdca report (for the carried-over mode), then prints
+ * Markdown for docs/pdca/YYYY-MM-DD.md:
  *
  *   1. ジャンル試行の状態 — sns-hub docs/strategy/genre-experiment.md format:
  *      S / F, judgement days S + 14k, window, Day N / 14, n < 7 hold,
@@ -13,7 +13,7 @@
  *   2. ジャンル判定（下書き）— only on judgement / delayed-judgement days
  *   3. 直近 N 日の投稿 — per-video IG saves first, YT views last
  *   4. TOP 3 / WORST 3 by IG saves (type's first post F onward, provisional days excluded)
- *   5. 軸別 — IG saves by 抽出法 / 豆 / 切り口 / 型
+ *   5. 軸別 — IG saves by 抽出法 / 柱 / 型
  *   6. ローテーション — usage counts (for days when performance data must not decide)
  *
  * Usage:
@@ -24,7 +24,7 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-import { METHODS, ANGLES, TRIAL_ID, jstDateParts, postableBeans } from "./content-format.mjs";
+import { METHODS, PILLARS, TRIAL_ID, jstDateParts } from "./content-format.mjs";
 
 export const ACCOUNTS = {
   ig: "IG @open_ground_coffee_roasters",
@@ -42,9 +42,15 @@ export const TRIALS = {
   },
   1: {
     label: "#1",
-    genre: "「今日の一杯」レシピカード型 + 日曜ニュース TOP5",
+    genre: "「今日の一杯」レシピカード型（2026-09-22 オーナー決定により中止）",
+    trialId: "coffee-trial-1-recipe-card",
+    cancelled: true,
+  },
+  2: {
+    label: "#2",
+    genre: "汎用抽出知識「今日の抽出メモ」（集客フェーズ）",
     trialId: TRIAL_ID,
-    plannedStart: "2026-09-17",
+    plannedStart: "2026-09-23",
   },
 };
 
@@ -147,13 +153,12 @@ export function cycle({ S, F, today }) {
 }
 
 /**
- * Trial #1 starts at its first recipe-card post. A Sunday news TOP5 alone
- * does not start it: while no bean is confirmed, Mon-Sat still post the old
- * explainer, and the 14-day verdict would measure the old genre.
+ * Trial #2 starts at its first brewing-lesson post — the day the generic
+ * brewing knowledge type first went out (owner decision 2026-09-22).
  */
 export function trialStart(videos, trialId = TRIAL_ID) {
   const dates = videos
-    .filter((v) => v.content?.trial === trialId && v.content?.format === "recipe")
+    .filter((v) => v.content?.trial === trialId && v.content?.format === "brew-lesson")
     .map((v) => v.date)
     .sort();
   return dates[0] || null;
@@ -223,9 +228,9 @@ export function decideMode(verdictValue, prevMode, judgeDate) {
 export function trialStatus(history, today, { reports = [] } = {}) {
   const videos = history?.videos || [];
   const start = trialStart(videos);
-  const trial = start && start <= today ? 1 : 0;
-  const S = trial === 1 ? start : TRIALS[0].S;
-  const F = trial === 1 ? start : TRIALS[0].F;
+  const trial = start && start <= today ? 2 : 0;
+  const S = trial === 2 ? start : TRIALS[0].S;
+  const F = trial === 2 ? start : TRIALS[0].F;
   const c = cycle({ S, F, today });
   const stats = c.from ? windowStats(videos, c.from, c.to) : null;
   const prev = previousModes(reports, today);
@@ -261,7 +266,7 @@ export function trialStatus(history, today, { reports = [] } = {}) {
     judge,
     prevSource: prev.source,
     accounts,
-    baseline: trial === 1 ? windowStats(videos, addDays(S, -14), addDays(S, -1)) : null,
+    baseline: trial === 2 ? windowStats(videos, addDays(S, -14), addDays(S, -1)) : null,
   };
 }
 
@@ -269,7 +274,7 @@ export function trialStatus(history, today, { reports = [] } = {}) {
 // Per-video rows, rankings, axes, rotation
 // ---------------------------------------------------------------------------
 
-const FORMAT_LABELS = { recipe: "レシピ", "news-top5": "ニュースTOP5" };
+const FORMAT_LABELS = { "brew-lesson": "抽出メモ", recipe: "レシピ（旧）", "news-top5": "ニュースTOP5（旧）" };
 
 export function videoRow(video, today, provisionalDays = 2) {
   const ig = igMetrics(video);
@@ -278,10 +283,9 @@ export function videoRow(video, today, provisionalDays = 2) {
   return {
     date: video.date,
     format,
-    bean: c?.beanName || "—",
-    beanId: c?.beanId || null,
+    topic: c?.topic || c?.beanName || "—",
+    pillar: c?.pillar ? PILLARS[c.pillar] || c.pillar : "—",
     method: c?.method ? METHODS[c.method]?.label || c.method : "—",
-    angle: c?.angle ? ANGLES[c.angle] || c.angle : "—",
     fallback: Boolean(c?.fallback),
     ig,
     saveRate: ig && ig.reach ? (ig.saved / ig.reach) * 100 : null,
@@ -345,7 +349,7 @@ export function groupBySaved(rows, keyFn) {
 }
 
 /** Usage counts in rows (all of them, provisional included) — least-used first. */
-export function rotation(rows, lineup) {
+export function rotation(rows) {
   const count = (keyFn, universe) => {
     const m = new Map(universe.map((k) => [k, 0]));
     for (const r of rows) {
@@ -354,16 +358,13 @@ export function rotation(rows, lineup) {
     }
     return [...m.entries()].map(([key, n]) => ({ key, n })).sort((a, b) => a.n - b.n);
   };
-  // Only beans that may be posted (confirmed) — a candidate would be rejected by the validator.
-  const beans = postableBeans(lineup).map((b) => b.displayName || b.name);
   return {
-    bean: count((r) => r.bean, beans),
+    pillar: count((r) => r.pillar, Object.values(PILLARS)),
     method: count((r) => r.method, Object.values(METHODS).map((m) => m.label)),
-    angle: count((r) => r.angle, Object.values(ANGLES)),
   };
 }
 
-export function summarize(history, { today, days = 14, provisionalDays = 2, reports = [], lineup = null } = {}) {
+export function summarize(history, { today, days = 14, provisionalDays = 2, reports = [] } = {}) {
   const status = trialStatus(history, today, { reports });
   const rows = recentRows(history, today, days, provisionalDays);
   const typeRows = rows.filter((r) => r.date >= status.F);
@@ -375,10 +376,9 @@ export function summarize(history, { today, days = 14, provisionalDays = 2, repo
     rows,
     ranking: rankBySaved(typeRows),
     byMethod: groupBySaved(typeRows, (r) => r.method),
-    byBean: groupBySaved(typeRows, (r) => r.bean),
-    byAngle: groupBySaved(typeRows, (r) => r.angle),
+    byPillar: groupBySaved(typeRows, (r) => r.pillar),
     byFormat: groupBySaved(typeRows, (r) => r.format),
-    rotation: rotation(typeRows, lineup),
+    rotation: rotation(typeRows),
   };
 }
 
@@ -398,7 +398,7 @@ function metricCell(platform, stats) {
 }
 
 const ROTATION_RULE =
-  "豆・抽出法・切り口は下の「ローテーション」で使用回数が少ないものから、曜日の型と「同じ豆・抽出法を 2 日連続にしない」を守って選ぶ";
+  "柱（知識のテーマ）と抽出法は下の「ローテーション」で使用回数が少ないものから、「同じ柱・抽出法を 2 日連続にしない」を守って選ぶ";
 
 export function methodPolicy(s) {
   const { accounts, stats } = s;
@@ -415,7 +415,7 @@ export function methodPolicy(s) {
     }
     return `${accounts[alive].label} の指標だけで選ぶ（${accounts[dead[0]].label} は配信死亡モード）`;
   }
-  return "通常 — 豆・抽出法・切り口は IG 保存数で比べて決める（YT は別に参考）";
+  return "通常 — 柱・抽出法は IG のフォロワー増加数と保存数で比べて決める（YT は別に参考）";
 }
 
 function statusSection(s) {
@@ -441,10 +441,12 @@ function statusSection(s) {
   for (const p of ["ig", "yt"]) {
     if (s.accounts[p].caution) lines.push(`- 注意: ${s.accounts[p].label} は判定窓で配信死亡の域（モードの変更は次の判定日）`);
   }
-  lines.push(`- 今日の豆・抽出法・切り口の方針: ${methodPolicy(s)}`);
+  lines.push(`- 今日の柱・抽出法の方針: ${methodPolicy(s)}`);
   lines.push(`- 前回モードの出どころ: ${s.prevSource}`);
-  if (s.trial === 0) {
-    lines.push(`- 試行 #1（レシピカード型）はまだ初回投稿がない（予定 ${TRIALS[1].plannedStart}）。初回投稿の翌朝から S = F = 初回投稿日で集計する`);
+  if (s.trial !== 2) {
+    lines.push(
+      `- 試行 #1（レシピカード型）は 2026-09-22 のオーナー決定で中止。試行 #2（${TRIALS[2].genre}）はまだ初回投稿がない（予定 ${TRIALS[2].plannedStart}）。初回投稿の翌朝から S = F = 初回投稿日で集計する`
+    );
   }
   if (s.baseline) {
     lines.push(
@@ -469,7 +471,7 @@ function judgementSection(s) {
         ? `views 中央値 ${fmt(j.stats.ig.viewsMedian)}（配信死亡 < ${th.ig.deadViewsMedian} / 切替候補 < ${th.ig.switchViewsMedian}）・保存合計 ${j.stats.ig.savedSum}（< ${th.ig.savedSum}）・n=${j.stats.ig.n}`
         : `views 中央値 ${fmt(j.stats.yt.viewsMedian)}（配信死亡 < ${th.yt.deadViewsMedian} / 切替候補 < ${th.yt.switchViewsMedian}）・n=${j.stats.yt.n}`;
     const change = a.prevMode === a.mode ? `モード: ${a.mode}（変化なし）` : `モード: ${a.prevMode} → ${a.mode}`;
-    const next = a.judgeVerdict === "切替候補" || a.judgeVerdict === "配信死亡" ? " — 次ジャンル候補 2〜3 案（豆の購入に繋がる型に限る）をルーチンが書く" : "";
+    const next = a.judgeVerdict === "切替候補" || a.judgeVerdict === "配信死亡" ? " — 次ジャンル候補 2〜3 案（集客フェーズなので販促の型は出さない）をルーチンが書く" : "";
     lines.push(`- ${a.label}: ${a.judgeVerdict} — ${basis} — ${change}${next}`);
   }
   lines.push("");
@@ -479,20 +481,20 @@ function judgementSection(s) {
 function experimentSection(s) {
   const deadAccounts = ["ig", "yt"].filter((p) => s.accounts[p].mode.startsWith("配信死亡モード"));
   if (!deadAccounts.length) return [];
-  if (s.trial >= 1 && s.cycle.d < 14) {
-    return ["## 構造実験の提案", "", `- IG / YT 共通: 実行中: 試行 #1（${TRIALS[1].genre}）${s.cycle.status}`, ""];
+  if (s.trial >= 2 && s.cycle.d < 14) {
+    return ["## 構造実験の提案", "", `- IG / YT 共通: 実行中: 試行 #2（${TRIALS[2].genre}）${s.cycle.status}`, ""];
   }
   if (s.trial === 0) {
     // This script ships with trial #1, so on main it is merged and waiting for
     // its first post: no new proposals until it runs (genre rule, 準備中).
-    return ["## 構造実験の提案", "", `- IG / YT 共通: 準備中: 試行 #1（${TRIALS[1].genre}）`, ""];
+    return ["## 構造実験の提案", "", `- IG / YT 共通: 準備中: 試行 #2（${TRIALS[2].genre}）`, ""];
   }
   return ["## 構造実験の提案", "", "- （配信死亡モードのアカウントについて、何を変えるか / 何で測るか / 14 日後の合格ライン をルーチンが書く）", ""];
 }
 
 export function rowTopic(r) {
-  if (r.format === "レシピ") return `レシピ ${r.bean}×${r.method}（${r.angle}）${r.fallback ? "［代替］" : ""}`;
-  if (r.format === "ニュース（旧型）") {
+  if (r.format === "抽出メモ") return `${r.pillar}「${r.topic}」×${r.method}${r.fallback ? "［常備ネタ］" : ""}`;
+  if (r.format === "ニュース（旧型）" || r.format === "レシピ（旧）") {
     const t = r.title.replace(/^【[^】]*】/, "").replace(/｜.*$/, "");
     return `旧型ニュース「${Array.from(t).slice(0, 28).join("")}」`;
   }
@@ -502,7 +504,7 @@ export function rowTopic(r) {
 function rowLine(r) {
   const ig = r.ig;
   const mark = r.provisional ? "（暫定）" : "";
-  return `| ${r.date}${mark} | ${r.format}${r.fallback ? "（代替）" : ""} | ${md(r.bean)} | ${md(r.method)} | ${md(r.angle)} | ${ig ? ig.saved : "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
+  return `| ${r.date}${mark} | ${r.format}${r.fallback ? "（常備）" : ""} | ${md(r.pillar)} | ${md(r.method)} | ${md(r.topic)} | ${ig ? ig.saved : "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
 }
 
 function groupTable(title, groups) {
@@ -527,7 +529,7 @@ export function renderMarkdown(summary) {
     ...experimentSection(s.status),
     `## 直近 ${s.days} 日の投稿（主指標: IG 保存数）`,
     "",
-    "| 日付 | 型 | 豆 | 抽出法 | 切り口 | **IG 保存** | 保存率(%) | IG views | IG reach | IG shares | YT views |",
+    "| 日付 | 型 | 柱 | 抽出法 | トピック | **IG 保存** | 保存率(%) | IG views | IG reach | IG shares | YT views |",
     "|---|---|---|---|---|---|---|---|---|---|---|",
     ...s.rows.map(rowLine),
     "",
@@ -549,14 +551,12 @@ export function renderMarkdown(summary) {
     "## 軸別の IG 保存数",
     "",
     ...groupTable("抽出法", s.byMethod),
-    ...groupTable("豆", s.byBean),
-    ...groupTable("切り口", s.byAngle),
+    ...groupTable("柱", s.byPillar),
     ...groupTable("型", s.byFormat),
     `## ローテーション（直近 ${s.days} 日の使用回数・少ない順）`,
     "",
-    `- 豆: ${rot(s.rotation.bean) || "—"}`,
+    `- 柱: ${rot(s.rotation.pillar) || "—"}`,
     `- 抽出法: ${rot(s.rotation.method)}`,
-    `- 切り口: ${rot(s.rotation.angle)}`
   );
   return lines.join("\n");
 }
@@ -576,9 +576,9 @@ function main() {
   const historyPath = arg("history") || join(rootDir, "data", "performance-history.json");
   const history = JSON.parse(readFileSync(historyPath, "utf-8"));
   const reports = loadReports(join(rootDir, "docs", "pdca"));
-  const lineupPath = join(rootDir, "data", "coffee-lineup.json");
-  const lineup = existsSync(lineupPath) ? JSON.parse(readFileSync(lineupPath, "utf-8")) : null;
-  const summary = summarize(history, { today, days, reports, lineup });
+
+
+  const summary = summarize(history, { today, days, reports });
   if (process.argv.includes("--json")) {
     console.log(JSON.stringify(summary, null, 2));
   } else {
