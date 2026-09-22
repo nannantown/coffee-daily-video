@@ -20,11 +20,11 @@
 cron (23:30 UTC) → daily-video.yml
   → pipeline.mjs
     1. fetch-stats.mjs            # 過去動画の統計取得 (任意)
-    2. scrape-coffee-news.mjs     # 本日のコーヒー銘柄決定
-    3. generate-data.mjs          # ナレーションテキスト生成
-    4. generate-audio.mjs         # Edge TTS で音声生成
-    5. generate-bgm.mjs           # BGM 生成
-    6. remotion render            # 動画 (1080x1920 縦)
+    2. generate-data.mjs          # 今日の抽出メモ → スライド + ナレーション
+    3. generate-audio.mjs         # Edge TTS で音声生成
+    4. generate-bgm.mjs           # BGM 生成
+    5. remotion render            # 動画 (1080x1920 縦)
+    6. generate-caption.mjs + check-published.mjs  # キャプション生成 → ブランドガード
     7. post-sns.mjs
        a. generate-caption.mjs
        b. createGitHubRelease()   # 動画を Release asset に保管 (アーカイブ用途)

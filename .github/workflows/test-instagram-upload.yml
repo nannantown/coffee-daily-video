@@ -55,6 +55,9 @@ jobs:
             node scripts/generate-data.mjs
             node scripts/generate-caption.mjs
           fi
+          # Brand guard: an archived caption may predate 2026-09-22 and name a
+          # coffee we sell. Never re-post that (owner decision 2026-09-22).
+          node scripts/check-published.mjs
         env:
           TZ: Asia/Tokyo
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

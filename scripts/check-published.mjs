@@ -19,18 +19,31 @@ import { scanBannedTerms } from "./brand-guard.mjs";
 import { collectPublishedTexts } from "./content-format.mjs";
 
 const outputDir = join(dirname(fileURLToPath(import.meta.url)), "..", "output");
-const read = (name) => JSON.parse(readFileSync(join(outputDir, name), "utf-8"));
+const readIfPresent = (name) => {
+  const path = join(outputDir, name);
+  return existsSync(path) ? JSON.parse(readFileSync(path, "utf-8")) : null;
+};
 
-const data = read("trending-data.json");
-const captionsPath = join(outputDir, "captions.json");
-const captions = existsSync(captionsPath) ? read("captions.json") : null;
-if (!captions) console.log("warning: output/captions.json not built yet — scanning the slides only");
+// Both are optional so the retry / re-upload workflows can run this over an
+// archived captions.json alone — that archive may predate 2026-09-22 and be
+// full of bean and sales copy, which is exactly what must not be re-posted.
+const data = readIfPresent("trending-data.json");
+const captions = readIfPresent("captions.json");
+if (!data && !captions) {
+  console.error("NG: neither output/trending-data.json nor output/captions.json exists — nothing to check");
+  process.exit(1);
+}
+if (!data) console.log("note: no output/trending-data.json — scanning the captions only");
+if (!captions) console.log("note: no output/captions.json — scanning the slides only");
 
-const hits = scanBannedTerms(collectPublishedTexts(data, captions));
+const texts = data
+  ? collectPublishedTexts(data, captions)
+  : collectPublishedTexts({ slides: [], ending: {}, topicTitle: "" }, captions);
+const hits = scanBannedTerms(texts);
 if (hits.length > 0) {
   console.error(`NG: ${hits.length} banned term(s) would be published`);
   for (const h of hits) console.error(`  - ${h.label}: ${JSON.stringify(h.term)} — ${h.why}`);
   console.error("The channel is in its audience-growth phase: no bean, no origin, no shop, no sales line (owner decision 2026-09-22).");
   process.exit(1);
 }
-console.log(`OK: nothing we sell in ${collectPublishedTexts(data, captions).length} published texts`);
+console.log(`OK: nothing we sell in ${texts.length} published texts`);

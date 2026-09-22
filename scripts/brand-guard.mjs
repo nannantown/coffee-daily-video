@@ -4,15 +4,19 @@
  * appear in a video, a title or a caption.
  *
  * Banned, in every published text:
- *   1. our own coffees — every name / origin / process / flavour wording in
+ *   1. our own coffees — the name, origin, region and farm of every bean in
  *      data/coffee-lineup.json, plus the shop's own name, brand and EC host
  *      (read from the file, so retiring or adding a bean keeps the guard true)
  *   2. producing-country names in general — a viewer does not own that coffee,
  *      and naming one is what the owner asked us to stop
  *   3. anything that sells — purchase / wholesale / DM / shop / order wording
  *
- * Allowed on purpose: 浅煎り / 中煎り / 深煎り and other general roast or
- * brewing vocabulary (the channel teaches exactly that).
+ * Allowed on purpose: general coffee vocabulary the lessons need — roast
+ * levels (浅煎り / 中煎り / 深煎り), tasting words (キャラメル / シトラス), and
+ * processing / product words that happen to sit inside a bean's own name
+ * (ナチュラル / ウォッシュド / ハニー / デカフェ …, see GENERIC_WORDS). Banning
+ * those would reject an honest lesson every morning and quietly fall back to
+ * the canned pack, which is worse than the risk they carry.
  *
  * The lineup file itself stays in the repo for the day the promotion phase
  * reopens; it is simply never an input to content generation any more.
@@ -30,17 +34,40 @@ export const ORIGIN_TERMS = [
   "コロンビア", "ブラジル", "グアテマラ", "コスタリカ", "エルサルバドル", "ホンジュラス", "ニカラグア", "パナマ", "ペルー",
   "ボリビア", "メキシコ", "ジャマイカ", "ハワイ", "エクアドル",
   "インドネシア", "スマトラ", "マンデリン", "ベトナム", "ミャンマー", "ラオス", "中国", "ネパール", "東ティモール",
+  // romaji, because YouTube tags and titles are often written in English
+  "ethiopia", "kenya", "tanzania", "rwanda", "burundi", "uganda", "yemen",
+  "colombia", "brazil", "guatemala", "costa rica", "el salvador", "honduras", "nicaragua", "panama", "peru", "bolivia",
+  "indonesia", "sumatra", "mandheling", "vietnam", "yirgacheffe", "sidamo", "geisha", "gesha", "single origin",
   "イルガチェフェ", "シダモ", "グジ", "コチャレ", "デーホン", "フムレ", "マバンザ", "ゴールドマウンテン", "ブルーマウンテン", "キリマンジャロ",
   "ゲイシャ", "ティピカ", "ブルボン", "パカマラ", "SL28", "SL34",
 ];
 
-/** Selling. The growth phase asks for a save and a follow, nothing else. */
+/**
+ * Selling. The growth phase asks for a save and a follow, nothing else.
+ *
+ * Deliberately NOT here, because an honest brewing lesson says them and a false
+ * positive costs a whole day of content: 「買える」（スーパーで買える豆で十分…）,
+ * 「取り扱い」（豆の取り扱いは密閉容器で）, 「注文」（カフェで注文する時は）,
+ * 「公式サイト」（メーカー公式サイトの推奨値）, bare 「卸」（粉を卸すように）, 「在庫」.
+ * The selling forms of those are listed in their polite/compound shapes instead.
+ */
 export const SALES_TERMS = [
-  "ご購入", "購入", "お買い", "買える", "販売", "発売", "売って", "通販", "オンラインショップ", "ネットショップ",
-  "ご注文", "注文", "卸", "取り扱い", "在庫", "送料", "定期便", "お取り寄せ", "ギフト", "プレゼント企画",
-  "DM", "ディーエム", "プロフィールのリンク", "リンクはプロフィール", "公式サイト", "自家焙煎", "焙煎所", "当店", "弊社",
+  "ご購入", "購入", "お買い求め", "お買い上げ", "販売", "発売", "売って", "通販", "オンラインショップ", "ネットショップ",
+  "ご注文", "ご予約", "卸売", "卸価格", "卸のご相談", "お取り扱い店", "送料", "定期便", "お取り寄せ", "ギフトセット", "プレゼント企画",
+  "DM", "ディーエム", "プロフィールのリンク", "リンクはプロフィール", "自家焙煎", "焙煎所", "当店", "弊社",
   "open-ground", "openground", "OPEN GROUND", "オープングラウンド",
 ];
+
+/**
+ * Words that appear inside a bean's own name but are ordinary coffee
+ * vocabulary. A lesson about brewing decaf, or one that says 「ナチュラルな甘み」,
+ * must not be rejected because a bean we sell happens to be
+ * 「デカフェ … ナチュラル」.
+ */
+export const GENERIC_WORDS = new Set([
+  "ナチュラル", "ウォッシュド", "ハニー", "デカフェ", "カフェインレス", "在来種", "ブレンド",
+  "イーストファーメンテーション", "アナエロビック", "フリーウォッシュド", "パルプドナチュラル", "スペシャルティ",
+]);
 
 function lineupTerms() {
   let lineup;
@@ -66,15 +93,19 @@ function lineupTerms() {
     }
   }
   for (const bean of lineup.beans || []) {
-    // A multi-word bean name is also banned word by word ("ブルンジ マバンザ …" → "マバンザ").
+    // A multi-word bean name is also banned word by word ("ブルンジ マバンザ …" →
+    // "マバンザ"), except for the generic words above.
     for (const key of ["name", "displayName", "spokenName"]) {
       push(bean[key]);
-      for (const part of String(bean[key] ?? "").split(/[\s・×]+/u)) push(part);
+      for (const part of String(bean[key] ?? "").split(/[\s・×]+/u)) {
+        if (!GENERIC_WORDS.has(part.trim())) push(part);
+      }
     }
-    // Identity of the lot, banned whole — never split, so a tasting word is not
-    // caught by accident. Flavour wording (flavor / labelFlavor) is NOT banned:
-    // "キャラメル" or "citrus" is ordinary tasting vocabulary the lessons need.
-    for (const key of ["origin", "region", "farm", "variety", "process", "processShort"]) push(bean[key]);
+    // Identity of the lot. `process` / `processShort` / `variety` are NOT here:
+    // ウォッシュド and ナチュラル are how anyone describes coffee, not how anyone
+    // identifies ours. Flavour wording (flavor / labelFlavor) is out for the
+    // same reason — "キャラメル" is vocabulary the lessons need.
+    for (const key of ["origin", "region", "farm"]) push(bean[key]);
   }
   return out;
 }
@@ -97,6 +128,24 @@ export function bannedTerms() {
   return [...byTerm.values()].sort((a, b) => b.term.length - a.term.length);
 }
 
+/**
+ * Normalise both sides of the comparison: NFKC, lower case, and spaces / middle
+ * dots / hyphens dropped — so 「ブルー マウンテン」, "Costa Rica" and
+ * "open-ground" all match their needle however they are spaced.
+ *
+ * Deliberately NOT folded: the long-vowel mark 「ー」 and hiragana. Dropping
+ * 「ー」 would shorten 「ペルー」 to a 2-character needle, and folding hiragana
+ * would let 「ぐじゃぐじゃ」 match 「グジ」 — both turn into false positives that
+ * silently cost a day of content, and neither buys a realistic leak back
+ * (nobody writes an origin in hiragana; romaji is covered by ORIGIN_TERMS).
+ */
+export function fold(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\s・·_/\u{2010}\u{2011}\u{2013}\u{2014}-]/gu, "");
+}
+
 let cached = null;
 
 /**
@@ -105,11 +154,12 @@ let cached = null;
  */
 export function scanBannedTerms(entries, terms = (cached ||= bannedTerms())) {
   const hits = [];
+  const needles = terms.map((t) => ({ ...t, needle: fold(t.term) }));
   for (const [label, value] of entries) {
-    const haystack = String(value ?? "").normalize("NFKC").toLowerCase();
+    const haystack = fold(value);
     if (!haystack) continue;
-    for (const { term, why } of terms) {
-      if (haystack.includes(term.normalize("NFKC").toLowerCase())) hits.push({ label, term, why, text: String(value) });
+    for (const { term, why, needle } of needles) {
+      if (needle && haystack.includes(needle)) hits.push({ label, term, why, text: String(value) });
     }
   }
   return hits;

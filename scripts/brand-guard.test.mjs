@@ -35,18 +35,49 @@ test("origins and sales wording are banned even if the lineup file disappears", 
 });
 
 test("the brewing vocabulary the channel needs stays allowed", () => {
+  // Every one of these is a sentence an honest lesson would write. A false
+  // positive here is worse than a miss: the morning post silently falls back
+  // to the canned pack, every day, and nobody notices.
   const allowed = [
     "浅煎りでも深煎りでも湯温で味は変わる",
     "挽き目を1段粗くする",
     "粉15gにお湯240g、1対16の比率",
     "蒸らしを40秒とると甘みが出る",
     "スーパーの粉でも味は動きます",
+    "スーパーで買える粉で十分おいしくなります",
     "タイマーを4分にセット",
     "キャラメルのような甘さ",
     "フレンチプレスとV60の違い",
     "苦い時は湯温を下げる",
+    "ナチュラルな甘みが出ます",
+    "デカフェも同じ数字で淹れられます",
+    "ハニーのような甘さが残ります",
+    "ウォッシュドらしい澄んだ味",
+    "豆の取り扱いは密閉容器で",
+    "ドリッパーの取り扱い説明書の推奨値です",
+    "メーカー公式サイトの推奨値に合わせます",
+    "カフェで注文する時は浅煎りを選ぶ",
+    "粉を卸すように削る",
+    "在庫のある粉から使い切る",
+    "湯の中、国産の水でも同じです",
+    "ペーパーを一度お湯で濡らす",
+    "粉がぐじゃぐじゃにならないよう静かに注ぐ",
   ];
   for (const text of allowed) assert.deepEqual(hit(text), [], text);
+});
+
+test("an origin still cannot slip through in romaji or with odd spacing", () => {
+  const rejected = [
+    "Ethiopia single origin",
+    "kenya AA",
+    "COSTA RICA の豆",
+    "ブルー マウンテン",
+    "ブルーマウンテン",
+    "open-ground.co をどうぞ",
+    "OPEN　GROUND",
+    "ご購入はこちら",
+  ];
+  for (const text of rejected) assert.ok(hit(text).length > 0, `${text} must be rejected`);
 });
 
 test("a hit names the most specific term and says why", () => {

@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npx remotion studio",
     "audio": "node scripts/generate-audio.mjs",
-    "generate": "node scripts/generate-audio.mjs && npx remotion render TrendingVideo output/trending.mp4",
-    "render": "npx remotion render TrendingVideo output/trending.mp4",
+    "render": "npx remotion render CoffeeCardsVideo output/coffee.mp4 --props=output/input-props.json",
+    "typecheck": "tsc --noEmit",
     "pipeline": "node scripts/pipeline.mjs",
     "post-sns": "node scripts/post-sns.mjs",
     "auth:youtube": "node scripts/auth-youtube.mjs",

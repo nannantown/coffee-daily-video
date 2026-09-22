@@ -8,7 +8,7 @@ name: Daily Coffee Video
 #     dry_run=true, or with sample other than "today" (samples are never
 #     posted). Renders the video, cover, captions and slide previews into an
 #     artifact. No stats fetch, no SNS posting, no commit.
-#       gh workflow run daily-video.yml --ref <branch> -f sample=recipe
+#       gh workflow run daily-video.yml --ref <branch> -f sample=sample
 
 on:
   schedule:

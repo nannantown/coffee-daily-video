@@ -60,7 +60,7 @@
       "taste": { "notes": ["濃い口", "強い甘み"], "summary": "薄い一杯が芯を持つ", "acidity": 3, "sweetness": 4, "body": 4 },
       "tips": [
         { "problem": "えぐい時", "fix": "1段粗くして戻す" },
-        { "problem": "落ちが遅い", "fix": "湯を細く注ぐ" }
+        { "problem": "落ちが遅い", "fix": "かき混ぜずに静かに注ぐ" }
       ]
     },
     {
@@ -75,7 +75,7 @@
         { "time": "0:00", "action": "粉と湯", "pour_to_g": 300 },
         { "time": "4:00", "action": "押し下げる" }
       ],
-      "taste": { "notes": ["澄んだ味", "軽い渋み"], "summary": "後味がざらつかない", "acidity": 3, "sweetness": 3, "body": 3 },
+      "taste": { "notes": ["澄んだ味", "まろやか"], "summary": "後味がざらつかない", "acidity": 3, "sweetness": 3, "body": 3 },
       "tips": [
         { "problem": "粉っぽい時", "fix": "注いだら4分は触らない" },
         { "problem": "薄い時", "fix": "粉を2g増やす" }
@@ -146,7 +146,7 @@
       "scene": "hot",
       "hook": "4分待ってから落とす",
       "topic": "甘みが後から出てくる",
-      "why": "甘みの成分は苦味より後半に溶け出す",
+      "why": "酸が先、甘みはその後に溶け出す",
       "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 92, "grind": "中挽き", "time": "4:00" },
       "steps": [
         { "time": "0:00", "action": "粉と湯", "pour_to_g": 270 },
@@ -174,7 +174,7 @@
       ],
       "taste": { "notes": ["澄んだ甘み", "安定した味"], "summary": "毎回同じ味に近づく", "acidity": 3, "sweetness": 4, "body": 3 },
       "tips": [
-        { "problem": "泡が出ない", "fix": "粉が古い。新しく挽く" },
+        { "problem": "泡が出ない", "fix": "粉が古い合図。新しい粉で" },
         { "problem": "えぐい時", "fix": "蒸らしを30秒に縮める" }
       ]
     },
@@ -258,12 +258,12 @@
       ]
     },
     {
-      "pillar": "gear",
+      "pillar": "temp",
       "method": "v60",
       "scene": "iced",
-      "hook": "氷に落として急冷",
+      "hook": "熱いまま氷で冷やす",
       "topic": "香りが飛ばず澄んだ味",
-      "why": "熱いうちに一気に冷やすと香りが残る",
+      "why": "高温で抽出し急に冷やすと香りが残る",
       "numbers": { "dose_g": 20, "water_g": 200, "ice_g": 100, "temp_c": 93, "grind": "中細", "time": "2:15" },
       "steps": [
         { "time": "0:00", "action": "蒸らす", "pour_to_g": 40 },
@@ -274,7 +274,7 @@
       "taste": { "notes": ["澄んだ香り", "軽い甘み"], "summary": "薄まらず香りが立つ", "acidity": 4, "sweetness": 3, "body": 2 },
       "tips": [
         { "problem": "薄い時", "fix": "粉を2g増やす" },
-        { "problem": "香りが弱い", "fix": "氷を先に入れておく" }
+        { "problem": "香りが弱い", "fix": "湯温を95度に上げる" }
       ]
     },
     {
