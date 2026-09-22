@@ -285,7 +285,7 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 ```bash
 node scripts/validate-content.mjs                                      # 今日の原稿（日付チェックあり）
 node scripts/validate-content.mjs data/samples/brew-lesson.sample.json --no-date-check
-npm test                                                               # 64 本
+npm test                                                               # 71 本
 npx tsc --noEmit
 DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/brew-lesson.sample.json  # 投稿しない
 DRY_RUN=true node scripts/pipeline.mjs --fallback                      # 常備ネタ帳の日を再現
