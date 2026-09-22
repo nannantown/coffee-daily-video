@@ -152,7 +152,7 @@ if ! git diff --quiet HEAD -- data/coffee-lineup.json data/brew-lessons.json doc
   echo "FAIL: data/coffee-lineup.json / data/brew-lessons.json / docs/strategy.md / docs/routine-prompt.md が変更されている。git checkout -- <file> で戻す"; exit 1
 fi
 # 2) 今日の原稿があるか（作業ツリーのファイルの date で判定）
-if grep -Eq "$DATE_RE" "$CONTENT"; then HAS_CONTENT=1; else HAS_CONTENT=0; fi
+if grep -Eq "$DATE_RE" "$CONTENT" 2>/dev/null; then HAS_CONTENT=1; else HAS_CONTENT=0; fi
 if [ "$HAS_CONTENT" = "0" ]; then
   echo "FAIL: 今日の原稿 ($CONTENT) が無い。手順 2〜4 で書いてから流す"; exit 1
 fi

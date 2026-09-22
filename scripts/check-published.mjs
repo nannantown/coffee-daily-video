@@ -27,6 +27,9 @@ const readIfPresent = (name) => {
 // Both are optional so the retry / re-upload workflows can run this over an
 // archived captions.json alone — that archive may predate 2026-09-22 and be
 // full of bean and sales copy, which is exactly what must not be re-posted.
+// When only the captions are present the SLIDES ARE NOT CHECKED (there is no
+// trending-data.json to read); that path re-posts an already-rendered video,
+// so the caption is the only text being decided here.
 const data = readIfPresent("trending-data.json");
 const captions = readIfPresent("captions.json");
 if (!data && !captions) {

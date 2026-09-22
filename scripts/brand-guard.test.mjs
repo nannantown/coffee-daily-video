@@ -30,8 +30,43 @@ test("the shop itself is banned: name, brand, handle and EC host", () => {
 });
 
 test("origins and sales wording are banned even if the lineup file disappears", () => {
-  for (const term of ORIGIN_TERMS) assert.ok(hit(`${term}の豆で淹れました`).length > 0, term);
-  for (const term of SALES_TERMS) assert.ok(hit(`${term}はこちら`).length > 0, term);
+  // Spelled out, not derived from the lists — a test that iterates the list it
+  // is checking passes even when the list is emptied.
+  const origins = ["エチオピア", "ケニア", "コロンビア", "ブラジル", "グアテマラ", "ルワンダ", "ブルンジ", "ニカラグア", "中国", "インドネシア"];
+  const sales = ["ご購入", "販売", "通販", "ご注文", "卸売", "送料", "定期便", "DM", "自家焙煎", "当店", "プロフのリンク", "買えます"];
+  for (const term of origins) {
+    assert.ok(ORIGIN_TERMS.includes(term), `${term} must stay in ORIGIN_TERMS`);
+    assert.ok(hit(`${term}の豆で淹れました`).length > 0, term);
+  }
+  for (const term of sales) {
+    assert.ok(SALES_TERMS.includes(term), `${term} must stay in SALES_TERMS`);
+    assert.ok(hit(`${term}はこちら`).length > 0, term);
+  }
+  assert.ok(ORIGIN_TERMS.length >= 40 && SALES_TERMS.length >= 25, "the lists must not shrink silently");
+});
+
+test("an ASCII term needs a word boundary — 'DM' must not fire inside an English word", () => {
+  for (const text of ["Hand Method", "Good Morning", "admin", "handmade drip", "medium grind"]) {
+    assert.deepEqual(hit(text), [], text);
+  }
+  for (const text of ["DM で送ってください", "お気軽に DM を", "dm us"]) {
+    assert.ok(hit(text).some((h) => h.term === "DM"), text);
+  }
+});
+
+test("the sales wording the review found slipping through is caught", () => {
+  for (const text of ["プロフのリンクから", "ECサイトで買えます", "豆はうちで焼いたもの", "店頭でもどうぞ", "次回入荷は来週"]) {
+    assert.ok(hit(text).length > 0, `${text} must be rejected`);
+  }
+});
+
+test("a missing lineup file is loud, not silent", async () => {
+  const src = await import("./brand-guard.mjs");
+  // the real file is present, so bean names are in the list — the regression we
+  // guard against is the catch branch returning [] with no warning at all
+  const guard = readFileSync(join(rootDir, "scripts", "brand-guard.mjs"), "utf-8");
+  assert.match(guard, /console\.warn\([\s\S]*coffee-lineup\.json is not readable/);
+  assert.ok(src.bannedTerms().some((t) => t.term === lineup.beans[0].origin));
 });
 
 test("the brewing vocabulary the channel needs stays allowed", () => {

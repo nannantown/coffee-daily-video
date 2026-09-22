@@ -54,7 +54,9 @@ export const ORIGIN_TERMS = [
 export const SALES_TERMS = [
   "ご購入", "購入", "お買い求め", "お買い上げ", "販売", "発売", "売って", "通販", "オンラインショップ", "ネットショップ",
   "ご注文", "ご予約", "卸売", "卸価格", "卸のご相談", "お取り扱い店", "送料", "定期便", "お取り寄せ", "ギフトセット", "プレゼント企画",
-  "DM", "ディーエム", "プロフィールのリンク", "リンクはプロフィール", "自家焙煎", "焙煎所", "当店", "弊社",
+  "DM", "ディーエム", "プロフィールのリンク", "プロフのリンク", "リンクはプロフィール", "プロフィールから",
+  "自家焙煎", "焙煎所", "当店", "弊社", "うちで焼いた", "自分たちで焼いた", "買えます", "買えるように",
+  "ECサイト", "EC ショップ", "ネット限定", "店頭", "入荷",
   "open-ground", "openground", "OPEN GROUND", "オープングラウンド",
 ];
 
@@ -73,8 +75,14 @@ function lineupTerms() {
   let lineup;
   try {
     lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
-  } catch {
-    return []; // the file may be removed one day; the static lists still hold
+  } catch (err) {
+    // Loud on purpose: without this file no bean NAME is banned at all, only
+    // the static origin and sales lists. A silent empty list here is how a
+    // coffee we sell gets on air.
+    console.warn(
+      `brand-guard: data/coffee-lineup.json is not readable (${err.message}) — bean names are NOT being checked, only ORIGIN_TERMS and SALES_TERMS`
+    );
+    return [];
   }
   const out = [];
   const push = (v) => {
@@ -146,6 +154,38 @@ export function fold(value) {
     .replace(/[\s・·_/\u{2010}\u{2011}\u{2013}\u{2014}-]/gu, "");
 }
 
+/** NFKC + lower case, keeping the separators — the haystack ASCII terms anchor to. */
+export function normalize(value) {
+  return String(value ?? "").normalize("NFKC").toLowerCase();
+}
+
+/**
+ * ASCII-only terms match on a word boundary, not as a substring: "Hand Method"
+ * and "admin" both contain "dm", and "DM" is a banned term. They are tested
+ * against the separator-keeping haystack, with the term's own separators made
+ * flexible so "Costa Rica" still matches "costa-rica" and "OPEN　GROUND".
+ *
+ * Japanese terms stay substring matches on the separator-stripped haystack —
+ * Japanese has no word separators to anchor to.
+ */
+const ASCII_ONLY = /^[\x20-\x7e]+$/u;
+const SEP_CLASS = "[\\s\u{30fb}\u{b7}_/\u{2010}\u{2011}\u{2013}\u{2014}-]*";
+
+function matcher(term) {
+  if (!ASCII_ONLY.test(term)) {
+    const needle = fold(term);
+    return needle ? { spaced: false, test: (h) => h.includes(needle) } : null;
+  }
+  const body = normalize(term)
+    .split(/[\s_/\u{2010}\u{2011}\u{2013}\u{2014}-]+/u)
+    .filter(Boolean)
+    .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join(SEP_CLASS);
+  if (!body) return null;
+  const re = new RegExp(`(?<![a-z0-9])${body}(?![a-z0-9])`, "u");
+  return { spaced: true, test: (h) => re.test(h) };
+}
+
 let cached = null;
 
 /**
@@ -154,12 +194,13 @@ let cached = null;
  */
 export function scanBannedTerms(entries, terms = (cached ||= bannedTerms())) {
   const hits = [];
-  const needles = terms.map((t) => ({ ...t, needle: fold(t.term) }));
+  const matchers = terms.map((t) => ({ ...t, m: matcher(t.term) })).filter((t) => t.m);
   for (const [label, value] of entries) {
-    const haystack = fold(value);
-    if (!haystack) continue;
-    for (const { term, why, needle } of needles) {
-      if (needle && haystack.includes(needle)) hits.push({ label, term, why, text: String(value) });
+    const folded = fold(value);
+    if (!folded) continue;
+    const spaced = normalize(value);
+    for (const { term, why, m } of matchers) {
+      if (m.test(m.spaced ? spaced : folded)) hits.push({ label, term, why, text: String(value) });
     }
   }
   return hits;

@@ -15,7 +15,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const historyPath = join(rootDir, "data", "performance-history.json");
-const enrichedPath = join(rootDir, "data", "enriched-coffee-news.json");
 
 function readJSON(path) {
   if (!existsSync(path)) return null;
@@ -38,13 +37,6 @@ function main() {
 
   // Read audio durations for video length
   const audioDurations = readJSON(join(outputDir, "audio-durations.json"));
-
-  // Discovery metadata (Meta-PDCA input) travels with the day's data, so a
-  // fallback day never inherits yesterday's enriched-coffee-news.json.
-  const enriched = readJSON(enrichedPath);
-  const discovery = trendingData && "discovery" in trendingData
-    ? trendingData.discovery
-    : enriched?.discovery || null;
 
   // Instagram Media ID written by upload-instagram.mjs (absent if IG skipped/failed;
   // fetch-stats.mjs then restores it by date-matching)
@@ -83,7 +75,6 @@ function main() {
       ? trendingData.projects.map((p) => p.fullName)
       : [],
     durationSeconds: Math.round(durationSeconds),
-    discovery,
     // 「今日の一杯」/ news TOP5 summary (format, trial, bean, method, angle)
     // — scripts/pdca-summary.mjs groups IG saves by these. null = legacy news.
     content: contentRecord(trendingData),
@@ -133,12 +124,6 @@ function main() {
   console.log(`  Title: ${entry.title}`);
   console.log(`  Languages: ${entry.languages.join(", ")}`);
   console.log(`  Instagram: ${entry.instagram ? entry.instagram.mediaId : "no media id (restored later by fetch-stats)"}`);
-  if (entry.discovery) {
-    // routine-written (web-derived) text: quoted so it cannot start a new log line
-    console.log(`  Discovery: ${JSON.stringify(entry.discovery.method ?? null)} (${JSON.stringify(entry.discovery.description || "no description")})`);
-  } else {
-    console.log(`  Discovery: null (no metadata in enriched file)`);
-  }
   console.log(`  History: ${history.videos.length} videos tracked`);
 }
 

@@ -46,7 +46,7 @@ export const CARD_SHADOW = "0 12px 28px rgba(0,0,0,0.45)";
  * constraint: the content column is inset by this much on every side so that
  * a fully drifted slide lands back exactly on the margins above, instead of
  * DRIFT_MAX past them. Anything computing a width from `SPACE.margin` has to
- * subtract it too — see TILE_WIDTH in RecipeSlides.tsx.
+ * subtract it too — see TILE_WIDTH in LessonSlides.tsx.
  */
 export const DRIFT_MAX = 8;
 
