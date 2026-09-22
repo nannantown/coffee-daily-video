@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
+import { Atmosphere } from "./atmosphere";
 import { AccentLine, Brand, Pill, Reveal, SlideShell } from "./primitives";
 import { ACCENTS, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type {
@@ -35,8 +36,10 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
         width: TILE_WIDTH,
         height: 220,
         boxSizing: "border-box",
+        // No outer outline: the accent rule on top plus the surface fill
+        // already separate the tile. Outlining every box was one of the
+        // template tells (docs/video-style.md §1, cause 5).
         background: COLORS.surface,
-        border: `2px solid ${COLORS.hairline}`,
         borderTop: `6px solid ${accent}`,
         borderRadius: 24,
         padding: `28px ${SPACE.cardPad}px`,
@@ -66,8 +69,8 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
 
 // The method + scene pills sit in their own row under the header: next to the
 // date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
-export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) => (
-  <SlideShell label={slide.heading} right={slide.date} brand>
+export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide; index?: number }> = ({ slide, index = 0 }) => (
+  <SlideShell label={slide.heading} right={slide.date} brand index={index}>
     <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
       <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
       <Pill accent={slide.sceneLabel === "アイス" ? COLORS.sage : COLORS.terracotta}>{slide.sceneLabel}</Pill>
@@ -93,12 +96,12 @@ export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) =>
   </SlideShell>
 );
 
-export const RecipeSteps: React.FC<{ slide: RecipeStepsSlide; page: string }> = ({ slide, page }) => {
+export const RecipeSteps: React.FC<{ slide: RecipeStepsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => {
   const rowHeight = slide.steps.length > 4 ? 190 : 230;
   const timeWidth = 190;
   const dotColumn = 84;
   return (
-    <SlideShell label={slide.heading} right={page} center>
+    <SlideShell label={slide.heading} right={page} center index={index}>
       <div style={{ position: "relative", paddingRight: SPACE.actionColumnClearance }}>
         {/* timeline rail — caramel, while all step text is white */}
         <div
@@ -177,8 +180,8 @@ const Meter: React.FC<{ label: string; value: number }> = ({ label, value }) => 
   </div>
 );
 
-export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label={slide.heading} right={page} center>
+export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label={slide.heading} right={page} center index={index}>
     <Reveal delay={4} style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textMuted }}>
       フレーバー
     </Reveal>
@@ -202,15 +205,15 @@ export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string }> = 
 
 const TIP_ACCENTS = [COLORS.terracotta, COLORS.sky, COLORS.sage];
 
-export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label={slide.heading} right={page} center>
+export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label={slide.heading} right={page} center index={index}>
     <div style={{ display: "flex", flexDirection: "column", gap: SPACE.gutter }}>
       {slide.tips.map((tip, i) => (
         <Reveal key={tip.problem} delay={4 + i * 6}>
           <div
             style={{
               background: COLORS.surface,
-              border: `2px solid ${COLORS.hairline}`,
+              borderLeft: `8px solid ${TIP_ACCENTS[i % TIP_ACCENTS.length]}`,
               borderRadius: 28,
               padding: SPACE.cardPad,
               paddingRight: SPACE.cardPad + SPACE.actionColumnClearance,
@@ -236,8 +239,9 @@ export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string }> = ({
 );
 
 /** Last segment: save prompt + fixed sales line (bean name for recipes). */
-export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
+export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ ending, index = 0 }) => (
   <AbsoluteFill lang="ja" style={{ background: COLORS.bg, fontFamily: FONT_FAMILY, color: COLORS.text }}>
+    <Atmosphere index={index} />
     <div style={{ position: "absolute", top: SPACE.top, left: SPACE.margin, right: SPACE.margin }}>
       <Reveal>
         <Pill accent={COLORS.caramel}>{ending.kind === "recipe-cta" ? "保存がおすすめ" : "毎週日曜"}</Pill>
@@ -249,7 +253,6 @@ export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
         <div
           style={{
             background: COLORS.surface,
-            border: `2px solid ${COLORS.hairline}`,
             borderLeft: `8px solid ${COLORS.caramel}`,
             borderRadius: 28,
             padding: 48,
