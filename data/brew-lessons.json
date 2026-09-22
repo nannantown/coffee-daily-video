@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-22",
+  "note": "汎用抽出知識の常備ネタ帳。毎朝ルーチンが原稿を出せなかった日に、日付でローテーションして 1 本選ばれる（scripts/content-format.mjs fallbackLessonContent）。銘柄名・産地名・自社商品・販促の文言は入れない（scripts/brand-guard.mjs が機械的に弾く）。数値の根拠は docs/strategy.md「数値の根拠」。",
+  "lessons": [
+    {
+      "pillar": "temp",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "湯温を3度下げる",
+      "topic": "苦味が引いて酸が立つ",
+      "why": "温度が高いほど苦味成分が多く溶ける",
+      "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 88, "grind": "中細", "time": "2:30" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
+        { "time": "2:30", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["軽い苦味", "明るい酸"], "summary": "後味がすっきりする", "acidity": 4, "sweetness": 3, "body": 2 },
+      "tips": [
+        { "problem": "酸っぱい時", "fix": "湯温を92度に戻す" },
+        { "problem": "薄い時", "fix": "粉を1g増やす" }
+      ]
+    },
+    {
+      "pillar": "temp",
+      "method": "kalita-wave",
+      "scene": "hot",
+      "hook": "93度で甘さを出す",
+      "topic": "甘みとコクが前に出る",
+      "why": "高い湯温ほど甘みやコクの成分が溶けやすい",
+      "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 93, "grind": "中挽き", "time": "3:00" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 54 },
+        { "time": "0:45", "action": "2投目", "pour_to_g": 160 },
+        { "time": "1:30", "action": "3投目", "pour_to_g": 270 },
+        { "time": "3:00", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["丸い甘み", "厚いコク"], "summary": "冷めても甘さが残る", "acidity": 2, "sweetness": 4, "body": 4 },
+      "tips": [
+        { "problem": "苦い時", "fix": "湯温を90度に下げる" },
+        { "problem": "重い時", "fix": "粉を2g減らす" }
+      ]
+    },
+    {
+      "pillar": "grind",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "挽き目を1段細かく",
+      "topic": "濃さとコクが増える",
+      "why": "粉が細かいほど湯と触れる面積が増える",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:45" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
+        { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
+        { "time": "2:45", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["濃い口", "強い甘み"], "summary": "薄い一杯が芯を持つ", "acidity": 3, "sweetness": 4, "body": 4 },
+      "tips": [
+        { "problem": "えぐい時", "fix": "1段粗くして戻す" },
+        { "problem": "落ちが遅い", "fix": "湯を細く注ぐ" }
+      ]
+    },
+    {
+      "pillar": "grind",
+      "method": "french-press",
+      "scene": "hot",
+      "hook": "粗挽きで雑味を消す",
+      "topic": "重さが取れて飲みやすい",
+      "why": "粗いほど細かい粉由来の雑味が出にくい",
+      "numbers": { "dose_g": 20, "water_g": 300, "temp_c": 92, "grind": "粗挽き", "time": "4:00" },
+      "steps": [
+        { "time": "0:00", "action": "粉と湯", "pour_to_g": 300 },
+        { "time": "4:00", "action": "押し下げる" }
+      ],
+      "taste": { "notes": ["澄んだ味", "軽い渋み"], "summary": "後味がざらつかない", "acidity": 3, "sweetness": 3, "body": 3 },
+      "tips": [
+        { "problem": "粉っぽい時", "fix": "注いだら4分は触らない" },
+        { "problem": "薄い時", "fix": "粉を2g増やす" }
+      ]
+    },
+    {
+      "pillar": "ratio",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "1対15から始める",
+      "topic": "濃さの基準がここで決まる",
+      "why": "比率が濃さを決め、挽き目や時間は微調整",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:30" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:45", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
+        { "time": "2:30", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["ちょうどいい", "素直な味"], "summary": "濃くも薄くもない基準", "acidity": 3, "sweetness": 3, "body": 3 },
+      "tips": [
+        { "problem": "濃すぎる時", "fix": "湯を15g足す" },
+        { "problem": "薄すぎる時", "fix": "粉を1g足す" }
+      ]
+    },
+    {
+      "pillar": "ratio",
+      "method": "aeropress",
+      "scene": "hot",
+      "hook": "1対12で濃く淹れる",
+      "topic": "少ない湯で味が凝縮する",
+      "why": "湯が少ないほど一杯あたりの濃度が上がる",
+      "numbers": { "dose_g": 15, "water_g": 180, "temp_c": 90, "grind": "中細", "time": "1:30" },
+      "steps": [
+        { "time": "0:00", "action": "粉と湯", "pour_to_g": 180 },
+        { "time": "1:00", "action": "かき混ぜる" },
+        { "time": "1:30", "action": "押し出す" }
+      ],
+      "taste": { "notes": ["濃厚", "甘い余韻"], "summary": "少量でも満足感がある", "acidity": 3, "sweetness": 4, "body": 5 },
+      "tips": [
+        { "problem": "濃すぎる時", "fix": "湯を30g足して薄める" },
+        { "problem": "苦い時", "fix": "湯温を88度に下げる" }
+      ]
+    },
+    {
+      "pillar": "time",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "30秒早く止める",
+      "topic": "渋みが出る前に終わる",
+      "why": "終盤ほど渋みや雑味が多く溶け出す",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:00" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:35", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:05", "action": "3投目", "pour_to_g": 225 },
+        { "time": "2:00", "action": "外す" }
+      ],
+      "taste": { "notes": ["軽い口当たり", "きれいな後味"], "summary": "最後まで飲み飽きない", "acidity": 4, "sweetness": 3, "body": 2 },
+      "tips": [
+        { "problem": "薄い時", "fix": "挽き目を1段細かく" },
+        { "problem": "落ちない時", "fix": "粗くして湯を太く" }
+      ]
+    },
+    {
+      "pillar": "time",
+      "method": "clever",
+      "scene": "hot",
+      "hook": "4分待ってから落とす",
+      "topic": "甘みが後から出てくる",
+      "why": "甘みの成分は苦味より後半に溶け出す",
+      "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 92, "grind": "中挽き", "time": "4:00" },
+      "steps": [
+        { "time": "0:00", "action": "粉と湯", "pour_to_g": 270 },
+        { "time": "4:00", "action": "落とす" }
+      ],
+      "taste": { "notes": ["丸い甘み", "柔らかい酸"], "summary": "角のない一杯になる", "acidity": 2, "sweetness": 4, "body": 3 },
+      "tips": [
+        { "problem": "苦い時", "fix": "3分で落とす" },
+        { "problem": "ぼやける時", "fix": "粉を2g増やす" }
+      ]
+    },
+    {
+      "pillar": "pour",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "蒸らしを40秒とる",
+      "topic": "ガスが抜けて味が均一に",
+      "why": "ガスが残ると湯が粉の中に入りにくい",
+      "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:40" },
+      "steps": [
+        { "time": "0:00", "action": "粉を湿らす", "pour_to_g": 45 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
+        { "time": "2:40", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["澄んだ甘み", "安定した味"], "summary": "毎回同じ味に近づく", "acidity": 3, "sweetness": 4, "body": 3 },
+      "tips": [
+        { "problem": "泡が出ない", "fix": "粉が古い。新しく挽く" },
+        { "problem": "えぐい時", "fix": "蒸らしを30秒に縮める" }
+      ]
+    },
+    {
+      "pillar": "pour",
+      "method": "kalita-wave",
+      "scene": "hot",
+      "hook": "3投から5投に増やす",
+      "topic": "濃さが安定して甘くなる",
+      "why": "少しずつ注ぐほど湯温と濃度が保たれる",
+      "numbers": { "dose_g": 20, "water_g": 300, "temp_c": 92, "grind": "中挽き", "time": "3:00" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 60 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 120 },
+        { "time": "1:05", "action": "3投目", "pour_to_g": 180 },
+        { "time": "1:30", "action": "4投目", "pour_to_g": 240 },
+        { "time": "1:55", "action": "5投目", "pour_to_g": 300 }
+      ],
+      "taste": { "notes": ["均一な甘み", "澄んだ後味"], "summary": "薄い部分が消える", "acidity": 3, "sweetness": 4, "body": 3 },
+      "tips": [
+        { "problem": "時間切れ", "fix": "1投を早く注ぎ切る" },
+        { "problem": "苦い時", "fix": "最後の1投を省く" }
+      ]
+    },
+    {
+      "pillar": "gear",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "円錐は輪郭が出る",
+      "topic": "酸と香りがはっきりする",
+      "why": "湯が中心に集まり短い時間で流れ落ちる",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:30" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:15", "action": "3投目", "pour_to_g": 225 },
+        { "time": "2:30", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["明るい酸", "華やかな香り"], "summary": "軽やかで輪郭が立つ", "acidity": 4, "sweetness": 3, "body": 2 },
+      "tips": [
+        { "problem": "薄い時", "fix": "注ぐ速さを落とす" },
+        { "problem": "ばらつく時", "fix": "湯を中心だけに注ぐ" }
+      ]
+    },
+    {
+      "pillar": "gear",
+      "method": "kalita-wave",
+      "scene": "hot",
+      "hook": "平底は味が安定する",
+      "topic": "湯だまりで濃さがそろう",
+      "why": "底が平らで湯が均一に粉を通る",
+      "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 92, "grind": "中挽き", "time": "3:00" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 50 },
+        { "time": "0:45", "action": "2投目", "pour_to_g": 160 },
+        { "time": "1:20", "action": "3投目", "pour_to_g": 270 },
+        { "time": "3:00", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["丸い甘み", "安定した濃さ"], "summary": "毎回ぶれにくい一杯", "acidity": 3, "sweetness": 4, "body": 3 },
+      "tips": [
+        { "problem": "落ちが遅い", "fix": "挽き目を1段粗く" },
+        { "problem": "薄い時", "fix": "粉を2g増やす" }
+      ]
+    },
+    {
+      "pillar": "gear",
+      "method": "french-press",
+      "scene": "hot",
+      "hook": "金属は油分が残る",
+      "topic": "コクが増して舌に厚い",
+      "why": "紙が吸う油分をそのままカップに通す",
+      "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 93, "grind": "粗挽き", "time": "4:00" },
+      "steps": [
+        { "time": "0:00", "action": "粉と湯", "pour_to_g": 270 },
+        { "time": "4:00", "action": "押し下げる" }
+      ],
+      "taste": { "notes": ["厚いコク", "甘い余韻"], "summary": "ミルクにも負けない", "acidity": 2, "sweetness": 4, "body": 5 },
+      "tips": [
+        { "problem": "粉っぽい時", "fix": "最後の一口は残す" },
+        { "problem": "重い時", "fix": "粗さを1段上げる" }
+      ]
+    },
+    {
+      "pillar": "gear",
+      "method": "v60",
+      "scene": "iced",
+      "hook": "氷に落として急冷",
+      "topic": "香りが飛ばず澄んだ味",
+      "why": "熱いうちに一気に冷やすと香りが残る",
+      "numbers": { "dose_g": 20, "water_g": 200, "ice_g": 100, "temp_c": 93, "grind": "中細", "time": "2:15" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 40 },
+        { "time": "0:35", "action": "2投目", "pour_to_g": 120 },
+        { "time": "1:10", "action": "3投目", "pour_to_g": 200 },
+        { "time": "2:15", "action": "氷と混ぜる" }
+      ],
+      "taste": { "notes": ["澄んだ香り", "軽い甘み"], "summary": "薄まらず香りが立つ", "acidity": 4, "sweetness": 3, "body": 2 },
+      "tips": [
+        { "problem": "薄い時", "fix": "粉を2g増やす" },
+        { "problem": "香りが弱い", "fix": "氷を先に入れておく" }
+      ]
+    },
+    {
+      "pillar": "trouble",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "酸っぱい時はここ",
+      "topic": "湯温と時間を少し足す",
+      "why": "酸は早く、甘みは後から溶け出すため",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 94, "grind": "中細", "time": "3:00" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:45", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:25", "action": "3投目", "pour_to_g": 225 },
+        { "time": "3:00", "action": "落ち切り" }
+      ],
+      "taste": { "notes": ["柔らかい酸", "増した甘み"], "summary": "酸が甘さに変わる", "acidity": 3, "sweetness": 4, "body": 3 },
+      "tips": [
+        { "problem": "まだ酸い", "fix": "粉を1段細かくする" },
+        { "problem": "苦くなった", "fix": "時間を30秒戻す" }
+      ]
+    },
+    {
+      "pillar": "trouble",
+      "method": "v60",
+      "scene": "hot",
+      "hook": "苦い時は3つ戻す",
+      "topic": "温度・細かさ・時間を1段",
+      "why": "苦味は溶かしすぎのサイン",
+      "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 88, "grind": "中挽き", "time": "2:15" },
+      "steps": [
+        { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
+        { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
+        { "time": "1:15", "action": "3投目", "pour_to_g": 240 },
+        { "time": "2:15", "action": "外す" }
+      ],
+      "taste": { "notes": ["軽い苦味", "すっきり"], "summary": "後味が重くならない", "acidity": 3, "sweetness": 3, "body": 2 },
+      "tips": [
+        { "problem": "薄くなった", "fix": "粉を1g足して戻す" },
+        { "problem": "味がない時", "fix": "比率を1対14にする" }
+      ]
+    },
+    {
+      "pillar": "nogear",
+      "method": "mug-steep",
+      "scene": "hot",
+      "hook": "マグひとつで淹れる",
+      "topic": "混ぜて待つだけで飲める",
+      "why": "粉が湯に触れている時間が味を決める",
+      "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中挽き", "time": "4:00" },
+      "steps": [
+        { "time": "0:00", "action": "粉に注ぐ", "pour_to_g": 225 },
+        { "time": "0:30", "action": "かき混ぜる" },
+        { "time": "4:00", "action": "上澄みを飲む" }
+      ],
+      "taste": { "notes": ["やさしい味", "軽い粉感"], "summary": "器具なしでも味は動く", "acidity": 3, "sweetness": 3, "body": 3 },
+      "tips": [
+        { "problem": "粉が浮く時", "fix": "30秒後に一度混ぜる" },
+        { "problem": "粉っぽい時", "fix": "最後の一口を残す" }
+      ]
+    }
+  ]
+}
