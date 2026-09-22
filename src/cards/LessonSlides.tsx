@@ -180,7 +180,7 @@ const Meter: React.FC<{ label: string; value: number }> = ({ label, value }) => 
 export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string }> = ({ slide, page }) => (
   <SlideShell label={slide.heading} right={page} center>
     <Reveal delay={4} style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textMuted }}>
-      フレーバー
+      味の変化
     </Reveal>
     <Reveal delay={8} style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 24 }}>
       {slide.notes.map((note, i) => (
