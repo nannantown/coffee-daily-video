@@ -30,7 +30,7 @@ const dryRun =
   process.env.DRY_RUN === "true" || process.argv.includes("--dry-run") || Boolean(contentArg || fallbackArg);
 // Beans still "candidate" in data/coffee-lineup.json may be rendered in a dry
 // run, never posted.
-const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg, dryRun ? "--allow-candidate" : ""]
+const generateDataArgs = [contentArg ? `"${contentArg}"` : "", fallbackArg]
   .filter(Boolean)
   .join(" ");
 
@@ -127,12 +127,8 @@ function main() {
     runSafe("node scripts/fetch-stats.mjs", "fetch-stats");
   }
 
-  // Step 1: Evergreen knowledge topic (only used by the legacy news explainer)
-  console.log("=== Step 1: Legacy Knowledge Topic ===");
-  run("node scripts/scrape-coffee-news.mjs");
-
-  // Step 2: Content → narration + slides
-  console.log("\n=== Step 2: Generate Data ===");
+  // Step 1: Content → narration + slides
+  console.log("\n=== Step 1: Generate Data ===");
   run(`node scripts/generate-data.mjs ${generateDataArgs}`);
 
   // Step 3: Generate TTS audio + BGM
@@ -143,31 +139,21 @@ function main() {
   // Step 4: Build input props for Remotion
   console.log("\n=== Step 4: Build Input Props ===");
   let data = readOutput("trending-data.json");
-  const isCards = Boolean(data.format);
-  let inputProps;
-  if (isCards) {
-    const limited = enforceDurationLimit(data);
-    data = limited.data;
-    inputProps = {
-      format: data.format,
-      withAudio: true,
-      slides: data.slides,
-      ending: data.ending,
-      timeline: {
-        slides: limited.timeline.slides,
-        ending: limited.timeline.ending,
-        total: limited.timeline.total,
-      },
-    };
-    console.log(`  ${data.format}: ${data.slides.length} slides + ending, ${limited.timeline.seconds.toFixed(1)}s`);
-  } else {
-    inputProps = {
-      projects: data.projects,
-      audioDurations: readOutput("audio-durations.json"),
-      subtitles: readOutput("subtitles.json"),
-    };
-  }
-  const compositionId = isCards ? "CoffeeCardsVideo" : "CoffeeVideo";
+  const limited = enforceDurationLimit(data);
+  data = limited.data;
+  const inputProps = {
+    format: data.format,
+    withAudio: true,
+    slides: data.slides,
+    ending: data.ending,
+    timeline: {
+      slides: limited.timeline.slides,
+      ending: limited.timeline.ending,
+      total: limited.timeline.total,
+    },
+  };
+  console.log(`  ${data.format}: ${data.slides.length} slides + ending, ${limited.timeline.seconds.toFixed(1)}s`);
+  const compositionId = "CoffeeCardsVideo";
 
   const propsPath = join(outputDir, "input-props.json");
   writeFileSync(propsPath, JSON.stringify(inputProps));
@@ -189,13 +175,12 @@ function main() {
   run(`rm -f "${rawFile}"`);
   assertAudible(outputFile);
 
-  // Step 5c: Render cover image. Cards: frame 45 = first card with hook,
-  //          bean and all numbers faded in. Legacy: frame 60 (~2s into the
-  //          hook). Uploaded to the GitHub Release and passed as cover_url to
-  //          IG so the grid thumbnail is not a black frame. Non-blocking: IG
-  //          falls back to thumb_offset=7000ms.
+  // Step 5c: Render cover image. Frame 45 = the first card with its hook,
+  //          answer and all numbers faded in. Uploaded to the GitHub Release
+  //          and passed as cover_url to IG so the grid thumbnail is not a
+  //          black frame. Non-blocking: IG falls back to thumb_offset=7000ms.
   const coverFile = `output/coffee-${dateStr}-cover.jpg`;
-  const coverFrame = isCards ? 45 : 60;
+  const coverFrame = 45;
   console.log(`\n=== Step 5c: Render Cover Image → ${coverFile} ===`);
   runSafe(
     `npx remotion still ${compositionId} "${coverFile}" --frame=${coverFrame} --props="${propsPath}"`,
@@ -205,9 +190,7 @@ function main() {
   if (dryRun) {
     console.log(`\n=== Dry run: captions + slide previews (nothing is posted) ===`);
     run("node scripts/generate-caption.mjs");
-    if (isCards) {
-      runSafe(`node scripts/render-previews.mjs --props="${propsPath}" --out=output/previews`, "render-previews");
-    }
+    runSafe(`node scripts/render-previews.mjs --props="${propsPath}" --out=output/previews`, "render-previews");
     console.log(`\n=== Done (dry run)! ${outputFile} ===`);
     return;
   }

@@ -5,10 +5,10 @@ import { ACCENTS, COLORS, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme
 import type {
   CtaEnding,
   NumberTile,
-  RecipeStepsSlide,
-  RecipeTasteSlide,
-  RecipeTipsSlide,
-  RecipeTitleSlide,
+  LessonStepsSlide,
+  LessonTasteSlide,
+  LessonTipsSlide,
+  LessonTitleSlide,
 } from "./types";
 
 const TILE_COLUMNS = 3;
@@ -66,7 +66,7 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
 
 // The method + scene pills sit in their own row under the header: next to the
 // date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
-export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) => (
+export const LessonTitle: React.FC<{ slide: LessonTitleSlide }> = ({ slide }) => (
   <SlideShell label={slide.heading} right={slide.date} brand>
     <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
       <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
@@ -79,8 +79,8 @@ export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) =>
     </Reveal>
     <Reveal delay={9} style={{ marginTop: 56 }}>
       <AccentLine>
-        {slide.beanName}
-        <div style={{ marginTop: 8, fontSize: TYPE.body, fontWeight: 600, color: COLORS.textSub }}>{slide.beanMeta}</div>
+        {slide.topic}
+        <div style={{ marginTop: 8, fontSize: TYPE.body, fontWeight: 600, color: COLORS.textSub }}>{slide.why}</div>
       </AccentLine>
     </Reveal>
     <div style={{ marginTop: SPACE.sectionS, display: "flex", flexWrap: "wrap", gap: TILE_GAP }}>
@@ -93,7 +93,7 @@ export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide }> = ({ slide }) =>
   </SlideShell>
 );
 
-export const RecipeSteps: React.FC<{ slide: RecipeStepsSlide; page: string }> = ({ slide, page }) => {
+export const LessonSteps: React.FC<{ slide: LessonStepsSlide; page: string }> = ({ slide, page }) => {
   const rowHeight = slide.steps.length > 4 ? 190 : 230;
   const timeWidth = 190;
   const dotColumn = 84;
@@ -177,7 +177,7 @@ const Meter: React.FC<{ label: string; value: number }> = ({ label, value }) => 
   </div>
 );
 
-export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string }> = ({ slide, page }) => (
+export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string }> = ({ slide, page }) => (
   <SlideShell label={slide.heading} right={page} center>
     <Reveal delay={4} style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textMuted }}>
       フレーバー
@@ -202,7 +202,7 @@ export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string }> = 
 
 const TIP_ACCENTS = [COLORS.terracotta, COLORS.sky, COLORS.sage];
 
-export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string }> = ({ slide, page }) => (
+export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string }> = ({ slide, page }) => (
   <SlideShell label={slide.heading} right={page} center>
     <div style={{ display: "flex", flexDirection: "column", gap: SPACE.gutter }}>
       {slide.tips.map((tip, i) => (
@@ -235,12 +235,12 @@ export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string }> = ({
   </SlideShell>
 );
 
-/** Last segment: save prompt + fixed sales line (bean name for recipes). */
+/** Last segment: the day's takeaway + the save / follow prompt (no product, ever). */
 export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
   <AbsoluteFill lang="ja" style={{ background: COLORS.bg, fontFamily: FONT_FAMILY, color: COLORS.text }}>
     <div style={{ position: "absolute", top: SPACE.top, left: SPACE.margin, right: SPACE.margin }}>
       <Reveal>
-        <Pill accent={COLORS.caramel}>{ending.kind === "recipe-cta" ? "保存がおすすめ" : "毎週日曜"}</Pill>
+        <Pill accent={COLORS.caramel}>保存がおすすめ</Pill>
       </Reveal>
       <Reveal delay={4} style={{ marginTop: SPACE.sectionS }}>
         <div style={{ fontSize: TYPE.title, fontWeight: 900, lineHeight: 1.2, ...PHRASE_BREAK }}>{ending.heading}</div>
@@ -257,9 +257,9 @@ export const CtaSlide: React.FC<{ ending: CtaEnding }> = ({ ending }) => (
           }}
         >
           <div style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textSub }}>{ending.lead}</div>
-          {ending.beanName ? (
+          {ending.topic ? (
             <div style={{ marginTop: 16, fontSize: TYPE.emphasis, fontWeight: 900, lineHeight: 1.3, ...PHRASE_BREAK }}>
-              {ending.beanName}
+              {ending.topic}
             </div>
           ) : null}
           {ending.lines.map((line, i) => (

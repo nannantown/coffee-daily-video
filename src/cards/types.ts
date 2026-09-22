@@ -1,6 +1,9 @@
 // Mirrors the slide objects built by scripts/content-format.mjs
-// (buildRecipeSlides / buildNewsTop5Slides) and the frame timeline from
-// computeCardTimeline — the pipeline passes them as Remotion input props.
+// (buildLessonSlides) and the frame timeline from computeCardTimeline — the
+// pipeline passes them as Remotion input props.
+//
+// There is no product here on purpose: the channel is in its audience-growth
+// phase and never names a coffee of its own (owner decision 2026-09-22).
 
 export interface NumberTile {
   label: string;
@@ -8,29 +11,28 @@ export interface NumberTile {
   unit: string;
 }
 
-export interface RecipeTitleSlide {
-  kind: "recipe-title";
-  heading: string;
+export interface LessonTitleSlide {
+  kind: "lesson-title";
+  heading: string; // the pillar, e.g. 湯温
   date: string;
-  beanName: string;
-  beanFullName?: string;
-  beanMeta: string;
+  hook: string; // the question of the day
+  topic: string; // the answer in one line
+  why: string; // why it happens
   methodLabel: string;
   sceneLabel: string;
-  hook: string;
   tiles: NumberTile[];
   narration: string;
 }
 
-export interface RecipeStepsSlide {
-  kind: "recipe-steps";
+export interface LessonStepsSlide {
+  kind: "lesson-steps";
   heading: string;
   steps: { time: string; action: string; amount: string }[];
   narration: string;
 }
 
-export interface RecipeTasteSlide {
-  kind: "recipe-taste";
+export interface LessonTasteSlide {
+  kind: "lesson-taste";
   heading: string;
   notes: string[];
   summary: string;
@@ -38,46 +40,23 @@ export interface RecipeTasteSlide {
   narration: string;
 }
 
-export interface RecipeTipsSlide {
-  kind: "recipe-tips";
+export interface LessonTipsSlide {
+  kind: "lesson-tips";
   heading: string;
   tips: { problem: string; fix: string }[];
   narration: string;
 }
 
-export interface NewsCoverSlide {
-  kind: "news-cover";
-  heading: string;
-  date: string;
-  weekLabel: string;
-  headlines: string[];
-  narration: string;
-}
-
-export interface NewsItemSlide {
-  kind: "news-item";
-  heading: string;
-  rank: number;
-  headline: string;
-  number: string;
-  numberLabel: string;
-  summary: string;
-  source: string;
-  narration: string;
-}
-
 export type CardSlide =
-  | RecipeTitleSlide
-  | RecipeStepsSlide
-  | RecipeTasteSlide
-  | RecipeTipsSlide
-  | NewsCoverSlide
-  | NewsItemSlide;
+  | LessonTitleSlide
+  | LessonStepsSlide
+  | LessonTasteSlide
+  | LessonTipsSlide;
 
 export interface CtaEnding {
-  kind: "recipe-cta" | "news-cta";
+  kind: "lesson-cta";
   heading: string;
-  beanName: string;
+  topic: string;
   lead: string;
   lines: string[];
   narration: string;
@@ -90,7 +69,7 @@ export interface CardTimeline {
 }
 
 export interface CoffeeCardsProps {
-  format: "recipe" | "news-top5";
+  format: "brew-lesson";
   slides: CardSlide[];
   ending: CtaEnding;
   timeline: CardTimeline;
