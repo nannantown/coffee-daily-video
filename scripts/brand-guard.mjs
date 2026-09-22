@@ -36,7 +36,7 @@ export const ORIGIN_TERMS = [
   "インドネシア", "スマトラ", "マンデリン", "ベトナム", "ミャンマー", "ラオス", "中国", "ネパール", "東ティモール",
   // romaji, because YouTube tags and titles are often written in English
   "ethiopia", "kenya", "tanzania", "rwanda", "burundi", "uganda", "yemen",
-  "colombia", "brazil", "guatemala", "costa rica", "el salvador", "honduras", "nicaragua", "panama", "peru", "bolivia",
+  "colombia", "brazil", "brasil", "guatemala", "costa rica", "el salvador", "honduras", "nicaragua", "panama", "peru", "bolivia",
   "indonesia", "sumatra", "mandheling", "vietnam", "yirgacheffe", "sidamo", "geisha", "gesha", "single origin",
   "イルガチェフェ", "シダモ", "グジ", "コチャレ", "デーホン", "フムレ", "マバンザ", "ゴールドマウンテン", "ブルーマウンテン", "キリマンジャロ",
   "ゲイシャ", "ティピカ", "ブルボン", "パカマラ", "SL28", "SL34",
@@ -54,9 +54,15 @@ export const ORIGIN_TERMS = [
 export const SALES_TERMS = [
   "ご購入", "購入", "お買い求め", "お買い上げ", "販売", "発売", "売って", "通販", "オンラインショップ", "ネットショップ",
   "ご注文", "ご予約", "卸売", "卸価格", "卸のご相談", "お取り扱い店", "送料", "定期便", "お取り寄せ", "ギフトセット", "プレゼント企画",
-  "DM", "ディーエム", "プロフィールのリンク", "プロフのリンク", "リンクはプロフィール", "プロフィールから",
-  "自家焙煎", "焙煎所", "当店", "弊社", "うちで焼いた", "自分たちで焼いた", "買えます", "買えるように",
-  "ECサイト", "EC ショップ", "ネット限定", "店頭", "入荷",
+  "DM", "D.M.", "ディーエム", "プロフィールのリンク", "プロフのリンク", "リンクはプロフィール", "プロフィールから",
+  "自家焙煎", "焙煎所", "当店", "弊社", "うちで焼いた", "自分たちで焼いた", "うちで買え",
+  "ECサイト", "EC ショップ", "ネット限定",
+  // Narrowed 2026-09-22 (review): bare 店頭 / 買えます / 入荷 blocked the growth
+  // phase's own message — 「スーパーで買えます」「店頭で挽いてもらう」「豆が入荷したて」
+  // are exactly the "you don't need our coffee" lines this channel exists to
+  // write. Only the selling shapes are listed. 「当店で買えます」 is already
+  // caught by 当店, 「通販で買えます」 by 通販.
+  "店頭販売", "店頭でお渡し", "店頭でもどうぞ", "店頭にて", "店頭でお求め", "新豆が入荷", "入荷しました",
   "open-ground", "openground", "OPEN GROUND", "オープングラウンド",
 ];
 

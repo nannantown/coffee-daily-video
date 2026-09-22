@@ -28,7 +28,7 @@
 
 - 試行 #0 = 2026-04-20（平日ニュース + 週末エバーグリーンの導入）からの型。S はルール導入日（判定サイクルの起点）、F はその型を始めた日。#0 の「経過日」は判定サイクル上の日数で、型そのものは F から続いている
 - **試行 #1「今日の一杯」レシピカード型は 2026-09-22 のオーナー決定で中止**（2026-09-17〜09-22 に 6 本投稿。2026-10-01 の判定は行わない）。台帳には「中止」として記録するだけで、比較には使わない
-- **試行 #2「今日の抽出メモ」汎用抽出知識型**（下の節）は本カードで着地済みだが、**上の 2 行はまだ #0 のまま**。ルールどおり「試行 # / ジャンル・型 / S / F」は**初回投稿日の当日以降**にしか書き換えないため（着地 2026-09-22、初回投稿は 2026-09-23 の予定で前日にあたる）。初回投稿日の当日に、この表と sns-hub の台帳を**同じ日に** #2 / S = F = 初回投稿日 / 最初の判定日 = S + 14 へ書き換える。**書き換え前でも `scripts/pdca-summary.mjs` は正しく #2 を数える** — `performance-history.json` で `content.trial = "coffee-trial-2-brew-basics"` かつ `content.format = "brew-lesson"` が最初に付いた日を S = F として集計する（正本 (a) の例外項。台帳を人間が揃えるまでの間はスクリプトの値が正）
+- **試行 #2「今日の抽出メモ」汎用抽出知識型**（下の節）は本カードで着地済みだが、**上の 2 行はまだ #0 のまま**。ルールどおり「試行 # / ジャンル・型 / S / F」は**初回投稿日の当日以降**にしか書き換えないため（着地 2026-09-22、初回投稿は 2026-09-23 の予定で前日にあたる）。初回投稿日の当日に、**人間（司令塔）が**この表と sns-hub の台帳を**同じ日に** #2 / S = F = 初回投稿日 / 最初の判定日 = S + 14 へ書き換える（朝ルーチンはこの列を動かさない）。**書き換え前でも `scripts/pdca-summary.mjs` は正しく #2 を数える** — `performance-history.json` で `content.trial = "coffee-trial-2-brew-basics"` かつ `content.format = "brew-lesson"` が最初に付いた日を S = F として集計する（正本 (a) の例外項。台帳を人間が揃えるまでの間はスクリプトの値が正）
 
 ### 判定窓・経過日・次の判定日と集計
 
@@ -285,7 +285,7 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 ```bash
 node scripts/validate-content.mjs                                      # 今日の原稿（日付チェックあり）
 node scripts/validate-content.mjs data/samples/brew-lesson.sample.json --no-date-check
-npm test                                                               # 71 本
+npm test                                                               # 72 本
 npx tsc --noEmit
 DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/brew-lesson.sample.json  # 投稿しない
 DRY_RUN=true node scripts/pipeline.mjs --fallback                      # 常備ネタ帳の日を再現

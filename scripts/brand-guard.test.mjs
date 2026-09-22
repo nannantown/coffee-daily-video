@@ -33,7 +33,7 @@ test("origins and sales wording are banned even if the lineup file disappears", 
   // Spelled out, not derived from the lists — a test that iterates the list it
   // is checking passes even when the list is emptied.
   const origins = ["エチオピア", "ケニア", "コロンビア", "ブラジル", "グアテマラ", "ルワンダ", "ブルンジ", "ニカラグア", "中国", "インドネシア"];
-  const sales = ["ご購入", "販売", "通販", "ご注文", "卸売", "送料", "定期便", "DM", "自家焙煎", "当店", "プロフのリンク", "買えます"];
+  const sales = ["ご購入", "販売", "通販", "ご注文", "卸売", "送料", "定期便", "DM", "自家焙煎", "当店", "プロフのリンク", "店頭販売"];
   for (const term of origins) {
     assert.ok(ORIGIN_TERMS.includes(term), `${term} must stay in ORIGIN_TERMS`);
     assert.ok(hit(`${term}の豆で淹れました`).length > 0, term);
@@ -55,9 +55,35 @@ test("an ASCII term needs a word boundary — 'DM' must not fire inside an Engli
 });
 
 test("the sales wording the review found slipping through is caught", () => {
-  for (const text of ["プロフのリンクから", "ECサイトで買えます", "豆はうちで焼いたもの", "店頭でもどうぞ", "次回入荷は来週"]) {
+  for (const text of [
+    "プロフのリンクから",
+    "ECサイトで買えます",
+    "豆はうちで焼いたもの",
+    "ご購入はDMから",
+    "新豆が入荷しました",
+    "店頭でもどうぞ",
+    "店頭販売もしています",
+    "当店で買えます",
+    "Brasil natural",
+    "D.M. でどうぞ",
+  ]) {
     assert.ok(hit(text).length > 0, `${text} must be rejected`);
   }
+});
+
+test("the growth phase's own message is not mistaken for selling", () => {
+  // "you don't need our coffee" is the point of this phase. 店頭 / 買えます /
+  // 入荷 used to be banned bare, which blocked exactly these sentences.
+  const allowed = [
+    "スーパーで買えます",
+    "コンビニでも買えます",
+    "スーパーの粉でも十分買えます",
+    "店頭で挽いてもらうと楽です",
+    "店頭のミルを使わせてもらう",
+    "豆が入荷したての時は膨らみます",
+    "焙煎から日が浅い粉が手に入ったら",
+  ];
+  for (const text of allowed) assert.deepEqual(hit(text), [], text);
 });
 
 test("a missing lineup file is loud, not silent", async () => {
@@ -80,6 +106,9 @@ test("the brewing vocabulary the channel needs stays allowed", () => {
     "蒸らしを40秒とると甘みが出る",
     "スーパーの粉でも味は動きます",
     "スーパーで買える粉で十分おいしくなります",
+    "スーパーで買えます",
+    "店頭で挽いてもらってもいい",
+    "豆が入荷したてなら蒸らしを長めに",
     "タイマーを4分にセット",
     "キャラメルのような甘さ",
     "フレンチプレスとV60の違い",

@@ -75,8 +75,9 @@ function main() {
       ? trendingData.projects.map((p) => p.fullName)
       : [],
     durationSeconds: Math.round(durationSeconds),
-    // 「今日の一杯」/ news TOP5 summary (format, trial, bean, method, angle)
-    // — scripts/pdca-summary.mjs groups IG saves by these. null = legacy news.
+    // 「今日の抽出メモ」summary (format, trial, fallback, pillar, topic, method,
+    // scene, tipProblems) — scripts/pdca-summary.mjs groups IG saves by these.
+    // null = a post from before the card formats existed.
     content: contentRecord(trendingData),
     stats: {
       views: 0,
