@@ -9,14 +9,19 @@ import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
  * the safe areas and the typography rules are untouched.
  */
 
-/** Where the warm key light sits, per slide, so consecutive cuts differ. */
+/**
+ * Where the warm key light sits, per slide, so consecutive cuts differ.
+ * `y` stays inside 14-56%: content lives between y=180 and y=1560 and its mass
+ * sits in the upper half, so a light lower than that just illuminates the
+ * empty band the platforms cover anyway and leaves the copy in shadow.
+ */
 const LIGHT_POSITIONS = [
   { x: 24, y: 16, drift: 1 },
   { x: 76, y: 30, drift: -1 },
-  { x: 32, y: 66, drift: 1 },
-  { x: 70, y: 22, drift: -1 },
-  { x: 50, y: 74, drift: 1 },
-  { x: 20, y: 40, drift: -1 },
+  { x: 30, y: 52, drift: 1 },
+  { x: 72, y: 20, drift: -1 },
+  { x: 46, y: 38, drift: 1 },
+  { x: 20, y: 44, drift: -1 },
 ];
 
 /**
@@ -34,17 +39,25 @@ const GRAIN_TILE = `data:image/svg+xml;utf8,${encodeURIComponent(
     "</svg>",
 )}`;
 
-/** Film grain: the tile is re-offset every frame, which is what makes it shimmer. */
+/**
+ * Film grain: the tile is re-offset periodically, which is what makes it
+ * shimmer rather than look like a static texture.
+ *
+ * Held for 2 frames (the "on twos" of hand-drawn animation, and what real
+ * film grain looks like at 30fps). Re-offsetting every single frame doubles
+ * the temporal noise the encoder has to carry — at CRF 20 that took the
+ * output from 3.2MB to 12MB, and those bits come out of the text.
+ */
 const Grain: React.FC = () => {
-  const frame = useCurrentFrame();
+  const step = Math.floor(useCurrentFrame() / 2);
   return (
     <AbsoluteFill
       style={{
         backgroundImage: `url("${GRAIN_TILE}")`,
         backgroundRepeat: "repeat",
         // Coprime steps, so the tile never lands on the same offset twice in a slide.
-        backgroundPosition: `${(frame * 37) % 180}px ${(frame * 61) % 180}px`,
-        opacity: 0.075,
+        backgroundPosition: `${(step * 37) % 180}px ${(step * 61) % 180}px`,
+        opacity: 0.05,
         pointerEvents: "none",
       }}
     />

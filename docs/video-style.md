@@ -57,18 +57,66 @@
 
 ---
 
-## 3. 有料が必要な案（オーナー相談 → 承認まで実装しない）
+## 3. 課金の判断が要る案（オーナー承認まで実装しない）
 
-**この時点で契約・課金・トライアル登録は一切していない。** 選択肢と概算費用は escalation で相談済み。要点のみ:
+**この時点で契約・課金・トライアル登録・アカウント作成は一切していない。** 調べたのは公開されている価格ページだけ。escalation で相談する。
 
-| 案 | 効く要因 | 無料代替との差 |
-|---|---|---|
-| 高品質な日本語 TTS | 7 | 抑揚と間が人間並みになる。無料の Edge TTS は「読み上げソフト」の域を出ない |
-| 実写ストック映像・写真 | 8 | 実物が映る。無料素材（Pexels 等）でもかなり戦えるが、コーヒー特化の画の質と量で差が出る |
-| AI 動画生成 API | 8 | 豆や抽出の B ロールを毎日生成できる。ただし現状は単価が高く、毎日 30 本運用には向かない可能性が高い |
-| 音源ライブラリ | 9 | 生楽器の BGM。合成パッドとは別物 |
+前提: 1 本 60 秒＝ナレーション約 350 字、月 30 本＝**約 10,500 字**。この量は各社の無料枠にほぼ収まるので、「高品質 TTS ＝ 高い」は今回に限って成り立たない。
 
-判断は 1〜6（無料）の改善を実際に見てからで良い。順番として、まず無料分の効果を確認してから課金を決めるのが合理的。
+### 3-1. 先に報告すべきこと: いま使っている音声合成にライセンス上の問題がある
+
+`scripts/generate-audio.mjs:12` が使う `edge-tts-universal` は、**Microsoft Edge の読み上げ機能への非公式ラッパー**で、Microsoft の製品でもなければ許諾もない（[rany2/edge-tts](https://github.com/rany2/edge-tts) 2026-09-22 取得）。無料で品質も悪くないが、**収益化しているチャンネルで使い続ける根拠がない**。
+これは「AI っぽさ」とは別軸の、先に片付けたほうがよい話。
+
+### 3-2. 日本語 TTS（要因 7 / 3-1 の置き換え先）
+
+| 選択肢 | 課金単位 | 月額概算（30本） | 無料枠 | 商用可否 | 出典（2026-09-22 取得） |
+|---|---|---|---|---|---|
+| **Google Chirp 3: HD** | $30 / 100万字 | **$0**（枠内） | 月 100万字。超過分は課金アカウントへ自動課金 | 可 | [cloud.google.com/text-to-speech/pricing](https://cloud.google.com/text-to-speech/pricing) |
+| Azure Neural HD | $22 / 100万字 | **$0**（F0 なら）/ S0 で $0.23 | F0 は月 50万字、超過は課金でなく制限 | 可 | [azure.microsoft.com](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/) |
+| OpenAI gpt-4o-mini-tts | 音声 $12 / 100万トークン | **$1 未満** | なし（従量のみ） | 可 | [developers.openai.com](https://developers.openai.com/api/docs/pricing) |
+| ElevenLabs Starter | $6/月で 30,000 クレジット | **$6/月**（固定費） | Free 枠は**商用不可** | 有料プランのみ可 | [elevenlabs.io/pricing](https://elevenlabs.io/pricing) |
+| Amazon Polly Neural | $16 / 100万字 | **$0**（初年度）/ 以降 $0.17 | 月 100万字・最初の 12 か月のみ | 可 | [aws.amazon.com/polly/pricing](https://aws.amazon.com/polly/pricing/) |
+| （無料）VOICEVOX | 無料ソフト | ¥0 | 全機能無料 | 可。ただし**クレジット表記が必須** | [voicevox.hiroshiba.jp/term](https://voicevox.hiroshiba.jp/term/) |
+
+無料代替との差: VOICEVOX は商用 OK・0 円だが**キャラクターボイスだと即座に分かる**ので、「AI っぽさを消す」目的には効きにくい。Coqui/XTTS はモデル側のライセンス本文が現在 404 で確認できず（【資料取得できず】 coqui.ai/cpml 2026-09-22）、収益化案件では避ける。
+
+**推し: Google Chirp 3: HD。** 品質は最上位クラス、必要量が無料枠の 1% で実質 0 円、かつ 3-1 のライセンス問題も同時に解消する。ただし Google Cloud の**課金アカウント登録が必要**で、枠を超えれば自動で課金されるため、オーナー承認が要る。
+
+### 3-3. 実写ストック素材（要因 8）
+
+| 選択肢 | 月額概算 | 制約 | 出典（2026-09-22 取得） |
+|---|---|---|---|
+| **Pexels**（無料） | **¥0** | 帰属不要だが **API 利用時は Pexels へのリンク表示が必要**。200req/時 | [pexels.com/license](https://www.pexels.com/license/) |
+| Pixabay（無料） | **¥0** | 帰属不要。**24時間キャッシュ義務**、大量自動DL禁止、商標が写る素材は商用不可 | [pixabay.com/api/docs](https://pixabay.com/api/docs/) |
+| Unsplash（無料） | ¥0 | **写真のみ・動画は対象外** | [unsplash.com/license](https://unsplash.com/license) |
+| Envato Elements | $16.50/月（年払い） | 無制限DL・恒久ライセンス | [elements.envato.com/pricing](https://elements.envato.com/pricing) |
+| Storyblocks | ¥3,200/月〜 | 無制限DL | [storyblocks.com/pricing](https://www.storyblocks.com/pricing) |
+| Adobe Stock | ¥11,880/月〜 | HD動画は月6本まで | [stock.adobe.com/plans](https://stock.adobe.com/plans) |
+
+無料代替との差: Pexels/Pixabay で**当面は十分戦える**（0 円）。有料で買えるのは、コーヒー特化素材の点数と 4K 品質、他チャンネルとクリップが被らないこと、権利侵害時の補償。
+
+### 3-4. AI 動画生成 API（要因 8・最後の layer）
+
+1 本あたり 15 秒の B ロールを生成する前提、月 450 秒。
+
+| 選択肢 | 単価 | 月額概算 | 出典（2026-09-22 取得） |
+|---|---|---|---|
+| Google Veo 3.1 Lite | $0.05/秒（720p） | **$22.5** | [ai.google.dev/gemini-api/docs/pricing](https://ai.google.dev/gemini-api/docs/pricing) |
+| Luma Ray 3.2 | $0.30 / 5秒（720p） | **$27** | [lumalabs.ai/api/pricing](https://lumalabs.ai/api/pricing) |
+| OpenAI Sora 2 | $0.10/秒（720p） | $45 | [developers.openai.com](https://developers.openai.com/api/docs/models/sora-2) |
+| Runway Gen-4.5 | $0.12/秒 | $54 | [docs.dev.runwayml.com](https://docs.dev.runwayml.com/guides/pricing/) |
+| Google Veo 3.1 標準 | $0.40/秒 | $180 | 同上 |
+| Kling / Pika | 【資料取得できず】公式価格ページに到達できず | — | — |
+
+**AI 生成映像を足すのは本末転倒になりうる**点に注意。目的は「AI っぽさを減らす」ことなので、生成映像より実写ストック（3-3、0 円）のほうが目的に合う。
+
+### 3-5. おすすめの順番
+
+1. **無料分（§2）の効果をまず見る** — 今回の PR の 2 本を見比べて判断
+2. **Google Chirp 3: HD へ移行**（$0・ライセンス問題も解消）← 承認が要るのはここ
+3. **Pexels/Pixabay の実写を差し込む**（$0・実装工数はそれなりにかかる）
+4. 3 まで終えてまだ物足りなければ、素材サブスク（¥3,200〜/月）か AI 生成（$22.5〜/月）を検討
 
 ---
 
