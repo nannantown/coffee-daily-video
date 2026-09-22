@@ -1,10 +1,10 @@
 import React from "react";
 import { Pill, Reveal, SlideShell } from "./primitives";
-import { COLORS, PHRASE_BREAK, SPACE, TYPE } from "./theme";
+import { CARD_SHADOW, COLORS, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type { NewsCoverSlide, NewsItemSlide } from "./types";
 
-export const NewsCover: React.FC<{ slide: NewsCoverSlide }> = ({ slide }) => (
-  <SlideShell label="毎週日曜" accent={COLORS.sky} right={slide.date}>
+export const NewsCover: React.FC<{ slide: NewsCoverSlide; index?: number }> = ({ slide, index = 0 }) => (
+  <SlideShell label="毎週日曜" accent={COLORS.sky} right={slide.date} index={index}>
     <Reveal delay={4}>
       <div style={{ fontSize: TYPE.title, fontWeight: 900, lineHeight: 1.2, ...PHRASE_BREAK }}>{slide.heading}</div>
     </Reveal>
@@ -39,8 +39,8 @@ export const NewsCover: React.FC<{ slide: NewsCoverSlide }> = ({ slide }) => (
   </SlideShell>
 );
 
-export const NewsItem: React.FC<{ slide: NewsItemSlide; page: string }> = ({ slide, page }) => (
-  <SlideShell label="今週のニュース" accent={COLORS.sky} right={page} center>
+export const NewsItem: React.FC<{ slide: NewsItemSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label="今週のニュース" accent={COLORS.sky} right={page} center index={index}>
     <Reveal delay={2} style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
       <span style={{ fontSize: TYPE.rank, fontWeight: 900, lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{slide.rank}</span>
       <span style={{ fontSize: 56, fontWeight: 800, color: COLORS.textSub }}>位</span>
@@ -57,9 +57,9 @@ export const NewsItem: React.FC<{ slide: NewsItemSlide; page: string }> = ({ sli
             flexWrap: "wrap",
             gap: 24,
             background: COLORS.surface,
-            border: `2px solid ${COLORS.hairline}`,
             borderTop: `6px solid ${COLORS.caramel}`,
             borderRadius: 28,
+            boxShadow: CARD_SHADOW,
             padding: SPACE.cardPad,
           }}
         >
