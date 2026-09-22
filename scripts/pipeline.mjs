@@ -4,7 +4,7 @@
  * Usage:
  *   node scripts/pipeline.mjs                                   # production (daily-video.yml)
  *   DRY_RUN=true node scripts/pipeline.mjs                      # verification: no stats fetch, no posting, no history write
- *   DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/recipe.sample.json
+ *   DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/brew-lesson.sample.json
  *   DRY_RUN=true node scripts/pipeline.mjs --fallback           # render the house-recipe fallback
  *
  * Content formats (see scripts/content-format.mjs): 「今日の一杯」recipe cards
