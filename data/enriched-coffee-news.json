@@ -1,39 +1,40 @@
 {
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "format": "recipe",
   "trial": "coffee-trial-1-recipe-card",
   "recipe": {
-    "beanId": "decaf-nicaragua-gold-mountain",
-    "method": "clever",
+    "beanId": "ethiopia-yirgacheffe-kochere",
+    "method": "chemex",
     "scene": "hot",
-    "angle": "trouble",
-    "hook": "夜のコーヒーが好きな人へ",
-    "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中粗挽き", "time": "4:00" },
+    "angle": "expert",
+    "hook": "花の香りが澄むケメックス",
+    "sources": ["https://www.chemexcoffeemaker.com/"],
+    "numbers": { "dose_g": 30, "water_g": 500, "temp_c": 93, "grind": "中粗挽き", "time": "4:00" },
     "steps": [
-      { "time": "0:00", "action": "お湯を注ぐ", "pour_to_g": 240 },
-      { "time": "0:15", "action": "やさしく混ぜる" },
-      { "time": "3:00", "action": "カップに乗せる" },
-      { "time": "4:00", "action": "抽出完了" }
+      { "time": "0:00", "action": "蒸らし", "pour_to_g": 60 },
+      { "time": "0:45", "action": "2投目", "pour_to_g": 300 },
+      { "time": "1:30", "action": "3投目", "pour_to_g": 500 },
+      { "time": "4:00", "action": "落ち切り" }
     ],
     "taste": {
-      "notes": ["きび糖", "トースト", "ダークチョコ"],
-      "summary": "きび糖の甘さと香ばしいコク",
-      "acidity": 2,
-      "sweetness": 4,
-      "body": 4
+      "notes": ["シトラス", "フローラル", "甘い余韻"],
+      "summary": "紅茶のように澄んだ甘さ",
+      "acidity": 4,
+      "sweetness": 3,
+      "body": 2
     },
     "tips": [
-      { "problem": "濃すぎる時", "fix": "湯温を2℃下げて90℃に" },
-      { "problem": "薄い時", "fix": "浸す時間を30秒延ばす" },
-      { "problem": "苦い時", "fix": "挽き目を1段粗くする" }
+      { "problem": "酸っぱい時", "fix": "湯温を2℃上げて95℃に" },
+      { "problem": "苦い時", "fix": "湯温を2℃下げて91℃に" },
+      { "problem": "薄い時", "fix": "豆を2g増やして32gに" }
     ],
     "narration": {
-      "title": "夜にコーヒーが飲みたい人へ。今日の一杯は、デカフェ、ニカラグアをクレバーで。",
-      "numbers": "豆15gに、お湯240g。湯温は92℃、4:00で抽出します。",
-      "steps": "注いだらやさしく混ぜて、3分待ってからカップに乗せる、じっくり浸ける4分抽出です。",
-      "taste": "きび糖のような甘さに、香ばしいトーストの余韻が続きます。",
-      "tips": "濃いと感じたら湯温を2℃下げて90℃に。薄い時は浸す時間を30秒延ばして。",
-      "cta": "デカフェでも味は妥協しない。夜のご褒美にどうぞ。"
+      "title": "花の香りが澄む一杯を、ケメックスで。今日は、イルガチェフェ、コチャレを淹れます。",
+      "numbers": "豆30gに、お湯500g。93℃で4:00です。",
+      "steps": "ケメックス公式の3投レシピを応用。60gで蒸らし、300g、500gまで注ぎ切ります。",
+      "taste": "レモンと花のような香りが、紅茶のように澄んで残ります。",
+      "tips": "酸っぱい時は湯温を2℃上げて95℃に。苦い時は逆に91℃へ。",
+      "cta": "この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。"
     }
   }
 }
