@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "R94pCAonJwI",
-      "videoUrl": "https://youtube.com/shorts/R94pCAonJwI",
-      "date": "2026-06-24",
-      "title": "【コーヒー豆知識】中国の最新研究・コーヒーチェリー内の天然菌で発酵させると安価な豆もスペシャリティ級に｜2026/06/24 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "official-src",
-        "description": "中国科学院・昆明植物研究所 (Qiu Minghua チーム) が Elsevier Food Chemistry 誌 2026 年 3 月号に発表した『コーヒーチェリー内生菌 Talaromyces funiculosus KQ2 を用いた発酵で雲南アラビカの SCA カッピングスコアが 1.5 点上昇しスペシャリティ域に到達』論文を一次ソースとし、Daily Coffee News (6/22) と Comunicaffe の解説、ScienceDirect 査読論文 (S0308814625050435)、中国科学院英語版プレス、Kunming InKunming 報道でクロスチェック。14d Method 集計で official-src は avg 5.50/n=4、最終使用 6/18 で 6 日空き。TOP3 (social-en/expert-blog/news-en) ではないが、直近 2 日ルール (6/22 market-data, 6/23 news-en) で TOP3 のうち news-en が使用不可となる中、勝ち筋テンプレ『驚き視点+一次研究ソース』(6/20 Bath大 34v) を official-src で再現する Explore 寄り試行。Pillar ② 産地・ハーベスト (発酵プロセシング革新) を選択。6/23 リベリカ (西アフリカ・国家計画) と同 Pillar だが、軸 (アジア・雲南×プロセシング技術) を変えて重複回避。Primary 層 (家で淹れる趣味層) には『お手頃豆がスペシャリティ品質に化ける』という経済・知的二重関心、焙煎士の技術理解力で差別化軸を補強。",
-        "sources": [
-          "https://dailycoffeenews.com/2026/06/22/chinese-study-finds-native-fungus-may-lift-conventional-coffee-into-specialty-range/",
-          "https://www.sciencedirect.com/science/article/abs/pii/S0308814625050435",
-          "https://english.cas.cn/newsroom/cas-in-media/202603/t20260320_1153041.shtml",
-          "https://www.comunicaffe.com/chinese-study-shows-endophytic-fungi-when-used-in-fermentation-can-help-enhance-the-sensory-profile-of-coffee",
-          "https://www.kunming.cn/en/c/2026-04-22/14035524.shtml"
-        ],
-        "query": "Talaromyces funiculosus KQ2 Yunnan arabica endophytic fungus fermentation specialty coffee Kunming Institute Botany Food Chemistry June 2026",
-        "freshness_hours": 48
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-08T00:57:55.308Z"
-      },
-      "instagram": {
-        "mediaId": "18098188016186585",
-        "permalink": "https://www.instagram.com/reel/DZ8ztzbCGPb/",
-        "views": 20,
-        "reach": 20,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "WSioto0cU2U",
       "videoUrl": "https://youtube.com/shorts/WSioto0cU2U",
       "date": "2026-06-25",
@@ -3736,7 +3681,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "17918912088433624",
@@ -3747,7 +3692,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -3790,18 +3735,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18114920308954651",
         "permalink": "https://www.instagram.com/reel/DdFoqrPDb3Q/",
-        "views": 1,
-        "reach": 1,
+        "views": 2,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -3844,7 +3789,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18174679993438781",
@@ -3855,7 +3800,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -3899,7 +3844,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18020523269867067",
@@ -3910,7 +3855,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -3953,18 +3898,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18626144203006525",
         "permalink": "https://www.instagram.com/reel/DdNXIn5j-LD/",
-        "views": 2,
-        "reach": 2,
+        "views": 5,
+        "reach": 3,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4008,7 +3953,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18196477864339800",
@@ -4019,7 +3964,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4064,18 +4009,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18014097392948286",
         "permalink": "https://www.instagram.com/reel/DdVHRHrCmq1/",
-        "views": 2,
-        "reach": 1,
+        "views": 3,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4123,18 +4068,18 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.158Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
         "permalink": "https://www.instagram.com/reel/DdXsaaQjixm/",
-        "views": 6,
-        "reach": 5,
+        "views": 7,
+        "reach": 6,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4182,18 +4127,18 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
         "permalink": "https://www.instagram.com/reel/DdaPwo9ksPl/",
-        "views": 5,
-        "reach": 6,
+        "views": 6,
+        "reach": 7,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4241,18 +4186,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
         "permalink": "https://www.instagram.com/reel/Ddc0fEmiBLx/",
-        "views": 20,
-        "reach": 15,
+        "views": 21,
+        "reach": 16,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4300,18 +4245,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       },
       "instagram": {
         "mediaId": "18070537547733178",
         "permalink": "https://www.instagram.com/reel/DdfZPdqjG-_/",
-        "views": 34,
-        "reach": 33,
+        "views": 35,
+        "reach": 34,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4360,18 +4305,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-22T01:41:25.856Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       },
       "instagram": {
         "mediaId": "18291185986295663",
         "permalink": "https://www.instagram.com/reel/Ddh924akiAe/",
-        "views": 21,
-        "reach": 18,
+        "views": 23,
+        "reach": 20,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-22T01:41:25.857Z"
+        "updatedAt": "2026-09-23T01:36:01.159Z"
       }
     },
     {
@@ -4416,13 +4361,72 @@
         ]
       },
       "stats": {
+        "views": 1,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-09-23T01:36:01.159Z"
+      },
+      "instagram": {
+        "mediaId": "17985764535076749",
+        "permalink": "https://www.instagram.com/reel/DdklOC4DhXx/",
+        "views": 53,
+        "reach": 45,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-09-23T01:36:01.159Z"
+      }
+    },
+    {
+      "videoId": "V6fZCWS-zoQ",
+      "videoUrl": "https://youtube.com/shorts/V6fZCWS-zoQ",
+      "date": "2026-09-23",
+      "title": "【今日の一杯】デカフェ ニカラグア×クレバー｜豆15g・92℃・4:00 #Shorts",
+      "titleTemplate": "recipe",
+      "hashtags": [
+        "今日の一杯",
+        "コーヒーレシピ",
+        "クレバードリッパー",
+        "スペシャルティコーヒー",
+        "自家焙煎",
+        "コーヒー豆",
+        "おうちカフェ",
+        "OpenGroundCoffee",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "recipe-title",
+        "recipe-steps",
+        "recipe-taste",
+        "recipe-tips"
+      ],
+      "durationSeconds": 37,
+      "discovery": null,
+      "content": {
+        "format": "recipe",
+        "trial": "coffee-trial-1-recipe-card",
+        "fallback": false,
+        "beanId": "decaf-nicaragua-gold-mountain",
+        "beanName": "デカフェ ニカラグア",
+        "method": "clever",
+        "scene": "hot",
+        "angle": "trouble",
+        "tipProblems": [
+          "濃すぎる時",
+          "薄い時",
+          "苦い時"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
         "updatedAt": null
       },
       "instagram": {
-        "mediaId": "17985764535076749",
+        "mediaId": "18111347096606211",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4435,14 +4439,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-08-22",
-      "changes": [
-        "standard: 5 avg views (79 videos)",
-        "Day performance: Sat=19, Sun=6, Wed=4, Fri=4, Mon=3, Tue=3, Thu=2"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-08-23",
       "changes": [
@@ -4696,6 +4692,22 @@
         "standard: 2 avg views (75 videos)",
         "recipe: 1 avg views (5 videos)",
         "Day performance: Sat=6, Fri=2, Sun=2, Tue=1, Wed=1, Thu=1, Mon=1"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-09-23",
+      "changes": [
+        "今日の一杯: 0.4x avg views → drop",
+        "コーヒーレシピ: 0.4x avg views → drop",
+        "V60: 0.2x avg views → drop",
+        "自家焙煎: 0.4x avg views → drop",
+        "コーヒー豆: 0.4x avg views → drop",
+        "おうちカフェ: 0.4x avg views → drop",
+        "OpenGroundCoffee: 0.4x avg views → drop",
+        "standard: 2 avg views (74 videos)",
+        "recipe: 1 avg views (6 videos)",
+        "Day performance: Sat=6, Fri=2, Sun=2, Wed=1, Thu=1, Mon=1, Tue=1"
       ],
       "recommendedTemplate": "standard"
     }
