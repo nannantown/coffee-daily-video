@@ -1,40 +1,46 @@
 {
-  "date": "2026-09-24",
-  "format": "recipe",
-  "trial": "coffee-trial-1-recipe-card",
-  "recipe": {
-    "beanId": "ethiopia-yirgacheffe-kochere",
-    "method": "chemex",
+  "date": "2026-09-25",
+  "format": "brew-lesson",
+  "trial": "coffee-trial-2-brew-basics",
+  "lesson": {
+    "pillar": "grind",
+    "method": "aeropress",
     "scene": "hot",
-    "angle": "expert",
-    "hook": "花の香りが澄むケメックス",
-    "sources": ["https://www.chemexcoffeemaker.com/"],
-    "numbers": { "dose_g": 30, "water_g": 500, "temp_c": 93, "grind": "中粗挽き", "time": "4:00" },
+    "hook": "挽き目を1段粗くする",
+    "topic": "えぐみが消えて甘さが立つ",
+    "why": "細かすぎると湯が抜けず過抽出になる",
+    "numbers": {
+      "dose_g": 14,
+      "water_g": 220,
+      "temp_c": 88,
+      "grind": "中挽き",
+      "time": "1:30"
+    },
     "steps": [
-      { "time": "0:00", "action": "蒸らし", "pour_to_g": 60 },
-      { "time": "0:45", "action": "2投目", "pour_to_g": 300 },
-      { "time": "1:30", "action": "3投目", "pour_to_g": 500 },
-      { "time": "4:00", "action": "落ち切り" }
+      { "time": "0:00", "action": "粉を入れる" },
+      { "time": "0:10", "action": "湯を注ぐ", "pour_to_g": 220 },
+      { "time": "0:30", "action": "10回攪拌" },
+      { "time": "1:00", "action": "フタを装着" },
+      { "time": "1:30", "action": "押し切り" }
     ],
     "taste": {
-      "notes": ["シトラス", "フローラル", "甘い余韻"],
-      "summary": "紅茶のように澄んだ甘さ",
-      "acidity": 4,
-      "sweetness": 3,
-      "body": 2
+      "notes": ["丸い甘み", "軽い苦味", "きれいな後味"],
+      "summary": "口当たりが素直で最後まで甘い",
+      "acidity": 3,
+      "sweetness": 4,
+      "body": 3
     },
     "tips": [
-      { "problem": "酸っぱい時", "fix": "湯温を2℃上げて95℃に" },
-      { "problem": "苦い時", "fix": "湯温を2℃下げて91℃に" },
-      { "problem": "薄い時", "fix": "豆を2g増やして32gに" }
+      { "problem": "苦い時", "fix": "挽き目をもう1段粗くする" },
+      { "problem": "薄い時", "fix": "粉を1g増やして再挑戦" },
+      { "problem": "えぐい時", "fix": "湯温を85度まで下げる" }
     ],
     "narration": {
-      "title": "花の香りが澄む一杯を、ケメックスで。今日は、イルガチェフェ、コチャレを淹れます。",
-      "numbers": "豆30gに、お湯500g。93℃で4:00です。",
-      "steps": "ケメックス公式の3投レシピを応用。60gで蒸らし、300g、500gまで注ぎ切ります。",
-      "taste": "レモンと花のような香りが、紅茶のように澄んで残ります。",
-      "tips": "酸っぱい時は湯温を2℃上げて95℃に。苦い時は逆に91℃へ。",
-      "cta": "この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。"
+      "title": "いつもの挽き目を1段粗くしてみます。エアロプレスならえぐみが消えて甘さが立ちます。",
+      "numbers": "エアロプレスで、粉14グラム、お湯220グラム。88度で1分30秒です。",
+      "steps": "手順は5ステップ。注いで攪拌し、フタを閉めて押し切ります。保存しておくと次に淹れる時に見返せます。",
+      "taste": "丸い甘みと軽い苦味。口当たりが素直で最後まで甘くなります。",
+      "tips": "苦ければもう1段粗く、薄ければ粉を1グラム増やしてください。"
     }
   }
 }
