@@ -6,10 +6,10 @@ import { ACCENTS, CARD_SHADOW, COLORS, DRIFT_MAX, FONT_FAMILY, PHRASE_BREAK, SPA
 import type {
   CtaEnding,
   NumberTile,
-  RecipeStepsSlide,
-  RecipeTasteSlide,
-  RecipeTipsSlide,
-  RecipeTitleSlide,
+  LessonStepsSlide,
+  LessonTasteSlide,
+  LessonTipsSlide,
+  LessonTitleSlide,
 } from "./types";
 
 const TILE_COLUMNS = 3;
@@ -77,7 +77,7 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
 
 // The method + scene pills sit in their own row under the header: next to the
 // date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
-export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide; index?: number }> = ({ slide, index = 0 }) => (
+export const LessonTitle: React.FC<{ slide: LessonTitleSlide; index?: number }> = ({ slide, index = 0 }) => (
   <SlideShell label={slide.heading} right={slide.date} brand index={index}>
     <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
       <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
@@ -90,8 +90,8 @@ export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide; index?: number }> 
     </Reveal>
     <Reveal delay={9} style={{ marginTop: 56 }}>
       <AccentLine>
-        {slide.beanName}
-        <div style={{ marginTop: 8, fontSize: TYPE.body, fontWeight: 600, color: COLORS.textSub }}>{slide.beanMeta}</div>
+        {slide.topic}
+        <div style={{ marginTop: 8, fontSize: TYPE.body, fontWeight: 600, color: COLORS.textSub }}>{slide.why}</div>
       </AccentLine>
     </Reveal>
     <div style={{ marginTop: SPACE.sectionS, display: "flex", flexWrap: "wrap", gap: TILE_GAP }}>
@@ -104,7 +104,7 @@ export const RecipeTitle: React.FC<{ slide: RecipeTitleSlide; index?: number }> 
   </SlideShell>
 );
 
-export const RecipeSteps: React.FC<{ slide: RecipeStepsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => {
+export const LessonSteps: React.FC<{ slide: LessonStepsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => {
   const rowHeight = slide.steps.length > 4 ? 190 : 230;
   const timeWidth = 190;
   const dotColumn = 84;
@@ -188,10 +188,10 @@ const Meter: React.FC<{ label: string; value: number }> = ({ label, value }) => 
   </div>
 );
 
-export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+export const LessonTaste: React.FC<{ slide: LessonTasteSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
   <SlideShell label={slide.heading} right={page} center index={index}>
     <Reveal delay={4} style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textMuted }}>
-      フレーバー
+      味の変化
     </Reveal>
     <Reveal delay={8} style={{ marginTop: 32, display: "flex", flexWrap: "wrap", gap: 24 }}>
       {slide.notes.map((note, i) => (
@@ -216,7 +216,7 @@ export const RecipeTaste: React.FC<{ slide: RecipeTasteSlide; page: string; inde
 // isn't there.
 const TIP_ACCENTS = [COLORS.terracotta, COLORS.caramel, COLORS.sage];
 
-export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
   <SlideShell label={slide.heading} right={page} center index={index}>
     <div style={{ display: "flex", flexDirection: "column", gap: SPACE.gutter }}>
       {slide.tips.map((tip, i) => (
@@ -251,7 +251,7 @@ export const RecipeTips: React.FC<{ slide: RecipeTipsSlide; page: string; index?
 );
 
 /**
- * Last segment: save prompt + fixed sales line (bean name for recipes).
+ * Last segment: the day's takeaway + the save / follow prompt (no product, ever).
  *
  * Doesn't use SlideShell (no label/page header), so it has to opt into the
  * cut-in and the drift by hand — otherwise the video's final 6 seconds are
@@ -266,7 +266,7 @@ export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ endi
     <Drift index={index}>
     <div style={{ position: "absolute", top: SPACE.top + DRIFT_MAX, left: SPACE.margin + DRIFT_MAX, right: SPACE.margin + DRIFT_MAX }}>
       <Reveal>
-        <Pill accent={COLORS.caramel}>{ending.kind === "recipe-cta" ? "保存がおすすめ" : "毎週日曜"}</Pill>
+        <Pill accent={COLORS.caramel}>保存がおすすめ</Pill>
       </Reveal>
       <Reveal delay={4} style={{ marginTop: SPACE.sectionS }}>
         <div style={{ fontSize: TYPE.title, fontWeight: 900, lineHeight: 1.2, ...PHRASE_BREAK }}>{ending.heading}</div>
@@ -283,9 +283,9 @@ export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ endi
           }}
         >
           <div style={{ fontSize: TYPE.heading, fontWeight: 700, color: COLORS.textSub }}>{ending.lead}</div>
-          {ending.beanName ? (
+          {ending.topic ? (
             <div style={{ marginTop: 16, fontSize: TYPE.emphasis, fontWeight: 900, lineHeight: 1.3, ...PHRASE_BREAK }}>
-              {ending.beanName}
+              {ending.topic}
             </div>
           ) : null}
           {ending.lines.map((line, i) => (

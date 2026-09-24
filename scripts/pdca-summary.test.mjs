@@ -15,18 +15,20 @@ import {
   previousModes,
   rankBySaved,
   recentRows,
+  rowTopic,
   renderMarkdown,
   rotation,
   summarize,
   trialStart,
   trialStatus,
   verdict,
+  videoRow,
   windowStats,
   ytViews,
 } from "./pdca-summary.mjs";
+import { PILLARS } from "./content-format.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
-const lineup = JSON.parse(readFileSync(join(rootDir, "data", "coffee-lineup.json"), "utf-8"));
 
 function video(date, { yt = 0, ig = { views: 10, reach: 8, saved: 0, shares: 0 }, content = null } = {}) {
   return {
@@ -38,15 +40,14 @@ function video(date, { yt = 0, ig = { views: 10, reach: 8, saved: 0, shares: 0 }
   };
 }
 
-const recipe = (beanName, method, angle = "trouble") => ({
-  format: "recipe",
-  trial: "coffee-trial-1-recipe-card",
+const recipe = (topic, method, pillar = "temp") => ({
+  format: "brew-lesson",
+  trial: "coffee-trial-2-brew-basics",
   fallback: false,
-  beanId: beanName,
-  beanName,
+  pillar,
+  topic,
   method,
   scene: "hot",
-  angle,
   tipProblems: [],
 });
 
@@ -159,19 +160,19 @@ test("mode §d-1: reports without a readable status table are skipped, per accou
   assert.deepEqual([s.accounts.ig.mode, s.accounts.yt.mode, s.prevSource], ["通常", "通常", "docs/pdca/2026-09-14.md"]);
 });
 
-test("policy: the alive account with n < 7 falls back to rotation; trial #1 before its first post is 準備中", () => {
+test("policy: the alive account with n < 7 falls back to rotation; trial #2 before its first post is 準備中", () => {
   const reports = [report("2026-09-17", "配信死亡モード（2026-09-14〜）", "通常")];
   const few = ["2026-09-15", "2026-09-16", "2026-09-17"].map((d) => video(d, { yt: 30 }));
-  const out = renderMarkdown(summarize({ videos: few }, { today: "2026-09-18", reports, lineup }));
+  const out = renderMarkdown(summarize({ videos: few }, { today: "2026-09-18", reports }));
   assert.match(out, /性能データで選ばない（IG @open_ground_coffee_roasters は配信死亡モード、YT OPEN GROUND coffee roasters は判定窓の n=3 < 7）/);
-  assert.match(out, /- IG \/ YT 共通: 準備中: 試行 #1/);
+  assert.match(out, /- IG \/ YT 共通: 準備中: 試行 #2/);
 
   const enough = Array.from({ length: 8 }, (_, i) => video(addDays("2026-09-10", i), { yt: 30 }));
-  const out2 = renderMarkdown(summarize({ videos: enough }, { today: "2026-09-18", reports, lineup }));
-  assert.match(out2, /今日の豆・抽出法・切り口の方針: YT OPEN GROUND coffee roasters の指標だけで選ぶ/);
+  const out2 = renderMarkdown(summarize({ videos: enough }, { today: "2026-09-18", reports }));
+  assert.match(out2, /今日の柱・抽出法の方針: YT OPEN GROUND coffee roasters の指標だけで選ぶ/);
 });
 
-test("trial #1 starts at the first recipe-card post and is judged on S + 14 with the carried-over mode", () => {
+test("trial #2 starts at the first brewing-lesson post and is judged on S + 14 with the carried-over mode", () => {
   const videos = [video("2026-09-14")];
   for (let i = 0; i < 16; i++) {
     videos.push(video(addDays("2026-09-15", i), { ig: { views: 60, reach: 40, saved: 1 }, yt: 3, content: recipe("b", "v60") }));
@@ -182,7 +183,7 @@ test("trial #1 starts at the first recipe-card post and is judged on S + 14 with
   assert.equal(before.trial, 0);
 
   const mid = trialStatus(history, "2026-09-21", { reports: [] });
-  assert.deepEqual([mid.trial, mid.S, mid.F, mid.cycle.status, mid.cycle.next], [1, "2026-09-15", "2026-09-15", "Day 7 / 14", "2026-09-29"]);
+  assert.deepEqual([mid.trial, mid.S, mid.F, mid.cycle.status, mid.cycle.next], [2, "2026-09-15", "2026-09-15", "Day 7 / 14", "2026-09-29"]);
   assert.equal(mid.accounts.ig.mode, "配信死亡モード（2026-09-14〜）", "a new trial inherits the previous mode");
   assert.equal(mid.judge, null);
   assert.equal(mid.baseline.to, "2026-09-14");
@@ -215,7 +216,7 @@ test("caution when today's numbers are in the dead zone but the mode is not", ()
   const s = trialStatus({ videos }, "2026-09-26", { reports: [report("2026-09-25", "通常", "通常")] });
   assert.equal(s.accounts.ig.mode, "通常");
   assert.equal(s.accounts.ig.caution, true);
-  assert.match(renderMarkdown(summarize({ videos }, { today: "2026-09-26", reports: [report("2026-09-25", "通常", "通常")], lineup })), /注意: IG @open_ground_coffee_roasters は判定窓で配信死亡の域/);
+  assert.match(renderMarkdown(summarize({ videos }, { today: "2026-09-26", reports: [report("2026-09-25", "通常", "通常")] })), /注意: IG @open_ground_coffee_roasters は判定窓で配信死亡の域/);
 });
 
 test("rankings use IG saves from the type's first post on, skip provisional days and missing IG values", () => {
@@ -234,7 +235,7 @@ test("rankings use IG saves from the type's first post on, skip provisional days
   assert.equal(rows[0].provisional, true);
   assert.equal(rows.find((r) => r.date === "2026-09-17").provisional, false);
 
-  const s = summarize(history, { today: "2026-09-20", lineup });
+  const s = summarize(history, { today: "2026-09-20" });
   assert.equal(s.status.F, "2026-09-15");
   assert.deepEqual(s.ranking.top.map((r) => r.date), ["2026-09-16", "2026-09-15", "2026-09-17"]);
   assert.equal(s.ranking.worst[0].date, "2026-09-17");
@@ -246,35 +247,58 @@ test("rankings use IG saves from the type's first post on, skip provisional days
   assert.equal(groupBySaved(rows, (r) => r.format).length, 2);
 });
 
-test("rotation lists unused beans, methods and angles first", () => {
+test("rotation lists the unused pillars and methods first", () => {
   const rows = [
-    { bean: "ブルンジ マバンザ", method: "V60", angle: "悩み起点" },
-    { bean: "ブルンジ マバンザ", method: "V60", angle: "季節" },
+    { pillar: "湯温", method: "V60" },
+    { pillar: "湯温", method: "V60" },
   ];
-  const confirmed = structuredClone(lineup);
-  for (const b of confirmed.beans) b.status = "confirmed";
-  const r = rotation(rows, confirmed);
-  assert.equal(r.bean.at(-1).key, "ブルンジ マバンザ");
-  assert.equal(r.bean.at(-1).n, 2);
-  assert.equal(r.bean[0].n, 0);
+  const r = rotation(rows);
+  assert.equal(r.pillar.at(-1).key, "湯温");
+  assert.equal(r.pillar.at(-1).n, 2);
+  assert.equal(r.pillar[0].n, 0);
   assert.equal(r.method.at(-1).key, "V60");
-  assert.equal(r.bean.length, confirmed.beans.length);
-
-  // candidate beans would be rejected by the validator → not offered in the rotation
-  const partly = structuredClone(confirmed);
-  partly.beans[1].status = "candidate"; // not used in rows
-  assert.ok(!rotation(rows, partly).bean.some((b) => b.key === (partly.beans[1].displayName || partly.beans[1].name)));
-  assert.equal(rotation(rows, partly).bean.length, confirmed.beans.length - 1);
+  assert.equal(r.pillar.length, Object.keys(PILLARS).length);
 });
 
-test("trial #1 starts at the first recipe post, not at a Sunday news TOP5; 直近 14 日 = today − 14..today − 1", () => {
-  const news = { format: "news-top5", trial: "coffee-trial-1-recipe-card", fallback: false, headlines: [] };
+test("retired formats keep their own label — a recipe post is not a news post", () => {
+  const legacyRecipe = video("2026-09-19", {
+    content: { format: "recipe", trial: "coffee-trial-1-recipe-card", fallback: false, beanName: "b", method: "v60" },
+  });
+  legacyRecipe.title = "【今日の一杯】ブルンジ マバンザ×V60｜豆15g #Shorts";
+  const r = videoRow(legacyRecipe, "2026-09-23");
+  assert.equal(r.format, "レシピ（旧）");
+  assert.match(rowTopic(r), /^旧レシピ「ブルンジ マバンザ×V60」$/);
+
+  // ...and its fallback was the house recipe, not the evergreen pack
+  const fellBack = videoRow({ ...legacyRecipe, content: { ...legacyRecipe.content, fallback: true } }, "2026-09-23");
+  assert.match(rowTopic(fellBack), /［標準レシピ］$/);
+  assert.ok(!rowTopic(fellBack).includes("常備"));
+
+  const news = videoRow(
+    { ...legacyRecipe, content: { format: "news-top5", trial: "x", fallback: false } },
+    "2026-09-23"
+  );
+  assert.equal(news.format, "ニュースTOP5（旧）");
+  assert.match(rowTopic(news), /^旧ニュースTOP5「/);
+
+  // the current format still reads as itself
+  const lesson = videoRow(video("2026-09-23", { content: recipe("苦味が引いて酸が立つ", "v60") }), "2026-09-23");
+  assert.equal(lesson.format, "抽出メモ");
+  assert.match(rowTopic(lesson), /^湯温「苦味が引いて酸が立つ」×V60$/);
+  assert.match(
+    rowTopic(videoRow(video("2026-09-23", { content: { ...recipe("x", "v60"), fallback: true } }), "2026-09-23")),
+    /［常備ネタ］$/
+  );
+});
+
+test("trial #2 starts at the first brewing lesson, not at a legacy recipe post; 直近 14 日 = today − 14..today − 1", () => {
+  const legacy = { format: "recipe", trial: "coffee-trial-1-recipe-card", fallback: false, beanId: "x" };
   const videos = [
-    video("2026-09-20", { content: news }),
+    video("2026-09-20", { content: legacy }),
     video("2026-09-21"),
     video("2026-09-22"),
   ];
-  assert.equal(trialStart(videos), null, "news alone does not start the trial");
+  assert.equal(trialStart(videos), null, "the cancelled recipe-card type does not start trial #2");
   assert.equal(trialStatus({ videos }, "2026-09-23").trial, 0);
   videos.push(video("2026-09-23", { content: recipe("a", "v60") }));
   assert.equal(trialStart(videos), "2026-09-23");
@@ -285,19 +309,19 @@ test("trial #1 starts at the first recipe post, not at a Sunday news TOP5; 直�
 
 test("markdown: status section first in the shared format, dead-mode policy, IG saves primary", () => {
   const history = { videos: [video("2026-09-15", { ig: { views: 7, reach: 6, saved: 2 }, content: recipe("a", "v60") })] };
-  const out = renderMarkdown(summarize(history, { today: "2026-09-17", reports: [], lineup }));
+  const out = renderMarkdown(summarize(history, { today: "2026-09-17", reports: [] }));
   assert.ok(out.startsWith("## ジャンル試行の状態"));
   assert.match(out, /\| アカウント \| 試行 # \| 開始日 \| 経過日 \| 判定窓 \(n\) \| 判定指標の現在値 \| モード \| 次の判定日 \|/);
-  assert.match(out, /\| IG @open_ground_coffee_roasters \| #1 \| 2026-09-15 \| Day 3 \/ 14 \| 09-15\.\.09-17 \(n=1\) \| views 中央値 7 \/ 保存合計 2 \| 配信死亡モード（2026-09-14〜） \| 2026-09-29 \|/);
+  assert.match(out, /\| IG @open_ground_coffee_roasters \| #2 \| 2026-09-15 \| Day 3 \/ 14 \| 09-15\.\.09-17 \(n=1\) \| views 中央値 7 \/ 保存合計 2 \| 配信死亡モード（2026-09-14〜） \| 2026-09-29 \|/);
   assert.match(out, /性能データで選ばない（2 アカウントとも配信死亡モード）/);
-  assert.match(out, /実行中: 試行 #1/);
+  assert.match(out, /実行中: 試行 #2/);
   assert.match(out, /\| \*\*IG 保存\*\* \|/);
   assert.match(out, /## ローテーション/);
 });
 
 test("real history file: summary renders without throwing (values change daily, so nothing is pinned)", () => {
   const history = JSON.parse(readFileSync(join(rootDir, "data", "performance-history.json"), "utf-8"));
-  const out = renderMarkdown(summarize(history, { today: "2026-09-14", reports: [], lineup }));
+  const out = renderMarkdown(summarize(history, { today: "2026-09-14", reports: [] }));
   assert.match(out, /\| IG @open_ground_coffee_roasters \| #0 \| 2026-09-14 \| Day 1 \/ 14 \| 09-01\.\.09-14/);
   assert.match(out, /\| YT OPEN GROUND coffee roasters \|/);
 });

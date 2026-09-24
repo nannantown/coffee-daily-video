@@ -1,13 +1,12 @@
 import React from "react";
 import { AbsoluteFill, Audio, Series, staticFile } from "remotion";
-import { NewsCover, NewsItem } from "../cards/NewsSlides";
 import {
   CtaSlide,
-  RecipeSteps,
-  RecipeTaste,
-  RecipeTips,
-  RecipeTitle,
-} from "../cards/RecipeSlides";
+  LessonSteps,
+  LessonTaste,
+  LessonTips,
+  LessonTitle,
+} from "../cards/LessonSlides";
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
 
@@ -17,27 +16,23 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
   index,
 }) => {
   switch (slide.kind) {
-    case "recipe-title":
-      return <RecipeTitle slide={slide} index={index} />;
-    case "recipe-steps":
-      return <RecipeSteps slide={slide} page={page} index={index} />;
-    case "recipe-taste":
-      return <RecipeTaste slide={slide} page={page} index={index} />;
-    case "recipe-tips":
-      return <RecipeTips slide={slide} page={page} index={index} />;
-    case "news-cover":
-      return <NewsCover slide={slide} index={index} />;
-    case "news-item":
-      return <NewsItem slide={slide} page={page} index={index} />;
+    case "lesson-title":
+      return <LessonTitle slide={slide} index={index} />;
+    case "lesson-steps":
+      return <LessonSteps slide={slide} page={page} index={index} />;
+    case "lesson-taste":
+      return <LessonTaste slide={slide} page={page} index={index} />;
+    case "lesson-tips":
+      return <LessonTips slide={slide} page={page} index={index} />;
     default:
       return null;
   }
 };
 
 /**
- * "今日の一杯" recipe cards / weekly news TOP5. Text-only slides; narration
- * is audio only (the cards carry the information, so no subtitle overlay).
- * Segment lengths come from props.timeline (scripts/content-format.mjs
+ * 「今日の抽出メモ」 — one generic brewing lesson a day. Text-only slides;
+ * narration is audio only (the cards carry the information, so no subtitle
+ * overlay). Segment lengths come from props.timeline (scripts/content-format.mjs
  * computeCardTimeline), audio files from scripts/generate-audio.mjs.
  */
 export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = ({ slides, ending, timeline, withAudio = true }) => {

@@ -8,7 +8,7 @@ name: Daily Coffee Video
 #     dry_run=true, or with sample other than "today" (samples are never
 #     posted). Renders the video, cover, captions and slide previews into an
 #     artifact. No stats fetch, no SNS posting, no commit.
-#       gh workflow run daily-video.yml --ref <branch> -f sample=recipe
+#       gh workflow run daily-video.yml --ref <branch> -f sample=sample
 
 on:
   schedule:
@@ -22,12 +22,11 @@ on:
         type: boolean
         default: false
       sample:
-        description: "Content for verification: today = data/enriched-coffee-news.json, recipe / news-top5 = data/samples, fallback = house recipe"
+        description: "Content for verification: today = data/enriched-coffee-news.json, sample = data/samples/brew-lesson.sample.json, fallback = the evergreen lesson of the day"
         type: choice
         options:
           - today
-          - recipe
-          - news-top5
+          - sample
           - fallback
         default: today
   push:
@@ -76,8 +75,7 @@ jobs:
             echo "dry_run=false" >> "$GITHUB_OUTPUT"
           fi
           case "${SAMPLE}" in
-            recipe) echo "args=--content=data/samples/recipe.sample.json" >> "$GITHUB_OUTPUT" ;;
-            news-top5) echo "args=--content=data/samples/news-top5.sample.json" >> "$GITHUB_OUTPUT" ;;
+            sample) echo "args=--content=data/samples/brew-lesson.sample.json" >> "$GITHUB_OUTPUT" ;;
             fallback) echo "args=--fallback" >> "$GITHUB_OUTPUT" ;;
             *) echo "args=" >> "$GITHUB_OUTPUT" ;;
           esac

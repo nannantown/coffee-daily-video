@@ -1,31 +1,40 @@
 /**
- * "今日の一杯" recipe cards + weekly "世界のコーヒーニュース TOP5".
+ * 「今日の抽出メモ」 — generic brewing-knowledge cards.
+ *
+ * One format only: `brew-lesson`. Every day teaches one adjustable variable of
+ * home brewing (water temperature, grind, ratio, time, pouring, gear, fixing a
+ * bad cup, brewing without gear) with numbers anyone can copy.
+ *
+ * Owner decision 2026-09-18 / 2026-09-22: the channel is in its audience-growth
+ * phase, so no coffee of our own is named, shown or sold here — no bean name,
+ * no origin, no product, no purchase call to action. scripts/brand-guard.mjs
+ * enforces that mechanically over every rendered text; this module must never
+ * read data/coffee-lineup.json.
  *
  * Pure functions shared by:
  *   - scripts/generate-data.mjs     (content JSON → slides / narration)
- *   - scripts/generate-caption.mjs  (captions with the fixed sales CTA)
+ *   - scripts/generate-caption.mjs  (captions with the save/follow CTA)
  *   - scripts/record-upload.mjs     (content summary for PDCA)
  *   - scripts/validate-content.mjs  (the morning routine's pre-commit check)
  *   - scripts/content-format.test.mjs
  *
- * data/enriched-coffee-news.json keeps its file name (the cross-account PDCA
- * routine and record-upload read it), but a `format` field now selects the
- * content type. A file without `format` (and without `recipe` / `newsTop5`)
- * is the legacy news explainer only when it has the legacy keys
- * (validateLegacyContent); anything else is rejected like invalid cards.
+ * The morning routine writes data/enriched-coffee-news.json after reading the
+ * web and its PR is merged without a human review, so every text that reaches
+ * a card, caption, title or narration is validated as untrusted input
+ * (unsafeTextReason) and scanned by the brand guard.
  *
- * The morning routine writes this JSON after reading the web and its PR is
- * merged without a human review, so every text that reaches a card, caption,
- * title or narration is validated as untrusted input (unsafeTextReason).
+ * Numeric guidance (temperature, ratio, extraction yield) follows the SCA
+ * brewing standard — see docs/strategy.md 「数値の根拠」.
  */
 
+import { scanBannedTerms } from "./brand-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 
-// The YouTube limits live in youtube-limits.mjs (shared with the legacy captions).
+// The YouTube limits live in youtube-limits.mjs.
 export { youtubeSafe, youtubeTitle };
 
-export const TRIAL_ID = "coffee-trial-1-recipe-card";
-export const FORMATS = ["recipe", "news-top5"];
+export const TRIAL_ID = "coffee-trial-2-brew-basics";
+export const FORMATS = ["brew-lesson"];
 
 export const METHODS = {
   v60: { label: "V60", hashtag: "V60" },
@@ -33,39 +42,45 @@ export const METHODS = {
   origami: { label: "ORIGAMI", hashtag: "オリガミドリッパー" },
   chemex: { label: "ケメックス", hashtag: "ケメックス" },
   clever: { label: "クレバー", hashtag: "クレバードリッパー" },
+  "paper-drip": { label: "ペーパードリップ", hashtag: "ペーパードリップ" },
   "french-press": { label: "フレンチプレス", hashtag: "フレンチプレス" },
   aeropress: { label: "エアロプレス", hashtag: "エアロプレス" },
+  "mug-steep": { label: "マグで浸漬", hashtag: "コーヒーの淹れ方" },
   "cold-brew": { label: "水出し", hashtag: "水出しコーヒー" },
   "moka-pot": { label: "マキネッタ", hashtag: "マキネッタ" },
 };
 
 export const SCENES = { hot: "ホット", iced: "アイス" };
 
-// Why this recipe today — the PDCA compares IG saves per angle.
-export const ANGLES = {
-  trouble: "悩み起点",
-  season: "季節",
-  bean: "豆の個性",
-  method: "器具",
-  expert: "名レシピ応用",
+/**
+ * Content pillars — the knowledge the channel teaches. One per day; the PDCA
+ * compares IG follows/saves per pillar, and the fallback pack rotates through
+ * them so a routine outage still teaches something new.
+ */
+export const PILLARS = {
+  temp: "湯温",
+  grind: "挽き目",
+  ratio: "粉と湯の比率",
+  time: "抽出時間",
+  pour: "注ぎ方",
+  gear: "器具の違い",
+  trouble: "味の直し方",
+  nogear: "器具がなくてもできる",
 };
 
 // Display limits derived from the 1080x1920 layout (outer margin 80px, card
 // padding 40px → 840px text width; CJK glyph ≈ 1em). Body text never goes
 // below 30px, so long strings must be shortened, not shrunk.
 export const LIMITS = {
-  hook: 16, // 80px title, up to 2 lines
+  hook: 16, // 80px title, up to 2 lines — the question of the day
+  topic: 18, // 52px accent line — the answer in one line
+  why: 30, // 36px under the accent line — why it happens
   grind: 4, // 48px inside a 3-column number tile
   stepAction: 8, // 44px in a row with time + amount
   tasteNote: 10,
   tasteSummary: 24,
   tipProblem: 10, // pill, 36px
   tipFix: 24, // 46px, up to 2 lines
-  headline: 26, // 48px, up to 2 lines
-  newsNumber: 8,
-  newsNumberLabel: 10,
-  newsSummary: 40, // 34px, up to 2 lines
-  newsSource: 30,
   narrationTotal: 260, // IG Reels rejects > 60s videos
 };
 
@@ -75,18 +90,20 @@ export const LIMITS = {
 export const COLD_BREW = { minHours: 6, maxHours: 24, minTempC: 1, maxTempC: 10, fridgeWord: "冷蔵庫" };
 
 // Sanity bounds per method — wider than the routine prompt's guideline ranges
-// (docs/routine-prompt.md 2a-4), so a creative but brewable recipe passes and
-// a broken one does not. ratio = (water + ice) ÷ beans, time in seconds,
-// water = what is poured into the brewer (hot water, or cold water for cold brew).
+// (docs/routine-prompt.md 2-4), so a creative but brewable lesson passes and a
+// broken one does not. ratio = (water + ice) ÷ beans, time in seconds, water =
+// what is poured into the brewer (hot water, or cold water for cold brew).
 const POUR_OVER_BOUNDS = { ratio: [12, 18], time: [90, 360], water: [100, 600] };
 export const METHOD_BOUNDS = {
   v60: POUR_OVER_BOUNDS,
   "kalita-wave": POUR_OVER_BOUNDS,
   origami: POUR_OVER_BOUNDS,
+  "paper-drip": POUR_OVER_BOUNDS,
   chemex: { ratio: [12, 18], time: [180, 420], water: [250, 1200] },
   clever: { ratio: [12, 18], time: [120, 360], water: [150, 500] },
   "french-press": { ratio: [12, 18], time: [180, 900], water: [150, 1000] },
   aeropress: { ratio: [10, 20], time: [45, 300], water: [60, 600] }, // e.g. 11g / 200g = 1:18.2
+  "mug-steep": { ratio: [12, 18], time: [180, 600], water: [150, 500] },
   "cold-brew": { ratio: [5, 15], time: [COLD_BREW.minHours * 3600, COLD_BREW.maxHours * 3600], water: [150, 1200] },
   "moka-pot": { ratio: [5, 12], time: [90, 480], water: [60, 500] },
 };
@@ -194,36 +211,6 @@ export function unsafeSteepReason(value) {
   return null;
 }
 
-function allowedNewsHosts(newsSources) {
-  const list = Array.isArray(newsSources) ? newsSources : newsSources?.hosts;
-  return (Array.isArray(list) ? list : [])
-    .map((h) => String(typeof h === "string" ? h : (h?.host ?? "")).toLowerCase())
-    .filter((h) => /^[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}$/u.test(h));
-}
-
-/**
- * Why a news URL may not be published (null = fine). The routine writes both
- * the item URLs and discovery.sources, so neither is trusted: https only, no
- * user name / password, no port, no IP address, and the host (or a subdomain
- * of it) must be an allowed news site in data/news-sources.json.
- */
-export function newsUrlProblem(value, newsSources) {
-  if (!isSafeHttpsUrl(value)) return "must be an https URL";
-  const authority = value.slice("https://".length).split(/[/?#]/u)[0];
-  if (authority.includes("@")) return "must not carry a user name or password";
-  if (authority.startsWith("[")) return "must not be an IP address";
-  if (authority.includes(":")) return "must not set a port";
-  const host = new URL(value).hostname.toLowerCase();
-  if (/^\d+(?:\.\d+){3}$/u.test(host)) return "must not be an IP address";
-  const hosts = allowedNewsHosts(newsSources);
-  if (hosts.length === 0) return "cannot be checked (data/news-sources.json is not loaded)";
-  if (!hosts.some((h) => host === h || host.endsWith(`.${h}`))) {
-    return `host ${JSON.stringify(host)} is not an allowed news site (data/news-sources.json)`;
-  }
-  return null;
-}
-
-/** An https URL without whitespace, invisible characters or quotes/brackets. */
 export function isSafeHttpsUrl(value) {
   if (typeof value !== "string" || !/^https:\/\//.test(value)) return false;
   if (INVISIBLE_RE.test(value.normalize("NFKC")) || /[\s<>"'`\\]/u.test(value)) return false;
@@ -304,30 +291,10 @@ export function jstDateParts(now = new Date()) {
   };
 }
 
-/** Sunday is the weekly news TOP5; every other day is a recipe card. */
-export function expectedFormatFor(isoDate) {
-  const d = new Date(`${isoDate}T12:00:00+09:00`);
-  return d.getUTCDay() === 0 ? "news-top5" : "recipe";
-}
 
-// Flavor wording: the bag label (`labelFlavor`) is the source of truth; a bean's `flavor`
-// and houseRecipe.taste.notes are its Japanese wording (owner decision 2026-09-16).
-/** Any bean that is not retired (rendering and captions — validation decides what may be posted). */
-export function findBean(lineup, beanId) {
-  return (lineup?.beans || []).find((b) => b.id === beanId && b.status !== "retired") || null;
-}
-
-/**
- * Beans that may be posted: status "confirmed" (the owner confirmed it by PR).
- * "candidate" beans are allowed only in dry runs (allowCandidate), so an
- * unconfirmed bean is never advertised.
- */
-export function isPostableBean(bean, { allowCandidate = false } = {}) {
-  return Boolean(bean) && (bean.status === "confirmed" || (allowCandidate && bean.status === "candidate"));
-}
-
-export function postableBeans(lineup, opts = {}) {
-  return (lineup?.beans || []).filter((b) => isPostableBean(b, opts));
+/** Every day is a brewing lesson — there is no second format. */
+export function expectedFormatFor(_isoDate) {
+  return "brew-lesson";
 }
 
 export function ratioLabel(numbers) {
@@ -363,56 +330,56 @@ function checkLen(errors, label, value, max) {
 
 const fmtSec = (sec) => (sec >= 3600 ? `${sec / 3600}h` : `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`);
 
-/** Every text of a recipe that reaches the cards, captions or narration: [label, value]. */
-function recipeTexts(recipe, prefix) {
+
+/** Every text of a lesson that reaches the cards, captions or narration: [label, value]. */
+function lessonTexts(lesson, prefix) {
   const out = [];
   const add = (label, v) => typeof v === "string" && out.push([label, v]);
-  add(`${prefix}.hook`, recipe.hook);
-  add(`${prefix}.numbers.grind`, recipe.numbers?.grind);
-  (Array.isArray(recipe.steps) ? recipe.steps : []).forEach((s, i) => add(`${prefix}.steps[${i}].action`, s?.action));
-  (Array.isArray(recipe.taste?.notes) ? recipe.taste.notes : []).forEach((v, i) => add(`${prefix}.taste.notes[${i}]`, v));
-  add(`${prefix}.taste.summary`, recipe.taste?.summary);
-  (Array.isArray(recipe.tips) ? recipe.tips : []).forEach((t, i) => {
+  add(`${prefix}.hook`, lesson.hook);
+  add(`${prefix}.topic`, lesson.topic);
+  add(`${prefix}.why`, lesson.why);
+  add(`${prefix}.numbers.grind`, lesson.numbers?.grind);
+  (Array.isArray(lesson.steps) ? lesson.steps : []).forEach((s, i) => add(`${prefix}.steps[${i}].action`, s?.action));
+  (Array.isArray(lesson.taste?.notes) ? lesson.taste.notes : []).forEach((v, i) => add(`${prefix}.taste.notes[${i}]`, v));
+  add(`${prefix}.taste.summary`, lesson.taste?.summary);
+  (Array.isArray(lesson.tips) ? lesson.tips : []).forEach((t, i) => {
     add(`${prefix}.tips[${i}].problem`, t?.problem);
     add(`${prefix}.tips[${i}].fix`, t?.fix);
   });
-  const nar = recipe.narration && typeof recipe.narration === "object" ? recipe.narration : {};
+  const nar = lesson.narration && typeof lesson.narration === "object" ? lesson.narration : {};
   // keys are untrusted too: quoted, so a key cannot carry a line break into the log
   for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration[${quote(k)}]`, v);
   return out;
 }
 
-export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allowCandidate = false } = {}) {
+// Kept under the old name inside this module so the numeric block below reads
+// the same as before; `recipe` here is the lesson's brewing block.
+const recipeTexts = lessonTexts;
+
+export function validateLesson(recipe, errors, prefix = "lesson") {
   if (!recipe || typeof recipe !== "object") {
     errors.push(`${prefix} block is required`);
     return;
   }
-  const bean = findBean(lineup, recipe.beanId);
-  if (!bean) {
-    const ids = postableBeans(lineup, { allowCandidate }).map((b) => b.id);
-    errors.push(`${prefix}.beanId ${quote(recipe.beanId)} is not in data/coffee-lineup.json (${ids.join(", ") || "no postable bean"})`);
-  } else if (!isPostableBean(bean, { allowCandidate })) {
-    errors.push(
-      `${prefix}.beanId "${bean.id}" has status "${bean.status}" in data/coffee-lineup.json — only "confirmed" beans are posted (the owner confirms beans by PR)`
-    );
+  if (recipe.beanId != null) {
+    errors.push(`${prefix}.beanId is not allowed — this channel never names a coffee of its own (owner decision 2026-09-22)`);
+  }
+  if (!own(PILLARS, recipe.pillar)) {
+    errors.push(`${prefix}.pillar must be one of ${Object.keys(PILLARS).join(", ")}`);
   }
   if (!own(METHODS, recipe.method)) {
     errors.push(`${prefix}.method ${quote(recipe.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
   }
   if (!own(SCENES, recipe.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
-  if (!own(ANGLES, recipe.angle)) {
-    errors.push(`${prefix}.angle must be one of ${Object.keys(ANGLES).join(", ")}`);
-  }
   if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
   const sources = Array.isArray(recipe.sources) ? recipe.sources : [];
   sources.forEach((u, i) => {
     if (!isSafeHttpsUrl(u)) errors.push(`${prefix}.sources[${i}] must be an https URL`);
   });
-  if (recipe.angle === "expert" && sources.length === 0) {
-    errors.push(`${prefix}.sources is required when angle is "expert" (link the recipe it adapts)`);
-  }
   checkLen(errors, `${prefix}.hook`, recipe.hook, LIMITS.hook);
+  checkLen(errors, `${prefix}.topic`, recipe.topic, LIMITS.topic);
+  checkLen(errors, `${prefix}.why`, recipe.why, LIMITS.why);
 
   const n = recipe.numbers || {};
   const coldBrew = recipe.method === "cold-brew";
@@ -536,108 +503,32 @@ export function validateRecipe(recipe, lineup, errors, prefix = "recipe", { allo
   }
 }
 
-function validateNewsTop5(content, errors, newsSources) {
-  const d = content.discovery;
-  const sources = d && Array.isArray(d.sources) ? d.sources : [];
-  if (sources.length === 0) {
-    errors.push("discovery.sources is required for news-top5");
+/**
+ * Everything the audience can read: slide text, narration, the YouTube title
+ * and description, and the Instagram caption. The brand guard scans this list,
+ * so a bean name can never reach a viewer through any of those channels.
+ */
+export function collectPublishedTexts(data, captions = null) {
+  const out = [];
+  const add = (label, v) => typeof v === "string" && v !== "" && out.push([label, v]);
+  add("topicTitle", data.topicTitle);
+  const walk = (label, value) => {
+    if (typeof value === "string") add(label, value);
+    else if (Array.isArray(value)) value.forEach((v, i) => walk(`${label}[${i}]`, v));
+    else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) walk(`${label}.${k}`, v);
+  };
+  data.slides.forEach((s, i) => walk(`slides[${i}]`, s));
+  walk("ending", data.ending);
+  if (captions) {
+    add("youtube.title", captions.youtube?.title);
+    add("youtube.description", captions.youtube?.description);
+    (captions.youtube?.tags || []).forEach((t, i) => add(`youtube.tags[${i}]`, t));
+    add("instagram", captions.instagram);
   }
-  sources.forEach((u, i) => {
-    const problem = newsUrlProblem(u, newsSources);
-    if (problem) errors.push(`discovery.sources[${i}] ${problem}`);
-  });
-  if (d && isNum(d.freshness_hours) && d.freshness_hours > 168) {
-    errors.push(`discovery.freshness_hours ${d.freshness_hours} > 168 (news older than a week)`);
-  }
-
-  const block = content.newsTop5;
-  if (!block || !Array.isArray(block.items) || block.items.length !== 5) {
-    errors.push("newsTop5.items must have exactly 5 items");
-    return;
-  }
-  if (block.weekLabel != null) checkText(errors, "newsTop5.weekLabel", block.weekLabel);
-  block.items.forEach((item, i) => {
-    const p = `newsTop5.items[${i}]`;
-    if (item?.rank !== i + 1) errors.push(`${p}.rank must be ${i + 1}`);
-    checkLen(errors, `${p}.headline`, item?.headline, LIMITS.headline);
-    checkLen(errors, `${p}.summary`, item?.summary, LIMITS.newsSummary);
-    checkLen(errors, `${p}.source`, item?.source, LIMITS.newsSource);
-    if (item?.number != null && item.number !== "") {
-      checkLen(errors, `${p}.number`, item.number, LIMITS.newsNumber);
-      if (item.numberLabel != null) checkLen(errors, `${p}.numberLabel`, item.numberLabel, LIMITS.newsNumberLabel);
-    }
-    // The URL is printed in the captions: only an allowed news site, and only
-    // a link the routine also listed as a discovery source.
-    const problem = newsUrlProblem(item?.url, newsSources);
-    if (problem) errors.push(`${p}.url ${problem}`);
-    else if (!sources.includes(item.url)) errors.push(`${p}.url must be one of discovery.sources`);
-  });
-  const nar = block.narration && typeof block.narration === "object" ? block.narration : {};
-  checkText(errors, "newsTop5.narration.intro", nar.intro);
-  checkText(errors, "newsTop5.narration.cta", nar.cta);
-  (Array.isArray(nar.items) ? nar.items : []).forEach((v, i) => checkText(errors, `newsTop5.narration.items[${i}]`, v));
+  return out;
 }
 
-// Keys the legacy news explainer (the pre-trial routine, still bundled in the
-// trigger as the rollback path) always writes.
-const LEGACY_ARTICLE_KEYS = ["title", "description", "narration"];
-
-/**
- * A JSON without `format` / `recipe` / `newsTop5` is rendered as the legacy
- * news explainer only if it has the legacy keys; otherwise it is rejected
- * (it would skip every card check). Every legacy text that reaches the YouTube
- * title / description or the IG caption (title, description, detail, section
- * titles and descriptions — scripts/generate-caption.mjs) gets the URL / @ / #
- * check; invisible characters are rejected in every string.
- */
-export function validateLegacyContent(content) {
-  const errors = [];
-  if (!content || typeof content !== "object") return { errors: ["content is not an object"] };
-  if (!DATE_RE.test(String(content.date ?? ""))) errors.push(`date must be YYYY-MM-DD (got ${quote(content.date)})`);
-  if (typeof content.discovery?.method !== "string" || !content.discovery.method.trim()) {
-    errors.push("discovery.method is required (legacy news explainer)");
-  }
-  if (!Array.isArray(content.articles) || content.articles.length === 0) {
-    errors.push("articles[] is required (legacy news explainer) — or set format to recipe / news-top5");
-    return { errors };
-  }
-  content.articles.forEach((a, i) => {
-    const p = `articles[${i}]`;
-    if (!Number.isInteger(a?.rank)) errors.push(`${p}.rank must be an integer`);
-    for (const k of LEGACY_ARTICLE_KEYS) {
-      if (typeof a?.[k] !== "string" || !a[k].trim()) errors.push(`${p}.${k} is required`);
-    }
-    for (const k of ["title", "description", "detail"]) checkText(errors, `${p}.${k}`, a?.[k]);
-    // tags are printed as "キーワード: …" in the third section → captions
-    if (Array.isArray(a?.tags)) a.tags.forEach((t, j) => checkText(errors, `${p}.tags[${j}]`, t));
-    for (const group of ["section_titles", "section_descriptions"]) {
-      const g = a?.[group];
-      if (g && typeof g === "object") {
-        for (const [k, v] of Object.entries(g)) checkText(errors, `${p}.${group}[${quote(k)}]`, v);
-      }
-    }
-    const walk = (v, path) => {
-      if (typeof v === "string") {
-        if (INVISIBLE_RE.test(v.normalize("NFKC"))) errors.push(`${path} contains an invisible or control character`);
-      } else if (v && typeof v === "object") {
-        for (const [k, child] of Object.entries(v)) walk(child, `${path}[${quote(k)}]`);
-      }
-    };
-    walk(a, p);
-  });
-  return { errors };
-}
-
-/**
- * @returns {{errors: string[], warnings: string[]}}
- * errors → the content cannot be rendered as-is (routine must fix; the
- * pipeline falls back to a house recipe). warnings → rendered anyway.
- */
-/**
- * opts.newsSources: data/news-sources.json (allowed news hosts). Without it a
- * news-top5 is rejected (fail closed).
- */
-export function validateDailyContent(content, lineup, { today, allowCandidate = false, newsSources = null } = {}) {
+export function validateDailyContent(content, { today } = {}) {
   const errors = [];
   const warnings = [];
   if (!content || typeof content !== "object") {
@@ -649,27 +540,24 @@ export function validateDailyContent(content, lineup, { today, allowCandidate = 
     errors.push(`format must be one of ${FORMATS.join(", ")} (got ${quote(content.format)})`);
     return { errors, warnings };
   }
-  if (DATE_RE.test(String(content.date ?? "")) && content.format !== expectedFormatFor(content.date)) {
-    // Mon–Sat are always recipe cards; the news TOP5 is Sunday-only (a recipe
-    // on a Sunday is allowed).
-    if (content.format === "news-top5") errors.push(`news-top5 is Sunday only (${content.date} must be "recipe")`);
-    else warnings.push(`${content.date} is normally "${expectedFormatFor(content.date)}" (got "${content.format}")`);
-  }
-  if (content.format === "recipe") validateRecipe(content.recipe, lineup, errors, "recipe", { allowCandidate });
-  if (content.format === "news-top5") validateNewsTop5(content, errors, newsSources);
+  validateLesson(content.lesson, errors, "lesson");
 
   if (errors.length === 0) {
-    const data = buildCardsData(content, lineup, { dateDisplay: "" });
+    const data = buildCardsData(content, { dateDisplay: "" });
     const total = narrationLength(data);
     if (total > LIMITS.narrationTotal) {
       errors.push(`narration is ${total} chars in total (max ${LIMITS.narrationTotal}); shorten the narration fields`);
+    }
+    const captions = buildCardCaptions(data, String(content.date).replace(/-/g, "/"));
+    for (const hit of scanBannedTerms(collectPublishedTexts(data, captions))) {
+      errors.push(`${hit.label} must not say ${JSON.stringify(hit.term)} — ${hit.why}: ${quote(hit.text)}`);
     }
   }
   return { errors, warnings };
 }
 
 // ---------------------------------------------------------------------------
-// Fallback (routine missing / invalid): the bean of the day's house recipe
+// Fallback (routine missing / invalid): the evergreen lesson pack
 // ---------------------------------------------------------------------------
 
 export function dayIndex(isoDate) {
@@ -677,33 +565,35 @@ export function dayIndex(isoDate) {
   return Math.floor(d.getTime() / 86_400_000);
 }
 
-/**
- * The house recipe of the day's bean (rotates by date). `previous` is the last
- * posted recipe ({ beanId, method }): beans that would repeat its bean or
- * method on consecutive days are skipped when another bean is available.
- */
-export class NoPostableBeanError extends Error {}
 
-export function fallbackRecipeContent(lineup, isoDate, previous = null, { allowCandidate = false } = {}) {
-  const beans = postableBeans(lineup, { allowCandidate }).filter((b) => b.houseRecipe);
-  if (beans.length === 0) {
-    throw new NoPostableBeanError(
-      `data/coffee-lineup.json has no ${allowCandidate ? "confirmed or candidate" : "confirmed"} bean with a houseRecipe`
-    );
-  }
-  const start = ((dayIndex(isoDate) % beans.length) + beans.length) % beans.length;
-  const rotated = beans.map((_, i) => beans[(start + i) % beans.length]);
-  const bean =
-    rotated.find((b) => b.id !== previous?.beanId && b.houseRecipe.method !== previous?.method) ||
-    rotated.find((b) => b.id !== previous?.beanId) ||
-    rotated[0];
-  return {
-    date: isoDate,
-    format: "recipe",
-    trial: TRIAL_ID,
-    fallback: true,
-    recipe: { ...bean.houseRecipe, beanId: bean.id },
-  };
+export class NoLessonError extends Error {}
+
+/**
+ * The evergreen lesson of the day from data/brew-lessons.json.
+ *
+ * The pick is the plain date rotation, `dayIndex % lessons.length`. That is a
+ * bijection over one cycle, so it alone guarantees "one lesson a day, no repeat
+ * for a full cycle". The "don't repeat yesterday's pillar" rule is baked into
+ * the *order* of the pack instead of being applied here (see its `note`):
+ * filtering at pick time pushed the choice off its rotation slot, and a slot
+ * skipped today is a slot re-visited in two days — which made the same lesson
+ * come back every other day.
+ *
+ * `recentTopics` is only a safety net for when the pack is edited or reordered
+ * between posts: a topic posted in the last few days is skipped, and the scan
+ * moves on by one slot. Pass the newest first; an empty list is the normal case.
+ *
+ * The pack is a plain data file with no beans in it, so a routine outage still
+ * posts generic knowledge (owner decision 2026-09-22).
+ */
+export function fallbackLessonContent(pack, isoDate, recentTopics = []) {
+  const lessons = Array.isArray(pack?.lessons) ? pack.lessons : [];
+  if (lessons.length === 0) throw new NoLessonError("data/brew-lessons.json has no lessons");
+  const start = ((dayIndex(isoDate) % lessons.length) + lessons.length) % lessons.length;
+  const rotated = lessons.map((_, i) => lessons[(start + i) % lessons.length]);
+  const recent = new Set((Array.isArray(recentTopics) ? recentTopics : []).filter(Boolean));
+  const lesson = rotated.find((l) => !recent.has(l.topic)) || rotated[0];
+  return { date: isoDate, format: "brew-lesson", trial: TRIAL_ID, fallback: true, lesson };
 }
 
 // ---------------------------------------------------------------------------
@@ -718,11 +608,11 @@ function pick(custom, fallback) {
  * Six number tiles for the first card (3x2 grid). Iced pour-over shows the
  * ice amount instead of the ratio (the ratio stays in the caption).
  */
-export function recipeNumberTiles(recipe) {
+export function lessonNumberTiles(recipe) {
   const n = recipe.numbers;
   const coldBrew = recipe.method === "cold-brew";
   const tiles = [
-    { label: "豆", value: String(n.dose_g), unit: "g" },
+    { label: "粉", value: String(n.dose_g), unit: "g" },
     { label: coldBrew ? "水" : "お湯", value: String(n.water_g), unit: "g" },
   ];
   if (recipe.scene === "iced" && !coldBrew && isNum(n.ice_g) && n.ice_g > 0) {
@@ -740,63 +630,43 @@ export function recipeNumberTiles(recipe) {
 }
 
 // ---------------------------------------------------------------------------
-// Sales CTA — one switch in data/coffee-lineup.json `shop.ctaMode`
-//   "dm"           : purchase / wholesale by Instagram DM (EC not public yet)
-//   "profile-link" : the bio carries a shop link
-//   "ec-url"       : the EC is public → print the URL (only if shop.ecPublic)
+// CTA — audience growth, not sales.
+//
+// Owner decision 2026-09-22: the shop's EC is not finished and naming a coffee
+// nobody owns does not help, so the channel asks for a save and a follow and
+// nothing else. No purchase / wholesale / DM line, no shop name, no handle.
+// The sales CTA comes back (with the lineup) when the shop reopens the
+// promotion phase — see docs/strategy.md 「販促フェーズに戻すとき」.
 // ---------------------------------------------------------------------------
 
-export function resolveCtaMode(shop) {
-  const mode = shop?.ctaMode || "dm";
-  if (mode === "ec-url" && !(shop?.ecPublic && shop?.ecUrl)) return "dm";
-  return ["dm", "profile-link", "ec-url"].includes(mode) ? mode : "dm";
+export function growthCtaSlideLines() {
+  return ["保存して、淹れる前に見返す", "フォローで、明日もひとつ持ち帰る"];
 }
 
-function ecHost(url) {
-  try {
-    return new URL(url).host;
-  } catch {
-    return String(url);
-  }
+export function growthCtaCaptionLines() {
+  return [
+    "――",
+    "毎朝ひとつ、今日から試せる抽出のコツを出しています。",
+    "保存しておくと、淹れる前にすぐ見返せます。",
+    "フォローすると、明日もひとつ持ち帰れます。",
+  ];
 }
 
-export function ctaSlideLines(shop) {
-  const mode = resolveCtaMode(shop);
-  if (mode === "ec-url") return [`ご購入は ${ecHost(shop.ecUrl)} から`];
-  if (mode === "profile-link") return ["ご購入はプロフィールのリンクから"];
-  return ["ご購入・卸のご相談は DM へ", shop?.instagram || "@open_ground_coffee_roasters"];
-}
-
-/** beanIntroduced: false on days that introduce no bean (the Sunday news TOP5). */
-export function salesCtaLines(shop, { beanIntroduced = true } = {}) {
-  const name = shop?.name || "Open Ground Coffee Roasters";
-  const ig = shop?.instagram || "@open_ground_coffee_roasters";
-  const mode = resolveCtaMode(shop);
-  const lines = ["――", beanIntroduced ? `紹介した豆は ${name} で販売中です。` : `${name} の自家焙煎豆を販売しています。`];
-  if (mode === "ec-url") lines.push(`ご購入はこちら → ${shop.ecUrl}`);
-  else if (mode === "profile-link") lines.push(`ご購入はプロフィールのリンクから → ${ig}`);
-  else lines.push(`ご購入・卸のご相談は Instagram の DM（${ig}）からお気軽にどうぞ。`);
-  return lines;
-}
-
-export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
-  const r = content.recipe;
-  const bean = findBean(lineup, r.beanId);
+export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
+  const r = content.lesson;
   const method = METHODS[r.method];
+  const pillarLabel = PILLARS[r.pillar];
   const n = r.numbers;
   const nar = r.narration || {};
-  const beanName = bean.displayName || bean.name;
-  const spokenBean = bean.spokenName || beanName;
   const iced = r.scene === "iced";
-
-  // Card 1 = hook + bean + all key numbers, so the first frame is already
-  // the "save this" recipe (numbers first, like AI Trend Daily's TOP5).
-  const withMethod = r.hook.includes(method.label) ? "" : `を${method.label}で`;
-  const titleNarration = pick(nar.title, `${r.hook}。今日の一杯は、${spokenBean}${withMethod}。`);
   const coldBrew = r.method === "cold-brew";
+
+  // Card 1 = the question + the answer + all key numbers, so the first frame is
+  // already the "save this" card (numbers first, like AI Trend Daily's TOP5).
+  const titleNarration = pick(nar.title, `${r.hook}。${r.topic}。${r.why}。`);
   const numbersNarration = pick(
     nar.numbers,
-    `豆${n.dose_g}グラムに、${coldBrew ? "水" : "お湯"}${n.water_g}グラム` +
+    `${method.label}で、粉${n.dose_g}グラムに、${coldBrew ? "水" : "お湯"}${n.water_g}グラム` +
       (iced && isNum(n.ice_g) && !coldBrew ? `、氷${n.ice_g}グラム` : "") +
       "。" +
       (coldBrew ? `冷蔵庫で${speakTime(n.time)}です。` : `${n.temp_c}度で、${speakTime(n.time)}です。`)
@@ -804,20 +674,19 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
 
   const slides = [
     {
-      kind: "recipe-title",
-      heading: "今日の一杯",
+      kind: "lesson-title",
+      heading: pillarLabel,
       date: dateDisplay,
-      beanName,
-      beanFullName: bean.name,
-      beanMeta: [bean.origin, bean.processShort || bean.process, bean.roast].filter(Boolean).join("・"),
+      topic: r.topic,
+      why: r.why,
       methodLabel: method.label,
       sceneLabel: SCENES[r.scene],
       hook: r.hook,
-      tiles: recipeNumberTiles(r),
+      tiles: lessonNumberTiles(r),
       narration: `${titleNarration}${numbersNarration}`,
     },
     {
-      kind: "recipe-steps",
+      kind: "lesson-steps",
       heading: "手順",
       steps: r.steps.map((s) => ({
         time: s.time,
@@ -827,8 +696,8 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
       narration: pick(nar.steps, `手順は${r.steps.length}ステップ。画面を保存しておくと便利です。`),
     },
     {
-      kind: "recipe-taste",
-      heading: "味わい",
+      kind: "lesson-taste",
+      heading: "こう変わる",
       notes: r.taste.notes,
       summary: r.taste.summary,
       meters: [
@@ -836,94 +705,34 @@ export function buildRecipeSlides(content, lineup, { dateDisplay = "" } = {}) {
         { label: "甘み", value: r.taste.sweetness },
         { label: "コク", value: r.taste.body },
       ],
-      narration: pick(nar.taste, `味わいは、${r.taste.notes.join("、")}。${r.taste.summary}。`),
+      narration: pick(nar.taste, `味は、${r.taste.notes.join("、")}。${r.taste.summary}。`),
     },
     {
-      kind: "recipe-tips",
-      heading: "悩み別のコツ",
+      kind: "lesson-tips",
+      heading: "うまくいかない時",
       tips: r.tips.map((t) => ({ problem: t.problem, fix: t.fix })),
       narration: pick(nar.tips, r.tips.slice(0, 2).map((t) => `${t.problem}は、${t.fix}。`).join("")),
     },
   ];
 
   const ending = {
-    kind: "recipe-cta",
-    heading: "保存して、淹れる時に見返そう",
-    beanName: bean.name,
-    lead: "この豆は OPEN GROUND で販売中",
-    lines: ctaSlideLines(lineup?.shop),
-    narration: pick(nar.cta, `この豆はオープングラウンドで販売中。保存して、淹れる時に見返してください。`),
+    kind: "lesson-cta",
+    heading: "保存して、次に淹れる時に試そう",
+    topic: r.topic,
+    lead: "毎朝ひとつ、今日から試せる抽出のコツ",
+    lines: growthCtaSlideLines(),
+    narration: pick(nar.cta, "保存して、次に淹れる時に試してみてください。フォローすると、明日もひとつ持ち帰れます。"),
   };
 
-  return {
-    slides,
-    ending,
-    topicTitle: `${beanName}×${method.label}`,
-  };
+  return { slides, ending, topicTitle: `${pillarLabel}｜${r.hook}` };
 }
 
 /**
- * recipesLive: at least one bean is confirmed, so Mon-Sat really post recipe
- * cards. While none is, the Sunday ending must not promise them (and the
- * routine's own cta narration, which may promise them, is not used).
+ * Build output/trending-data.json. `projects` mirrors the slides so
+ * scripts/generate-audio.mjs keeps producing project-N.mp3.
  */
-export function buildNewsTop5Slides(content, { dateDisplay = "", shop, recipesLive = true } = {}) {
-  const block = content.newsTop5;
-  const nar = block.narration || {};
-  const items = block.items;
-  const narItems = Array.isArray(nar.items) ? nar.items : [];
-  const slides = [
-    {
-      kind: "news-cover",
-      heading: "今週の世界のコーヒーニュース",
-      date: dateDisplay,
-      weekLabel: block.weekLabel || "",
-      headlines: items.map((it) => it.headline),
-      narration: pick(nar.intro, "今週の世界のコーヒーニュース、トップ5です。"),
-    },
-    ...items.map((it, i) => ({
-      kind: "news-item",
-      heading: `${it.rank}位`,
-      rank: it.rank,
-      headline: it.headline,
-      number: it.number || "",
-      numberLabel: it.numberLabel || "",
-      summary: it.summary,
-      source: it.source,
-      narration: pick(narItems[i], `${it.rank}位、${it.headline}。`),
-    })),
-  ];
-  const ending = recipesLive
-    ? {
-        kind: "news-cta",
-        heading: "月〜土は「今日の一杯」レシピ",
-        beanName: "",
-        lead: "OPEN GROUND の豆で、毎朝お届け",
-        lines: ctaSlideLines(shop),
-        narration: pick(nar.cta, "月曜から土曜は、オープングラウンドの豆で今日の一杯レシピをお届けします。"),
-      }
-    : {
-        kind: "news-cta",
-        heading: "毎週日曜は、世界のコーヒーニュース",
-        beanName: "",
-        lead: "OPEN GROUND の自家焙煎豆",
-        lines: ctaSlideLines(shop),
-        narration: "毎週日曜は、世界のコーヒーニュースをお届けします。",
-      };
-  return { slides, ending, topicTitle: `今週のコーヒーニュースTOP5：${items[0].headline}` };
-}
-
-/**
- * Build output/trending-data.json for the card formats. `projects` mirrors
- * the slides so scripts/generate-audio.mjs keeps producing project-N.mp3.
- */
-export function buildCardsData(content, lineup, { dateDisplay = "" } = {}) {
-  // what production shows: confirmed beans only (a dry run's candidates do not count)
-  const recipesLive = postableBeans(lineup).length > 0;
-  const built =
-    content.format === "news-top5"
-      ? buildNewsTop5Slides(content, { dateDisplay, shop: lineup?.shop, recipesLive })
-      : buildRecipeSlides(content, lineup, { dateDisplay });
+export function buildCardsData(content, { dateDisplay = "" } = {}) {
+  const built = buildLessonSlides(content, { dateDisplay });
   for (const s of [...built.slides, built.ending]) s.narration = toSpokenJa(s.narration);
   const projects = built.slides.map((s, i) => ({
     rank: i + 1,
@@ -937,7 +746,6 @@ export function buildCardsData(content, lineup, { dateDisplay = "" } = {}) {
   }));
   return {
     format: content.format,
-    recipesLive,
     trial: content.trial || TRIAL_ID,
     fallback: Boolean(content.fallback),
     date: content.date,
@@ -946,9 +754,7 @@ export function buildCardsData(content, lineup, { dateDisplay = "" } = {}) {
     projects,
     endingNarration: built.ending.narration,
     topicTitle: built.topicTitle,
-    recipe: content.format === "recipe" ? content.recipe : undefined,
-    newsTop5: content.format === "news-top5" ? content.newsTop5 : undefined,
-    discovery: content.discovery || null,
+    lesson: content.lesson,
   };
 }
 
@@ -959,19 +765,17 @@ export function narrationLength(data) {
 /** Template-only narration (used when the routine's narration makes the video too long). */
 export function withTemplateNarration(content) {
   const copy = structuredClone(content);
-  if (copy.recipe) delete copy.recipe.narration;
-  if (copy.newsTop5) delete copy.newsTop5.narration;
+  if (copy.lesson) delete copy.lesson.narration;
   return copy;
 }
 
 // ---------------------------------------------------------------------------
 // Timeline (frames) — single source of truth, passed to Remotion as props
 // ---------------------------------------------------------------------------
-
 export const TIMELINE = {
   fps: 30,
   padFrames: 15, // 0.5s after narration
-  minFirstSlideSec: 6, // hook + bean + six numbers
+  minFirstSlideSec: 6, // hook + answer + six numbers
   minSlideSec: 4.5, // dense cards need reading time even if narration is short
   endingExtraFrames: 30,
   minEndingSec: 3.5,
@@ -993,14 +797,14 @@ export function computeCardTimeline(audioDurations, slideCount, opts = TIMELINE)
 }
 
 // ---------------------------------------------------------------------------
-// Captions (sales CTA fixed at the end)
+// Captions (the save / follow CTA is fixed at the end)
 // ---------------------------------------------------------------------------
 
 // Instagram IG User Media: caption ≤ 2200 characters, 30 hashtags, 20 @ tags.
 // (YouTube title/description limits: youtube-limits.mjs.)
 const IG_CAPTION_MAX_CHARS = 2200;
 
-/** Join body + tail, dropping body lines from the end until it fits — the sales CTA tail always stays last. */
+/** Join body + tail, dropping body lines from the end until it fits — the CTA tail always stays last. */
 export function fitWithTail(bodyLines, tailLines, measure, max) {
   const body = [...bodyLines];
   const text = () => [...body, ...tailLines].join("\n");
@@ -1009,86 +813,57 @@ export function fitWithTail(bodyLines, tailLines, measure, max) {
 }
 
 function hashtagsFor(data) {
-  if (data.format === "news-top5") {
-    return ["#コーヒーニュース", "#コーヒー", "#スペシャルティコーヒー", "#珈琲", "#自家焙煎", "#OpenGroundCoffee"];
-  }
-  const method = METHODS[data.recipe?.method];
-  const tags = ["#今日の一杯", "#コーヒーレシピ", method ? `#${method.hashtag}` : null];
-  if (data.recipe?.scene === "iced") tags.push("#アイスコーヒー");
-  tags.push("#スペシャルティコーヒー", "#自家焙煎", "#コーヒー豆", "#おうちカフェ", "#OpenGroundCoffee");
+  const method = METHODS[data.lesson?.method];
+  const tags = ["#コーヒーの淹れ方", "#ハンドドリップ", method ? `#${method.hashtag}` : null];
+  if (data.lesson?.scene === "iced") tags.push("#アイスコーヒー");
+  tags.push("#おうちカフェ", "#コーヒーのある暮らし", "#抽出", "#コーヒー");
   return [...new Set(tags.filter(Boolean))];
 }
 
-function recipeBodyLines(data) {
-  const r = data.recipe;
-  const title = data.slides.find((s) => s.kind === "recipe-title");
-  const steps = data.slides.find((s) => s.kind === "recipe-steps");
-  const taste = data.slides.find((s) => s.kind === "recipe-taste");
-  const tips = data.slides.find((s) => s.kind === "recipe-tips");
+function lessonBodyLines(data) {
+  const r = data.lesson;
+  const title = data.slides.find((s) => s.kind === "lesson-title");
+  const steps = data.slides.find((s) => s.kind === "lesson-steps");
+  const taste = data.slides.find((s) => s.kind === "lesson-taste");
+  const tips = data.slides.find((s) => s.kind === "lesson-tips");
   const tileText = title.tiles.map((t) => `${t.label} ${t.value}${t.unit}`).join(" / ");
   const ratio = ratioLabel(r.numbers);
   const hasRatio = title.tiles.some((t) => t.label === "比率");
   return [
-    `【今日の一杯】${title.beanFullName || title.beanName} × ${title.methodLabel}（${title.sceneLabel}）`,
-    title.hook,
+    `【${title.heading}】${title.hook}`,
+    `${title.topic}｜${title.why}`,
     "",
-    "■ レシピ",
+    `■ 今日の数字（${title.methodLabel}・${title.sceneLabel}）`,
     tileText + (!hasRatio && ratio ? ` / 比率 ${ratio}` : ""),
     "",
     "■ 手順",
     ...steps.steps.map((s) => `${s.time} ${s.action}${s.amount ? ` ${s.amount}まで` : ""}`),
     "",
-    "■ 味わい",
+    "■ こう変わる",
     `${taste.notes.join("、")}｜${taste.summary}`,
     "",
-    "■ 悩み別のコツ",
+    "■ うまくいかない時",
     ...tips.tips.map((t) => `・${t.problem} → ${t.fix}`),
     "",
-    "保存しておくと、淹れる時にすぐ見返せます。",
+    "使う豆は手持ちのもので大丈夫です。数字だけ真似してみてください。",
   ];
 }
 
-function newsBodyLines(data) {
-  const items = data.slides.filter((s) => s.kind === "news-item");
-  const lines = ["【今週の世界のコーヒーニュース TOP5】", ""];
-  for (const it of items) {
-    lines.push(`${it.rank}. ${it.headline}${it.number ? `（${it.number}${it.numberLabel ? ` ${it.numberLabel}` : ""}）` : ""}`);
-    lines.push(`   ${it.summary}（${it.source}）`);
-  }
-  const urls = (data.newsTop5?.items || []).map((it) => it.url).filter(Boolean);
-  if (urls.length) {
-    lines.push("", "出典:", ...urls);
-  }
-  lines.push(
-    "",
-    data.recipesLive === false
-      ? "毎週日曜は、世界のコーヒーニュースをお届けします。"
-      : "月〜土は Open Ground の豆で「今日の一杯」レシピをお届けします。"
-  );
-  return lines;
-}
-
-export function buildCardCaptions(data, lineup, dateStr) {
-  const shop = lineup?.shop || {};
+export function buildCardCaptions(data, dateSlash) {
   const hashtags = hashtagsFor(data);
-  const body = data.format === "news-top5" ? newsBodyLines(data) : recipeBodyLines(data);
-  const cta = salesCtaLines(shop, { beanIntroduced: data.format !== "news-top5" });
+  const body = lessonBodyLines(data);
+  const cta = growthCtaCaptionLines();
 
-  let title;
-  if (data.format === "news-top5") {
-    title = youtubeTitle("【今週のコーヒーニュースTOP5】", data.slides[1]?.headline || "", `ほか｜${dateStr.slash} #Shorts`);
-  } else {
-    const t = data.slides[0];
-    const n = data.recipe.numbers;
-    const nums = (
-      data.recipe.method === "cold-brew"
-        ? [`豆${n.dose_g}g`, `冷蔵庫${n.time}`]
-        : [`豆${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time]
-    )
-      .filter(Boolean)
-      .join("・");
-    title = youtubeTitle("【今日の一杯】", `${t.beanName}×${t.methodLabel}`, `｜${nums} #Shorts`);
-  }
+  const t = data.slides[0];
+  const n = data.lesson.numbers;
+  const nums = (
+    data.lesson.method === "cold-brew"
+      ? [`粉${n.dose_g}g`, `冷蔵庫${n.time}`]
+      : [`粉${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time]
+  )
+    .filter(Boolean)
+    .join("・");
+  const title = youtubeTitle(`【${t.heading}】`, t.hook, `｜${nums} #Shorts`);
 
   const bodyWithTags = [...body, "", hashtags.join(" ")];
   const tail = ["", ...cta];
@@ -1109,6 +884,7 @@ export function buildCardCaptions(data, lineup, dateStr) {
       categoryId: "26", // Howto & Style
     },
     instagram,
+    dateSlash,
   };
 }
 
@@ -1118,25 +894,15 @@ export function buildCardCaptions(data, lineup, dateStr) {
 
 export function contentRecord(data) {
   if (!data?.format) return null;
-  if (data.format === "news-top5") {
-    return {
-      format: "news-top5",
-      trial: data.trial || TRIAL_ID,
-      fallback: Boolean(data.fallback),
-      headlines: (data.newsTop5?.items || []).map((it) => it.headline),
-    };
-  }
-  const r = data.recipe || {};
-  const title = data.slides?.[0] || {};
+  const r = data.lesson || {};
   return {
-    format: "recipe",
+    format: "brew-lesson",
     trial: data.trial || TRIAL_ID,
     fallback: Boolean(data.fallback),
-    beanId: r.beanId || null,
-    beanName: title.beanName || null,
+    pillar: r.pillar || null,
+    topic: r.topic || null,
     method: r.method || null,
     scene: r.scene || null,
-    angle: r.angle || null,
     tipProblems: (r.tips || []).map((t) => t.problem),
   };
 }

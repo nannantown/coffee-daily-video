@@ -57,10 +57,12 @@ jobs:
             cp "output/coffee-${DATE}-captions.json" output/captions.json
             echo "Using archived captions from release v${DATE}"
           else
-            node scripts/scrape-coffee-news.mjs
             node scripts/generate-data.mjs
             node scripts/generate-caption.mjs
           fi
+          # Brand guard: an archived caption may predate 2026-09-22 and name a
+          # coffee we sell. Never re-post that (owner decision 2026-09-22).
+          node scripts/check-published.mjs
 
       - name: Upload to Instagram (resumable)
         env:
