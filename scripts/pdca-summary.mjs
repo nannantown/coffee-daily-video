@@ -50,7 +50,7 @@ export const TRIALS = {
     label: "#2",
     genre: "汎用抽出知識「今日の抽出メモ」（集客フェーズ）",
     trialId: TRIAL_ID,
-    plannedStart: "2026-09-23",
+    plannedStart: "2026-09-25",
   },
 };
 
