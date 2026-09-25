@@ -7,6 +7,7 @@ import {
   LessonTips,
   LessonTitle,
 } from "../cards/LessonSlides";
+import { LessonVisualView } from "../cards/Diagrams";
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
 
@@ -18,6 +19,8 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
   switch (slide.kind) {
     case "lesson-title":
       return <LessonTitle slide={slide} index={index} />;
+    case "lesson-visual":
+      return <LessonVisualView slide={slide} page={page} index={index} />;
     case "lesson-steps":
       return <LessonSteps slide={slide} page={page} index={index} />;
     case "lesson-taste":
@@ -30,7 +33,8 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
 };
 
 /**
- * 「今日の抽出メモ」 — one generic brewing lesson a day. Text-only slides;
+ * 「今日の抽出メモ」 — one episode of the series 「味をコントロールする技術」 a day
+ * (data/curriculum.json): title, diagram (src/cards/Diagrams.tsx), steps, taste, tips;
  * narration is audio only (the cards carry the information, so no subtitle
  * overlay). Segment lengths come from props.timeline (scripts/content-format.mjs
  * computeCardTimeline), audio files from scripts/generate-audio.mjs.

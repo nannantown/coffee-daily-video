@@ -914,7 +914,7 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
     lead: "毎朝ひとつ、今日から試せる抽出のコツ",
     lines: growthCtaSlideLines(),
     // The series teaser: tomorrow's one change, so a follow has a reason.
-    next: next ? `次回　${next.term ? `用語「${next.term}」` : next.lesson.hook}` : "",
+    next: next ? (next.term ? `用語「${next.term}」` : next.lesson.hook) : "",
     narration: pick(
       nar.cta,
       next
@@ -1029,7 +1029,7 @@ function lessonBodyLines(data) {
   const ratio = ratioLabel(r.numbers);
   const hasRatio = title.tiles.some((t) => t.label === "比率");
   const series = title.series ? [`シリーズ「${CURRICULUM.series}」${title.series}`] : [];
-  const next = data.ending?.next ? ["", data.ending.next] : [];
+  const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
   return [
     ...series,
     `【${title.heading}】${title.hook}`,

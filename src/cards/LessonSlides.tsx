@@ -79,7 +79,8 @@ const NumberTileView: React.FC<{ tile: NumberTile; accent: string }> = ({ tile, 
 // date, a long method name (カリタウェーブ) + アイス pushed the date past the margin.
 export const LessonTitle: React.FC<{ slide: LessonTitleSlide; index?: number }> = ({ slide, index = 0 }) => (
   <SlideShell label={slide.heading} right={slide.date} brand index={index}>
-    <Reveal delay={2} style={{ display: "flex", gap: 16, marginBottom: 36 }}>
+    <Reveal delay={2} style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 36 }}>
+      {slide.series ? <Pill accent={COLORS.caramel}>{slide.series}</Pill> : null}
       <Pill accent={COLORS.sky}>{slide.methodLabel}</Pill>
       <Pill accent={slide.sceneLabel === "アイス" ? COLORS.sage : COLORS.terracotta}>{slide.sceneLabel}</Pill>
     </Reveal>
@@ -295,6 +296,12 @@ export const CtaSlide: React.FC<{ ending: CtaEnding; index?: number }> = ({ endi
           ))}
         </div>
       </Reveal>
+      {ending.next ? (
+        <Reveal delay={20} style={{ marginTop: SPACE.sectionS - 16, display: "flex", alignItems: "center", gap: 24, paddingRight: SPACE.actionColumnClearance }}>
+          <Pill accent={COLORS.sage}>次回</Pill>
+          <div style={{ fontSize: TYPE.emphasis, fontWeight: 800, lineHeight: 1.3, ...PHRASE_BREAK }}>{ending.next}</div>
+        </Reveal>
+      ) : null}
     </div>
     <Brand />
     </Drift>

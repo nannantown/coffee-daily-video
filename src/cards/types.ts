@@ -13,7 +13,8 @@ export interface NumberTile {
 
 export interface LessonTitleSlide {
   kind: "lesson-title";
-  heading: string; // the pillar, e.g. 湯温
+  heading: string; // the pillar, e.g. 湯温 — or 用語「TDS」 on a term episode
+  series: string; // e.g. 初級 第4回 (the episode's place in data/curriculum.json)
   date: string;
   hook: string; // the question of the day
   topic: string; // the answer in one line
@@ -47,8 +48,59 @@ export interface LessonTipsSlide {
   narration: string;
 }
 
+// The diagram slide (src/cards/Diagrams.tsx). Shapes mirror validateVisual in
+// scripts/content-format.mjs, which caps every string to the space it gets.
+export interface CompareSide {
+  label: string;
+  result: string;
+  strength: number; // 1-5, how dark the cup is
+}
+
+export interface FlowBrewer {
+  shape: "cone" | "flat" | "immersion";
+  label: string;
+  note: string;
+  speed?: "fast" | "slow";
+  pour?: "center" | "wide";
+  height?: "high" | "low";
+  bed?: "even" | "uneven";
+}
+
+export type LessonVisual =
+  | { type: "compare"; caption: string; left: CompareSide; right: CompareSide; pick?: "left" | "right" }
+  | {
+      type: "graph";
+      caption: string;
+      xLabel: string;
+      yLabel: string;
+      points: { label: string; value: number }[];
+      mark?: number;
+      zones?: string[];
+    }
+  | { type: "flow"; caption: string; brewers: FlowBrewer[] }
+  | {
+      type: "scale";
+      caption: string;
+      label: string;
+      unit: string;
+      format?: "ratio";
+      min: number;
+      max: number;
+      from?: number;
+      to: number;
+      zones: { upTo: number; label: string }[];
+    };
+
+export interface LessonVisualSlide {
+  kind: "lesson-visual";
+  heading: string;
+  visual: LessonVisual;
+  narration: string;
+}
+
 export type CardSlide =
   | LessonTitleSlide
+  | LessonVisualSlide
   | LessonStepsSlide
   | LessonTasteSlide
   | LessonTipsSlide;
@@ -59,6 +111,7 @@ export interface CtaEnding {
   topic: string;
   lead: string;
   lines: string[];
+  next?: string; // tomorrow's one change (or 用語「…」) — the series teaser
   narration: string;
 }
 
