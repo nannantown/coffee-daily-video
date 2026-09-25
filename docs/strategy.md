@@ -159,9 +159,17 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 - フォロワー 3 人では、誰に売るかという母数が無い
 - **戻す条件: IG フォロワー 2,000 人**。そこでオーナーが販促フェーズに戻すかを決める。戻すときは `data/coffee-lineup.json`（リポに残してある）と `scripts/brand-guard.mjs` の解除を PR で行う
 
-## コンテンツの柱（1 日 1 本、この 8 本を回す）
+## シリーズ「味をコントロールする技術」（2026-09-25 オーナー依頼）
 
-`scripts/content-format.mjs` の `PILLARS` が正。ルーチンは直近 14 日で使用回数が少ない柱から選ぶ。
+毎朝の 1 本は、カリキュラム（`data/curriculum.json`・地図は [`docs/curriculum.md`](curriculum.md)）の**次の回**。初級 13 回 → 中級 14 回 → 上級 9 回の 36 回で、1 本ずつ見ていくと味を自分で動かせるようになる順に並べてある。用語だけを解説する回（抽出・比率・蒸らし・透過式と浸漬式・未抽出・過抽出・TDS・抽出収率・濃さと収率・微粉）を含む。
+
+- 回は `scripts/next-episode.mjs` が決める（まだ出ていない回のうち一番前。記録は `performance-history.json` の `content.episode`）。ルーチンが原稿を出せなかった朝も、同じ回の常備原稿が出るのでシリーズは 1 回ずつ進む
+- 2 枚目は図解スライド（比べてみる / 味の動き / お湯の流れ / 目盛りで見る）。原稿の `lesson.visual` で型を選ぶ
+- 1 枚目に「初級 第4回」、最後の画面とキャプションに「次回 ○○」を出す（フォローする理由を作る）
+
+## コンテンツの柱
+
+`scripts/content-format.mjs` の `PILLARS` が正。柱は**回ごとに決まっている**（カリキュラムが柱を並べる。ルーチンは選ばない）。
 
 | キー | 柱 | 扱う例 |
 |---|---|---|
@@ -173,8 +181,10 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 | `gear` | 器具の違い | 円錐と平底 / 紙と金属 / 浸漬式と透過式 / アイスの急冷 |
 | `trouble` | 味の直し方 | 酸っぱい / 苦い / 薄い / えぐい をどう直すか |
 | `nogear` | 器具がなくてもできる | マグひとつで / スーパーの粉でも味は動く / 計量スプーンでの目安 |
+| `water` | 水 | 軟水と硬水 |
+| `terms` | 用語 | TDS / 抽出収率 / 過抽出・未抽出 / 蒸らし などの言葉を 1 本で解説（その日に試せる 1 つも付ける） |
 
-各回は「問い（hook）→ 答え（topic）→ 理屈（why）→ 数字 → 手順 → こう変わる → うまくいかない時」の 1 本道。視聴者が**その日のうちに 1 つだけ試せる**ことを条件にする。
+各回は「問い（hook）→ 答え（topic）→ 理屈（why）→ 数字 → 図解 → 手順 → こう変わる → うまくいかない時 → 次回」の 1 本道。視聴者が**その日のうちに 1 つだけ試せる**ことを条件にする。
 
 ## 絶対に出さないもの（NG）
 
@@ -231,9 +241,9 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 
 ## PDCA で比べる軸
 
-`contentRecord` が毎回記録する: `pillar`（柱）/ `method`（抽出法）/ `scene`（ホット・アイス）/ `topic`（その日の答え）/ `tipProblems` / `fallback`（常備ネタ帳の日か）。
+`contentRecord` が毎回記録する: `episode`（シリーズの回）/ `pillar`（柱）/ `method`（抽出法）/ `scene`（ホット・アイス）/ `topic`（その日の答え）/ `tipProblems` / `fallback`（常備ネタ帳の日か）。
 
-- **ローテーション**: 直近 14 日で使用回数が少ない柱・抽出法から選ぶ。**同じ柱・同じ抽出法を 2 日連続にしない**
+- **回の順番**: カリキュラムの順（柱はそこで決まる）。**抽出法**だけは、回が固定でなければ直近 14 日で使用回数が少ないものから選び、前日と同じにしない
 - 配信死亡モードの間は性能データで軸を選ばない（上の「ジャンル実験」節のルール）
 
 ## データスキーマ
@@ -246,18 +256,20 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
   "format": "brew-lesson",       // これ以外は無い
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "pillar": "temp",            // PILLARS のキー
+    "episode": "b06-temp",       // data/curriculum.json の回の id（今日の回 = node scripts/next-episode.mjs）
+    "pillar": "temp",            // PILLARS のキー（回の柱のまま）
     "method": "v60",             // METHODS のキー
     "scene": "hot",              // hot | iced（cold-brew は iced 必須）
-    "hook": "湯温を3度下げる",      // ≤16 字。今日の問い（1 枚目の大見出し）
+    "hook": "湯温を3度下げる",      // 回の hook を一字も変えない（前日の「次回」で予告済み）
     "topic": "苦味が引いて酸が立つ", // ≤18 字。答えを 1 行で
     "why": "温度が高いほど苦味成分が多く溶ける", // ≤30 字。理屈
     "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 88, "grind": "中細", "time": "2:30" },
     "steps": [ { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 } ],  // 1〜5 件
     "taste": { "notes": ["軽い苦味"], "summary": "後味がすっきりする", "acidity": 4, "sweetness": 3, "body": 2 },
     "tips": [ { "problem": "酸っぱい時", "fix": "湯温を92度に戻す" } ],      // 2〜3 件
+    "visual": { "type": "scale", "caption": "…", … }, // 図解。compare / graph / flow / scale（型ごとの項目は docs/routine-prompt.md 手順 2-10）
     "sources": ["https://…"],    // 任意。出典があるときだけ
-    "narration": { "title": "…", "numbers": "…", "steps": "…", "taste": "…", "tips": "…", "cta": "…" } // 任意
+    "narration": { "title": "…", "numbers": "…", "visual": "…", "steps": "…", "taste": "…", "tips": "…", "cta": "…" } // 任意
   }
 }
 ```
@@ -271,10 +283,12 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 - ナレーション合計 260 字以内（IG Reels は 60 秒超を弾く）
 - **ブランドガード**（上の NG 節）
 - `beanId` を書いたら即エラー
+- シリーズ: `episode` はカリキュラムにある回で、柱と hook は回のまま、固定の回は抽出法も回のまま。本番（と日付チェックありの検証）では今日の回でないと NG
+- 図解: `visual` は必須。型ごとに字数・数値の範囲を検査（`validateVisual`）
 
-### 常備ネタ帳（`data/brew-lessons.json`）
+### 常備ネタ帳（`data/curriculum.json`）
 
-ルーチンが原稿を出せなかった朝の差し替え用。**17 本**入っていて 8 つの柱を全部カバーしており、日付でローテーションし、前日と同じ柱・抽出法は避ける。だから休んだ日も汎用知識が出る（豆の話には決して戻らない）。追加・修正は人間の PR で。
+ルーチンが原稿を出せなかった朝の差し替え用は、**カリキュラムの各回が持つ原稿**（36 本・全部の柱をカバー）。差し替えの日も「今日の回」が出るので、シリーズの順番は崩れない（豆の話には決して戻らない）。旧 `data/brew-lessons.json`（17 本の日付ローテーション）は 2026-09-25 に廃止し、中身は各回に引き継いだ。追加・修正は人間の PR で（`docs/curriculum.md` の表も同じ順に直す。テストが照合する）。
 
 ### 豆マスタ（`data/coffee-lineup.json`）
 
@@ -285,10 +299,12 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 ```bash
 node scripts/validate-content.mjs                                      # 今日の原稿（日付チェックあり）
 node scripts/validate-content.mjs data/samples/brew-lesson.sample.json --no-date-check
-npm test                                                               # 72 本
+npm test
 npx tsc --noEmit
 DRY_RUN=true node scripts/pipeline.mjs --content=data/samples/brew-lesson.sample.json  # 投稿しない
-DRY_RUN=true node scripts/pipeline.mjs --fallback                      # 常備ネタ帳の日を再現
+DRY_RUN=true node scripts/pipeline.mjs --fallback                      # 常備ネタ帳の日を再現（今日の回の常備原稿）
+node scripts/next-episode.mjs                                          # 今日の回
+node scripts/episode-props.mjs --episode=b04-grind --out=output/p/props.json && node scripts/render-previews.mjs --props=output/p/props.json --out=output/p  # 1 回分の静止画（音声なし）
 gh workflow run daily-video.yml -f dry_run=true -f sample=sample       # Actions の検証ラン
 ```
 
