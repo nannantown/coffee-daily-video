@@ -98,13 +98,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit performance history
-        if: steps.mode.outputs.dry_run != 'true'
+        # always(): a post that failed part-way still recorded what aired (pipeline Step 7),
+        # and the series needs that record to move on to the next episode tomorrow.
+        if: always() && steps.mode.outputs.dry_run != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/performance-history.json
-          git diff --staged --quiet || git commit -m "Update performance history [skip ci]"
-          git push || echo "Push failed (non-blocking)"
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update performance history [skip ci]"
+          # main may have moved during the ~4 min job (the routine's content PR,
+          # another workflow). A lost record means the series re-airs today's
+          # episode tomorrow, so a failed push must turn the job red, not green.
+          for attempt in 1 2; do
+            git pull --rebase origin main
+            if ! jq empty data/performance-history.json; then
+              echo "performance-history.json is not valid JSON after rebase; not pushing."
+              exit 1
+            fi
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Push rejected (attempt $attempt); pulling again."
+          done
+          echo "Could not push performance history — today's aired episode is not recorded."
+          exit 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

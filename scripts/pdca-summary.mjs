@@ -398,7 +398,7 @@ function metricCell(platform, stats) {
 }
 
 const ROTATION_RULE =
-  "柱（知識のテーマ）と抽出法は下の「ローテーション」で使用回数が少ないものから、「同じ柱・抽出法を 2 日連続にしない」を守って選ぶ";
+  "柱と変える条件はシリーズの今日の回で決まる（node scripts/next-episode.mjs）。抽出法は回が固定でなければ下の「ローテーション」で使用回数が少ないものから、前日と同じにしないで選ぶ";
 
 export function methodPolicy(s) {
   const { accounts, stats } = s;

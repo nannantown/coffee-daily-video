@@ -201,17 +201,24 @@ function main() {
 
   // Step 6: Post to SNS (optional - skips if credentials not configured)
   const snsEnabled = process.env.SNS_POST_ENABLED === "true";
-  if (snsEnabled) {
-    console.log(`\n=== Step 6: Post to SNS ===`);
-    run(`node scripts/post-sns.mjs --video="${outputFile}"`);
-  } else {
-    console.log(`\n=== Step 6: SNS posting skipped (set SNS_POST_ENABLED=true to enable) ===`);
-  }
-
-  // Step 7: Record upload for analytics tracking
-  if (snsEnabled) {
-    console.log(`\n=== Step 7: Record Upload ===`);
-    runSafe("node scripts/record-upload.mjs", "record-upload");
+  // Step 7 runs even when Step 6 fails part-way: a YouTube post followed by an
+  // Instagram error still aired today's episode, and an unrecorded episode would
+  // air again tomorrow (the series picks the episode after the last recorded one).
+  // ponytail: record-upload still needs the YouTube videoId, so an IG-only day
+  // is not recorded and repeats — record IG-only posts if that ever happens often.
+  try {
+    if (snsEnabled) {
+      console.log(`\n=== Step 6: Post to SNS ===`);
+      run(`node scripts/post-sns.mjs --video="${outputFile}"`);
+    } else {
+      console.log(`\n=== Step 6: SNS posting skipped (set SNS_POST_ENABLED=true to enable) ===`);
+    }
+  } finally {
+    // Step 7: Record upload for analytics tracking (and the series' aired record)
+    if (snsEnabled) {
+      console.log(`\n=== Step 7: Record Upload ===`);
+      runSafe("node scripts/record-upload.mjs", "record-upload");
+    }
   }
 
   console.log(`\n=== Done! ${outputFile} ===`);

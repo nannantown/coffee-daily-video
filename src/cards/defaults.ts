@@ -10,6 +10,7 @@ export const defaultCardsProps: CoffeeCardsProps = {
     {
       kind: "lesson-title",
       heading: "湯温",
+      series: "初級 第6回",
       date: "2026.09.23",
       hook: "湯温を3度下げる",
       topic: "苦味が引いて酸が立つ",
@@ -24,6 +25,26 @@ export const defaultCardsProps: CoffeeCardsProps = {
         { label: "挽き目", value: "中細", unit: "" },
         { label: "比率", value: "1対16", unit: "" },
       ],
+      narration: "",
+    },
+    {
+      kind: "lesson-visual",
+      heading: "目盛りで見る",
+      visual: {
+        type: "scale",
+        caption: "下げるほど苦味が控えめ",
+        label: "湯温",
+        unit: "℃",
+        min: 80,
+        max: 100,
+        from: 91,
+        to: 88,
+        zones: [
+          { upTo: 86, label: "軽い" },
+          { upTo: 94, label: "標準" },
+          { upTo: 100, label: "苦め" },
+        ],
+      },
       narration: "",
     },
     {
@@ -65,7 +86,8 @@ export const defaultCardsProps: CoffeeCardsProps = {
     topic: "苦味が引いて酸が立つ",
     lead: "毎朝ひとつ、今日から試せる抽出のコツ",
     lines: ["保存して、淹れる前に見返す", "フォローで、明日もひとつ持ち帰る"],
+    next: "30秒早く止める",
     narration: "",
   },
-  timeline: { slides: [240, 150, 150, 180], ending: 120, total: 840 },
+  timeline: { slides: [240, 150, 150, 150, 180], ending: 120, total: 990 },
 };

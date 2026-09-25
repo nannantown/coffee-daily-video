@@ -3,6 +3,7 @@
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
+    "episode": "b06-temp",
     "pillar": "temp",
     "method": "v60",
     "scene": "hot",
@@ -21,9 +22,25 @@
       { "problem": "酸っぱい時", "fix": "湯温を92度に戻す" },
       { "problem": "薄い時", "fix": "粉を1g増やす" }
     ],
+    "visual": {
+      "type": "scale",
+      "caption": "下げるほど苦味が控えめ",
+      "label": "湯温",
+      "unit": "℃",
+      "min": 80,
+      "max": 100,
+      "from": 91,
+      "to": 88,
+      "zones": [
+        { "upTo": 86, "label": "軽い" },
+        { "upTo": 94, "label": "標準" },
+        { "upTo": 100, "label": "苦め" }
+      ]
+    },
     "narration": {
       "title": "いつもの湯温を3度下げるだけで、苦味が引いて酸が立ちます。",
       "numbers": "V60で、粉15グラム、お湯240グラム。88度で2分30秒です。",
+      "visual": "温度が高いほど苦味が溶けます。3度下げると、苦味が控えめになります。",
       "steps": "手順は4ステップ。保存しておくと、次に淹れる時に見返せます。",
       "taste": "軽い苦味と明るい酸。後味がすっきりします。",
       "tips": "酸っぱければ92度に戻す。薄ければ粉を1グラム増やす。"

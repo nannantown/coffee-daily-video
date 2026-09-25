@@ -27,6 +27,7 @@
  * brewing standard — see docs/strategy.md 「数値の根拠」.
  */
 
+import { readFileSync } from "fs";
 import { scanBannedTerms } from "./brand-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 
@@ -66,7 +67,29 @@ export const PILLARS = {
   gear: "器具の違い",
   trouble: "味の直し方",
   nogear: "器具がなくてもできる",
+  water: "水",
+  terms: "用語", // one word explained in its own episode (TDS, 抽出収率, 過抽出 …)
 };
+
+/**
+ * The series 「味をコントロールする技術」 (owner request 2026-09-25): every episode
+ * in data/curriculum.json, in broadcast order, beginner → advanced. The same
+ * file is the evergreen pack — each episode carries a complete lesson, so a
+ * routine outage still airs the next episode instead of something off-series.
+ */
+export const CURRICULUM = JSON.parse(readFileSync(new URL("../data/curriculum.json", import.meta.url), "utf-8"));
+export const LEVELS = { beginner: "初級", intermediate: "中級", advanced: "上級" };
+
+/** The header pill of the diagram slide, per diagram type. */
+export const VISUAL_TYPES = {
+  compare: "比べてみる",
+  graph: "味の動き",
+  flow: "お湯の流れ",
+  scale: "目盛りで見る",
+};
+export const FLOW_SHAPES = ["cone", "flat", "immersion"];
+// Width of the scale gauge in src/cards/Diagrams.tsx (WIDTH there).
+const SCALE_WIDTH_PX = 824;
 
 // Display limits derived from the 1080x1920 layout (outer margin 80px, card
 // padding 40px → 840px text width; CJK glyph ≈ 1em). Body text never goes
@@ -82,6 +105,13 @@ export const LIMITS = {
   tipProblem: 10, // pill, 36px
   tipFix: 24, // 46px, up to 2 lines
   narrationTotal: 260, // IG Reels rejects > 60s videos
+  // diagram slide (src/cards/Diagrams.tsx)
+  visualCaption: 18, // 52px under the diagram, up to 2 lines
+  visualLabel: 6, // 48px pill / heading over one half of the canvas
+  visualResult: 10, // 40px, up to 2 lines in a half-width column
+  visualNote: 10, // flow: 40px under each brewer
+  graphTick: 5, // 32px x-axis tick
+  zoneLabel: 6, // 32px band / zone label
 };
 
 // Cold brew is a food-safety case: it steeps for hours, so it must steep in
@@ -346,10 +376,166 @@ function lessonTexts(lesson, prefix) {
     add(`${prefix}.tips[${i}].problem`, t?.problem);
     add(`${prefix}.tips[${i}].fix`, t?.fix);
   });
+  for (const [label, v] of visualTexts(lesson.visual, `${prefix}.visual`)) add(label, v);
   const nar = lesson.narration && typeof lesson.narration === "object" ? lesson.narration : {};
   // keys are untrusted too: quoted, so a key cannot carry a line break into the log
   for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration[${quote(k)}]`, v);
   return out;
+}
+
+/** Every string of the diagram block: [label, value] (all of them reach the screen). */
+function visualTexts(visual, prefix) {
+  const out = [];
+  const walk = (label, value) => {
+    if (typeof value === "string") out.push([label, value]);
+    else if (Array.isArray(value)) value.forEach((v, i) => walk(`${label}[${i}]`, v));
+    // keys are untrusted: anything but a plain name is quoted, so it cannot carry a line break into the log
+    else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) walk(`${label}.${/^\w+$/.test(k) ? k : quote(k)}`, v);
+  };
+  if (visual && typeof visual === "object") walk(prefix, visual);
+  return out;
+}
+
+const isInt = (v, lo, hi) => Number.isInteger(v) && v >= lo && v <= hi;
+
+/**
+ * The diagram of the day (src/cards/Diagrams.tsx). Every string is capped by
+ * the space its drawing gives it — at 40px+ there is no room to shrink.
+ */
+export function validateVisual(v, errors, prefix = "lesson.visual") {
+  if (!v || typeof v !== "object" || Array.isArray(v)) {
+    errors.push(`${prefix} is required: pick one of ${Object.keys(VISUAL_TYPES).join(", ")} (docs/curriculum.md 「図解の型」)`);
+    return;
+  }
+  if (!own(VISUAL_TYPES, v.type)) {
+    errors.push(`${prefix}.type must be one of ${Object.keys(VISUAL_TYPES).join(", ")} (got ${quote(v.type)})`);
+    return;
+  }
+  checkLen(errors, `${prefix}.caption`, v.caption, LIMITS.visualCaption);
+  if (v.type === "compare") {
+    for (const side of ["left", "right"]) {
+      const s = v[side] || {};
+      checkLen(errors, `${prefix}.${side}.label`, s.label, LIMITS.visualLabel);
+      checkLen(errors, `${prefix}.${side}.result`, s.result, LIMITS.visualResult);
+      if (!isInt(s.strength, 1, 5)) errors.push(`${prefix}.${side}.strength must be an integer 1-5 (how dark the cup is)`);
+    }
+    if (v.pick != null && v.pick !== "left" && v.pick !== "right") errors.push(`${prefix}.pick must be "left" or "right"`);
+  } else if (v.type === "graph") {
+    checkLen(errors, `${prefix}.xLabel`, v.xLabel, LIMITS.visualLabel);
+    checkLen(errors, `${prefix}.yLabel`, v.yLabel, LIMITS.visualLabel);
+    const pts = v.points;
+    if (!Array.isArray(pts) || pts.length < 2 || pts.length > 5) {
+      errors.push(`${prefix}.points must have 2-5 items`);
+    } else {
+      pts.forEach((p, i) => {
+        checkLen(errors, `${prefix}.points[${i}].label`, p?.label, LIMITS.graphTick);
+        if (!isInt(p?.value, 1, 5)) errors.push(`${prefix}.points[${i}].value must be an integer 1-5`);
+      });
+      if (v.mark != null && !isInt(v.mark, 0, pts.length - 1)) errors.push(`${prefix}.mark must be the index of one of the points`);
+    }
+    if (v.zones != null) {
+      if (!Array.isArray(v.zones) || v.zones.length < 2 || v.zones.length > 3) errors.push(`${prefix}.zones must have 2-3 labels`);
+      else v.zones.forEach((z, i) => checkLen(errors, `${prefix}.zones[${i}]`, z, LIMITS.zoneLabel));
+    }
+  } else if (v.type === "flow") {
+    const b = v.brewers;
+    if (!Array.isArray(b) || b.length < 1 || b.length > 2) {
+      errors.push(`${prefix}.brewers must have 1-2 items`);
+    } else {
+      b.forEach((x, i) => {
+        const p = `${prefix}.brewers[${i}]`;
+        if (!FLOW_SHAPES.includes(x?.shape)) errors.push(`${p}.shape must be one of ${FLOW_SHAPES.join(", ")}`);
+        checkLen(errors, `${p}.label`, x?.label, LIMITS.visualLabel);
+        checkLen(errors, `${p}.note`, x?.note, LIMITS.visualNote);
+        if (x?.speed != null && x.speed !== "fast" && x.speed !== "slow") errors.push(`${p}.speed must be "fast" or "slow"`);
+        if (x?.pour != null && x.pour !== "center" && x.pour !== "wide") errors.push(`${p}.pour must be "center" or "wide"`);
+        if (x?.height != null && x.height !== "high" && x.height !== "low") errors.push(`${p}.height must be "high" or "low"`);
+        if (x?.bed != null && x.bed !== "even" && x.bed !== "uneven") errors.push(`${p}.bed must be "even" or "uneven"`);
+      });
+    }
+  } else if (v.type === "scale") {
+    checkLen(errors, `${prefix}.label`, v.label, LIMITS.visualLabel);
+    if (typeof v.unit !== "string" || charLen(v.unit) > 2) errors.push(`${prefix}.unit must be a string of 0-2 characters (℃ / % / g / 段)`);
+    else checkText(errors, `${prefix}.unit`, v.unit);
+    if (v.format != null && v.format !== "ratio") errors.push(`${prefix}.format must be "ratio" when set`);
+    const nums = ["min", "max", "to"].every((k) => isNum(v[k])) && (v.from == null || isNum(v.from));
+    if (!nums) {
+      errors.push(`${prefix}.min / max / to (and from, if set) must be numbers`);
+    } else if (!(v.min < v.max) || v.min < -999 || v.max > 9999) {
+      errors.push(`${prefix}.min must be below max, both within -999 to 9999 (the readout has to fit one line)`);
+    } else {
+      for (const k of ["from", "to"]) {
+        if (v[k] != null && (v[k] < v.min || v[k] > v.max)) errors.push(`${prefix}.${k} ${v[k]} is outside ${v.min}-${v.max}`);
+      }
+      const z = v.zones;
+      if (!Array.isArray(z) || z.length < 1 || z.length > 3) {
+        errors.push(`${prefix}.zones must have 1-3 items`);
+      } else {
+        let prev = v.min;
+        z.forEach((zone, i) => {
+          checkLen(errors, `${prefix}.zones[${i}].label`, zone?.label, LIMITS.zoneLabel);
+          if (!isNum(zone?.upTo) || zone.upTo <= prev || zone.upTo > v.max) {
+            errors.push(`${prefix}.zones[${i}].upTo must rise and stay within ${v.min}-${v.max}`);
+          } else {
+            // The zone is drawn (upTo - prev) / (max - min) of the 824px gauge wide;
+            // its name (40px a character) and its boundary number (~120px) must fit.
+            const px = ((zone.upTo - prev) / (v.max - v.min)) * SCALE_WIDTH_PX;
+            const need = Math.max(charLen(zone?.label) * 40 + 24, 120);
+            if (px < need) errors.push(`${prefix}.zones[${i}] is too narrow for its label (${Math.round(px)}px < ${need}px) — widen it or shorten the label`);
+            prev = zone.upTo;
+          }
+        });
+        if (isNum(z.at(-1)?.upTo) && z.at(-1).upTo !== v.max) errors.push(`${prefix}.zones: the last upTo must equal max (${v.max})`);
+      }
+    }
+  }
+}
+
+/** The curriculum entry of an episode id (own ids only), or undefined. */
+export function episodeById(id, curriculum = CURRICULUM) {
+  return typeof id === "string" ? curriculum.episodes.find((e) => e.id === id) : undefined;
+}
+
+/**
+ * Episodes in the order the channel should air them next, starting with "the
+ * next episode": the one after the most recently aired episode (curriculum
+ * order, wrapping to episode 1 after the last — season two). Nothing aired yet
+ * → episode 1. The rest of the list is the curriculum from there on, which the
+ * fallback walks only when an episode's own lesson fails validation.
+ *
+ * "Aired" = the `content.episode` of the latest performance-history video
+ * dated before `today` (a re-run of today's job must not count today's own
+ * post). Only the latest one matters, so the 90-day history window never
+ * confuses the count, and a day that failed to post (no record) simply airs the
+ * same episode again the next day — which the viewers never saw.
+ */
+export function episodeQueue(history, today, curriculum = CURRICULUM) {
+  const videos = Array.isArray(history?.videos) ? history.videos : [];
+  let latest = null;
+  for (const v of videos) {
+    const id = v?.content?.episode;
+    if (typeof v?.date !== "string" || (today && v.date >= today) || !episodeById(id, curriculum)) continue;
+    if (!latest || v.date >= latest.date) latest = { date: v.date, id };
+  }
+  const eps = curriculum.episodes;
+  const start = latest ? (eps.findIndex((e) => e.id === latest.id) + 1) % eps.length : 0;
+  return eps.map((_, i) => eps[(start + i) % eps.length]);
+}
+
+export function nextEpisode(history, today, curriculum = CURRICULUM) {
+  return episodeQueue(history, today, curriculum)[0];
+}
+
+/** 1-based broadcast number and the level label: { no: 4, level: "初級" }. */
+export function episodeNumber(id, curriculum = CURRICULUM) {
+  const i = curriculum.episodes.findIndex((e) => e.id === id);
+  return i < 0 ? null : { no: i + 1, level: LEVELS[curriculum.episodes[i].level] };
+}
+
+/** The episode after `id` in curriculum order (wraps to episode 1) — the CTA's "次回". */
+export function followingEpisode(id, curriculum = CURRICULUM) {
+  const i = curriculum.episodes.findIndex((e) => e.id === id);
+  return i < 0 ? undefined : curriculum.episodes[(i + 1) % curriculum.episodes.length];
 }
 
 // Kept under the old name inside this module so the numeric block below reads
@@ -370,6 +556,20 @@ export function validateLesson(recipe, errors, prefix = "lesson") {
   if (!own(METHODS, recipe.method)) {
     errors.push(`${prefix}.method ${quote(recipe.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
   }
+  // The series: every lesson is one episode of data/curriculum.json, and keeps
+  // what that episode teaches — its pillar, its one change (the hook, which the
+  // day before already announced as 次回) and, for gear episodes, the brewer.
+  const episode = episodeById(recipe.episode);
+  if (!episode) {
+    errors.push(`${prefix}.episode ${quote(recipe.episode)} must be an episode id of data/curriculum.json (node scripts/next-episode.mjs prints today's)`);
+  } else {
+    if (recipe.pillar !== episode.lesson.pillar) errors.push(`${prefix}.pillar must be ${quote(episode.lesson.pillar)} for episode ${episode.id}`);
+    if (recipe.hook !== episode.lesson.hook) errors.push(`${prefix}.hook must stay ${quote(episode.lesson.hook)} for episode ${episode.id} (the one change the series map promises)`);
+    if (episode.fixedMethod && recipe.method !== episode.lesson.method) {
+      errors.push(`${prefix}.method must be ${quote(episode.lesson.method)} for episode ${episode.id} (the brewer is the lesson)`);
+    }
+  }
+  validateVisual(recipe.visual, errors, `${prefix}.visual`);
   if (!own(SCENES, recipe.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
   if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
@@ -528,7 +728,12 @@ export function collectPublishedTexts(data, captions = null) {
   return out;
 }
 
-export function validateDailyContent(content, { today } = {}) {
+/**
+ * `expectedEpisode` (an episode id) makes "not today's episode" an error too:
+ * validate-content.mjs and generate-data.mjs pass nextEpisode(history, today),
+ * so a routine that picked the wrong episode falls back to the right one.
+ */
+export function validateDailyContent(content, { today, expectedEpisode } = {}) {
   const errors = [];
   const warnings = [];
   if (!content || typeof content !== "object") {
@@ -541,6 +746,9 @@ export function validateDailyContent(content, { today } = {}) {
     return { errors, warnings };
   }
   validateLesson(content.lesson, errors, "lesson");
+  if (expectedEpisode && content.lesson?.episode !== expectedEpisode) {
+    errors.push(`lesson.episode ${quote(content.lesson?.episode)} is not today's episode ${quote(expectedEpisode)} (node scripts/next-episode.mjs)`);
+  }
 
   if (errors.length === 0) {
     const data = buildCardsData(content, { dateDisplay: "" });
@@ -557,43 +765,27 @@ export function validateDailyContent(content, { today } = {}) {
 }
 
 // ---------------------------------------------------------------------------
-// Fallback (routine missing / invalid): the evergreen lesson pack
+// Fallback (routine missing / invalid): the curriculum's own lesson
 // ---------------------------------------------------------------------------
-
-export function dayIndex(isoDate) {
-  const d = new Date(`${isoDate}T00:00:00Z`);
-  return Math.floor(d.getTime() / 86_400_000);
-}
-
 
 export class NoLessonError extends Error {}
 
 /**
- * The evergreen lesson of the day from data/brew-lessons.json.
- *
- * The pick is the plain date rotation, `dayIndex % lessons.length`. That is a
- * bijection over one cycle, so it alone guarantees "one lesson a day, no repeat
- * for a full cycle". The "don't repeat yesterday's pillar" rule is baked into
- * the *order* of the pack instead of being applied here (see its `note`):
- * filtering at pick time pushed the choice off its rotation slot, and a slot
- * skipped today is a slot re-visited in two days — which made the same lesson
- * come back every other day.
- *
- * `recentTopics` is only a safety net for when the pack is edited or reordered
- * between posts: a topic posted in the last few days is skipped, and the scan
- * moves on by one slot. Pass the newest first; an empty list is the normal case.
- *
- * The pack is a plain data file with no beans in it, so a routine outage still
- * posts generic knowledge (owner decision 2026-09-22).
+ * The fallback content for one curriculum episode: its evergreen lesson,
+ * tagged with the episode id. generate-data.mjs picks the episode with
+ * episodeQueue (the one after the last aired), so a day the routine misses
+ * still moves the series forward by exactly one episode instead of jumping
+ * off-series (owner request 2026-09-25: 「1個1個見ていったら分かる」).
  */
-export function fallbackLessonContent(pack, isoDate, recentTopics = []) {
-  const lessons = Array.isArray(pack?.lessons) ? pack.lessons : [];
-  if (lessons.length === 0) throw new NoLessonError("data/brew-lessons.json has no lessons");
-  const start = ((dayIndex(isoDate) % lessons.length) + lessons.length) % lessons.length;
-  const rotated = lessons.map((_, i) => lessons[(start + i) % lessons.length]);
-  const recent = new Set((Array.isArray(recentTopics) ? recentTopics : []).filter(Boolean));
-  const lesson = rotated.find((l) => !recent.has(l.topic)) || rotated[0];
-  return { date: isoDate, format: "brew-lesson", trial: TRIAL_ID, fallback: true, lesson };
+export function fallbackLessonContent(episode, isoDate) {
+  if (!episode?.lesson) throw new NoLessonError("data/curriculum.json has no episode to air");
+  return {
+    date: isoDate,
+    format: "brew-lesson",
+    trial: TRIAL_ID,
+    fallback: true,
+    lesson: { episode: episode.id, ...structuredClone(episode.lesson) },
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -661,9 +853,15 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
   const iced = r.scene === "iced";
   const coldBrew = r.method === "cold-brew";
 
+  const episode = episodeById(r.episode);
+  const number = episode ? episodeNumber(episode.id) : null;
+  const term = episode?.term;
+  const next = episode ? followingEpisode(episode.id) : undefined;
+  const heading = term ? `用語「${term}」` : pillarLabel;
+
   // Card 1 = the question + the answer + all key numbers, so the first frame is
   // already the "save this" card (numbers first, like AI Trend Daily's TOP5).
-  const titleNarration = pick(nar.title, `${r.hook}。${r.topic}。${r.why}。`);
+  const titleNarration = pick(nar.title, `${term ? `今日の用語は、${term}。` : ""}${r.hook}。${r.topic}。${r.why}。`);
   const numbersNarration = pick(
     nar.numbers,
     `${method.label}で、粉${n.dose_g}グラムに、${coldBrew ? "水" : "お湯"}${n.water_g}グラム` +
@@ -675,7 +873,8 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
   const slides = [
     {
       kind: "lesson-title",
-      heading: pillarLabel,
+      heading,
+      series: number ? `${number.level} 第${number.no}回` : "",
       date: dateDisplay,
       topic: r.topic,
       why: r.why,
@@ -684,6 +883,14 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
       hook: r.hook,
       tiles: lessonNumberTiles(r),
       narration: `${titleNarration}${numbersNarration}`,
+    },
+    // Card 2 = the diagram: what the one change does, drawn (owner request
+    // 2026-09-25: more kinds of animation so the change is easy to see).
+    {
+      kind: "lesson-visual",
+      heading: VISUAL_TYPES[r.visual.type],
+      visual: structuredClone(r.visual),
+      narration: pick(nar.visual, `${r.visual.caption}。`),
     },
     {
       kind: "lesson-steps",
@@ -721,7 +928,14 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
     topic: r.topic,
     lead: "毎朝ひとつ、今日から試せる抽出のコツ",
     lines: growthCtaSlideLines(),
-    narration: pick(nar.cta, "保存して、次に淹れる時に試してみてください。フォローすると、明日もひとつ持ち帰れます。"),
+    // The series teaser: tomorrow's one change, so a follow has a reason.
+    next: next ? (next.term ? `用語「${next.term}」` : next.lesson.hook) : "",
+    narration: pick(
+      nar.cta,
+      next
+        ? `保存して、次に淹れる時に試してください。次回は、${next.term ? `用語、${next.term}` : next.lesson.hook}。フォローで明日も届きます。`
+        : "保存して、次に淹れる時に試してみてください。フォローすると、明日もひとつ持ち帰れます。"
+    ),
   };
 
   return { slides, ending, topicTitle: `${pillarLabel}｜${r.hook}` };
@@ -829,7 +1043,10 @@ function lessonBodyLines(data) {
   const tileText = title.tiles.map((t) => `${t.label} ${t.value}${t.unit}`).join(" / ");
   const ratio = ratioLabel(r.numbers);
   const hasRatio = title.tiles.some((t) => t.label === "比率");
+  const series = title.series ? [`シリーズ「${CURRICULUM.series}」${title.series}`] : [];
+  const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
   return [
+    ...series,
     `【${title.heading}】${title.hook}`,
     `${title.topic}｜${title.why}`,
     "",
@@ -846,6 +1063,7 @@ function lessonBodyLines(data) {
     ...tips.tips.map((t) => `・${t.problem} → ${t.fix}`),
     "",
     "使う豆は手持ちのもので大丈夫です。数字だけ真似してみてください。",
+    ...next,
   ];
 }
 
@@ -899,6 +1117,7 @@ export function contentRecord(data) {
     format: "brew-lesson",
     trial: data.trial || TRIAL_ID,
     fallback: Boolean(data.fallback),
+    episode: r.episode || null,
     pillar: r.pillar || null,
     topic: r.topic || null,
     method: r.method || null,

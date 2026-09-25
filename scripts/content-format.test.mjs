@@ -16,8 +16,16 @@ import {
   collectPublishedTexts,
   computeCardTimeline,
   contentRecord,
+  CURRICULUM,
+  LEVELS,
+  VISUAL_TYPES,
+  episodeById,
+  episodeNumber,
+  episodeQueue,
   expectedFormatFor,
   fallbackLessonContent,
+  followingEpisode,
+  nextEpisode,
   growthCtaCaptionLines,
   kanjiNumber,
   lessonNumberTiles,
@@ -34,7 +42,9 @@ import { SALES_TERMS, scanBannedTerms } from "./brand-guard.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const readJSON = (rel) => JSON.parse(readFileSync(join(rootDir, rel), "utf-8"));
-const pack = readJSON("data/brew-lessons.json");
+const curriculum = readJSON("data/curriculum.json");
+// Every episode's evergreen lesson, tagged the way the fallback tags it.
+const pack = { lessons: curriculum.episodes.map((e) => ({ episode: e.id, ...e.lesson })) };
 const sample = readJSON("data/samples/brew-lesson.sample.json");
 const lineup = readJSON("data/coffee-lineup.json");
 const clone = (o) => structuredClone(o);
@@ -55,7 +65,7 @@ test("there is exactly one format and every day uses it", () => {
 
 test("the sample and every evergreen lesson validate and fit the narration budget", () => {
   assert.deepEqual(errorsOf(sample), []);
-  assert.ok(pack.lessons.length >= 14, `the pack needs at least two weeks of lessons (${pack.lessons.length})`);
+  assert.ok(pack.lessons.length >= 30, `the series needs at least 30 episodes (${pack.lessons.length})`);
   for (const lesson of pack.lessons) {
     const content = { date: "2026-09-23", format: "brew-lesson", trial: TRIAL_ID, lesson };
     assert.deepEqual(errorsOf(content), [], `${lesson.pillar} / ${lesson.hook}`);
@@ -97,7 +107,8 @@ test("a bean name, an origin or a sales line fails validation wherever it is wri
     mutate(content.lesson);
     const errors = errorsOf(content);
     assert.ok(
-      errors.some((e) => e.includes("must not say")),
+      // the hook is pinned to the curriculum, so a changed hook is already an error of its own
+      errors.some((e) => e.includes("must not say") || (where === "hook" && e.includes("hook must stay"))),
       `${where} must be rejected, got: ${errors.join(" | ") || "no error"}`
     );
   }
@@ -130,81 +141,169 @@ test("the caption asks for a save and a follow, and never for a sale", () => {
 });
 
 // ---------------------------------------------------------------------------
-// Fallback: a missing routine still posts generic knowledge
+// The series 「味をコントロールする技術」 (owner request 2026-09-25)
 // ---------------------------------------------------------------------------
 
-const addDays = (iso, n) => {
-  const d = new Date(`${iso}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() + n);
-  return d.toISOString().slice(0, 10);
-};
+const LEVEL_ORDER = Object.keys(LEVELS);
+const aired = (...entries) => ({ videos: entries.map(([date, episode]) => ({ date, content: { episode } })) });
 
-/**
- * Walk `days` consecutive days the way production does: each day's pick feeds
- * the next day's `recentTopics` (newest first, a 7-day window), exactly like
- * generate-data.mjs reads performance-history. A filter that pushes the pick
- * off its rotation slot shows up here as a repeat two days later.
- */
-function runRotation(days, from = "2026-09-23", window = 7) {
-  const posted = [];
-  for (let i = 0; i < days; i++) {
-    const iso = addDays(from, i);
-    const recent = posted.slice(-window).map((l) => l.topic).reverse();
-    posted.push({ ...fallbackLessonContent(pack, iso, recent).lesson, iso });
+test("the curriculum: 30+ unique episodes, beginner → intermediate → advanced, term episodes included", () => {
+  const eps = curriculum.episodes;
+  assert.equal(CURRICULUM.episodes.length, eps.length);
+  assert.ok(eps.length >= 30, `${eps.length} episodes`);
+  assert.equal(new Set(eps.map((e) => e.id)).size, eps.length, "episode ids are unique");
+  assert.equal(new Set(eps.map((e) => e.lesson.hook)).size, eps.length, "each episode changes a different thing (the 次回 teaser names it)");
+  for (let i = 1; i < eps.length; i++) {
+    assert.ok(LEVEL_ORDER.indexOf(eps[i].level) >= LEVEL_ORDER.indexOf(eps[i - 1].level), `${eps[i].id} goes back a level`);
   }
-  return posted;
-}
-
-test("the fallback is deterministic and every day is a valid, product-free lesson", () => {
-  const a = fallbackLessonContent(pack, "2026-09-23");
-  assert.deepEqual(a, fallbackLessonContent(pack, "2026-09-23"));
-  assert.equal(a.fallback, true);
-  assert.equal(a.format, "brew-lesson");
-  assert.equal(a.trial, TRIAL_ID);
-
-  for (let i = 0; i < 21; i++) {
-    const iso = addDays("2026-10-01", i);
-    const content = fallbackLessonContent(pack, iso);
-    content.date = iso;
-    assert.deepEqual(errorsOf(content), [], iso);
+  for (const level of LEVEL_ORDER) assert.ok(eps.some((e) => e.level === level), `no ${level} episode`);
+  const terms = eps.filter((e) => e.term).map((e) => e.term);
+  for (const t of ["抽出", "蒸らし", "未抽出", "過抽出", "TDS", "抽出収率"]) assert.ok(terms.includes(t), `term episode ${t}`);
+  for (const e of eps.filter((x) => x.term)) assert.equal(e.lesson.pillar, "terms", `${e.id} is a term episode`);
+  // every diagram kind is used, and more than once
+  for (const type of Object.keys(VISUAL_TYPES)) {
+    assert.ok(eps.filter((e) => e.lesson.visual.type === type).length >= 3, `diagram ${type} is used at least 3 times`);
   }
 });
 
-test("chaining the previous days never brings a lesson back inside one cycle", () => {
-  const n = pack.lessons.length;
-  const run = runRotation(n * 3);
-
-  // no repeat inside any window of one full cycle
-  for (let i = 0; i < run.length; i++) {
-    const window = run.slice(Math.max(0, i - (n - 1)), i);
-    assert.ok(
-      !window.some((l) => l.topic === run[i].topic),
-      `${run[i].iso} repeats "${run[i].topic}" within ${n} days`
-    );
+test("docs/curriculum.md lists every episode, in broadcast order", () => {
+  const doc = readFileSync(join(rootDir, "docs", "curriculum.md"), "utf-8");
+  let at = -1;
+  for (const e of curriculum.episodes) {
+    const i = doc.indexOf(`\`${e.id}\``);
+    assert.ok(i > at, `${e.id} is missing from docs/curriculum.md or out of order`);
+    at = i;
   }
-  // and the whole pack really is used, not a handful of it
-  assert.equal(new Set(run.slice(0, n).map((l) => l.topic)).size, n);
 });
 
-test("consecutive fallback days teach different pillars (the pack's order guarantees it)", () => {
-  const run = runRotation(pack.lessons.length * 2 + 1);
-  for (let i = 1; i < run.length; i++) {
-    assert.notEqual(run[i].pillar, run[i - 1].pillar, `${run[i].iso} repeats the pillar of the day before`);
+test("the next episode follows the last one aired; today's own post never counts", () => {
+  const [first, second, third, fourth] = curriculum.episodes;
+  assert.equal(nextEpisode({ videos: [] }, "2026-09-26").id, first.id);
+  assert.equal(nextEpisode(null, "2026-09-26").id, first.id); // unreadable history
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-27").id, second.id);
+  // a re-run on the same day still picks the episode it already posted
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-26").id, first.id);
+  // only the latest airing matters (history order does not), and a day with no record repeats nothing new
+  assert.equal(nextEpisode(aired(["2026-09-27", third.id], ["2026-09-26", first.id]), "2026-09-28").id, fourth.id);
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-28").id, second.id); // 09-27 failed to post
+  // unknown ids (a renamed episode) are ignored rather than trusted
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id], ["2026-09-27", "gone"]), "2026-09-28").id, second.id);
+  // pre-series posts (no episode) do not count
+  assert.equal(nextEpisode({ videos: [{ date: "2026-09-25", content: { topic: "x" } }] }, "2026-09-26").id, first.id);
+  // season two starts again from episode 1 once the last episode has aired
+  assert.equal(nextEpisode(aired(["2026-10-31", curriculum.episodes.at(-1).id]), "2026-11-01").id, first.id);
+  assert.equal(episodeQueue(null, "2026-11-01").length, curriculum.episodes.length);
+});
+
+test("200 days of posts air the whole series in order, season after season, under the 90-day history window", () => {
+  let history = { videos: [] };
+  const start = new Date("2026-09-26T00:00:00Z");
+  const iso = (i) => new Date(start.getTime() + i * 86_400_000).toISOString().slice(0, 10);
+  const n = curriculum.episodes.length;
+  for (let i = 0; i < 200; i++) {
+    const ep = nextEpisode(history, iso(i));
+    assert.equal(ep.id, curriculum.episodes[i % n].id, `day ${i} (${iso(i)})`);
+    history.videos.push({ date: iso(i), content: { episode: ep.id } });
+    history.videos = history.videos.filter((v) => v.date >= iso(i - 90)); // record-upload keeps 90 days
   }
-  // V60 is 9 of 17 lessons, so the method can only avoid repeating once per
-  // cycle at most — assert the bound rather than a clean alternation.
-  const sameMethod = run.slice(1).filter((l, i) => l.method === run[i].method).length;
-  assert.ok(sameMethod <= Math.ceil(run.length / pack.lessons.length), `method repeated on ${sameMethod} consecutive pairs`);
 });
 
-test("a recently posted topic is skipped when the pack is reordered under us", () => {
-  const first = fallbackLessonContent(pack, "2026-09-23").lesson;
-  const next = fallbackLessonContent(pack, "2026-09-23", [first.topic]);
-  assert.notEqual(next.lesson.topic, first.topic);
+test("a missed routine airs the next episode's own lesson (the fallback follows the curriculum)", () => {
+  const ep = nextEpisode(aired(["2026-09-26", curriculum.episodes[0].id]), "2026-09-27");
+  const content = fallbackLessonContent(ep, "2026-09-27");
+  assert.equal(content.lesson.episode, curriculum.episodes[1].id);
+  assert.equal(content.fallback, true);
+  assert.equal(content.trial, TRIAL_ID);
+  assert.deepEqual(validateDailyContent(content, { today: "2026-09-27", expectedEpisode: ep.id }).errors, []);
+  // the pack itself is never mutated by a pick
+  content.lesson.hook = "x";
+  assert.notEqual(episodeById(ep.id).lesson.hook, "x");
+  assert.throws(() => fallbackLessonContent(undefined, "2026-09-27"), /no episode/);
 });
 
-test("an empty pack is an error, never a silent bean day", () => {
-  assert.throws(() => fallbackLessonContent({ lessons: [] }, "2026-09-23"), /no lessons/);
+test("series: the title card numbers the episode, the CTA and caption announce the next one", () => {
+  const data = buildCardsData(sample, { dateDisplay: "2026.09.23" });
+  const { no, level } = episodeNumber(sample.lesson.episode);
+  assert.equal(data.slides[0].series, `${level} 第${no}回`);
+  const next = followingEpisode(sample.lesson.episode);
+  assert.equal(data.ending.next, next.term ? `用語「${next.term}」` : next.lesson.hook);
+  assert.ok(data.ending.narration.includes("次回"));
+  const captions = buildCardCaptions(data, "2026/09/23");
+  assert.ok(captions.instagram.includes(`次回：${data.ending.next}`));
+  assert.ok(captions.instagram.startsWith(`シリーズ「${CURRICULUM.series}」`));
+  // a term episode is headed by its word
+  const tds = curriculum.episodes.find((e) => e.term === "TDS");
+  const tdsData = buildCardsData(fallbackLessonContent(tds, "2026-09-23"), {});
+  assert.equal(tdsData.slides[0].heading, "用語「TDS」");
+  assert.ok(tdsData.slides[0].narration.startsWith("今日の用語は、TDS。"));
+  // the last episode wraps its teaser to episode 1
+  assert.equal(followingEpisode(curriculum.episodes.at(-1).id).id, curriculum.episodes[0].id);
+});
+
+test("validation keeps the script on its episode", () => {
+  const bad = (mutate, opts) => {
+    const content = clone(sample);
+    mutate(content);
+    return validateDailyContent(content, opts).errors;
+  };
+  assert.ok(bad((c) => delete c.lesson.episode).some((e) => e.includes("lesson.episode")));
+  assert.ok(bad((c) => (c.lesson.episode = "z99-nope")).some((e) => e.includes("must be an episode id")));
+  assert.ok(bad((c) => (c.lesson.hook = "湯温を5度下げる")).some((e) => e.includes("hook must stay")));
+  assert.ok(bad((c) => (c.lesson.pillar = "grind")).some((e) => e.includes("pillar must be")));
+  assert.ok(bad(() => {}, { expectedEpisode: "b01-extraction" }).some((e) => e.includes("is not today's episode")));
+  assert.deepEqual(bad(() => {}, { expectedEpisode: sample.lesson.episode }), []);
+  // a gear episode keeps its brewer; an ordinary one may change it
+  const clever = fallbackLessonContent(episodeById("i10-clever"), "2026-09-23");
+  clever.lesson.method = "v60";
+  assert.ok(errorsOf(clever).some((e) => e.includes("the brewer is the lesson")));
+  assert.deepEqual(bad((c) => (c.lesson.method = "kalita-wave")), []);
+});
+
+test("diagram block: each type is checked against the space it gets", () => {
+  const bad = (visual) => {
+    const content = clone(sample);
+    content.lesson.visual = visual;
+    return errorsOf(content);
+  };
+  const has = (errors, text) => assert.ok(errors.some((e) => e.includes(text)), `${text}: ${errors.join(" | ") || "no error"}`);
+  has(bad(undefined), "lesson.visual is required");
+  has(bad({ type: "pie", caption: "x" }), "visual.type must be one of");
+  has(bad({ ...sample.lesson.visual, caption: "あ".repeat(LIMITS.visualCaption + 1) }), "visual.caption is");
+  const compare = { type: "compare", caption: "比べる", left: { label: "粗い", result: "軽い", strength: 2 }, right: { label: "細かい", result: "濃い", strength: 4 }, pick: "right" };
+  assert.deepEqual(bad(compare), []);
+  has(bad({ ...compare, left: { ...compare.left, strength: 7 } }), "left.strength");
+  has(bad({ ...compare, pick: "middle" }), "pick");
+  has(bad({ ...compare, right: { ...compare.right, result: "あ".repeat(LIMITS.visualResult + 1) } }), "right.result is");
+  const graph = { type: "graph", caption: "動き", xLabel: "時間", yLabel: "濃さ", points: [{ label: "1:00", value: 1 }, { label: "2:00", value: 3 }], mark: 1 };
+  assert.deepEqual(bad(graph), []);
+  has(bad({ ...graph, points: [graph.points[0]] }), "points must have 2-5");
+  has(bad({ ...graph, mark: 5 }), "mark");
+  has(bad({ ...graph, zones: ["a"] }), "zones must have 2-3");
+  const flow = { type: "flow", caption: "流れ", brewers: [{ shape: "cone", label: "円すい", note: "速く落ちる", speed: "fast" }] };
+  assert.deepEqual(bad(flow), []);
+  has(bad({ ...flow, brewers: [] }), "brewers must have 1-2");
+  has(bad({ ...flow, brewers: [{ ...flow.brewers[0], shape: "siphon" }] }), "shape must be one of");
+  has(bad({ ...flow, brewers: [{ ...flow.brewers[0], speed: "warp" }] }), "speed");
+  const scale = clone(sample.lesson.visual);
+  has(bad({ ...scale, to: 120 }), "to 120 is outside");
+  has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }, { upTo: 90, label: "b" }] }), "upTo must rise");
+  has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }] }), "last upTo must equal max");
+  has(bad({ ...scale, unit: "度数" + "x" }), "unit must be");
+  has(bad({ ...scale, zones: [{ upTo: 81, label: "ぬるすぎ" }, { upTo: 100, label: "標準" }] }), "too narrow");
+  has(bad({ ...scale, max: 123456 }), "within -999 to 9999");
+});
+
+test("diagram text is untrusted and product-free like every other text", () => {
+  const withCaption = (caption) => {
+    const content = clone(sample);
+    content.lesson.visual.caption = caption;
+    return errorsOf(content);
+  };
+  assert.ok(withCaption("エチオピアの味").some((e) => e.includes("must not say")));
+  assert.ok(withCaption("詳しくはexample.com").some((e) => e.includes("URL or domain")));
+  const content = clone(sample);
+  content.lesson.visual.zones[0].label = "#軽い";
+  assert.ok(errorsOf(content).some((e) => e.includes("visual.zones[0].label")));
 });
 
 // ---------------------------------------------------------------------------
@@ -255,11 +354,11 @@ test("cold brew food safety survives the format change", () => {
   assert.ok(!tiles.some((t) => t.label === "湯温"));
 });
 
-test("cards: 4 slides + CTA, audio sections mirror the slides, narration is spoken", () => {
+test("cards: 5 slides (title, diagram, steps, taste, tips) + CTA, audio sections mirror the slides, narration is spoken", () => {
   const data = buildCardsData(sample, { dateDisplay: "2026.09.23" });
   assert.deepEqual(
     data.slides.map((s) => s.kind),
-    ["lesson-title", "lesson-steps", "lesson-taste", "lesson-tips"]
+    ["lesson-title", "lesson-visual", "lesson-steps", "lesson-taste", "lesson-tips"]
   );
   assert.equal(data.ending.kind, "lesson-cta");
   assert.equal(data.projects.length, data.slides.length);
@@ -289,6 +388,7 @@ test("performance-history content record carries the pillar, not a bean", () => 
     format: "brew-lesson",
     trial: TRIAL_ID,
     fallback: false,
+    episode: sample.lesson.episode,
     pillar: sample.lesson.pillar,
     topic: sample.lesson.topic,
     method: sample.lesson.method,
