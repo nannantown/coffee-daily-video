@@ -3,10 +3,9 @@
  *
  * data/enriched-coffee-news.json is written by the morning routine:
  *   - `format: "brew-lesson"`, dated today, valid → that lesson
- *   - missing / stale / invalid                   → the evergreen lesson of the
- *     day from data/brew-lessons.json (plain date rotation: one cycle of the
- *     pack with no repeat, and the pack's order keeps consecutive days on
- *     different pillars)
+ *   - missing / stale / invalid / not today's episode → the evergreen lesson
+ *     of today's episode from data/curriculum.json (the first episode of the
+ *     series not aired yet — scripts/next-episode.mjs prints the same one)
  * Every fallback is also reported as a GitHub Actions warning + job summary.
  *
  * There is no bean in this pipeline: the growth phase teaches brewing and
@@ -25,6 +24,7 @@ import { fileURLToPath } from "url";
 import {
   PILLARS,
   buildCardsData,
+  episodeQueue,
   fallbackLessonContent,
   jstDateParts,
   narrationLength,
@@ -36,7 +36,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const outputDir = join(rootDir, "output");
 const enrichedPath = join(rootDir, "data", "enriched-coffee-news.json");
-const lessonsPath = join(rootDir, "data", "brew-lessons.json");
 const historyPath = join(rootDir, "data", "performance-history.json");
 
 const contentArg = process.argv.find((a) => a.startsWith("--content="))?.slice("--content=".length);
@@ -69,22 +68,9 @@ function readJSON(path) {
   }
 }
 
-/** Topics posted in the last `days` days, newest first — the fallback's safety net. */
-function recentTopics(today, days = 7) {
-  const history = readJSON(historyPath);
-  const videos = Array.isArray(history?.videos) ? history.videos : [];
-  return videos
-    .filter((v) => typeof v?.date === "string" && v.date < today && v.date >= addDays(today, -days))
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .map((v) => v.content?.topic)
-    .filter(Boolean);
-}
-
-/** `iso` shifted by `delta` days (JST dates are plain calendar dates here). */
-function addDays(iso, delta) {
-  const d = new Date(`${iso}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() + delta);
-  return d.toISOString().slice(0, 10);
+/** Today's episode order (next not-aired episode first). A broken history file must not stop the post. */
+function queue(today) {
+  return episodeQueue(readJSON(historyPath), today);
 }
 
 /** Validation must never stop the post: a crash on odd input counts as "rejected". */
@@ -97,35 +83,30 @@ function safely(validate) {
 }
 
 /**
- * The evergreen lesson of the day, validated like any other content: a lesson
- * edited into the pack without running the tests must not reach a viewer. A
- * rejected lesson is dropped from the pack and the next one in the rotation is
- * tried; if none validates the job fails rather than posting something wrong.
+ * The evergreen lesson of today's episode, validated like any other content: an
+ * episode edited into the curriculum without running the tests must not reach a
+ * viewer. A rejected episode is skipped for the next one in the queue; if none
+ * validates the job fails rather than posting something wrong.
  */
 function evergreenLesson(today) {
-  const recent = recentTopics(today);
-  const pack = JSON.parse(readFileSync(lessonsPath, "utf-8"));
-  let lessons = Array.isArray(pack.lessons) ? pack.lessons : [];
   const rejected = [];
-  while (lessons.length > 0) {
-    const content = fallbackLessonContent({ lessons }, today, recent);
-    const { errors } = safely(() => validateDailyContent({ ...content, date: today }, {}));
+  for (const episode of queue(today)) {
+    const content = fallbackLessonContent(episode, today);
+    const { errors } = safely(() => validateDailyContent(content, {}));
     if (errors.length === 0) {
-      if (recent.length > 0) console.log(`  (last ${recent.length} posted topic(s) skipped in the rotation)`);
       if (rejected.length > 0) {
-        actionsWarning(`${rejected.length} lesson(s) in data/brew-lessons.json are invalid and were skipped`, rejected.slice(0, 5));
+        actionsWarning(`${rejected.length} episode(s) in data/curriculum.json are invalid and were skipped`, rejected.slice(0, 5));
       }
       return content;
     }
-    rejected.push(`${content.lesson.pillar} / ${content.lesson.hook}: ${errors[0]}`);
-    lessons = lessons.filter((l) => l !== content.lesson);
+    rejected.push(`${episode.id}: ${errors[0]}`);
   }
-  throw new Error(`data/brew-lessons.json has no valid lesson: ${rejected.join(" | ")}`);
+  throw new Error(`data/curriculum.json has no valid episode: ${rejected.join(" | ")}`);
 }
 
 function fallbackTo(today, reason, details = []) {
   const content = evergreenLesson(today);
-  actionsWarning(`${reason} → evergreen lesson (${content.lesson.pillar} × ${content.lesson.method})`, details);
+  actionsWarning(`${reason} → evergreen lesson of episode ${content.lesson.episode} (${content.lesson.pillar} × ${content.lesson.method})`, details);
   return content;
 }
 
@@ -135,7 +116,10 @@ function chooseContent(file, today) {
     console.log(`  No content for today → evergreen lesson fallback`);
     return fallbackTo(today, "No content for today");
   }
-  const { errors, warnings } = safely(() => validateDailyContent(file, { ...(contentArg ? {} : { today }) }));
+  // Production also requires today's episode, so the series never skips or repeats one.
+  const { errors, warnings } = safely(() =>
+    validateDailyContent(file, contentArg ? {} : { today, expectedEpisode: queue(today)[0]?.id })
+  );
   for (const w of warnings) console.log(`  warning: ${w}`);
   if (errors.length === 0) return file;
   console.error(`  Content rejected (${errors.length} error(s)) → evergreen lesson fallback`);
@@ -161,7 +145,7 @@ async function main() {
   const outputPath = join(outputDir, "trending-data.json");
   writeFileSync(outputPath, JSON.stringify(data, null, 2));
   console.log(
-    `Format: ${data.format}${data.fallback ? " (fallback: evergreen lesson)" : ""} — ${PILLARS[data.lesson.pillar]}「${data.lesson.hook}」`
+    `Format: ${data.format}${data.fallback ? " (fallback: evergreen lesson)" : ""} — ${PILLARS[data.lesson.pillar]}「${data.lesson.hook}」 episode ${data.lesson.episode}`
   );
   console.log(`  ${data.slides.length} slides + ending, narration ${narrationLength(data)} chars → ${outputPath}`);
 }

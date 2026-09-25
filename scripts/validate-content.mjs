@@ -9,15 +9,20 @@
  * name, an origin or a sales line anywhere in the slides, the title or the
  * caption is an error (owner decision 2026-09-22, audience-growth phase).
  *
+ * With the date check on, the lesson must also be today's episode of the series
+ * (scripts/next-episode.mjs, from data/performance-history.json).
+ *
  * Exit 0 = renderable as-is. Exit 1 = fix the listed errors (the pipeline
- * would otherwise fall back to the evergreen lesson of the day).
+ * would otherwise fall back to the evergreen lesson of today's episode).
  */
 
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import {
   PILLARS,
+  episodeNumber,
+  nextEpisode,
   validateDailyContent,
   buildCardsData,
   narrationLength,
@@ -42,7 +47,9 @@ try {
 
 let result;
 try {
-  result = validateDailyContent(content, skipDate ? {} : { today });
+  const historyPath = join(rootDir, "data", "performance-history.json");
+  const history = existsSync(historyPath) ? JSON.parse(readFileSync(historyPath, "utf-8")) : { videos: [] };
+  result = validateDailyContent(content, skipDate ? {} : { today, expectedEpisode: nextEpisode(history, today)?.id });
 } catch (err) {
   console.error(`NG: validation crashed on ${contentPath}: ${JSON.stringify(String(err?.message ?? err))}`);
   process.exit(1);
@@ -56,6 +63,7 @@ if (errors.length > 0) {
 }
 
 const data = buildCardsData(content, { dateDisplay: "" });
+const ep = episodeNumber(content.lesson.episode);
 console.log(
-  `OK: ${content.format} ${content.date} ${PILLARS[content.lesson.pillar]}「${content.lesson.hook}」 — ${data.slides.length} slides + ending, narration ${narrationLength(data)}/${LIMITS.narrationTotal} chars`
+  `OK: ${content.format} ${content.date} ${ep.level} 第${ep.no}回 ${PILLARS[content.lesson.pillar]}「${content.lesson.hook}」 図解 ${content.lesson.visual.type} — ${data.slides.length} slides + ending, narration ${narrationLength(data)}/${LIMITS.narrationTotal} chars`
 );
