@@ -101,7 +101,7 @@ const CompareColumn: React.FC<{
   picked: boolean;
 }> = ({ side, accent, delay, dim, picked }) => {
   const frame = useCurrentFrame();
-  const opacity = dim ? interpolate(frame, [34, 44], [1, 0.5], clampOpts) : 1;
+  const opacity = dim ? interpolate(frame, [34, 44], [1, 0.62], clampOpts) : 1;
   return (
     <div style={{ width: HALF, display: "flex", flexDirection: "column", alignItems: "center", opacity }}>
       <Reveal delay={delay}>
@@ -416,7 +416,7 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
   const { cx } = F;
   const immersion = b.shape === "immersion";
   // Kettle spout + stream. Immersion pours everything at once and stops.
-  const spoutY = b.height === "high" ? 24 : b.height === "low" ? 112 : 64;
+  const spoutY = b.height === "high" ? 16 : b.height === "low" ? 160 : 64;
   const swing = b.pour === "wide" ? Math.sin(frame / 7) * 76 : 0;
   const streamOn = immersion ? interpolate(frame, [delay, delay + 4, delay + 30, delay + 36], [0, 1, 1, 0], clampOpts) : progress(frame, delay, delay + 6);
   const surface = immersion ? 200 : 250;
@@ -454,7 +454,7 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
           stroke={COLORS.sky}
           strokeWidth={22}
           strokeLinecap="round"
-          opacity={progress(frame, delay - 2, delay + 4)}
+          opacity={immersion ? Math.max(streamOn, 0) : progress(frame, delay - 2, delay + 4)}
         />
       </svg>
       <Reveal delay={delay + 6}>
@@ -495,8 +495,10 @@ function decimals(n: number): number {
 const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = ({ v }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const values = [v.min, v.max, v.to, ...(v.from != null ? [v.from] : []), ...v.zones.map((z) => z.upTo)];
-  const digits = Math.max(...values.map(decimals));
+  // The readout shows as many decimals as the two values need (1.25 → 1.40,
+  // 16 → 15); the axis numbers as many as the axis needs (1.00 … 1.60).
+  const digits = Math.max(...[v.to, ...(v.from != null ? [v.from] : [])].map(decimals));
+  const axisDigits = Math.max(...[v.min, v.max, ...v.zones.map((z) => z.upTo)].map(decimals));
   const fmt = (n: number) => {
     const s = n.toFixed(digits);
     return v.format === "ratio" ? `1対${s}` : `${s}${v.unit}`;
@@ -591,7 +593,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
                 opacity: barIn,
               }}
             >
-              {v.format === "ratio" ? `1対${b}` : `${b}${v.unit}`}
+              {v.format === "ratio" ? `1対${b.toFixed(axisDigits)}` : `${b.toFixed(axisDigits)}${v.unit}`}
             </div>
           );
         })}
