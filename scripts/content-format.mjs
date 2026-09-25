@@ -88,6 +88,8 @@ export const VISUAL_TYPES = {
   scale: "目盛りで見る",
 };
 export const FLOW_SHAPES = ["cone", "flat", "immersion"];
+// Width of the scale gauge in src/cards/Diagrams.tsx (WIDTH there).
+const SCALE_WIDTH_PX = 824;
 
 // Display limits derived from the 1080x1920 layout (outer margin 80px, card
 // padding 40px → 840px text width; CJK glyph ≈ 1em). Body text never goes
@@ -387,7 +389,8 @@ function visualTexts(visual, prefix) {
   const walk = (label, value) => {
     if (typeof value === "string") out.push([label, value]);
     else if (Array.isArray(value)) value.forEach((v, i) => walk(`${label}[${i}]`, v));
-    else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) walk(`${label}.${k}`, v);
+    // keys are untrusted: anything but a plain name is quoted, so it cannot carry a line break into the log
+    else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) walk(`${label}.${/^\w+$/.test(k) ? k : quote(k)}`, v);
   };
   if (visual && typeof visual === "object") walk(prefix, visual);
   return out;
@@ -458,8 +461,8 @@ export function validateVisual(v, errors, prefix = "lesson.visual") {
     const nums = ["min", "max", "to"].every((k) => isNum(v[k])) && (v.from == null || isNum(v.from));
     if (!nums) {
       errors.push(`${prefix}.min / max / to (and from, if set) must be numbers`);
-    } else if (!(v.min < v.max)) {
-      errors.push(`${prefix}.min must be below max`);
+    } else if (!(v.min < v.max) || v.min < -999 || v.max > 9999) {
+      errors.push(`${prefix}.min must be below max, both within -999 to 9999 (the readout has to fit one line)`);
     } else {
       for (const k of ["from", "to"]) {
         if (v[k] != null && (v[k] < v.min || v[k] > v.max)) errors.push(`${prefix}.${k} ${v[k]} is outside ${v.min}-${v.max}`);
@@ -473,7 +476,14 @@ export function validateVisual(v, errors, prefix = "lesson.visual") {
           checkLen(errors, `${prefix}.zones[${i}].label`, zone?.label, LIMITS.zoneLabel);
           if (!isNum(zone?.upTo) || zone.upTo <= prev || zone.upTo > v.max) {
             errors.push(`${prefix}.zones[${i}].upTo must rise and stay within ${v.min}-${v.max}`);
-          } else prev = zone.upTo;
+          } else {
+            // The zone is drawn (upTo - prev) / (max - min) of the 824px gauge wide;
+            // its name (40px a character) and its boundary number (~120px) must fit.
+            const px = ((zone.upTo - prev) / (v.max - v.min)) * SCALE_WIDTH_PX;
+            const need = Math.max(charLen(zone?.label) * 40 + 24, 120);
+            if (px < need) errors.push(`${prefix}.zones[${i}] is too narrow for its label (${Math.round(px)}px < ${need}px) — widen it or shorten the label`);
+            prev = zone.upTo;
+          }
         });
         if (isNum(z.at(-1)?.upTo) && z.at(-1).upTo !== v.max) errors.push(`${prefix}.zones: the last upTo must equal max (${v.max})`);
       }
@@ -487,24 +497,29 @@ export function episodeById(id, curriculum = CURRICULUM) {
 }
 
 /**
- * Episodes in the order the channel should air them next: fewest airings
- * first, curriculum order within a tie. The head is "the next episode" — the
- * first one not aired yet, and once the whole series has aired, season two
- * starts again from episode 1. Airings are the `content.episode` of every
- * performance-history video dated before `today` (a re-run of today's job must
- * not count today's own post).
+ * Episodes in the order the channel should air them next, starting with "the
+ * next episode": the one after the most recently aired episode (curriculum
+ * order, wrapping to episode 1 after the last — season two). Nothing aired yet
+ * → episode 1. The rest of the list is the curriculum from there on, which the
+ * fallback walks only when an episode's own lesson fails validation.
+ *
+ * "Aired" = the `content.episode` of the latest performance-history video
+ * dated before `today` (a re-run of today's job must not count today's own
+ * post). Only the latest one matters, so the 90-day history window never
+ * confuses the count, and a day that failed to post (no record) simply airs the
+ * same episode again the next day — which the viewers never saw.
  */
 export function episodeQueue(history, today, curriculum = CURRICULUM) {
   const videos = Array.isArray(history?.videos) ? history.videos : [];
-  const aired = new Map();
+  let latest = null;
   for (const v of videos) {
     const id = v?.content?.episode;
-    if (typeof id === "string" && typeof v.date === "string" && (!today || v.date < today)) aired.set(id, (aired.get(id) || 0) + 1);
+    if (typeof v?.date !== "string" || (today && v.date >= today) || !episodeById(id, curriculum)) continue;
+    if (!latest || v.date >= latest.date) latest = { date: v.date, id };
   }
-  return curriculum.episodes
-    .map((e, index) => ({ e, index, count: aired.get(e.id) || 0 }))
-    .sort((a, b) => a.count - b.count || a.index - b.index)
-    .map((x) => x.e);
+  const eps = curriculum.episodes;
+  const start = latest ? (eps.findIndex((e) => e.id === latest.id) + 1) % eps.length : 0;
+  return eps.map((_, i) => eps[(start + i) % eps.length]);
 }
 
 export function nextEpisode(history, today, curriculum = CURRICULUM) {

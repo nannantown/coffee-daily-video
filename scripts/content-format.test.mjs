@@ -176,22 +176,36 @@ test("docs/curriculum.md lists every episode, in broadcast order", () => {
   }
 });
 
-test("the next episode is the first one not aired yet; today's own post never counts", () => {
-  const [first, second, third] = curriculum.episodes;
+test("the next episode follows the last one aired; today's own post never counts", () => {
+  const [first, second, third, fourth] = curriculum.episodes;
   assert.equal(nextEpisode({ videos: [] }, "2026-09-26").id, first.id);
   assert.equal(nextEpisode(null, "2026-09-26").id, first.id); // unreadable history
   assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-27").id, second.id);
   // a re-run on the same day still picks the episode it already posted
   assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-26").id, first.id);
-  // a gap is filled before moving on (an out-of-order day does not skip an episode)
-  assert.equal(nextEpisode(aired(["2026-09-26", first.id], ["2026-09-27", third.id]), "2026-09-28").id, second.id);
+  // only the latest airing matters (history order does not), and a day with no record repeats nothing new
+  assert.equal(nextEpisode(aired(["2026-09-27", third.id], ["2026-09-26", first.id]), "2026-09-28").id, fourth.id);
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id]), "2026-09-28").id, second.id); // 09-27 failed to post
+  // unknown ids (a renamed episode) are ignored rather than trusted
+  assert.equal(nextEpisode(aired(["2026-09-26", first.id], ["2026-09-27", "gone"]), "2026-09-28").id, second.id);
   // pre-series posts (no episode) do not count
   assert.equal(nextEpisode({ videos: [{ date: "2026-09-25", content: { topic: "x" } }] }, "2026-09-26").id, first.id);
-  // season two starts again from episode 1 once everything has aired
-  const all = aired(...curriculum.episodes.map((e, i) => [`2026-10-${String(i + 1).padStart(2, "0")}`, e.id]));
-  all.videos.forEach((v, i) => (v.date = `2026-${String(10 + Math.floor(i / 28)).padStart(2, "0")}-${String((i % 28) + 1).padStart(2, "0")}`));
-  assert.equal(nextEpisode(all, "2027-01-01").id, first.id);
-  assert.equal(episodeQueue(all, "2027-01-01").length, curriculum.episodes.length);
+  // season two starts again from episode 1 once the last episode has aired
+  assert.equal(nextEpisode(aired(["2026-10-31", curriculum.episodes.at(-1).id]), "2026-11-01").id, first.id);
+  assert.equal(episodeQueue(null, "2026-11-01").length, curriculum.episodes.length);
+});
+
+test("200 days of posts air the whole series in order, season after season, under the 90-day history window", () => {
+  let history = { videos: [] };
+  const start = new Date("2026-09-26T00:00:00Z");
+  const iso = (i) => new Date(start.getTime() + i * 86_400_000).toISOString().slice(0, 10);
+  const n = curriculum.episodes.length;
+  for (let i = 0; i < 200; i++) {
+    const ep = nextEpisode(history, iso(i));
+    assert.equal(ep.id, curriculum.episodes[i % n].id, `day ${i} (${iso(i)})`);
+    history.videos.push({ date: iso(i), content: { episode: ep.id } });
+    history.videos = history.videos.filter((v) => v.date >= iso(i - 90)); // record-upload keeps 90 days
+  }
 });
 
 test("a missed routine airs the next episode's own lesson (the fallback follows the curriculum)", () => {
@@ -275,6 +289,8 @@ test("diagram block: each type is checked against the space it gets", () => {
   has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }, { upTo: 90, label: "b" }] }), "upTo must rise");
   has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }] }), "last upTo must equal max");
   has(bad({ ...scale, unit: "度数" + "x" }), "unit must be");
+  has(bad({ ...scale, zones: [{ upTo: 81, label: "ぬるすぎ" }, { upTo: 100, label: "標準" }] }), "too narrow");
+  has(bad({ ...scale, max: 123456 }), "within -999 to 9999");
 });
 
 test("diagram text is untrusted and product-free like every other text", () => {

@@ -98,7 +98,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit performance history
-        if: steps.mode.outputs.dry_run != 'true'
+        # always(): a post that failed part-way still recorded what aired (pipeline Step 7),
+        # and the series needs that record to move on to the next episode tomorrow.
+        if: always() && steps.mode.outputs.dry_run != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
