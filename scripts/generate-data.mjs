@@ -4,8 +4,8 @@
  * data/enriched-coffee-news.json is written by the morning routine:
  *   - `format: "brew-lesson"`, dated today, valid → that lesson
  *   - missing / stale / invalid / not today's episode → the evergreen lesson
- *     of today's episode from data/curriculum.json (the first episode of the
- *     series not aired yet — scripts/next-episode.mjs prints the same one)
+ *     of today's episode from data/curriculum.json (the episode after the last
+ *     one aired — scripts/next-episode.mjs prints the same one)
  * Every fallback is also reported as a GitHub Actions warning + job summary.
  *
  * There is no bean in this pipeline: the growth phase teaches brewing and

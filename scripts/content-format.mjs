@@ -773,7 +773,7 @@ export class NoLessonError extends Error {}
 /**
  * The fallback content for one curriculum episode: its evergreen lesson,
  * tagged with the episode id. generate-data.mjs picks the episode with
- * episodeQueue (the next one not aired yet), so a day the routine misses
+ * episodeQueue (the one after the last aired), so a day the routine misses
  * still moves the series forward by exactly one episode instead of jumping
  * off-series (owner request 2026-09-25: 「1個1個見ていったら分かる」).
  */

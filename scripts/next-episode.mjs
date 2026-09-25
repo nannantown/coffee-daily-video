@@ -1,7 +1,8 @@
 /**
- * Print today's episode of the series 「味をコントロールする技術」 — the first
- * episode of data/curriculum.json not aired yet (airings = the `content.episode`
- * of data/performance-history.json). The morning routine writes this episode;
+ * Print today's episode of the series 「味をコントロールする技術」 — the episode
+ * of data/curriculum.json after the last one aired (the latest `content.episode`
+ * of data/performance-history.json dated before today; episode 1 if none, and
+ * after the last episode). The morning routine writes this episode;
  * generate-data.mjs falls back to its evergreen lesson when the routine does not.
  *
  * Usage:

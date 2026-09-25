@@ -163,7 +163,7 @@ jq -r --arg today "$TODAY" --arg s "$S" --arg f "$F" '
 
 毎朝の 1 本は、カリキュラム（`data/curriculum.json`・地図は [`docs/curriculum.md`](curriculum.md)）の**次の回**。初級 13 回 → 中級 14 回 → 上級 9 回の 36 回で、1 本ずつ見ていくと味を自分で動かせるようになる順に並べてある。用語だけを解説する回（抽出・比率・蒸らし・透過式と浸漬式・未抽出・過抽出・TDS・抽出収率・濃さと収率・微粉）を含む。
 
-- 回は `scripts/next-episode.mjs` が決める（まだ出ていない回のうち一番前。記録は `performance-history.json` の `content.episode`）。ルーチンが原稿を出せなかった朝も、同じ回の常備原稿が出るのでシリーズは 1 回ずつ進む
+- 回は `scripts/next-episode.mjs` が決める（最後に出た回の次。第 36 回の次は第 1 回。記録は `performance-history.json` の `content.episode`）。ルーチンが原稿を出せなかった朝も、同じ回の常備原稿が出るのでシリーズは 1 回ずつ進む
 - 2 枚目は図解スライド（比べてみる / 味の動き / お湯の流れ / 目盛りで見る）。原稿の `lesson.visual` で型を選ぶ
 - 1 枚目に「初級 第4回」、最後の画面とキャプションに「次回 ○○」を出す（フォローする理由を作る）
 
