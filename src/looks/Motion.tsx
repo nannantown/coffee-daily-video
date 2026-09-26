@@ -33,8 +33,8 @@ const easeOut = Easing.bezier(0.16, 1, 0.3, 1);
 const inOut = Easing.inOut(Easing.cubic);
 const prog = (f: number, a: number, b: number, e = easeOut) => interpolate(f, [a, b], [0, 1], { ...clamp, easing: e });
 
-const LIGHT = [232, 199, 155]; // pale amber
-const DARK = [43, 21, 10]; // near-black brown
+const LIGHT = [228, 168, 96]; // light amber (a thin, bright cup)
+const DARK = [48, 22, 9]; // near-black brown
 export const coffeeColor = (shade: number) => {
   const t = Math.max(0, Math.min(1, shade / 100));
   const c = LIGHT.map((l, i) => Math.round(l + (DARK[i] - l) * t));

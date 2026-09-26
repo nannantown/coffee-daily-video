@@ -48,12 +48,18 @@ const In: React.FC<{ at: number; style?: React.CSSProperties; children: React.Re
 const EDGE = "radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%)";
 
 /** Paper, grain, the coffee branch (top right) and beans (bottom left) of the storyboard. */
-export const LabFrame: React.FC<{ children: React.ReactNode; beans?: boolean }> = ({ children, beans = true }) => {
+export const LabFrame: React.FC<{ children: React.ReactNode; beans?: boolean; sprig?: boolean }> = ({ children, beans = true, sprig = true }) => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill lang="ja" style={{ background: PAPER, fontFamily: FONT_FAMILY, color: INK }}>
-      <Img src={staticFile("looks/lab-decor-branch.png")} style={{ position: "absolute", right: -20, top: -30, width: 260, mixBlendMode: "darken", WebkitMaskImage: EDGE, maskImage: EDGE, opacity: prog(f, 0, 20) }} />
-      {beans ? <Img src={staticFile("looks/lab-decor-beans.png")} style={{ position: "absolute", left: 20, bottom: 70, width: 400, mixBlendMode: "darken", WebkitMaskImage: EDGE, maskImage: EDGE, opacity: prog(f, 6, 26) }} /> : null}
+      <Img src={staticFile("looks/lab-decor-branch.png")} style={{ position: "absolute", right: -20, top: -30, width: 300, mixBlendMode: "darken", WebkitMaskImage: EDGE, maskImage: EDGE, opacity: prog(f, 0, 20) }} />
+      {sprig ? (
+        // a leaf sprig at the foot, right (the storyboard's second decoration)
+        <div style={{ position: "absolute", right: -40, bottom: 40, width: 420, height: 420, overflow: "hidden", opacity: prog(f, 6, 26) }}>
+          <Img src={staticFile("looks/lab-decor-sprig.png")} style={{ position: "absolute", left: -150, top: -520, width: 720, height: 1280, mixBlendMode: "darken" }} />
+        </div>
+      ) : null}
+      {beans ? <Img src={staticFile("looks/lab-decor-beans.png")} style={{ position: "absolute", left: 20, bottom: 60, width: 460, mixBlendMode: "darken", WebkitMaskImage: EDGE, maskImage: EDGE, opacity: prog(f, 6, 26) }} /> : null}
       {children}
       <PaperGrain />
     </AbsoluteFill>
@@ -88,7 +94,7 @@ export const LabHeading: React.FC<{ label: string; heading: string; accent: stri
 // ---------------------------------------------------------------------------
 
 export const LabWhyConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
-  <LabFrame beans={false}>
+  <LabFrame beans={false} sprig={false}>
     {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} /> : null}
     <LabHeading label="なぜ変わる？" heading={`${ep.hook}と`} accent={ep.accent} centerLabel />
   </LabFrame>
@@ -157,7 +163,7 @@ const Gauge: React.FC<{ v: Extract<LessonVisualSlide["visual"], { type: "scale" 
 export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlide }> = ({ ep, slide }) => {
   const v = slide.visual;
   return (
-    <LabFrame>
+    <LabFrame sprig={false}>
       <LabHeading label={slide.heading} heading={`${ep.word}${ep.ask}`} accent={ep.accent} />
       {v.type === "scale" ? (
         <Gauge v={v} accent={ep.accent} />
@@ -168,9 +174,15 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
           </div>
         </InkContext.Provider>
       )}
-      <In at={70} style={{ top: 1250, left: 96, right: 96 }}>
+      <In at={60} style={{ top: 1250, left: 96, right: 96 }}>
         <div style={T(64, 700, ep.accent)}>{v.caption}</div>
-        <div style={{ height: 2, background: RULE, margin: "30px 0 24px" }} />
+      </In>
+      {/* the lower band of the storyboard: the episode's drawing left, the reason right */}
+      <In at={70} style={{ top: 1400, left: 40 }}>
+        <Doodle subject={subjectFor(ep.id)} size={440} />
+      </In>
+      <In at={80} style={{ top: 1440, left: 520, right: 96 }}>
+        <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
         <div style={T(LAB_TYPE.label, 500, GREY)}>{ep.why}</div>
       </In>
     </LabFrame>
@@ -191,7 +203,7 @@ const PencilCup: React.FC<{ shade: number; width: number }> = ({ shade, width })
       <div style={{ position: "absolute", left: -box.x * s, top: -box.y * s, width: 1080 * s, height: 1920 * s }}>
         <Img src={staticFile("looks/lab-vessel-cups.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", mixBlendMode: "darken" }} />
         <div style={{ position: "absolute", inset: 0, WebkitMaskImage: mask, maskImage: mask, WebkitMaskSize: "100% 100%", maskSize: "100% 100%", mixBlendMode: "multiply" }}>
-          <div style={{ position: "absolute", left: 0, right: 0, top: `${(1000 / 1920) * 100}%`, bottom: 0, background: `repeating-linear-gradient(128deg, rgba(0,0,0,0.1) 0 2px, rgba(0,0,0,0) 2px 11px), ${coffeeColor(shade)}` }} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: `${(1000 / 1920) * 100}%`, bottom: 0, background: `repeating-linear-gradient(128deg, rgba(0,0,0,0.16) 0 2px, rgba(0,0,0,0) 2px 10px), linear-gradient(180deg, rgba(255,214,150,0.35) 0%, rgba(255,214,150,0.08) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%), ${coffeeColor(shade)}`, opacity: 0.94 }} />
         </div>
       </div>
     </div>
@@ -247,9 +259,14 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
   const own = subjectFor(ep.id);
   const doodles = [own, own === "grinder" ? "kettle" : "grinder", "cup"];
   const tips = slide.tips.slice(0, 3);
-  const pitch = tips.length > 2 ? 380 : 500;
+  const pitch = tips.length > 2 ? 360 : 480;
+  const f = useCurrentFrame();
   return (
-    <LabFrame>
+    <LabFrame beans={false} sprig={false}>
+      {/* the storyboard's foot: an open notebook and spilled grounds, edge to edge */}
+      <div style={{ position: "absolute", left: 0, top: 1640, width: 1080, height: 280, overflow: "hidden", opacity: prog(f, 0, 24), WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 45%)", maskImage: "linear-gradient(180deg, transparent 0%, #000 45%)" }}>
+        <Img src={staticFile("looks/lab-end-still.png")} style={{ position: "absolute", left: 0, top: -1380, width: 1080, height: 1920, mixBlendMode: "darken" }} />
+      </div>
       <LabHeading label={`${ep.word}${ep.ask}`} heading={slide.heading} accent={ep.accent} />
       {tips.map((t, i) => (
         <In key={t.problem} at={10 + i * 12} style={{ top: 580 + i * pitch, left: 96, right: 60 }}>
@@ -260,7 +277,7 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
               </div>
               <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 10 })}>{t.fix}</div>
             </div>
-            <Doodle subject={doodles[i]} size={tips.length > 2 ? 340 : 440} />
+            <Doodle subject={doodles[i]} size={tips.length > 2 ? 360 : 500} />
           </div>
           {i < tips.length - 1 ? <div style={{ height: 2, background: RULE, marginTop: 24 }} /> : null}
         </In>
@@ -276,10 +293,10 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
 export const LabEndConte: React.FC<{ ep: LookEpisode; ending: CtaEnding }> = ({ ep, ending }) => {
   const f = useCurrentFrame();
   return (
-    <LabFrame beans={false}>
-      {/* the still life (a cup and a notebook), filling the lower part */}
-      <div style={{ position: "absolute", left: 0, top: 1160, width: 1080, height: 760, overflow: "hidden", opacity: prog(f, 0, 24) }}>
-        <Img src={staticFile("looks/lab-notebook.png")} style={{ position: "absolute", left: -60, top: -860, width: 1200, height: 2133, mixBlendMode: "darken" }} />
+    <LabFrame beans={false} sprig={false}>
+      {/* the still life (cup, kettle, notebook, beans), filling the lower half edge to edge */}
+      <div style={{ position: "absolute", left: 0, top: 220, width: 1080, height: 1700, overflow: "hidden", opacity: prog(f, 0, 24) }}>
+        <Img src={staticFile("looks/lab-end-still.png")} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, mixBlendMode: "darken" }} />
       </div>
       <LabHeading label={ending.lead} heading={ending.heading} accent={ep.accent} />
       <In at={12} style={{ top: 680, left: 96, right: 96 }}>
@@ -296,7 +313,9 @@ export const LabEndConte: React.FC<{ ep: LookEpisode; ending: CtaEnding }> = ({ 
           <div style={{ ...T(64, 700, ep.accent), display: "inline-block", borderBottom: `3px solid ${ep.accent}` }}>{ending.next}</div>
         </In>
       ) : null}
-      <In at={30} style={{ top: 1080, left: 96, ...T(32, 500, GREY, { letterSpacing: "0.14em" }) }}>
+      {/* the signature sits on a strip of paper at the foot, as in the storyboard */}
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 150, background: `linear-gradient(180deg, rgba(243,240,234,0) 0%, ${PAPER} 45%)` }} />
+      <In at={30} style={{ top: 1846, left: 0, right: 0, textAlign: "center", ...T(32, 500, GREY, { letterSpacing: "0.14em" }) }}>
         OPEN GROUND COFFEE ROASTERS
       </In>
     </LabFrame>

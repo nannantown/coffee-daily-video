@@ -58,7 +58,9 @@ const Pour: React.FC<{ mask: string; shade: number; top: number; drawIn: number 
           right: 0,
           top,
           bottom: 0,
-          background: `repeating-linear-gradient(128deg, rgba(0,0,0,0.10) 0 2px, rgba(0,0,0,0) 2px 11px), ${coffeeColor(shade)}`,
+          // pencil-hatched and see-through near the surface, like the storyboard's glass
+          background: `repeating-linear-gradient(128deg, rgba(0,0,0,0.16) 0 2px, rgba(0,0,0,0) 2px 10px), linear-gradient(180deg, rgba(255,214,150,0.35) 0%, rgba(255,214,150,0.08) 25%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.14) 100%), ${coffeeColor(shade)}`,
+          opacity: 0.94,
         }}
       />
     </AbsoluteFill>
