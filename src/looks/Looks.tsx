@@ -165,7 +165,7 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 
 const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
-    {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} /> : <DrawnPlate src={`looks/${ep.plate}`} />}
+    {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} heading={`${ep.hook}と`} /> : <DrawnPlate src={`looks/${ep.plate}`} />}
     {!ep.motion && ep.plate.endsWith("-kettle.png") ? (
       <>
         <Steam x={360} y={1290} color={rgba(ep.accent, 0.55)} width={4} />

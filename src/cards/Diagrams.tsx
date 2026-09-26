@@ -416,7 +416,7 @@ const Immersion: React.FC<{ b: FlowBrewer; delay: number }> = ({ b, delay }) => 
   );
 };
 
-const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, delay, width }) => {
+const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number; drawH?: number }> = ({ b, delay, width, drawH = F.h }) => {
   const frame = useCurrentFrame();
   const { cx } = F;
   const immersion = b.shape === "immersion";
@@ -430,7 +430,7 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
   const ripple = b.height === "high" ? ((frame - delay) % 18) / 18 : null;
   return (
     <div style={{ width, display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <svg width={F.w} height={F.h} viewBox={`0 0 ${F.w} ${F.h}`}>
+      <svg width={(F.w * drawH) / F.h} height={drawH} viewBox={`0 0 ${F.w} ${F.h}`}>
         {immersion ? <Immersion b={b} delay={delay} /> : <Percolation b={b} delay={delay} />}
         <line
           x1={cx + swing * 0.3}
@@ -474,10 +474,10 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
   );
 };
 
-const FlowDiagram: React.FC<{ v: Extract<LessonVisual, { type: "flow" }> }> = ({ v }) => (
+const FlowDiagram: React.FC<{ v: Extract<LessonVisual, { type: "flow" }>; drawH?: number }> = ({ v, drawH }) => (
   <div style={{ display: "flex", gap: HALF_GAP, width: WIDTH, justifyContent: "center" }}>
     {v.brewers.map((b, i) => (
-      <Brewer key={`${b.label}-${i}`} b={b} delay={2 + i * 8} width={HALF} />
+      <Brewer key={`${b.label}-${i}`} b={b} delay={2 + i * 8} width={HALF} drawH={drawH} />
     ))}
   </div>
 );
@@ -575,14 +575,15 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
 // the slide
 // ---------------------------------------------------------------------------
 
-export const DiagramBody: React.FC<{ v: LessonVisual }> = ({ v }) => {
+/** `flowHeight`: the drawn height of the flow brewers (default 600) — the lab look fits them above its caption. */
+export const DiagramBody: React.FC<{ v: LessonVisual; flowHeight?: number }> = ({ v, flowHeight }) => {
   switch (v.type) {
     case "compare":
       return <CompareDiagram v={v} />;
     case "graph":
       return <GraphDiagram v={v} />;
     case "flow":
-      return <FlowDiagram v={v} />;
+      return <FlowDiagram v={v} drawH={flowHeight} />;
     case "scale":
       return <ScaleDiagram v={v} />;
     default:

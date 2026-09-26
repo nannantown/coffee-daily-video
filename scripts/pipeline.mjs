@@ -154,7 +154,12 @@ function main() {
   console.log(`  ${data.format}: ${data.slides.length} slides + ending, ${limited.timeline.seconds.toFixed(1)}s`);
   // A look whose picture for today's episode is missing would fail the render:
   // post in the classic cards instead of not posting (scripts/looks-plates.mjs).
-  const plateIssue = lookAssetProblem() ?? (data.lesson?.episode ? plateProblem(data.lesson.episode) : null);
+  let plateIssue;
+  try {
+    plateIssue = lookAssetProblem() ?? (data.lesson?.episode ? plateProblem(data.lesson.episode) : null);
+  } catch (err) {
+    plateIssue = `cannot check the look's files (${err.message})`;
+  }
   if (plateIssue) {
     inputProps.look = "classic";
     console.warn(`::warning::${plateIssue} — rendering the classic cards today`);
@@ -172,7 +177,16 @@ function main() {
   const rawFile = `output/coffee-${dateStr}.raw.mp4`;
   const outputFile = `output/coffee-${dateStr}.mp4`;
   console.log(`\n=== Step 5: Render Video → ${rawFile} ===`);
-  run(`npx remotion render ${compositionId} "${rawFile}" --props="${propsPath}"`);
+  try {
+    run(`npx remotion render ${compositionId} "${rawFile}" --props="${propsPath}"`);
+  } catch (err) {
+    // The look failed to render: post in the classic cards rather than not at all (one retry).
+    if (inputProps.look === "classic") throw err;
+    console.warn(`::warning::render failed in the production look (${err.message}) — retrying with the classic cards`);
+    inputProps.look = "classic";
+    writeFileSync(propsPath, JSON.stringify(inputProps));
+    run(`npx remotion render ${compositionId} "${rawFile}" --props="${propsPath}"`);
+  }
 
   console.log(`\n=== Step 5b: Normalize to yuv420p → ${outputFile} ===`);
   run(

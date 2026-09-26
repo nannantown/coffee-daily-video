@@ -4,6 +4,7 @@ import { PHRASE_BREAK } from "../cards/theme";
 import type { LessonMotion } from "../cards/types";
 import { coffeeColor } from "./Motion";
 import { VESSELS, type Vessel } from "./vessels";
+import { whyLayout } from "./safe-layout.mjs";
 import { withTo } from "./art";
 
 /**
@@ -69,12 +70,12 @@ const Pour: React.FC<{ mask: string; shade: number; top: number; drawIn: number 
 };
 
 /** The pencil drawing, uncovered as if drawn (soft diagonal wipe). */
-const Drawing: React.FC<{ v: Vessel; children?: React.ReactNode }> = ({ v, children }) => {
+const Drawing: React.FC<{ v: Vessel; transform: string; children?: React.ReactNode }> = ({ v, transform, children }) => {
   const f = useCurrentFrame();
   const reveal = interpolate(f, [0, 36], [-30, 130], { ...clamp, easing: inOut });
   const mask = `linear-gradient(160deg, #000 ${reveal - 25}%, transparent ${reveal}%)`;
   return (
-    <AbsoluteFill style={{ transform: `translateY(${v.shift}px) scale(${v.scale})`, transformOrigin: "50% 32%", mixBlendMode: "darken" }}>
+    <AbsoluteFill style={{ transform, transformOrigin: "0 0", mixBlendMode: "darken" }}>
       <AbsoluteFill style={{ WebkitMaskImage: `${mask}, ${EDGE}`, maskImage: `${mask}, ${EDGE}`, WebkitMaskComposite: "source-in", maskComposite: "intersect" }}>
         <Img src={staticFile(`looks/${v.file}`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </AbsoluteFill>
@@ -150,36 +151,44 @@ const Particles: React.FC<{ from: { x: number; y: number }; toY: number; density
   );
 };
 
-/** Full frame: the drawn vessel(s) with coffee poured in, the meters, the core line. */
-export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides: { label: string }[]; accent: string }> = ({ motion, core, sides, accent }) => {
+/** Full frame: the drawn vessel(s) with coffee poured in, the meters, the core line (all text ≤ CONTENT_BOTTOM). */
+export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides: { label: string }[]; accent: string; heading: string }> = ({ motion, core, sides, accent, heading }) => {
   const f = useCurrentFrame();
   const shade = interpolate(f, [40, 100], [motion.shade.from, motion.shade.to], { ...clamp, easing: inOut });
   const pourIn = prog(f, 20, 40);
   const kind = motion.type === "compare" ? "cups" : motion.type === "dissolve" ? "dripper" : "server";
   const v = VESSELS[kind];
+  const L = whyLayout({ heading, core, meters: motion.meters.length, box: v.box, maxScale: v.maxScale, labels: kind === "cups" });
   const level = (m: number) => v.interiorBottom - (v.interiorBottom - v.interiorTop) * m;
+  // plate → screen: scale about the frame's centre line, the box's top at L.top
+  const place = `translate(${540 - 540 * L.scale}px, ${L.top - v.box.top * L.scale}px) scale(${L.scale})`;
   return (
     <AbsoluteFill>
-      <Drawing v={v}>
+      <Drawing v={v} transform={place}>
         {kind === "cups" ? (
           <>
             <Pour mask={v.masks[0]} shade={motion.shade.from} top={level(0.75)} drawIn={pourIn} />
             <Pour mask={v.masks[1]} shade={shade} top={level(0.75)} drawIn={pourIn} />
-            {sides.slice(0, 2).map((s, i) => (
-              <div key={s.label} style={{ position: "absolute", top: v.labelY ?? v.interiorBottom + 40, left: (v.labelX?.[1 - i] ?? 300) - 200, width: 400, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
-                {withTo(s.label)}
-              </div>
-            ))}
           </>
         ) : (
           <Pour mask={v.masks[0]} shade={shade} top={level(0.62)} drawIn={pourIn} />
         )}
         {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={coffeeColor(88)} /> : null}
       </Drawing>
-      <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={motion.meters.length > 2 ? 92 : 104} />
-      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * (motion.meters.length > 2 ? 92 : 104) + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
+      {kind === "cups"
+        ? sides.slice(0, 2).map((s, i) => {
+            const x = 540 + ((v.labelX?.[1 - i] ?? 540) - 540) * L.scale;
+            return (
+              <div key={s.label} style={{ position: "absolute", top: L.labelTop, left: x - 220, width: 440, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
+                {withTo(s.label)}
+              </div>
+            );
+          })
+        : null}
+      <PencilMeters meters={motion.meters} accent={accent} top={L.metersTop} gap={L.gap} />
+      <div style={{ position: "absolute", left: 96, right: 96, top: L.coreTop - 26, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
         <div style={{ height: 2, background: "#D6D0C4", marginBottom: 24 }} />
-        <div style={T(52, 700, accent)}>{core}</div>
+        <div style={T(48, 700, accent, { lineHeight: 1.5 })}>{core}</div>
       </div>
       <PaperGrain />
     </AbsoluteFill>

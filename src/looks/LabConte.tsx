@@ -8,6 +8,7 @@ import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
 import { subjectFor, withTo } from "./art";
+import { CONTENT_BOTTOM, DIAGRAM_TOP, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
 
 /**
  * The lab look (ラボノート, owner's pick 2026-09-26), every scene after the
@@ -95,7 +96,7 @@ export const LabHeading: React.FC<{ label: string; heading: string; accent: stri
 
 export const LabWhyConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <LabFrame beans={false} sprig={false}>
-    {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} /> : null}
+    {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} heading={`${ep.hook}と`} /> : null}
     <LabHeading label="なぜ変わる？" heading={`${ep.hook}と`} accent={ep.accent} centerLabel />
   </LabFrame>
 );
@@ -162,28 +163,31 @@ const Gauge: React.FC<{ v: Extract<LessonVisualSlide["visual"], { type: "scale" 
 
 export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlide }> = ({ ep, slide }) => {
   const v = slide.visual;
+  const L = visualLayout({ type: v.type, caption: v.caption, why: ep.why });
   return (
-    <LabFrame sprig={false}>
+    <LabFrame sprig={false} beans={false}>
       <LabHeading label={slide.heading} heading={`${ep.word}${ep.ask}`} accent={ep.accent} />
       {v.type === "scale" ? (
         <Gauge v={v} accent={ep.accent} />
       ) : (
         <InkContext.Provider value={{ text: INK, textSub: "rgba(34,32,28,0.8)", textMuted: GREY, surface: "#FFFFFF", pill: "#EAE4D8", hairline: RULE, bg: PAPER }}>
-          <div style={{ position: "absolute", top: 650, left: 96, width: 888, transform: v.type === "flow" ? "scale(0.84)" : undefined, transformOrigin: "50% 0%" }}>
-            <DiagramBody v={v} />
+          <div style={{ position: "absolute", top: DIAGRAM_TOP, left: 96, width: 888 }}>
+            <DiagramBody v={v} flowHeight={480} />
           </div>
         </InkContext.Provider>
       )}
-      <In at={60} style={{ top: v.type === "scale" ? 1290 : 1400, left: 96, right: 96 }}>
-        <div style={T(64, 700, ep.accent)}>{v.caption}</div>
+      <In at={60} style={{ top: L.captionTop, left: 96, right: L.captionTop > LOW_Y ? 176 : 96 }}>
+        <div style={T(L.captionSize, 700, ep.accent)}>{v.caption}</div>
       </In>
-      {/* the lower band of the storyboard: the episode's drawing left, the reason right */}
-      <In at={70} style={{ top: 1440, left: 40, display: v.type === "scale" ? "block" : "none" }}>
-        <Doodle subject={subjectFor(ep.id)} size={440} />
-      </In>
-      <In at={80} style={{ top: v.type === "scale" ? 1480 : 1570, left: v.type === "scale" ? 520 : 96, right: 96 }}>
-        <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
-        <div style={T(LAB_TYPE.label, 500, GREY)}>{ep.why}</div>
+      {L.showNote ? (
+        <In at={80} style={{ top: L.noteTop - 26, left: 96, right: 176 }}>
+          <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
+          <div style={T(NOTE_SIZE, 500, GREY)}>{ep.why}</div>
+        </In>
+      ) : null}
+      {/* the storyboard's lower band: the episode's drawing, under the text (pictures may pass CONTENT_BOTTOM) */}
+      <In at={70} style={{ top: Math.max(L.pictureTop, CONTENT_BOTTOM - 180), left: 40 }}>
+        <Doodle subject={subjectFor(ep.id)} size={380} />
       </In>
     </LabFrame>
   );
@@ -219,21 +223,22 @@ export const LabEffectConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => {
     { ...ep.effect[0], shade: interpolate(f, [20, 70], [m?.shade.from ?? today, today], { ...clamp, easing: inOut }) },
     { ...ep.effect[1], shade: interpolate(f, [34, 84], [m?.shade.from ?? other, other], { ...clamp, easing: inOut }) },
   ];
+  const L = effectLayout(rows);
   return (
     <LabFrame>
       <LabHeading label={`${ep.word}${ep.ask}`} heading="味はこう変わる" accent={ep.accent} />
       {rows.map((r, i) => (
-        <In key={r.label} at={10 + i * 14} style={{ top: 560 + i * 520, left: 60, right: 60 }}>
+        <In key={r.label} at={10 + i * 14} style={{ top: L[i].top, left: 60 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
-            <PencilCup shade={r.shade} width={480} />
-            <div style={{ flex: 1 }}>
-              <div style={T(64, 700, INK)}>
+            <PencilCup shade={r.shade} width={EFFECT.cup} />
+            <div style={{ width: L[i].width }}>
+              <div style={T(EFFECT.labelSize, 700, INK)}>
                 {withTo(r.label)} <span style={{ color: ep.accent }}>→</span>
               </div>
-              <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 12 })}>{r.taste}</div>
+              <div style={T(EFFECT.tasteSize, 500, INK, { marginTop: 12 })}>{r.taste}</div>
             </div>
           </div>
-          {i === 0 ? <div style={{ height: 2, background: RULE, marginTop: 40 }} /> : null}
+          {i === 0 ? <div style={{ height: 2, background: RULE, marginTop: 30, width: 1080 - 60 - 96 }} /> : null}
         </In>
       ))}
     </LabFrame>
@@ -259,7 +264,7 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
   const own = subjectFor(ep.id);
   const doodles = [own, own === "grinder" ? "kettle" : "grinder", "cup"];
   const tips = slide.tips.slice(0, 3);
-  const pitch = tips.length > 2 ? 360 : 480;
+  const L = tipsLayout(tips);
   const f = useCurrentFrame();
   return (
     <LabFrame beans={false} sprig={false}>
@@ -269,19 +274,15 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
       </div>
       <LabHeading label={`${ep.word}${ep.ask}`} heading={slide.heading} accent={ep.accent} />
       {tips.map((t, i) => (
-        <In key={t.problem} at={10 + i * 12} style={{ top: 580 + i * pitch, left: 96, right: 60 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <div style={{ flex: 1 }}>
-              <div style={T(64, 700, INK)}>
-                {t.problem}
-              </div>
-              <div style={T(LAB_TYPE.body, 700, ep.accent, { marginTop: 10 })}>
-                {t.fix}
-              </div>
+        <In key={t.problem} at={10 + i * 12} style={{ top: L[i].top, left: 96 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: TIPS.gap }}>
+            <div style={{ width: L[i].width }}>
+              <div style={T(L[i].problemSize, 700, INK)}>{t.problem}</div>
+              <div style={T(L[i].fixSize, 700, ep.accent, { marginTop: 10 })}>→ {t.fix}</div>
             </div>
-            <Doodle subject={doodles[i]} size={tips.length > 2 ? 360 : 500} />
+            <Doodle subject={doodles[i]} size={L[i].doodle} />
           </div>
-          {i < tips.length - 1 ? <div style={{ height: 2, background: RULE, marginTop: 24 }} /> : null}
+          {i < tips.length - 1 ? <div style={{ height: 2, background: RULE, marginTop: 20, width: 1080 - 96 * 2 }} /> : null}
         </In>
       ))}
     </LabFrame>
@@ -294,30 +295,29 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
 
 export const LabEndConte: React.FC<{ ep: LookEpisode; ending: CtaEnding }> = ({ ep, ending }) => {
   const f = useCurrentFrame();
+  const L = endLayout({ heading: ending.heading, lines: ending.lines, next: ending.next });
   return (
     <LabFrame beans={false} sprig={false}>
-      {/* the still life (cup, kettle, notebook, beans), filling the lower half edge to edge */}
-      <div style={{ position: "absolute", left: 0, top: 220, width: 1080, height: 1700, overflow: "hidden", opacity: prog(f, 0, 24) }}>
+      {/* the still life (cup, kettle, notebook, beans) below the text, filling the lower half edge to edge */}
+      <div style={{ position: "absolute", left: 0, top: L.stillTop - 860, width: 1080, height: 1920 - (L.stillTop - 860), overflow: "hidden", opacity: prog(f, 0, 24) }}>
         <Img src={staticFile("looks/lab-end-still.png")} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, mixBlendMode: "darken" }} />
       </div>
       <LabHeading label={ending.lead} heading={ending.heading} accent={ep.accent} />
-      <In at={12} style={{ top: 680, left: 96, right: 96 }}>
+      <In at={12} style={{ top: L.linesTop, left: 96, right: 96 }}>
         {ending.lines.map((l) => (
-          <div key={l} style={T(44, 500, INK)}>
+          <div key={l} style={T(END.lineSize, 500, INK)}>
             {l}
           </div>
         ))}
         <div style={{ height: 2, background: RULE, margin: "32px 0 24px" }} />
       </In>
       {ending.next ? (
-        <In at={22} style={{ top: 900, left: 96, right: 96 }}>
-          <div style={T(LAB_TYPE.label, 500, GREY)}>次回</div>
-          <div style={{ ...T(64, 700, ep.accent), display: "inline-block", borderBottom: `3px solid ${ep.accent}` }}>{ending.next}</div>
+        <In at={22} style={{ top: L.nextTop, left: 96, right: 96 }}>
+          <div style={T(END.labelSize, 500, GREY)}>次回</div>
+          <div style={{ ...T(END.nextSize, 700, ep.accent), display: "inline-block", borderBottom: `3px solid ${ep.accent}` }}>{ending.next}</div>
         </In>
       ) : null}
-      {/* the signature sits on a strip of paper at the foot, as in the storyboard */}
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 150, background: `linear-gradient(180deg, rgba(243,240,234,0) 0%, ${PAPER} 45%)` }} />
-      <In at={30} style={{ top: 1846, left: 0, right: 0, textAlign: "center", ...T(32, 500, GREY, { letterSpacing: "0.14em" }) }}>
+      <In at={30} style={{ top: L.signatureTop, left: 96, ...T(END.signatureSize, 500, GREY, { letterSpacing: "0.14em" }) }}>
         OPEN GROUND COFFEE ROASTERS
       </In>
     </LabFrame>

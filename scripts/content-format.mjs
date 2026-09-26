@@ -128,21 +128,40 @@ export const COLD_BREW = { fridgeWord: "冷蔵庫" };
 // Recipe numbers (owner decision 2026-09-26). Checked after NFKC, so full-width
 // digits and ℃ (→ °C) count too. Counting words that are not a recipe setting
 // stay allowed: 第4回 / 1つ / 1回 / 2つの味.
+// Kanji numerals: one to nine, and the two-digit / hundreds forms (二十 / 十五 / 九十二 / 二百).
+const K1 = "[一二三四五六七八九]";
+const KNUM = `(?:${K1}?百(?:${K1}?十)?${K1}?|${K1}十${K1}?|十${K1}|${K1}〇${K1}?)`;
 const RECIPE_NUMBER_RULES = [
   [
-    // 15g / 240グラム / 200ml / 92°C / 30秒 / 3分 / 1.3% / 2倍 / 3投 / 1段 … (not 3分の1, 1ミリも, 1投目, 数十秒)
-    /\d+(?:\.\d+)?\s*(?:g(?![a-z])|grams?|グラム|kg|mg|ml|ミリ(?![もの])|cc|l(?![a-z])|oz|リットル|°|秒|分(?!の)|min(?:ute)?s?(?![a-z])|sec(?:ond)?s?(?![a-z])|s(?![a-z])|m(?![a-z])|%|パーセント|倍|ppm|投(?!目)|段(?!階)|クリック|clicks?|番(?!目)|メモリ|cups?|deg|[CF](?![a-z]))/iu,
+    // 15g / 240グラム / 200ml / 92°C / 30秒 / 3分 / 1.3% / 2倍 / 3投 / 1段 / 2段階 / 5センチ / 3cm / 0.5mm / 8時間 / 8h …
+    // (not 3分の1, 1ミリも, 1投目)
+    /\d+(?:\.\d+)?\s*(?:g(?![a-z])|grams?|グラム|kg|mg|ml|ミリ(?![もの])|cc|l(?![a-z])|oz|リットル|°|秒|分(?!の)|min(?:ute)?s?(?![a-z])|sec(?:ond)?s?(?![a-z])|s(?![a-z])|m(?![a-z])|%|パーセント|倍|ppm|投(?!目)|段|クリック|clicks?|番(?!目)|メモリ|目盛|cups?|deg|[CF](?![a-z])|センチ|cm|mm|時間|h(?![a-z])|hours?)/iu,
     "an amount, a temperature, a time, a ratio or a grinder setting",
   ],
   // 3度下げる / 92度 (but もう1度 / 1度だけ / 2度目 / 1度に are counting words)
   [/\d{2,}\s*度|(?<!もう)\d\s*度(?!目|だけ|に|きり|も)/u, "a temperature (92度 / 3度下げる)"],
   [/\d+\s*[:/]\s*\d+|\d+\s*[対比]\s*\d+/u, "a time or a ratio (2:30 / 1:15 / 1対15 / 1/15)"],
-  [/(?:ダイヤル|目盛り?|メモリ)\s*\d/u, "a grinder setting (ダイヤル3)"],
+  [new RegExp(`(?:ダイヤル|目盛り?|メモリ)\\s*(?:\\d|${K1}|十)`, "u"), "a grinder setting (ダイヤル3 / 目盛り二つ)"],
   // a bare number of two digits or more (湯温は92くらい), except 第28回 / 36回 / V60 and other names
   [/(?<![A-Za-z第\d.])\d{2,}(?![\d.]|\s*(?:回|つ|人|本|種|代|年|日|月))/u, "a bare number (92くらい)"],
   [
-    /(?<!数)[〇一二三四五六七八九十百千]+\s*(?:グラム|g(?![a-z])|ミリ(?![もの])|ml|cc|リットル|秒|パーセント|°|クリック|段(?!階))|[二三四五六七八九百]十[一二三四五六七八九]?\s*度|百\s*度|[一二三四五六七八九][〇一二三四五六七八九]\s*度|(?<![十数])[一二三四五六七八九]分(?!の|け|か|野|類|解|量)|[一二三四五六七八九十]+分半|[一二三四五六七八九十]+\s*対\s*[一二三四五六七八九十]+/u,
-    "a number in kanji (十五グラム / 九十度 / 三分 / 一対十五)",
+    new RegExp(
+      [
+        // a kanji number with a unit: 十五グラム / 二倍 / 八時間 / 五センチ / 九十℃ / 十度 / 三分 / 二十分
+        `(?<![数何])(?:${KNUM}|${K1}|十)\\s*(?:グラム|g(?![a-z])|ミリ(?![もの])|ml|cc|リットル|秒|パーセント|°|クリック|段(?!階的)|倍|時間|センチ)`,
+        // 十度 / 三度 / 九十二度 (一度 = "once" stays)
+        `(?<![数何])(?:${KNUM}|[二三四五六七八九]|十)\\s*度(?!目|だけ|に|も)`,
+        `(?<![数何十])${K1}分(?!の|け|か|野|類|解|量)`,
+        `(?<![数何])${KNUM}分`,
+        `${K1}?十?${K1}?分半`,
+        // a kanji ratio / time: 一対十五 / 一：十五
+        `(?:${KNUM}|${K1}|十)\\s*[対比:：/]\\s*(?:${KNUM}|${K1}|十)`,
+        // a bare two-digit or hundreds kanji number: 九十二くらい / 湯を二百 (十分に / 数十秒 stay)
+        `(?<![数何十百])${KNUM}(?![分人日年回つ本種代])`,
+      ].join("|"),
+      "u"
+    ),
+    "a number in kanji (十五グラム / 九十度 / 二十分 / 一対十五 / 九十二)",
   ],
 ];
 

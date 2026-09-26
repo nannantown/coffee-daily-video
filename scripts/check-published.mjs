@@ -16,7 +16,7 @@ import { existsSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { scanBannedTerms } from "./brand-guard.mjs";
-import { collectPublishedTexts } from "./content-format.mjs";
+import { collectPublishedTexts, recipeNumberReason } from "./content-format.mjs";
 
 const outputDir = join(dirname(fileURLToPath(import.meta.url)), "..", "output");
 const readIfPresent = (name) => {
@@ -49,4 +49,12 @@ if (hits.length > 0) {
   console.error("The channel is in its audience-growth phase: no bean, no origin, no shop, no sales line (owner decision 2026-09-22).");
   process.exit(1);
 }
-console.log(`OK: nothing we sell in ${texts.length} published texts`);
+// No recipe numbers either (owner decision 2026-09-26) — this also stops a re-post
+// workflow from publishing an older, number-filled caption or video.
+const numbers = texts.map(([label, text]) => [label, recipeNumberReason(text)]).filter(([, why]) => why);
+if (numbers.length > 0) {
+  console.error(`NG: ${numbers.length} recipe number(s) would be published`);
+  for (const [label, why] of numbers) console.error(`  - ${label}: ${why}`);
+  process.exit(1);
+}
+console.log(`OK: nothing we sell and no recipe numbers in ${texts.length} published texts`);
