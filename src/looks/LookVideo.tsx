@@ -5,6 +5,7 @@ import { type Ink, InkContext } from "../cards/ink";
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps, CtaEnding, LessonTipsSlide, LessonVisualSlide } from "../cards/types";
 import { subjectFor, toneFor } from "./art";
+import { LabEffectConte, LabEndConte, LabTipsConte, LabVisualConte, LabWhyConte } from "./LabConte";
 import { type Look, type LookEpisode, LOOK_SCENES, SIZE } from "./Looks";
 
 /**
@@ -184,6 +185,13 @@ export function lookEpisode(look: Look, slides: CardSlide[]): LookEpisode {
 }
 
 const Scene: React.FC<{ look: Look; ep: LookEpisode; slide: CardSlide }> = ({ look, ep, slide }) => {
+  if (look === "lab" && slide.kind !== "lesson-title") {
+    // the lab look's storyboard scenes (src/looks/LabConte.tsx)
+    if (slide.kind === "lesson-why") return <LabWhyConte ep={ep} />;
+    if (slide.kind === "lesson-visual") return <LabVisualConte ep={ep} slide={slide} />;
+    if (slide.kind === "lesson-effect") return <LabEffectConte ep={ep} />;
+    if (slide.kind === "lesson-tips") return <LabTipsConte ep={ep} slide={slide} />;
+  }
   const S = LOOK_SCENES[look];
   switch (slide.kind) {
     case "lesson-title":
@@ -214,7 +222,7 @@ export const LookVideo: React.FC<CoffeeCardsProps & { look: Look }> = ({ look, s
           </Series.Sequence>
         ))}
         <Series.Sequence durationInFrames={timeline.ending}>
-          <EndingScene look={look} ep={ep} ending={ending} />
+          {look === "lab" ? <LabEndConte ep={ep} ending={ending} /> : <EndingScene look={look} ep={ep} ending={ending} />}
           {withAudio ? <Audio src={staticFile("audio/ending.mp3")} volume={1} /> : null}
         </Series.Sequence>
       </Series>
@@ -226,4 +234,4 @@ export const LookVideo: React.FC<CoffeeCardsProps & { look: Look }> = ({ look, s
  * The look the daily video is drawn in. null = the classic dark cards
  * (src/cards/). Set once the owner picks a direction (2026-09-26 redesign).
  */
-export const PRODUCTION_LOOK: Look | null = null;
+export const PRODUCTION_LOOK: Look | null = "lab";

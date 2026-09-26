@@ -130,7 +130,7 @@ const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; t
 
 const Particles: React.FC<{ from: { x: number; y: number }; toY: number; density: number; color: string }> = ({ from, toY, density, color }) => {
   const f = useCurrentFrame();
-  const count = Math.round(6 + (density / 100) * 40);
+  const count = Math.round(10 + (density / 100) * 60);
   const rand = (s: number) => {
     const x = Math.sin(s * 12.9898) * 43758.5453;
     return x - Math.floor(x);
@@ -141,7 +141,7 @@ const Particles: React.FC<{ from: { x: number; y: number }; toY: number; density
         const life = ((f * 1.5 + i * 37) % 150) / 150;
         const x = from.x + (rand(i + 5) - 0.5) * 70 * life;
         const y = from.y + life * (toY - from.y);
-        return <circle key={i} cx={x} cy={y} r={4.5 - life * 1.5} fill={color} opacity={Math.sin(life * Math.PI) * 0.85} />;
+        return <circle key={i} cx={x} cy={y} r={7 - life * 2} fill={color} opacity={Math.sin(life * Math.PI) * 0.9} />;
       })}
     </svg>
   );
@@ -163,7 +163,7 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
             <Pour mask={v.masks[0]} shade={motion.shade.from} top={level(0.75)} drawIn={pourIn} />
             <Pour mask={v.masks[1]} shade={shade} top={level(0.75)} drawIn={pourIn} />
             {sides.slice(0, 2).map((s, i) => (
-              <div key={s.label} style={{ position: "absolute", top: v.labelY ?? v.interiorBottom + 40, left: (v.labelX?.[1 - i] ?? 300) - 200, width: 400, textAlign: "center", opacity: prog(f, 30, 46), ...T(44, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
+              <div key={s.label} style={{ position: "absolute", top: v.labelY ?? v.interiorBottom + 40, left: (v.labelX?.[1 - i] ?? 300) - 200, width: 400, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
                 {s.label}と
               </div>
             ))}
@@ -174,7 +174,10 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
         {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={accent} /> : null}
       </Drawing>
       <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={96} />
-      <div style={{ position: "absolute", left: 96, right: 96, top: 470, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)`, ...T(48, 700, accent) }}>{core}</div>
+      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * 96 + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
+        <div style={{ height: 2, background: "#D6D0C4", marginBottom: 24 }} />
+        <div style={T(52, 700, accent)}>{core}</div>
+      </div>
       <PaperGrain />
     </AbsoluteFill>
   );
