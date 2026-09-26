@@ -85,10 +85,10 @@ const Drawing: React.FC<{ v: Vessel; transform: string; children?: React.ReactNo
 };
 
 /** Hatched pencil bars: the fill is diagonal strokes in the accent, the track a rough outline. */
-const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; top: number; gap: number; start?: number }> = ({ meters, accent, top, gap, start = 40 }) => {
+const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; top: number; gap: number; width: number; start?: number }> = ({ meters, accent, top, gap, width, start = 40 }) => {
   const f = useCurrentFrame();
   const labelW = 270; // 4 characters at 52px + the arrow
-  const barW = 888 - labelW - 20;
+  const barW = width - labelW - 20;
   return (
     <>
       <svg width={0} height={0} style={{ position: "absolute" }}>
@@ -109,7 +109,7 @@ const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; t
         const down = m.to < m.from - 2;
         const w = (barW * v) / 100;
         return (
-          <div key={m.label} style={{ position: "absolute", left: 96, top: top + i * gap, width: 888, height: 64, display: "flex", alignItems: "center", opacity: prog(f, 14 + i * 6, 30 + i * 6) }}>
+          <div key={m.label} style={{ position: "absolute", left: 96, top: top + i * gap, width, height: 64, display: "flex", alignItems: "center", opacity: prog(f, 14 + i * 6, 30 + i * 6) }}>
             <div style={{ width: labelW, display: "flex", alignItems: "center", gap: 10, whiteSpace: "nowrap" }}>
               <span style={T(52, 700, INK)}>{m.label}</span>
               {up || down ? (
@@ -158,7 +158,9 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
   const pourIn = prog(f, 20, 40);
   const kind = motion.type === "compare" ? "cups" : motion.type === "dissolve" ? "dripper" : "server";
   const v = VESSELS[kind];
-  const L = whyLayout({ heading, core, meters: motion.meters.length, box: v.box, maxScale: v.maxScale, labels: kind === "cups" });
+  // cup names: [the other way, today's way] under [left cup, right cup] (the right cup holds today's coffee)
+  const cupNames = kind === "cups" ? [withTo(sides[1]?.label ?? ""), withTo(sides[0]?.label ?? "")] : null;
+  const L = whyLayout({ heading, core, meters: motion.meters.length, box: v.box, maxScale: v.maxScale, labels: cupNames, labelX: v.labelX });
   const level = (m: number) => v.interiorBottom - (v.interiorBottom - v.interiorTop) * m;
   // plate → screen: scale about the frame's centre line, the box's top at L.top
   const place = `translate(${540 - 540 * L.scale}px, ${L.top - v.box.top * L.scale}px) scale(${L.scale})`;
@@ -175,18 +177,14 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
         )}
         {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={coffeeColor(88)} /> : null}
       </Drawing>
-      {kind === "cups"
-        ? sides.slice(0, 2).map((s, i) => {
-            const x = 540 + ((v.labelX?.[1 - i] ?? 540) - 540) * L.scale;
-            return (
-              <div key={s.label} style={{ position: "absolute", top: L.labelTop, left: x - 220, width: 440, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
-                {withTo(s.label)}
-              </div>
-            );
-          })
-        : null}
-      <PencilMeters meters={motion.meters} accent={accent} top={L.metersTop} gap={L.gap} />
-      <div style={{ position: "absolute", left: 96, right: 96, top: L.coreTop - 26, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
+      {L.labels.map((b: { text: string; left: number; width: number; top: number }, i: number) => (
+        <div key={b.text} style={{ position: "absolute", top: b.top, left: b.left, width: b.width, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 1 ? 700 : 500, i === 1 ? accent : GREY) }}>
+          {b.text}
+        </div>
+      ))}
+      {/* the meters sit below y 1000 too: same column as the core line, clear of the action buttons */}
+      <PencilMeters meters={motion.meters} accent={accent} top={L.metersTop} gap={L.gap} width={L.coreRight - L.coreLeft} />
+      <div style={{ position: "absolute", left: L.coreLeft, width: L.coreRight - L.coreLeft, top: L.coreTop - 26, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
         <div style={{ height: 2, background: "#D6D0C4", marginBottom: 24 }} />
         <div style={T(48, 700, accent, { lineHeight: 1.5 })}>{core}</div>
       </div>

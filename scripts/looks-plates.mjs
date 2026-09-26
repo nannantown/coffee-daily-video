@@ -39,7 +39,7 @@ export function plateProblem(episode, look = productionLook()) {
 /**
  * Files every episode of a look draws besides its own plate (review round 2:
  * a missing vessel / decoration / still life failed the render too). Keep in
- * step with src/looks/LabConte.tsx, PencilMotion.tsx and vessels.ts.
+ * step with src/looks/LabConte.tsx, PencilMotion.tsx and vessels-data.mjs.
  */
 export const LOOK_ASSETS = {
   lab: [

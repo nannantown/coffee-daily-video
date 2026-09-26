@@ -8,7 +8,7 @@ import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
 import { subjectFor, withTo } from "./art";
-import { CONTENT_BOTTOM, DIAGRAM_TOP, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
+import { DIAGRAM_TOP, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
 
 /**
  * The lab look (ラボノート, owner's pick 2026-09-26), every scene after the
@@ -165,7 +165,7 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
   const v = slide.visual;
   const L = visualLayout({ type: v.type, caption: v.caption, why: ep.why });
   return (
-    <LabFrame sprig={false} beans={false}>
+    <LabFrame sprig={false}>
       <LabHeading label={slide.heading} heading={`${ep.word}${ep.ask}`} accent={ep.accent} />
       {v.type === "scale" ? (
         <Gauge v={v} accent={ep.accent} />
@@ -179,16 +179,18 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
       <In at={60} style={{ top: L.captionTop, left: 96, right: L.captionTop > LOW_Y ? 176 : 96 }}>
         <div style={T(L.captionSize, 700, ep.accent)}>{v.caption}</div>
       </In>
+      {/* the gauge's lower band (as in the storyboard): the episode's drawing left, the reason right */}
+      {L.doodle ? (
+        <In at={70} style={{ top: 1440, left: 40 }}>
+          <Doodle subject={subjectFor(ep.id)} size={440} />
+        </In>
+      ) : null}
       {L.showNote ? (
-        <In at={80} style={{ top: L.noteTop - 26, left: 96, right: 176 }}>
+        <In at={80} style={{ top: L.noteTop - 26, left: L.noteLeft, width: L.noteWidth }}>
           <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
           <div style={T(NOTE_SIZE, 500, GREY)}>{ep.why}</div>
         </In>
       ) : null}
-      {/* the storyboard's lower band: the episode's drawing, under the text (pictures may pass CONTENT_BOTTOM) */}
-      <In at={70} style={{ top: Math.max(L.pictureTop, CONTENT_BOTTOM - 180), left: 40 }}>
-        <Doodle subject={subjectFor(ep.id)} size={380} />
-      </In>
     </LabFrame>
   );
 };
@@ -278,7 +280,7 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
           <div style={{ display: "flex", alignItems: "center", gap: TIPS.gap }}>
             <div style={{ width: L[i].width }}>
               <div style={T(L[i].problemSize, 700, INK)}>{t.problem}</div>
-              <div style={T(L[i].fixSize, 700, ep.accent, { marginTop: 10 })}>→ {t.fix}</div>
+              <div style={T(L[i].fixSize, 700, ep.accent, { marginTop: 10 })}>{t.fix}</div>
             </div>
             <Doodle subject={doodles[i]} size={L[i].doodle} />
           </div>
@@ -312,12 +314,12 @@ export const LabEndConte: React.FC<{ ep: LookEpisode; ending: CtaEnding }> = ({ 
         <div style={{ height: 2, background: RULE, margin: "32px 0 24px" }} />
       </In>
       {ending.next ? (
-        <In at={22} style={{ top: L.nextTop, left: 96, right: 96 }}>
+        <In at={22} style={{ top: L.nextTop, left: 96, width: L.lowRight - 96 }}>
           <div style={T(END.labelSize, 500, GREY)}>次回</div>
           <div style={{ ...T(END.nextSize, 700, ep.accent), display: "inline-block", borderBottom: `3px solid ${ep.accent}` }}>{ending.next}</div>
         </In>
       ) : null}
-      <In at={30} style={{ top: L.signatureTop, left: 96, ...T(END.signatureSize, 500, GREY, { letterSpacing: "0.14em" }) }}>
+      <In at={30} style={{ top: L.signatureTop, left: 96, width: L.lowRight - 96, ...T(END.signatureSize, 500, GREY, { letterSpacing: "0.14em" }) }}>
         OPEN GROUND COFFEE ROASTERS
       </In>
     </LabFrame>

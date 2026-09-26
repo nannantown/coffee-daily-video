@@ -1,5 +1,5 @@
 /**
- * Masks for the pencil vessels (src/looks/vessels.ts): the inside of each
+ * Masks for the pencil vessels (src/looks/vessels-data.mjs): the inside of each
  * drawn glass, flood-filled from its seed point, opaque white on transparent,
  * 1080x1920. The coffee colour is drawn through these masks.
  *
@@ -11,7 +11,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
-const src = readFileSync(join(rootDir, "src", "looks", "vessels.ts"), "utf-8");
+const src = readFileSync(join(rootDir, "src", "looks", "vessels-data.mjs"), "utf-8");
 const only = process.argv[2];
 for (const [, name, body] of src.matchAll(/^  (server|dripper|cups): \{([\s\S]*?)^  \},/gm)) {
   if (only && name !== only) continue;

@@ -56,19 +56,34 @@ export const WHY = {
  * sit above it, and the drawing gets whatever is left under the heading.
  * `box` is the drawing's bounding box on its 1080x1920 plate (vessels.ts).
  */
-export function whyLayout({ heading, core, meters, box, maxScale, labels = false }) {
+export function whyLayout({ heading, core, meters, box, maxScale, labels = null, labelX = [] }) {
   const n = Math.max(1, meters);
   const gap = WHY.meterGap(n);
-  const coreH = textHeight(core, WHY.coreSize, COLUMN);
+  // the core line sits below y LOW_Y: it keeps the action-column clearance
+  const coreH = textHeight(core, WHY.coreSize, LOW_COLUMN);
   const coreTop = CONTENT_BOTTOM - coreH;
   const metersBottom = coreTop - WHY.ruleGap;
   const metersTop = metersBottom - ((n - 1) * gap + WHY.meterRow);
   const top = headingBottom(heading) + 20;
-  const labelH = labels ? lineHeight(WHY.cupLabelSize) + 10 : 0;
+  // cups: each cup's name under it, in a box that ends left of the action column (x ≤ 1080 - MARGIN - 80)
+  const labelBoxes = (labels ?? []).map((text, i, all) => {
+    const half = 540 - MARGIN; // 444: each name gets half the column
+    const left = i === 0 ? MARGIN : 540 + 20;
+    const right = i === 0 ? 540 - 20 : Math.min(1080 - MARGIN - 80, left + half);
+    return { text, left, right, width: right - left, height: textHeight(text, WHY.cupLabelSize, right - left) };
+  });
+  const labelH = labelBoxes.length ? Math.max(...labelBoxes.map((b) => b.height)) + 10 : 0;
   const avail = metersTop - WHY.vesselGap - labelH - top;
   const scale = Math.max(0.3, Math.min(maxScale, avail / (box.bottom - box.top)));
   const drawnBottom = top + (box.bottom - box.top) * scale;
-  return { gap, coreTop, coreBottom: coreTop + coreH, metersTop, top, scale, drawnBottom, labelTop: drawnBottom + 10 };
+  const labelTop = drawnBottom + 10;
+  // centre each name under its cup when that still fits its box
+  for (const [i, b] of labelBoxes.entries()) {
+    b.top = labelTop;
+    b.bottom = labelTop + b.height;
+    b.cupX = 540 + ((labelX[i] ?? 540) - 540) * scale;
+  }
+  return { gap, coreTop, coreBottom: coreTop + coreH, coreLeft: MARGIN, coreRight: MARGIN + LOW_COLUMN, metersTop, top, scale, drawnBottom, labelTop, labels: labelBoxes };
 }
 
 // ---------------------------------------------------------------------------
@@ -78,26 +93,33 @@ export function whyLayout({ heading, core, meters, box, maxScale, labels = false
 /** Drawn height of each diagram kind at the lab look's sizes (flow drawn 480 high): measured on all 36 episodes (graph 716, compare 695, flow 680) plus room for a routine's longest labels. */
 export const DIAGRAM_HEIGHT = { compare: 710, graph: 720, flow: 700, scale: 0 };
 export const DIAGRAM_TOP = 650;
-export const GAUGE_BOTTOM = 1190; // the hand-drawn gauge's baseline + its needle hub
+export const SCALE_CAPTION_TOP = 1290; // under the hand-drawn gauge (baseline 1130 + needle hub)
+export const SCALE_NOTE_TOP = 1506; // right of the episode drawing (x 40, y 1440, 440 square)
+export const SCALE_NOTE_LEFT = 520;
 export const captionSize = (type) => (type === "scale" ? 64 : 56); // under a tall diagram the caption steps down a size
 export const NOTE_SIZE = 44;
 
 /** Caption (and the reason, if it still fits) under the diagram; null = the reason is dropped. */
 export function visualLayout({ type, caption, why }) {
-  const captionTop = type === "scale" ? GAUGE_BOTTOM + 40 : DIAGRAM_TOP + DIAGRAM_HEIGHT[type] + 16;
+  const scale = type === "scale";
+  // the gauge's caption sits where the approved storyboard put it (1290); other diagrams: right under the drawing
+  const captionTop = scale ? SCALE_CAPTION_TOP : DIAGRAM_TOP + DIAGRAM_HEIGHT[type] + 16;
   const size = captionSize(type);
   const captionBottom = captionTop + textHeight(caption, size, captionTop > LOW_Y ? LOW_COLUMN : COLUMN);
-  const noteTop = captionBottom + 50;
-  const noteBottom = noteTop + textHeight(why, NOTE_SIZE, LOW_COLUMN);
+  // gauge: the reason goes right of the episode's drawing (as in the storyboard); others: under the caption
+  const noteLeft = scale ? SCALE_NOTE_LEFT : MARGIN;
+  const noteWidth = 1080 - MARGIN - 80 - noteLeft;
+  const noteTop = scale ? Math.max(SCALE_NOTE_TOP, captionBottom + 50) : captionBottom + 50;
+  const noteBottom = noteTop + textHeight(why, NOTE_SIZE, noteWidth);
   const showNote = noteBottom <= CONTENT_BOTTOM;
-  return { captionTop, captionSize: size, captionBottom, noteTop, noteBottom, showNote, pictureTop: (showNote ? noteBottom : captionBottom) + 30 };
+  return { captionTop, captionSize: size, captionBottom, noteLeft, noteWidth, noteTop, noteBottom, showNote, doodle: scale };
 }
 
 // ---------------------------------------------------------------------------
 // both ways (LabEffectConte) and tips (LabTipsConte)
 // ---------------------------------------------------------------------------
 
-export const EFFECT = { top: 560, pitch: 450, cup: 400, labelSize: 60, tasteSize: 56 };
+export const EFFECT = { top: 560, pitch: 450, cup: 400, labelSize: 64, tasteSize: 56 };
 /** Text column right of the cup; rows below LOW_Y keep the action-column clearance. */
 export function effectLayout(rows) {
   return rows.map((r, i) => {
@@ -133,7 +155,8 @@ export function endLayout({ heading, lines, next }) {
   const linesTop = Math.max(END.linesTop, headingBottom(heading) + 40);
   const linesBottom = linesTop + lines.reduce((h, l) => h + textHeight(l, END.lineSize, COLUMN), 0) + 58;
   const nextTop = linesBottom + 10;
-  const nextBottom = next ? nextTop + lineHeight(END.labelSize) + textHeight(next, END.nextSize, COLUMN) : nextTop;
+  // the 次回 line and the signature may reach below y LOW_Y: they keep the action-column clearance
+  const nextBottom = next ? nextTop + lineHeight(END.labelSize) + textHeight(next, END.nextSize, LOW_COLUMN) : nextTop;
   const signatureTop = nextBottom + 30;
-  return { linesTop, nextTop, signatureTop, bottom: signatureTop + lineHeight(END.signatureSize), stillTop: signatureTop + 80 };
+  return { linesTop, nextTop, nextBottom, signatureTop, bottom: signatureTop + lineHeight(END.signatureSize), stillTop: signatureTop + 80, lowRight: MARGIN + LOW_COLUMN };
 }
