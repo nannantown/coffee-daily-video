@@ -12,7 +12,7 @@ import type { CompareSide, FlowBrewer, LessonVisual, LessonVisualSlide } from ".
  *   compare — two cups side by side: condition → how dark / what it tastes like
  *   graph   — how one taste moves along a variable (time, bloom …), today marked
  *   flow    — a brewer in cross-section: where the water goes (percolation vs immersion, shapes, pours)
- *   scale   — a gauge whose needle moves from the usual value to today's (℃, %, 1対n)
+ *   scale   — a gauge with named zones; the needle moves from the usual spot to today's (no numbers)
  *
  * House rules kept from the other cards (docs/video-style.md): body text ≥ 40px,
  * auxiliary ≥ 32px, text stays white, accent colours only on lines / fills,
@@ -478,38 +478,26 @@ const FlowDiagram: React.FC<{ v: Extract<LessonVisual, { type: "flow" }> }> = ({
 );
 
 // ---------------------------------------------------------------------------
-// scale
+// scale — a gauge without numbers (owner decision 2026-09-26): named zones of
+// equal width, the needle moving from the usual spot to today's (0-100).
 // ---------------------------------------------------------------------------
 
 const ZONE_COLORS: Record<number, string[]> = {
-  1: [COLORS.sage],
   2: [COLORS.sky, COLORS.terracotta],
   3: [COLORS.sky, COLORS.sage, COLORS.terracotta],
 };
 
-function decimals(n: number): number {
-  const s = String(n);
-  return s.includes(".") ? Math.min(2, s.split(".")[1].length) : 0;
-}
-
 const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = ({ v }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  // The readout shows as many decimals as the two values need (1.25 → 1.40,
-  // 16 → 15); the axis numbers as many as the axis needs (1.00 … 1.60).
-  const digits = Math.max(...[v.to, ...(v.from != null ? [v.from] : [])].map(decimals));
-  const axisDigits = Math.max(...[v.min, v.max, ...v.zones.map((z) => z.upTo)].map(decimals));
-  const fmt = (n: number) => {
-    const s = n.toFixed(digits);
-    return v.format === "ratio" ? `1対${s}` : `${s}${v.unit}`;
-  };
-  const x = (n: number) => ((n - v.min) / (v.max - v.min)) * WIDTH;
+  const x = (n: number) => (n / 100) * WIDTH;
   const from = v.from ?? v.to;
   const move = spring({ frame: Math.max(0, frame - 14), fps, config: { damping: 16, stiffness: 70 } });
   const current = from + (v.to - from) * Math.min(1, move);
   const needleX = x(current);
   const colors = ZONE_COLORS[v.zones.length] ?? ZONE_COLORS[3];
-  const bounds = [v.min, ...v.zones.map((z) => z.upTo)];
+  const zoneW = WIDTH / v.zones.length;
+  const zoneAt = (n: number) => v.zones[Math.min(v.zones.length - 1, Math.floor((n / 100) * v.zones.length))];
   const barIn = progress(frame, 4, 16);
   const BAR_Y = 210;
   const BAR_H = 52;
@@ -522,35 +510,22 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
         </Pill>
       </Reveal>
       <Reveal delay={6} style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 28, whiteSpace: "nowrap" }}>
-        {v.from != null ? (
+        {v.from != null && zoneAt(v.from) !== zoneAt(v.to) ? (
           <>
-            <span style={{ fontSize: 64, fontWeight: 800, color: COLORS.textMuted, fontVariantNumeric: "tabular-nums" }}>{fmt(v.from)}</span>
+            <span style={{ fontSize: 64, fontWeight: 800, color: COLORS.textMuted }}>{zoneAt(v.from)}</span>
             <svg width={72} height={48} viewBox="0 0 72 48">
               <path d="M6 24 H60 M44 8 L62 24 L44 40" stroke={COLORS.caramel} strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </>
         ) : null}
-        <span style={{ fontSize: 112, fontWeight: 900, letterSpacing: "-2px", fontVariantNumeric: "tabular-nums" }}>{fmt(v.to)}</span>
+        <span style={{ fontSize: 96, fontWeight: 900 }}>{zoneAt(v.to)}</span>
       </Reveal>
-      <div style={{ position: "relative", width: WIDTH, height: BAR_Y + BAR_H + 200, marginTop: 40 }}>
-        {/* zones */}
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            top: BAR_Y,
-            width: WIDTH * barIn,
-            height: BAR_H,
-            borderRadius: BAR_H / 2,
-            overflow: "hidden",
-            display: "flex",
-          }}
-        >
+      <div style={{ position: "relative", width: WIDTH, height: BAR_Y + BAR_H + 140, marginTop: 40 }}>
+        <div style={{ position: "absolute", left: 0, top: BAR_Y, width: WIDTH * barIn, height: BAR_H, borderRadius: BAR_H / 2, overflow: "hidden", display: "flex" }}>
           {v.zones.map((z, i) => (
-            <div key={z.label} style={{ flex: `0 0 ${x(z.upTo) - x(bounds[i])}px`, background: colors[i], opacity: 0.85 }} />
+            <div key={z} style={{ flex: `0 0 ${zoneW}px`, background: colors[i], opacity: 0.85 }} />
           ))}
         </div>
-        {/* usual value: a hollow ring left behind */}
         {v.from != null ? (
           <div
             style={{
@@ -566,46 +541,15 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
             }}
           />
         ) : null}
-        {/* needle + live value */}
-        <div style={{ position: "absolute", left: needleX - 110, top: 0, width: 220, display: "flex", flexDirection: "column", alignItems: "center", opacity: barIn }}>
-          <Pill accent={COLORS.caramel} size={48}>
-            <span style={{ fontVariantNumeric: "tabular-nums" }}>{fmt(current)}</span>
-          </Pill>
-          <div style={{ width: 10, height: BAR_Y - 80 + BAR_H + 26, marginTop: 8, borderRadius: 5, background: COLORS.caramel, boxShadow: "0 0 0 3px rgba(26,14,8,0.9)" }} />
-        </div>
-        {/* boundary numbers */}
-        {bounds.map((b, i) => {
-          const edge = i === 0 ? "left" : i === bounds.length - 1 ? "right" : "center";
-          const left = edge === "left" ? 0 : edge === "right" ? WIDTH - 160 : x(b) - 80;
-          return (
-            <div
-              key={`${b}-${i}`}
-              style={{
-                position: "absolute",
-                left,
-                width: 160,
-                top: BAR_Y + BAR_H + 36,
-                textAlign: edge,
-                fontSize: TYPE.aux,
-                fontWeight: 600,
-                color: COLORS.textMuted,
-                fontVariantNumeric: "tabular-nums",
-                opacity: barIn,
-              }}
-            >
-              {v.format === "ratio" ? `1対${b.toFixed(axisDigits)}` : `${b.toFixed(axisDigits)}${v.unit}`}
-            </div>
-          );
-        })}
-        {/* zone names */}
+        <div style={{ position: "absolute", left: needleX - 5, top: 60, width: 10, height: BAR_Y - 60 + BAR_H + 26, borderRadius: 5, background: COLORS.caramel, boxShadow: "0 0 0 3px rgba(26,14,8,0.9)", opacity: barIn }} />
         {v.zones.map((z, i) => (
           <div
-            key={z.label}
+            key={z}
             style={{
               position: "absolute",
-              left: x(bounds[i]),
-              width: x(z.upTo) - x(bounds[i]),
-              top: BAR_Y + BAR_H + 100,
+              left: i * zoneW,
+              width: zoneW,
+              top: BAR_Y + BAR_H + 40,
               textAlign: "center",
               fontSize: TYPE.body,
               fontWeight: 800,
@@ -613,7 +557,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
               opacity: progress(frame, 10 + i * 3, 20 + i * 3),
             }}
           >
-            {z.label}
+            {z}
           </div>
         ))}
       </div>

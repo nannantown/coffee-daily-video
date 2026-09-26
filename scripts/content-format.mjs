@@ -1,9 +1,17 @@
 /**
- * 「今日の抽出メモ」 — generic brewing-knowledge cards.
+ * 「今日の抽出メモ」 — one episode of the series 「味をコントロールする技術」 a day.
  *
- * One format only: `brew-lesson`. Every day teaches one adjustable variable of
- * home brewing (water temperature, grind, ratio, time, pouring, gear, fixing a
- * bad cup, brewing without gear) with numbers anyone can copy.
+ * One format only: `brew-lesson`. Every episode of data/curriculum.json is one
+ * thing you change (お湯の温度を上げる), why it changes the cup, and how the
+ * taste moves one way or the other (上げると苦味とコク / 下げると酸味とすっきり).
+ *
+ * No recipe numbers (owner decision 2026-09-26, 「具体的なレシピの何グラムでとか
+ * 何ミリリットルのお湯を何秒で入れてとかそういうのはいらない」): no grams,
+ * millilitres, seconds, minutes, temperatures, ratios or grinder clicks anywhere
+ * a viewer can read or hear. recipeNumberReason enforces that over every text
+ * the routine writes and every published text (slides, narration, title,
+ * captions). The cover is one big word + one picture, so the profile grid
+ * tells the episodes apart.
  *
  * Owner decision 2026-09-18 / 2026-09-22: the channel is in its audience-growth
  * phase, so no coffee of our own is named, shown or sold here — no bean name,
@@ -22,9 +30,6 @@
  * web and its PR is merged without a human review, so every text that reaches
  * a card, caption, title or narration is validated as untrusted input
  * (unsafeTextReason) and scanned by the brand guard.
- *
- * Numeric guidance (temperature, ratio, extraction yield) follows the SCA
- * brewing standard — see docs/strategy.md 「数値の根拠」.
  */
 
 import { readFileSync } from "fs";
@@ -88,57 +93,60 @@ export const VISUAL_TYPES = {
   scale: "目盛りで見る",
 };
 export const FLOW_SHAPES = ["cone", "flat", "immersion"];
-// Width of the scale gauge in src/cards/Diagrams.tsx (WIDTH there).
-const SCALE_WIDTH_PX = 824;
 
-// Display limits derived from the 1080x1920 layout (outer margin 80px, card
-// padding 40px → 840px text width; CJK glyph ≈ 1em). Body text never goes
-// below 30px, so long strings must be shortened, not shrunk.
+// Display limits. The cover carries one giant word and the short question that
+// follows it (湯温 + を上げると？); everything else is one phrase per line.
+// Body text never goes below 30pt, so long strings must be shortened, not shrunk.
 export const LIMITS = {
-  hook: 16, // 80px title, up to 2 lines — the question of the day
-  topic: 18, // 52px accent line — the answer in one line
-  why: 30, // 36px under the accent line — why it happens
-  grind: 4, // 48px inside a 3-column number tile
-  stepAction: 8, // 44px in a row with time + amount
-  tasteNote: 10,
-  tasteSummary: 24,
-  tipProblem: 10, // pill, 36px
-  tipFix: 24, // 46px, up to 2 lines
+  word: 5, // the giant word on the cover: 湯温 / 挽き目 / TDS
+  ask: 9, // what follows it on the cover: を上げると？ / ってなに？
+  hook: 16, // the one change, in words: お湯の温度を上げる
+  topic: 14, // what it does to the taste, one line
+  why: 24, // why it happens
+  effectLabel: 6, // one side of the change: 上げる / 下げる / 細かくする
+  effectTaste: 12, // how the cup tastes on that side
+  tipProblem: 10,
+  tipFix: 16,
   narrationTotal: 260, // IG Reels rejects > 60s videos
   // diagram slide (src/cards/Diagrams.tsx)
-  visualCaption: 18, // 52px under the diagram, up to 2 lines
-  visualLabel: 6, // 48px pill / heading over one half of the canvas
-  visualResult: 10, // 40px, up to 2 lines in a half-width column
-  visualNote: 10, // flow: 40px under each brewer
-  graphTick: 5, // 32px x-axis tick
-  zoneLabel: 6, // 32px band / zone label
+  visualCaption: 18,
+  visualLabel: 6,
+  visualResult: 10,
+  visualNote: 10,
+  graphTick: 5,
+  zoneLabel: 6,
 };
 
-// Cold brew is a food-safety case: it steeps for hours, so it must steep in
-// the fridge (1-10℃) for 6-24 hours and the steps must say so. A room
-// temperature steep over several days must never validate.
-export const COLD_BREW = { minHours: 6, maxHours: 24, minTempC: 1, maxTempC: 10, fridgeWord: "冷蔵庫" };
+// Cold brew is a food-safety case: it steeps for hours, so a cold-brew lesson
+// must say it steeps in the fridge (冷蔵庫) somewhere in its text.
+// unsafeSteepReason rejects room-temperature and multi-day steeps in every lesson.
+export const COLD_BREW = { fridgeWord: "冷蔵庫" };
 
-// Sanity bounds per method — wider than the routine prompt's guideline ranges
-// (docs/routine-prompt.md 2-4), so a creative but brewable lesson passes and a
-// broken one does not. ratio = (water + ice) ÷ beans, time in seconds, water =
-// what is poured into the brewer (hot water, or cold water for cold brew).
-const POUR_OVER_BOUNDS = { ratio: [12, 18], time: [90, 360], water: [100, 600] };
-export const METHOD_BOUNDS = {
-  v60: POUR_OVER_BOUNDS,
-  "kalita-wave": POUR_OVER_BOUNDS,
-  origami: POUR_OVER_BOUNDS,
-  "paper-drip": POUR_OVER_BOUNDS,
-  chemex: { ratio: [12, 18], time: [180, 420], water: [250, 1200] },
-  clever: { ratio: [12, 18], time: [120, 360], water: [150, 500] },
-  "french-press": { ratio: [12, 18], time: [180, 900], water: [150, 1000] },
-  aeropress: { ratio: [10, 20], time: [45, 300], water: [60, 600] }, // e.g. 11g / 200g = 1:18.2
-  "mug-steep": { ratio: [12, 18], time: [180, 600], water: [150, 500] },
-  "cold-brew": { ratio: [5, 15], time: [COLD_BREW.minHours * 3600, COLD_BREW.maxHours * 3600], water: [150, 1200] },
-  "moka-pot": { ratio: [5, 12], time: [90, 480], water: [60, 500] },
-};
-// Iced (flash-brewed onto ice, not cold brew): the ice is part of the ratio.
-export const ICED_BOUNDS = { ratio: [10, 16], iceShare: [0.25, 0.6] };
+// Recipe numbers (owner decision 2026-09-26). Checked after NFKC, so full-width
+// digits and ℃ (→ °C) count too. Counting words that are not a recipe setting
+// stay allowed: 第4回 / 1つ / 1回 / 2つの味.
+const RECIPE_NUMBER_RULES = [
+  [
+    /\d+(?:\.\d+)?\s*(?:g(?![a-z])|グラム|kg|mg|ml|ミリ|cc|l(?![a-z])|リットル|°|度|秒|分|min(?:ute)?s?(?![a-z])|sec(?:ond)?s?(?![a-z])|%|パーセント|倍|ppm|投|段(?!階)|クリック)/iu,
+    "an amount, a temperature, a time, a ratio or a grinder setting",
+  ],
+  [/\d+\s*:\s*\d+/u, "a time or a ratio (2:30 / 1:15)"],
+  [/\d+\s*対\s*\d+/u, "a ratio (1対15)"],
+  [
+    /[〇一二三四五六七八九十百千]+\s*(?:グラム|ミリ|リットル|秒|パーセント)|[二三四五六七八九]十[一二三四五六七八九]?\s*度|[一二三四五六七八九十]+分半/u,
+    "a number in kanji (十五グラム / 九十度 / 二分半)",
+  ],
+];
+
+/** Why a text carries a recipe number (null = fine). */
+export function recipeNumberReason(value) {
+  const s = String(value ?? "").normalize("NFKC");
+  for (const [re, what] of RECIPE_NUMBER_RULES) {
+    const m = s.match(re);
+    if (m) return `${what}: ${JSON.stringify(m[0])}`;
+  }
+  return null;
+}
 
 // Untrusted text checks, applied after NFKC so full-width look-alikes
 // (＠ ＃ ｗｗｗ． ｈｔｔｐｓ：／／) count too. Written with escapes and property
@@ -285,24 +293,6 @@ export function toSpokenJa(text) {
     .replace(/(\d+(?:\.\d+)?)\s?g(?![A-Za-z])/g, "$1グラム")
     .replace(/(\d+(?:\.\d)?)h(?![A-Za-z])/g, "$1時間");
 }
-
-export function isValidTime(t) {
-  return TIME_RE.test(String(t ?? "")) || HOURS_RE.test(String(t ?? ""));
-}
-
-/** "2:30" → 150, "10h" → 36000, anything else → null. */
-export function timeSeconds(t) {
-  const s = String(t ?? "");
-  const h = s.match(HOURS_RE);
-  if (h) return Math.round(Number(h[1]) * 3600);
-  const m = s.match(TIME_RE);
-  return m ? Number(m[1]) * 60 + Number(m[2]) : null;
-}
-
-function isNum(v) {
-  return typeof v === "number" && Number.isFinite(v);
-}
-
 export function jstDateParts(now = new Date()) {
   const fmt = new Intl.DateTimeFormat("ja-JP", {
     timeZone: "Asia/Tokyo",
@@ -325,14 +315,6 @@ export function jstDateParts(now = new Date()) {
 /** Every day is a brewing lesson — there is no second format. */
 export function expectedFormatFor(_isoDate) {
   return "brew-lesson";
-}
-
-export function ratioLabel(numbers) {
-  const dose = numbers?.dose_g;
-  const total = (numbers?.water_g || 0) + (numbers?.ice_g || 0);
-  if (!isNum(dose) || dose <= 0 || total <= 0) return "";
-  const r = Math.round((total / dose) * 10) / 10;
-  return `1:${Number.isInteger(r) ? r : r.toFixed(1)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -358,20 +340,15 @@ function checkLen(errors, label, value, max) {
   checkText(errors, label, value);
 }
 
-const fmtSec = (sec) => (sec >= 3600 ? `${sec / 3600}h` : `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}`);
-
-
 /** Every text of a lesson that reaches the cards, captions or narration: [label, value]. */
 function lessonTexts(lesson, prefix) {
   const out = [];
   const add = (label, v) => typeof v === "string" && out.push([label, v]);
-  add(`${prefix}.hook`, lesson.hook);
-  add(`${prefix}.topic`, lesson.topic);
-  add(`${prefix}.why`, lesson.why);
-  add(`${prefix}.numbers.grind`, lesson.numbers?.grind);
-  (Array.isArray(lesson.steps) ? lesson.steps : []).forEach((s, i) => add(`${prefix}.steps[${i}].action`, s?.action));
-  (Array.isArray(lesson.taste?.notes) ? lesson.taste.notes : []).forEach((v, i) => add(`${prefix}.taste.notes[${i}]`, v));
-  add(`${prefix}.taste.summary`, lesson.taste?.summary);
+  for (const k of ["word", "ask", "hook", "topic", "why"]) add(`${prefix}.${k}`, lesson[k]);
+  (Array.isArray(lesson.effect) ? lesson.effect : []).forEach((e, i) => {
+    add(`${prefix}.effect[${i}].label`, e?.label);
+    add(`${prefix}.effect[${i}].taste`, e?.taste);
+  });
   (Array.isArray(lesson.tips) ? lesson.tips : []).forEach((t, i) => {
     add(`${prefix}.tips[${i}].problem`, t?.problem);
     add(`${prefix}.tips[${i}].fix`, t?.fix);
@@ -454,40 +431,17 @@ export function validateVisual(v, errors, prefix = "lesson.visual") {
       });
     }
   } else if (v.type === "scale") {
+    // A gauge without numbers (owner decision 2026-09-26): 2-3 named zones of
+    // equal width, and where the needle starts / ends, 0-100 along the gauge.
     checkLen(errors, `${prefix}.label`, v.label, LIMITS.visualLabel);
-    if (typeof v.unit !== "string" || charLen(v.unit) > 2) errors.push(`${prefix}.unit must be a string of 0-2 characters (℃ / % / g / 段)`);
-    else checkText(errors, `${prefix}.unit`, v.unit);
-    if (v.format != null && v.format !== "ratio") errors.push(`${prefix}.format must be "ratio" when set`);
-    const nums = ["min", "max", "to"].every((k) => isNum(v[k])) && (v.from == null || isNum(v.from));
-    if (!nums) {
-      errors.push(`${prefix}.min / max / to (and from, if set) must be numbers`);
-    } else if (!(v.min < v.max) || v.min < -999 || v.max > 9999) {
-      errors.push(`${prefix}.min must be below max, both within -999 to 9999 (the readout has to fit one line)`);
-    } else {
-      for (const k of ["from", "to"]) {
-        if (v[k] != null && (v[k] < v.min || v[k] > v.max)) errors.push(`${prefix}.${k} ${v[k]} is outside ${v.min}-${v.max}`);
-      }
-      const z = v.zones;
-      if (!Array.isArray(z) || z.length < 1 || z.length > 3) {
-        errors.push(`${prefix}.zones must have 1-3 items`);
-      } else {
-        let prev = v.min;
-        z.forEach((zone, i) => {
-          checkLen(errors, `${prefix}.zones[${i}].label`, zone?.label, LIMITS.zoneLabel);
-          if (!isNum(zone?.upTo) || zone.upTo <= prev || zone.upTo > v.max) {
-            errors.push(`${prefix}.zones[${i}].upTo must rise and stay within ${v.min}-${v.max}`);
-          } else {
-            // The zone is drawn (upTo - prev) / (max - min) of the 824px gauge wide;
-            // its name (40px a character) and its boundary number (~120px) must fit.
-            const px = ((zone.upTo - prev) / (v.max - v.min)) * SCALE_WIDTH_PX;
-            const need = Math.max(charLen(zone?.label) * 40 + 24, 120);
-            if (px < need) errors.push(`${prefix}.zones[${i}] is too narrow for its label (${Math.round(px)}px < ${need}px) — widen it or shorten the label`);
-            prev = zone.upTo;
-          }
-        });
-        if (isNum(z.at(-1)?.upTo) && z.at(-1).upTo !== v.max) errors.push(`${prefix}.zones: the last upTo must equal max (${v.max})`);
-      }
+    for (const k of ["unit", "format", "min", "max"]) {
+      if (v[k] != null) errors.push(`${prefix}.${k} is not used any more — the gauge shows no numbers: name the zones and give from / to as 0-100 along the gauge`);
     }
+    if (!isInt(v.to, 0, 100)) errors.push(`${prefix}.to must be an integer 0-100 (where the needle ends, along the gauge)`);
+    if (v.from != null && !isInt(v.from, 0, 100)) errors.push(`${prefix}.from must be an integer 0-100 when set`);
+    const z = v.zones;
+    if (!Array.isArray(z) || z.length < 2 || z.length > 3) errors.push(`${prefix}.zones must have 2-3 names, left to right`);
+    else z.forEach((name, i) => checkLen(errors, `${prefix}.zones[${i}]`, name, LIMITS.zoneLabel));
   }
 }
 
@@ -538,161 +492,66 @@ export function followingEpisode(id, curriculum = CURRICULUM) {
   return i < 0 ? undefined : curriculum.episodes[(i + 1) % curriculum.episodes.length];
 }
 
-// Kept under the old name inside this module so the numeric block below reads
-// the same as before; `recipe` here is the lesson's brewing block.
-const recipeTexts = lessonTexts;
-
-export function validateLesson(recipe, errors, prefix = "lesson") {
-  if (!recipe || typeof recipe !== "object") {
+export function validateLesson(lesson, errors, prefix = "lesson") {
+  if (!lesson || typeof lesson !== "object") {
     errors.push(`${prefix} block is required`);
     return;
   }
-  if (recipe.beanId != null) {
+  if (lesson.beanId != null) {
     errors.push(`${prefix}.beanId is not allowed — this channel never names a coffee of its own (owner decision 2026-09-22)`);
   }
-  if (!own(PILLARS, recipe.pillar)) {
+  for (const k of ["numbers", "steps", "taste"]) {
+    if (lesson[k] != null) {
+      errors.push(`${prefix}.${k} is not allowed — no recipe numbers, steps or taste scores (owner decision 2026-09-26); write why / effect / tips instead (docs/routine-prompt.md)`);
+    }
+  }
+  if (!own(PILLARS, lesson.pillar)) {
     errors.push(`${prefix}.pillar must be one of ${Object.keys(PILLARS).join(", ")}`);
   }
-  if (!own(METHODS, recipe.method)) {
-    errors.push(`${prefix}.method ${quote(recipe.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
+  if (!own(METHODS, lesson.method)) {
+    errors.push(`${prefix}.method ${quote(lesson.method)} must be one of ${Object.keys(METHODS).join(", ")}`);
   }
-  // The series: every lesson is one episode of data/curriculum.json, and keeps
-  // what that episode teaches — its pillar, its one change (the hook, which the
-  // day before already announced as 次回) and, for gear episodes, the brewer.
-  const episode = episodeById(recipe.episode);
+  // The series: every lesson is one episode of data/curriculum.json and keeps
+  // what that episode is — its pillar, its cover (word + ask, which the day
+  // before already announced as 次回), its one change (hook) and, for gear
+  // episodes, the brewer.
+  const episode = episodeById(lesson.episode);
   if (!episode) {
-    errors.push(`${prefix}.episode ${quote(recipe.episode)} must be an episode id of data/curriculum.json (node scripts/next-episode.mjs prints today's)`);
+    errors.push(`${prefix}.episode ${quote(lesson.episode)} must be an episode id of data/curriculum.json (node scripts/next-episode.mjs prints today's)`);
   } else {
-    if (recipe.pillar !== episode.lesson.pillar) errors.push(`${prefix}.pillar must be ${quote(episode.lesson.pillar)} for episode ${episode.id}`);
-    if (recipe.hook !== episode.lesson.hook) errors.push(`${prefix}.hook must stay ${quote(episode.lesson.hook)} for episode ${episode.id} (the one change the series map promises)`);
-    if (episode.fixedMethod && recipe.method !== episode.lesson.method) {
+    for (const k of ["pillar", "word", "ask", "hook"]) {
+      if (lesson[k] !== episode.lesson[k]) errors.push(`${prefix}.${k} must stay ${quote(episode.lesson[k])} for episode ${episode.id} (the series map fixes it)`);
+    }
+    if (episode.fixedMethod && lesson.method !== episode.lesson.method) {
       errors.push(`${prefix}.method must be ${quote(episode.lesson.method)} for episode ${episode.id} (the brewer is the lesson)`);
     }
   }
-  validateVisual(recipe.visual, errors, `${prefix}.visual`);
-  if (!own(SCENES, recipe.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
-  if (recipe.method === "cold-brew" && recipe.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
-  if (recipe.sources != null && !Array.isArray(recipe.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
-  const sources = Array.isArray(recipe.sources) ? recipe.sources : [];
-  sources.forEach((u, i) => {
+  validateVisual(lesson.visual, errors, `${prefix}.visual`);
+  if (!own(SCENES, lesson.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
+  if (lesson.method === "cold-brew" && lesson.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
+  if (lesson.sources != null && !Array.isArray(lesson.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
+  (Array.isArray(lesson.sources) ? lesson.sources : []).forEach((u, i) => {
     if (!isSafeHttpsUrl(u)) errors.push(`${prefix}.sources[${i}] must be an https URL`);
   });
-  checkLen(errors, `${prefix}.hook`, recipe.hook, LIMITS.hook);
-  checkLen(errors, `${prefix}.topic`, recipe.topic, LIMITS.topic);
-  checkLen(errors, `${prefix}.why`, recipe.why, LIMITS.why);
+  checkLen(errors, `${prefix}.word`, lesson.word, LIMITS.word);
+  checkLen(errors, `${prefix}.ask`, lesson.ask, LIMITS.ask);
+  checkLen(errors, `${prefix}.hook`, lesson.hook, LIMITS.hook);
+  checkLen(errors, `${prefix}.topic`, lesson.topic, LIMITS.topic);
+  checkLen(errors, `${prefix}.why`, lesson.why, LIMITS.why);
 
-  const n = recipe.numbers || {};
-  const coldBrew = recipe.method === "cold-brew";
-  const iced = recipe.scene === "iced" && !coldBrew;
-  const bounds = own(METHOD_BOUNDS, recipe.method);
-  const methodName = own(METHODS, recipe.method)?.label || String(recipe.method);
-  if (!isNum(n.dose_g) || n.dose_g < 5 || n.dose_g > 80) errors.push(`${prefix}.numbers.dose_g must be 5-80`);
-  if (!isNum(n.water_g) || n.water_g < 20 || n.water_g > 1200) {
-    errors.push(`${prefix}.numbers.water_g must be 20-1200`);
-  } else if (bounds && (n.water_g < bounds.water[0] || n.water_g > bounds.water[1])) {
-    errors.push(`${prefix}.numbers.water_g ${n.water_g}g is outside ${bounds.water[0]}-${bounds.water[1]}g for ${methodName}`);
-  }
-  if (coldBrew) {
-    if (!isNum(n.temp_c) || n.temp_c < COLD_BREW.minTempC || n.temp_c > COLD_BREW.maxTempC) {
-      errors.push(
-        `${prefix}.numbers.temp_c must be ${COLD_BREW.minTempC}-${COLD_BREW.maxTempC} for cold-brew (the fridge temperature — never steep at room temperature)`
-      );
-    }
-  } else if (!isNum(n.temp_c) || n.temp_c < 60 || n.temp_c > 100) {
-    errors.push(`${prefix}.numbers.temp_c must be 60-100`);
-  }
-  if (iced && (!isNum(n.ice_g) || n.ice_g <= 0)) {
-    errors.push(`${prefix}.numbers.ice_g is required for iced recipes`);
-  }
-  if (coldBrew && n.ice_g != null) errors.push(`${prefix}.numbers.ice_g must be omitted for cold-brew (the ratio is water ÷ beans)`);
-  if (recipe.scene === "hot" && n.ice_g != null && n.ice_g !== 0) errors.push(`${prefix}.numbers.ice_g is only for iced recipes`);
-  if (n.ice_g != null && (!isNum(n.ice_g) || n.ice_g < 0 || n.ice_g > 600)) errors.push(`${prefix}.numbers.ice_g must be 0-600`);
-  // Cold brew steeps for hours ("10h"); every other method is "m:ss" — a cold
-  // brew "8:00" would be printed and read aloud as 8 minutes.
-  const totalSec = timeSeconds(n.time);
-  if (coldBrew ? !HOURS_RE.test(String(n.time ?? "")) : !TIME_RE.test(String(n.time ?? ""))) {
-    errors.push(`${prefix}.numbers.time must be ${coldBrew ? '"<hours>h" for cold-brew' : '"m:ss"'} (got ${quote(n.time)})`);
-  } else if (coldBrew && (totalSec < COLD_BREW.minHours * 3600 || totalSec > COLD_BREW.maxHours * 3600)) {
-    errors.push(`${prefix}.numbers.time must be ${COLD_BREW.minHours}h-${COLD_BREW.maxHours}h for cold-brew (steep in the fridge)`);
-  } else if (bounds && !coldBrew && (totalSec < bounds.time[0] || totalSec > bounds.time[1])) {
-    errors.push(`${prefix}.numbers.time ${n.time} is outside ${fmtSec(bounds.time[0])}-${fmtSec(bounds.time[1])} for ${methodName}`);
-  }
-  checkLen(errors, `${prefix}.numbers.grind`, n.grind, LIMITS.grind);
-  if (isNum(n.dose_g) && isNum(n.water_g) && n.dose_g > 0 && bounds) {
-    const total = n.water_g + (iced && isNum(n.ice_g) ? n.ice_g : 0);
-    const ratio = total / n.dose_g;
-    const [lo, hi] = iced ? ICED_BOUNDS.ratio : bounds.ratio;
-    if (ratio < lo || ratio > hi) {
-      errors.push(`${prefix}.numbers ratio 1:${ratio.toFixed(1)} is outside 1:${lo}-1:${hi} for ${iced ? `iced ${methodName}` : methodName}`);
-    }
-    if (iced && isNum(n.ice_g) && n.ice_g > 0) {
-      const share = n.ice_g / total;
-      const [slo, shi] = ICED_BOUNDS.iceShare;
-      if (share < slo || share > shi) {
-        errors.push(`${prefix}.numbers.ice_g is ${Math.round(share * 100)}% of water + ice (keep it ${slo * 100}-${shi * 100}%)`);
-      }
-    }
-  }
-
-  const steps = recipe.steps;
-  if (!Array.isArray(steps) || steps.length < 1 || steps.length > 5) {
-    errors.push(`${prefix}.steps must have 1-5 items`);
+  // The two sides of the change: today's move first, then the other way.
+  const eff = lesson.effect;
+  if (!Array.isArray(eff) || eff.length !== 2) {
+    errors.push(`${prefix}.effect must have exactly 2 items: [today's move, the other way], each { label, taste }`);
   } else {
-    let prevSec = null;
-    let lastPour = null;
-    steps.forEach((s, i) => {
-      const sec = timeSeconds(s?.time);
-      if (sec == null) {
-        errors.push(`${prefix}.steps[${i}].time must be "m:ss" or "<hours>h"`);
-      } else {
-        if (prevSec != null && sec < prevSec) errors.push(`${prefix}.steps[${i}].time ${s.time} is earlier than the step before it`);
-        if (totalSec != null && sec > totalSec) errors.push(`${prefix}.steps[${i}].time ${s.time} is after numbers.time ${n.time}`);
-        prevSec = sec;
-      }
-      checkLen(errors, `${prefix}.steps[${i}].action`, s?.action, LIMITS.stepAction);
-      if (s?.pour_to_g != null) {
-        if (!isNum(s.pour_to_g) || s.pour_to_g <= 0) {
-          errors.push(`${prefix}.steps[${i}].pour_to_g must be a positive number`);
-        } else {
-          if (lastPour != null && s.pour_to_g <= lastPour) {
-            errors.push(`${prefix}.steps[${i}].pour_to_g ${s.pour_to_g}g must be more than the pour before it (${lastPour}g) — it is the scale total`);
-          }
-          lastPour = s.pour_to_g;
-        }
-      }
+    eff.forEach((e, i) => {
+      checkLen(errors, `${prefix}.effect[${i}].label`, e?.label, LIMITS.effectLabel);
+      checkLen(errors, `${prefix}.effect[${i}].taste`, e?.taste, LIMITS.effectTaste);
     });
-    if (lastPour == null) {
-      errors.push(`${prefix}.steps need at least one pour_to_g (the scale total after pouring)`);
-    } else if (isNum(n.water_g) && Math.abs(lastPour - n.water_g) > 2) {
-      errors.push(`${prefix}.steps: last pour_to_g (${lastPour}g) must equal numbers.water_g (${n.water_g}g)`);
-    }
-    if (coldBrew && !steps.some((s) => String(s?.action ?? "").includes(COLD_BREW.fridgeWord))) {
-      errors.push(`${prefix}.steps must say "${COLD_BREW.fridgeWord}" for cold-brew (e.g. "冷蔵庫で寝かせる") — it steeps in the fridge`);
-    }
-  }
-  // every recipe, not only cold-brew: a hot recipe's tip can describe a cold brew too
-  for (const [label, value] of recipeTexts(recipe, prefix)) {
-    const reason = unsafeSteepReason(value);
-    if (reason) errors.push(`${label} describes an unsafe steep (${reason}): ${quote(value)}`);
-  }
-  const nar = recipe.narration;
-  if (nar != null && (typeof nar !== "object" || Array.isArray(nar))) errors.push(`${prefix}.narration must be an object`);
-  for (const [label, value] of recipeTexts(recipe, prefix)) {
-    if (label.startsWith(`${prefix}.narration[`)) checkText(errors, label, value);
+    if (eff[0]?.label && eff[0].label === eff[1]?.label) errors.push(`${prefix}.effect: the two labels must differ`);
   }
 
-  const t = recipe.taste || {};
-  if (!Array.isArray(t.notes) || t.notes.length < 1 || t.notes.length > 4) {
-    errors.push(`${prefix}.taste.notes must have 1-4 items`);
-  } else {
-    t.notes.forEach((note, i) => checkLen(errors, `${prefix}.taste.notes[${i}]`, note, LIMITS.tasteNote));
-  }
-  checkLen(errors, `${prefix}.taste.summary`, t.summary, LIMITS.tasteSummary);
-  for (const k of ["acidity", "sweetness", "body"]) {
-    if (!Number.isInteger(t[k]) || t[k] < 1 || t[k] > 5) errors.push(`${prefix}.taste.${k} must be an integer 1-5`);
-  }
-
-  const tips = recipe.tips;
+  const tips = lesson.tips;
   if (!Array.isArray(tips) || tips.length < 2 || tips.length > 3) {
     errors.push(`${prefix}.tips must have 2-3 items`);
   } else {
@@ -700,6 +559,21 @@ export function validateLesson(recipe, errors, prefix = "lesson") {
       checkLen(errors, `${prefix}.tips[${i}].problem`, tip?.problem, LIMITS.tipProblem);
       checkLen(errors, `${prefix}.tips[${i}].fix`, tip?.fix, LIMITS.tipFix);
     });
+  }
+
+  const nar = lesson.narration;
+  if (nar != null && (typeof nar !== "object" || Array.isArray(nar))) errors.push(`${prefix}.narration must be an object`);
+  const texts = lessonTexts(lesson, prefix);
+  for (const [label, value] of texts) {
+    if (label.startsWith(`${prefix}.narration[`)) checkText(errors, label, value);
+    // every lesson, not only cold-brew: a hot lesson's tip can describe a cold brew too
+    const steep = unsafeSteepReason(value);
+    if (steep) errors.push(`${label} describes an unsafe steep (${steep}): ${quote(value)}`);
+    const num = recipeNumberReason(value);
+    if (num) errors.push(`${label} must not carry a recipe number — ${num} (say it in words: 高め / 細かく / 長く): ${quote(value)}`);
+  }
+  if (lesson.method === "cold-brew" && !texts.some(([, v]) => v.includes(COLD_BREW.fridgeWord))) {
+    errors.push(`${prefix} must say "${COLD_BREW.fridgeWord}" for cold-brew (e.g. why: "冷蔵庫でゆっくり溶かす") — it steeps in the fridge`);
   }
 }
 
@@ -757,7 +631,12 @@ export function validateDailyContent(content, { today, expectedEpisode } = {}) {
       errors.push(`narration is ${total} chars in total (max ${LIMITS.narrationTotal}); shorten the narration fields`);
     }
     const captions = buildCardCaptions(data, String(content.date).replace(/-/g, "/"));
-    for (const hit of scanBannedTerms(collectPublishedTexts(data, captions))) {
+    const published = collectPublishedTexts(data, captions);
+    for (const [label, text] of published) {
+      const num = recipeNumberReason(text);
+      if (num) errors.push(`${label} must not carry a recipe number — ${num}: ${quote(text)}`);
+    }
+    for (const hit of scanBannedTerms(published)) {
       errors.push(`${hit.label} must not say ${JSON.stringify(hit.term)} — ${hit.why}: ${quote(hit.text)}`);
     }
   }
@@ -796,31 +675,6 @@ function pick(custom, fallback) {
   return typeof custom === "string" && custom.trim() ? custom.trim() : fallback;
 }
 
-/**
- * Six number tiles for the first card (3x2 grid). Iced pour-over shows the
- * ice amount instead of the ratio (the ratio stays in the caption).
- */
-export function lessonNumberTiles(recipe) {
-  const n = recipe.numbers;
-  const coldBrew = recipe.method === "cold-brew";
-  const tiles = [
-    { label: "粉", value: String(n.dose_g), unit: "g" },
-    { label: coldBrew ? "水" : "お湯", value: String(n.water_g), unit: "g" },
-  ];
-  if (recipe.scene === "iced" && !coldBrew && isNum(n.ice_g) && n.ice_g > 0) {
-    tiles.push({ label: "氷", value: String(n.ice_g), unit: "g" });
-  }
-  // Cold brew shows where it steeps (the fridge) — its temperature is the fridge's.
-  tiles.push({ label: coldBrew ? "冷蔵庫" : "湯温", value: isNum(n.temp_c) ? String(n.temp_c) : "—", unit: isNum(n.temp_c) ? "℃" : "" });
-  const hours = String(n.time).match(HOURS_RE);
-  tiles.push({ label: coldBrew ? "抽出" : "時間", value: hours ? hours[1] : String(n.time), unit: hours ? "時間" : "" });
-  tiles.push({ label: "挽き目", value: n.grind, unit: "" });
-  const ratio = ratioLabel(n);
-  // "1対15", never "1:15" — next to a "2:30" time tile a colon ratio reads as a time.
-  if (tiles.length < 6 && ratio) tiles.push({ label: "比率", value: ratio.replace(":", "対"), unit: "" });
-  return tiles;
-}
-
 // ---------------------------------------------------------------------------
 // CTA — audience growth, not sales.
 //
@@ -848,71 +702,57 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
   const r = content.lesson;
   const method = METHODS[r.method];
   const pillarLabel = PILLARS[r.pillar];
-  const n = r.numbers;
   const nar = r.narration || {};
-  const iced = r.scene === "iced";
-  const coldBrew = r.method === "cold-brew";
 
   const episode = episodeById(r.episode);
   const number = episode ? episodeNumber(episode.id) : null;
   const term = episode?.term;
   const next = episode ? followingEpisode(episode.id) : undefined;
   const heading = term ? `用語「${term}」` : pillarLabel;
-
-  // Card 1 = the question + the answer + all key numbers, so the first frame is
-  // already the "save this" card (numbers first, like AI Trend Daily's TOP5).
-  const titleNarration = pick(nar.title, `${term ? `今日の用語は、${term}。` : ""}${r.hook}。${r.topic}。${r.why}。`);
-  const numbersNarration = pick(
-    nar.numbers,
-    `${method.label}で、粉${n.dose_g}グラムに、${coldBrew ? "水" : "お湯"}${n.water_g}グラム` +
-      (iced && isNum(n.ice_g) && !coldBrew ? `、氷${n.ice_g}グラム` : "") +
-      "。" +
-      (coldBrew ? `冷蔵庫で${speakTime(n.time)}です。` : `${n.temp_c}度で、${speakTime(n.time)}です。`)
-  );
+  const question = `${r.word}${r.ask}`;
+  const [one, other] = r.effect;
 
   const slides = [
+    // Cover: one big word + the question, and what it does to the taste. It is
+    // the grid thumbnail (IG takes frame 45), so it names the topic at a glance.
     {
       kind: "lesson-title",
       heading,
+      episode: r.episode,
+      pillar: r.pillar,
       series: number ? `${number.level} 第${number.no}回` : "",
       date: dateDisplay,
+      word: r.word,
+      ask: r.ask,
       topic: r.topic,
-      why: r.why,
       methodLabel: method.label,
       sceneLabel: SCENES[r.scene],
-      hook: r.hook,
-      tiles: lessonNumberTiles(r),
-      narration: `${titleNarration}${numbersNarration}`,
+      narration: pick(nar.title, `${term ? `今日の用語は、${term}。` : ""}${question}${r.topic}。`),
     },
-    // Card 2 = the diagram: what the one change does, drawn (owner request
-    // 2026-09-25: more kinds of animation so the change is easy to see).
+    // Why: the one change and the reason behind it.
+    {
+      kind: "lesson-why",
+      heading: "なぜ変わる？",
+      hook: r.hook,
+      why: r.why,
+      narration: pick(nar.why, `${r.hook}と、なぜ味が変わるのか。${r.why}。`),
+    },
+    // The diagram: the change, drawn (src/cards/Diagrams.tsx).
     {
       kind: "lesson-visual",
       heading: VISUAL_TYPES[r.visual.type],
       visual: structuredClone(r.visual),
       narration: pick(nar.visual, `${r.visual.caption}。`),
     },
+    // Both ways: this is what lets a viewer steer the taste themselves.
     {
-      kind: "lesson-steps",
-      heading: "手順",
-      steps: r.steps.map((s) => ({
-        time: s.time,
-        action: s.action,
-        amount: isNum(s.pour_to_g) ? `${s.pour_to_g}g` : "",
-      })),
-      narration: pick(nar.steps, `手順は${r.steps.length}ステップ。画面を保存しておくと便利です。`),
-    },
-    {
-      kind: "lesson-taste",
-      heading: "こう変わる",
-      notes: r.taste.notes,
-      summary: r.taste.summary,
-      meters: [
-        { label: "酸味", value: r.taste.acidity },
-        { label: "甘み", value: r.taste.sweetness },
-        { label: "コク", value: r.taste.body },
+      kind: "lesson-effect",
+      heading: "味はこう変わる",
+      sides: [
+        { label: one.label, taste: one.taste },
+        { label: other.label, taste: other.taste },
       ],
-      narration: pick(nar.taste, `味は、${r.taste.notes.join("、")}。${r.taste.summary}。`),
+      narration: pick(nar.effect, `${one.label}と、${one.taste}。${other.label}と、${other.taste}。`),
     },
     {
       kind: "lesson-tips",
@@ -926,10 +766,10 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
     kind: "lesson-cta",
     heading: "保存して、次に淹れる時に試そう",
     topic: r.topic,
-    lead: "毎朝ひとつ、今日から試せる抽出のコツ",
+    lead: "毎朝ひとつ、味を動かすコツ",
     lines: growthCtaSlideLines(),
-    // The series teaser: tomorrow's one change, so a follow has a reason.
-    next: next ? (next.term ? `用語「${next.term}」` : next.lesson.hook) : "",
+    // The series teaser: tomorrow's cover question, so a follow has a reason.
+    next: next ? `${next.lesson.word}${next.lesson.ask}` : "",
     narration: pick(
       nar.cta,
       next
@@ -938,7 +778,7 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
     ),
   };
 
-  return { slides, ending, topicTitle: `${pillarLabel}｜${r.hook}` };
+  return { slides, ending, topicTitle: `${pillarLabel}｜${question}` };
 }
 
 /**
@@ -989,7 +829,7 @@ export function withTemplateNarration(content) {
 export const TIMELINE = {
   fps: 30,
   padFrames: 15, // 0.5s after narration
-  minFirstSlideSec: 6, // hook + answer + six numbers
+  minFirstSlideSec: 4.5, // the cover: one word, the question and the taste line
   minSlideSec: 4.5, // dense cards need reading time even if narration is short
   endingExtraFrames: 30,
   minEndingSec: 3.5,
@@ -1035,34 +875,30 @@ function hashtagsFor(data) {
 }
 
 function lessonBodyLines(data) {
-  const r = data.lesson;
-  const title = data.slides.find((s) => s.kind === "lesson-title");
-  const steps = data.slides.find((s) => s.kind === "lesson-steps");
-  const taste = data.slides.find((s) => s.kind === "lesson-taste");
-  const tips = data.slides.find((s) => s.kind === "lesson-tips");
-  const tileText = title.tiles.map((t) => `${t.label} ${t.value}${t.unit}`).join(" / ");
-  const ratio = ratioLabel(r.numbers);
-  const hasRatio = title.tiles.some((t) => t.label === "比率");
+  const find = (kind) => data.slides.find((s) => s.kind === kind);
+  const title = find("lesson-title");
+  const why = find("lesson-why");
+  const visual = find("lesson-visual");
+  const effect = find("lesson-effect");
+  const tips = find("lesson-tips");
   const series = title.series ? [`シリーズ「${CURRICULUM.series}」${title.series}`] : [];
   const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
   return [
     ...series,
-    `【${title.heading}】${title.hook}`,
-    `${title.topic}｜${title.why}`,
+    `【${title.heading}】${title.word}${title.ask}`,
+    `→ ${title.topic}`,
     "",
-    `■ 今日の数字（${title.methodLabel}・${title.sceneLabel}）`,
-    tileText + (!hasRatio && ratio ? ` / 比率 ${ratio}` : ""),
+    "■ なぜ変わる？",
+    `${why.hook}と、${why.why}`,
     "",
-    "■ 手順",
-    ...steps.steps.map((s) => `${s.time} ${s.action}${s.amount ? ` ${s.amount}まで` : ""}`),
-    "",
-    "■ こう変わる",
-    `${taste.notes.join("、")}｜${taste.summary}`,
+    "■ 味はこう変わる",
+    ...effect.sides.map((s) => `・${s.label} → ${s.taste}`),
+    `（${visual.visual.caption}）`,
     "",
     "■ うまくいかない時",
     ...tips.tips.map((t) => `・${t.problem} → ${t.fix}`),
     "",
-    "使う豆は手持ちのもので大丈夫です。数字だけ真似してみてください。",
+    "豆も道具も手持ちのもので大丈夫。1つだけ変えて、味の違いを比べてみてください。",
     ...next,
   ];
 }
@@ -1073,15 +909,7 @@ export function buildCardCaptions(data, dateSlash) {
   const cta = growthCtaCaptionLines();
 
   const t = data.slides[0];
-  const n = data.lesson.numbers;
-  const nums = (
-    data.lesson.method === "cold-brew"
-      ? [`粉${n.dose_g}g`, `冷蔵庫${n.time}`]
-      : [`粉${n.dose_g}g`, Number.isFinite(n.temp_c) ? `${n.temp_c}℃` : null, n.time]
-  )
-    .filter(Boolean)
-    .join("・");
-  const title = youtubeTitle(`【${t.heading}】`, t.hook, `｜${nums} #Shorts`);
+  const title = youtubeTitle(`【${t.heading}】`, `${t.word}${t.ask}`, ` ${t.topic} #Shorts`);
 
   const bodyWithTags = [...body, "", hashtags.join(" ")];
   const tail = ["", ...cta];

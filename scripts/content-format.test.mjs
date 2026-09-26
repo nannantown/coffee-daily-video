@@ -28,7 +28,7 @@ import {
   nextEpisode,
   growthCtaCaptionLines,
   kanjiNumber,
-  lessonNumberTiles,
+  recipeNumberReason,
   narrationLength,
   speakTime,
   toSpokenJa,
@@ -98,7 +98,7 @@ test("a bean name, an origin or a sales line fails validation wherever it is wri
     ["hook", (l) => (l.hook = bean.origin)],
     ["topic", (l) => (l.topic = bean.displayName || bean.name)],
     ["why", (l) => (l.why = "当店の自家焙煎豆で淹れました")],
-    ["taste note", (l) => (l.taste.notes[0] = "エチオピア")],
+    ["effect taste", (l) => (l.effect[0].taste = "エチオピア")],
     ["tip fix", (l) => (l.tips[0].fix = "ご購入はDMから")],
     ["narration", (l) => ((l.narration ||= {}), (l.narration.cta = "オープングラウンドで販売中です"))],
   ];
@@ -221,12 +221,12 @@ test("a missed routine airs the next episode's own lesson (the fallback follows 
   assert.throws(() => fallbackLessonContent(undefined, "2026-09-27"), /no episode/);
 });
 
-test("series: the title card numbers the episode, the CTA and caption announce the next one", () => {
+test("series: the cover numbers the episode, the CTA and caption announce the next one", () => {
   const data = buildCardsData(sample, { dateDisplay: "2026.09.23" });
   const { no, level } = episodeNumber(sample.lesson.episode);
   assert.equal(data.slides[0].series, `${level} 第${no}回`);
   const next = followingEpisode(sample.lesson.episode);
-  assert.equal(data.ending.next, next.term ? `用語「${next.term}」` : next.lesson.hook);
+  assert.equal(data.ending.next, `${next.lesson.word}${next.lesson.ask}`);
   assert.ok(data.ending.narration.includes("次回"));
   const captions = buildCardCaptions(data, "2026/09/23");
   assert.ok(captions.instagram.includes(`次回：${data.ending.next}`));
@@ -235,9 +235,18 @@ test("series: the title card numbers the episode, the CTA and caption announce t
   const tds = curriculum.episodes.find((e) => e.term === "TDS");
   const tdsData = buildCardsData(fallbackLessonContent(tds, "2026-09-23"), {});
   assert.equal(tdsData.slides[0].heading, "用語「TDS」");
+  assert.equal(tdsData.slides[0].word, "TDS");
   assert.ok(tdsData.slides[0].narration.startsWith("今日の用語は、TDS。"));
   // the last episode wraps its teaser to episode 1
   assert.equal(followingEpisode(curriculum.episodes.at(-1).id).id, curriculum.episodes[0].id);
+});
+
+test("every episode has its own cover: word + ask are unique across the series", () => {
+  const covers = curriculum.episodes.map((e) => `${e.lesson.word}${e.lesson.ask}`);
+  assert.equal(new Set(covers).size, covers.length);
+  const words = curriculum.episodes.map((e) => e.lesson.word);
+  // the grid shows the words; no word repeats on two episodes in a row
+  words.forEach((w, i) => i > 0 && assert.notEqual(w, words[i - 1], `episodes ${i} and ${i + 1} share the cover word ${w}`));
 });
 
 test("validation keeps the script on its episode", () => {
@@ -248,8 +257,10 @@ test("validation keeps the script on its episode", () => {
   };
   assert.ok(bad((c) => delete c.lesson.episode).some((e) => e.includes("lesson.episode")));
   assert.ok(bad((c) => (c.lesson.episode = "z99-nope")).some((e) => e.includes("must be an episode id")));
-  assert.ok(bad((c) => (c.lesson.hook = "湯温を5度下げる")).some((e) => e.includes("hook must stay")));
-  assert.ok(bad((c) => (c.lesson.pillar = "grind")).some((e) => e.includes("pillar must be")));
+  assert.ok(bad((c) => (c.lesson.hook = "お湯をぬるくする")).some((e) => e.includes("hook must stay")));
+  assert.ok(bad((c) => (c.lesson.word = "温度")).some((e) => e.includes("word must stay")));
+  assert.ok(bad((c) => (c.lesson.ask = "を変えると？")).some((e) => e.includes("ask must stay")));
+  assert.ok(bad((c) => (c.lesson.pillar = "grind")).some((e) => e.includes("pillar must stay")));
   assert.ok(bad(() => {}, { expectedEpisode: "b01-extraction" }).some((e) => e.includes("is not today's episode")));
   assert.deepEqual(bad(() => {}, { expectedEpisode: sample.lesson.episode }), []);
   // a gear episode keeps its brewer; an ordinary one may change it
@@ -274,23 +285,24 @@ test("diagram block: each type is checked against the space it gets", () => {
   has(bad({ ...compare, left: { ...compare.left, strength: 7 } }), "left.strength");
   has(bad({ ...compare, pick: "middle" }), "pick");
   has(bad({ ...compare, right: { ...compare.right, result: "あ".repeat(LIMITS.visualResult + 1) } }), "right.result is");
-  const graph = { type: "graph", caption: "動き", xLabel: "時間", yLabel: "濃さ", points: [{ label: "1:00", value: 1 }, { label: "2:00", value: 3 }], mark: 1 };
+  const graph = { type: "graph", caption: "動き", xLabel: "時間", yLabel: "濃さ", points: [{ label: "短い", value: 1 }, { label: "長い", value: 3 }], mark: 1 };
   assert.deepEqual(bad(graph), []);
   has(bad({ ...graph, points: [graph.points[0]] }), "points must have 2-5");
   has(bad({ ...graph, mark: 5 }), "mark");
   has(bad({ ...graph, zones: ["a"] }), "zones must have 2-3");
+  has(bad({ ...graph, points: [{ label: "1:30", value: 1 }, { label: "3:00", value: 3 }] }), "recipe number");
   const flow = { type: "flow", caption: "流れ", brewers: [{ shape: "cone", label: "円すい", note: "速く落ちる", speed: "fast" }] };
   assert.deepEqual(bad(flow), []);
   has(bad({ ...flow, brewers: [] }), "brewers must have 1-2");
   has(bad({ ...flow, brewers: [{ ...flow.brewers[0], shape: "siphon" }] }), "shape must be one of");
   has(bad({ ...flow, brewers: [{ ...flow.brewers[0], speed: "warp" }] }), "speed");
   const scale = clone(sample.lesson.visual);
-  has(bad({ ...scale, to: 120 }), "to 120 is outside");
-  has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }, { upTo: 90, label: "b" }] }), "upTo must rise");
-  has(bad({ ...scale, zones: [{ upTo: 94, label: "a" }] }), "last upTo must equal max");
-  has(bad({ ...scale, unit: "度数" + "x" }), "unit must be");
-  has(bad({ ...scale, zones: [{ upTo: 81, label: "ぬるすぎ" }, { upTo: 100, label: "標準" }] }), "too narrow");
-  has(bad({ ...scale, max: 123456 }), "within -999 to 9999");
+  has(bad({ ...scale, to: 120 }), "to must be an integer 0-100");
+  has(bad({ ...scale, from: -1 }), "from must be an integer 0-100");
+  has(bad({ ...scale, zones: ["ひとつ"] }), "zones must have 2-3");
+  has(bad({ ...scale, zones: ["低め", "あ".repeat(LIMITS.zoneLabel + 1)] }), "zones[1] is");
+  // the old numeric gauge is gone: a unit / min / max is an error, not a silent readout
+  has(bad({ ...scale, unit: "℃", min: 80, max: 100 }), "not used any more");
 });
 
 test("diagram text is untrusted and product-free like every other text", () => {
@@ -302,12 +314,12 @@ test("diagram text is untrusted and product-free like every other text", () => {
   assert.ok(withCaption("エチオピアの味").some((e) => e.includes("must not say")));
   assert.ok(withCaption("詳しくはexample.com").some((e) => e.includes("URL or domain")));
   const content = clone(sample);
-  content.lesson.visual.zones[0].label = "#軽い";
-  assert.ok(errorsOf(content).some((e) => e.includes("visual.zones[0].label")));
+  content.lesson.visual.zones[0] = "#軽い";
+  assert.ok(errorsOf(content).some((e) => e.includes("visual.zones[0]")));
 });
 
 // ---------------------------------------------------------------------------
-// Shape, numbers and safety
+// Shape, recipe numbers and safety
 // ---------------------------------------------------------------------------
 
 test("validation rejects content the cards cannot show", () => {
@@ -321,65 +333,93 @@ test("validation rejects content the cards cannot show", () => {
   assert.ok(bad((c) => (c.lesson.pillar = "vibes")).some((e) => e.includes("pillar must be one of")));
   assert.ok(bad((c) => (c.lesson.method = "microwave")).some((e) => e.includes("method")));
   assert.ok(bad((c) => (c.lesson.scene = "warm")).some((e) => e.includes("scene")));
-  assert.ok(bad((c) => (c.lesson.hook = "あ".repeat(LIMITS.hook + 1))).some((e) => e.includes("lesson.hook is")));
   assert.ok(bad((c) => (c.lesson.topic = "")).some((e) => e.includes("lesson.topic is required")));
+  assert.ok(bad((c) => (c.lesson.topic = "あ".repeat(LIMITS.topic + 1))).some((e) => e.includes("lesson.topic is")));
   assert.ok(bad((c) => (c.lesson.why = "あ".repeat(LIMITS.why + 1))).some((e) => e.includes("lesson.why is")));
-  assert.ok(bad((c) => (c.lesson.numbers.temp_c = 120)).some((e) => e.includes("temp_c")));
-  assert.ok(bad((c) => (c.lesson.numbers.dose_g = 1)).some((e) => e.includes("dose_g")));
-  assert.ok(bad((c) => (c.lesson.steps[3].time = "0:10")).some((e) => e.includes("earlier than the step before")));
-  assert.ok(bad((c) => (c.lesson.steps[2].pour_to_g = 300)).some((e) => e.includes("must equal numbers.water_g")));
-  assert.ok(bad((c) => (c.lesson.taste.acidity = 9)).some((e) => e.includes("taste.acidity")));
+  assert.ok(bad((c) => (c.lesson.effect = [c.lesson.effect[0]])).some((e) => e.includes("effect must have exactly 2")));
+  assert.ok(bad((c) => (c.lesson.effect[1].label = c.lesson.effect[0].label)).some((e) => e.includes("two labels must differ")));
+  assert.ok(bad((c) => (c.lesson.effect[0].taste = "あ".repeat(LIMITS.effectTaste + 1))).some((e) => e.includes("effect[0].taste is")));
   assert.ok(bad((c) => (c.lesson.tips = [c.lesson.tips[0]])).some((e) => e.includes("tips must have 2-3")));
   assert.ok(bad((c) => (c.date = "2026-09-24")).length === 0); // date check is opt-in
   assert.ok(validateDailyContent(sample, { today: "2026-09-24" }).errors.some((e) => e.includes("is not today")));
+});
+
+test("recipe numbers never reach a viewer (owner decision 2026-09-26)", () => {
+  const rejected = [
+    "粉15g", "お湯240グラム", "200ml", "30cc", "92℃", "９２℃", "88度で", "30秒蒸らす", "3分で落とす", "2:30",
+    "1:15", "1対16", "TDS1.3%", "粉の2倍", "3投目", "1段粗く", "十五グラム", "九十二度", "二分半", "15 g",
+  ];
+  for (const text of rejected) assert.ok(recipeNumberReason(text), `${text} must be rejected`);
+  const allowed = ["初級 第4回", "1つだけ変える", "1回に1つ", "もう一度", "十分に蒸らす", "半分くらい", "V60", "2つの味", "段階的に"];
+  for (const text of allowed) assert.equal(recipeNumberReason(text), null, text);
+
+  // wherever the routine writes it
+  const has = (mutate, where) => {
+    const content = clone(sample);
+    mutate(content.lesson);
+    const errors = errorsOf(content);
+    assert.ok(errors.some((e) => e.includes("recipe number")), `${where}: ${errors.join(" | ") || "no error"}`);
+  };
+  has((l) => (l.topic = "92℃で苦味が増える"), "topic");
+  has((l) => (l.why = "3分を超えると渋くなる"), "why");
+  has((l) => (l.effect[1].taste = "粉を1g増やす"), "effect");
+  has((l) => (l.tips[0].fix = "湯温を92度に戻す"), "tip");
+  has((l) => (l.visual.caption = "比率は1対15"), "diagram");
+  has((l) => (l.narration.why = "お湯は240グラムです"), "narration");
+  // and the old recipe blocks are refused outright
+  for (const k of ["numbers", "steps", "taste"]) {
+    const content = clone(sample);
+    content.lesson[k] = {};
+    assert.ok(errorsOf(content).some((e) => e.includes(`lesson.${k} is not allowed`)), k);
+  }
+  // nothing built from the curriculum or the sample carries one either (slides, narration, title, captions)
+  for (const lesson of [...pack.lessons, sample.lesson]) {
+    const data = buildCardsData({ date: "2026-09-23", format: "brew-lesson", lesson }, { dateDisplay: "" });
+    for (const [label, text] of collectPublishedTexts(data, buildCardCaptions(data, "2026/09/23"))) {
+      assert.equal(recipeNumberReason(text), null, `${lesson.episode} ${label}: ${text}`);
+    }
+  }
 });
 
 test("cold brew food safety survives the format change", () => {
   const content = clone(sample);
   content.lesson.method = "cold-brew";
   content.lesson.scene = "iced";
-  content.lesson.numbers = { dose_g: 60, water_g: 600, temp_c: 4, grind: "粗挽き", time: "10h" };
-  content.lesson.steps = [
-    { time: "0:00", action: "粉と水", pour_to_g: 600 },
-    { time: "10h", action: "冷蔵庫で待つ" },
-  ];
+  assert.ok(errorsOf(content).some((e) => e.includes('must say "冷蔵庫" for cold-brew')));
+  content.lesson.tips[1].fix = "冷蔵庫でゆっくり待つ";
   assert.deepEqual(errorsOf(content), []);
 
   const roomTemp = clone(content);
-  roomTemp.lesson.steps[1].action = "常温で待つ";
-  assert.ok(errorsOf(roomTemp).length > 0);
-
-  const tiles = lessonNumberTiles(content.lesson);
-  assert.ok(tiles.some((t) => t.label === "冷蔵庫"));
-  assert.ok(!tiles.some((t) => t.label === "湯温"));
+  roomTemp.lesson.tips[0].fix = "常温で一晩置く";
+  assert.ok(errorsOf(roomTemp).some((e) => e.includes("unsafe steep")));
 });
 
-test("cards: 5 slides (title, diagram, steps, taste, tips) + CTA, audio sections mirror the slides, narration is spoken", () => {
+test("cards: cover, why, diagram, both ways, tips + CTA; audio sections mirror the slides", () => {
   const data = buildCardsData(sample, { dateDisplay: "2026.09.23" });
   assert.deepEqual(
     data.slides.map((s) => s.kind),
-    ["lesson-title", "lesson-visual", "lesson-steps", "lesson-taste", "lesson-tips"]
+    ["lesson-title", "lesson-why", "lesson-visual", "lesson-effect", "lesson-tips"]
   );
   assert.equal(data.ending.kind, "lesson-cta");
   assert.equal(data.projects.length, data.slides.length);
-  assert.equal(data.topicTitle, `${PILLARS[sample.lesson.pillar]}｜${sample.lesson.hook}`);
-  assert.ok(!data.slides[0].narration.includes("15g"));
-  assert.ok(data.slides[0].narration.includes("グラム"));
-  assert.equal(data.slides[0].topic, sample.lesson.topic);
+  assert.equal(data.topicTitle, `${PILLARS[sample.lesson.pillar]}｜${sample.lesson.word}${sample.lesson.ask}`);
+  const cover = data.slides[0];
+  assert.equal(cover.word, sample.lesson.word);
+  assert.equal(cover.ask, sample.lesson.ask);
+  assert.equal(cover.topic, sample.lesson.topic);
+  assert.equal(cover.episode, sample.lesson.episode);
+  assert.ok(!("tiles" in cover));
+  assert.deepEqual(data.slides[3].sides, sample.lesson.effect);
   assert.equal(data.ending.topic, sample.lesson.topic);
 
   const template = buildCardsData(withTemplateNarration(sample), {});
   assert.notEqual(template.slides[0].narration, data.slides[0].narration);
+  assert.equal(template.slides[3].narration, "下げると、苦味が引き、すっきり。上げると、苦味とコクが増える。");
   assert.ok(narrationLength(template) <= LIMITS.narrationTotal);
-});
 
-test("number tiles: hot shows the ratio, iced shows the ice instead", () => {
-  const hot = lessonNumberTiles(sample.lesson);
-  assert.ok(hot.some((t) => t.label === "比率" && t.value.includes("対")));
-  const iced = pack.lessons.find((l) => l.scene === "iced");
-  const tiles = lessonNumberTiles(iced);
-  assert.ok(tiles.some((t) => t.label === "氷"));
-  assert.ok(!tiles.some((t) => t.label === "比率"));
+  const captions = buildCardCaptions(data, "2026/09/23");
+  assert.equal(captions.youtube.title, `【湯温】湯温を下げると？ ${sample.lesson.topic} #Shorts`);
+  assert.ok(captions.instagram.includes("・下げる → 苦味が引き、すっきり"));
 });
 
 test("performance-history content record carries the pillar, not a bean", () => {
