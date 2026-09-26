@@ -31,3 +31,17 @@ test("a missing plate is reported (the pipeline then renders the classic cards)"
   assert.equal(plateProblem("b06-temp", "lab"), null);
   assert.match(plateProblem("b06-temp", "nosuchlook"), /missing plate/);
 });
+
+test("every file the production look draws is present and committed", async () => {
+  const { LOOK_ASSETS, lookAssetProblem } = await import("./looks-plates.mjs");
+  const look = productionLook();
+  if (!look) return;
+  assert.equal(lookAssetProblem(look), null);
+  const { execFileSync } = await import("node:child_process");
+  const tracked = new Set(execFileSync("git", ["ls-files", "public/looks"], { cwd: rootDir }).toString().trim().split("\n"));
+  for (const f of LOOK_ASSETS[look]) assert.ok(tracked.has(`public/looks/${f}`), `public/looks/${f} is not committed`);
+  for (const e of curriculum.episodes) assert.ok(tracked.has(`public/looks/${look}-${subjects[e.id]}.png`), `${e.id}: plate not committed`);
+  // every file named in the look's sources is in the list (or is a subject plate)
+  const src = ["src/looks/LabConte.tsx", "src/looks/PencilMotion.tsx", "src/looks/vessels.ts"].map((p) => readFileSync(join(rootDir, p), "utf-8")).join("\n");
+  for (const m of src.matchAll(/"(?:looks\/)?(lab-[a-z-]+\.png)"/g)) assert.ok(LOOK_ASSETS.lab.includes(m[1]), `${m[1]} is used but not in LOOK_ASSETS`);
+});

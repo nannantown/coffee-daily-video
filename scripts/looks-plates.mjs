@@ -35,3 +35,36 @@ export function plateProblem(episode, look = productionLook()) {
   const file = platePath(look, episode);
   return existsSync(file) ? null : `missing plate ${file}`;
 }
+
+/**
+ * Files every episode of a look draws besides its own plate (review round 2:
+ * a missing vessel / decoration / still life failed the render too). Keep in
+ * step with src/looks/LabConte.tsx, PencilMotion.tsx and vessels.ts.
+ */
+export const LOOK_ASSETS = {
+  lab: [
+    "lab-decor-branch.png",
+    "lab-decor-beans.png",
+    "lab-decor-sprig.png",
+    "lab-end-still.png",
+    "lab-grinder.png",
+    "lab-kettle.png",
+    "lab-cup.png",
+    "lab-vessel-server.png",
+    "lab-vessel-server-mask.png",
+    "lab-vessel-dripper.png",
+    "lab-vessel-dripper-mask.png",
+    "lab-vessel-cups.png",
+    "lab-vessel-cups-mask-left.png",
+    "lab-vessel-cups-mask-right.png",
+  ],
+};
+
+/** null = fine; otherwise the first file the look needs that is missing. */
+export function lookAssetProblem(look = productionLook()) {
+  for (const f of LOOK_ASSETS[look] ?? []) {
+    const file = join(rootDir, "public", "looks", f);
+    if (!existsSync(file)) return `missing look asset ${file}`;
+  }
+  return null;
+}

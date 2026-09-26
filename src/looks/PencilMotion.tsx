@@ -4,6 +4,7 @@ import { PHRASE_BREAK } from "../cards/theme";
 import type { LessonMotion } from "../cards/types";
 import { coffeeColor } from "./Motion";
 import { VESSELS, type Vessel } from "./vessels";
+import { withTo } from "./art";
 
 /**
  * The why scene of the lab look (ラボノート), after the owner / commander notes
@@ -85,7 +86,7 @@ const Drawing: React.FC<{ v: Vessel; children?: React.ReactNode }> = ({ v, child
 /** Hatched pencil bars: the fill is diagonal strokes in the accent, the track a rough outline. */
 const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; top: number; gap: number; start?: number }> = ({ meters, accent, top, gap, start = 40 }) => {
   const f = useCurrentFrame();
-  const labelW = 220;
+  const labelW = 270; // 4 characters at 52px + the arrow
   const barW = 888 - labelW - 20;
   return (
     <>
@@ -166,7 +167,7 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
             <Pour mask={v.masks[1]} shade={shade} top={level(0.75)} drawIn={pourIn} />
             {sides.slice(0, 2).map((s, i) => (
               <div key={s.label} style={{ position: "absolute", top: v.labelY ?? v.interiorBottom + 40, left: (v.labelX?.[1 - i] ?? 300) - 200, width: 400, textAlign: "center", opacity: prog(f, 30, 46), ...T(48, i === 0 ? 700 : 500, i === 0 ? accent : GREY) }}>
-                {s.label}と
+                {withTo(s.label)}
               </div>
             ))}
           </>
@@ -175,8 +176,8 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
         )}
         {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={coffeeColor(88)} /> : null}
       </Drawing>
-      <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={104} />
-      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * 104 + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
+      <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={motion.meters.length > 2 ? 92 : 104} />
+      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * (motion.meters.length > 2 ? 92 : 104) + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
         <div style={{ height: 2, background: "#D6D0C4", marginBottom: 24 }} />
         <div style={T(52, 700, accent)}>{core}</div>
       </div>

@@ -141,3 +141,6 @@ export function toneFor(episode: string, pillar: string): Tone {
 export function subjectFor(episode: string): Subject {
   return EPISODE_SUBJECT[episode] ?? "cup";
 }
+
+/** "下げる" → "下げると"; a label that already ends in と is left alone (no "とと"). */
+export const withTo = (label: string) => (label.endsWith("と") ? label : `${label}と`);

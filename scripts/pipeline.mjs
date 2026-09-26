@@ -16,7 +16,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { computeCardTimeline, jstDateParts, TIMELINE } from "./content-format.mjs";
-import { plateProblem } from "./looks-plates.mjs";
+import { lookAssetProblem, plateProblem } from "./looks-plates.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -154,7 +154,7 @@ function main() {
   console.log(`  ${data.format}: ${data.slides.length} slides + ending, ${limited.timeline.seconds.toFixed(1)}s`);
   // A look whose picture for today's episode is missing would fail the render:
   // post in the classic cards instead of not posting (scripts/looks-plates.mjs).
-  const plateIssue = data.lesson?.episode ? plateProblem(data.lesson.episode) : null;
+  const plateIssue = lookAssetProblem() ?? (data.lesson?.episode ? plateProblem(data.lesson.episode) : null);
   if (plateIssue) {
     inputProps.look = "classic";
     console.warn(`::warning::${plateIssue} — rendering the classic cards today`);

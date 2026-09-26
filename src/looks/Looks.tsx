@@ -4,6 +4,7 @@ import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import { DrawnPlate, Flow, MovingPhoto, Ripples, Steam, thermoFor, WhyChain } from "./Explain";
 import { MotionPicture } from "./Motion";
 import { PencilMotion } from "./PencilMotion";
+import { withTo } from "./art";
 import type { LessonMotion } from "../cards/types";
 
 /**
@@ -110,7 +111,7 @@ const EffectRows: React.FC<{
       <In key={e.label} at={14 + i * 14} style={{ top: top + i * 180, left: 96, right: align === "center" ? 96 : 176 }}>
         {rule ? <div style={{ height: 2, background: rule, marginBottom: 26 }} /> : null}
         <div style={{ display: "flex", alignItems: "baseline", gap: 24, justifyContent: align === "center" ? "center" : "flex-start", flexWrap: "wrap", columnGap: 24, rowGap: 0 }}>
-          <span style={type("body", 500, i === 0 ? mark : sub)}>{e.label}と</span>
+          <span style={type("body", 500, i === 0 ? mark : sub)}>{withTo(e.label)}</span>
           <span style={type("body", 500, sub)}>→</span>
           <span style={type("body", 700, ink)}>{e.taste}</span>
         </div>
@@ -136,7 +137,10 @@ const LabHeader: React.FC<{ label: string }> = ({ label }) => (
 
 const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
-    <Plate ep={ep} reveal />
+    {/* moved down so tall drawings (a pour, a press) stay clear of the topic line */}
+    <AbsoluteFill style={{ transform: "translateY(110px)" }}>
+      <Plate ep={ep} reveal />
+    </AbsoluteFill>
     <LabHeader label={`${ep.series}　・　抽出メモ`} />
     <In at={2} style={{ top: 372, left: 90, right: 96 }}>
       <div style={type("word", 700, INK)}>{ep.word}</div>

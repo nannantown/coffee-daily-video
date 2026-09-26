@@ -7,7 +7,7 @@ import type { CtaEnding, LessonMotion, LessonTipsSlide, LessonVisualSlide } from
 import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
-import { subjectFor } from "./art";
+import { subjectFor, withTo } from "./art";
 
 /**
  * The lab look (ラボノート, owner's pick 2026-09-26), every scene after the
@@ -108,7 +108,7 @@ export const LabWhyConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 const Gauge: React.FC<{ v: Extract<LessonVisualSlide["visual"], { type: "scale" }>; accent: string }> = ({ v, accent }) => {
   const f = useCurrentFrame();
   const cx = 540;
-  const cy = 1080;
+  const cy = 1130; // leaves room for a two-line heading above the top zone label
   const r = 400;
   const pos = interpolate(f, [30, 90], [v.from ?? v.to, v.to], { ...clamp, easing: inOut });
   const ang = (p: number) => Math.PI * (1 - p / 100); // 0 → left, 100 → right
@@ -169,19 +169,19 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
         <Gauge v={v} accent={ep.accent} />
       ) : (
         <InkContext.Provider value={{ text: INK, textSub: "rgba(34,32,28,0.8)", textMuted: GREY, surface: "#FFFFFF", pill: "#EAE4D8", hairline: RULE, bg: PAPER }}>
-          <div style={{ position: "absolute", top: 560, left: 96, width: 888, transform: "scale(1.08)", transformOrigin: "50% 0%" }}>
+          <div style={{ position: "absolute", top: 650, left: 96, width: 888, transform: v.type === "flow" ? "scale(0.84)" : undefined, transformOrigin: "50% 0%" }}>
             <DiagramBody v={v} />
           </div>
         </InkContext.Provider>
       )}
-      <In at={60} style={{ top: v.type === "scale" ? 1250 : 1360, left: 96, right: 96 }}>
+      <In at={60} style={{ top: v.type === "scale" ? 1290 : 1400, left: 96, right: 96 }}>
         <div style={T(64, 700, ep.accent)}>{v.caption}</div>
       </In>
       {/* the lower band of the storyboard: the episode's drawing left, the reason right */}
-      <In at={70} style={{ top: 1400, left: 40, display: v.type === "scale" ? "block" : "none" }}>
+      <In at={70} style={{ top: 1440, left: 40, display: v.type === "scale" ? "block" : "none" }}>
         <Doodle subject={subjectFor(ep.id)} size={440} />
       </In>
-      <In at={80} style={{ top: v.type === "scale" ? 1440 : 1560, left: v.type === "scale" ? 520 : 96, right: 96 }}>
+      <In at={80} style={{ top: v.type === "scale" ? 1480 : 1570, left: v.type === "scale" ? 520 : 96, right: 96 }}>
         <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
         <div style={T(LAB_TYPE.label, 500, GREY)}>{ep.why}</div>
       </In>
@@ -228,7 +228,7 @@ export const LabEffectConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => {
             <PencilCup shade={r.shade} width={480} />
             <div style={{ flex: 1 }}>
               <div style={T(64, 700, INK)}>
-                {r.label}と <span style={{ color: ep.accent }}>→</span>
+                {withTo(r.label)} <span style={{ color: ep.accent }}>→</span>
               </div>
               <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 12 })}>{r.taste}</div>
             </div>
@@ -275,8 +275,7 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
               <div style={T(64, 700, INK)}>
                 {t.problem}
               </div>
-              <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 10 })}>
-                <span style={{ color: ep.accent, fontWeight: 700 }}>→ </span>
+              <div style={T(LAB_TYPE.body, 700, ep.accent, { marginTop: 10 })}>
                 {t.fix}
               </div>
             </div>
