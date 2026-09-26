@@ -22,7 +22,7 @@ const theme = await import("node:fs").then((fs) => fs.readFileSync(new URL("../s
 const BOXES = {
   server: { box: { top: 600, bottom: 1340 }, maxScale: 0.85 },
   dripper: { box: { top: 640, bottom: 1440 }, maxScale: 0.85 },
-  cups: { box: { top: 890, bottom: 1230 }, maxScale: 1.2 },
+  cups: { box: { top: 890, bottom: 1230 }, maxScale: 1.05 },
 };
 const vesselFor = (type) => (type === "compare" ? "cups" : type === "dissolve" ? "dripper" : "server");
 const long = (n) => "あ".repeat(n);

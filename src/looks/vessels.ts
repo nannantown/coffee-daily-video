@@ -48,7 +48,7 @@ export const VESSELS: Record<"server" | "dripper" | "cups", Vessel> = {
     interiorTop: 935,
     interiorBottom: 1185,
     box: { top: 890, bottom: 1230 },
-    maxScale: 1.2,
+    maxScale: 1.05, // the two cups span x 130-1030 on the plate: wider would cut the right handle
     labelX: [310, 780],
   },
 };
