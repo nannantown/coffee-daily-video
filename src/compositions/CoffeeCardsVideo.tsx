@@ -10,6 +10,7 @@ import {
 import { LessonVisualView } from "../cards/Diagrams";
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
+import { LookVideo, PRODUCTION_LOOK } from "../looks/LookVideo";
 
 const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = ({
   slide,
@@ -39,7 +40,11 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
  * overlay). Segment lengths come from props.timeline (scripts/content-format.mjs
  * computeCardTimeline), audio files from scripts/generate-audio.mjs.
  */
-export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = ({ slides, ending, timeline, withAudio = true }) => {
+export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = (props) => {
+  // A look passed in the props (previews of a candidate) wins over the production one.
+  const look = props.look ?? PRODUCTION_LOOK;
+  if (look) return <LookVideo {...props} look={look} />;
+  const { slides, ending, timeline, withAudio = true } = props;
   const pages = slides.length + 1;
   return (
     <AbsoluteFill style={{ background: COLORS.bg }}>

@@ -3,6 +3,7 @@ import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "re
 import { AccentLine, Pill, Reveal, SlideShell } from "./primitives";
 import { CARD_SHADOW, COLORS, DRIFT_MAX, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type { CompareSide, FlowBrewer, LessonVisual, LessonVisualSlide } from "./types";
+import { useInk } from "./ink";
 
 /**
  * The diagram slide: the day's one change, drawn instead of told (owner
@@ -46,6 +47,7 @@ const STREAM = "#a9c6dd";
 // ---------------------------------------------------------------------------
 
 const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ strength, accent, delay }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const fill = progress(frame, delay, delay + 26);
   const color = BREW[Math.min(5, Math.max(1, strength)) - 1];
@@ -76,7 +78,7 @@ const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ st
           />
         );
       })}
-      <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" fill={COLORS.surface} />
+      <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" fill={ink.surface} />
       <g clipPath={`url(#${id})`}>
         <rect x={0} y={level} width={260} height={260} fill={color} />
         <rect x={0} y={level} width={260} height={8} fill="rgba(255,255,255,0.22)" />
@@ -100,6 +102,7 @@ const CompareColumn: React.FC<{
   dim: boolean;
   picked: boolean;
 }> = ({ side, accent, delay, dim, picked }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const opacity = dim ? interpolate(frame, [34, 44], [1, 0.62], clampOpts) : 1;
   return (
@@ -122,7 +125,7 @@ const CompareColumn: React.FC<{
       <Reveal delay={delay + 24} style={{ width: "100%", marginTop: 24 }}>
         <div
           style={{
-            background: COLORS.surface,
+            background: ink.surface,
             borderTop: `6px solid ${accent}`,
             borderRadius: 24,
             boxShadow: CARD_SHADOW,
@@ -147,6 +150,7 @@ const CompareColumn: React.FC<{
 };
 
 const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }> = ({ v }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const arrowIn = progress(frame, 20, 32);
   // The chip in the middle points at today's side; without a pick it just joins them.
@@ -163,7 +167,7 @@ const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }
           width: 96,
           height: 96,
           borderRadius: 48,
-          background: COLORS.pill,
+          background: ink.pill,
           boxShadow: CARD_SHADOW,
           display: "flex",
           alignItems: "center",
@@ -194,6 +198,7 @@ const G = { w: WIDTH, h: 600, x0: 56, x1: WIDTH - 56, yTop: 96, yBottom: 500 };
 const ZONE_FILLS = ["rgba(123,157,184,0.13)", "rgba(140,180,160,0.13)", "rgba(201,123,75,0.15)"];
 
 const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = ({ v }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const n = v.points.length;
   const xs = v.points.map((_, i) => G.x0 + ((G.x1 - G.x0) * i) / (n - 1));
@@ -208,7 +213,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
 
   return (
     <div style={{ width: WIDTH }}>
-      <Reveal delay={2} style={{ fontSize: TYPE.body, fontWeight: 700, color: COLORS.textSub }}>
+      <Reveal delay={2} style={{ fontSize: TYPE.body, fontWeight: 700, color: ink.textSub }}>
         ↑ {v.yLabel}
       </Reveal>
       <div style={{ position: "relative", width: G.w, height: G.h, marginTop: 8 }}>
@@ -219,7 +224,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
             return (
               <g key={label} opacity={progress(frame, 4 + i * 3, 14 + i * 3)}>
                 <rect x={zx} y={G.yTop - 70} width={zw} height={G.yBottom - G.yTop + 90} fill={ZONE_FILLS[i % ZONE_FILLS.length]} />
-                <text x={zx + zw / 2} y={G.yTop - 30} textAnchor="middle" fill={COLORS.text} fontSize={TYPE.aux} fontWeight={700}>
+                <text x={zx + zw / 2} y={G.yTop - 30} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {label}
                 </text>
               </g>
@@ -227,9 +232,9 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
           })}
           {[1, 2, 3, 4, 5].map((k) => {
             const y = G.yBottom - ((G.yBottom - G.yTop) * (k - 1)) / 4;
-            return <line key={k} x1={G.x0 - 28} x2={G.x1 + 28} y1={y} y2={y} stroke={COLORS.hairline} strokeWidth={2} />;
+            return <line key={k} x1={G.x0 - 28} x2={G.x1 + 28} y1={y} y2={y} stroke={ink.hairline} strokeWidth={2} />;
           })}
-          <line x1={G.x0 - 28} x2={G.x1 + 28} y1={G.yBottom + 20} y2={G.yBottom + 20} stroke={COLORS.textMuted} strokeWidth={3} />
+          <line x1={G.x0 - 28} x2={G.x1 + 28} y1={G.yBottom + 20} y2={G.yBottom + 20} stroke={ink.textMuted} strokeWidth={3} />
           {mark != null ? (
             <line
               x1={xs[mark]}
@@ -258,8 +263,8 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
             const r = isMark ? 13 + 9 * markIn : 13;
             return (
               <g key={`${p.label}-${i}`} opacity={shown ? 1 : 0}>
-                <circle cx={xs[i]} cy={ys[i]} r={r} fill={isMark && markIn > 0 ? COLORS.sage : COLORS.bg} stroke={isMark ? COLORS.sage : COLORS.caramel} strokeWidth={6} />
-                <text x={xs[i]} y={G.yBottom + 72} textAnchor="middle" fill={COLORS.text} fontSize={TYPE.aux} fontWeight={700}>
+                <circle cx={xs[i]} cy={ys[i]} r={r} fill={isMark && markIn > 0 ? COLORS.sage : ink.bg} stroke={isMark ? COLORS.sage : COLORS.caramel} strokeWidth={6} />
+                <text x={xs[i]} y={G.yBottom + 72} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {p.label}
                 </text>
               </g>
@@ -284,7 +289,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
           </div>
         ) : null}
       </div>
-      <Reveal delay={6} style={{ fontSize: TYPE.body, fontWeight: 700, color: COLORS.textSub, textAlign: "right" }}>
+      <Reveal delay={6} style={{ fontSize: TYPE.body, fontWeight: 700, color: ink.textSub, textAlign: "right" }}>
         {v.xLabel} →
       </Reveal>
     </div>
@@ -488,6 +493,7 @@ const ZONE_COLORS: Record<number, string[]> = {
 };
 
 const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = ({ v }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const x = (n: number) => (n / 100) * WIDTH;
@@ -512,7 +518,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
       <Reveal delay={6} style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 28, whiteSpace: "nowrap" }}>
         {v.from != null && zoneAt(v.from) !== zoneAt(v.to) ? (
           <>
-            <span style={{ fontSize: 64, fontWeight: 800, color: COLORS.textMuted }}>{zoneAt(v.from)}</span>
+            <span style={{ fontSize: 64, fontWeight: 800, color: ink.textMuted }}>{zoneAt(v.from)}</span>
             <svg width={72} height={48} viewBox="0 0 72 48">
               <path d="M6 24 H60 M44 8 L62 24 L44 40" stroke={COLORS.caramel} strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -535,7 +541,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
               width: 44,
               height: 44,
               borderRadius: 22,
-              border: `6px solid ${COLORS.text}`,
+              border: `6px solid ${ink.text}`,
               boxSizing: "border-box",
               opacity: 0.7 * barIn,
             }}
@@ -569,7 +575,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
 // the slide
 // ---------------------------------------------------------------------------
 
-const DiagramBody: React.FC<{ v: LessonVisual }> = ({ v }) => {
+export const DiagramBody: React.FC<{ v: LessonVisual }> = ({ v }) => {
   switch (v.type) {
     case "compare":
       return <CompareDiagram v={v} />;

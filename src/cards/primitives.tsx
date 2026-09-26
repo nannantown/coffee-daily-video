@@ -2,22 +2,25 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Atmosphere, Drift, useCutIn } from "./atmosphere";
 import { ACCENTS, COLORS, DRIFT_MAX, FONT_FAMILY, SPACE, TYPE } from "./theme";
+import { useInk } from "./ink";
 
 /** Solid label chip: opaque fill, white text, color carried by the border. */
 export const Pill: React.FC<{
   children: React.ReactNode;
   accent?: string;
   size?: number;
-}> = ({ children, accent = COLORS.caramel, size = TYPE.pill }) => (
+}> = ({ children, accent = COLORS.caramel, size = TYPE.pill }) => {
+  const ink = useInk();
+  return (
   <div
     style={{
       display: "inline-flex",
       alignItems: "center",
-      background: COLORS.pill,
+      background: ink.pill,
       border: `3px solid ${accent}`,
       borderRadius: 999,
       padding: "10px 30px",
-      color: COLORS.text,
+      color: ink.text,
       fontSize: size,
       fontWeight: 700,
       lineHeight: 1.2,
@@ -27,7 +30,8 @@ export const Pill: React.FC<{
   >
     {children}
   </div>
-);
+  );
+};
 
 /**
  * Fade + rise entrance, `delay` in frames from the start of the slide.
@@ -62,21 +66,24 @@ export const AccentLine: React.FC<{
   children: React.ReactNode;
   accent?: string;
   size?: number;
-}> = ({ children, accent = COLORS.caramel, size = TYPE.emphasis }) => (
+}> = ({ children, accent = COLORS.caramel, size = TYPE.emphasis }) => {
+  const ink = useInk();
+  return (
   <div style={{ display: "flex", alignItems: "stretch", gap: 32 }}>
     <div style={{ width: 8, borderRadius: 4, background: accent, flexShrink: 0 }} />
     <div
       style={{
         fontSize: size,
         fontWeight: 800,
-        color: COLORS.text,
+        color: ink.text,
         lineHeight: 1.35,
       }}
     >
       {children}
     </div>
   </div>
-);
+  );
+};
 
 export const Brand: React.FC = () => (
   <div

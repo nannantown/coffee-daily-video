@@ -119,4 +119,5 @@ export interface CoffeeCardsProps {
   ending: CtaEnding;
   timeline: CardTimeline;
   withAudio?: boolean;
+  look?: "lab" | "photo" | "still"; // preview a candidate look (src/looks/); unset = PRODUCTION_LOOK
 }

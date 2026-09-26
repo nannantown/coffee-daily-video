@@ -280,7 +280,7 @@ export const LOOK_SCENES: Record<Look, { cover: React.FC<{ ep: LookEpisode }>; w
 
 const PREVIEW_EPISODES: Omit<LookEpisode, "plate">[] = [
   {
-    id: "yuon",
+    id: "kettle",
     series: "初級 第6回",
     word: "湯温",
     ask: "を下げると？",
@@ -296,7 +296,7 @@ const PREVIEW_EPISODES: Omit<LookEpisode, "plate">[] = [
     deep: "#5A3A2C",
   },
   {
-    id: "hikime",
+    id: "grinder",
     series: "初級 第4回",
     word: "挽き目",
     ask: "を細かくすると？",
@@ -312,7 +312,7 @@ const PREVIEW_EPISODES: Omit<LookEpisode, "plate">[] = [
     deep: "#4A4336",
   },
   {
-    id: "tds",
+    id: "cup",
     series: "上級 第28回",
     word: "TDS",
     ask: "ってなに？",
