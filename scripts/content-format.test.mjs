@@ -608,3 +608,13 @@ test("every episode shows its core change with one of the four motions, and all 
   assert.deepEqual(why.motion, sample.lesson.motion);
   assert.equal(why.core, sample.lesson.core);
 });
+
+test("the slide date is not a recipe number (the last gate must not block a post over 2026.09.27)", async () => {
+  const { recipeNumberHits } = await import("./content-format.mjs");
+  const data = buildCardsData(sample, { dateDisplay: "2026.09.27" });
+  const texts = collectPublishedTexts(data, buildCardCaptions(data, "2026/09/27"));
+  assert.ok(texts.some(([label, t]) => /date$/.test(label) && t === "2026.09.27"));
+  assert.deepEqual(recipeNumberHits(texts), []);
+  // but a number anywhere else still counts
+  assert.equal(recipeNumberHits([["slides[1].why", "0.5"]]).length, 1);
+});

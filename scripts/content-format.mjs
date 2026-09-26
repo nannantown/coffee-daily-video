@@ -180,6 +180,18 @@ export function recipeNumberReason(value) {
   return null;
 }
 
+/**
+ * Recipe numbers in published texts ([label, text] pairs): [label, reason, text].
+ * The slide's date ("2026.09.27", the classic cards' header) is a date, not a
+ * recipe number, so date fields are skipped.
+ */
+export function recipeNumberHits(texts) {
+  return texts
+    .filter(([label]) => !/(?:^|\.)date$/.test(label))
+    .map(([label, text]) => [label, recipeNumberReason(text), text])
+    .filter(([, why]) => why);
+}
+
 // Untrusted text checks, applied after NFKC so full-width look-alikes
 // (＠ ＃ ｗｗｗ． ｈｔｔｐｓ：／／) count too. Written with escapes and property
 // classes only — never paste raw invisible characters into this file.
@@ -693,8 +705,7 @@ export function validateDailyContent(content, { today, expectedEpisode } = {}) {
     }
     const captions = buildCardCaptions(data, String(content.date).replace(/-/g, "/"));
     const published = collectPublishedTexts(data, captions);
-    for (const [label, text] of published) {
-      const num = recipeNumberReason(text);
+    for (const [label, num, text] of recipeNumberHits(published)) {
       if (num) errors.push(`${label} must not carry a recipe number — ${num}: ${quote(text)}`);
     }
     for (const hit of scanBannedTerms(published)) {

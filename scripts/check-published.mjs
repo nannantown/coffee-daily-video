@@ -16,7 +16,7 @@ import { existsSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { scanBannedTerms } from "./brand-guard.mjs";
-import { collectPublishedTexts, recipeNumberReason } from "./content-format.mjs";
+import { collectPublishedTexts, recipeNumberHits } from "./content-format.mjs";
 
 const outputDir = join(dirname(fileURLToPath(import.meta.url)), "..", "output");
 const readIfPresent = (name) => {
@@ -51,7 +51,7 @@ if (hits.length > 0) {
 }
 // No recipe numbers either (owner decision 2026-09-26) — this also stops a re-post
 // workflow from publishing an older, number-filled caption or video.
-const numbers = texts.map(([label, text]) => [label, recipeNumberReason(text)]).filter(([, why]) => why);
+const numbers = recipeNumberHits(texts);
 if (numbers.length > 0) {
   console.error(`NG: ${numbers.length} recipe number(s) would be published`);
   for (const [label, why] of numbers) console.error(`  - ${label}: ${why}`);
