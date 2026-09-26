@@ -1,59 +1,78 @@
 {
-  "date": "2026-09-26",
+  "date": "2026-09-27",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b01-extraction",
-    "pillar": "terms",
-    "method": "v60",
+    "episode": "b02-measure",
+    "pillar": "ratio",
+    "method": "kalita-wave",
     "scene": "hot",
-    "hook": "抽出時間を延ばす",
-    "topic": "溶け出す量が増えて濃くなる",
-    "why": "抽出＝お湯に粉の成分が溶け出すこと",
-    "numbers": {
-      "dose_g": 15,
-      "water_g": 240,
-      "temp_c": 92,
-      "grind": "中細",
-      "time": "3:00"
+    "word": "計量",
+    "ask": "で味がそろう？",
+    "hook": "目分量をやめて量る",
+    "topic": "毎回同じ味に近づく",
+    "why": "量のブレが、そのまま味のブレになる",
+    "core": "量ると、毎回同じ濃さになる",
+    "motion": {
+      "type": "compare",
+      "shade": {
+        "from": 40,
+        "to": 55
+      },
+      "meters": [
+        {
+          "label": "ブレ",
+          "from": 80,
+          "to": 20
+        },
+        {
+          "label": "濃さ",
+          "from": 40,
+          "to": 55
+        }
+      ]
     },
-    "steps": [
-      { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-      { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-      { "time": "1:30", "action": "3投目", "pour_to_g": 240 },
-      { "time": "3:00", "action": "落ち切り" }
+    "effect": [
+      {
+        "label": "量る",
+        "taste": "毎回同じ味になる"
+      },
+      {
+        "label": "量らない",
+        "taste": "日によって味が変わる"
+      }
     ],
-    "taste": {
-      "notes": ["しっかり濃い", "苦味が出る"],
-      "summary": "時間を延ばすほど味が濃くなる",
-      "acidity": 2,
-      "sweetness": 3,
-      "body": 4
-    },
     "tips": [
-      { "problem": "薄い時", "fix": "注ぐ速さを落とす" },
-      { "problem": "苦すぎる時", "fix": "2:30で落とし切る" }
+      {
+        "problem": "毎回味が違う",
+        "fix": "粉もお湯もはかりで量る"
+      },
+      {
+        "problem": "はかりが無い時",
+        "fix": "計量スプーンで粉を量る"
+      }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "時間が延びるほど濃く出る",
-      "xLabel": "抽出時間",
-      "yLabel": "濃さ",
-      "points": [
-        { "label": "1:30", "value": 1 },
-        { "label": "2:00", "value": 2 },
-        { "label": "2:30", "value": 3 },
-        { "label": "3:00", "value": 4 }
-      ],
-      "mark": 3
+      "type": "compare",
+      "caption": "量るだけで味がそろう",
+      "left": {
+        "label": "目分量",
+        "result": "毎回ちがう",
+        "strength": 2
+      },
+      "right": {
+        "label": "量る",
+        "result": "毎回同じ",
+        "strength": 3
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "抽出とは、お湯に粉の成分が溶け出すこと。時間を延ばすほど濃くなります。",
-      "numbers": "V60で、粉15グラム、お湯240グラム。92度で3分で淹れます。",
-      "visual": "1分30秒だと薄く、3分だとしっかり濃い。時間ほど溶け出す量が増えます。",
-      "steps": "蒸らして3回に分けて注ぎ、3分で落ち切ります。",
-      "taste": "しっかり濃く、苦味も少し出ます。",
-      "tips": "薄ければ注ぐ速さを落とす。苦すぎれば2分30秒で切る。"
+      "title": "目分量をやめて、粉もお湯も量ります。それだけで、毎回同じ味に近づきます。",
+      "why": "量のブレが、そのまま味のブレになるからです。",
+      "visual": "目分量だと毎回ちがう味に、量ると毎回同じ味に落ち着きます。",
+      "effect": "量ると、毎回同じ味になります。量らないと、日によって味が変わります。",
+      "tips": "味が毎回違うなら、粉もお湯もはかりで量る。はかりが無ければ、計量スプーンで粉を量ります。"
     }
   }
 }
