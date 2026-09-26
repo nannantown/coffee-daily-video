@@ -37,11 +37,11 @@ for (let k = 0; k < count; k++) {
   // one frame per scene: the cover at 1.5s (the grid thumbnail), the rest once their text is in
   let at = 0;
   const frames = timeline.slides.map((d, i) => {
-    const f = i === 0 ? 45 : at + 60;
+    const f = i === 0 ? 45 : at + Math.max(60, d - 20);
     at += d;
     return f;
   });
-  frames.push(at + 60);
+  frames.push(at + Math.max(60, timeline.ending - 20));
   const shots = [];
   for (const [i, frame] of frames.entries()) {
     const output = join(tmp, `${look}-${ep.id}-${i}.png`);

@@ -50,7 +50,7 @@ interface Ink {
 }
 
 /** A stroke that draws itself between frames a and b. */
-const Draw: React.FC<{ d: string; a: number; b: number; color: string; width?: number; fill?: string }> = ({ d, a, b, color, width = 4, fill = "none" }) => {
+export const Draw: React.FC<{ d: string; a: number; b: number; color: string; width?: number; fill?: string }> = ({ d, a, b, color, width = 4, fill = "none" }) => {
   const p = prog(useCurrentFrame(), a, b, inOut);
   return <path d={d} fill={fill} stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} />;
 };
@@ -122,7 +122,7 @@ const INK = "#22201C";
 const TERRACOTTA = "#B5563A";
 
 /** Steam wisps: wavy strokes that rise, sway and fade, in a loop. */
-const Steam: React.FC<{ x: number; y: number; color: string; width: number; blur?: number; spread?: number; height?: number }> = ({ x, y, color, width, blur = 0, spread = 70, height = 300 }) => {
+export const Steam: React.FC<{ x: number; y: number; color: string; width: number; blur?: number; spread?: number; height?: number }> = ({ x, y, color, width, blur = 0, spread = 70, height = 300 }) => {
   const f = useCurrentFrame();
   return (
     <svg width={1080} height={1920} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
@@ -147,7 +147,7 @@ const Steam: React.FC<{ x: number; y: number; color: string; width: number; blur
 };
 
 /** Water flowing along the stream: short dashes that travel down the path. */
-const Flow: React.FC<{ d: string; color: string; width: number; dash: string; speed: number; blur?: number }> = ({ d, color, width, dash, speed, blur }) => {
+export const Flow: React.FC<{ d: string; color: string; width: number; dash: string; speed: number; blur?: number }> = ({ d, color, width, dash, speed, blur }) => {
   const f = useCurrentFrame();
   return (
     <svg width={1080} height={1920} style={{ position: "absolute", inset: 0, filter: blur ? `blur(${blur}px)` : undefined }}>
@@ -156,7 +156,7 @@ const Flow: React.FC<{ d: string; color: string; width: number; dash: string; sp
   );
 };
 
-const Ripples: React.FC<{ x: number; y: number; color: string }> = ({ x, y, color }) => {
+export const Ripples: React.FC<{ x: number; y: number; color: string }> = ({ x, y, color }) => {
   const f = useCurrentFrame();
   return (
     <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
@@ -221,3 +221,80 @@ export const ExplainPhoto: React.FC = () => {
 export const EXPLAIN_FRAMES = 195;
 
 export const ExplainPreview: React.FC<{ look: "lab" | "photo" }> = ({ look }) => (look === "lab" ? <ExplainLab /> : <ExplainPhoto />);
+
+// ---------------------------------------------------------------------------
+// Production: the explanation scene of any episode (src/looks/Looks.tsx *Why)
+// ---------------------------------------------------------------------------
+
+/**
+ * why → (arrow drawing itself) → topic, in the band y 540-960. Temperature
+ * episodes get the thermometer, its mercury moving the way the change goes.
+ */
+export const WhyChain: React.FC<{ why: string; topic: string; ink: Ink; thermo?: "up" | "down" | null }> = ({ why, topic, ink, thermo = null }) => {
+  const f = useCurrentFrame();
+  const left = thermo ? 280 : 96;
+  const [m0, m1] = thermo === "up" ? [0.34, 0.86] : [0.86, 0.34];
+  const mercury = interpolate(f, [20, 70], [m0, m1], { ...clamp, easing: inOut });
+  const tubeTop = 560;
+  const tubeBottom = 780;
+  const mercuryTop = tubeBottom - (tubeBottom - tubeTop) * mercury;
+  const shadow = ink.shadow ? { filter: `drop-shadow(0 2px 6px ${ink.shadow})` } : {};
+  return (
+    <AbsoluteFill style={shadow}>
+      <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
+        {thermo ? (
+          <>
+            <Draw d={`M130 ${tubeTop + 16} a16 16 0 0 1 32 0 V${tubeBottom} a36 36 0 1 1 -32 0 Z`} a={0} b={26} color={ink.line} width={4} />
+            <rect x={138} y={mercuryTop} width={16} height={tubeBottom - mercuryTop + 20} rx={8} fill={ink.accent} opacity={prog(f, 14, 26)} />
+            <circle cx={146} cy={tubeBottom + 30} r={24} fill={ink.accent} opacity={prog(f, 14, 26)} />
+            <Draw d={thermo === "up" ? "M214 760 V640 M194 664 L214 638 L234 664" : "M214 640 V760 M194 736 L214 762 L234 736"} a={60} b={84} color={ink.accent} width={5} />
+          </>
+        ) : null}
+        {/* the arrow from the reason down to what it does to the taste */}
+        <Draw d={`M${left + 24} 740 V820 M${left + 4} 798 L${left + 24} 822 L${left + 44} 798`} a={56} b={80} color={ink.line} width={4} />
+      </svg>
+      <Fade at={18} style={{ top: 560, left, right: 176, ...text(48, 500, ink.text) }}>
+        {why}
+      </Fade>
+      <Fade at={78} style={{ top: 850, left, right: 120, ...text(64, 700, ink.accent) }}>
+        {topic}
+      </Fade>
+    </AbsoluteFill>
+  );
+};
+
+/** Which way a temperature episode moves (for the thermometer), or null. */
+export function thermoFor(pillar: string, firstLabel: string): "up" | "down" | null {
+  if (pillar !== "temp" && !/温度|湯温/.test(firstLabel)) return null;
+  return /下げ|低|ぬる/.test(firstLabel) ? "down" : "up";
+}
+
+/** lab: the pencil plate uncovered as if drawn (a soft diagonal wipe). */
+export const DrawnPlate: React.FC<{ src: string }> = ({ src }) => {
+  const f = useCurrentFrame();
+  const reveal = interpolate(f, [0, 45], [-30, 130], { ...clamp, easing: inOut });
+  const mask = `linear-gradient(160deg, #000 ${reveal - 25}%, transparent ${reveal}%)`;
+  return (
+    <AbsoluteFill style={{ WebkitMaskImage: mask, maskImage: mask }}>
+      <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+    </AbsoluteFill>
+  );
+};
+
+/** photo: slow push-in + drift, window light breathing, a scrim for the text. */
+export const MovingPhoto: React.FC<{ src: string; children?: React.ReactNode }> = ({ src, children }) => {
+  const f = useCurrentFrame();
+  const zoom = 1.06 + f * 0.0005;
+  const pan = 10 - f * 0.25;
+  const glow = 0.18 + 0.1 * Math.sin(f / 22);
+  return (
+    <AbsoluteFill style={{ background: "#1C1511", overflow: "hidden" }}>
+      <AbsoluteFill style={{ transform: `translateX(${pan}px) scale(${zoom})`, transformOrigin: "62% 60%" }}>
+        <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {children}
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: `radial-gradient(circle at 88% 22%, rgba(255,190,120,${glow}) 0%, rgba(255,190,120,0) 55%)`, mixBlendMode: "screen" }} />
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(20,16,12,0.8) 0%, rgba(20,16,12,0.6) 45%, rgba(20,16,12,0) 62%)" }} />
+    </AbsoluteFill>
+  );
+};

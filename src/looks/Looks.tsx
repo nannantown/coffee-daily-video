@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
+import { DrawnPlate, Flow, MovingPhoto, Ripples, Steam, thermoFor, WhyChain } from "./Explain";
 
 /**
  * Second round of the 2026-09-26 redesign. The owner rejected the first three
@@ -25,6 +26,7 @@ export type Look = "lab" | "photo" | "still";
 
 export interface LookEpisode {
   id: string;
+  pillar?: string; // curriculum pillar (temp → thermometer in the why scene)
   series: string; // 初級 第6回
   word: string;
   ask: string;
@@ -144,15 +146,19 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 
 const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
-    <Plate ep={ep} />
+    <DrawnPlate src={`looks/${ep.plate}`} />
+    {ep.plate.endsWith("-kettle.png") ? (
+      <>
+        <Steam x={360} y={1290} color={rgba(ep.accent, 0.55)} width={4} />
+        <Flow d="M478 1102 C 452 1180 418 1300 412 1486" color="rgba(90,120,140,0.75)" width={4} dash="10 26" speed={3.2} />
+        <Ripples x={402} y={1492} color={rgba(ep.accent, 0.7)} />
+      </>
+    ) : null}
     <LabHeader label="なぜ変わる？" />
     <In at={4} style={{ top: 380, left: 96, right: 96, ...type("head", 700, INK) }}>
       {ep.hook}と
     </In>
-    <In at={24} style={{ top: 560, left: 96, width: 820 }}>
-      <div style={{ height: 2, background: RULE, marginBottom: 26 }} />
-      <div style={type("body", 500, INK)}>{ep.why}</div>
-    </In>
+    <WhyChain why={ep.why} topic={ep.topic} thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, glass: PAPER }} />
   </AbsoluteFill>
 );
 
@@ -193,17 +199,27 @@ const PhotoCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 );
 
 const PhotoWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
-  <AbsoluteFill style={{ background: "#2B211B" }}>
-    <Plate ep={ep} dim="linear-gradient(180deg, rgba(20,16,12,0.7) 0%, rgba(20,16,12,0.45) 50%, rgba(20,16,12,0.15) 75%)" />
+  <AbsoluteFill>
+    <MovingPhoto src={`looks/${ep.plate}`}>
+      {ep.plate.endsWith("-kettle.png") ? (
+        <>
+          <Steam x={690} y={1080} color="rgba(255,248,238,0.5)" width={22} blur={9} spread={90} height={380} />
+          <Flow d="M690 1092 C 720 1180 780 1330 868 1680" color="rgba(255,236,200,0.95)" width={3} dash="18 90" speed={6} blur={0.8} />
+        </>
+      ) : null}
+    </MovingPhoto>
     <In at={0} style={{ top: 300, left: 96, ...type("aux", 500, WHITE_SUB) }}>
       なぜ変わる？
     </In>
     <In at={4} style={{ top: 380, left: 96, right: 96, ...type("head", 700, WHITE) }}>
       {ep.hook}と
     </In>
-    <In at={24} style={{ top: 560, left: 96, right: 176, ...type("body", 500, AMBER) }}>
-      {ep.why}
-    </In>
+    <WhyChain
+      why={ep.why}
+      topic={ep.topic}
+      thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")}
+      ink={{ line: "rgba(255,255,255,0.92)", text: WHITE, sub: WHITE_SUB, accent: AMBER, glass: "rgba(255,255,255,0.08)", shadow: "rgba(0,0,0,0.45)" }}
+    />
   </AbsoluteFill>
 );
 
@@ -281,6 +297,7 @@ export const LOOK_SCENES: Record<Look, { cover: React.FC<{ ep: LookEpisode }>; w
 const PREVIEW_EPISODES: Omit<LookEpisode, "plate">[] = [
   {
     id: "kettle",
+    pillar: "temp",
     series: "初級 第6回",
     word: "湯温",
     ask: "を下げると？",

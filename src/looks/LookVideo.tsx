@@ -132,7 +132,7 @@ const EndingScene: React.FC<{ look: Look; ep: LookEpisode; ending: CtaEnding }> 
   const t = themeFor(look, ep);
   return (
     <AbsoluteFill>
-      {t.plate(ep)}
+      {look === "photo" ? t.plate(ep) : t.quiet(ep)}
       <At top={300} style={clampType("aux", 500, t.sub)}>
         {ending.lead}
       </At>
@@ -168,6 +168,7 @@ export function lookEpisode(look: Look, slides: CardSlide[]): LookEpisode {
   const tone = toneFor(title.episode, title.pillar);
   return {
     id: title.episode,
+    pillar: title.pillar,
     series: title.series,
     word: title.word,
     ask: title.ask,
