@@ -41,6 +41,20 @@ for (const look of ["lab", "photo", "still"].filter((l) => !only || l === only))
   const full = covers.map((_, i) => `[${i}:v]scale=432:768,pad=444:768:6:0:0x111111[f${i}]`).join(";");
   ffmpeg([...inputs, "-filter_complex", `${full};[f0][f1][f2]hstack=3`, "-frames:v", "1", join(outDir, `look-${look}-covers.png`)]);
 
+  // Codex reference (top row) over the reproduction (bottom row), for the Canvas.
+  const ref = { lab: "A", photo: "B", still: "C" }[look];
+  const refs = ["1-yuon", "2-hikime", "3-tds"].map((n) => join(outDir, "ref", `${ref}-${n}.png`));
+  const both = [...refs, ...covers];
+  const cells = both.map((_, i) => `[${i}:v]scale=360:640,pad=372:652:6:6:white[x${i}]`).join(";");
+  ffmpeg([
+    ...both.flatMap((f) => ["-i", f]),
+    "-filter_complex",
+    `${cells};[x0][x1][x2]hstack=3[top];[x3][x4][x5]hstack=3[bot];[top][bot]vstack=2`,
+    "-frames:v",
+    "1",
+    join(outDir, `look-${look}-ref-vs-render.png`),
+  ]);
+
   const inputProps = { look, episodeIndex: 0 };
   const composition = await selectComposition({ serveUrl, id: "LookPreview", inputProps });
   const clip = join(tmp, `${look}-clip.mp4`);
