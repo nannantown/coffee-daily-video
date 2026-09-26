@@ -2,6 +2,8 @@ import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import { DrawnPlate, Flow, MovingPhoto, Ripples, Steam, thermoFor, WhyChain } from "./Explain";
+import { MotionPicture } from "./Motion";
+import type { LessonMotion } from "../cards/types";
 
 /**
  * Second round of the 2026-09-26 redesign. The owner rejected the first three
@@ -27,6 +29,8 @@ export type Look = "lab" | "photo" | "still";
 export interface LookEpisode {
   id: string;
   pillar?: string; // curriculum pillar (temp → thermometer in the why scene)
+  core?: string; // the one change (lesson.core)
+  motion?: LessonMotion; // how the why scene shows it
   series: string; // 初級 第6回
   word: string;
   ask: string;
@@ -146,8 +150,8 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 
 const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
-    <DrawnPlate src={`looks/${ep.plate}`} />
-    {ep.plate.endsWith("-kettle.png") ? (
+    {ep.motion ? null : <DrawnPlate src={`looks/${ep.plate}`} />}
+    {!ep.motion && ep.plate.endsWith("-kettle.png") ? (
       <>
         <Steam x={360} y={1290} color={rgba(ep.accent, 0.55)} width={4} />
         <Flow d="M478 1102 C 452 1180 418 1300 412 1486" color="rgba(90,120,140,0.75)" width={4} dash="10 26" speed={3.2} />
@@ -158,7 +162,11 @@ const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
     <In at={4} style={{ top: 380, left: 96, right: 96, ...type("head", 700, INK) }}>
       {ep.hook}と
     </In>
-    <WhyChain why={ep.why} topic={ep.topic} thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, glass: PAPER }} />
+    {ep.motion ? (
+      <MotionPicture motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, track: "#E4DDCF", glass: "rgba(255,255,255,0.7)" }} />
+    ) : (
+      <WhyChain why={ep.why} topic={ep.topic} thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, glass: PAPER }} />
+    )}
   </AbsoluteFill>
 );
 
@@ -214,12 +222,21 @@ const PhotoWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
     <In at={4} style={{ top: 380, left: 96, right: 96, ...type("head", 700, WHITE) }}>
       {ep.hook}と
     </In>
-    <WhyChain
-      why={ep.why}
-      topic={ep.topic}
-      thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")}
-      ink={{ line: "rgba(255,255,255,0.92)", text: WHITE, sub: WHITE_SUB, accent: AMBER, glass: "rgba(255,255,255,0.08)", shadow: "rgba(0,0,0,0.45)" }}
-    />
+    {ep.motion ? (
+      <MotionPicture
+        motion={ep.motion}
+        core={ep.core ?? ep.why}
+        sides={ep.effect}
+        ink={{ line: "rgba(255,255,255,0.9)", text: WHITE, sub: WHITE_SUB, accent: AMBER, track: "rgba(255,255,255,0.18)", glass: "rgba(255,255,255,0.1)", card: "rgba(28,21,17,0.55)" }}
+      />
+    ) : (
+      <WhyChain
+        why={ep.why}
+        topic={ep.topic}
+        thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")}
+        ink={{ line: "rgba(255,255,255,0.92)", text: WHITE, sub: WHITE_SUB, accent: AMBER, glass: "rgba(255,255,255,0.08)", shadow: "rgba(0,0,0,0.45)" }}
+      />
+    )}
   </AbsoluteFill>
 );
 

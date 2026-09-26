@@ -175,6 +175,8 @@ export function lookEpisode(look: Look, slides: CardSlide[]): LookEpisode {
     topic: title.topic,
     hook: why?.kind === "lesson-why" ? why.hook : "",
     why: why?.kind === "lesson-why" ? why.why : "",
+    core: why?.kind === "lesson-why" ? why.core : undefined,
+    motion: why?.kind === "lesson-why" ? why.motion : undefined,
     effect: effect?.kind === "lesson-effect" ? effect.sides : [],
     ...tone,
     plate: `${look}-${subjectFor(title.episode)}.png`,
