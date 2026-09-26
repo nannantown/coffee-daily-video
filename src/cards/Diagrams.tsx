@@ -3,6 +3,7 @@ import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "re
 import { AccentLine, Pill, Reveal, SlideShell } from "./primitives";
 import { CARD_SHADOW, COLORS, DRIFT_MAX, PHRASE_BREAK, SPACE, TYPE } from "./theme";
 import type { CompareSide, FlowBrewer, LessonVisual, LessonVisualSlide } from "./types";
+import { useInk } from "./ink";
 
 /**
  * The diagram slide: the day's one change, drawn instead of told (owner
@@ -12,7 +13,7 @@ import type { CompareSide, FlowBrewer, LessonVisual, LessonVisualSlide } from ".
  *   compare — two cups side by side: condition → how dark / what it tastes like
  *   graph   — how one taste moves along a variable (time, bloom …), today marked
  *   flow    — a brewer in cross-section: where the water goes (percolation vs immersion, shapes, pours)
- *   scale   — a gauge whose needle moves from the usual value to today's (℃, %, 1対n)
+ *   scale   — a gauge with named zones; the needle moves from the usual spot to today's (no numbers)
  *
  * House rules kept from the other cards (docs/video-style.md): body text ≥ 40px,
  * auxiliary ≥ 32px, text stays white, accent colours only on lines / fills,
@@ -45,7 +46,8 @@ const STREAM = "#a9c6dd";
 // compare
 // ---------------------------------------------------------------------------
 
-const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ strength, accent, delay }) => {
+const Cup: React.FC<{ strength: number; accent: string; delay: number; size?: number }> = ({ strength, accent, delay, size = 300 }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const fill = progress(frame, delay, delay + 26);
   const color = BREW[Math.min(5, Math.max(1, strength)) - 1];
@@ -54,7 +56,7 @@ const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ st
   const level = bottom - (bottom - top - 22) * fill;
   const id = `cup-${delay}`;
   return (
-    <svg width={300} height={300} viewBox="0 0 260 260">
+    <svg width={size} height={size} viewBox="0 0 260 260">
       <defs>
         <clipPath id={id}>
           <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" />
@@ -76,7 +78,7 @@ const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ st
           />
         );
       })}
-      <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" fill={COLORS.surface} />
+      <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" fill={ink.surface} />
       <g clipPath={`url(#${id})`}>
         <rect x={0} y={level} width={260} height={260} fill={color} />
         <rect x={0} y={level} width={260} height={8} fill="rgba(255,255,255,0.22)" />
@@ -99,7 +101,9 @@ const CompareColumn: React.FC<{
   delay: number;
   dim: boolean;
   picked: boolean;
-}> = ({ side, accent, delay, dim, picked }) => {
+  cupSize?: number;
+}> = ({ side, accent, delay, dim, picked, cupSize }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const opacity = dim ? interpolate(frame, [34, 44], [1, 0.62], clampOpts) : 1;
   return (
@@ -118,11 +122,11 @@ const CompareColumn: React.FC<{
           </Reveal>
         ) : null}
       </div>
-      <Cup strength={side.strength} accent={accent} delay={delay + 4} />
+      <Cup strength={side.strength} accent={accent} delay={delay + 4} size={cupSize} />
       <Reveal delay={delay + 24} style={{ width: "100%", marginTop: 24 }}>
         <div
           style={{
-            background: COLORS.surface,
+            background: ink.surface,
             borderTop: `6px solid ${accent}`,
             borderRadius: 24,
             boxShadow: CARD_SHADOW,
@@ -146,15 +150,16 @@ const CompareColumn: React.FC<{
   );
 };
 
-const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }> = ({ v }) => {
+const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }>; cupSize?: number }> = ({ v, cupSize }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const arrowIn = progress(frame, 20, 32);
   // The chip in the middle points at today's side; without a pick it just joins them.
   const rotate = v.pick === "left" ? 180 : 0;
   return (
     <div style={{ position: "relative", display: "flex", gap: HALF_GAP, width: WIDTH }}>
-      <CompareColumn side={v.left} accent={COLORS.sky} delay={2} dim={v.pick === "right"} picked={v.pick === "left"} />
-      <CompareColumn side={v.right} accent={COLORS.caramel} delay={8} dim={v.pick === "left"} picked={v.pick === "right"} />
+      <CompareColumn side={v.left} accent={COLORS.sky} delay={2} dim={v.pick === "right"} picked={v.pick === "left"} cupSize={cupSize} />
+      <CompareColumn side={v.right} accent={COLORS.caramel} delay={8} dim={v.pick === "left"} picked={v.pick === "right"} cupSize={cupSize} />
       <div
         style={{
           position: "absolute",
@@ -163,7 +168,7 @@ const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }
           width: 96,
           height: 96,
           borderRadius: 48,
-          background: COLORS.pill,
+          background: ink.pill,
           boxShadow: CARD_SHADOW,
           display: "flex",
           alignItems: "center",
@@ -193,11 +198,14 @@ const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }
 const G = { w: WIDTH, h: 600, x0: 56, x1: WIDTH - 56, yTop: 96, yBottom: 500 };
 const ZONE_FILLS = ["rgba(123,157,184,0.13)", "rgba(140,180,160,0.13)", "rgba(201,123,75,0.15)"];
 
-const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = ({ v }) => {
+const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }>; plotHeight?: number }> = ({ v, plotHeight = G.h }) => {
+  // the plot drawn at plotHeight: the axis moves up with it, labels keep their size
+  const g = { ...G, h: plotHeight, yBottom: G.yBottom - (G.h - plotHeight) };
+  const ink = useInk();
   const frame = useCurrentFrame();
   const n = v.points.length;
-  const xs = v.points.map((_, i) => G.x0 + ((G.x1 - G.x0) * i) / (n - 1));
-  const ys = v.points.map((p) => G.yBottom - ((G.yBottom - G.yTop) * (p.value - 1)) / 4);
+  const xs = v.points.map((_, i) => g.x0 + ((g.x1 - g.x0) * i) / (n - 1));
+  const ys = v.points.map((p) => g.yBottom - ((g.yBottom - g.yTop) * (p.value - 1)) / 4);
   let length = 0;
   for (let i = 1; i < n; i++) length += Math.hypot(xs[i] - xs[i - 1], ys[i] - ys[i - 1]);
   const drawn = progress(frame, 10, 38);
@@ -208,34 +216,34 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
 
   return (
     <div style={{ width: WIDTH }}>
-      <Reveal delay={2} style={{ fontSize: TYPE.body, fontWeight: 700, color: COLORS.textSub }}>
+      <Reveal delay={2} style={{ fontSize: TYPE.body, fontWeight: 700, color: ink.textSub }}>
         ↑ {v.yLabel}
       </Reveal>
-      <div style={{ position: "relative", width: G.w, height: G.h, marginTop: 8 }}>
-        <svg width={G.w} height={G.h} viewBox={`0 0 ${G.w} ${G.h}`} style={{ position: "absolute", inset: 0 }}>
+      <div style={{ position: "relative", width: g.w, height: g.h, marginTop: 8 }}>
+        <svg width={g.w} height={g.h} viewBox={`0 0 ${g.w} ${g.h}`} style={{ position: "absolute", inset: 0 }}>
           {zones.map((label, i) => {
-            const zx = G.x0 - 28 + ((G.x1 - G.x0 + 56) * i) / zones.length;
-            const zw = (G.x1 - G.x0 + 56) / zones.length;
+            const zx = g.x0 - 28 + ((g.x1 - g.x0 + 56) * i) / zones.length;
+            const zw = (g.x1 - g.x0 + 56) / zones.length;
             return (
               <g key={label} opacity={progress(frame, 4 + i * 3, 14 + i * 3)}>
-                <rect x={zx} y={G.yTop - 70} width={zw} height={G.yBottom - G.yTop + 90} fill={ZONE_FILLS[i % ZONE_FILLS.length]} />
-                <text x={zx + zw / 2} y={G.yTop - 30} textAnchor="middle" fill={COLORS.text} fontSize={TYPE.aux} fontWeight={700}>
+                <rect x={zx} y={g.yTop - 70} width={zw} height={g.yBottom - g.yTop + 90} fill={ZONE_FILLS[i % ZONE_FILLS.length]} />
+                <text x={zx + zw / 2} y={g.yTop - 30} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {label}
                 </text>
               </g>
             );
           })}
           {[1, 2, 3, 4, 5].map((k) => {
-            const y = G.yBottom - ((G.yBottom - G.yTop) * (k - 1)) / 4;
-            return <line key={k} x1={G.x0 - 28} x2={G.x1 + 28} y1={y} y2={y} stroke={COLORS.hairline} strokeWidth={2} />;
+            const y = g.yBottom - ((g.yBottom - g.yTop) * (k - 1)) / 4;
+            return <line key={k} x1={g.x0 - 28} x2={g.x1 + 28} y1={y} y2={y} stroke={ink.hairline} strokeWidth={2} />;
           })}
-          <line x1={G.x0 - 28} x2={G.x1 + 28} y1={G.yBottom + 20} y2={G.yBottom + 20} stroke={COLORS.textMuted} strokeWidth={3} />
+          <line x1={g.x0 - 28} x2={g.x1 + 28} y1={g.yBottom + 20} y2={g.yBottom + 20} stroke={ink.textMuted} strokeWidth={3} />
           {mark != null ? (
             <line
               x1={xs[mark]}
               x2={xs[mark]}
               y1={ys[mark]}
-              y2={G.yBottom + 20}
+              y2={g.yBottom + 20}
               stroke={COLORS.sage}
               strokeWidth={5}
               strokeDasharray="12 10"
@@ -258,8 +266,8 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
             const r = isMark ? 13 + 9 * markIn : 13;
             return (
               <g key={`${p.label}-${i}`} opacity={shown ? 1 : 0}>
-                <circle cx={xs[i]} cy={ys[i]} r={r} fill={isMark && markIn > 0 ? COLORS.sage : COLORS.bg} stroke={isMark ? COLORS.sage : COLORS.caramel} strokeWidth={6} />
-                <text x={xs[i]} y={G.yBottom + 72} textAnchor="middle" fill={COLORS.text} fontSize={TYPE.aux} fontWeight={700}>
+                <circle cx={xs[i]} cy={ys[i]} r={r} fill={isMark && markIn > 0 ? COLORS.sage : ink.bg} stroke={isMark ? COLORS.sage : COLORS.caramel} strokeWidth={6} />
+                <text x={xs[i]} y={g.yBottom + 72} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {p.label}
                 </text>
               </g>
@@ -270,7 +278,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
           <div
             style={{
               position: "absolute",
-              left: Math.min(Math.max(xs[mark] - 70, 0), G.w - 140),
+              left: Math.min(Math.max(xs[mark] - 70, 0), g.w - 140),
               top: ys[mark] - 110,
               width: 140,
               display: "flex",
@@ -284,7 +292,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
           </div>
         ) : null}
       </div>
-      <Reveal delay={6} style={{ fontSize: TYPE.body, fontWeight: 700, color: COLORS.textSub, textAlign: "right" }}>
+      <Reveal delay={6} style={{ fontSize: TYPE.body, fontWeight: 700, color: ink.textSub, textAlign: "right" }}>
         {v.xLabel} →
       </Reveal>
     </div>
@@ -411,7 +419,7 @@ const Immersion: React.FC<{ b: FlowBrewer; delay: number }> = ({ b, delay }) => 
   );
 };
 
-const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, delay, width }) => {
+const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number; drawH?: number }> = ({ b, delay, width, drawH = F.h }) => {
   const frame = useCurrentFrame();
   const { cx } = F;
   const immersion = b.shape === "immersion";
@@ -425,7 +433,7 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
   const ripple = b.height === "high" ? ((frame - delay) % 18) / 18 : null;
   return (
     <div style={{ width, display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <svg width={F.w} height={F.h} viewBox={`0 0 ${F.w} ${F.h}`}>
+      <svg width={(F.w * drawH) / F.h} height={drawH} viewBox={`0 0 ${F.w} ${F.h}`}>
         {immersion ? <Immersion b={b} delay={delay} /> : <Percolation b={b} delay={delay} />}
         <line
           x1={cx + swing * 0.3}
@@ -469,47 +477,36 @@ const Brewer: React.FC<{ b: FlowBrewer; delay: number; width: number }> = ({ b, 
   );
 };
 
-const FlowDiagram: React.FC<{ v: Extract<LessonVisual, { type: "flow" }> }> = ({ v }) => (
+const FlowDiagram: React.FC<{ v: Extract<LessonVisual, { type: "flow" }>; drawH?: number }> = ({ v, drawH }) => (
   <div style={{ display: "flex", gap: HALF_GAP, width: WIDTH, justifyContent: "center" }}>
     {v.brewers.map((b, i) => (
-      <Brewer key={`${b.label}-${i}`} b={b} delay={2 + i * 8} width={HALF} />
+      <Brewer key={`${b.label}-${i}`} b={b} delay={2 + i * 8} width={HALF} drawH={drawH} />
     ))}
   </div>
 );
 
 // ---------------------------------------------------------------------------
-// scale
+// scale — a gauge without numbers (owner decision 2026-09-26): named zones of
+// equal width, the needle moving from the usual spot to today's (0-100).
 // ---------------------------------------------------------------------------
 
 const ZONE_COLORS: Record<number, string[]> = {
-  1: [COLORS.sage],
   2: [COLORS.sky, COLORS.terracotta],
   3: [COLORS.sky, COLORS.sage, COLORS.terracotta],
 };
 
-function decimals(n: number): number {
-  const s = String(n);
-  return s.includes(".") ? Math.min(2, s.split(".")[1].length) : 0;
-}
-
 const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = ({ v }) => {
+  const ink = useInk();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  // The readout shows as many decimals as the two values need (1.25 → 1.40,
-  // 16 → 15); the axis numbers as many as the axis needs (1.00 … 1.60).
-  const digits = Math.max(...[v.to, ...(v.from != null ? [v.from] : [])].map(decimals));
-  const axisDigits = Math.max(...[v.min, v.max, ...v.zones.map((z) => z.upTo)].map(decimals));
-  const fmt = (n: number) => {
-    const s = n.toFixed(digits);
-    return v.format === "ratio" ? `1対${s}` : `${s}${v.unit}`;
-  };
-  const x = (n: number) => ((n - v.min) / (v.max - v.min)) * WIDTH;
+  const x = (n: number) => (n / 100) * WIDTH;
   const from = v.from ?? v.to;
   const move = spring({ frame: Math.max(0, frame - 14), fps, config: { damping: 16, stiffness: 70 } });
   const current = from + (v.to - from) * Math.min(1, move);
   const needleX = x(current);
   const colors = ZONE_COLORS[v.zones.length] ?? ZONE_COLORS[3];
-  const bounds = [v.min, ...v.zones.map((z) => z.upTo)];
+  const zoneW = WIDTH / v.zones.length;
+  const zoneAt = (n: number) => v.zones[Math.min(v.zones.length - 1, Math.floor((n / 100) * v.zones.length))];
   const barIn = progress(frame, 4, 16);
   const BAR_Y = 210;
   const BAR_H = 52;
@@ -522,35 +519,22 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
         </Pill>
       </Reveal>
       <Reveal delay={6} style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 28, whiteSpace: "nowrap" }}>
-        {v.from != null ? (
+        {v.from != null && zoneAt(v.from) !== zoneAt(v.to) ? (
           <>
-            <span style={{ fontSize: 64, fontWeight: 800, color: COLORS.textMuted, fontVariantNumeric: "tabular-nums" }}>{fmt(v.from)}</span>
+            <span style={{ fontSize: 64, fontWeight: 800, color: ink.textMuted }}>{zoneAt(v.from)}</span>
             <svg width={72} height={48} viewBox="0 0 72 48">
               <path d="M6 24 H60 M44 8 L62 24 L44 40" stroke={COLORS.caramel} strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </>
         ) : null}
-        <span style={{ fontSize: 112, fontWeight: 900, letterSpacing: "-2px", fontVariantNumeric: "tabular-nums" }}>{fmt(v.to)}</span>
+        <span style={{ fontSize: 96, fontWeight: 900 }}>{zoneAt(v.to)}</span>
       </Reveal>
-      <div style={{ position: "relative", width: WIDTH, height: BAR_Y + BAR_H + 200, marginTop: 40 }}>
-        {/* zones */}
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            top: BAR_Y,
-            width: WIDTH * barIn,
-            height: BAR_H,
-            borderRadius: BAR_H / 2,
-            overflow: "hidden",
-            display: "flex",
-          }}
-        >
+      <div style={{ position: "relative", width: WIDTH, height: BAR_Y + BAR_H + 140, marginTop: 40 }}>
+        <div style={{ position: "absolute", left: 0, top: BAR_Y, width: WIDTH * barIn, height: BAR_H, borderRadius: BAR_H / 2, overflow: "hidden", display: "flex" }}>
           {v.zones.map((z, i) => (
-            <div key={z.label} style={{ flex: `0 0 ${x(z.upTo) - x(bounds[i])}px`, background: colors[i], opacity: 0.85 }} />
+            <div key={z} style={{ flex: `0 0 ${zoneW}px`, background: colors[i], opacity: 0.85 }} />
           ))}
         </div>
-        {/* usual value: a hollow ring left behind */}
         {v.from != null ? (
           <div
             style={{
@@ -560,52 +544,21 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
               width: 44,
               height: 44,
               borderRadius: 22,
-              border: `6px solid ${COLORS.text}`,
+              border: `6px solid ${ink.text}`,
               boxSizing: "border-box",
               opacity: 0.7 * barIn,
             }}
           />
         ) : null}
-        {/* needle + live value */}
-        <div style={{ position: "absolute", left: needleX - 110, top: 0, width: 220, display: "flex", flexDirection: "column", alignItems: "center", opacity: barIn }}>
-          <Pill accent={COLORS.caramel} size={48}>
-            <span style={{ fontVariantNumeric: "tabular-nums" }}>{fmt(current)}</span>
-          </Pill>
-          <div style={{ width: 10, height: BAR_Y - 80 + BAR_H + 26, marginTop: 8, borderRadius: 5, background: COLORS.caramel, boxShadow: "0 0 0 3px rgba(26,14,8,0.9)" }} />
-        </div>
-        {/* boundary numbers */}
-        {bounds.map((b, i) => {
-          const edge = i === 0 ? "left" : i === bounds.length - 1 ? "right" : "center";
-          const left = edge === "left" ? 0 : edge === "right" ? WIDTH - 160 : x(b) - 80;
-          return (
-            <div
-              key={`${b}-${i}`}
-              style={{
-                position: "absolute",
-                left,
-                width: 160,
-                top: BAR_Y + BAR_H + 36,
-                textAlign: edge,
-                fontSize: TYPE.aux,
-                fontWeight: 600,
-                color: COLORS.textMuted,
-                fontVariantNumeric: "tabular-nums",
-                opacity: barIn,
-              }}
-            >
-              {v.format === "ratio" ? `1対${b.toFixed(axisDigits)}` : `${b.toFixed(axisDigits)}${v.unit}`}
-            </div>
-          );
-        })}
-        {/* zone names */}
+        <div style={{ position: "absolute", left: needleX - 5, top: 60, width: 10, height: BAR_Y - 60 + BAR_H + 26, borderRadius: 5, background: COLORS.caramel, boxShadow: "0 0 0 3px rgba(26,14,8,0.9)", opacity: barIn }} />
         {v.zones.map((z, i) => (
           <div
-            key={z.label}
+            key={z}
             style={{
               position: "absolute",
-              left: x(bounds[i]),
-              width: x(z.upTo) - x(bounds[i]),
-              top: BAR_Y + BAR_H + 100,
+              left: i * zoneW,
+              width: zoneW,
+              top: BAR_Y + BAR_H + 40,
               textAlign: "center",
               fontSize: TYPE.body,
               fontWeight: 800,
@@ -613,7 +566,7 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
               opacity: progress(frame, 10 + i * 3, 20 + i * 3),
             }}
           >
-            {z.label}
+            {z}
           </div>
         ))}
       </div>
@@ -625,14 +578,16 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
 // the slide
 // ---------------------------------------------------------------------------
 
-const DiagramBody: React.FC<{ v: LessonVisual }> = ({ v }) => {
+/** `flowHeight`: the drawn height of the flow brewers (default 600) — the lab look fits them above its caption. */
+/** Drawn sizes (defaults = the classic cards): the lab look fits the diagram above its caption and reason. */
+export const DiagramBody: React.FC<{ v: LessonVisual; flowHeight?: number; graphHeight?: number; cupSize?: number }> = ({ v, flowHeight, graphHeight, cupSize }) => {
   switch (v.type) {
     case "compare":
-      return <CompareDiagram v={v} />;
+      return <CompareDiagram v={v} cupSize={cupSize} />;
     case "graph":
-      return <GraphDiagram v={v} />;
+      return <GraphDiagram v={v} plotHeight={graphHeight} />;
     case "flow":
-      return <FlowDiagram v={v} />;
+      return <FlowDiagram v={v} drawH={flowHeight} />;
     case "scale":
       return <ScaleDiagram v={v} />;
     default:

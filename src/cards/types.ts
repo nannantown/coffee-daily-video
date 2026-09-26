@@ -4,40 +4,46 @@
 //
 // There is no product here on purpose: the channel is in its audience-growth
 // phase and never names a coffee of its own (owner decision 2026-09-22).
-
-export interface NumberTile {
-  label: string;
-  value: string;
-  unit: string;
-}
+// There are no recipe numbers either (owner decision 2026-09-26): one change,
+// why it works, and how the taste moves either way.
 
 export interface LessonTitleSlide {
   kind: "lesson-title";
   heading: string; // the pillar, e.g. 湯温 — or 用語「TDS」 on a term episode
+  episode: string; // curriculum id (picks the cover picture / colour)
+  pillar: string;
   series: string; // e.g. 初級 第4回 (the episode's place in data/curriculum.json)
   date: string;
-  hook: string; // the question of the day
-  topic: string; // the answer in one line
-  why: string; // why it happens
+  word: string; // the big word on the cover: 湯温
+  ask: string; // what follows it: を下げると？
+  topic: string; // what it does to the taste, one line
   methodLabel: string;
   sceneLabel: string;
-  tiles: NumberTile[];
   narration: string;
 }
 
-export interface LessonStepsSlide {
-  kind: "lesson-steps";
+export interface LessonWhySlide {
+  kind: "lesson-why";
   heading: string;
-  steps: { time: string; action: string; amount: string }[];
+  hook: string; // the one change: お湯の温度を下げる
+  why: string; // why the cup changes
+  core: string; // the one change the episode is about
+  motion: LessonMotion;
+  sides: { label: string; taste: string }[];
   narration: string;
 }
 
-export interface LessonTasteSlide {
-  kind: "lesson-taste";
+// How the why scene shows the change; every value is a 0-100 position, never printed.
+export interface LessonMotion {
+  type: "liquid" | "meter" | "compare" | "dissolve";
+  shade: { from: number; to: number }; // how dark the coffee is
+  meters: { label: string; from: number; to: number }[];
+}
+
+export interface LessonEffectSlide {
+  kind: "lesson-effect";
   heading: string;
-  notes: string[];
-  summary: string;
-  meters: { label: string; value: number }[];
+  sides: { label: string; taste: string }[]; // [today's move, the other way]
   narration: string;
 }
 
@@ -82,13 +88,9 @@ export type LessonVisual =
       type: "scale";
       caption: string;
       label: string;
-      unit: string;
-      format?: "ratio";
-      min: number;
-      max: number;
-      from?: number;
-      to: number;
-      zones: { upTo: number; label: string }[];
+      from?: number; // 0-100 along the gauge (no numbers are shown)
+      to: number; // 0-100
+      zones: string[]; // 2-3 names, left to right, equal width
     };
 
 export interface LessonVisualSlide {
@@ -101,8 +103,8 @@ export interface LessonVisualSlide {
 export type CardSlide =
   | LessonTitleSlide
   | LessonVisualSlide
-  | LessonStepsSlide
-  | LessonTasteSlide
+  | LessonWhySlide
+  | LessonEffectSlide
   | LessonTipsSlide;
 
 export interface CtaEnding {
@@ -127,4 +129,5 @@ export interface CoffeeCardsProps {
   ending: CtaEnding;
   timeline: CardTimeline;
   withAudio?: boolean;
+  look?: "lab" | "photo" | "still" | "classic"; // a candidate look (src/looks/) or the classic cards (a plate is missing); unset = PRODUCTION_LOOK
 }

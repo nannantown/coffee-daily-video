@@ -29,11 +29,12 @@ if (process.argv.includes("--json")) {
   const next = followingEpisode(ep.id);
   console.log(`今日の回 (${date}): ${level} 第${no}回  episode = ${ep.id}`);
   console.log(`  柱: ${ep.lesson.pillar}（${PILLARS[ep.lesson.pillar]}）${ep.term ? ` / 用語回: ${ep.term}` : ""}`);
-  console.log(`  変える条件 (hook, 変えない): ${ep.lesson.hook}`);
+  console.log(`  表紙 (word + ask, 変えない): ${ep.lesson.word}${ep.lesson.ask}`);
+  console.log(`  変えること (hook, 変えない): ${ep.lesson.hook}`);
   console.log(`  こう変わる (topic): ${ep.lesson.topic}`);
   console.log(`  理屈 (why): ${ep.lesson.why}`);
   console.log(`  抽出法: ${ep.lesson.method}${ep.fixedMethod ? "（固定。変えない）" : "（変えてよい）"}`);
   console.log(`  図解の型（案）: ${ep.lesson.visual.type}（${VISUAL_TYPES[ep.lesson.visual.type]}）`);
-  console.log(`  次回: ${next.lesson.hook}`);
+  console.log(`  次回: ${next.lesson.word}${next.lesson.ask}`);
   console.log("  下書き: node scripts/next-episode.mjs --json");
 }

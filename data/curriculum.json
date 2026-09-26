@@ -1,34 +1,85 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-09-25",
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-26",
   "series": "味をコントロールする技術",
-  "note": "シリーズ地図（カリキュラム）兼、常備ネタ帳。並び順がそのまま放送順で、初級 → 中級 → 上級。各回は「変える条件は 1 つ（lesson.hook）」「変えると味がどうなるか（lesson.topic）」を 1 文で言える粒度。毎朝ルーチンは scripts/next-episode.mjs が出す『次の回』（まだ出ていない回のうち一番前）を作り、ルーチンが原稿を出せなかった朝は同じ回の lesson がそのまま出る（scripts/generate-data.mjs）。出た回の記録は data/performance-history.json の content.episode。解説は docs/curriculum.md。銘柄名・産地名・自社商品・販促の文言は入れない（scripts/brand-guard.mjs が機械的に弾く）。fixedMethod: true の回は、器具そのものが教える中身なので method を変えない。",
+  "note": "シリーズ地図（カリキュラム）兼、常備ネタ帳。並び順がそのまま放送順で、初級 → 中級 → 上級。各回は「変えること 1 つ（lesson.hook）」と、表紙の大きい一言（lesson.word）＋問い（lesson.ask）、理由（why）、上げると / 下げると味がどう動くか（effect）を持つ。レシピの数字（g・ml・秒・℃・比率）は書かない（2026-09-26 オーナー決定。scripts/content-format.mjs の recipeNumberReason が弾く）。毎朝ルーチンは scripts/next-episode.mjs が出す『次の回』を作り、ルーチンが原稿を出せなかった朝は同じ回の lesson がそのまま出る（scripts/generate-data.mjs）。出た回の記録は data/performance-history.json の content.episode。解説は docs/curriculum.md。銘柄名・産地名・自社商品・販促の文言は入れない（scripts/brand-guard.mjs が機械的に弾く）。fixedMethod: true の回は、器具そのものが教える中身なので method を変えない。",
   "episodes": [
     {
       "id": "b01-extraction",
       "level": "beginner",
       "term": "抽出",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "抽出",
+        "ask": "ってなに？",
         "hook": "抽出時間を延ばす",
-        "topic": "溶け出す量が増えて濃くなる",
+        "topic": "溶ける量が増えて濃くなる",
         "why": "抽出＝お湯に粉の成分が溶け出すこと",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "3:00" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:30", "action": "3投目", "pour_to_g": 240 },
-          { "time": "3:00", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "延ばす",
+            "taste": "濃く、苦味も出る"
+          },
+          {
+            "label": "縮める",
+            "taste": "薄く、軽くなる"
+          }
         ],
-        "taste": { "notes": ["しっかり濃い", "苦味が出る"], "summary": "時間を延ばすほど味が濃くなる", "acidity": 2, "sweetness": 3, "body": 4 },
         "tips": [
-          { "problem": "薄い時", "fix": "注ぐ速さを落とす" },
-          { "problem": "苦すぎる時", "fix": "2:30で落とし切る" }
+          {
+            "problem": "薄い時",
+            "fix": "ゆっくり注いで時間を延ばす"
+          },
+          {
+            "problem": "苦すぎる時",
+            "fix": "早めに落とし切る"
+          }
         ],
+        "core": "時間を延ばすほど、成分が多く溶け出す",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 35,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 35,
+              "to": 70
+            },
+            {
+              "label": "苦味",
+              "from": 30,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "時間が延びるほど濃く出る",
-          "xLabel": "抽出時間", "yLabel": "濃さ",
-          "points": [{ "label": "1:30", "value": 1 }, { "label": "2:00", "value": 2 }, { "label": "2:30", "value": 3 }, { "label": "3:00", "value": 4 }],
+          "type": "graph",
+          "caption": "時間が延びるほど濃く出る",
+          "xLabel": "抽出時間",
+          "yLabel": "濃さ",
+          "points": [
+            {
+              "label": "短い",
+              "value": 1
+            },
+            {
+              "label": "やや短い",
+              "value": 2
+            },
+            {
+              "label": "ふつう",
+              "value": 3
+            },
+            {
+              "label": "長い",
+              "value": 4
+            }
+          ],
           "mark": 3
         }
       }
@@ -37,26 +88,67 @@
       "id": "b02-measure",
       "level": "beginner",
       "lesson": {
-        "pillar": "ratio", "method": "kalita-wave", "scene": "hot",
+        "pillar": "ratio",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "計量",
+        "ask": "で味がそろう？",
         "hook": "目分量をやめて量る",
         "topic": "毎回同じ味に近づく",
-        "why": "粉とお湯の量のブレが味のブレになる",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:45", "action": "落ち切り" }
+        "why": "量のブレが、そのまま味のブレになる",
+        "effect": [
+          {
+            "label": "量る",
+            "taste": "毎回同じ味になる"
+          },
+          {
+            "label": "量らない",
+            "taste": "日によって味が変わる"
+          }
         ],
-        "taste": { "notes": ["ブレない味"], "summary": "昨日と同じ味をもう一度出せる", "acidity": 3, "sweetness": 3, "body": 3 },
         "tips": [
-          { "problem": "スケールがない", "fix": "計量スプーン1杯で約10g" },
-          { "problem": "濃さが毎回違う", "fix": "お湯も量りながら注ぐ" }
+          {
+            "problem": "毎回味が違う",
+            "fix": "粉もお湯もはかりで量る"
+          },
+          {
+            "problem": "はかりが無い時",
+            "fix": "計量スプーンで粉を量る"
+          }
         ],
+        "core": "量ると、毎回同じ濃さになる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 40,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ブレ",
+              "from": 80,
+              "to": 20
+            },
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "量るだけで味がそろう",
-          "left": { "label": "目分量", "result": "毎回ちがう", "strength": 2 },
-          "right": { "label": "量る", "result": "毎回同じ", "strength": 3 },
+          "type": "compare",
+          "caption": "量るだけで味がそろう",
+          "left": {
+            "label": "目分量",
+            "result": "毎回ちがう",
+            "strength": 2
+          },
+          "right": {
+            "label": "量る",
+            "result": "毎回同じ",
+            "strength": 3
+          },
           "pick": "right"
         }
       }
@@ -66,27 +158,65 @@
       "level": "beginner",
       "term": "比率",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "お湯を15g減らす",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "比率",
+        "ask": "ってなに？",
+        "hook": "お湯を少し減らす",
         "topic": "同じ粉でも濃くなる",
-        "why": "比率＝粉1に対するお湯の量のこと",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 130 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
-          { "time": "2:30", "action": "落ち切り" }
+        "why": "比率＝粉に対するお湯の量のこと",
+        "effect": [
+          {
+            "label": "減らす",
+            "taste": "濃く、しっかり"
+          },
+          {
+            "label": "増やす",
+            "taste": "薄く、軽やか"
+          }
         ],
-        "taste": { "notes": ["濃い", "コクが増す"], "summary": "1対16より濃くしっかり", "acidity": 3, "sweetness": 3, "body": 4 },
         "tips": [
-          { "problem": "濃すぎる時", "fix": "お湯を240gに戻す" },
-          { "problem": "まだ薄い時", "fix": "お湯をさらに15g減らす" }
+          {
+            "problem": "薄い時",
+            "fix": "お湯を少し減らす"
+          },
+          {
+            "problem": "濃すぎる時",
+            "fix": "お湯を少し足す"
+          }
         ],
+        "core": "お湯を減らすと、同じ粉でも濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 70
+            },
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "お湯が少ないほど濃くなる",
-          "label": "比率", "unit": "", "format": "ratio",
-          "min": 12, "max": 18, "from": 16, "to": 15,
-          "zones": [{ "upTo": 14, "label": "濃い" }, { "upTo": 16.5, "label": "標準" }, { "upTo": 18, "label": "薄い" }]
+          "type": "scale",
+          "caption": "お湯を減らすと濃くなる",
+          "label": "濃さ",
+          "zones": [
+            "薄い",
+            "ちょうど",
+            "濃い"
+          ],
+          "from": 45,
+          "to": 70
         }
       }
     },
@@ -94,26 +224,67 @@
       "id": "b04-grind",
       "level": "beginner",
       "lesson": {
-        "pillar": "grind", "method": "v60", "scene": "hot",
-        "hook": "挽き目を1段細かく",
+        "pillar": "grind",
+        "method": "v60",
+        "scene": "hot",
+        "word": "挽き目",
+        "ask": "を細かくすると？",
+        "hook": "挽き目を細かくする",
         "topic": "濃さとコクが増える",
-        "why": "粉が細かいほど湯と触れる面積が増える",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
-          { "time": "2:45", "action": "落ち切り" }
+        "why": "細かいほど、お湯に触れる面が増える",
+        "effect": [
+          {
+            "label": "細かくする",
+            "taste": "濃く、苦味とコク"
+          },
+          {
+            "label": "粗くする",
+            "taste": "軽く、すっきり"
+          }
         ],
-        "taste": { "notes": ["濃い口", "強い甘み"], "summary": "薄い一杯が芯を持つ", "acidity": 3, "sweetness": 4, "body": 4 },
         "tips": [
-          { "problem": "えぐい時", "fix": "1段粗くして戻す" },
-          { "problem": "落ちが遅い", "fix": "かき混ぜずに静かに注ぐ" }
+          {
+            "problem": "薄い時",
+            "fix": "挽き目を細かくする"
+          },
+          {
+            "problem": "苦すぎる時",
+            "fix": "挽き目を粗くする"
+          }
         ],
+        "core": "細かいほど、成分が早く溶け出す",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 35,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 30,
+              "to": 60
+            },
+            {
+              "label": "酸味",
+              "from": 60,
+              "to": 40
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "細かいほど速く濃く出る",
-          "left": { "label": "粗い", "result": "軽い・酸が立つ", "strength": 2 },
-          "right": { "label": "細かい", "result": "濃い・コク", "strength": 4 },
+          "type": "compare",
+          "caption": "細かいほど濃く出る",
+          "left": {
+            "label": "粗い",
+            "result": "軽い・酸が立つ",
+            "strength": 2
+          },
+          "right": {
+            "label": "細かい",
+            "result": "濃い・コク",
+            "strength": 4
+          },
           "pick": "right"
         }
       }
@@ -122,27 +293,65 @@
       "id": "b05-grinder-dial",
       "level": "beginner",
       "lesson": {
-        "pillar": "grind", "method": "origami", "scene": "hot",
-        "hook": "目盛りを1つずつ動かす",
+        "pillar": "grind",
+        "method": "origami",
+        "scene": "hot",
+        "word": "目盛り",
+        "ask": "は少しずつ？",
+        "hook": "目盛りを少しずつ動かす",
         "topic": "味の変化を追える",
         "why": "一度に大きく動かすと原因が分からない",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "少し動かす",
+            "taste": "違いを追いやすい"
+          },
+          {
+            "label": "大きく動かす",
+            "taste": "どこが良いか迷う"
+          }
         ],
-        "taste": { "notes": ["少しずつ変わる"], "summary": "好みの挽き目が見つかる", "acidity": 3, "sweetness": 3, "body": 3 },
         "tips": [
-          { "problem": "違いが分からない", "fix": "2目盛り動かして比べる" },
-          { "problem": "毎回ズレる", "fix": "挽く前に目盛りを確かめる" }
+          {
+            "problem": "行き過ぎた時",
+            "fix": "一つ手前に戻す"
+          },
+          {
+            "problem": "変化が無い時",
+            "fix": "もう少しだけ動かす"
+          }
         ],
+        "core": "少しずつ動かすと、味の変化を追える",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 50,
+            "to": 56
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 45,
+              "to": 55
+            },
+            {
+              "label": "酸味",
+              "from": 55,
+              "to": 45
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "1段ずつ動かして比べる",
-          "label": "挽き目", "unit": "段",
-          "min": 1, "max": 10, "from": 5, "to": 6,
-          "zones": [{ "upTo": 3.5, "label": "細かい" }, { "upTo": 7.5, "label": "中くらい" }, { "upTo": 10, "label": "粗い" }]
+          "type": "scale",
+          "caption": "少しずつ動かして比べる",
+          "label": "挽き目",
+          "zones": [
+            "細かい",
+            "中くらい",
+            "粗い"
+          ],
+          "from": 50,
+          "to": 60
         }
       }
     },
@@ -150,27 +359,70 @@
       "id": "b06-temp",
       "level": "beginner",
       "lesson": {
-        "pillar": "temp", "method": "v60", "scene": "hot",
-        "hook": "湯温を3度下げる",
+        "pillar": "temp",
+        "method": "v60",
+        "scene": "hot",
+        "word": "湯温",
+        "ask": "を下げると？",
+        "hook": "お湯の温度を下げる",
         "topic": "苦味が引いて酸が立つ",
-        "why": "温度が高いほど苦味成分が多く溶ける",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 88, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "why": "熱いほど苦味の成分がよく溶ける",
+        "effect": [
+          {
+            "label": "下げる",
+            "taste": "苦味が引き、すっきり"
+          },
+          {
+            "label": "上げる",
+            "taste": "苦味とコクが増える"
+          }
         ],
-        "taste": { "notes": ["軽い苦味", "明るい酸"], "summary": "後味がすっきりする", "acidity": 4, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "酸っぱい時", "fix": "湯温を92度に戻す" },
-          { "problem": "薄い時", "fix": "粉を1g増やす" }
+          {
+            "problem": "酸っぱい時",
+            "fix": "温度を少し戻す"
+          },
+          {
+            "problem": "まだ苦い時",
+            "fix": "挽き目も少し粗くする"
+          }
         ],
+        "core": "温度を下げると、苦味の成分が溶けにくくなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 70,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 70,
+              "to": 40
+            },
+            {
+              "label": "酸味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 50,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "下げるほど苦味が控えめ",
-          "label": "湯温", "unit": "℃",
-          "min": 80, "max": 100, "from": 91, "to": 88,
-          "zones": [{ "upTo": 86, "label": "軽い" }, { "upTo": 94, "label": "標準" }, { "upTo": 100, "label": "苦め" }]
+          "type": "scale",
+          "caption": "下げるほど苦味が控えめ",
+          "label": "湯温",
+          "zones": [
+            "低め",
+            "ふつう",
+            "高め"
+          ],
+          "from": 55,
+          "to": 20
         }
       }
     },
@@ -178,26 +430,73 @@
       "id": "b07-stop-early",
       "level": "beginner",
       "lesson": {
-        "pillar": "time", "method": "v60", "scene": "hot",
-        "hook": "30秒早く止める",
+        "pillar": "time",
+        "method": "v60",
+        "scene": "hot",
+        "word": "早く止める",
+        "ask": "とどうなる？",
+        "hook": "抽出を早めに止める",
         "topic": "渋みが出る前に終わる",
-        "why": "終盤ほど渋みや雑味が多く溶け出す",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:00" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
-          { "time": "0:35", "action": "2投目", "pour_to_g": 150 },
-          { "time": "1:05", "action": "3投目", "pour_to_g": 225 },
-          { "time": "2:00", "action": "外す" }
+        "why": "終わりぎわほど渋みや雑味が溶け出す",
+        "effect": [
+          {
+            "label": "早く止める",
+            "taste": "すっきり、渋みが減る"
+          },
+          {
+            "label": "最後まで待つ",
+            "taste": "濃いが渋みも出る"
+          }
         ],
-        "taste": { "notes": ["軽い口当たり", "きれいな後味"], "summary": "最後まで飲み飽きない", "acidity": 4, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "薄い時", "fix": "挽き目を1段細かく" },
-          { "problem": "落ちない時", "fix": "粗くして湯を太く" }
+          {
+            "problem": "薄くなった時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "まだ渋い時",
+            "fix": "もう少し早く止める"
+          }
         ],
+        "core": "早く止めると、終わりの渋みが入らない",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 65,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "渋み",
+              "from": 70,
+              "to": 30
+            },
+            {
+              "label": "濃さ",
+              "from": 65,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "長く出すほど渋みが増える",
-          "xLabel": "抽出時間", "yLabel": "渋み",
-          "points": [{ "label": "1:30", "value": 1 }, { "label": "2:00", "value": 2 }, { "label": "2:30", "value": 3 }, { "label": "3:00", "value": 5 }],
+          "type": "graph",
+          "caption": "終わりぎわに渋みが増える",
+          "xLabel": "抽出時間",
+          "yLabel": "渋み",
+          "points": [
+            {
+              "label": "はじめ",
+              "value": 1
+            },
+            {
+              "label": "なかごろ",
+              "value": 2
+            },
+            {
+              "label": "おわり",
+              "value": 4
+            }
+          ],
           "mark": 1
         }
       }
@@ -207,27 +506,72 @@
       "level": "beginner",
       "term": "蒸らし",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "蒸らしを40秒とる",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "蒸らし",
+        "ask": "ってなに？",
+        "hook": "最初に少しの湯で蒸らす",
         "topic": "ガスが抜けて味が均一に",
-        "why": "蒸らし＝少しの湯で粉のガスを抜く工程",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:40" },
-        "steps": [
-          { "time": "0:00", "action": "粉を湿らす", "pour_to_g": 45 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:40", "action": "落ち切り" }
+        "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
+        "effect": [
+          {
+            "label": "蒸らす",
+            "taste": "味がむらなく出る"
+          },
+          {
+            "label": "蒸らさない",
+            "taste": "薄く、むらが出る"
+          }
         ],
-        "taste": { "notes": ["澄んだ甘み", "安定した味"], "summary": "毎回同じ味に近づく", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "泡が出ない", "fix": "粉が古い合図。新しい粉で" },
-          { "problem": "えぐい時", "fix": "蒸らしを30秒に縮める" }
+          {
+            "problem": "膨らまない時",
+            "fix": "挽きたての粉で試す"
+          },
+          {
+            "problem": "薄い時",
+            "fix": "蒸らしを少し長くとる"
+          }
         ],
+        "core": "蒸らすと、湯が全体にしみて均一に溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 40,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 70,
+              "to": 25
+            },
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "ガスが抜けると湯がしみ込む",
+          "type": "flow",
+          "caption": "蒸らすと湯が全体にしみる",
           "brewers": [
-            { "shape": "cone", "label": "蒸らしなし", "note": "湯が素通りする", "speed": "fast", "bed": "uneven" },
-            { "shape": "cone", "label": "40秒蒸らす", "note": "粉全体に湯が回る", "speed": "slow" }
+            {
+              "shape": "cone",
+              "label": "蒸らしなし",
+              "note": "湯が素通りする",
+              "speed": "fast",
+              "bed": "uneven"
+            },
+            {
+              "shape": "cone",
+              "label": "蒸らす",
+              "note": "湯がしみ込む",
+              "speed": "slow",
+              "bed": "even"
+            }
           ]
         }
       }
@@ -236,27 +580,70 @@
       "id": "b09-pour-slow",
       "level": "beginner",
       "lesson": {
-        "pillar": "pour", "method": "v60", "scene": "hot",
+        "pillar": "pour",
+        "method": "v60",
+        "scene": "hot",
+        "word": "注ぐ速さ",
+        "ask": "をゆっくりに？",
         "hook": "細くゆっくり注ぐ",
         "topic": "時間が延びて濃くなる",
         "why": "湯が粉に触れている時間が長くなる",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "3:00" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "細く注ぐ", "pour_to_g": 140 },
-          { "time": "1:30", "action": "細く注ぐ", "pour_to_g": 240 },
-          { "time": "3:00", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "ゆっくり注ぐ",
+            "taste": "濃く、甘みも出る"
+          },
+          {
+            "label": "速く注ぐ",
+            "taste": "軽く、薄めになる"
+          }
         ],
-        "taste": { "notes": ["厚みのある味", "甘み"], "summary": "同じ粉でも濃くまろやかに", "acidity": 2, "sweetness": 4, "body": 4 },
         "tips": [
-          { "problem": "苦すぎる時", "fix": "少し太く速く注ぐ" },
-          { "problem": "時間が延びすぎ", "fix": "挽き目を1段粗く" }
+          {
+            "problem": "薄い時",
+            "fix": "細く、ゆっくり注ぐ"
+          },
+          {
+            "problem": "落ちが遅い時",
+            "fix": "少し太めに注ぐ"
+          }
         ],
+        "core": "ゆっくり注ぐと、湯がとどまって濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "ゆっくり注ぐほど長く触れる",
+          "type": "flow",
+          "caption": "ゆっくり注ぐと湯がとどまる",
           "brewers": [
-            { "shape": "cone", "label": "太く速く", "note": "湯が早く抜ける", "speed": "fast" },
-            { "shape": "cone", "label": "細くゆっくり", "note": "湯が粉にとどまる", "speed": "slow" }
+            {
+              "shape": "cone",
+              "label": "太く速く",
+              "note": "湯が早く抜ける",
+              "speed": "fast"
+            },
+            {
+              "shape": "cone",
+              "label": "細くゆっくり",
+              "note": "湯が粉にとどまる",
+              "speed": "slow"
+            }
           ]
         }
       }
@@ -265,25 +652,63 @@
       "id": "b10-mug",
       "level": "beginner",
       "lesson": {
-        "pillar": "nogear", "method": "mug-steep", "scene": "hot",
+        "pillar": "nogear",
+        "method": "mug-steep",
+        "scene": "hot",
+        "word": "マグだけ",
+        "ask": "で淹れる？",
         "hook": "マグひとつで淹れる",
         "topic": "混ぜて待つだけで飲める",
-        "why": "粉が湯に触れている時間が味を決める",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中挽き", "time": "4:00" },
-        "steps": [
-          { "time": "0:00", "action": "粉に注ぐ", "pour_to_g": 225 },
-          { "time": "0:30", "action": "かき混ぜる" },
-          { "time": "4:00", "action": "上澄みを飲む" }
+        "why": "粉が湯に浸かる時間が味を決める",
+        "effect": [
+          {
+            "label": "長く待つ",
+            "taste": "濃く、コクが出る"
+          },
+          {
+            "label": "早く飲む",
+            "taste": "軽く、すっきり"
+          }
         ],
-        "taste": { "notes": ["やさしい味", "軽い粉感"], "summary": "器具なしでも味は動く", "acidity": 3, "sweetness": 3, "body": 3 },
         "tips": [
-          { "problem": "粉が浮く時", "fix": "30秒後に一度混ぜる" },
-          { "problem": "粉っぽい時", "fix": "最後の一口を残す" }
+          {
+            "problem": "粉が残る時",
+            "fix": "上ずみだけを静かに注ぐ"
+          },
+          {
+            "problem": "薄い時",
+            "fix": "もう少し待ってから飲む"
+          }
         ],
+        "core": "浸す時間が長いほど、濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 25,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 25,
+              "to": 65
+            },
+            {
+              "label": "コク",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "浸すだけでも成分は溶ける",
+          "type": "flow",
+          "caption": "浸かる時間で濃さが決まる",
           "brewers": [
-            { "shape": "immersion", "label": "マグで浸す", "note": "粉がお湯に浸かる" }
+            {
+              "shape": "immersion",
+              "label": "マグで浸す",
+              "note": "粉がお湯に浸かる"
+            }
           ]
         }
       }
@@ -293,26 +718,68 @@
       "level": "beginner",
       "term": "透過式と浸漬式",
       "lesson": {
-        "pillar": "terms", "method": "french-press", "scene": "hot",
+        "pillar": "terms",
+        "method": "french-press",
+        "scene": "hot",
+        "word": "透過と浸漬",
+        "ask": "の違いは？",
         "hook": "浸して待つ淹れ方にする",
         "topic": "味がブレにくくなる",
         "why": "注ぎ方に関係なく全体が同じだけ浸る",
-        "numbers": { "dose_g": 15, "water_g": 250, "temp_c": 94, "grind": "粗挽き", "time": "4:00" },
-        "steps": [
-          { "time": "0:00", "action": "全量注ぐ", "pour_to_g": 250 },
-          { "time": "0:30", "action": "軽く混ぜる" },
-          { "time": "4:00", "action": "押し下げる" }
+        "effect": [
+          {
+            "label": "浸して待つ",
+            "taste": "毎回同じ、まろやか"
+          },
+          {
+            "label": "上から注ぐ",
+            "taste": "すっきり、腕で変わる"
+          }
         ],
-        "taste": { "notes": ["まろやか", "しっかりコク"], "summary": "誰が淹れても同じ味になる", "acidity": 2, "sweetness": 3, "body": 4 },
         "tips": [
-          { "problem": "粉っぽい時", "fix": "ゆっくり押し下げる" },
-          { "problem": "薄い時", "fix": "4:30まで待つ" }
+          {
+            "problem": "重く感じる時",
+            "fix": "待つ時間を短くする"
+          },
+          {
+            "problem": "粉っぽい時",
+            "fix": "上ずみだけを注ぐ"
+          }
         ],
+        "core": "浸して待つと、誰が淹れても同じ味になる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ブレ",
+              "from": 70,
+              "to": 20
+            },
+            {
+              "label": "まろやか",
+              "from": 40,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "流すか、浸すかの違い",
+          "type": "flow",
+          "caption": "通り抜けるか、浸かるか",
           "brewers": [
-            { "shape": "cone", "label": "透過式", "note": "お湯が通り抜ける" },
-            { "shape": "immersion", "label": "浸漬式", "note": "お湯に浸かって待つ" }
+            {
+              "shape": "cone",
+              "label": "透過式",
+              "note": "お湯が通り抜ける"
+            },
+            {
+              "shape": "immersion",
+              "label": "浸漬式",
+              "note": "お湯に浸かって待つ"
+            }
           ]
         }
       }
@@ -321,27 +788,65 @@
       "id": "b12-sour",
       "level": "beginner",
       "lesson": {
-        "pillar": "trouble", "method": "v60", "scene": "hot",
+        "pillar": "trouble",
+        "method": "v60",
+        "scene": "hot",
+        "word": "酸っぱい",
+        "ask": "時は？",
         "hook": "酸っぱい時は湯温を上げる",
         "topic": "酸が丸くなり甘みが出る",
-        "why": "酸は早く、甘みは後から溶け出すため",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 94, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
-          { "time": "2:30", "action": "落ち切り" }
+        "why": "酸は早く、甘みは後から溶け出す",
+        "effect": [
+          {
+            "label": "上げる",
+            "taste": "酸が丸く、甘くなる"
+          },
+          {
+            "label": "下げる",
+            "taste": "酸が強く、軽くなる"
+          }
         ],
-        "taste": { "notes": ["柔らかい酸", "増した甘み"], "summary": "酸が甘さに変わる", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "まだ酸い", "fix": "挽き目を1段細かく" },
-          { "problem": "苦くなった", "fix": "湯温を2度戻す" }
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "苦くなった時",
+            "fix": "温度を少し戻す"
+          }
         ],
+        "core": "温度を上げると、後から出る甘みまで溶ける",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 45,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "上げるほど甘みまで溶ける",
-          "label": "湯温", "unit": "℃",
-          "min": 80, "max": 100, "from": 90, "to": 94,
-          "zones": [{ "upTo": 86, "label": "酸っぱい" }, { "upTo": 95, "label": "ちょうど" }, { "upTo": 100, "label": "苦め" }]
+          "type": "scale",
+          "caption": "上げると酸が丸くなる",
+          "label": "湯温",
+          "zones": [
+            "酸っぱい",
+            "ちょうど",
+            "苦い"
+          ],
+          "from": 25,
+          "to": 55
         }
       }
     },
@@ -349,26 +854,67 @@
       "id": "b13-bitter",
       "level": "beginner",
       "lesson": {
-        "pillar": "trouble", "method": "v60", "scene": "hot",
-        "hook": "苦い時は1段粗く",
+        "pillar": "trouble",
+        "method": "v60",
+        "scene": "hot",
+        "word": "苦い",
+        "ask": "時は？",
+        "hook": "苦い時は挽き目を粗くする",
         "topic": "苦味とえぐみが引く",
         "why": "苦味は溶かしすぎのサイン",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中挽き", "time": "2:15" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 45 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 150 },
-          { "time": "1:15", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:15", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "粗くする",
+            "taste": "すっきり、軽くなる"
+          },
+          {
+            "label": "細かくする",
+            "taste": "苦く、重くなる"
+          }
         ],
-        "taste": { "notes": ["軽い苦味", "すっきり"], "summary": "後味が重くならない", "acidity": 3, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "薄くなった", "fix": "粉を1g足す" },
-          { "problem": "まだ苦い時", "fix": "湯温を3度下げる" }
+          {
+            "problem": "薄くなった時",
+            "fix": "少しだけ細かく戻す"
+          },
+          {
+            "problem": "まだ苦い時",
+            "fix": "お湯の温度を下げる"
+          }
         ],
+        "core": "粗くすると、溶けすぎが止まる",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 75,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 75,
+              "to": 45
+            },
+            {
+              "label": "雑味",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "粗いほど苦味が出にくい",
-          "left": { "label": "細かい", "result": "苦い・重い", "strength": 5 },
-          "right": { "label": "1段粗く", "result": "すっきり", "strength": 3 },
+          "type": "compare",
+          "caption": "粗くすると苦味が引く",
+          "left": {
+            "label": "細かい",
+            "result": "苦い・重い",
+            "strength": 5
+          },
+          "right": {
+            "label": "粗くする",
+            "result": "すっきり",
+            "strength": 3
+          },
           "pick": "right"
         }
       }
@@ -378,28 +924,84 @@
       "level": "intermediate",
       "term": "未抽出",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "落ち切りを2分半にする",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "未抽出",
+        "ask": "ってなに？",
+        "hook": "抽出時間を少し延ばす",
         "topic": "酸っぱさと薄さが消える",
         "why": "未抽出＝成分が出きる前に止まること",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "延ばす",
+            "taste": "甘みと厚みが出る"
+          },
+          {
+            "label": "縮める",
+            "taste": "酸っぱく、薄くなる"
+          }
         ],
-        "taste": { "notes": ["丸い酸", "甘み"], "summary": "とがった酸味が甘さに変わる", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "早く落ちる時", "fix": "挽き目を1段細かく" },
-          { "problem": "まだ酸っぱい", "fix": "湯温を2度上げる" }
+          {
+            "problem": "酸っぱく薄い",
+            "fix": "挽き目を細かくする"
+          },
+          {
+            "problem": "まだ薄い時",
+            "fix": "お湯の温度を上げる"
+          }
         ],
+        "core": "短すぎると、甘みが出る前に終わる",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 30,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 25,
+              "to": 60
+            },
+            {
+              "label": "濃さ",
+              "from": 30,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "出しきる前に止めると酸っぱい",
-          "xLabel": "抽出時間", "yLabel": "濃さ",
-          "points": [{ "label": "1:30", "value": 1 }, { "label": "2:00", "value": 2 }, { "label": "2:30", "value": 3 }, { "label": "3:00", "value": 4 }, { "label": "3:30", "value": 5 }],
-          "mark": 2,
-          "zones": ["未抽出", "ちょうど", "過抽出"]
+          "type": "graph",
+          "caption": "短すぎると成分が出きらない",
+          "xLabel": "抽出時間",
+          "yLabel": "濃さ",
+          "points": [
+            {
+              "label": "短い",
+              "value": 1
+            },
+            {
+              "label": "ふつう",
+              "value": 3
+            },
+            {
+              "label": "長い",
+              "value": 4
+            }
+          ],
+          "mark": 1,
+          "zones": [
+            "未抽出",
+            "適正",
+            "過抽出"
+          ]
         }
       }
     },
@@ -408,28 +1010,82 @@
       "level": "intermediate",
       "term": "過抽出",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "3分以内で落とし切る",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "過抽出",
+        "ask": "ってなに？",
+        "hook": "早めに落とし切る",
         "topic": "渋みとえぐみが減る",
         "why": "過抽出＝出すぎて雑味まで溶けること",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中挽き", "time": "2:50" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:50", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "早く切る",
+            "taste": "すっきり、雑味が減る"
+          },
+          {
+            "label": "長く待つ",
+            "taste": "渋く、えぐみが出る"
+          }
         ],
-        "taste": { "notes": ["すっきり", "甘い余韻"], "summary": "後味の渋さが消える", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "3分を超える", "fix": "挽き目を1段粗く" },
-          { "problem": "えぐみが残る", "fix": "湯温を3度下げる" }
+          {
+            "problem": "渋い時",
+            "fix": "挽き目を粗くする"
+          },
+          {
+            "problem": "薄くなった時",
+            "fix": "少しだけ時間を戻す"
+          }
         ],
+        "core": "長すぎると、雑味まで溶け出す",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 80,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 75,
+              "to": 30
+            },
+            {
+              "label": "苦味",
+              "from": 70,
+              "to": 50
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "出しすぎると雑味まで溶ける",
-          "xLabel": "抽出時間", "yLabel": "雑味",
-          "points": [{ "label": "2:00", "value": 1 }, { "label": "2:30", "value": 1 }, { "label": "3:00", "value": 2 }, { "label": "3:30", "value": 4 }, { "label": "4:00", "value": 5 }],
-          "mark": 2,
-          "zones": ["未抽出", "ちょうど", "過抽出"]
+          "type": "graph",
+          "caption": "長すぎると雑味が溶ける",
+          "xLabel": "抽出時間",
+          "yLabel": "雑味",
+          "points": [
+            {
+              "label": "短い",
+              "value": 1
+            },
+            {
+              "label": "ふつう",
+              "value": 1
+            },
+            {
+              "label": "長い",
+              "value": 2
+            },
+            {
+              "label": "長すぎ",
+              "value": 4
+            }
+          ],
+          "mark": 1,
+          "zones": [
+            "適正",
+            "過抽出"
+          ]
         }
       }
     },
@@ -437,27 +1093,65 @@
       "id": "i03-dark-roast-temp",
       "level": "intermediate",
       "lesson": {
-        "pillar": "temp", "method": "v60", "scene": "hot",
-        "hook": "深煎りは湯温を85度に",
+        "pillar": "temp",
+        "method": "v60",
+        "scene": "hot",
+        "word": "深煎り",
+        "ask": "はぬるめ？",
+        "hook": "深煎りは湯温を低めに",
         "topic": "焦げた苦味が出にくい",
         "why": "深煎りは苦味の成分が溶けやすい",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 85, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "低めにする",
+            "taste": "甘く、なめらか"
+          },
+          {
+            "label": "熱くする",
+            "taste": "焦げた苦味が出る"
+          }
         ],
-        "taste": { "notes": ["なめらか", "苦味は控えめ"], "summary": "チョコのような甘さが残る", "acidity": 2, "sweetness": 4, "body": 4 },
         "tips": [
-          { "problem": "物足りない時", "fix": "湯温を88度に上げる" },
-          { "problem": "浅煎りの時", "fix": "湯温を92度以上にする" }
+          {
+            "problem": "物足りない時",
+            "fix": "温度を少し上げる"
+          },
+          {
+            "problem": "まだ苦い時",
+            "fix": "挽き目を少し粗くする"
+          }
         ],
+        "core": "深煎りは、低い温度でも苦味が出やすい",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 80,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 80,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "深いほど低めの湯温が合う",
-          "label": "湯温", "unit": "℃",
-          "min": 80, "max": 100, "from": 92, "to": 85,
-          "zones": [{ "upTo": 87, "label": "深煎り" }, { "upTo": 91, "label": "中煎り" }, { "upTo": 100, "label": "浅煎り" }]
+          "type": "scale",
+          "caption": "深煎りは低めでまろやか",
+          "label": "湯温",
+          "zones": [
+            "低め",
+            "ふつう",
+            "高め"
+          ],
+          "from": 60,
+          "to": 25
         }
       }
     },
@@ -465,27 +1159,67 @@
       "id": "i04-more-pours",
       "level": "intermediate",
       "lesson": {
-        "pillar": "pour", "method": "kalita-wave", "scene": "hot",
-        "hook": "3投から5投に増やす",
+        "pillar": "pour",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "注ぐ回数",
+        "ask": "を増やすと？",
+        "hook": "注ぐ回数を増やす",
         "topic": "濃さが安定して甘くなる",
-        "why": "少しずつ注ぐほど湯温と濃度が保たれる",
-        "numbers": { "dose_g": 20, "water_g": 300, "temp_c": 92, "grind": "中挽き", "time": "3:00" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 60 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 120 },
-          { "time": "1:05", "action": "3投目", "pour_to_g": 180 },
-          { "time": "1:30", "action": "4投目", "pour_to_g": 240 },
-          { "time": "1:55", "action": "5投目", "pour_to_g": 300 }
+        "why": "少しずつ注ぐほど温度と濃さが保たれる",
+        "effect": [
+          {
+            "label": "増やす",
+            "taste": "甘みと厚みが出る"
+          },
+          {
+            "label": "減らす",
+            "taste": "軽く、すっきり"
+          }
         ],
-        "taste": { "notes": ["均一な甘み", "澄んだ後味"], "summary": "薄い部分が消える", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "時間切れ", "fix": "1投を早く注ぎ切る" },
-          { "problem": "苦い時", "fix": "最後の1投を省く" }
+          {
+            "problem": "重すぎる時",
+            "fix": "注ぐ回数を減らす"
+          },
+          {
+            "problem": "落ちが遅い時",
+            "fix": "1回の量を多めにする"
+          }
         ],
+        "core": "こまめに注ぐと、濃さがそろって甘くなる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "分けて注ぐほど甘さが出る",
-          "left": { "label": "3投", "result": "軽くすっきり", "strength": 2 },
-          "right": { "label": "5投", "result": "甘みと厚み", "strength": 4 },
+          "type": "compare",
+          "caption": "こまめに注ぐと甘くなる",
+          "left": {
+            "label": "まとめて",
+            "result": "軽くすっきり",
+            "strength": 2
+          },
+          "right": {
+            "label": "こまめに",
+            "result": "甘みと厚み",
+            "strength": 4
+          },
           "pick": "right"
         }
       }
@@ -494,27 +1228,70 @@
       "id": "i05-pour-center",
       "level": "intermediate",
       "lesson": {
-        "pillar": "pour", "method": "v60", "scene": "hot",
+        "pillar": "pour",
+        "method": "v60",
+        "scene": "hot",
+        "word": "注ぐ場所",
+        "ask": "は中心だけ？",
         "hook": "中心だけに注ぐ",
         "topic": "雑味が減って澄んだ味",
         "why": "壁に残る粉が湯をこすフィルターになる",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "中心に注ぐ", "pour_to_g": 140 },
-          { "time": "1:20", "action": "中心に注ぐ", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "中心に注ぐ",
+            "taste": "澄んで、すっきり"
+          },
+          {
+            "label": "全体に注ぐ",
+            "taste": "濃いが雑味も出る"
+          }
         ],
-        "taste": { "notes": ["クリア", "軽やか"], "summary": "口当たりがすっきりする", "acidity": 4, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "薄い時", "fix": "小さな円を描いて注ぐ" },
-          { "problem": "粉が壁に残る", "fix": "最後に軽く回す" }
+          {
+            "problem": "落ちが遅い時",
+            "fix": "少し外側にも注ぐ"
+          },
+          {
+            "problem": "薄い時",
+            "fix": "挽き目を少し細かくする"
+          }
         ],
+        "core": "中心に注ぐと、壁の粉が雑味をこす",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 60,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 40,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "注ぐ位置で湯の通り道が変わる",
+          "type": "flow",
+          "caption": "壁の粉がフィルターになる",
           "brewers": [
-            { "shape": "cone", "label": "全体に注ぐ", "note": "壁の粉も流れる", "pour": "wide" },
-            { "shape": "cone", "label": "中心だけ", "note": "壁の粉が湯をこす", "pour": "center" }
+            {
+              "shape": "cone",
+              "label": "全体に注ぐ",
+              "note": "壁の粉も流れる",
+              "pour": "wide"
+            },
+            {
+              "shape": "cone",
+              "label": "中心だけ",
+              "note": "壁の粉が湯をこす",
+              "pour": "center"
+            }
           ]
         }
       }
@@ -523,27 +1300,65 @@
       "id": "i06-bloom-water",
       "level": "intermediate",
       "lesson": {
-        "pillar": "pour", "method": "kalita-wave", "scene": "hot",
-        "hook": "蒸らしの湯を粉の2倍に",
+        "pillar": "pour",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "蒸らし湯",
+        "ask": "を多めに？",
+        "hook": "蒸らしの湯を多めにする",
         "topic": "ムラが減り甘みが出る",
         "why": "少なすぎると粉全体が湿らない",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:45", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "多めにする",
+            "taste": "むらなく甘い"
+          },
+          {
+            "label": "少なくする",
+            "taste": "むらが出て薄い"
+          }
         ],
-        "taste": { "notes": ["甘み", "まとまり"], "summary": "味の抜けが減る", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "乾いた粉が残る", "fix": "蒸らしの湯を3倍にする" },
-          { "problem": "膨らまない時", "fix": "湯温を2度上げる" }
+          {
+            "problem": "乾いた粉がある",
+            "fix": "蒸らしの湯を増やす"
+          },
+          {
+            "problem": "蒸らしで落ちる",
+            "fix": "蒸らしの湯を減らす"
+          }
         ],
+        "core": "粉全体が湿ると、ムラなく溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 70,
+              "to": 25
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "粉の2倍で全体が湿る",
-          "label": "蒸らし湯", "unit": "g",
-          "min": 0, "max": 60, "from": 15, "to": 30,
-          "zones": [{ "upTo": 22, "label": "少ない" }, { "upTo": 46, "label": "適量" }, { "upTo": 60, "label": "多い" }]
+          "type": "scale",
+          "caption": "粉全体が湿る量にする",
+          "label": "蒸らし湯",
+          "zones": [
+            "少ない",
+            "ちょうど",
+            "多い"
+          ],
+          "from": 20,
+          "to": 50
         }
       }
     },
@@ -551,26 +1366,77 @@
       "id": "i07-bloom-time",
       "level": "intermediate",
       "lesson": {
-        "pillar": "time", "method": "v60", "scene": "hot",
-        "hook": "蒸らしを45秒に延ばす",
+        "pillar": "time",
+        "method": "v60",
+        "scene": "hot",
+        "word": "蒸らし時間",
+        "ask": "を延ばすと？",
+        "hook": "蒸らしを長めにとる",
         "topic": "味の厚みが増す",
         "why": "ガスが抜けるほど湯がしみ込む",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:45", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:25", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:45", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "長めにとる",
+            "taste": "厚みが増す"
+          },
+          {
+            "label": "短くする",
+            "taste": "軽く、薄くなる"
+          }
         ],
-        "taste": { "notes": ["厚み", "甘み"], "summary": "同じ粉で味が濃く感じる", "acidity": 3, "sweetness": 4, "body": 4 },
         "tips": [
-          { "problem": "よく膨らむ時", "fix": "蒸らしを1分とる" },
-          { "problem": "苦くなった", "fix": "蒸らしを30秒に戻す" }
+          {
+            "problem": "重すぎる時",
+            "fix": "蒸らしを短くする"
+          },
+          {
+            "problem": "膨らまない時",
+            "fix": "挽きたての粉を使う"
+          }
         ],
+        "core": "ガスが抜けるほど、湯がしみて厚みが出る",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "45秒あたりで厚みが出る",
-          "xLabel": "蒸らし", "yLabel": "厚み",
-          "points": [{ "label": "0秒", "value": 1 }, { "label": "15秒", "value": 2 }, { "label": "30秒", "value": 3 }, { "label": "45秒", "value": 4 }, { "label": "60秒", "value": 4 }],
+          "type": "graph",
+          "caption": "蒸らすほど厚みが出る",
+          "xLabel": "蒸らし",
+          "yLabel": "厚み",
+          "points": [
+            {
+              "label": "なし",
+              "value": 1
+            },
+            {
+              "label": "短め",
+              "value": 2
+            },
+            {
+              "label": "ふつう",
+              "value": 3
+            },
+            {
+              "label": "長め",
+              "value": 4
+            }
+          ],
           "mark": 3
         }
       }
@@ -580,27 +1446,70 @@
       "level": "intermediate",
       "fixedMethod": true,
       "lesson": {
-        "pillar": "gear", "method": "kalita-wave", "scene": "hot",
+        "pillar": "gear",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "平底",
+        "ask": "に替えると？",
         "hook": "円すいを平底に替える",
         "topic": "湯だまりで濃さがそろう",
         "why": "底が平らで湯が均一に粉を通る",
-        "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 92, "grind": "中挽き", "time": "3:00" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 50 },
-          { "time": "0:45", "action": "2投目", "pour_to_g": 160 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 270 },
-          { "time": "3:00", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "平底にする",
+            "taste": "濃さがそろい、甘い"
+          },
+          {
+            "label": "円すいにする",
+            "taste": "軽く、すっきり"
+          }
         ],
-        "taste": { "notes": ["丸い甘み", "安定した濃さ"], "summary": "毎回ぶれにくい一杯", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "落ちが遅い", "fix": "挽き目を1段粗く" },
-          { "problem": "薄い時", "fix": "粉を2g増やす" }
+          {
+            "problem": "落ちが遅い時",
+            "fix": "挽き目を少し粗くする"
+          },
+          {
+            "problem": "軽すぎる時",
+            "fix": "ゆっくり注ぐ"
+          }
         ],
+        "core": "平底は湯だまりができ、濃さがそろう",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            },
+            {
+              "label": "ムラ",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "形で湯の通り方が変わる",
+          "type": "flow",
+          "caption": "底の形で湯の通り方が変わる",
           "brewers": [
-            { "shape": "cone", "label": "円すい", "note": "中心に速く集まる", "speed": "fast" },
-            { "shape": "flat", "label": "平底", "note": "平らに均一に落ちる", "speed": "slow" }
+            {
+              "shape": "cone",
+              "label": "円すい",
+              "note": "中心に速く集まる",
+              "speed": "fast"
+            },
+            {
+              "shape": "flat",
+              "label": "平底",
+              "note": "平らに均一に落ちる",
+              "speed": "slow"
+            }
           ]
         }
       }
@@ -610,25 +1519,77 @@
       "level": "intermediate",
       "fixedMethod": true,
       "lesson": {
-        "pillar": "time", "method": "french-press", "scene": "hot",
-        "hook": "浸す時間を4分から5分に",
+        "pillar": "time",
+        "method": "french-press",
+        "scene": "hot",
+        "word": "浸す時間",
+        "ask": "を延ばすと？",
+        "hook": "浸す時間を長くする",
         "topic": "コクが増して重くなる",
         "why": "浸す時間が長いほど成分が多く溶ける",
-        "numbers": { "dose_g": 15, "water_g": 250, "temp_c": 94, "grind": "粗挽き", "time": "5:00" },
-        "steps": [
-          { "time": "0:00", "action": "全量注ぐ", "pour_to_g": 250 },
-          { "time": "0:30", "action": "軽く混ぜる" },
-          { "time": "5:00", "action": "押し下げる" }
+        "effect": [
+          {
+            "label": "長くする",
+            "taste": "コクが増して重い"
+          },
+          {
+            "label": "短くする",
+            "taste": "軽く、すっきり"
+          }
         ],
-        "taste": { "notes": ["重いコク", "ほろ苦さ"], "summary": "ミルクに負けない濃さ", "acidity": 2, "sweetness": 3, "body": 5 },
         "tips": [
-          { "problem": "重すぎる時", "fix": "4分に戻す" },
-          { "problem": "粉っぽい時", "fix": "上澄みだけ注ぐ" }
+          {
+            "problem": "重すぎる時",
+            "fix": "浸す時間を短くする"
+          },
+          {
+            "problem": "粉っぽい時",
+            "fix": "上ずみだけを注ぐ"
+          }
         ],
+        "core": "長く浸すほど、コクが増して重くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 55,
+            "to": 80
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 45,
+              "to": 75
+            },
+            {
+              "label": "苦味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "浸すほどコクが増える",
-          "xLabel": "浸す時間", "yLabel": "コク",
-          "points": [{ "label": "3分", "value": 2 }, { "label": "4分", "value": 3 }, { "label": "5分", "value": 4 }, { "label": "6分", "value": 5 }],
+          "type": "graph",
+          "caption": "浸すほどコクが増す",
+          "xLabel": "浸す時間",
+          "yLabel": "コク",
+          "points": [
+            {
+              "label": "短い",
+              "value": 2
+            },
+            {
+              "label": "ふつう",
+              "value": 3
+            },
+            {
+              "label": "長い",
+              "value": 4
+            },
+            {
+              "label": "長すぎ",
+              "value": 5
+            }
+          ],
           "mark": 2
         }
       }
@@ -638,25 +1599,69 @@
       "level": "intermediate",
       "fixedMethod": true,
       "lesson": {
-        "pillar": "gear", "method": "clever", "scene": "hot",
-        "hook": "4分待ってから落とす",
+        "pillar": "gear",
+        "method": "clever",
+        "scene": "hot",
+        "word": "クレバー",
+        "ask": "で待つと？",
+        "hook": "しっかり待ってから落とす",
         "topic": "甘みが後から出てくる",
         "why": "酸が先、甘みはその後に溶け出す",
-        "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 92, "grind": "中挽き", "time": "4:00" },
-        "steps": [
-          { "time": "0:00", "action": "粉と湯", "pour_to_g": 270 },
-          { "time": "4:00", "action": "落とす" }
+        "effect": [
+          {
+            "label": "待つ",
+            "taste": "甘みが出て丸い"
+          },
+          {
+            "label": "すぐ落とす",
+            "taste": "酸が立ち、軽い"
+          }
         ],
-        "taste": { "notes": ["丸い甘み", "柔らかい酸"], "summary": "角のない一杯になる", "acidity": 2, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "苦い時", "fix": "3分で落とす" },
-          { "problem": "ぼやける時", "fix": "粉を2g増やす" }
+          {
+            "problem": "重すぎる時",
+            "fix": "待つ時間を短くする"
+          },
+          {
+            "problem": "酸っぱい時",
+            "fix": "もう少し待ってから落とす"
+          }
         ],
+        "core": "待つほど、酸の後に甘みが溶け出す",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 45
+            },
+            {
+              "label": "甘味",
+              "from": 30,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "浸してから、一気にこす",
+          "type": "flow",
+          "caption": "待ってから一気に落とす",
           "brewers": [
-            { "shape": "immersion", "label": "4分浸す", "note": "弁が閉じて湯がたまる" },
-            { "shape": "cone", "label": "落とす", "note": "紙で一気にこす", "speed": "fast" }
+            {
+              "shape": "immersion",
+              "label": "浸して待つ",
+              "note": "弁が閉じて湯がたまる"
+            },
+            {
+              "shape": "cone",
+              "label": "落とす",
+              "note": "紙で一気にこす",
+              "speed": "fast"
+            }
           ]
         }
       }
@@ -666,24 +1671,67 @@
       "level": "intermediate",
       "fixedMethod": true,
       "lesson": {
-        "pillar": "gear", "method": "french-press", "scene": "hot",
+        "pillar": "gear",
+        "method": "french-press",
+        "scene": "hot",
+        "word": "金属",
+        "ask": "フィルターだと？",
         "hook": "金属フィルターで淹れる",
         "topic": "コクが増して舌に厚い",
-        "why": "紙が吸う油分をそのままカップに通す",
-        "numbers": { "dose_g": 18, "water_g": 270, "temp_c": 93, "grind": "粗挽き", "time": "4:00" },
-        "steps": [
-          { "time": "0:00", "action": "粉と湯", "pour_to_g": 270 },
-          { "time": "4:00", "action": "押し下げる" }
+        "why": "紙が吸う油分がそのまま入る",
+        "effect": [
+          {
+            "label": "金属にする",
+            "taste": "油分とコクが出る"
+          },
+          {
+            "label": "紙にする",
+            "taste": "すっきり軽い"
+          }
         ],
-        "taste": { "notes": ["厚いコク", "甘い余韻"], "summary": "ミルクにも負けない", "acidity": 2, "sweetness": 4, "body": 5 },
         "tips": [
-          { "problem": "粉っぽい時", "fix": "最後の一口は残す" },
-          { "problem": "重い時", "fix": "粗さを1段上げる" }
+          {
+            "problem": "粉っぽい時",
+            "fix": "最後の一口を残す"
+          },
+          {
+            "problem": "重すぎる時",
+            "fix": "挽き目を少し粗くする"
+          }
         ],
+        "core": "紙が吸う油分が、そのままカップに入る",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 75
+            },
+            {
+              "label": "すっきり",
+              "from": 70,
+              "to": 40
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "油分を通すかどうかの差",
-          "left": { "label": "紙", "result": "すっきり軽い", "strength": 2 },
-          "right": { "label": "金属", "result": "油分とコク", "strength": 4 },
+          "type": "compare",
+          "caption": "油分が通るとコクが出る",
+          "left": {
+            "label": "紙",
+            "result": "すっきり軽い",
+            "strength": 2
+          },
+          "right": {
+            "label": "金属",
+            "result": "油分とコク",
+            "strength": 4
+          },
           "pick": "right"
         }
       }
@@ -692,26 +1740,67 @@
       "id": "i12-soft-water",
       "level": "intermediate",
       "lesson": {
-        "pillar": "water", "method": "v60", "scene": "hot",
+        "pillar": "water",
+        "method": "v60",
+        "scene": "hot",
+        "word": "水",
+        "ask": "を軟水に？",
         "hook": "軟水で淹れてみる",
         "topic": "酸と甘みがはっきりする",
         "why": "硬水の成分は酸味を打ち消しやすい",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "軟水にする",
+            "taste": "酸と甘みが明るい"
+          },
+          {
+            "label": "硬水にする",
+            "taste": "平たく、重い"
+          }
         ],
-        "taste": { "notes": ["明るい酸", "甘み"], "summary": "果実のような酸が分かる", "acidity": 4, "sweetness": 4, "body": 2 },
         "tips": [
-          { "problem": "酸が強すぎる", "fix": "湯温を2度下げる" },
-          { "problem": "重く感じる時", "fix": "粉を1g減らす" }
+          {
+            "problem": "酸っぱすぎる時",
+            "fix": "温度を少し上げる"
+          },
+          {
+            "problem": "重い時",
+            "fix": "軟水の表示を確かめる"
+          }
         ],
+        "core": "軟水だと、酸と甘みがはっきり出る",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "水の成分で味が変わる",
-          "left": { "label": "硬水", "result": "平たく重い", "strength": 4 },
-          "right": { "label": "軟水", "result": "酸と甘み", "strength": 2 },
+          "type": "compare",
+          "caption": "水が変わると酸が変わる",
+          "left": {
+            "label": "硬水",
+            "result": "平たく重い",
+            "strength": 4
+          },
+          "right": {
+            "label": "軟水",
+            "result": "酸と甘み",
+            "strength": 2
+          },
           "pick": "right"
         }
       }
@@ -720,26 +1809,62 @@
       "id": "i13-iced-ratio",
       "level": "intermediate",
       "lesson": {
-        "pillar": "ratio", "method": "v60", "scene": "iced",
+        "pillar": "ratio",
+        "method": "v60",
+        "scene": "iced",
+        "word": "氷の分",
+        "ask": "だけ濃く？",
         "hook": "氷の分だけ濃く淹れる",
         "topic": "冷やしても薄くならない",
-        "why": "溶けた氷の水も比率に数える",
-        "numbers": { "dose_g": 20, "water_g": 200, "ice_g": 100, "temp_c": 93, "grind": "中細", "time": "2:15" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 40 },
-          { "time": "0:35", "action": "2投目", "pour_to_g": 120 },
-          { "time": "1:10", "action": "3投目", "pour_to_g": 200 },
-          { "time": "2:15", "action": "氷と混ぜる" }
+        "why": "溶けた氷も、薄める水になる",
+        "effect": [
+          {
+            "label": "濃く淹れる",
+            "taste": "冷えてもちょうど"
+          },
+          {
+            "label": "普通に淹れる",
+            "taste": "氷で薄まる"
+          }
         ],
-        "taste": { "notes": ["澄んだ香り", "軽い甘み"], "summary": "薄まらず香りが立つ", "acidity": 4, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "薄い時", "fix": "粉を2g増やす" },
-          { "problem": "香りが弱い", "fix": "湯温を95度に上げる" }
+          {
+            "problem": "薄い時",
+            "fix": "お湯を減らして濃くする"
+          },
+          {
+            "problem": "濃すぎる時",
+            "fix": "氷を少し増やす"
+          }
         ],
+        "core": "溶けた氷の分を、先に濃くしておく",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 30,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "氷の分だけお湯を減らす",
-          "left": { "label": "お湯300g", "result": "氷で薄まる", "strength": 1 },
-          "right": { "label": "お湯200g", "result": "氷でちょうど", "strength": 3 },
+          "type": "compare",
+          "caption": "氷の分を先に引いておく",
+          "left": {
+            "label": "いつも通り",
+            "result": "氷で薄まる",
+            "strength": 1
+          },
+          "right": {
+            "label": "濃く淹れる",
+            "result": "氷でちょうど",
+            "strength": 3
+          },
           "pick": "right"
         }
       }
@@ -748,28 +1873,69 @@
       "id": "i14-swirl",
       "level": "intermediate",
       "lesson": {
-        "pillar": "pour", "method": "v60", "scene": "hot",
+        "pillar": "pour",
+        "method": "v60",
+        "scene": "hot",
+        "word": "回す",
+        "ask": "とどうなる？",
         "hook": "最後にドリッパーを回す",
         "topic": "粉が平らになり落ちが揃う",
         "why": "粉の層が平らだと湯が均一に通る",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "1:30", "action": "軽く回す" },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "回す",
+            "taste": "味がそろい、澄む"
+          },
+          {
+            "label": "回さない",
+            "taste": "むらが出やすい"
+          }
         ],
-        "taste": { "notes": ["まとまり", "甘み"], "summary": "雑味が減って甘さが残る", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "落ちが遅い時", "fix": "回すのは1回だけにする" },
-          { "problem": "粉が壁に残る", "fix": "注ぐ円を小さくする" }
+          {
+            "problem": "落ちが遅い時",
+            "fix": "回すのをやさしくする"
+          },
+          {
+            "problem": "壁に粉が残る時",
+            "fix": "最後に軽く回す"
+          }
         ],
+        "core": "粉が平らになると、湯が均一に通る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 55,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 65,
+              "to": 25
+            },
+            {
+              "label": "すっきり",
+              "from": 45,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "粉が平らだと湯が揃って通る",
+          "type": "flow",
+          "caption": "回すと粉が平らになる",
           "brewers": [
-            { "shape": "cone", "label": "回さない", "note": "粉が偏って残る", "bed": "uneven" },
-            { "shape": "cone", "label": "軽く回す", "note": "粉が平らになる" }
+            {
+              "shape": "cone",
+              "label": "回さない",
+              "note": "粉が偏って残る",
+              "bed": "uneven"
+            },
+            {
+              "shape": "cone",
+              "label": "軽く回す",
+              "note": "粉が平らになる"
+            }
           ]
         }
       }
@@ -779,27 +1945,60 @@
       "level": "advanced",
       "term": "TDS",
       "lesson": {
-        "pillar": "terms", "method": "origami", "scene": "hot",
-        "hook": "粉を2g増やす",
+        "pillar": "terms",
+        "method": "origami",
+        "scene": "hot",
+        "word": "TDS",
+        "ask": "ってなに？",
+        "hook": "粉を少し増やす",
         "topic": "TDSが上がり濃く感じる",
         "why": "TDS＝コーヒーに溶けた成分の濃さ",
-        "numbers": { "dose_g": 17, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 35 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "粉を増やす",
+            "taste": "濃く、重たい"
+          },
+          {
+            "label": "粉を減らす",
+            "taste": "薄く、軽い"
+          }
         ],
-        "taste": { "notes": ["濃い", "重さが増す"], "summary": "口に含んだ重さが増す", "acidity": 3, "sweetness": 3, "body": 4 },
         "tips": [
-          { "problem": "濃すぎる時", "fix": "粉を15gに戻す" },
-          { "problem": "まだ薄い時", "fix": "粉をさらに1g増やす" }
+          {
+            "problem": "薄い時",
+            "fix": "粉を少し増やす"
+          },
+          {
+            "problem": "濃すぎる時",
+            "fix": "淹れた後にお湯を足す"
+          }
         ],
+        "core": "溶けた成分が多いほど、濃く感じる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 75
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 75
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "溶けた成分が多いほど濃い",
-          "label": "TDS", "unit": "%",
-          "min": 1.0, "max": 1.6, "from": 1.25, "to": 1.4,
-          "zones": [{ "upTo": 1.15, "label": "薄い" }, { "upTo": 1.35, "label": "標準" }, { "upTo": 1.6, "label": "濃い" }]
+          "type": "scale",
+          "caption": "溶けた成分が多いほど濃い",
+          "label": "TDS",
+          "zones": [
+            "薄い",
+            "ちょうど",
+            "濃い"
+          ],
+          "from": 50,
+          "to": 80
         }
       }
     },
@@ -808,27 +2007,65 @@
       "level": "advanced",
       "term": "抽出収率",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "挽き目を半段細かく",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "収率",
+        "ask": "ってなに？",
+        "hook": "挽き目を少し細かくする",
         "topic": "収率が上がり甘みが出る",
         "why": "収率＝粉から溶け出した成分の割合",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:45", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "細かくする",
+            "taste": "甘みが出る"
+          },
+          {
+            "label": "粗くする",
+            "taste": "酸が立ち、軽い"
+          }
         ],
-        "taste": { "notes": ["甘み", "厚み"], "summary": "酸っぱさが消えて甘くなる", "acidity": 3, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "苦くなった", "fix": "半段粗く戻す" },
-          { "problem": "変化がない時", "fix": "湯温を2度上げる" }
+          {
+            "problem": "苦くなった時",
+            "fix": "挽き目を少し戻す"
+          },
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "お湯の温度を上げる"
+          }
         ],
+        "core": "溶け出す割合が上がると、甘みが出る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 45,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 65
+            },
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 45
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "18から22％がちょうどいい",
-          "label": "収率", "unit": "%",
-          "min": 16, "max": 24, "from": 18, "to": 20,
-          "zones": [{ "upTo": 18, "label": "未抽出" }, { "upTo": 22, "label": "適正" }, { "upTo": 24, "label": "過抽出" }]
+          "type": "scale",
+          "caption": "出す割合で甘みが変わる",
+          "label": "収率",
+          "zones": [
+            "未抽出",
+            "適正",
+            "過抽出"
+          ],
+          "from": 30,
+          "to": 50
         }
       }
     },
@@ -837,26 +2074,62 @@
       "level": "advanced",
       "term": "濃さと収率",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
-        "hook": "比率だけを動かす",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "濃さと収率",
+        "ask": "の違い？",
+        "hook": "お湯の量だけを動かす",
         "topic": "濃さだけが変わる",
-        "why": "濃さは比率、溶け出し方は挽き目で動く",
-        "numbers": { "dose_g": 15, "water_g": 225, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 130 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 225 },
-          { "time": "2:30", "action": "落ち切り" }
+        "why": "濃さはお湯の量、出方は挽き目で動く",
+        "effect": [
+          {
+            "label": "お湯を減らす",
+            "taste": "味の形はそのまま濃い"
+          },
+          {
+            "label": "挽きを変える",
+            "taste": "味の出方が変わる"
+          }
         ],
-        "taste": { "notes": ["濃い", "味の形は同じ"], "summary": "味の性格はそのまま濃くなる", "acidity": 3, "sweetness": 3, "body": 4 },
         "tips": [
-          { "problem": "濃すぎる時", "fix": "お湯を15g増やす" },
-          { "problem": "酸っぱい時", "fix": "比率でなく挽き目で直す" }
+          {
+            "problem": "濃さだけ変えたい",
+            "fix": "お湯の量を動かす"
+          },
+          {
+            "problem": "味を変えたい時",
+            "fix": "挽き目を動かす"
+          }
         ],
+        "core": "濃さはお湯の量、味の出方は挽き目で動く",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 70
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "濃さは比率、味は挽き目",
-          "left": { "label": "比率", "result": "濃さが動く", "strength": 4 },
-          "right": { "label": "挽き目", "result": "味の出方が動く", "strength": 3 }
+          "type": "compare",
+          "caption": "2つのつまみは役割が違う",
+          "left": {
+            "label": "お湯の量",
+            "result": "濃さが動く",
+            "strength": 4
+          },
+          "right": {
+            "label": "挽き目",
+            "result": "味の出方が動く",
+            "strength": 3
+          }
         }
       }
     },
@@ -864,27 +2137,60 @@
       "id": "a04-bypass",
       "level": "advanced",
       "lesson": {
-        "pillar": "ratio", "method": "v60", "scene": "hot",
+        "pillar": "ratio",
+        "method": "v60",
+        "scene": "hot",
+        "word": "足し湯",
+        "ask": "で薄めると？",
         "hook": "淹れた後にお湯を足す",
         "topic": "濃さだけを下げられる",
-        "why": "溶け出す段階は済んでいて味の形は同じ",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 120 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 200 },
-          { "time": "2:30", "action": "湯を足す", "pour_to_g": 240 }
+        "why": "溶け出し方はそのままで、薄まるだけ",
+        "effect": [
+          {
+            "label": "足す",
+            "taste": "軽く、飲みやすい"
+          },
+          {
+            "label": "足さない",
+            "taste": "濃く、しっかり"
+          }
         ],
-        "taste": { "notes": ["軽やか", "甘みは残る"], "summary": "薄めても味の芯はぶれない", "acidity": 3, "sweetness": 4, "body": 2 },
         "tips": [
-          { "problem": "薄すぎる時", "fix": "足す湯を20gにする" },
-          { "problem": "雑味が出る時", "fix": "足す前の抽出を短く" }
+          {
+            "problem": "足しすぎた時",
+            "fix": "次は少しずつ足す"
+          },
+          {
+            "problem": "味がぼやける時",
+            "fix": "粉を減らして淹れ直す"
+          }
         ],
+        "core": "足すと、味の形はそのままで薄まる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 75,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 75,
+              "to": 50
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "足した分だけTDSが下がる",
-          "label": "TDS", "unit": "%",
-          "min": 1.0, "max": 1.8, "from": 1.55, "to": 1.3,
-          "zones": [{ "upTo": 1.15, "label": "薄い" }, { "upTo": 1.35, "label": "標準" }, { "upTo": 1.8, "label": "濃い" }]
+          "type": "scale",
+          "caption": "足すと濃さだけが下がる",
+          "label": "濃さ",
+          "zones": [
+            "薄い",
+            "ちょうど",
+            "濃い"
+          ],
+          "from": 80,
+          "to": 55
         }
       }
     },
@@ -893,26 +2199,67 @@
       "level": "advanced",
       "term": "微粉",
       "lesson": {
-        "pillar": "terms", "method": "v60", "scene": "hot",
+        "pillar": "terms",
+        "method": "v60",
+        "scene": "hot",
+        "word": "微粉",
+        "ask": "ってなに？",
         "hook": "挽いた粉を茶こしでふるう",
         "topic": "渋みが減り澄んだ味",
         "why": "微粉＝細かすぎる粉で雑味のもとになる",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "ふるう",
+            "taste": "澄んで、すっきり"
+          },
+          {
+            "label": "ふるわない",
+            "taste": "渋みと濁りが出る"
+          }
         ],
-        "taste": { "notes": ["クリア", "甘い余韻"], "summary": "舌に残るざらつきが消える", "acidity": 4, "sweetness": 4, "body": 2 },
         "tips": [
-          { "problem": "薄くなった", "fix": "挽き目を1段細かく" },
-          { "problem": "早く落ちる時", "fix": "注ぐ速さを落とす" }
+          {
+            "problem": "軽すぎる時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "落ちが遅い時",
+            "fix": "粉をふるってみる"
+          }
         ],
+        "core": "細かすぎる粉を除くと、雑味が減る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 70,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 40,
+              "to": 70
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "細かすぎる粉が雑味のもと",
-          "left": { "label": "ふるわない", "result": "渋み・濁り", "strength": 4 },
-          "right": { "label": "ふるう", "result": "澄んだ味", "strength": 2 },
+          "type": "compare",
+          "caption": "微粉を減らすと澄んだ味",
+          "left": {
+            "label": "ふるわない",
+            "result": "渋み・濁り",
+            "strength": 4
+          },
+          "right": {
+            "label": "ふるう",
+            "result": "澄んだ味",
+            "strength": 2
+          },
           "pick": "right"
         }
       }
@@ -921,26 +2268,77 @@
       "id": "a06-drawdown",
       "level": "advanced",
       "lesson": {
-        "pillar": "time", "method": "v60", "scene": "hot",
+        "pillar": "time",
+        "method": "v60",
+        "scene": "hot",
+        "word": "最後の湯",
+        "ask": "を残すと？",
         "hook": "最後の湯を落とし切らない",
         "topic": "えぐみが減る",
         "why": "最後に落ちる湯ほど雑味を多く含む",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:15" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:15", "action": "ドリッパーを外す" }
+        "effect": [
+          {
+            "label": "残す",
+            "taste": "えぐみが減る"
+          },
+          {
+            "label": "落とし切る",
+            "taste": "濃いが雑味も出る"
+          }
         ],
-        "taste": { "notes": ["すっきり", "甘い余韻"], "summary": "後半の雑味だけが切れる", "acidity": 3, "sweetness": 4, "body": 2 },
         "tips": [
-          { "problem": "薄くなった", "fix": "外すのを15秒遅らせる" },
-          { "problem": "量が足りない", "fix": "お湯を15g増やす" }
+          {
+            "problem": "薄くなった時",
+            "fix": "残す量を少なくする"
+          },
+          {
+            "problem": "まだ渋い時",
+            "fix": "挽き目を少し粗くする"
+          }
         ],
+        "core": "最後に落ちる湯ほど、雑味が多い",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 65,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 65,
+              "to": 35
+            },
+            {
+              "label": "えぐみ",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
-          "type": "graph", "caption": "最後の数滴に雑味が集まる",
-          "xLabel": "落ちる順", "yLabel": "雑味",
-          "points": [{ "label": "最初", "value": 1 }, { "label": "中盤", "value": 2 }, { "label": "後半", "value": 3 }, { "label": "最後", "value": 5 }],
+          "type": "graph",
+          "caption": "最後の湯ほど雑味が多い",
+          "xLabel": "落ちる順",
+          "yLabel": "雑味",
+          "points": [
+            {
+              "label": "最初",
+              "value": 1
+            },
+            {
+              "label": "中盤",
+              "value": 2
+            },
+            {
+              "label": "後半",
+              "value": 3
+            },
+            {
+              "label": "最後",
+              "value": 5
+            }
+          ],
           "mark": 2
         }
       }
@@ -949,27 +2347,70 @@
       "id": "a07-pour-height",
       "level": "advanced",
       "lesson": {
-        "pillar": "pour", "method": "v60", "scene": "hot",
+        "pillar": "pour",
+        "method": "v60",
+        "scene": "hot",
+        "word": "注ぐ高さ",
+        "ask": "を低くすると？",
         "hook": "注ぐ高さを低くする",
         "topic": "かき混ぜが減り軽い味に",
         "why": "高くから注ぐほど粉が強くかき混ざる",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "低く注ぐ", "pour_to_g": 140 },
-          { "time": "1:20", "action": "低く注ぐ", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "低くする",
+            "taste": "軽く、すっきり"
+          },
+          {
+            "label": "高くする",
+            "taste": "濃く、力強い"
+          }
         ],
-        "taste": { "notes": ["軽やか", "明るい酸"], "summary": "口当たりがやわらかい", "acidity": 4, "sweetness": 3, "body": 2 },
         "tips": [
-          { "problem": "薄い時", "fix": "少し高くから注ぐ" },
-          { "problem": "落ちが速い時", "fix": "挽き目を1段細かく" }
+          {
+            "problem": "薄い時",
+            "fix": "少し高くから注ぐ"
+          },
+          {
+            "problem": "雑味が出る時",
+            "fix": "低く静かに注ぐ"
+          }
         ],
+        "core": "低く注ぐと、粉がかき混ざりすぎない",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 55,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 45,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
-          "type": "flow", "caption": "高さでかき混ぜる強さが変わる",
+          "type": "flow",
+          "caption": "高さでかき混ぜ方が変わる",
           "brewers": [
-            { "shape": "cone", "label": "高く注ぐ", "note": "粉が強く混ざる", "height": "high" },
-            { "shape": "cone", "label": "低く注ぐ", "note": "粉が静かに沈む", "height": "low" }
+            {
+              "shape": "cone",
+              "label": "高く注ぐ",
+              "note": "粉が強く混ざる",
+              "height": "high"
+            },
+            {
+              "shape": "cone",
+              "label": "低く注ぐ",
+              "note": "粉が静かに沈む",
+              "height": "low"
+            }
           ]
         }
       }
@@ -978,27 +2419,65 @@
       "id": "a08-light-roast-hot",
       "level": "advanced",
       "lesson": {
-        "pillar": "temp", "method": "kalita-wave", "scene": "hot",
-        "hook": "浅煎りを96度で淹れる",
+        "pillar": "temp",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "浅煎り",
+        "ask": "は熱めで？",
+        "hook": "浅煎りは湯温を高めに",
         "topic": "酸が甘く丸くなる",
         "why": "浅煎りは成分が溶けにくく熱が要る",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 96, "grind": "中細", "time": "2:45" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:45", "action": "落ち切り" }
+        "effect": [
+          {
+            "label": "高めにする",
+            "taste": "酸が丸く、甘い"
+          },
+          {
+            "label": "低めにする",
+            "taste": "酸っぱく、薄い"
+          }
         ],
-        "taste": { "notes": ["丸い酸", "甘み"], "summary": "果実のような甘酸っぱさ", "acidity": 4, "sweetness": 4, "body": 3 },
         "tips": [
-          { "problem": "苦味が出た時", "fix": "93度に下げる" },
-          { "problem": "まだ酸っぱい", "fix": "挽き目を1段細かく" }
+          {
+            "problem": "苦くなった時",
+            "fix": "温度を少し下げる"
+          },
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "挽き目を少し細かくする"
+          }
         ],
+        "core": "浅煎りは、熱いお湯でやっと甘みが溶ける",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 35,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 55
+            },
+            {
+              "label": "甘味",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
-          "type": "scale", "caption": "浅いほど高い湯温が合う",
-          "label": "湯温", "unit": "℃",
-          "min": 80, "max": 100, "from": 92, "to": 96,
-          "zones": [{ "upTo": 87, "label": "深煎り" }, { "upTo": 91, "label": "中煎り" }, { "upTo": 100, "label": "浅煎り" }]
+          "type": "scale",
+          "caption": "浅煎りは熱めで甘く",
+          "label": "湯温",
+          "zones": [
+            "低め",
+            "ふつう",
+            "高め"
+          ],
+          "from": 55,
+          "to": 85
         }
       }
     },
@@ -1006,26 +2485,62 @@
       "id": "a09-one-change",
       "level": "advanced",
       "lesson": {
-        "pillar": "trouble", "method": "v60", "scene": "hot",
+        "pillar": "trouble",
+        "method": "v60",
+        "scene": "hot",
+        "word": "ひとつだけ",
+        "ask": "変えると？",
         "hook": "1回に1つだけ変える",
         "topic": "好みの味にたどり着く",
-        "why": "2つ同時に変えると原因が分からない",
-        "numbers": { "dose_g": 15, "water_g": 240, "temp_c": 92, "grind": "中細", "time": "2:30" },
-        "steps": [
-          { "time": "0:00", "action": "蒸らす", "pour_to_g": 30 },
-          { "time": "0:40", "action": "2投目", "pour_to_g": 140 },
-          { "time": "1:20", "action": "3投目", "pour_to_g": 240 },
-          { "time": "2:30", "action": "落ち切り" }
+        "why": "同時に変えると原因が分からない",
+        "effect": [
+          {
+            "label": "1つ変える",
+            "taste": "違いがはっきり分かる"
+          },
+          {
+            "label": "全部変える",
+            "taste": "何が効いたか迷う"
+          }
         ],
-        "taste": { "notes": ["自分の好み"], "summary": "次の1杯をねらって作れる", "acidity": 3, "sweetness": 3, "body": 3 },
         "tips": [
-          { "problem": "迷った時", "fix": "比率1対16に戻す" },
-          { "problem": "覚えられない", "fix": "数字をメモに残す" }
+          {
+            "problem": "迷った時",
+            "fix": "いつもの淹れ方に戻す"
+          },
+          {
+            "problem": "忘れてしまう時",
+            "fix": "変えた所をメモする"
+          }
         ],
+        "core": "1つずつ変えると、何が効いたか分かる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 50,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "迷い",
+              "from": 75,
+              "to": 20
+            }
+          ]
+        },
         "visual": {
-          "type": "compare", "caption": "変えるのは1回に1つ",
-          "left": { "label": "2つ変える", "result": "原因が不明", "strength": 3 },
-          "right": { "label": "1つ変える", "result": "原因が分かる", "strength": 3 },
+          "type": "compare",
+          "caption": "1つずつなら原因が分かる",
+          "left": {
+            "label": "2つ変える",
+            "result": "原因が不明",
+            "strength": 3
+          },
+          "right": {
+            "label": "1つ変える",
+            "result": "原因が分かる",
+            "strength": 3
+          },
           "pick": "right"
         }
       }

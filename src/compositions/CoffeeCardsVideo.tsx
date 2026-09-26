@@ -2,14 +2,15 @@ import React from "react";
 import { AbsoluteFill, Audio, Series, staticFile } from "remotion";
 import {
   CtaSlide,
-  LessonSteps,
-  LessonTaste,
+  LessonEffect,
+  LessonWhy,
   LessonTips,
   LessonTitle,
 } from "../cards/LessonSlides";
 import { LessonVisualView } from "../cards/Diagrams";
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
+import { LookVideo, PRODUCTION_LOOK } from "../looks/LookVideo";
 
 const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = ({
   slide,
@@ -21,10 +22,10 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
       return <LessonTitle slide={slide} index={index} />;
     case "lesson-visual":
       return <LessonVisualView slide={slide} page={page} index={index} />;
-    case "lesson-steps":
-      return <LessonSteps slide={slide} page={page} index={index} />;
-    case "lesson-taste":
-      return <LessonTaste slide={slide} page={page} index={index} />;
+    case "lesson-why":
+      return <LessonWhy slide={slide} page={page} index={index} />;
+    case "lesson-effect":
+      return <LessonEffect slide={slide} page={page} index={index} />;
     case "lesson-tips":
       return <LessonTips slide={slide} page={page} index={index} />;
     default:
@@ -34,12 +35,16 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
 
 /**
  * 「今日の抽出メモ」 — one episode of the series 「味をコントロールする技術」 a day
- * (data/curriculum.json): title, diagram (src/cards/Diagrams.tsx), steps, taste, tips;
+ * (data/curriculum.json): cover, why, diagram (src/cards/Diagrams.tsx), both ways, tips;
  * narration is audio only (the cards carry the information, so no subtitle
  * overlay). Segment lengths come from props.timeline (scripts/content-format.mjs
  * computeCardTimeline), audio files from scripts/generate-audio.mjs.
  */
-export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = ({ slides, ending, timeline, withAudio = true }) => {
+export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = (props) => {
+  // A look passed in the props (previews of a candidate) wins over the production one.
+  const look = props.look === "classic" ? null : (props.look ?? PRODUCTION_LOOK);
+  if (look) return <LookVideo {...props} look={look} />;
+  const { slides, ending, timeline, withAudio = true } = props;
   const pages = slides.length + 1;
   return (
     <AbsoluteFill style={{ background: COLORS.bg }}>

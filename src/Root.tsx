@@ -3,6 +3,8 @@ import { Composition } from "remotion";
 import { CoffeeCardsVideo } from "./compositions/CoffeeCardsVideo";
 import { defaultCardsProps } from "./cards/defaults";
 import type { CoffeeCardsProps } from "./cards/types";
+import { LOOK_FRAMES, LookPreview } from "./looks/Looks";
+import { EXPLAIN_FRAMES, ExplainPreview } from "./looks/Explain";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -22,6 +24,26 @@ export const RemotionRoot: React.FC = () => {
           const p = props as unknown as CoffeeCardsProps;
           return { durationInFrames: p.timeline?.total || defaultCardsProps.timeline.total };
         }}
+      />
+      {/* 2026-09-26 redesign, round 2: three candidate looks, preview only (scripts/render-looks.mjs) */}
+      <Composition
+        id="LookPreview"
+        component={LookPreview as unknown as React.FC<Record<string, unknown>>}
+        durationInFrames={LOOK_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ look: "lab", episodeIndex: 0 }}
+      />
+      {/* 2026-09-26: motion samples of the explanation scene, looks lab / photo (scripts/render-explain.mjs) */}
+      <Composition
+        id="ExplainPreview"
+        component={ExplainPreview as unknown as React.FC<Record<string, unknown>>}
+        durationInFrames={EXPLAIN_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ look: "lab" }}
       />
     </>
   );
