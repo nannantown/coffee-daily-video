@@ -174,14 +174,14 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
           </div>
         </InkContext.Provider>
       )}
-      <In at={60} style={{ top: 1250, left: 96, right: 96 }}>
+      <In at={60} style={{ top: v.type === "scale" ? 1250 : 1360, left: 96, right: 96 }}>
         <div style={T(64, 700, ep.accent)}>{v.caption}</div>
       </In>
       {/* the lower band of the storyboard: the episode's drawing left, the reason right */}
-      <In at={70} style={{ top: 1400, left: 40 }}>
+      <In at={70} style={{ top: 1400, left: 40, display: v.type === "scale" ? "block" : "none" }}>
         <Doodle subject={subjectFor(ep.id)} size={440} />
       </In>
-      <In at={80} style={{ top: 1440, left: 520, right: 96 }}>
+      <In at={80} style={{ top: v.type === "scale" ? 1440 : 1560, left: v.type === "scale" ? 520 : 96, right: 96 }}>
         <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
         <div style={T(LAB_TYPE.label, 500, GREY)}>{ep.why}</div>
       </In>
@@ -273,9 +273,12 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
             <div style={{ flex: 1 }}>
               <div style={T(64, 700, INK)}>
-                {t.problem} <span style={{ color: ep.accent }}>→</span>
+                {t.problem}
               </div>
-              <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 10 })}>{t.fix}</div>
+              <div style={T(LAB_TYPE.body, 500, INK, { marginTop: 10 })}>
+                <span style={{ color: ep.accent, fontWeight: 700 }}>→ </span>
+                {t.fix}
+              </div>
             </div>
             <Doodle subject={doodles[i]} size={tips.length > 2 ? 360 : 500} />
           </div>

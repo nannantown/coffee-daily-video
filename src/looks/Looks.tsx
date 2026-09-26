@@ -147,6 +147,7 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
       <div style={type("head", 500, ep.accent, { marginTop: 24 })}>{ep.topic}</div>
     </In>
     {/* the storyboard's little side note: the usual way ↓ today's way */}
+    {ep.pillar === "temp" ? (
     <In at={16} style={{ top: 1000, left: 40, width: 200, textAlign: "center" }}>
       <svg width={60} height={60} viewBox="0 0 60 60"><path d="M18 52 c 10 -12 -10 -20 0 -32 M34 52 c 10 -12 -10 -20 0 -32" stroke={GREY} strokeWidth={3} fill="none" strokeLinecap="round" /></svg>
       <div style={type("aux", 500, GREY)}>いつも</div>
@@ -154,6 +155,7 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
       <svg width={60} height={60} viewBox="0 0 60 60"><path d="M26 52 c 8 -10 -8 -16 0 -26" stroke={GREY} strokeWidth={3} fill="none" strokeLinecap="round" opacity={0.6} /></svg>
       <div style={type("aux", 500, ep.accent)}>{ep.effect[0]?.label}</div>
     </In>
+    ) : null}
   </AbsoluteFill>
 );
 
