@@ -352,12 +352,16 @@ test("recipe numbers never reach a viewer (owner decision 2026-09-26)", () => {
     "湯温を十度下げる", "十五分", "二十分", "二倍", "十五倍", "5センチ", "3cm", "0.5mm", "2段階粗く", "2目盛り", "目盛り二つ", "冷蔵庫で8時間", "八時間", "8h", "一：十五", "九十二くらい", "湯を二百",
     // review round 2
     "大さじ2", "小さじ一", "スプーン2杯", "計量スプーン山盛り1杯", "氷を3個", "0.5", "½",
+    // review round 3
+    "スプーン一杯",
   ];
   for (const text of rejected) assert.ok(recipeNumberReason(text), `${text} must be rejected`);
   const allowed = ["初級 第4回", "上級 第28回", "1つだけ変える", "1回に1つ", "もう一度", "もう1度", "1度だけ", "1投目", "3分の1", "数十秒", "十分に蒸らす", "半分くらい", "V60", "2つの味", "段階的に",
     "湯温を上げる", "粗くする", "十分です", "一度に", "目盛りを少しずつ動かす", "一つ手前に戻す", "一口", "二つの味",
     // review round 2: words that only look like numbers
-    "一段と甘く", "二度と", "百均", "八百屋", "十一月", "一対一", "一段落", "一秒でも早く", "二段構え", "一杯ずつ", "マグ1杯分の話"];
+    "一段と甘く", "二度と", "百均", "八百屋", "十一月", "一対一", "一段落", "一秒でも早く", "二段構え", "一杯ずつ", "マグ1杯分の話",
+    // review round 3
+    "1杯目", "2杯目", "3個目"];
   for (const text of allowed) assert.equal(recipeNumberReason(text), null, text);
 
   // wherever the routine writes it

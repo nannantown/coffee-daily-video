@@ -46,7 +46,7 @@ const STREAM = "#a9c6dd";
 // compare
 // ---------------------------------------------------------------------------
 
-const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ strength, accent, delay }) => {
+const Cup: React.FC<{ strength: number; accent: string; delay: number; size?: number }> = ({ strength, accent, delay, size = 300 }) => {
   const ink = useInk();
   const frame = useCurrentFrame();
   const fill = progress(frame, delay, delay + 26);
@@ -56,7 +56,7 @@ const Cup: React.FC<{ strength: number; accent: string; delay: number }> = ({ st
   const level = bottom - (bottom - top - 22) * fill;
   const id = `cup-${delay}`;
   return (
-    <svg width={300} height={300} viewBox="0 0 260 260">
+    <svg width={size} height={size} viewBox="0 0 260 260">
       <defs>
         <clipPath id={id}>
           <path d="M34 70 L226 70 L204 226 Q202 236 190 236 L70 236 Q58 236 56 226 Z" />
@@ -101,7 +101,8 @@ const CompareColumn: React.FC<{
   delay: number;
   dim: boolean;
   picked: boolean;
-}> = ({ side, accent, delay, dim, picked }) => {
+  cupSize?: number;
+}> = ({ side, accent, delay, dim, picked, cupSize }) => {
   const ink = useInk();
   const frame = useCurrentFrame();
   const opacity = dim ? interpolate(frame, [34, 44], [1, 0.62], clampOpts) : 1;
@@ -121,7 +122,7 @@ const CompareColumn: React.FC<{
           </Reveal>
         ) : null}
       </div>
-      <Cup strength={side.strength} accent={accent} delay={delay + 4} />
+      <Cup strength={side.strength} accent={accent} delay={delay + 4} size={cupSize} />
       <Reveal delay={delay + 24} style={{ width: "100%", marginTop: 24 }}>
         <div
           style={{
@@ -149,7 +150,7 @@ const CompareColumn: React.FC<{
   );
 };
 
-const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }> = ({ v }) => {
+const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }>; cupSize?: number }> = ({ v, cupSize }) => {
   const ink = useInk();
   const frame = useCurrentFrame();
   const arrowIn = progress(frame, 20, 32);
@@ -157,8 +158,8 @@ const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }
   const rotate = v.pick === "left" ? 180 : 0;
   return (
     <div style={{ position: "relative", display: "flex", gap: HALF_GAP, width: WIDTH }}>
-      <CompareColumn side={v.left} accent={COLORS.sky} delay={2} dim={v.pick === "right"} picked={v.pick === "left"} />
-      <CompareColumn side={v.right} accent={COLORS.caramel} delay={8} dim={v.pick === "left"} picked={v.pick === "right"} />
+      <CompareColumn side={v.left} accent={COLORS.sky} delay={2} dim={v.pick === "right"} picked={v.pick === "left"} cupSize={cupSize} />
+      <CompareColumn side={v.right} accent={COLORS.caramel} delay={8} dim={v.pick === "left"} picked={v.pick === "right"} cupSize={cupSize} />
       <div
         style={{
           position: "absolute",
@@ -197,12 +198,14 @@ const CompareDiagram: React.FC<{ v: Extract<LessonVisual, { type: "compare" }> }
 const G = { w: WIDTH, h: 600, x0: 56, x1: WIDTH - 56, yTop: 96, yBottom: 500 };
 const ZONE_FILLS = ["rgba(123,157,184,0.13)", "rgba(140,180,160,0.13)", "rgba(201,123,75,0.15)"];
 
-const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = ({ v }) => {
+const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }>; plotHeight?: number }> = ({ v, plotHeight = G.h }) => {
+  // the plot drawn at plotHeight: the axis moves up with it, labels keep their size
+  const g = { ...G, h: plotHeight, yBottom: G.yBottom - (G.h - plotHeight) };
   const ink = useInk();
   const frame = useCurrentFrame();
   const n = v.points.length;
-  const xs = v.points.map((_, i) => G.x0 + ((G.x1 - G.x0) * i) / (n - 1));
-  const ys = v.points.map((p) => G.yBottom - ((G.yBottom - G.yTop) * (p.value - 1)) / 4);
+  const xs = v.points.map((_, i) => g.x0 + ((g.x1 - g.x0) * i) / (n - 1));
+  const ys = v.points.map((p) => g.yBottom - ((g.yBottom - g.yTop) * (p.value - 1)) / 4);
   let length = 0;
   for (let i = 1; i < n; i++) length += Math.hypot(xs[i] - xs[i - 1], ys[i] - ys[i - 1]);
   const drawn = progress(frame, 10, 38);
@@ -216,31 +219,31 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
       <Reveal delay={2} style={{ fontSize: TYPE.body, fontWeight: 700, color: ink.textSub }}>
         ↑ {v.yLabel}
       </Reveal>
-      <div style={{ position: "relative", width: G.w, height: G.h, marginTop: 8 }}>
-        <svg width={G.w} height={G.h} viewBox={`0 0 ${G.w} ${G.h}`} style={{ position: "absolute", inset: 0 }}>
+      <div style={{ position: "relative", width: g.w, height: g.h, marginTop: 8 }}>
+        <svg width={g.w} height={g.h} viewBox={`0 0 ${g.w} ${g.h}`} style={{ position: "absolute", inset: 0 }}>
           {zones.map((label, i) => {
-            const zx = G.x0 - 28 + ((G.x1 - G.x0 + 56) * i) / zones.length;
-            const zw = (G.x1 - G.x0 + 56) / zones.length;
+            const zx = g.x0 - 28 + ((g.x1 - g.x0 + 56) * i) / zones.length;
+            const zw = (g.x1 - g.x0 + 56) / zones.length;
             return (
               <g key={label} opacity={progress(frame, 4 + i * 3, 14 + i * 3)}>
-                <rect x={zx} y={G.yTop - 70} width={zw} height={G.yBottom - G.yTop + 90} fill={ZONE_FILLS[i % ZONE_FILLS.length]} />
-                <text x={zx + zw / 2} y={G.yTop - 30} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
+                <rect x={zx} y={g.yTop - 70} width={zw} height={g.yBottom - g.yTop + 90} fill={ZONE_FILLS[i % ZONE_FILLS.length]} />
+                <text x={zx + zw / 2} y={g.yTop - 30} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {label}
                 </text>
               </g>
             );
           })}
           {[1, 2, 3, 4, 5].map((k) => {
-            const y = G.yBottom - ((G.yBottom - G.yTop) * (k - 1)) / 4;
-            return <line key={k} x1={G.x0 - 28} x2={G.x1 + 28} y1={y} y2={y} stroke={ink.hairline} strokeWidth={2} />;
+            const y = g.yBottom - ((g.yBottom - g.yTop) * (k - 1)) / 4;
+            return <line key={k} x1={g.x0 - 28} x2={g.x1 + 28} y1={y} y2={y} stroke={ink.hairline} strokeWidth={2} />;
           })}
-          <line x1={G.x0 - 28} x2={G.x1 + 28} y1={G.yBottom + 20} y2={G.yBottom + 20} stroke={ink.textMuted} strokeWidth={3} />
+          <line x1={g.x0 - 28} x2={g.x1 + 28} y1={g.yBottom + 20} y2={g.yBottom + 20} stroke={ink.textMuted} strokeWidth={3} />
           {mark != null ? (
             <line
               x1={xs[mark]}
               x2={xs[mark]}
               y1={ys[mark]}
-              y2={G.yBottom + 20}
+              y2={g.yBottom + 20}
               stroke={COLORS.sage}
               strokeWidth={5}
               strokeDasharray="12 10"
@@ -264,7 +267,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
             return (
               <g key={`${p.label}-${i}`} opacity={shown ? 1 : 0}>
                 <circle cx={xs[i]} cy={ys[i]} r={r} fill={isMark && markIn > 0 ? COLORS.sage : ink.bg} stroke={isMark ? COLORS.sage : COLORS.caramel} strokeWidth={6} />
-                <text x={xs[i]} y={G.yBottom + 72} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
+                <text x={xs[i]} y={g.yBottom + 72} textAnchor="middle" fill={ink.text} fontSize={TYPE.aux} fontWeight={700}>
                   {p.label}
                 </text>
               </g>
@@ -275,7 +278,7 @@ const GraphDiagram: React.FC<{ v: Extract<LessonVisual, { type: "graph" }> }> = 
           <div
             style={{
               position: "absolute",
-              left: Math.min(Math.max(xs[mark] - 70, 0), G.w - 140),
+              left: Math.min(Math.max(xs[mark] - 70, 0), g.w - 140),
               top: ys[mark] - 110,
               width: 140,
               display: "flex",
@@ -576,12 +579,13 @@ const ScaleDiagram: React.FC<{ v: Extract<LessonVisual, { type: "scale" }> }> = 
 // ---------------------------------------------------------------------------
 
 /** `flowHeight`: the drawn height of the flow brewers (default 600) — the lab look fits them above its caption. */
-export const DiagramBody: React.FC<{ v: LessonVisual; flowHeight?: number }> = ({ v, flowHeight }) => {
+/** Drawn sizes (defaults = the classic cards): the lab look fits the diagram above its caption and reason. */
+export const DiagramBody: React.FC<{ v: LessonVisual; flowHeight?: number; graphHeight?: number; cupSize?: number }> = ({ v, flowHeight, graphHeight, cupSize }) => {
   switch (v.type) {
     case "compare":
-      return <CompareDiagram v={v} />;
+      return <CompareDiagram v={v} cupSize={cupSize} />;
     case "graph":
-      return <GraphDiagram v={v} />;
+      return <GraphDiagram v={v} plotHeight={graphHeight} />;
     case "flow":
       return <FlowDiagram v={v} drawH={flowHeight} />;
     case "scale":

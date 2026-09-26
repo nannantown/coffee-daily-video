@@ -8,7 +8,7 @@ import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
 import { subjectFor, withTo } from "./art";
-import { DIAGRAM_TOP, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
+import { DIAGRAM_SIZE, DIAGRAM_TOP, GAUGE, SCALE_DOODLE, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
 
 /**
  * The lab look (ラボノート, owner's pick 2026-09-26), every scene after the
@@ -109,8 +109,8 @@ export const LabWhyConte: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 const Gauge: React.FC<{ v: Extract<LessonVisualSlide["visual"], { type: "scale" }>; accent: string }> = ({ v, accent }) => {
   const f = useCurrentFrame();
   const cx = 540;
-  const cy = 1130; // leaves room for a two-line heading above the top zone label
-  const r = 400;
+  const cy = GAUGE.cy; // leaves room for a two-line heading above the top zone label
+  const r = GAUGE.r;
   const pos = interpolate(f, [30, 90], [v.from ?? v.to, v.to], { ...clamp, easing: inOut });
   const ang = (p: number) => Math.PI * (1 - p / 100); // 0 → left, 100 → right
   const pt = (p: number, rr: number) => [cx + rr * Math.cos(ang(p)), cy - rr * Math.sin(ang(p))];
@@ -172,7 +172,7 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
       ) : (
         <InkContext.Provider value={{ text: INK, textSub: "rgba(34,32,28,0.8)", textMuted: GREY, surface: "#FFFFFF", pill: "#EAE4D8", hairline: RULE, bg: PAPER }}>
           <div style={{ position: "absolute", top: DIAGRAM_TOP, left: 96, width: 888 }}>
-            <DiagramBody v={v} flowHeight={480} />
+            <DiagramBody v={v} flowHeight={DIAGRAM_SIZE.flow} graphHeight={DIAGRAM_SIZE.graph} cupSize={DIAGRAM_SIZE.cup} />
           </div>
         </InkContext.Provider>
       )}
@@ -181,16 +181,15 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
       </In>
       {/* the gauge's lower band (as in the storyboard): the episode's drawing left, the reason right */}
       {L.doodle ? (
-        <In at={70} style={{ top: 1440, left: 40 }}>
-          <Doodle subject={subjectFor(ep.id)} size={440} />
+        <In at={70} style={{ top: L.bandTop, left: SCALE_DOODLE.left }}>
+          <Doodle subject={subjectFor(ep.id)} size={SCALE_DOODLE.size} />
         </In>
       ) : null}
-      {L.showNote ? (
-        <In at={80} style={{ top: L.noteTop - 26, left: L.noteLeft, width: L.noteWidth }}>
-          <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
-          <div style={T(NOTE_SIZE, 500, GREY)}>{ep.why}</div>
-        </In>
-      ) : null}
+      {/* the reason is always on screen (validation rejects content whose reason does not fit) */}
+      <In at={80} style={{ top: L.bandTop, left: L.noteLeft, width: L.noteWidth }}>
+        <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
+        <div style={T(NOTE_SIZE, 500, GREY)}>{ep.why}</div>
+      </In>
     </LabFrame>
   );
 };

@@ -1,98 +1,48 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { CURRICULUM, LIMITS, buildCardsData, fallbackLessonContent } from "./content-format.mjs";
-import {
-  COLUMN,
-  CONTENT_BOTTOM,
-  EFFECT,
-  LOW_COLUMN,
-  LOW_Y,
-  MARGIN,
-  effectLayout,
-  endLayout,
-  headingBottom,
-  tipsLayout,
-  visualLayout,
-  whyLayout,
-} from "../src/looks/safe-layout.mjs";
-import { VESSELS, vesselFor } from "../src/looks/vessels-data.mjs";
+import { CURRICULUM, LIMITS, buildCardsData, fallbackLessonContent, validateDailyContent } from "./content-format.mjs";
+import { LOW_COLUMN, MARGIN, RIGHT_LIMIT, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
+import { VESSELS } from "../src/looks/vessels-data.mjs";
 
-// Review 2026-09-26 (rounds 1 and 2): no text of the lab look may reach under
-// the Reels / Shorts UI — every text block ends at or above contentBottom
-// (1560) and, below y 1000, ends left of the action-button column
-// (x ≤ 1080 − 96 − 80 = 904) — for every curriculum episode and for the
-// longest content a routine may write.
+// Review 2026-09-26 (rounds 1-3): every text of the lab look sits where the
+// Reels / Shorts UI leaves it readable — bottom ≤ contentBottom (1560) and,
+// below y 1000, right edge ≤ 904 (action buttons) — and the diagram scene's
+// reason (lesson.why) is always on screen, for every curriculum episode and
+// for the longest content a routine may write. Vessel sizes come from
+// src/looks/vessels-data.mjs, the same numbers the renderer uses.
 
 const theme = readFileSync(new URL("../src/cards/theme.ts", import.meta.url), "utf-8");
-const RIGHT_LIMIT = 1080 - MARGIN - 80; // 904
-const withTo = (l) => (l.endsWith("と") ? l : `${l}と`);
-
-function scenes(data) {
-  const s = Object.fromEntries(data.slides.map((x) => [x.kind, x]));
-  const why = s["lesson-why"];
-  const kind = vesselFor(why.motion.type);
-  const v = VESSELS[kind];
-  const labels = kind === "cups" ? [withTo(why.sides[1].label), withTo(why.sides[0].label)] : null;
-  return {
-    why: whyLayout({ heading: `${why.hook}と`, core: why.core, meters: why.motion.meters.length, box: v.box, maxScale: v.maxScale, labels, labelX: v.labelX }),
-    visual: visualLayout({ type: s["lesson-visual"].visual.type, caption: s["lesson-visual"].visual.caption, why: why.why }),
-    effect: effectLayout(s["lesson-effect"].sides),
-    tips: tipsLayout(s["lesson-tips"].tips),
-    end: endLayout(data.ending),
-  };
-}
-
-/** A text box [top, bottom] × [left, right]: above the UI, and clear of the buttons once below y 1000. */
-function box(label, { top, bottom, left, right }) {
-  assert.ok(bottom <= CONTENT_BOTTOM, `${label}: ends at y ${bottom} (max ${CONTENT_BOTTOM})`);
-  if (bottom > LOW_Y) assert.ok(right <= RIGHT_LIMIT, `${label}: reaches x ${right} below y ${LOW_Y} (max ${RIGHT_LIMIT})`);
-  assert.ok(left >= 0 && right <= 1080 && top < bottom, `${label}: outside the frame or empty`);
-}
-
-function assertInside(label, L) {
-  const w = L.why;
-  box(`${label} why core`, { top: w.coreTop, bottom: w.coreBottom, left: w.coreLeft, right: w.coreRight });
-  box(`${label} why meters`, { top: w.metersTop, bottom: w.coreTop - 50, left: MARGIN, right: w.coreRight });
-  for (const [i, b] of w.labels.entries()) box(`${label} why cup name ${i}`, b);
-  const labelH = w.labels.length ? Math.max(...w.labels.map((b) => b.height)) : 0;
-  assert.ok(w.metersTop > w.drawnBottom + labelH, `${label} why: the drawing (to ${w.drawnBottom}) runs into the meters (${w.metersTop})`);
-  assert.ok(w.scale >= 0.45, `${label} why: the drawing shrank to ${w.scale}`);
-
-  const v = L.visual;
-  box(`${label} diagram caption`, { top: v.captionTop, bottom: v.captionBottom, left: MARGIN, right: v.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
-  if (v.showNote) box(`${label} diagram note`, { top: v.noteTop, bottom: v.noteBottom, left: v.noteLeft, right: v.noteLeft + v.noteWidth });
-
-  for (const [i, r] of L.effect.entries()) {
-    const left = 60 + EFFECT.cup + 40;
-    box(`${label} both ways row ${i}`, { top: r.top, bottom: r.bottom, left, right: left + r.width });
-  }
-  L.tips.forEach((r, i) => {
-    box(`${label} tip ${i}`, { top: r.top, bottom: r.bottom, left: MARGIN, right: MARGIN + r.width + 20 + r.doodle });
-    if (i > 0) assert.ok(r.top >= L.tips[i - 1].bottom + 10, `${label} tip ${i}: overlaps the tip above`);
-  });
-  const e = L.end;
-  box(`${label} ending next`, { top: e.nextTop, bottom: e.nextBottom, left: MARGIN, right: e.lowRight });
-  box(`${label} ending signature`, { top: e.signatureTop, bottom: e.bottom, left: MARGIN, right: e.lowRight });
-}
+const built = (ep) => buildCardsData(fallbackLessonContent(ep, "2026-09-27"), {});
 
 test("the layout uses the theme's content bottom and clearance", () => {
   assert.match(theme, /contentBottom: 1560/);
   assert.match(theme, /actionColumnClearance: 80/);
   assert.equal(LOW_COLUMN, 1080 - MARGIN * 2 - 80);
   assert.equal(MARGIN + LOW_COLUMN, RIGHT_LIMIT);
+  assert.equal(RIGHT_LIMIT, 904);
 });
 
-test("every curriculum episode: all lab-look text ends above the Reels UI and left of the action buttons", () => {
+test("every curriculum episode fits: text above the Reels UI, left of the action buttons, the reason always shown", () => {
   for (const ep of CURRICULUM.episodes) {
-    const data = buildCardsData(fallbackLessonContent(ep, "2026-09-27"), {});
-    assertInside(ep.id, scenes(data));
+    const data = built(ep);
+    assert.deepEqual(layoutProblems(data, VESSELS), [], ep.id);
+    const L = labLayout(data, VESSELS);
+    assert.ok(L.visual.fits, `${ep.id}: the diagram's reason does not fit`);
     assert.ok(headingBottom(`${ep.lesson.hook}と`) < 700, `${ep.id}: heading runs three lines`);
   }
 });
 
+test("cups follow right under the drawing: no gap between the cup names and the meters", () => {
+  for (const ep of CURRICULUM.episodes.filter((e) => e.lesson.motion.type === "compare")) {
+    const w = labLayout(built(ep), VESSELS).why;
+    const namesBottom = Math.max(...w.labels.map((b) => b.bottom));
+    assert.ok(w.metersTop - namesBottom <= 60, `${ep.id}: ${Math.round(w.metersTop - namesBottom)}px between the cup names and the meters`);
+  }
+});
+
 test("the longest content a routine may write still fits", () => {
-  const base = buildCardsData(fallbackLessonContent(CURRICULUM.episodes[0], "2026-09-27"), {});
+  const base = built(CURRICULUM.episodes[0]);
   const longest = (xs) => [...xs].sort((a, b) => b.length - a.length)[0];
   const long = (n) => "あ".repeat(n);
   for (const type of ["liquid", "meter", "compare", "dissolve"]) {
@@ -109,7 +59,16 @@ test("the longest content a routine may write still fits", () => {
       s["lesson-effect"].sides = [0, 1].map(() => ({ label: long(LIMITS.effectLabel), taste: long(LIMITS.effectTaste) }));
       s["lesson-tips"].tips = [0, 1, 2].map(() => ({ problem: long(LIMITS.tipProblem), fix: long(LIMITS.tipFix) }));
       data.ending.next = long(LIMITS.word + LIMITS.ask);
-      assertInside(`max ${type}/${vtype}`, scenes(data));
+      assert.deepEqual(layoutProblems(data, VESSELS), [], `max ${type}/${vtype}`);
     }
   }
+});
+
+test("content that cannot fit is reported (validation then falls back instead of hiding text)", () => {
+  const data = built(CURRICULUM.episodes.find((e) => e.lesson.visual.type === "scale"));
+  data.slides.find((x) => x.kind === "lesson-why").why = "あ".repeat(80);
+  assert.ok(layoutProblems(data, VESSELS).some((p) => p.startsWith("diagram: reason")));
+  // and validation carries the layout problems (the sample fits)
+  const sample = JSON.parse(readFileSync(new URL("../data/samples/brew-lesson.sample.json", import.meta.url), "utf-8"));
+  assert.deepEqual(validateDailyContent(sample).errors, []);
 });

@@ -35,6 +35,8 @@
 import { readFileSync } from "fs";
 import { scanBannedTerms } from "./brand-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
+import { layoutProblems } from "../src/looks/safe-layout.mjs";
+import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // The YouTube limits live in youtube-limits.mjs.
 export { youtubeSafe, youtubeTitle };
@@ -143,8 +145,8 @@ const RECIPE_NUMBER_RULES = [
   [/\d+\s*[:/]\s*\d+|\d+\s*[対比]\s*\d+/u, "a time or a ratio (2:30 / 1:15 / 1対15 / 1/15)"],
   [new RegExp(`(?:ダイヤル|目盛り?|メモリ)\\s*(?:\\d|${K1}|十)`, "u"), "a grinder setting (ダイヤル3 / 目盛り二つ)"],
   // spoons, cups, pieces with a number: 大さじ2 / 小さじ一 / スプーン2杯 / 山盛り1杯 / 氷を3個
-  // (一杯ずつ / 一口 / 1杯分 stay: they are not an amount to copy)
-  [new RegExp(`(?:大さじ|小さじ|さじ)\\s*(?:\\d|${K1}|十|半)|\\d+(?:\\.\\d+)?\\s*(?:杯(?!分)|個)|[二三四五六七八九十]\\s*(?:杯(?!分)|個)`, "u"), "a spoonful, cup or piece count (大さじ2 / スプーン2杯 / 3個)"],
+  // (一杯ずつ / 一口 / 1杯分 / 2杯目 / 3個目 stay: they are not an amount to copy)
+  [new RegExp(`(?:大さじ|小さじ|さじ|スプーン|山盛り)\\s*(?:\\d|${K1}|十|半)|\\d+(?:\\.\\d+)?\\s*(?:杯(?!分|目)|個(?!目))|[二三四五六七八九十]\\s*(?:杯(?!分|目)|個(?!目))`, "u"), "a spoonful, cup or piece count (大さじ2 / スプーン2杯 / 3個)"],
   // decimals and fractions: 0.5 / ½ (NFKC turns ½ into 1⁄2)
   [/\d+\.\d+|\d\s*[⁄∕]\s*\d/u, "a decimal or a fraction (0.5 / ½)"],
   // a bare number of two digits or more (湯温は92くらい), except 第28回 / 36回 / V60 and other names
@@ -708,6 +710,10 @@ export function validateDailyContent(content, { today, expectedEpisode } = {}) {
     for (const [label, num, text] of recipeNumberHits(published)) {
       if (num) errors.push(`${label} must not carry a recipe number — ${num}: ${quote(text)}`);
     }
+    // The video draws every text where the Reels / Shorts UI leaves it readable
+    // (src/looks/safe-layout.mjs): content that cannot fit fails here, and the
+    // day falls back to the evergreen lesson instead of hiding or clipping text.
+    for (const p of layoutProblems(data, VESSELS)) errors.push(`does not fit the video — ${p}; shorten that text`);
     for (const hit of scanBannedTerms(published)) {
       errors.push(`${hit.label} must not say ${JSON.stringify(hit.term)} — ${hit.why}: ${quote(hit.text)}`);
     }

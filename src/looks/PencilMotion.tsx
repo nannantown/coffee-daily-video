@@ -160,7 +160,7 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
   const v = VESSELS[kind];
   // cup names: [the other way, today's way] under [left cup, right cup] (the right cup holds today's coffee)
   const cupNames = kind === "cups" ? [withTo(sides[1]?.label ?? ""), withTo(sides[0]?.label ?? "")] : null;
-  const L = whyLayout({ heading, core, meters: motion.meters.length, box: v.box, maxScale: v.maxScale, labels: cupNames, labelX: v.labelX });
+  const L = whyLayout({ heading, core, meters: motion.meters.length, box: v.box, maxScale: v.maxScale, labels: cupNames });
   const level = (m: number) => v.interiorBottom - (v.interiorBottom - v.interiorTop) * m;
   // plate → screen: scale about the frame's centre line, the box's top at L.top
   const place = `translate(${540 - 540 * L.scale}px, ${L.top - v.box.top * L.scale}px) scale(${L.scale})`;
