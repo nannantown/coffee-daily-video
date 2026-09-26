@@ -10,7 +10,6 @@ export interface Vessel {
   box: { top: number; bottom: number }; // the drawing's vertical extent on the plate
   maxScale: number; // never drawn bigger than this
   tip?: { x: number; y: number }; // dripper: where the particles leave the grounds
-  labelX?: number[]; // cups: centre x of each cup on the plate, left to right
 }
 
 export type VesselKind = "server" | "dripper" | "cups";

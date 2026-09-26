@@ -37,7 +37,6 @@ export const VESSELS = {
     interiorBottom: 1185,
     box: { top: 890, bottom: 1230 },
     maxScale: 1.05, // the two cups span x 130-1030 on the plate: wider would cut the right handle
-    labelX: [310, 780],
   },
 };
 
