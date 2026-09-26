@@ -129,5 +129,5 @@ export interface CoffeeCardsProps {
   ending: CtaEnding;
   timeline: CardTimeline;
   withAudio?: boolean;
-  look?: "lab" | "photo" | "still"; // preview a candidate look (src/looks/); unset = PRODUCTION_LOOK
+  look?: "lab" | "photo" | "still" | "classic"; // a candidate look (src/looks/) or the classic cards (a plate is missing); unset = PRODUCTION_LOOK
 }

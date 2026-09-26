@@ -121,7 +121,7 @@ const TipsScene: React.FC<{ look: Look; ep: LookEpisode; slide: LessonTipsSlide 
         <At key={tip.problem} top={560 + i * 210} at={12 + i * 10} style={{ right: 176 }}>
           <div style={{ height: 2, background: t.ink.hairline, marginBottom: 26 }} />
           <div style={clampType("aux", 500, t.mark)}>{tip.problem}</div>
-          <div style={clampType("body", 700, t.head, { marginTop: 6 })}>→ {tip.fix}</div>
+          <div style={clampType("body", 700, t.head, { marginTop: 6 })}>{tip.fix}</div>
         </At>
       ))}
     </AbsoluteFill>

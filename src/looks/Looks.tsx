@@ -106,9 +106,9 @@ const EffectRows: React.FC<{
 }> = ({ ep, top, align, ink, sub, mark, rule }) => (
   <>
     {ep.effect.map((e, i) => (
-      <In key={e.label} at={14 + i * 14} style={{ top: top + i * 150, left: 96, right: align === "center" ? 96 : 176 }}>
+      <In key={e.label} at={14 + i * 14} style={{ top: top + i * 180, left: 96, right: align === "center" ? 96 : 176 }}>
         {rule ? <div style={{ height: 2, background: rule, marginBottom: 26 }} /> : null}
-        <div style={{ display: "flex", alignItems: "baseline", gap: 24, justifyContent: align === "center" ? "center" : "flex-start", whiteSpace: "nowrap" }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 24, justifyContent: align === "center" ? "center" : "flex-start", flexWrap: "wrap", columnGap: 24, rowGap: 0 }}>
           <span style={type("body", 500, i === 0 ? mark : sub)}>{e.label}と</span>
           <span style={type("body", 500, sub)}>→</span>
           <span style={type("body", 700, ink)}>{e.taste}</span>

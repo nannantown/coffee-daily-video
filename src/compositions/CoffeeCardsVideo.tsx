@@ -42,7 +42,7 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
  */
 export const CoffeeCardsVideo: React.FC<CoffeeCardsProps> = (props) => {
   // A look passed in the props (previews of a candidate) wins over the production one.
-  const look = props.look ?? PRODUCTION_LOOK;
+  const look = props.look === "classic" ? null : (props.look ?? PRODUCTION_LOOK);
   if (look) return <LookVideo {...props} look={look} />;
   const { slides, ending, timeline, withAudio = true } = props;
   const pages = slides.length + 1;
