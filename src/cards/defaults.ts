@@ -26,6 +26,20 @@ export const defaultCardsProps: CoffeeCardsProps = {
       heading: "なぜ変わる？",
       hook: "お湯の温度を下げる",
       why: "熱いほど苦味の成分がよく溶ける",
+      core: "温度を下げると、苦味の成分が溶けにくくなる",
+      motion: {
+        type: "liquid",
+        shade: { from: 70, to: 50 },
+        meters: [
+          { label: "苦味", from: 70, to: 40 },
+          { label: "酸味", from: 40, to: 65 },
+          { label: "甘味", from: 50, to: 55 },
+        ],
+      },
+      sides: [
+        { label: "下げる", taste: "苦味が引き、すっきり" },
+        { label: "上げる", taste: "苦味とコクが増える" },
+      ],
       narration: "",
     },
     {
@@ -36,8 +50,8 @@ export const defaultCardsProps: CoffeeCardsProps = {
         caption: "下げるほど苦味が控えめ",
         label: "湯温",
         zones: ["低め", "ふつう", "高め"],
-        from: 60,
-        to: 35,
+        from: 55,
+        to: 20,
       },
       narration: "",
     },

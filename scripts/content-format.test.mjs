@@ -347,10 +347,10 @@ test("validation rejects content the cards cannot show", () => {
 test("recipe numbers never reach a viewer (owner decision 2026-09-26)", () => {
   const rejected = [
     "粉15g", "お湯240グラム", "200ml", "30cc", "92℃", "９２℃", "88度で", "30秒蒸らす", "3分で落とす", "2:30",
-    "1:15", "1対16", "TDS1.3%", "粉の2倍", "3投目", "1段粗く", "十五グラム", "九十二度", "二分半", "15 g",
+    "1:15", "1対16", "TDS1.3%", "粉の2倍", "3投に増やす", "1段粗く", "三分", "百度近く", "一対十五", "ダイヤル3", "湯温は92くらい", "3度下げる", "十五グラム", "九十二度", "二分半", "15 g",
   ];
   for (const text of rejected) assert.ok(recipeNumberReason(text), `${text} must be rejected`);
-  const allowed = ["初級 第4回", "1つだけ変える", "1回に1つ", "もう一度", "十分に蒸らす", "半分くらい", "V60", "2つの味", "段階的に"];
+  const allowed = ["初級 第4回", "上級 第28回", "1つだけ変える", "1回に1つ", "もう一度", "もう1度", "1度だけ", "1投目", "3分の1", "数十秒", "十分に蒸らす", "半分くらい", "V60", "2つの味", "段階的に"];
   for (const text of allowed) assert.equal(recipeNumberReason(text), null, text);
 
   // wherever the routine writes it
@@ -576,4 +576,28 @@ test("youtubeTitle shortens only the middle so the title fits 100 characters", (
     const c = buildCardCaptions(buildCardsData({ date: "2026-09-23", format: "brew-lesson", lesson }, {}), "2026/09/23");
     assert.ok(charLen(c.youtube.title) <= 100 && c.youtube.title.endsWith(" #Shorts"), c.youtube.title);
   }
+});
+
+test("every episode shows its core change with one of the four motions, and all four are used", () => {
+  const types = new Set();
+  for (const e of curriculum.episodes) {
+    assert.ok(e.lesson.core, `${e.id} has no core change`);
+    assert.ok(["liquid", "meter", "compare", "dissolve"].includes(e.lesson.motion?.type), `${e.id} motion type`);
+    types.add(e.lesson.motion.type);
+  }
+  assert.deepEqual([...types].sort(), ["compare", "dissolve", "liquid", "meter"]);
+  const bad = (mutate) => {
+    const content = clone(sample);
+    mutate(content.lesson);
+    return errorsOf(content);
+  };
+  assert.ok(bad((l) => delete l.motion).some((e) => e.includes("lesson.motion is required")));
+  assert.ok(bad((l) => (l.motion.type = "spin")).some((e) => e.includes("motion.type")));
+  assert.ok(bad((l) => (l.motion.shade.to = 140)).some((e) => e.includes("shade")));
+  assert.ok(bad((l) => (l.motion.meters = [])).some((e) => e.includes("meters must have 1-3")));
+  assert.ok(bad((l) => (l.motion.meters[0].label = "苦味90")).some((e) => e.includes("recipe number") || e.includes("meters[0].label is")));
+  assert.ok(bad((l) => delete l.core).some((e) => e.includes("lesson.core is required")));
+  const why = buildCardsData(sample, {}).slides.find((s) => s.kind === "lesson-why");
+  assert.deepEqual(why.motion, sample.lesson.motion);
+  assert.equal(why.core, sample.lesson.core);
 });

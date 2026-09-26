@@ -93,6 +93,7 @@ export const VISUAL_TYPES = {
   scale: "目盛りで見る",
 };
 export const FLOW_SHAPES = ["cone", "flat", "immersion"];
+export const MOTION_TYPES = ["liquid", "meter", "compare", "dissolve"];
 
 // Display limits. The cover carries one giant word and the short question that
 // follows it (湯温 + を上げると？); everything else is one phrase per line.
@@ -105,6 +106,8 @@ export const LIMITS = {
   why: 24, // why it happens
   effectLabel: 6, // one side of the change: 上げる / 下げる / 細かくする
   effectTaste: 12, // how the cup tastes on that side
+  core: 24, // the one change the episode is about, under the why scene's picture
+  meterLabel: 4, // 苦味 / 酸味 / すっきり
   tipProblem: 10,
   tipFix: 16,
   narrationTotal: 260, // IG Reels rejects > 60s videos
@@ -114,7 +117,7 @@ export const LIMITS = {
   visualResult: 10,
   visualNote: 10,
   graphTick: 5,
-  zoneLabel: 6,
+  zoneLabel: 4, // scale / graph zone names: 4 × 64px + arrow + 4 × 96px fits the 824px gauge row
 };
 
 // Cold brew is a food-safety case: it steeps for hours, so a cold-brew lesson
@@ -127,14 +130,19 @@ export const COLD_BREW = { fridgeWord: "冷蔵庫" };
 // stay allowed: 第4回 / 1つ / 1回 / 2つの味.
 const RECIPE_NUMBER_RULES = [
   [
-    /\d+(?:\.\d+)?\s*(?:g(?![a-z])|グラム|kg|mg|ml|ミリ|cc|l(?![a-z])|リットル|°|度|秒|分|min(?:ute)?s?(?![a-z])|sec(?:ond)?s?(?![a-z])|%|パーセント|倍|ppm|投|段(?!階)|クリック)/iu,
+    // 15g / 240グラム / 200ml / 92°C / 30秒 / 3分 / 1.3% / 2倍 / 3投 / 1段 … (not 3分の1, 1ミリも, 1投目, 数十秒)
+    /\d+(?:\.\d+)?\s*(?:g(?![a-z])|grams?|グラム|kg|mg|ml|ミリ(?![もの])|cc|l(?![a-z])|oz|リットル|°|秒|分(?!の)|min(?:ute)?s?(?![a-z])|sec(?:ond)?s?(?![a-z])|s(?![a-z])|m(?![a-z])|%|パーセント|倍|ppm|投(?!目)|段(?!階)|クリック|clicks?|番(?!目)|メモリ|cups?|deg|[CF](?![a-z]))/iu,
     "an amount, a temperature, a time, a ratio or a grinder setting",
   ],
-  [/\d+\s*:\s*\d+/u, "a time or a ratio (2:30 / 1:15)"],
-  [/\d+\s*対\s*\d+/u, "a ratio (1対15)"],
+  // 3度下げる / 92度 (but もう1度 / 1度だけ / 2度目 / 1度に are counting words)
+  [/\d{2,}\s*度|(?<!もう)\d\s*度(?!目|だけ|に|きり|も)/u, "a temperature (92度 / 3度下げる)"],
+  [/\d+\s*[:/]\s*\d+|\d+\s*[対比]\s*\d+/u, "a time or a ratio (2:30 / 1:15 / 1対15 / 1/15)"],
+  [/(?:ダイヤル|目盛り?|メモリ)\s*\d/u, "a grinder setting (ダイヤル3)"],
+  // a bare number of two digits or more (湯温は92くらい), except 第28回 / 36回 / V60 and other names
+  [/(?<![A-Za-z第\d.])\d{2,}(?![\d.]|\s*(?:回|つ|人|本|種|代|年|日|月))/u, "a bare number (92くらい)"],
   [
-    /[〇一二三四五六七八九十百千]+\s*(?:グラム|ミリ|リットル|秒|パーセント)|[二三四五六七八九]十[一二三四五六七八九]?\s*度|[一二三四五六七八九十]+分半/u,
-    "a number in kanji (十五グラム / 九十度 / 二分半)",
+    /(?<!数)[〇一二三四五六七八九十百千]+\s*(?:グラム|g(?![a-z])|ミリ(?![もの])|ml|cc|リットル|秒|パーセント|°|クリック|段(?!階))|[二三四五六七八九百]十[一二三四五六七八九]?\s*度|百\s*度|[一二三四五六七八九][〇一二三四五六七八九]\s*度|(?<![十数])[一二三四五六七八九]分(?!の|け|か|野|類|解|量)|[一二三四五六七八九十]+分半|[一二三四五六七八九十]+\s*対\s*[一二三四五六七八九十]+/u,
+    "a number in kanji (十五グラム / 九十度 / 三分 / 一対十五)",
   ],
 ];
 
@@ -344,7 +352,8 @@ function checkLen(errors, label, value, max) {
 function lessonTexts(lesson, prefix) {
   const out = [];
   const add = (label, v) => typeof v === "string" && out.push([label, v]);
-  for (const k of ["word", "ask", "hook", "topic", "why"]) add(`${prefix}.${k}`, lesson[k]);
+  for (const k of ["word", "ask", "hook", "topic", "why", "core"]) add(`${prefix}.${k}`, lesson[k]);
+  (Array.isArray(lesson.motion?.meters) ? lesson.motion.meters : []).forEach((x, i) => add(`${prefix}.motion.meters[${i}].label`, x?.label));
   (Array.isArray(lesson.effect) ? lesson.effect : []).forEach((e, i) => {
     add(`${prefix}.effect[${i}].label`, e?.label);
     add(`${prefix}.effect[${i}].taste`, e?.taste);
@@ -445,6 +454,32 @@ export function validateVisual(v, errors, prefix = "lesson.visual") {
   }
 }
 
+
+/**
+ * How the why scene shows the change (owner 2026-09-26: 「実際の苦味が出る表現が
+ * イラストの中で表現されてない」): the liquid gets darker or lighter, taste
+ * meters move, two cups drift apart, or particles dissolve out of the grounds.
+ * Every value is a position 0-100 — nothing is printed as a number.
+ */
+export function validateMotion(v, errors, prefix = "lesson.motion") {
+  if (!v || typeof v !== "object" || Array.isArray(v)) {
+    errors.push(`${prefix} is required: { type: ${MOTION_TYPES.join(" | ")}, shade: { from, to }, meters: [{ label, from, to }] } (copy it from today's draft)`);
+    return;
+  }
+  if (!MOTION_TYPES.includes(v.type)) errors.push(`${prefix}.type must be one of ${MOTION_TYPES.join(", ")}`);
+  const pos = (x) => Number.isInteger(x) && x >= 0 && x <= 100;
+  if (!v.shade || !pos(v.shade.from) || !pos(v.shade.to)) errors.push(`${prefix}.shade.from / to must be integers 0-100 (how dark the coffee is before / after)`);
+  const m = v.meters;
+  if (!Array.isArray(m) || m.length < 1 || m.length > 3) {
+    errors.push(`${prefix}.meters must have 1-3 items`);
+  } else {
+    m.forEach((x, i) => {
+      checkLen(errors, `${prefix}.meters[${i}].label`, x?.label, LIMITS.meterLabel);
+      if (!pos(x?.from) || !pos(x?.to)) errors.push(`${prefix}.meters[${i}].from / to must be integers 0-100`);
+    });
+  }
+}
+
 /** The curriculum entry of an episode id (own ids only), or undefined. */
 export function episodeById(id, curriculum = CURRICULUM) {
   return typeof id === "string" ? curriculum.episodes.find((e) => e.id === id) : undefined;
@@ -538,6 +573,8 @@ export function validateLesson(lesson, errors, prefix = "lesson") {
   checkLen(errors, `${prefix}.hook`, lesson.hook, LIMITS.hook);
   checkLen(errors, `${prefix}.topic`, lesson.topic, LIMITS.topic);
   checkLen(errors, `${prefix}.why`, lesson.why, LIMITS.why);
+  checkLen(errors, `${prefix}.core`, lesson.core, LIMITS.core);
+  validateMotion(lesson.motion, errors, `${prefix}.motion`);
 
   // The two sides of the change: today's move first, then the other way.
   const eff = lesson.effect;
@@ -735,6 +772,9 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
       heading: "なぜ変わる？",
       hook: r.hook,
       why: r.why,
+      core: r.core,
+      motion: structuredClone(r.motion),
+      sides: r.effect.map((e) => ({ label: e.label, taste: e.taste })),
       narration: pick(nar.why, `${r.hook}と、なぜ味が変わるのか。${r.why}。`),
     },
     // The diagram: the change, drawn (src/cards/Diagrams.tsx).

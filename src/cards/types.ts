@@ -27,7 +27,17 @@ export interface LessonWhySlide {
   heading: string;
   hook: string; // the one change: お湯の温度を下げる
   why: string; // why the cup changes
+  core: string; // the one change the episode is about
+  motion: LessonMotion;
+  sides: { label: string; taste: string }[];
   narration: string;
+}
+
+// How the why scene shows the change; every value is a 0-100 position, never printed.
+export interface LessonMotion {
+  type: "liquid" | "meter" | "compare" | "dissolve";
+  shade: { from: number; to: number }; // how dark the coffee is
+  meters: { label: string; from: number; to: number }[];
 }
 
 export interface LessonEffectSlide {

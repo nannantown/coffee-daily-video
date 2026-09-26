@@ -126,8 +126,8 @@ node scripts/pdca-summary.mjs
       "caption": "下げるほど苦味が控えめ",
       "label": "湯温",
       "zones": ["低め", "ふつう", "高め"],
-      "from": 60,
-      "to": 35
+      "from": 55,
+      "to": 20
     },
     "narration": {
       "title": "お湯の温度を下げると、どうなる？苦味が引いて、酸が立ちます。",

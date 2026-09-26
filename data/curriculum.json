@@ -37,6 +37,26 @@
             "fix": "早めに落とし切る"
           }
         ],
+        "core": "時間を延ばすほど、成分が多く溶け出す",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 35,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 35,
+              "to": 70
+            },
+            {
+              "label": "苦味",
+              "from": 30,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "時間が延びるほど濃く出る",
@@ -96,6 +116,26 @@
             "fix": "計量スプーンで粉を量る"
           }
         ],
+        "core": "量ると、毎回同じ濃さになる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 40,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ブレ",
+              "from": 80,
+              "to": 20
+            },
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "量るだけで味がそろう",
@@ -146,6 +186,26 @@
             "fix": "お湯を少し足す"
           }
         ],
+        "core": "お湯を減らすと、同じ粉でも濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 70
+            },
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "お湯を減らすと濃くなる",
@@ -192,6 +252,26 @@
             "fix": "挽き目を粗くする"
           }
         ],
+        "core": "細かいほど、成分が早く溶け出す",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 35,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 30,
+              "to": 60
+            },
+            {
+              "label": "酸味",
+              "from": 60,
+              "to": 40
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "細かいほど濃く出る",
@@ -241,6 +321,26 @@
             "fix": "もう少しだけ動かす"
           }
         ],
+        "core": "少しずつ動かすと、味の変化を追える",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 50,
+            "to": 56
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 45,
+              "to": 55
+            },
+            {
+              "label": "酸味",
+              "from": 55,
+              "to": 45
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "少しずつ動かして比べる",
@@ -287,6 +387,31 @@
             "fix": "挽き目も少し粗くする"
           }
         ],
+        "core": "温度を下げると、苦味の成分が溶けにくくなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 70,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 70,
+              "to": 40
+            },
+            {
+              "label": "酸味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 50,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "下げるほど苦味が控えめ",
@@ -296,8 +421,8 @@
             "ふつう",
             "高め"
           ],
-          "from": 60,
-          "to": 35
+          "from": 55,
+          "to": 20
         }
       }
     },
@@ -333,6 +458,26 @@
             "fix": "もう少し早く止める"
           }
         ],
+        "core": "早く止めると、終わりの渋みが入らない",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 65,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "渋み",
+              "from": 70,
+              "to": 30
+            },
+            {
+              "label": "濃さ",
+              "from": 65,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "終わりぎわに渋みが増える",
@@ -389,6 +534,26 @@
             "fix": "蒸らしを少し長くとる"
           }
         ],
+        "core": "蒸らすと、湯が全体にしみて均一に溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 40,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 70,
+              "to": 25
+            },
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "蒸らすと湯が全体にしみる",
@@ -443,6 +608,26 @@
             "fix": "少し太めに注ぐ"
           }
         ],
+        "core": "ゆっくり注ぐと、湯がとどまって濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "ゆっくり注ぐと湯がとどまる",
@@ -495,6 +680,26 @@
             "fix": "もう少し待ってから飲む"
           }
         ],
+        "core": "浸す時間が長いほど、濃くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 25,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 25,
+              "to": 65
+            },
+            {
+              "label": "コク",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "浸かる時間で濃さが決まる",
@@ -541,6 +746,26 @@
             "fix": "上ずみだけを注ぐ"
           }
         ],
+        "core": "浸して待つと、誰が淹れても同じ味になる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ブレ",
+              "from": 70,
+              "to": 20
+            },
+            {
+              "label": "まろやか",
+              "from": 40,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "通り抜けるか、浸かるか",
@@ -591,6 +816,26 @@
             "fix": "温度を少し戻す"
           }
         ],
+        "core": "温度を上げると、後から出る甘みまで溶ける",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 45,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "上げると酸が丸くなる",
@@ -637,6 +882,26 @@
             "fix": "お湯の温度を下げる"
           }
         ],
+        "core": "粗くすると、溶けすぎが止まる",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 75,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 75,
+              "to": 45
+            },
+            {
+              "label": "雑味",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "粗くすると苦味が引く",
@@ -687,6 +952,31 @@
             "fix": "お湯の温度を上げる"
           }
         ],
+        "core": "短すぎると、甘みが出る前に終わる",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 30,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 25,
+              "to": 60
+            },
+            {
+              "label": "濃さ",
+              "from": 30,
+              "to": 55
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "短すぎると成分が出きらない",
@@ -748,6 +1038,26 @@
             "fix": "少しだけ時間を戻す"
           }
         ],
+        "core": "長すぎると、雑味まで溶け出す",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 80,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 75,
+              "to": 30
+            },
+            {
+              "label": "苦味",
+              "from": 70,
+              "to": 50
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "長すぎると雑味が溶ける",
@@ -811,6 +1121,26 @@
             "fix": "挽き目を少し粗くする"
           }
         ],
+        "core": "深煎りは、低い温度でも苦味が出やすい",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 80,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "苦味",
+              "from": 80,
+              "to": 50
+            },
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "深煎りは低めでまろやか",
@@ -857,6 +1187,26 @@
             "fix": "1回の量を多めにする"
           }
         ],
+        "core": "こまめに注ぐと、濃さがそろって甘くなる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "こまめに注ぐと甘くなる",
@@ -906,6 +1256,26 @@
             "fix": "挽き目を少し細かくする"
           }
         ],
+        "core": "中心に注ぐと、壁の粉が雑味をこす",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 60,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 40,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "壁の粉がフィルターになる",
@@ -958,6 +1328,26 @@
             "fix": "蒸らしの湯を減らす"
           }
         ],
+        "core": "粉全体が湿ると、ムラなく溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 70,
+              "to": 25
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "粉全体が湿る量にする",
@@ -1004,6 +1394,26 @@
             "fix": "挽きたての粉を使う"
           }
         ],
+        "core": "ガスが抜けるほど、湯がしみて厚みが出る",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "蒸らすほど厚みが出る",
@@ -1064,6 +1474,26 @@
             "fix": "ゆっくり注ぐ"
           }
         ],
+        "core": "平底は湯だまりができ、濃さがそろう",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            },
+            {
+              "label": "ムラ",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "底の形で湯の通り方が変わる",
@@ -1117,6 +1547,26 @@
             "fix": "上ずみだけを注ぐ"
           }
         ],
+        "core": "長く浸すほど、コクが増して重くなる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 55,
+            "to": 80
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 45,
+              "to": 75
+            },
+            {
+              "label": "苦味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "浸すほどコクが増す",
@@ -1177,6 +1627,26 @@
             "fix": "もう少し待ってから落とす"
           }
         ],
+        "core": "待つほど、酸の後に甘みが溶け出す",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 45
+            },
+            {
+              "label": "甘味",
+              "from": 30,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "待ってから一気に落とす",
@@ -1229,6 +1699,26 @@
             "fix": "挽き目を少し粗くする"
           }
         ],
+        "core": "紙が吸う油分が、そのままカップに入る",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 40,
+              "to": 75
+            },
+            {
+              "label": "すっきり",
+              "from": 70,
+              "to": 40
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "油分が通るとコクが出る",
@@ -1278,6 +1768,26 @@
             "fix": "軟水の表示を確かめる"
           }
         ],
+        "core": "軟水だと、酸と甘みがはっきり出る",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 55,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "水が変わると酸が変わる",
@@ -1327,6 +1837,21 @@
             "fix": "氷を少し増やす"
           }
         ],
+        "core": "溶けた氷の分を、先に濃くしておく",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 30,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "氷の分を先に引いておく",
@@ -1376,6 +1901,26 @@
             "fix": "最後に軽く回す"
           }
         ],
+        "core": "粉が平らになると、湯が均一に通る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 55,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "ムラ",
+              "from": 65,
+              "to": 25
+            },
+            {
+              "label": "すっきり",
+              "from": 45,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "回すと粉が平らになる",
@@ -1428,6 +1973,21 @@
             "fix": "淹れた後にお湯を足す"
           }
         ],
+        "core": "溶けた成分が多いほど、濃く感じる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 40,
+            "to": 75
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 40,
+              "to": 75
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "溶けた成分が多いほど濃い",
@@ -1437,8 +1997,8 @@
             "ちょうど",
             "濃い"
           ],
-          "from": 45,
-          "to": 65
+          "from": 50,
+          "to": 80
         }
       }
     },
@@ -1475,6 +2035,26 @@
             "fix": "お湯の温度を上げる"
           }
         ],
+        "core": "溶け出す割合が上がると、甘みが出る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 45,
+            "to": 65
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 65
+            },
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 45
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "出す割合で甘みが変わる",
@@ -1522,6 +2102,21 @@
             "fix": "挽き目を動かす"
           }
         ],
+        "core": "濃さはお湯の量、味の出方は挽き目で動く",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 45,
+            "to": 70
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 45,
+              "to": 70
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "2つのつまみは役割が違う",
@@ -1570,6 +2165,21 @@
             "fix": "粉を減らして淹れ直す"
           }
         ],
+        "core": "足すと、味の形はそのままで薄まる",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 75,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "濃さ",
+              "from": 75,
+              "to": 50
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "足すと濃さだけが下がる",
@@ -1617,6 +2227,26 @@
             "fix": "粉をふるってみる"
           }
         ],
+        "core": "細かすぎる粉を除くと、雑味が減る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 70,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 40,
+              "to": 70
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "微粉を減らすと澄んだ味",
@@ -1666,6 +2296,26 @@
             "fix": "挽き目を少し粗くする"
           }
         ],
+        "core": "最後に落ちる湯ほど、雑味が多い",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 65,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 65,
+              "to": 35
+            },
+            {
+              "label": "えぐみ",
+              "from": 60,
+              "to": 30
+            }
+          ]
+        },
         "visual": {
           "type": "graph",
           "caption": "最後の湯ほど雑味が多い",
@@ -1725,6 +2375,26 @@
             "fix": "低く静かに注ぐ"
           }
         ],
+        "core": "低く注ぐと、粉がかき混ざりすぎない",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 60,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 55,
+              "to": 30
+            },
+            {
+              "label": "すっきり",
+              "from": 45,
+              "to": 65
+            }
+          ]
+        },
         "visual": {
           "type": "flow",
           "caption": "高さでかき混ぜ方が変わる",
@@ -1777,6 +2447,26 @@
             "fix": "挽き目を少し細かくする"
           }
         ],
+        "core": "浅煎りは、熱いお湯でやっと甘みが溶ける",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 35,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 75,
+              "to": 55
+            },
+            {
+              "label": "甘味",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
         "visual": {
           "type": "scale",
           "caption": "浅煎りは熱めで甘く",
@@ -1823,6 +2513,21 @@
             "fix": "変えた所をメモする"
           }
         ],
+        "core": "1つずつ変えると、何が効いたか分かる",
+        "motion": {
+          "type": "compare",
+          "shade": {
+            "from": 50,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "迷い",
+              "from": 75,
+              "to": 20
+            }
+          ]
+        },
         "visual": {
           "type": "compare",
           "caption": "1つずつなら原因が分かる",
