@@ -3,6 +3,7 @@ import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurren
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import { DrawnPlate, Flow, MovingPhoto, Ripples, Steam, thermoFor, WhyChain } from "./Explain";
 import { MotionPicture } from "./Motion";
+import { PencilMotion } from "./PencilMotion";
 import type { LessonMotion } from "../cards/types";
 
 /**
@@ -150,7 +151,7 @@ const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
 
 const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
-    {ep.motion ? null : <DrawnPlate src={`looks/${ep.plate}`} />}
+    {ep.motion ? <PencilMotion motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} accent={ep.accent} /> : <DrawnPlate src={`looks/${ep.plate}`} />}
     {!ep.motion && ep.plate.endsWith("-kettle.png") ? (
       <>
         <Steam x={360} y={1290} color={rgba(ep.accent, 0.55)} width={4} />
@@ -162,9 +163,7 @@ const LabWhy: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
     <In at={4} style={{ top: 380, left: 96, right: 96, ...type("head", 700, INK) }}>
       {ep.hook}と
     </In>
-    {ep.motion ? (
-      <MotionPicture motion={ep.motion} core={ep.core ?? ep.why} sides={ep.effect} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, track: "#E4DDCF", glass: "rgba(255,255,255,0.7)" }} />
-    ) : (
+    {ep.motion ? null : (
       <WhyChain why={ep.why} topic={ep.topic} thermo={thermoFor(ep.pillar ?? "", ep.effect[0]?.label ?? "")} ink={{ line: INK, text: INK, sub: GREY, accent: ep.accent, glass: PAPER }} />
     )}
   </AbsoluteFill>
