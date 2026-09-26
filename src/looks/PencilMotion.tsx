@@ -83,7 +83,7 @@ const Drawing: React.FC<{ v: Vessel; children?: React.ReactNode }> = ({ v, child
 /** Hatched pencil bars: the fill is diagonal strokes in the accent, the track a rough outline. */
 const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; top: number; gap: number; start?: number }> = ({ meters, accent, top, gap, start = 40 }) => {
   const f = useCurrentFrame();
-  const labelW = 200;
+  const labelW = 220;
   const barW = 888 - labelW - 20;
   return (
     <>
@@ -107,19 +107,19 @@ const PencilMeters: React.FC<{ meters: LessonMotion["meters"]; accent: string; t
         return (
           <div key={m.label} style={{ position: "absolute", left: 96, top: top + i * gap, width: 888, height: 64, display: "flex", alignItems: "center", opacity: prog(f, 14 + i * 6, 30 + i * 6) }}>
             <div style={{ width: labelW, display: "flex", alignItems: "center", gap: 10, whiteSpace: "nowrap" }}>
-              <span style={T(44, 500, INK)}>{m.label}</span>
+              <span style={T(52, 700, INK)}>{m.label}</span>
               {up || down ? (
                 <svg width={36} height={48} viewBox="0 0 36 48" style={{ opacity: prog(f, t0 + 50, t0 + 66), filter: "url(#rough)" }}>
                   <path d={up ? "M18 44 V6 M5 19 L18 4 L31 19" : "M18 4 V42 M5 29 L18 44 L31 29"} stroke={accent} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               ) : null}
             </div>
-            <svg width={barW + 8} height={44} style={{ overflow: "visible", filter: "url(#rough)" }}>
-              <rect x={2} y={8} width={barW} height={28} rx={3} fill="rgba(34,32,28,0.03)" stroke={GREY} strokeWidth={2} />
-              <rect x={2} y={8} width={w} height={28} rx={3} fill="url(#hatch)" />
-              <rect x={2} y={8} width={w} height={28} rx={3} fill={accent} opacity={0.18} />
+            <svg width={barW + 8} height={52} style={{ overflow: "visible", filter: "url(#rough)" }}>
+              <rect x={2} y={6} width={barW} height={40} rx={4} fill="rgba(34,32,28,0.03)" stroke={GREY} strokeWidth={2.5} />
+              <rect x={2} y={6} width={w} height={40} rx={4} fill="url(#hatch)" />
+              <rect x={2} y={6} width={w} height={40} rx={4} fill={accent} opacity={0.3} />
               {/* where it was */}
-              <line x1={2 + (barW * m.from) / 100} x2={2 + (barW * m.from) / 100} y1={0} y2={44} stroke={GREY} strokeWidth={3} strokeDasharray="4 4" />
+              <line x1={2 + (barW * m.from) / 100} x2={2 + (barW * m.from) / 100} y1={-2} y2={54} stroke={GREY} strokeWidth={3} strokeDasharray="4 4" />
             </svg>
           </div>
         );
@@ -141,7 +141,7 @@ const Particles: React.FC<{ from: { x: number; y: number }; toY: number; density
         const life = ((f * 1.5 + i * 37) % 150) / 150;
         const x = from.x + (rand(i + 5) - 0.5) * 70 * life;
         const y = from.y + life * (toY - from.y);
-        return <circle key={i} cx={x} cy={y} r={7 - life * 2} fill={color} opacity={Math.sin(life * Math.PI) * 0.9} />;
+        return <circle key={i} cx={x} cy={y} r={9 - life * 3} fill={color} opacity={Math.sin(life * Math.PI) * 0.95} />;
       })}
     </svg>
   );
@@ -171,10 +171,10 @@ export const PencilMotion: React.FC<{ motion: LessonMotion; core: string; sides:
         ) : (
           <Pour mask={v.masks[0]} shade={shade} top={level(0.62)} drawIn={pourIn} />
         )}
-        {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={accent} /> : null}
+        {kind === "dripper" && v.tip ? <Particles from={v.tip} toY={level(0.62)} density={interpolate(f, [30, 110], [motion.shade.from, motion.shade.to], clamp)} color={coffeeColor(88)} /> : null}
       </Drawing>
-      <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={96} />
-      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * 96 + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
+      <PencilMeters meters={motion.meters} accent={accent} top={v.metersTop} gap={104} />
+      <div style={{ position: "absolute", left: 96, right: 96, top: v.metersTop + motion.meters.length * 104 + 30, opacity: prog(f, 100, 118), transform: `translateY(${(1 - prog(f, 100, 118)) * 16}px)` }}>
         <div style={{ height: 2, background: "#D6D0C4", marginBottom: 24 }} />
         <div style={T(52, 700, accent)}>{core}</div>
       </div>
