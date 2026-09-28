@@ -1,78 +1,78 @@
 {
-  "date": "2026-09-27",
+  "date": "2026-09-29",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b02-measure",
-    "pillar": "ratio",
-    "method": "kalita-wave",
+    "episode": "b04-grind",
+    "pillar": "grind",
+    "method": "chemex",
     "scene": "hot",
-    "word": "計量",
-    "ask": "で味がそろう？",
-    "hook": "目分量をやめて量る",
-    "topic": "毎回同じ味に近づく",
-    "why": "量のブレが、そのまま味のブレになる",
-    "core": "量ると、毎回同じ濃さになる",
+    "word": "挽き目",
+    "ask": "を細かくすると？",
+    "hook": "挽き目を細かくする",
+    "topic": "濃さとコクが増える",
+    "why": "細かいほど、お湯に触れる面が増える",
+    "core": "細かいほど、成分が早く溶け出す",
     "motion": {
-      "type": "compare",
+      "type": "dissolve",
       "shade": {
-        "from": 40,
-        "to": 55
+        "from": 35,
+        "to": 70
       },
       "meters": [
         {
-          "label": "ブレ",
-          "from": 80,
-          "to": 20
+          "label": "苦味",
+          "from": 30,
+          "to": 60
         },
         {
-          "label": "濃さ",
-          "from": 40,
-          "to": 55
+          "label": "酸味",
+          "from": 60,
+          "to": 40
         }
       ]
     },
     "effect": [
       {
-        "label": "量る",
-        "taste": "毎回同じ味になる"
+        "label": "細かくする",
+        "taste": "濃く、苦味とコク"
       },
       {
-        "label": "量らない",
-        "taste": "日によって味が変わる"
+        "label": "粗くする",
+        "taste": "軽く、すっきり"
       }
     ],
     "tips": [
       {
-        "problem": "毎回味が違う",
-        "fix": "粉もお湯もはかりで量る"
+        "problem": "薄い時",
+        "fix": "挽き目を細かくする"
       },
       {
-        "problem": "はかりが無い時",
-        "fix": "計量スプーンで粉を量る"
+        "problem": "苦すぎる時",
+        "fix": "挽き目を粗くする"
       }
     ],
     "visual": {
       "type": "compare",
-      "caption": "量るだけで味がそろう",
+      "caption": "細かいほど濃く出る",
       "left": {
-        "label": "目分量",
-        "result": "毎回ちがう",
+        "label": "粗い",
+        "result": "軽い・酸が立つ",
         "strength": 2
       },
       "right": {
-        "label": "量る",
-        "result": "毎回同じ",
-        "strength": 3
+        "label": "細かい",
+        "result": "濃い・コク",
+        "strength": 4
       },
       "pick": "right"
     },
     "narration": {
-      "title": "目分量をやめて、粉もお湯も量ります。それだけで、毎回同じ味に近づきます。",
-      "why": "量のブレが、そのまま味のブレになるからです。",
-      "visual": "目分量だと毎回ちがう味に、量ると毎回同じ味に落ち着きます。",
-      "effect": "量ると、毎回同じ味になります。量らないと、日によって味が変わります。",
-      "tips": "味が毎回違うなら、粉もお湯もはかりで量る。はかりが無ければ、計量スプーンで粉を量ります。"
+      "title": "挽き目を細かくすると、どうなる？濃さとコクがぐっと増えます。",
+      "why": "細かいほど、お湯に触れる面が増えて、成分がよく溶け出すからです。",
+      "visual": "細かい方が、カップの色も濃く出ます。",
+      "effect": "細かくすると、濃くて苦味とコクがしっかり。粗くすると、軽くすっきりします。",
+      "tips": "薄いと感じたら、挽き目を少し細かく。苦すぎたら、少し粗くします。"
     }
   }
 }
