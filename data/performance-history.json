@@ -2,59 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "5kgHzDiZy5k",
-      "videoUrl": "https://youtube.com/shorts/5kgHzDiZy5k",
-      "date": "2026-07-02",
-      "title": "【コーヒー豆知識】スイカの種で作る植物ミルク『MILKish』海外カフェで本格採用・アーモンドより水 99% 少ない｜2026/07/02 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "news-en",
-        "description": "Barista Magazine の今週特集 (Cup of Coffee July 1 daily brief 経由で再拡散) から、米 SF の中南米系スタートアップ Força Foods の『MILKish』(スイカの種原料の世界初 SeedMilk) が海外カフェで導入本格化中というトレンドを検出。柱③業界・ビジネスニュース (20%) の食材トレンド枠を埋めつつ、5 週連続不振の news-en を『主人公+striking な 1 数字+実用 TIP』フォーマットで再挑戦する検証第 1 弾。直近 2 日 (social-en / expert-blog) と被らない method 選定。",
-        "sources": [
-          "https://www.baristamagazine.com/watermelon-seeds-are-hitting-the-alternative-milk-scene/",
-          "https://foodinstitute.com/focus/watermelon-seed-milk-a-dairy-alternative-requiring-99-less-water-than-almonds/",
-          "https://forcafoods.com/"
-        ],
-        "query": "watermelon seed milk MILKish Forca Foods barista cafe 2026",
-        "freshness_hours": 96
-      },
-      "stats": {
-        "views": 3,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-16T00:54:11.026Z"
-      },
-      "instagram": {
-        "mediaId": "18098941477904399",
-        "permalink": "https://www.instagram.com/reel/DaRa1WwDxu3/",
-        "views": 50,
-        "reach": 43,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "h-sJMx8iHf0",
       "videoUrl": "https://youtube.com/shorts/h-sJMx8iHf0",
       "date": "2026-07-03",
@@ -3681,7 +3628,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18140980375582303",
@@ -3692,7 +3639,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -3740,7 +3687,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
@@ -3751,7 +3698,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -3799,18 +3746,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
         "permalink": "https://www.instagram.com/reel/Ddc0fEmiBLx/",
         "views": 23,
-        "reach": 16,
+        "reach": 17,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -3858,7 +3805,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18070537547733178",
@@ -3869,7 +3816,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -3918,7 +3865,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18291185986295663",
@@ -3929,7 +3876,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -3977,7 +3924,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "17985764535076749",
@@ -3988,7 +3935,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4036,7 +3983,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18111347096606211",
@@ -4047,7 +3994,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4095,7 +4042,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18184468468412015",
@@ -4106,7 +4053,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4151,7 +4098,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18126481774885696",
@@ -4162,7 +4109,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4208,7 +4155,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18134198506644405",
@@ -4219,7 +4166,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4265,18 +4212,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18442710586130712",
         "permalink": "https://www.instagram.com/reel/Ddxc_0YDPXq/",
-        "views": 122,
-        "reach": 114,
+        "views": 124,
+        "reach": 116,
         "likes": 0,
         "comments": 0,
         "shares": 0,
-        "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "saved": 2,
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4322,18 +4269,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18087075347308772",
         "permalink": "https://www.instagram.com/reel/Dd0C-g9CtQs/",
-        "views": 52,
-        "reach": 45,
+        "views": 53,
+        "reach": 46,
         "likes": 1,
         "comments": 0,
         "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "saved": 1,
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4379,18 +4326,18 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-09-30T02:13:56.762Z"
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18062867264716847",
         "permalink": "https://www.instagram.com/reel/Dd2tXmxkQ6H/",
-        "views": 207,
-        "reach": 178,
+        "views": 219,
+        "reach": 188,
         "likes": 5,
         "comments": 0,
         "shares": 0,
-        "saved": 1,
-        "updatedAt": "2026-09-30T02:13:56.763Z"
+        "saved": 2,
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       }
     },
     {
@@ -4436,10 +4383,67 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-01T02:16:06.802Z"
       },
       "instagram": {
         "mediaId": "18150141385547297",
+        "permalink": "https://www.instagram.com/reel/Dd5PZdNFPZm/",
+        "views": 133,
+        "reach": 126,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 1,
+        "updatedAt": "2026-10-01T02:16:06.802Z"
+      }
+    },
+    {
+      "videoId": "sXu0lSBRLV4",
+      "videoUrl": "https://youtube.com/shorts/sXu0lSBRLV4",
+      "date": "2026-10-01",
+      "title": "【湯温】湯温を下げると？ 苦味が引いて酸が立つ #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "クレバードリッパー",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 35,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "b06-temp",
+        "pillar": "temp",
+        "topic": "苦味が引いて酸が立つ",
+        "method": "clever",
+        "scene": "hot",
+        "tipProblems": [
+          "酸っぱい時",
+          "まだ苦い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17992928547048839",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4452,14 +4456,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-01",
-      "changes": [
-        "standard: 4 avg views (81 videos)",
-        "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Tue=2, Mon=2, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-02",
       "changes": [
@@ -4794,6 +4790,27 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 0 avg views (5 videos)",
         "Day performance: Sun=2, Wed=1, Thu=1, Fri=1, Sat=1, Mon=0, Tue=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-01",
+      "changes": [
+        "今日の一杯: 0.7x avg views → drop",
+        "コーヒーレシピ: 0.7x avg views → drop",
+        "V60: 0.3x avg views → drop",
+        "自家焙煎: 0.7x avg views → drop",
+        "コーヒー豆: 0.7x avg views → drop",
+        "おうちカフェ: 0.5x avg views → drop",
+        "OpenGroundCoffee: 0.7x avg views → drop",
+        "コーヒーの淹れ方: 0.2x avg views → drop",
+        "ハンドドリップ: 0.2x avg views → drop",
+        "コーヒーのある暮らし: 0.2x avg views → drop",
+        "抽出: 0.2x avg views → drop",
+        "standard: 1 avg views (66 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 0 avg views (6 videos)",
+        "Day performance: Sun=2, Thu=1, Fri=1, Sat=1, Mon=0, Tue=0, Wed=0"
       ],
       "recommendedTemplate": "standard"
     }
