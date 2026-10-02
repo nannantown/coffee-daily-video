@@ -1,84 +1,83 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b07-stop-early",
-    "pillar": "time",
-    "method": "paper-drip",
+    "episode": "b08-bloom",
+    "pillar": "terms",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "早く止める",
-    "ask": "とどうなる？",
-    "hook": "抽出を早めに止める",
-    "topic": "渋みが出る前に終わる",
-    "why": "終わりぎわほど渋みや雑味が溶け出す",
-    "core": "早く止めると、終わりの渋みが入らない",
+    "word": "蒸らし",
+    "ask": "ってなに？",
+    "hook": "最初に少しの湯で蒸らす",
+    "topic": "ガスが抜けて味が均一に",
+    "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
+    "core": "蒸らすと、湯が全体にしみて均一に溶ける",
     "motion": {
-      "type": "meter",
+      "type": "dissolve",
       "shade": {
-        "from": 65,
-        "to": 55
+        "from": 40,
+        "to": 60
       },
       "meters": [
         {
-          "label": "渋み",
+          "label": "ムラ",
           "from": 70,
-          "to": 30
+          "to": 25
         },
         {
           "label": "濃さ",
-          "from": 65,
-          "to": 55
+          "from": 40,
+          "to": 60
         }
       ]
     },
     "effect": [
       {
-        "label": "早く止める",
-        "taste": "すっきり、渋みが減る"
+        "label": "蒸らす",
+        "taste": "味がむらなく出る"
       },
       {
-        "label": "最後まで待つ",
-        "taste": "濃いが渋みも出る"
+        "label": "蒸らさない",
+        "taste": "薄く、むらが出る"
       }
     ],
     "tips": [
       {
-        "problem": "薄くなった時",
-        "fix": "挽き目を少し細かくする"
+        "problem": "膨らまない時",
+        "fix": "挽きたての粉で試す"
       },
       {
-        "problem": "まだ渋い時",
-        "fix": "もう少し早く止める"
+        "problem": "薄い時",
+        "fix": "蒸らしを少し長くとる"
       }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "終わりぎわに渋みが増える",
-      "xLabel": "抽出時間",
-      "yLabel": "渋み",
-      "points": [
+      "type": "flow",
+      "caption": "蒸らすと湯が全体にしみる",
+      "brewers": [
         {
-          "label": "はじめ",
-          "value": 1
+          "shape": "flat",
+          "label": "蒸らしなし",
+          "note": "湯が素通りする",
+          "speed": "fast",
+          "bed": "uneven"
         },
         {
-          "label": "なかごろ",
-          "value": 2
-        },
-        {
-          "label": "おわり",
-          "value": 4
+          "shape": "flat",
+          "label": "蒸らす",
+          "note": "湯がしみ込む",
+          "speed": "slow",
+          "bed": "even"
         }
-      ],
-      "mark": 1
+      ]
     },
     "narration": {
-      "title": "抽出を早めに止めると、どうなる？渋みが出る前に、すっきり終わります。",
-      "why": "終わりぎわほど、渋みや雑味がよく溶け出すからです。",
-      "visual": "時間が経つほど、渋みはぐんと増えていきます。",
-      "effect": "早く止めると、すっきりして渋みが減ります。最後まで待つと、濃いけれど渋みも出ます。",
-      "tips": "薄く感じたら、挽き目を少し細かく。まだ渋ければ、もう少し早く止めます。"
+      "title": "蒸らしってなに？最初に少しの湯で、粉のガスを抜く下ごしらえです。",
+      "why": "ガスが残ったままだと、湯が粉に触れずに素通りしてしまうからです。",
+      "visual": "蒸らすと湯が粉全体にしみて、むらなく味が出ます。",
+      "effect": "蒸らすと、味が均一に出ます。蒸らさないと、薄くてむらのある味になります。",
+      "tips": "膨らまなければ、挽きたての粉で試す。薄ければ、蒸らしを少し長めにします。"
     }
   }
 }
