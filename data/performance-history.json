@@ -2,59 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "h-sJMx8iHf0",
-      "videoUrl": "https://youtube.com/shorts/h-sJMx8iHf0",
-      "date": "2026-07-03",
-      "title": "【コーヒー豆知識】海外で『コーヒーに塩ひとつまみ』が今夏再ブーム・Fox News特集、砂糖なしで苦味だけ消える科学｜2026/07/03 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 50,
-      "discovery": {
-        "method": "social-en",
-        "description": "TikTok / X で拡散中の『コーヒーに塩ひとつまみ』トレンドを検出、Fox News が今夏の再ブームとして特集し食品科学者 Ed McCormick 氏がナトリウムイオンによる苦味受容体ブロックのメカニズムを解説。Sprudge / Koffee Kult のロースター側解説と併せて内容確認。TOP method である social-en を 3 日空けて再登板 (直近 06-30 Brassart 以来)。5 週不振の news-en を昨日試したので、TOP2 の social-en に一旦戻して比較データを取る。柱④焙煎士の一次情報 (実用 TIP) に近い『抽出テクニック × 味覚科学』ハイブリッド、家淹れ層 (Primary) にど真ん中。",
-        "sources": [
-          "https://www.foxnews.com/food-drink/forget-sugar-cream-viral-coffee-hack-might-transform-your-morning-brew",
-          "https://sprudge.com/the-latest-tiktok-coffee-trend-is-weird-but-good-337898.html",
-          "https://www.koffeekult.com/blogs/blog/salt-in-coffee-the-simple-trick-that-cuts-bitterness"
-        ],
-        "query": "salt in coffee viral TikTok Turkey Vietnam Fox News 2026 bitterness sodium",
-        "freshness_hours": 72
-      },
-      "stats": {
-        "views": 5,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-17T00:57:55.051Z"
-      },
-      "instagram": {
-        "mediaId": "18059339858742156",
-        "permalink": "https://www.instagram.com/reel/DaT9II8k7Vy/",
-        "views": 10,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "5A8GLGOyqSU",
       "videoUrl": "https://youtube.com/shorts/5A8GLGOyqSU",
       "date": "2026-07-04",
@@ -3687,7 +3634,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18073991681460719",
@@ -3698,7 +3645,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -3746,18 +3693,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18141506812584981",
         "permalink": "https://www.instagram.com/reel/Ddc0fEmiBLx/",
-        "views": 23,
-        "reach": 17,
+        "views": 24,
+        "reach": 18,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -3805,7 +3752,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18070537547733178",
@@ -3816,7 +3763,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -3865,7 +3812,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18291185986295663",
@@ -3876,7 +3823,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -3924,7 +3871,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "17985764535076749",
@@ -3935,7 +3882,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -3983,7 +3930,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18111347096606211",
@@ -3994,7 +3941,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4042,7 +3989,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18184468468412015",
@@ -4053,7 +4000,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4098,7 +4045,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18126481774885696",
@@ -4109,7 +4056,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4155,7 +4102,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18134198506644405",
@@ -4166,7 +4113,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4212,7 +4159,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18442710586130712",
@@ -4223,7 +4170,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4269,7 +4216,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18087075347308772",
@@ -4280,7 +4227,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4326,18 +4273,18 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18062867264716847",
         "permalink": "https://www.instagram.com/reel/Dd2tXmxkQ6H/",
-        "views": 219,
-        "reach": 188,
+        "views": 221,
+        "reach": 189,
         "likes": 5,
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4383,18 +4330,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "18150141385547297",
         "permalink": "https://www.instagram.com/reel/Dd5PZdNFPZm/",
-        "views": 133,
-        "reach": 126,
+        "views": 134,
+        "reach": 127,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-01T02:16:06.802Z"
+        "updatedAt": "2026-10-02T02:23:24.228Z"
       }
     },
     {
@@ -4440,10 +4387,67 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-02T02:23:24.227Z"
       },
       "instagram": {
         "mediaId": "17992928547048839",
+        "permalink": "https://www.instagram.com/reel/Dd70bXkESHp/",
+        "views": 276,
+        "reach": 246,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saved": 3,
+        "updatedAt": "2026-10-02T02:23:24.228Z"
+      }
+    },
+    {
+      "videoId": "8BYW4-hn59c",
+      "videoUrl": "https://youtube.com/shorts/8BYW4-hn59c",
+      "date": "2026-10-02",
+      "title": "【抽出時間】早く止めるとどうなる？ 渋みが出る前に終わる #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "ペーパードリップ",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 37,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "b07-stop-early",
+        "pillar": "time",
+        "topic": "渋みが出る前に終わる",
+        "method": "paper-drip",
+        "scene": "hot",
+        "tipProblems": [
+          "薄くなった時",
+          "まだ渋い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18053744756803629",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4456,14 +4460,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-02",
-      "changes": [
-        "standard: 4 avg views (81 videos)",
-        "Day performance: Sat=12, Sun=5, Wed=3, Fri=3, Mon=2, Thu=1, Tue=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-04",
       "changes": [
@@ -4811,6 +4807,27 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 0 avg views (6 videos)",
         "Day performance: Sun=2, Thu=1, Fri=1, Sat=1, Mon=0, Tue=0, Wed=0"
+      ],
+      "recommendedTemplate": "standard"
+    },
+    {
+      "date": "2026-10-02",
+      "changes": [
+        "今日の一杯: 0.7x avg views → drop",
+        "コーヒーレシピ: 0.7x avg views → drop",
+        "V60: 0.3x avg views → drop",
+        "自家焙煎: 0.7x avg views → drop",
+        "コーヒー豆: 0.7x avg views → drop",
+        "おうちカフェ: 0.5x avg views → drop",
+        "OpenGroundCoffee: 0.7x avg views → drop",
+        "コーヒーの淹れ方: 0.2x avg views → drop",
+        "ハンドドリップ: 0.2x avg views → drop",
+        "コーヒーのある暮らし: 0.2x avg views → drop",
+        "抽出: 0.2x avg views → drop",
+        "standard: 1 avg views (65 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 0 avg views (7 videos)",
+        "Day performance: Sun=2, Fri=1, Sat=1, Mon=0, Tue=0, Wed=0, Thu=0"
       ],
       "recommendedTemplate": "standard"
     }
