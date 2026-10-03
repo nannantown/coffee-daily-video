@@ -1,83 +1,58 @@
 {
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b08-bloom",
-    "pillar": "terms",
-    "method": "kalita-wave",
+    "episode": "b09-pour-slow",
+    "pillar": "pour",
+    "method": "origami",
     "scene": "hot",
-    "word": "蒸らし",
-    "ask": "ってなに？",
-    "hook": "最初に少しの湯で蒸らす",
-    "topic": "ガスが抜けて味が均一に",
-    "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
-    "core": "蒸らすと、湯が全体にしみて均一に溶ける",
+    "word": "注ぐ速さ",
+    "ask": "をゆっくりに？",
+    "hook": "細くゆっくり注ぐ",
+    "topic": "時間が延びて濃くなる",
+    "why": "湯が粉に触れている時間が長くなる",
+    "core": "ゆっくり注ぐと、湯がとどまって濃くなる",
     "motion": {
-      "type": "dissolve",
-      "shade": {
-        "from": 40,
-        "to": 60
-      },
+      "type": "liquid",
+      "shade": { "from": 40, "to": 65 },
       "meters": [
-        {
-          "label": "ムラ",
-          "from": 70,
-          "to": 25
-        },
-        {
-          "label": "濃さ",
-          "from": 40,
-          "to": 60
-        }
+        { "label": "濃さ", "from": 40, "to": 65 },
+        { "label": "甘味", "from": 40, "to": 60 }
       ]
     },
     "effect": [
-      {
-        "label": "蒸らす",
-        "taste": "味がむらなく出る"
-      },
-      {
-        "label": "蒸らさない",
-        "taste": "薄く、むらが出る"
-      }
+      { "label": "ゆっくり注ぐ", "taste": "濃く、甘みも出る" },
+      { "label": "速く注ぐ", "taste": "軽く、薄めになる" }
     ],
     "tips": [
-      {
-        "problem": "膨らまない時",
-        "fix": "挽きたての粉で試す"
-      },
-      {
-        "problem": "薄い時",
-        "fix": "蒸らしを少し長くとる"
-      }
+      { "problem": "薄い時", "fix": "細く、ゆっくり注ぐ" },
+      { "problem": "落ちが遅い時", "fix": "少し太めに注ぐ" }
     ],
     "visual": {
       "type": "flow",
-      "caption": "蒸らすと湯が全体にしみる",
+      "caption": "ゆっくり注ぐと湯がとどまる",
       "brewers": [
         {
-          "shape": "flat",
-          "label": "蒸らしなし",
-          "note": "湯が素通りする",
-          "speed": "fast",
-          "bed": "uneven"
+          "shape": "cone",
+          "label": "太く速く",
+          "note": "湯が早く抜ける",
+          "speed": "fast"
         },
         {
-          "shape": "flat",
-          "label": "蒸らす",
-          "note": "湯がしみ込む",
-          "speed": "slow",
-          "bed": "even"
+          "shape": "cone",
+          "label": "細くゆっくり",
+          "note": "湯が粉にとどまる",
+          "speed": "slow"
         }
       ]
     },
     "narration": {
-      "title": "蒸らしってなに？最初に少しの湯で、粉のガスを抜く下ごしらえです。",
-      "why": "ガスが残ったままだと、湯が粉に触れずに素通りしてしまうからです。",
-      "visual": "蒸らすと湯が粉全体にしみて、むらなく味が出ます。",
-      "effect": "蒸らすと、味が均一に出ます。蒸らさないと、薄くてむらのある味になります。",
-      "tips": "膨らまなければ、挽きたての粉で試す。薄ければ、蒸らしを少し長めにします。"
+      "title": "注ぐ速さをゆっくりに変えると、どうなる？時間が延びて、濃くなります。",
+      "why": "湯が粉に触れている時間が長くなるからです。",
+      "visual": "ゆっくり注ぐと、湯が粉にとどまって抽出が進みます。",
+      "effect": "ゆっくり注ぐと、濃く甘みも出ます。速く注ぐと、軽く薄めになります。",
+      "tips": "薄い時は、細くゆっくり注ぐ。落ちが遅い時は、少し太めに注ぎます。"
     }
   }
 }
