@@ -1,83 +1,79 @@
 {
-  "date": "2026-10-03",
+  "date": "2026-10-06",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b08-bloom",
+    "episode": "b11-percolation-immersion",
     "pillar": "terms",
-    "method": "kalita-wave",
+    "method": "french-press",
     "scene": "hot",
-    "word": "蒸らし",
-    "ask": "ってなに？",
-    "hook": "最初に少しの湯で蒸らす",
-    "topic": "ガスが抜けて味が均一に",
-    "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
-    "core": "蒸らすと、湯が全体にしみて均一に溶ける",
+    "word": "透過と浸漬",
+    "ask": "の違いは？",
+    "hook": "浸して待つ淹れ方にする",
+    "topic": "味がブレにくくなる",
+    "why": "注ぎ方に関係なく全体が同じだけ浸る",
+    "core": "浸して待つと、誰が淹れても同じ味になる",
     "motion": {
-      "type": "dissolve",
+      "type": "compare",
       "shade": {
-        "from": 40,
-        "to": 60
+        "from": 55,
+        "to": 55
       },
       "meters": [
         {
-          "label": "ムラ",
+          "label": "ブレ",
           "from": 70,
-          "to": 25
+          "to": 20
         },
         {
-          "label": "濃さ",
+          "label": "まろやか",
           "from": 40,
-          "to": 60
+          "to": 65
         }
       ]
     },
     "effect": [
       {
-        "label": "蒸らす",
-        "taste": "味がむらなく出る"
+        "label": "浸して待つ",
+        "taste": "毎回同じ、まろやか"
       },
       {
-        "label": "蒸らさない",
-        "taste": "薄く、むらが出る"
+        "label": "上から注ぐ",
+        "taste": "すっきり、腕で変わる"
       }
     ],
     "tips": [
       {
-        "problem": "膨らまない時",
-        "fix": "挽きたての粉で試す"
+        "problem": "重く感じる時",
+        "fix": "待つ時間を短くする"
       },
       {
-        "problem": "薄い時",
-        "fix": "蒸らしを少し長くとる"
+        "problem": "粉っぽい時",
+        "fix": "上ずみだけを注ぐ"
       }
     ],
     "visual": {
       "type": "flow",
-      "caption": "蒸らすと湯が全体にしみる",
+      "caption": "通り抜けるか、浸かるか",
       "brewers": [
         {
-          "shape": "flat",
-          "label": "蒸らしなし",
-          "note": "湯が素通りする",
-          "speed": "fast",
-          "bed": "uneven"
+          "shape": "cone",
+          "label": "透過式",
+          "note": "お湯が通り抜ける"
         },
         {
-          "shape": "flat",
-          "label": "蒸らす",
-          "note": "湯がしみ込む",
-          "speed": "slow",
-          "bed": "even"
+          "shape": "immersion",
+          "label": "浸漬式",
+          "note": "お湯に浸かって待つ"
         }
       ]
     },
     "narration": {
-      "title": "蒸らしってなに？最初に少しの湯で、粉のガスを抜く下ごしらえです。",
-      "why": "ガスが残ったままだと、湯が粉に触れずに素通りしてしまうからです。",
-      "visual": "蒸らすと湯が粉全体にしみて、むらなく味が出ます。",
-      "effect": "蒸らすと、味が均一に出ます。蒸らさないと、薄くてむらのある味になります。",
-      "tips": "膨らまなければ、挽きたての粉で試す。薄ければ、蒸らしを少し長めにします。"
+      "title": "透過と浸漬の違いって？お湯が粉を通り抜ける淹れ方と、お湯に浸かって待つ淹れ方のことです。",
+      "why": "注ぎ方に関係なく、粉全体が同じだけ浸るので、味がブレにくいんです。",
+      "visual": "通り抜けるのが透過式、浸かって待つのが浸漬式です。",
+      "effect": "浸して待つと、毎回同じまろやかな味に。上から注ぐと、すっきりして腕で変わります。",
+      "tips": "重く感じたら、待つ時間を短くする。粉っぽい時は、上ずみだけを注ぎます。"
     }
   }
 }
