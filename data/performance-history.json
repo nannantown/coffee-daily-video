@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "6AB2EKDy334",
-      "videoUrl": "https://youtube.com/shorts/6AB2EKDy334",
-      "date": "2026-07-07",
-      "title": "【コーヒー豆知識】エチオピア コーヒー輸出3,000億円突破・5年で倍増計画も同時発表、単収を9→21キンタルへ｜2026/07/07 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "精製方法",
-        "精製方法",
-        "精製方法"
-      ],
-      "durationSeconds": 51,
-      "discovery": {
-        "method": "news-en",
-        "description": "火曜・ニュース中心枠。Perfect Daily Grind 7/3 recap をハブに、Food Business MEA / Medafrica Times / Ethiopian News Agency (ENA) / Farmers Review Africa でエチオピア農相 Addisu Arega が発表した5年計画を裏取り。輸出額が初の3,000億円台に到達し、2031年までに6,000億円へ倍増、単収を1ha 9→21キンタルへ倍増、Jimma研究所に組織培養施設を新設。柱②産地・ハーベスト(25%目標)は直近14日で不足しており比率補正を兼ねる。07-06 の news-en:consumer-brand が 0 views で不発だったため、切り口を『大手ブランド財布直結』→『産地政策 x specialty 銘柄未来』に変更し、Primary ペルソナ (家で淹れる趣味層) の知っている固有銘柄名 (イルガチェフェ、シダモ) で recommend を締める設計に転換。",
-        "sources": [
-          "https://perfectdailygrind.com/2026/07/coffee-news-recap-3-july-2026/",
-          "https://www.foodbusinessmea.com/ethiopia-launches-national-coffee-strategy-to-double-production-increase-export-revenue/",
-          "https://medafricatimes.com/46064-ethiopia-earns-3-billion-from-coffee-exports-targets-doubling-revenue-within-five-years.html",
-          "https://www.ena.et/web/eng/w/eng_9151027",
-          "https://farmersreviewafrica.com/ethiopia-tops-us3-billion-in-coffee-export-earnings-as-government-launches-five-year-productivity-drive/",
-          "https://allafrica.com/stories/202607030377.html"
-        ],
-        "query": "Ethiopia coffee export $3 billion 2025/26 5-year plan yield doubling Jimma tissue culture",
-        "freshness_hours": 144
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-21T00:56:47.139Z"
-      },
-      "instagram": {
-        "mediaId": "17948952129016956",
-        "permalink": "https://www.instagram.com/reel/DaeQ6ukicz7/",
-        "views": 10,
-        "reach": 10,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "ednSHsPwEEY",
       "videoUrl": "https://youtube.com/shorts/ednSHsPwEEY",
       "date": "2026-07-08",
@@ -3705,7 +3649,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "17985764535076749",
@@ -3716,7 +3660,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -3764,7 +3708,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18111347096606211",
@@ -3775,7 +3719,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -3823,7 +3767,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18184468468412015",
@@ -3834,7 +3778,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -3879,7 +3823,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18126481774885696",
@@ -3890,7 +3834,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -3936,7 +3880,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18134198506644405",
@@ -3947,7 +3891,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -3993,7 +3937,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18442710586130712",
@@ -4004,7 +3948,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4050,7 +3994,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18087075347308772",
@@ -4061,7 +4005,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4107,7 +4051,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18062867264716847",
@@ -4118,7 +4062,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4164,7 +4108,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18150141385547297",
@@ -4175,7 +4119,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4221,7 +4165,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "17992928547048839",
@@ -4232,7 +4176,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 3,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4278,7 +4222,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18053744756803629",
@@ -4289,7 +4233,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4335,18 +4279,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18118364587962466",
         "permalink": "https://www.instagram.com/reel/DeA9eN1ilmb/",
-        "views": 158,
-        "reach": 143,
+        "views": 159,
+        "reach": 144,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4392,18 +4336,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-05T02:12:03.787Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18079960553707165",
         "permalink": "https://www.instagram.com/reel/DeDmaxClq-i/",
-        "views": 118,
-        "reach": 112,
+        "views": 121,
+        "reach": 115,
         "likes": 1,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-05T02:12:03.788Z"
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       }
     },
     {
@@ -4448,10 +4392,67 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-06T03:11:03.960Z"
       },
       "instagram": {
         "mediaId": "18089115959670351",
+        "permalink": "https://www.instagram.com/reel/DeGHK0ZEWzh/",
+        "views": 67,
+        "reach": 62,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-06T03:11:03.960Z"
+      }
+    },
+    {
+      "videoId": "yo57rwkVjMA",
+      "videoUrl": "https://youtube.com/shorts/yo57rwkVjMA",
+      "date": "2026-10-06",
+      "title": "【用語「透過式と浸漬式」】透過と浸漬の違いは？ 味がブレにくくなる #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "フレンチプレス",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 42,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "b11-percolation-immersion",
+        "pillar": "terms",
+        "topic": "味がブレにくくなる",
+        "method": "french-press",
+        "scene": "hot",
+        "tipProblems": [
+          "重く感じる時",
+          "粉っぽい時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "17910049782305684",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4464,14 +4465,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-07",
-      "changes": [
-        "standard: 3 avg views (80 videos)",
-        "Day performance: Sat=11, Sun=4, Wed=3, Mon=2, Fri=2, Tue=1, Thu=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-08",
       "changes": [
@@ -4872,6 +4865,28 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 0 avg views (10 videos)",
         "Day performance: Sat=1, Mon=0, Tue=0, Wed=0, Thu=0, Fri=0, Sun=0"
+      ],
+      "recommendedTemplate": "recipe"
+    },
+    {
+      "date": "2026-10-06",
+      "changes": [
+        "今日の一杯: 1.4x avg views → boost",
+        "コーヒーレシピ: 1.4x avg views → boost",
+        "V60: 0.5x avg views → drop",
+        "自家焙煎: 1.4x avg views → boost",
+        "コーヒー豆: 1.4x avg views → boost",
+        "おうちカフェ: 0.8x avg views → drop",
+        "OpenGroundCoffee: 1.4x avg views → boost",
+        "カリタウェーブ: 1.9x avg views → boost",
+        "コーヒーの淹れ方: 0.3x avg views → drop",
+        "ハンドドリップ: 0.3x avg views → drop",
+        "コーヒーのある暮らし: 0.3x avg views → drop",
+        "抽出: 0.3x avg views → drop",
+        "standard: 0 avg views (61 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 0 avg views (11 videos)",
+        "Day performance: Sat=1, Tue=0, Wed=0, Thu=0, Fri=0, Mon=0, Sun=0"
       ],
       "recommendedTemplate": "recipe"
     }
