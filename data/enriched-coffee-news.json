@@ -1,47 +1,54 @@
 {
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b13-bitter",
-    "pillar": "trouble",
-    "method": "moka-pot",
+    "episode": "i01-underextraction",
+    "pillar": "terms",
+    "method": "clever",
     "scene": "hot",
-    "word": "苦い",
-    "ask": "時は？",
-    "hook": "苦い時は挽き目を粗くする",
-    "topic": "苦味とえぐみが引く",
-    "why": "細かいほど苦味が溶けすぎる",
-    "core": "粗くすると、溶けすぎが止まる",
+    "word": "未抽出",
+    "ask": "ってなに？",
+    "hook": "抽出時間を少し延ばす",
+    "topic": "酸っぱさと薄さが消える",
+    "why": "未抽出＝成分が出きる前に止まること",
+    "core": "短すぎると、甘みが出る前に終わる",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 80, "to": 55 },
+      "type": "meter",
+      "shade": { "from": 30, "to": 55 },
       "meters": [
-        { "label": "苦味", "from": 75, "to": 40 },
-        { "label": "雑味", "from": 60, "to": 25 }
+        { "label": "酸味", "from": 75, "to": 50 },
+        { "label": "甘味", "from": 25, "to": 60 },
+        { "label": "濃さ", "from": 30, "to": 55 }
       ]
     },
     "effect": [
-      { "label": "粗くする", "taste": "苦味が引き、軽くなる" },
-      { "label": "細かくする", "taste": "苦味とコクが増える" }
+      { "label": "延ばす", "taste": "甘みと厚みが出る" },
+      { "label": "縮める", "taste": "酸っぱく、薄くなる" }
     ],
     "tips": [
-      { "problem": "薄くなった時", "fix": "少しだけ細かく戻す" },
-      { "problem": "まだ苦い時", "fix": "火を少し弱める" }
+      { "problem": "酸っぱく薄い", "fix": "挽き目を細かくする" },
+      { "problem": "まだ薄い時", "fix": "お湯の温度を上げる" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "粗くすると苦味が引く",
-      "left": { "label": "細かい", "result": "苦い・重い", "strength": 5 },
-      "right": { "label": "粗くする", "result": "すっきり", "strength": 3 },
-      "pick": "right"
+      "type": "graph",
+      "caption": "短すぎると成分が出きらない",
+      "xLabel": "抽出時間",
+      "yLabel": "濃さ",
+      "points": [
+        { "label": "短い", "value": 1 },
+        { "label": "ふつう", "value": 3 },
+        { "label": "長い", "value": 4 }
+      ],
+      "mark": 1,
+      "zones": ["未抽出", "適正", "過抽出"]
     },
     "narration": {
-      "title": "苦い時は、挽き目を粗くしてみてください。苦味とえぐみが引きます。",
-      "why": "細かいほど、苦味の成分が溶けすぎてしまうからです。",
-      "visual": "粗くすると、溶け出す量が減って苦味が引きます。",
-      "effect": "粗くすると、苦味が引いて軽くなります。細かくすると、苦味とコクが増えます。",
-      "tips": "薄くなったら、少しだけ細かく戻す。まだ苦い時は、火を少し弱めます。"
+      "title": "「未抽出」って知っていますか？抽出時間を少し延ばすと、酸っぱさと薄さが消えます。",
+      "why": "未抽出とは、成分が出きる前に抽出が終わることです。",
+      "visual": "短すぎると、濃さが出きらない。少し長めで、ちょうどよくなります。",
+      "effect": "延ばすと、甘みと厚みが出ます。縮めると、酸っぱく、薄くなります。",
+      "tips": "酸っぱく薄い時は、挽き目を少し細かく。まだ薄ければ、お湯の温度を上げます。"
     }
   }
 }
