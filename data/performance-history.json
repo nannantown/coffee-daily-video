@@ -2,60 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "CUeWIqKkLjE",
-      "videoUrl": "https://youtube.com/shorts/CUeWIqKkLjE",
-      "date": "2026-07-10",
-      "title": "【コーヒー豆知識】アラビカ先物が月曜16%急騰→水曜8%急落・USDAがBrazil26/27期を史上最大級7,190万袋と予想、店頭反映は9ヶ月遅れ｜2026/07/10 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "焙煎",
-        "焙煎",
-        "焙煎"
-      ],
-      "durationSeconds": 56,
-      "discovery": {
-        "method": "market-data",
-        "description": "今週 (7/6 月〜7/9 木) の Arabica 先物が歴史的乱高下を記録。7/6 月曜に 1 日で 16% 急騰 (26年ぶり最大の上げ幅、5ヶ月高値 $3.50 タッチ)、7/8 水曜に 8% 急落と真逆の展開。裏で USDA の Foreign Agricultural Service が Brazil 26/27 期を過去最大級の 7,190 万 60kg 袋 (前年比 +14%)、アラビカ生産だけで +25% の 4,750 万袋と予想発表。同週 ICE がマージン要求を引き上げ、投機筋の急速な巻き戻しが起きた。Barchart / StoneX / Business Recorder / Philstar の英語商品市況ソースを横断して数字を裏取り、日本語圏では depth 記事が翌日以降になるため、翌朝の速報として届ける狙い。TOP3 method (expert-blog / social-en / news-en) は今日全て制約ヒット (ネタ切れ or 直近2日禁止) のため、80/20 の Explore 枠として 6/22 で 0 views 確定した market-data を『narrative-first』(乾いた数字表ではなく物語として) 再フレームで検証。07-08 の Godzilla El Niño 記事 (bullish) からの 48h narrative flip も同時に見せて、視聴者に『毎朝チェックの価値』を体感してもらう狙い。ペルソナ Primary (家で淹れる趣味層) には「短期の値上がり不安は落ち着く見込み、店頭反映は 9ヶ月遅れ」という家計・購買感覚への接続で締める。",
-        "sources": [
-          "https://www.barchart.com/story/news/2265836/arabica-coffee-tumbles-on-brazil-harvest-pressures",
-          "https://www.stonex.com/en-us/insights/brazil-harvest-pressures-coffee-market-as-arabica-futures-fall-to-19-month-lows/",
-          "https://www.brecorder.com/news/40428967/arabica-coffee-heads-sharply-lower-after-stellar-rally",
-          "https://www.philstar.com/business/stock-commentary/2026/07/08/2540759/arabica-coffee-prices-remain-extremely-volatile"
-        ],
-        "query": "arabica coffee futures crash July 8 9 2026 profit taking Brazil harvest USDA record forecast margin",
-        "freshness_hours": 36
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-24T00:54:43.879Z"
-      },
-      "instagram": {
-        "mediaId": "18114937622504747",
-        "permalink": "https://www.instagram.com/reel/Dal-nNGgWQd/",
-        "views": 8,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "48H6MQxxX88",
       "videoUrl": "https://youtube.com/shorts/48H6MQxxX88",
       "date": "2026-07-13",
@@ -3714,7 +3660,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18126481774885696",
@@ -3725,7 +3671,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -3771,7 +3717,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18134198506644405",
@@ -3782,7 +3728,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -3828,7 +3774,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18442710586130712",
@@ -3839,7 +3785,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -3885,7 +3831,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18087075347308772",
@@ -3896,7 +3842,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -3942,7 +3888,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18062867264716847",
@@ -3953,7 +3899,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 2,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -3999,7 +3945,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18150141385547297",
@@ -4010,7 +3956,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 1,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4056,7 +4002,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "17992928547048839",
@@ -4067,7 +4013,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 3,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4110,10 +4056,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18053744756803629",
@@ -4124,7 +4070,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4170,7 +4116,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18118364587962466",
@@ -4181,7 +4127,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4224,10 +4170,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18079960553707165",
@@ -4238,7 +4184,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4283,7 +4229,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18089115959670351",
@@ -4294,7 +4240,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4340,7 +4286,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "17910049782305684",
@@ -4351,7 +4297,7 @@
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4397,18 +4343,18 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18134595262671335",
         "permalink": "https://www.instagram.com/reel/DeLTP_BkdeJ/",
-        "views": 96,
-        "reach": 94,
+        "views": 97,
+        "reach": 96,
         "likes": 0,
         "comments": 0,
         "shares": 0,
         "saved": 0,
-        "updatedAt": "2026-10-08T02:48:10.249Z"
+        "updatedAt": "2026-10-09T03:01:27.298Z"
       }
     },
     {
@@ -4454,10 +4400,67 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": null
+        "updatedAt": "2026-10-09T03:01:27.297Z"
       },
       "instagram": {
         "mediaId": "18066486761784255",
+        "permalink": "https://www.instagram.com/reel/DeN5sc1gvER/",
+        "views": 58,
+        "reach": 52,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "saved": 0,
+        "updatedAt": "2026-10-09T03:01:27.298Z"
+      }
+    },
+    {
+      "videoId": "kpXFMJTgOmE",
+      "videoUrl": "https://youtube.com/shorts/kpXFMJTgOmE",
+      "date": "2026-10-09",
+      "title": "【用語「未抽出」】未抽出ってなに？ 酸っぱさと薄さが消える #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "クレバードリッパー",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 40,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "i01-underextraction",
+        "pillar": "terms",
+        "topic": "酸っぱさと薄さが消える",
+        "method": "clever",
+        "scene": "hot",
+        "tipProblems": [
+          "酸っぱく薄い",
+          "まだ薄い時"
+        ]
+      },
+      "stats": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": null
+      },
+      "instagram": {
+        "mediaId": "18118127162000654",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4470,14 +4473,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-10",
-      "changes": [
-        "standard: 3 avg views (80 videos)",
-        "Day performance: Sat=11, Sun=4, Fri=2, Mon=2, Thu=1, Wed=1, Tue=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-11",
       "changes": [
@@ -4920,6 +4915,21 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 0 avg views (13 videos)",
         "Day performance: Sat=1, Thu=0, Fri=0, Mon=0, Tue=0, Wed=0, Sun=0"
+      ],
+      "recommendedTemplate": "recipe"
+    },
+    {
+      "date": "2026-10-09",
+      "changes": [
+        "カリタウェーブ: 1.7x avg views → boost",
+        "コーヒーの淹れ方: 0.7x avg views → drop",
+        "ハンドドリップ: 0.7x avg views → drop",
+        "コーヒーのある暮らし: 0.7x avg views → drop",
+        "抽出: 0.7x avg views → drop",
+        "standard: 0 avg views (58 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 0 avg views (14 videos)",
+        "Day performance: Sat=1, Fri=0, Mon=0, Tue=0, Wed=0, Thu=0, Sun=0"
       ],
       "recommendedTemplate": "recipe"
     }
