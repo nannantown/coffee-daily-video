@@ -1,48 +1,59 @@
 {
-  "date": "2026-10-11",
+  "date": "2026-10-12",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i03-dark-roast-temp",
-    "pillar": "temp",
-    "method": "french-press",
+    "episode": "i04-more-pours",
+    "pillar": "pour",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "深煎り",
-    "ask": "はぬるめ？",
-    "hook": "深煎りは湯温を低めに",
-    "topic": "焦げた苦味が出にくい",
-    "why": "深煎りは苦味の成分が溶けやすい",
-    "core": "深煎りは、低い温度でも苦味が出やすい",
+    "word": "注ぐ回数",
+    "ask": "を増やすと？",
+    "hook": "注ぐ回数を増やす",
+    "topic": "濃さが安定して甘くなる",
+    "why": "少しずつ注ぐほど温度と濃さが保たれる",
+    "core": "こまめに注ぐと、濃さがそろって甘くなる",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 80, "to": 65 },
+      "type": "compare",
+      "shade": { "from": 45, "to": 60 },
       "meters": [
-        { "label": "苦味", "from": 80, "to": 45 },
-        { "label": "甘味", "from": 35, "to": 60 }
+        { "label": "甘味", "from": 40, "to": 65 },
+        { "label": "濃さ", "from": 45, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "低めにする", "taste": "甘く、なめらか" },
-      { "label": "熱くする", "taste": "焦げた苦味が出る" }
+      { "label": "増やす", "taste": "甘みと厚みが出る" },
+      { "label": "減らす", "taste": "軽く、すっきり" }
     ],
     "tips": [
-      { "problem": "物足りない時", "fix": "温度を少し上げる" },
-      { "problem": "まだ苦い時", "fix": "浸ける時間を短くする" }
+      { "problem": "重すぎる時", "fix": "注ぐ回数を減らす" },
+      { "problem": "落ちが遅い時", "fix": "1回の量を多めにする" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "深煎りは低めでまろやか",
-      "label": "湯温",
-      "zones": ["低め", "ふつう", "高め"],
-      "from": 60,
-      "to": 25
+      "type": "compare",
+      "caption": "こまめに注ぐと甘くなる",
+      "left": {
+        "label": "まとめて",
+        "result": "軽くすっきり",
+        "strength": 2
+      },
+      "right": {
+        "label": "こまめに",
+        "result": "甘みと厚み",
+        "strength": 4
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "深煎りを、ぬるめで淹れるとどうなる？焦げた苦味が出にくくなります。",
-      "why": "深煎りは、苦味の成分が溶けやすいからです。",
-      "visual": "低めの温度ほど、苦味は控えめで甘さが残ります。",
-      "effect": "低めにすると、甘くてなめらか。熱くすると、焦げた苦味が出ます。",
-      "tips": "物足りなければ温度を少し上げ、まだ苦ければ浸ける時間を短くします。"
-    }
+      "title": "注ぐ回数を増やすと、どうなる？濃さが安定して、甘く仕上がります。",
+      "why": "少しずつ注ぐほど、お湯の温度と濃さが保たれるからです。",
+      "visual": "まとめて注ぐより、こまめに注ぐほうが、甘く厚みのある味になります。",
+      "effect": "増やすと、甘みと厚みが出ます。減らすと、軽くすっきりします。",
+      "tips": "重すぎる時は、注ぐ回数を減らす。落ちが遅ければ、1回の量を多めにします。"
+    },
+    "sources": [
+      "https://perfectdailygrind.com/2022/07/why-is-pulse-pouring-popular-in-coffee-brewing/",
+      "https://baristahustle.com/blog/the-four-key-pour-over-variables/"
+    ]
   }
 }
