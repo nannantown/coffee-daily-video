@@ -1,58 +1,61 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i04-more-pours",
+    "episode": "i05-pour-center",
     "pillar": "pour",
-    "method": "kalita-wave",
+    "method": "v60",
     "scene": "hot",
-    "word": "注ぐ回数",
-    "ask": "を増やすと？",
-    "hook": "注ぐ回数を増やす",
-    "topic": "濃さが安定して甘くなる",
-    "why": "少しずつ注ぐほど温度と濃さが保たれる",
-    "core": "こまめに注ぐと、濃さがそろって甘くなる",
+    "word": "注ぐ場所",
+    "ask": "は中心だけ？",
+    "hook": "中心だけに注ぐ",
+    "topic": "雑味が減って澄んだ味",
+    "why": "壁に残る粉が湯をこすフィルターになる",
+    "core": "中心に注ぐと、壁の粉が雑味をこす",
     "motion": {
-      "type": "compare",
-      "shade": { "from": 45, "to": 60 },
+      "type": "dissolve",
+      "shade": { "from": 60, "to": 55 },
       "meters": [
-        { "label": "甘味", "from": 40, "to": 65 },
-        { "label": "濃さ", "from": 45, "to": 60 }
+        { "label": "雑味", "from": 60, "to": 30 },
+        { "label": "すっきり", "from": 40, "to": 65 }
       ]
     },
     "effect": [
-      { "label": "増やす", "taste": "甘みと厚みが出る" },
-      { "label": "減らす", "taste": "軽く、すっきり" }
+      { "label": "中心に注ぐ", "taste": "澄んで、すっきり" },
+      { "label": "全体に注ぐ", "taste": "濃いが雑味も出る" }
     ],
     "tips": [
-      { "problem": "重すぎる時", "fix": "注ぐ回数を減らす" },
-      { "problem": "落ちが遅い時", "fix": "1回の量を多めにする" }
+      { "problem": "落ちが遅い時", "fix": "少し外側にも注ぐ" },
+      { "problem": "薄い時", "fix": "挽き目を少し細かくする" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "こまめに注ぐと甘くなる",
-      "left": {
-        "label": "まとめて",
-        "result": "軽くすっきり",
-        "strength": 2
-      },
-      "right": {
-        "label": "こまめに",
-        "result": "甘みと厚み",
-        "strength": 4
-      },
-      "pick": "right"
+      "type": "flow",
+      "caption": "壁の粉がフィルターになる",
+      "brewers": [
+        {
+          "shape": "cone",
+          "label": "全体に注ぐ",
+          "note": "壁の粉も流れる",
+          "pour": "wide"
+        },
+        {
+          "shape": "cone",
+          "label": "中心だけ",
+          "note": "壁の粉が湯をこす",
+          "pour": "center"
+        }
+      ]
     },
     "narration": {
-      "title": "注ぐ回数を増やすと、どうなる？濃さが安定して、甘く仕上がります。",
-      "why": "少しずつ注ぐほど、お湯の温度と濃さが保たれるからです。",
-      "visual": "まとめて注ぐより、こまめに注ぐほうが、甘く厚みのある味になります。",
-      "effect": "増やすと、甘みと厚みが出ます。減らすと、軽くすっきりします。",
-      "tips": "重すぎる時は、注ぐ回数を減らす。落ちが遅ければ、1回の量を多めにします。"
+      "title": "注ぐ場所を中心だけにすると、どうなる？雑味が減って、澄んだ味になります。",
+      "why": "壁に残った粉が、湯をこすフィルターになってくれるからです。",
+      "visual": "全体に注ぐと壁の粉も流れますが、中心だけなら壁の粉が湯をこしてくれます。",
+      "effect": "中心に注ぐと、澄んですっきり。全体に注ぐと、濃いですが雑味も出ます。",
+      "tips": "落ちが遅ければ、少し外側にも注ぐ。薄い時は、挽き目を少し細かくします。"
     },
     "sources": [
-      "https://perfectdailygrind.com/2022/07/why-is-pulse-pouring-popular-in-coffee-brewing/",
+      "https://perfectdailygrind.com/2020/02/pour-over-coffee-the-definitive-guide/",
       "https://baristahustle.com/blog/the-four-key-pour-over-variables/"
     ]
   }
