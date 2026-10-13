@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
     "episode": "i05-pour-center",
     "pillar": "pour",
-    "method": "v60",
+    "method": "origami",
     "scene": "hot",
     "word": "注ぐ場所",
     "ask": "は中心だけ？",
@@ -33,30 +33,16 @@
       "type": "flow",
       "caption": "壁の粉がフィルターになる",
       "brewers": [
-        {
-          "shape": "cone",
-          "label": "全体に注ぐ",
-          "note": "壁の粉も流れる",
-          "pour": "wide"
-        },
-        {
-          "shape": "cone",
-          "label": "中心だけ",
-          "note": "壁の粉が湯をこす",
-          "pour": "center"
-        }
+        { "shape": "cone", "label": "全体に注ぐ", "note": "壁の粉も流れる", "pour": "wide" },
+        { "shape": "cone", "label": "中心だけ", "note": "壁の粉が湯をこす", "pour": "center" }
       ]
     },
     "narration": {
-      "title": "注ぐ場所を中心だけにすると、どうなる？雑味が減って、澄んだ味になります。",
-      "why": "壁に残った粉が、湯をこすフィルターになってくれるからです。",
-      "visual": "全体に注ぐと壁の粉も流れますが、中心だけなら壁の粉が湯をこしてくれます。",
-      "effect": "中心に注ぐと、澄んですっきり。全体に注ぐと、濃いですが雑味も出ます。",
-      "tips": "落ちが遅ければ、少し外側にも注ぐ。薄い時は、挽き目を少し細かくします。"
-    },
-    "sources": [
-      "https://perfectdailygrind.com/2020/02/pour-over-coffee-the-definitive-guide/",
-      "https://baristahustle.com/blog/the-four-key-pour-over-variables/"
-    ]
+      "title": "注ぐ場所を、中心だけにしてみると？雑味が減って、澄んだ味になります。",
+      "why": "壁に残った粉が、湯をこすフィルターになるからです。",
+      "visual": "中心だけに注ぐと、壁の粉を通らないお湯が減ります。",
+      "effect": "中心に注ぐと、澄んですっきり。全体に注ぐと、濃いが雑味も出ます。",
+      "tips": "落ちが遅ければ、少し外側にも注ぐ。薄ければ、挽き目を少し細かくします。"
+    }
   }
 }
