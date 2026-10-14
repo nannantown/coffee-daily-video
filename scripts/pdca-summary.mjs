@@ -78,37 +78,69 @@ export function median(nums) {
   return s.length % 2 === 1 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
 }
 
-/** IG metrics or null when the video has no matched IG media / no insights yet. */
+const measuredNumber = (value) => typeof value === "number" && Number.isFinite(value) && value >= 0 ? value : null;
+const validTimestamp = (value) => typeof value === "string" && /T.*(?:Z|[+-]\d{2}:?\d{2})$/.test(value) && Number.isFinite(Date.parse(value));
+
+/** IDs in the upload ledger are platform-specific evidence, never inferred from a draft or metrics.
+ * Optional explicit statuses can describe verified non-publications in a supplied --history file.
+ * Missing ledger entries/IDs remain unknown; this module never fills the ledger.
+ */
+export function publicationState(video, platform) {
+  if (video?.dryRun === true) return "dry-run";
+  const status = video?.publication?.[platform]?.status;
+  if (["not-posted", "dry-run", "unknown"].includes(status)) return status;
+  if (status != null && status !== "published") return "unknown";
+  const id = platform === "ig" ? video?.instagram?.mediaId : video?.videoId;
+  return typeof id === "string" && id.trim() ? "published" : "unknown";
+}
+
+/** Calendar age in JST, not exact hours since publication (not stored in the legacy ledger). */
+export function metricObservation(video, platform) {
+  const data = platform === "ig" ? video?.instagram : video?.stats;
+  if (publicationState(video, platform) !== "published" || !validTimestamp(data?.updatedAt)) {
+    return { status: "unmeasured", updatedAt: null, ageDays: null };
+  }
+  const measuredDate = new Date(Date.parse(data.updatedAt) + 9 * 3_600_000).toISOString().slice(0, 10);
+  const ageDays = daysBetween(video.date, measuredDate);
+  const complete = measuredNumber(data.views) != null && (platform !== "ig" || measuredNumber(data.saved) != null);
+  return { status: complete && ageDays >= 0 ? "measured" : "incomplete", updatedAt: data.updatedAt, ageDays };
+}
+
+/** IG views may be measured while saves are still missing; preserve that missing value. */
 export function igMetrics(video) {
   const ig = video?.instagram;
-  if (!ig || ig.views == null) return null;
+  if (publicationState(video, "ig") !== "published" || !validTimestamp(ig?.updatedAt) || measuredNumber(ig.views) == null) return null;
   return {
     views: ig.views,
-    reach: ig.reach ?? null,
-    saved: ig.saved ?? 0,
-    shares: ig.shares ?? null,
-    likes: ig.likes ?? null,
+    reach: measuredNumber(ig.reach),
+    saved: measuredNumber(ig.saved),
+    shares: measuredNumber(ig.shares),
+    likes: measuredNumber(ig.likes),
   };
 }
 
 export function ytViews(video) {
-  if (!video?.stats || video.stats.updatedAt == null) return null;
-  return video.stats.views ?? 0;
+  if (publicationState(video, "yt") !== "published" || !validTimestamp(video?.stats?.updatedAt)) return null;
+  return measuredNumber(video.stats.views);
 }
 
-export function windowStats(videos, from, to) {
+export function windowStats(videos, from, to, { provisionalDays = 2 } = {}) {
   const v = videos.filter((x) => x.date >= from && x.date <= to);
-  const yt = v.map(ytViews).filter((x) => x != null);
-  const ig = v.map(igMetrics).filter(Boolean);
+  const observed = (platform) => v.filter((video) => {
+    const observation = metricObservation(video, platform);
+    return observation.status === "measured" && observation.ageDays >= provisionalDays;
+  });
+  const yt = observed("yt").map(ytViews);
+  const ig = observed("ig").map(igMetrics);
   return {
     from,
     to,
-    posts: v.length,
+    posts: v.filter((video) => ["ig", "yt"].some((p) => publicationState(video, p) === "published")).length,
     yt: { n: yt.length, viewsMedian: median(yt) },
     ig: {
       n: ig.length,
       viewsMedian: median(ig.map((m) => m.views)),
-      savedSum: ig.reduce((sum, m) => sum + (m.saved || 0), 0),
+      savedSum: ig.length ? ig.reduce((sum, m) => sum + m.saved, 0) : null,
     },
   };
 }
@@ -117,12 +149,12 @@ export function windowStats(videos, from, to) {
 export function verdict(platform, stats) {
   const t = THRESHOLDS;
   if (platform === "ig") {
-    if (stats.ig.n < t.minN) return "判定保留";
+    if (stats.ig.n < t.minN || stats.ig.viewsMedian == null || stats.ig.savedSum == null) return "判定保留";
     if (stats.ig.viewsMedian < t.ig.deadViewsMedian && stats.ig.savedSum < t.ig.savedSum) return "配信死亡";
     if (stats.ig.viewsMedian < t.ig.switchViewsMedian && stats.ig.savedSum < t.ig.savedSum) return "切替候補";
     return "続行";
   }
-  if (stats.yt.n < t.minN) return "判定保留";
+  if (stats.yt.n < t.minN || stats.yt.viewsMedian == null) return "判定保留";
   if (stats.yt.viewsMedian < t.yt.deadViewsMedian) return "配信死亡";
   if (stats.yt.viewsMedian < t.yt.switchViewsMedian) return "切替候補";
   return "続行";
@@ -158,7 +190,8 @@ export function cycle({ S, F, today }) {
  */
 export function trialStart(videos, trialId = TRIAL_ID) {
   const dates = videos
-    .filter((v) => v.content?.trial === trialId && v.content?.format === "brew-lesson")
+    .filter((v) => v.content?.trial === trialId && v.content?.format === "brew-lesson" &&
+      ["ig", "yt"].some((p) => publicationState(v, p) === "published"))
     .map((v) => v.date)
     .sort();
   return dates[0] || null;
@@ -225,21 +258,21 @@ export function decideMode(verdictValue, prevMode, judgeDate) {
   return prevMode; // 判定保留
 }
 
-export function trialStatus(history, today, { reports = [] } = {}) {
+export function trialStatus(history, today, { reports = [], provisionalDays = 2 } = {}) {
   const videos = history?.videos || [];
   const start = trialStart(videos);
   const trial = start && start <= today ? 2 : 0;
   const S = trial === 2 ? start : TRIALS[0].S;
   const F = trial === 2 ? start : TRIALS[0].F;
   const c = cycle({ S, F, today });
-  const stats = c.from ? windowStats(videos, c.from, c.to) : null;
+  const stats = c.from ? windowStats(videos, c.from, c.to, { provisionalDays }) : null;
   const prev = previousModes(reports, today);
 
   let judge = null;
   if (c.isJudgeDay) {
     judge = { date: today, delayed: false, stats };
   } else if (c.lastJudge && !hasJudgementOnOrAfter(reports, c.lastJudge)) {
-    judge = { date: c.lastJudge, delayed: true, stats: windowStats(videos, addDays(c.lastJudge, -14), addDays(c.lastJudge, -1)) };
+    judge = { date: c.lastJudge, delayed: true, stats: windowStats(videos, addDays(c.lastJudge, -14), addDays(c.lastJudge, -1), { provisionalDays }) };
   }
 
   const accounts = {};
@@ -266,7 +299,7 @@ export function trialStatus(history, today, { reports = [] } = {}) {
     judge,
     prevSource: prev.source,
     accounts,
-    baseline: trial === 2 ? windowStats(videos, addDays(S, -14), addDays(S, -1)) : null,
+    baseline: trial === 2 ? windowStats(videos, addDays(S, -14), addDays(S, -1), { provisionalDays }) : null,
   };
 }
 
@@ -287,10 +320,14 @@ export function videoRow(video, today, provisionalDays = 2) {
     pillar: c?.pillar ? PILLARS[c.pillar] || c.pillar : "—",
     method: c?.method ? METHODS[c.method]?.label || c.method : "—",
     fallback: Boolean(c?.fallback),
+    publication: { ig: publicationState(video, "ig"), yt: publicationState(video, "yt") },
+    evidence: { ig: video.instagram?.mediaId ?? null, yt: video.videoId ?? null },
+    observation: { ig: metricObservation(video, "ig"), yt: metricObservation(video, "yt") },
     ig,
-    saveRate: ig && ig.reach ? (ig.saved / ig.reach) * 100 : null,
+    saveRate: ig?.saved != null && ig.reach > 0 ? (ig.saved / ig.reach) * 100 : null,
     yt: ytViews(video),
-    provisional: video.date > addDays(today, -1 - provisionalDays),
+    provisional: video.date > addDays(today, -1 - provisionalDays) ||
+      (metricObservation(video, "ig").ageDays != null && metricObservation(video, "ig").ageDays < provisionalDays),
     title: video.title || "",
   };
 }
@@ -310,16 +347,19 @@ export function recentRows(history, today, days = 14, provisionalDays = 2) {
 }
 
 function comparable(rows) {
-  return rows.filter((r) => r.ig && !r.provisional);
+  return rows.filter((r) => r.publication?.ig === "published" && r.observation?.ig.status === "measured" && r.ig?.saved != null && !r.provisional);
 }
 
 export function rankBySaved(rows, n = 3) {
   const pool = comparable(rows);
+  // Missing reach is not a measured 0% save rate, in either ranking direction.
+  const rateOrder = (a, b, direction) => a.saveRate == null ? (b.saveRate == null ? 0 : 1)
+    : b.saveRate == null ? -1 : direction * (a.saveRate - b.saveRate);
   const top = [...pool]
-    .sort((a, b) => b.ig.saved - a.ig.saved || (b.saveRate ?? 0) - (a.saveRate ?? 0) || b.ig.views - a.ig.views)
+    .sort((a, b) => b.ig.saved - a.ig.saved || rateOrder(a, b, -1) || b.ig.views - a.ig.views)
     .slice(0, n);
   const worst = [...pool]
-    .sort((a, b) => a.ig.saved - b.ig.saved || (a.saveRate ?? 0) - (b.saveRate ?? 0) || a.ig.views - b.ig.views)
+    .sort((a, b) => a.ig.saved - b.ig.saved || rateOrder(a, b, 1) || a.ig.views - b.ig.views)
     .slice(0, n);
   return { top, worst, n: pool.length };
 }
@@ -334,7 +374,7 @@ export function groupBySaved(rows, keyFn) {
   }
   return [...groups.entries()]
     .map(([key, list]) => {
-      const reach = list.reduce((s, r) => s + (r.ig.reach || 0), 0);
+      const reach = list.every((r) => r.ig.reach != null) ? list.reduce((s, r) => s + r.ig.reach, 0) : null;
       const saved = list.reduce((s, r) => s + r.ig.saved, 0);
       return {
         key,
@@ -348,11 +388,12 @@ export function groupBySaved(rows, keyFn) {
     .sort((a, b) => b.savedAvg - a.savedAvg || b.n - a.n);
 }
 
-/** Usage counts in rows (all of them, provisional included) — least-used first. */
+/** Usage counts for evidenced posts (unmeasured/provisional posts included). */
 export function rotation(rows) {
   const count = (keyFn, universe) => {
     const m = new Map(universe.map((k) => [k, 0]));
     for (const r of rows) {
+      if (!["ig", "yt"].some((p) => r.publication?.[p] === "published")) continue;
       const k = keyFn(r);
       if (k && k !== "—") m.set(k, (m.get(k) || 0) + 1);
     }
@@ -365,15 +406,19 @@ export function rotation(rows) {
 }
 
 export function summarize(history, { today, days = 14, provisionalDays = 2, reports = [] } = {}) {
-  const status = trialStatus(history, today, { reports });
+  const status = trialStatus(history, today, { reports, provisionalDays });
   const rows = recentRows(history, today, days, provisionalDays);
   const typeRows = rows.filter((r) => r.date >= status.F);
+  const knownDates = new Set(rows.map((r) => r.date));
+  const missingDates = Array.from({ length: days }, (_, i) => addDays(today, -days + i)).filter((date) => !knownDates.has(date));
   return {
     today,
     days,
     provisionalDays,
     status,
     rows,
+    missingDates,
+    evidenceRows: [...rows, ...(history?.videos || []).filter((v) => v.date === today).map((v) => videoRow(v, today, provisionalDays))],
     ranking: rankBySaved(typeRows),
     byMethod: groupBySaved(typeRows, (r) => r.method),
     byPillar: groupBySaved(typeRows, (r) => r.pillar),
@@ -393,7 +438,7 @@ const mmdd = (iso) => iso.slice(5);
 function metricCell(platform, stats) {
   if (!stats) return "—";
   return platform === "ig"
-    ? `views 中央値 ${fmt(stats.ig.viewsMedian)} / 保存合計 ${stats.ig.savedSum}`
+    ? `views 中央値 ${fmt(stats.ig.viewsMedian)} / 保存合計 ${fmt(stats.ig.savedSum)}`
     : `views 中央値 ${fmt(stats.yt.viewsMedian)}`;
 }
 
@@ -450,7 +495,7 @@ function statusSection(s) {
   }
   if (s.baseline) {
     lines.push(
-      `- 比較用ベースライン（試行 #0 の最後の 14 日 ${mmdd(s.baseline.from)}..${mmdd(s.baseline.to)}）: IG views 中央値 ${fmt(s.baseline.ig.viewsMedian)} / 保存合計 ${s.baseline.ig.savedSum} (n=${s.baseline.ig.n})、YT views 中央値 ${fmt(s.baseline.yt.viewsMedian)} (n=${s.baseline.yt.n})`
+      `- 比較用ベースライン（試行 #0 の最後の 14 日 ${mmdd(s.baseline.from)}..${mmdd(s.baseline.to)}）: IG views 中央値 ${fmt(s.baseline.ig.viewsMedian)} / 保存合計 ${fmt(s.baseline.ig.savedSum)} (n=${s.baseline.ig.n})、YT views 中央値 ${fmt(s.baseline.yt.viewsMedian)} (n=${s.baseline.yt.n})`
     );
   }
   return lines;
@@ -468,7 +513,7 @@ function judgementSection(s) {
     const a = s.accounts[p];
     const basis =
       p === "ig"
-        ? `views 中央値 ${fmt(j.stats.ig.viewsMedian)}（配信死亡 < ${th.ig.deadViewsMedian} / 切替候補 < ${th.ig.switchViewsMedian}）・保存合計 ${j.stats.ig.savedSum}（< ${th.ig.savedSum}）・n=${j.stats.ig.n}`
+        ? `views 中央値 ${fmt(j.stats.ig.viewsMedian)}（配信死亡 < ${th.ig.deadViewsMedian} / 切替候補 < ${th.ig.switchViewsMedian}）・保存合計 ${fmt(j.stats.ig.savedSum)}（< ${th.ig.savedSum}）・n=${j.stats.ig.n}`
         : `views 中央値 ${fmt(j.stats.yt.viewsMedian)}（配信死亡 < ${th.yt.deadViewsMedian} / 切替候補 < ${th.yt.switchViewsMedian}）・n=${j.stats.yt.n}`;
     const change = a.prevMode === a.mode ? `モード: ${a.mode}（変化なし）` : `モード: ${a.prevMode} → ${a.mode}`;
     const next = a.judgeVerdict === "切替候補" || a.judgeVerdict === "配信死亡" ? " — 次ジャンル候補 2〜3 案（集客フェーズなので販促の型は出さない）をルーチンが書く" : "";
@@ -517,7 +562,33 @@ function fallbackMark(r) {
 function rowLine(r) {
   const ig = r.ig;
   const mark = r.provisional ? "（暫定）" : "";
-  return `| ${r.date}${mark} | ${r.format}${fallbackMark(r)} | ${md(r.pillar)} | ${md(r.method)} | ${md(r.topic)} | ${ig ? ig.saved : "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
+  return `| ${r.date}${mark} | ${r.format}${fallbackMark(r)} | ${md(r.pillar)} | ${md(r.method)} | ${md(r.topic)} | ${ig?.saved ?? "—"} | ${fmt(r.saveRate)} | ${ig ? ig.views : "—"} | ${ig?.reach ?? "—"} | ${ig?.shares ?? "—"} | ${r.yt ?? "—"} |`;
+}
+
+const PUBLICATION_LABELS = { published: "公開済み", "not-posted": "未投稿（証跡確認済み）", "dry-run": "dry run（未投稿）", unknown: "投稿状態不明" };
+
+function evidenceSection(summary) {
+  const publicationCell = (row, platform) => PUBLICATION_LABELS[row.publication[platform]] +
+    (row.publication[platform] === "published" ? ` / ${md(row.evidence[platform])}` : "");
+  const observationCell = (row, platform) => {
+    if (row.publication[platform] !== "published") return "対象外";
+    const observation = row.observation[platform];
+    if (observation.status === "unmeasured") return "計測未取得";
+    return `${observation.status === "incomplete" ? "計測不完全 / " : ""}${md(observation.updatedAt)} / 公開日から ${observation.ageDays} 暦日`;
+  };
+  return [
+    "## 投稿証跡と観測期間",
+    "",
+    "| 日付 | IG 投稿証跡 | IG 計測日時 / 経過日数 | YT 投稿証跡 | YT 計測日時 / 経過日数 |",
+    "|---|---|---|---|---|",
+    ...summary.evidenceRows.map((row) => `| ${row.date} | ${publicationCell(row, "ig")} | ${observationCell(row, "ig")} | ${publicationCell(row, "yt")} | ${observationCell(row, "yt")} |`),
+    "",
+    `- 台帳にない日（投稿状態不明。未投稿と断定せず実行証跡を照合）: ${summary.missingDates.join(" / ") || "なし"}`,
+    `- 投稿日の対象範囲: ${addDays(summary.today, -summary.days)}..${addDays(summary.today, -1)}。当日分は投稿証跡の確認だけに表示`,
+    `- 集計対象はプラットフォーム別の公開 ID と計測日時がある数値だけ。IG は views と保存数の両方、YT は views が必要。計測時点で公開日から ${summary.provisionalDays} 暦日未満は集計から除外`,
+    "- 値は各計測日時までの累積。経過日数は JST の公開日から計測日までの暦日差で、正確な公開後時間ではない。台帳は最新値のみを保持するため、TOP / WORST・軸別・ジャンル判定は経過日数が異なる参考集計。同じ公開後時間の比較や器具差の因果判断は、同条件の観測値が揃うまで保留",
+    "",
+  ];
 }
 
 function groupTable(title, groups) {
@@ -540,20 +611,21 @@ export function renderMarkdown(summary) {
     "",
     ...judgementSection(s.status),
     ...experimentSection(s.status),
+    ...evidenceSection(s),
     `## 直近 ${s.days} 日の投稿（主指標: IG 保存数）`,
     "",
     "| 日付 | 型 | 柱 | 抽出法 | トピック | **IG 保存** | 保存率(%) | IG views | IG reach | IG shares | YT views |",
     "|---|---|---|---|---|---|---|---|---|---|---|",
     ...s.rows.map(rowLine),
     "",
-    `- 保存率 = IG 保存 ÷ IG reach。「（暫定）」は ${mmdd(addDays(s.today, -s.provisionalDays))} 以降の回（IG insights は最大 48h 遅れ、朝の時点では未確定）。「—」は未取得`,
-    `- TOP / WORST・軸別・ローテーションは型の初回投稿日 F（${typeFrom}）以降の回だけで数える`,
+    `- 保存率 = IG 保存 ÷ IG reach。「（暫定）」は ${mmdd(addDays(s.today, -s.provisionalDays))} 以降の回、または計測時点の経過日数が ${s.provisionalDays} 暦日未満。「—」は未取得・不完全で、0 や配信失敗ではない`,
+    `- TOP / WORST・軸別は型の初回投稿日 F（${typeFrom}）以降の IG 公開・計測確認済みの回だけで数える。ローテーションは少なくとも片方の公開 ID がある回を数え、原稿だけの回は数えない`,
     "",
-    "## TOP 3 / WORST 3（IG 保存数。同数は保存率 → views の順、暫定を除く）",
+    "## TOP 3 / WORST 3（IG 累積保存数の参考集計。同数は保存率 → views の順、暫定を除く）",
     "",
   ];
   if (s.ranking.n === 0) {
-    lines.push("（比較できる確定値がまだない）", "");
+    lines.push("（公開・計測を確認できる集計対象がまだない）", "");
   } else {
     const rankLine = (r, i) =>
       `${i + 1}. ${r.date} ${rowTopic(r)} — 保存 ${r.ig.saved} / 保存率 ${fmt(r.saveRate)}% / views ${r.ig.views}`;

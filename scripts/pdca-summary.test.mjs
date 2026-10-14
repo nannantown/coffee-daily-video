@@ -11,8 +11,10 @@ import {
   hasJudgementOnOrAfter,
   igMetrics,
   median,
+  metricObservation,
   parseStatusModes,
   previousModes,
+  publicationState,
   rankBySaved,
   recentRows,
   rowTopic,
@@ -33,9 +35,10 @@ const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 function video(date, { yt = 0, ig = { views: 10, reach: 8, saved: 0, shares: 0 }, content = null } = {}) {
   return {
     date,
+    videoId: `yt-${date}`,
     title: `【今日の一杯】${date}`,
-    stats: yt == null ? { views: 0, updatedAt: null } : { views: yt, updatedAt: `${date}T01:00:00Z` },
-    instagram: ig == null ? null : { mediaId: "m", ...ig, updatedAt: `${date}T02:00:00Z` },
+    stats: yt == null ? { views: 0, updatedAt: null } : { views: yt, updatedAt: `${addDays(date, 2)}T01:00:00Z` },
+    instagram: ig == null ? null : { mediaId: "m", ...ig, updatedAt: `${addDays(date, 2)}T02:00:00Z` },
     content,
   };
 }
@@ -75,12 +78,12 @@ test("median and date helpers", () => {
   assert.equal(addDays("2026-03-01", -1), "2026-02-28");
 });
 
-test("metrics follow the genre-experiment aggregation (missing values excluded, saved null → 0)", () => {
+test("metrics require publication evidence; missing values stay null and are excluded", () => {
   assert.equal(ytViews(video("2026-09-01", { yt: null })), null);
   assert.equal(ytViews(video("2026-09-01", { yt: 3 })), 3);
   assert.equal(igMetrics(video("2026-09-01", { ig: null })), null);
   assert.equal(igMetrics(video("2026-09-01", { ig: { views: null } })), null);
-  assert.equal(igMetrics(video("2026-09-01", { ig: { views: 5, saved: null } })).saved, 0);
+  assert.equal(igMetrics(video("2026-09-01", { ig: { views: 5, saved: null } })).saved, null);
 
   const videos = [
     video("2026-09-01", { yt: 1, ig: { views: 10, reach: 9, saved: 2 } }),
@@ -91,7 +94,110 @@ test("metrics follow the genre-experiment aggregation (missing values excluded, 
   const s = windowStats(videos, "2026-09-01", "2026-09-04");
   assert.equal(s.posts, 4);
   assert.deepEqual(s.yt, { n: 3, viewsMedian: 3 });
-  assert.deepEqual(s.ig, { n: 3, viewsMedian: 20, savedSum: 6 });
+  assert.deepEqual(s.ig, { n: 2, viewsMedian: 15, savedSum: 6 });
+});
+
+test("proof is per platform: a draft, metrics or a successful dry run never establish publication", () => {
+  const measured = video("2026-10-01", { content: recipe("公開済み", "v60") });
+  const ytOnly = structuredClone(measured);
+  delete ytOnly.instagram.mediaId;
+  const igOnly = structuredClone(measured);
+  delete igOnly.videoId;
+  const unknown = { ...measured, videoId: null, instagram: { ...measured.instagram, mediaId: null } };
+  const dryRun = { ...measured, dryRun: true };
+  const notPosted = { ...measured, publication: { ig: { status: "not-posted" }, yt: { status: "not-posted" } } };
+  assert.equal(publicationState(ytOnly, "ig"), "unknown");
+  assert.equal(publicationState(igOnly, "yt"), "unknown");
+  assert.equal(igMetrics(ytOnly), null);
+  assert.equal(ytViews(igOnly), null);
+  assert.equal(publicationState(dryRun, "ig"), "dry-run");
+  assert.equal(publicationState(notPosted, "yt"), "not-posted");
+  assert.equal(publicationState({ ...measured, publication: { ig: { status: "unrecognised" } } }, "ig"), "unknown");
+  const stats = windowStats([ytOnly, igOnly, unknown, dryRun, notPosted], "2026-10-01", "2026-10-01");
+  assert.equal(stats.posts, 2);
+  assert.equal(stats.ig.n, 1);
+  assert.equal(stats.yt.n, 1);
+  assert.equal(trialStart([unknown, dryRun, notPosted]), null);
+  const rows = [unknown, dryRun, notPosted].map((v) => videoRow(v, "2026-10-14"));
+  assert.equal(rankBySaved(rows).n, 0);
+  assert.deepEqual(groupBySaved(rows, (r) => r.method), []);
+  assert.ok(rotation(rows).method.every((r) => r.n === 0));
+});
+
+test("unmeasured and partially measured values never become zero, a worst post or a failed genre", () => {
+  const noMetrics = video("2026-10-01", { yt: null, ig: { views: 0, saved: 0, reach: 0 } });
+  noMetrics.instagram.updatedAt = null; // upload placeholders are not measurements
+  const partial = video("2026-10-02", { yt: 0, ig: { views: 0, saved: null, reach: null } });
+  partial.stats.views = null;
+  const empty = windowStats([noMetrics, partial], "2026-10-01", "2026-10-02");
+  assert.deepEqual(empty.ig, { n: 0, viewsMedian: null, savedSum: null });
+  assert.deepEqual(empty.yt, { n: 0, viewsMedian: null });
+  assert.equal(verdict("ig", empty), "判定保留");
+  assert.equal(verdict("yt", empty), "判定保留");
+  assert.equal(videoRow(partial, "2026-10-14").saveRate, null);
+  assert.equal(rankBySaved([noMetrics, partial].map((v) => videoRow(v, "2026-10-14"))).n, 0);
+  const measuredZero = video("2026-10-03", { yt: 0, ig: { views: 0, saved: 0, reach: 0 } });
+  const zero = windowStats([measuredZero], "2026-10-03", "2026-10-03");
+  assert.deepEqual(zero.ig, { n: 1, viewsMedian: 0, savedSum: 0 });
+  assert.deepEqual(zero.yt, { n: 1, viewsMedian: 0 });
+  for (const badValue of [null, "0", NaN, Infinity, -1]) {
+    const invalid = video("2026-10-01", { yt: badValue, ig: { views: 1, saved: badValue } });
+    assert.equal(windowStats([invalid], "2026-10-01", "2026-10-01").ig.n, 0);
+    assert.equal(ytViews(invalid), null);
+  }
+});
+
+test("observation age is measured at collection time in JST; old posts with young snapshots stay provisional", () => {
+  const stale = video("2026-10-01");
+  stale.instagram.updatedAt = "2026-10-01T15:00:00Z"; // 10-02 JST, only one calendar day
+  stale.stats.updatedAt = stale.instagram.updatedAt;
+  assert.equal(metricObservation(stale, "ig").ageDays, 1);
+  assert.equal(videoRow(stale, "2026-10-14").provisional, true);
+  assert.equal(rankBySaved([videoRow(stale, "2026-10-14")]).n, 0);
+  assert.equal(windowStats([stale], "2026-10-01", "2026-10-01").ig.n, 0);
+  assert.equal(windowStats([stale], "2026-10-01", "2026-10-01").yt.n, 0);
+  stale.instagram.updatedAt = "2026-10-02T15:00:00Z"; // 10-03 JST
+  assert.equal(metricObservation(stale, "ig").ageDays, 2);
+  assert.equal(rankBySaved([videoRow(stale, "2026-10-14")]).n, 1);
+  for (const timestamp of [null, "invalid", "2026-10-03", "2026-09-30T01:00:00Z"]) {
+    stale.instagram.updatedAt = timestamp;
+    assert.equal(windowStats([stale], "2026-10-01", "2026-10-01").ig.n, 0);
+  }
+});
+
+test("missing reach does not inflate grouped save rates or sort as a measured zero rate", () => {
+  const rows = [
+    video("2026-10-01", { ig: { views: 10, saved: 1, reach: null }, content: recipe("a", "v60") }),
+    video("2026-10-02", { ig: { views: 10, saved: 1, reach: 100 }, content: recipe("b", "v60") }),
+  ].map((v) => videoRow(v, "2026-10-14"));
+  assert.equal(groupBySaved(rows, (r) => r.method)[0].saveRate, null);
+  assert.equal(groupBySaved(rows, (r) => r.method)[0].savedSum, 2);
+  assert.equal(rankBySaved(rows).worst[0].date, "2026-10-02");
+});
+
+test("October 13/14 regression: missing failed-day ledger is unknown; the next published episode is unmeasured", () => {
+  const oct14 = video("2026-10-14", { yt: null, ig: { views: null, saved: null }, content: recipe("雑味が減る", "origami", "pour") });
+  oct14.videoId = "Gsze2fFKMfU";
+  oct14.instagram.mediaId = "18117213236118268";
+  oct14.instagram.updatedAt = null;
+  const summary = summarize({ videos: [video("2026-10-12"), oct14] }, { today: "2026-10-14", days: 2 });
+  assert.deepEqual(summary.missingDates, ["2026-10-13"]);
+  assert.equal(summary.rows.some((r) => r.date === "2026-10-13"), false);
+  assert.equal(summary.evidenceRows.find((r) => r.date === "2026-10-14").observation.ig.status, "unmeasured");
+  const out = renderMarkdown(summary);
+  assert.match(out, /2026-10-14 \| 公開済み \/ 18117213236118268 \| 計測未取得 \| 公開済み \/ Gsze2fFKMfU \| 計測未取得/);
+  assert.match(out, /台帳にない日（投稿状態不明。未投稿と断定せず実行証跡を照合）: 2026-10-13/);
+  assert.match(out, /正確な公開後時間ではない/);
+  assert.match(out, /同条件の観測値が揃うまで保留/);
+  const unknown = { ...oct14, date: "2026-10-11", videoId: null, instagram: null };
+  const dry = { ...unknown, date: "2026-10-10", dryRun: true };
+  const unpublished = { ...unknown, date: "2026-10-09", publication: { ig: { status: "not-posted" }, yt: { status: "not-posted" } } };
+  const states = renderMarkdown(summarize({ videos: [unknown, dry, unpublished] }, { today: "2026-10-14" }));
+  assert.match(states, /投稿状態不明 \| 対象外/);
+  assert.match(states, /dry run（未投稿） \| 対象外/);
+  assert.match(states, /未投稿（証跡確認済み） \| 対象外/);
+  assert.match(states, /保存合計 —/);
+  assert.doesNotMatch(states, /\| null \|/);
 });
 
 test("verdict thresholds are applied top to bottom and need n ≥ 7", () => {
@@ -249,8 +355,8 @@ test("rankings use IG saves from the type's first post on, skip provisional days
 
 test("rotation lists the unused pillars and methods first", () => {
   const rows = [
-    { pillar: "湯温", method: "V60" },
-    { pillar: "湯温", method: "V60" },
+    { pillar: "湯温", method: "V60", publication: { yt: "published" } },
+    { pillar: "湯温", method: "V60", publication: { yt: "published" } },
   ];
   const r = rotation(rows);
   assert.equal(r.pillar.at(-1).key, "湯温");
