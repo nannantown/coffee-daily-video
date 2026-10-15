@@ -36,6 +36,12 @@ on:
 permissions:
   contents: write
 
+# Keep a running publisher alive. Remote receipt SHA checks also guard separate
+# writers, old checkouts and interrupted runs before any Buffer mutation.
+concurrency:
+  group: coffee-daily-video-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-video:
     runs-on: ubuntu-latest
@@ -96,6 +102,12 @@ jobs:
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           # GitHub (auto-provided, used for Release creation)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Buffer: disabled unless explicitly enabled after review. Drafts only.
+          BUFFER_DRAFTS_ENABLED: ${{ steps.mode.outputs.dry_run != 'true' && vars.BUFFER_DRAFTS_ENABLED == 'true' && 'true' || 'false' }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID }}
+          BUFFER_ORGANIZATION_ID: ${{ vars.BUFFER_ORGANIZATION_ID }}
+          BUFFER_DRAFT_STATE_BACKEND: github
 
       - name: Commit performance history
         # always(): a post that failed part-way still recorded what aired (pipeline Step 7),

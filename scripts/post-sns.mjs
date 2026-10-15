@@ -18,6 +18,7 @@ import { execSync } from "child_process";
 import { copyFileSync, existsSync, readFileSync } from "fs";
 import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
+import { BufferDraftError, maybeCreateBufferDraft } from "./buffer-draft.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -196,6 +197,18 @@ async function main() {
     youtube: await uploadYouTube(videoPath),
     instagram: await uploadInstagram(videoPath, urls?.coverUrl),
   };
+
+  // Optional, disabled by default. Buffer errors must not cause already completed
+  // YouTube/Instagram uploads to be repeated. Retry this draft with its standalone CLI.
+  try {
+    const draft = await maybeCreateBufferDraft({
+      videoPath, videoUrl: urls?.videoUrl, captionsPath: join(outputDir, "captions.json"),
+    });
+    console.log(`  Buffer TikTok draft: ${draft.state}${draft.postId ? ` (${draft.postId})` : ""}`);
+  } catch (error) {
+    console.error(error instanceof BufferDraftError ? error.message : "Buffer draft: local input or receipt error. See docs/buffer-tiktok-drafts.md.");
+    console.error("  Buffer draft needs review; retry only scripts/create-buffer-draft.mjs.");
+  }
 
   // Summary
   console.log("\n=== SNS Posting Summary ===");
