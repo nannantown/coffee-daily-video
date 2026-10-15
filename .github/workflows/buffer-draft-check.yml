@@ -1,0 +1,64 @@
+name: Buffer TikTok Draft Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "inspect = read-only target lookup; create-draft = one unscheduled draft; status = read-only post check"
+        type: choice
+        options: [inspect, create-draft, status]
+        default: inspect
+      release_date:
+        description: "Existing release date (YYYYMMDD); no generation or upload"
+        default: "20261015"
+      expected_channel_id:
+        description: "Verified TikTok channel ID; required for create-draft/status"
+        default: ""
+      expected_organization_id:
+        description: "Verified organization ID; required for create-draft/status"
+        default: ""
+      confirmation:
+        description: "For create-draft only, type CREATE_ONE_DRAFT"
+        default: ""
+      post_id:
+        description: "For status only, the existing Buffer post ID"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: buffer-tiktok-draft-check
+  cancel-in-progress: false
+
+jobs:
+  check-draft:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check Buffer draft only
+        run: node scripts/check-buffer-draft.mjs
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          BUFFER_CHECK_OPERATION: ${{ inputs.operation }}
+          RELEASE_DATE: ${{ inputs.release_date }}
+          EXPECTED_CHANNEL_ID: ${{ inputs.expected_channel_id }}
+          EXPECTED_ORGANIZATION_ID: ${{ inputs.expected_organization_id }}
+          DRAFT_CONFIRMATION: ${{ inputs.confirmation }}
+          BUFFER_POST_ID: ${{ inputs.post_id }}
+      - name: Save sanitized check result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: buffer-draft-check-${{ github.run_id }}
+          path: output/buffer-draft-check.json
+          if-no-files-found: ignore
+          retention-days: 14
