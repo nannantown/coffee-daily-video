@@ -4,9 +4,11 @@
     "6ad038ce778b240e2f12264f:20261015": {
       "fingerprint": "e53f3325988acfaf334ba7f2d3841c32a42a0fd5fd9fd8921d37ba26f5ecbdee",
       "videoSha256": "b544e5ada249036d12081b0c608c5b5831e9f3082d60048818cd83bc6a033d4f",
-      "state": "creating",
+      "state": "draft",
       "attemptId": "d69a0700-da56-433f-acd3-0cdab8a79400",
-      "attemptedAt": "2026-10-15T04:28:53.592Z"
+      "attemptedAt": "2026-10-15T04:28:53.592Z",
+      "postId": "6ad056870d0df6a75bc3735d",
+      "verifiedAt": "2026-10-15T04:28:55.135Z"
     }
   }
 }
