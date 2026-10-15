@@ -29,7 +29,7 @@ npm run buffer-draft -- \
 
 **キー作成、OAuth の許可、継続アクセス、GitHub Secrets / Variables の設定は、ユーザーの承認後に行う。この実装は認証の作成や設定、有効化を自動では行わない。認証情報は実行環境の Secret から渡し、チャットやログに取り出さない。**
 
-現行 API は `https://api.buffer.com` の GraphQL、認証は Bearer トークン。個人 API キーは Buffer の Settings → API から作成できる。2026-10-15 に確認した **New Key** 画面では、個人キーでも permission チェックボックスで操作 scope を選べる。この連携では `account:read`・`posts:read`・`posts:write` の3つだけを選ぶ。
+現行 API は `https://api.buffer.com` の GraphQL、認証は Bearer トークン。個人 API キーは Buffer の Settings → API から作成できる。2026-10-15 に確認した **New Key** 画面では、個人キーでも permission チェックボックスで操作 scope を選べる。下書き機能に必要な最小構成は `account:read`・`posts:read`・`posts:write` の3つ。
 
 操作 scope と、アクセス先の組織・チャンネルの範囲は別の制約。個人キーはアカウント内の全組織・全チャンネルを対象とし、組織単位には制限できないため、コード側でも対象 ID・組織・handle を照合する。「全組織対象」は「すべての操作権限が必須」という意味ではない。[公式認証ガイドの対象範囲](https://developers.buffer.com/guides/authentication.html)
 
@@ -39,13 +39,15 @@ OAuth を使う場合もこれら3つの scope が最小構成の候補になる
 
 ### ユーザー自身がキーを保存する最短手順（承認後）
 
-1. 対象の Buffer アカウントで [Settings → API](https://publish.buffer.com/settings/api) → **New Key** を開く。初期選択から `account:read`・`posts:read`・`posts:write` の3つだけを残し、その他はすべて外す。有効期限は **30 days** にする（2026-10-15 の作成なら **2026-11-14**）。キーはチャットやスクリーンショットに出さない。
+1. 対象の Buffer アカウントで [Settings → API](https://publish.buffer.com/settings/api) → **New Key** を開く。下書き確認だけなら `account:read`・`posts:read`・`posts:write` の3つを選ぶ。分析用の追加権限は別目的の承認範囲として扱う。有効期限は **30 days を推奨**するが、これは実キーの設定値を示すものではない。2026-10-15 に30日を選んだ場合は2026-11-14になるという計算例であり、保存済みキーの確定した期限ではない。キーはチャットやスクリーンショットに出さない。
 2. [coffee-daily-video の Actions Secrets](https://github.com/nannantown/coffee-daily-video/settings/secrets/actions) → **New repository secret** を開く。Name は `BUFFER_ACCESS_TOKEN`、Secret 欄にキーを直接貼り付けて保存する。コード、通常の repository variable、ターミナル引数には入れない。
 3. 保存が終わったことだけを伝える。キーの値は送らない。この時点では `BUFFER_DRAFTS_ENABLED` を作らず、下書き連携は無効のままにする。
 4. 下記の専用 workflow の `inspect` で対象 TikTok のチャンネル ID・組織 ID を確認する。一件だけの作成確認にはその ID を workflow の入力に使い、Variables の設定は不要。日次連携を設定する場合だけ、確認済み ID を [Actions Variables](https://github.com/nannantown/coffee-daily-video/settings/variables/actions) の `BUFFER_CHANNEL_ID` と `BUFFER_ORGANIZATION_ID` に保存する。名前から ID を推測しない。
 5. 修正のレビュー・反映、承認された一件の下書き確認が済み、継続アクセスも承認した後にだけ、同じ Variables で `BUFFER_DRAFTS_ENABLED=true` を設定する。予約や公開をする設定は追加しない。一件だけの接続確認は、継続設定を有効にする前に承認済み環境で行う。
 
-個人キーの自動更新は行わない。30日の期限前にユーザー自身で同じ3権限のキーを作成し、同じ repository secret を更新する。期限が切れた場合は認証エラーで停止し、権限を自動で広げない。
+保存済みキーの最終的な scope 一覧・有効期限は未確認。API 操作の成功から設定一覧や期限を推定しない。ユーザー本人が秘密値を表示・共有せずに設定画面の非秘密メタデータで確認する。
+
+個人キーの自動更新は行わない。実際に設定された期限の前にユーザー自身で承認済みの必要権限を持つキーを作成し、同じ repository secret を更新する。30日固定の前提は置かない。期限が切れた場合は認証エラーで停止し、権限を自動で広げない。
 
 Buffer 側には API キー作成が可能な対象アカウントへのログイン権限、GitHub 側にはこの repo の Actions Secrets / Variables を管理できる権限が必要。CI の保存処理は自動提供される `GITHUB_TOKEN` の既存 `contents: write` を使う。追加の GitHub PAT、`workflows: write`、管理者権限や保護ルールの迂回は不要。main の保護ルールが bot によるデータ更新を拒否する場合は、Buffer 作成前に止まるため、規則に沿った運用可否を別途確認する。[GitHub Contents API の権限と更新条件](https://docs.github.com/en/rest/repos/contents#create-or-update-file-contents)
 
