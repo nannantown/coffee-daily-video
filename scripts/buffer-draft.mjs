@@ -70,6 +70,28 @@ export function createBufferClient({ token, fetchImpl = fetch }) {
     }
   }
   return {
+    async listOrganizations() {
+      const organizations = (await request("query DraftOrganizations { account { organizations { id } } }", {})).account?.organizations;
+      if (!Array.isArray(organizations) || organizations.some((org) => typeof org?.id !== "string")) fail("invalid_account_response");
+      return organizations;
+    },
+    async listChannels(organizationId) {
+      const channels = (await request(`query DraftChannels($input: ChannelsInput!) {
+        channels(input: $input) { id name service organizationId isDisconnected isLocked }
+      }`, { input: { organizationId } })).channels;
+      if (!Array.isArray(channels)) fail("invalid_channel_response");
+      return channels;
+    },
+    async inspectPost(id) {
+      return (await request(`query DraftInspection($input: PostInput!) {
+        post(input: $input) {
+          ${POST_FIELDS} sentAt externalLink
+          assets { type mimeType thumbnail ... on VideoAsset {
+            video { durationMs width height isVideoProcessing isTranscodingRequired }
+          } }
+        }
+      }`, { input: { id } })).post;
+    },
     async getChannel(id) {
       return (await request(`query DraftChannel($input: ChannelInput!) {
         channel(input: $input) { id name service organizationId isDisconnected isLocked }
