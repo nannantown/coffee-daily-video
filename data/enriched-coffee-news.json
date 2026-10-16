@@ -1,53 +1,48 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i07-bloom-time",
-    "pillar": "time",
-    "method": "paper-drip",
+    "episode": "i08-cone-flat",
+    "pillar": "gear",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "蒸らし時間",
-    "ask": "を延ばすと？",
-    "hook": "蒸らしを長めにとる",
-    "topic": "厚みとコクが育つ",
-    "why": "ガスが抜けるほど湯が粉にしみ込む",
-    "core": "ガスが抜けるほど、湯がしみて厚みが出る",
+    "word": "平底",
+    "ask": "に替えると？",
+    "hook": "円すいを平底に替える",
+    "topic": "湯だまりで濃さがそろう",
+    "why": "底が平らで湯が均一に粉を通る",
+    "core": "平底は湯だまりができ、濃さがそろう",
     "motion": {
-      "type": "meter",
+      "type": "compare",
       "shade": { "from": 45, "to": 60 },
       "meters": [
-        { "label": "コク", "from": 40, "to": 65 },
-        { "label": "濃さ", "from": 45, "to": 60 }
+        { "label": "甘味", "from": 40, "to": 60 },
+        { "label": "ムラ", "from": 60, "to": 30 }
       ]
     },
     "effect": [
-      { "label": "長めにとる", "taste": "厚みとコクが増す" },
-      { "label": "短くする", "taste": "軽めで、すっきり" }
+      { "label": "平底にする", "taste": "濃さがそろい、甘い" },
+      { "label": "円すいにする", "taste": "軽く、すっきり" }
     ],
     "tips": [
-      { "problem": "重すぎる時", "fix": "蒸らしを短めに戻す" },
-      { "problem": "膨らまない時", "fix": "挽きたての粉を使う" }
+      { "problem": "落ちが遅い時", "fix": "挽き目を少し粗くする" },
+      { "problem": "軽すぎる時", "fix": "ゆっくり注ぐ" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "蒸らすほど厚みが出る",
-      "xLabel": "蒸らし",
-      "yLabel": "厚み",
-      "points": [
-        { "label": "なし", "value": 1 },
-        { "label": "短め", "value": 2 },
-        { "label": "ふつう", "value": 3 },
-        { "label": "長め", "value": 4 }
-      ],
-      "mark": 3
+      "type": "flow",
+      "caption": "底の形で湯の通り方が変わる",
+      "brewers": [
+        { "shape": "cone", "label": "円すい", "note": "中心に速く集まる", "speed": "fast" },
+        { "shape": "flat", "label": "平底", "note": "平らに均一に落ちる", "speed": "slow" }
+      ]
     },
     "narration": {
-      "title": "蒸らしの時間を、長めにとるとどうなる？味の厚みが増します。",
-      "why": "蒸らしの間に、粉からガスが抜けるほど、お湯が中までしみ込むからです。",
-      "visual": "蒸らしを長くとるほど、味の厚みはしっかり出てきます。",
-      "effect": "長めにとると、厚みとコクが増す。短くすると、軽めで、すっきりします。",
-      "tips": "重すぎれば、蒸らしを短めに戻す。膨らまなければ、挽きたての粉に替えます。"
+      "title": "円すいから平底のドリッパーに替えると、どうなる？湯だまりで、濃さがそろいます。",
+      "why": "底が平らだと、お湯が均一に粉を通るからです。",
+      "visual": "円すいは中心に速く集まり、平底は平らにゆっくり落ちます。",
+      "effect": "平底にすると、濃さがそろって甘く。円すいにすると、軽めですっきりになります。",
+      "tips": "落ちが遅ければ、挽き目を少し粗く。軽すぎれば、ゆっくり注ぎます。"
     }
   }
 }
