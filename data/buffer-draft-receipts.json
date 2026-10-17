@@ -18,6 +18,13 @@
       "attemptedAt": "2026-10-16T01:35:25.413Z",
       "postId": "6ad17f5ea82f34dbe13f347b",
       "verifiedAt": "2026-10-16T01:35:27.057Z"
+    },
+    "6ad038ce778b240e2f12264f:20261017": {
+      "fingerprint": "e01ae5137a2b756843b708040f5fa8073e7f53a2514acd849dbd5b06990240ba",
+      "videoSha256": "4fbfbce2a27ca6c984dfeb376fb684f1ba4311911001087095441f5032a09d1f",
+      "state": "creating",
+      "attemptId": "5a8a89c9-95cf-447c-be1c-eab3664f2678",
+      "attemptedAt": "2026-10-17T01:26:26.870Z"
     }
   }
 }
