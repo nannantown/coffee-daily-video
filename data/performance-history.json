@@ -2,61 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "MOwWdXQkhyc",
-      "videoUrl": "https://youtube.com/shorts/MOwWdXQkhyc",
-      "date": "2026-07-18",
-      "title": "【コーヒー豆知識】EUがEUDRにインスタントコーヒー正式追加(2026/7/13採択)、2027年12月末から適用でスペシャルティは追い風｜2026/07/18 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "official-src",
-        "description": "EU委員会が2026-07-13に採択したDelegated Act(EUDR対象拡大)を一次情報として、Daily Coffee News / Comunicaffe / Just-Drinks / Perfect Daily Grind の業界解説と照合。official-srcを『規制官庁公式』へ拡張する試行(従来は産地機関・協会中心だったカテゴリの再挑戦)。",
-        "sources": [
-          "https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en",
-          "https://dailycoffeenews.com/2026/07/16/european-commission-adds-soluble-coffee-to-eudr-product-list/",
-          "https://www.just-drinks.com/news/eu-commission-proposes-to-add-instant-coffee-to-eudr-scope/",
-          "https://www.comunicaffe.com/eudr-new-delegated-act-updates-the-list-of-products-covered-by-the-regulation-adding-instant-coffee",
-          "https://perfectdailygrind.com/2026/07/coffee-news-recap-17-jul-2026/"
-        ],
-        "query": "EUDR instant coffee July 2026 Delegated Act",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-07-31T01:01:42.760Z"
-      },
-      "instagram": {
-        "mediaId": "18136391839584831",
-        "permalink": "https://www.instagram.com/reel/Da6e8J0gHAh/",
-        "views": 125,
-        "reach": 126,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "EaU3PU83jGU",
       "videoUrl": "https://youtube.com/shorts/EaU3PU83jGU",
       "date": "2026-07-19",
@@ -3844,7 +3789,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18118364587962466",
@@ -3901,7 +3846,7 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18079960553707165",
@@ -3957,7 +3902,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18089115959670351",
@@ -4014,7 +3959,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "17910049782305684",
@@ -4071,7 +4016,7 @@
         "views": 5,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18134595262671335",
@@ -4128,7 +4073,7 @@
         "views": 3,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18066486761784255",
@@ -4182,10 +4127,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18118127162000654",
@@ -4242,7 +4187,7 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18451833970193024",
@@ -4299,7 +4244,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18374066401246636",
@@ -4356,7 +4301,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18104990059998926",
@@ -4413,7 +4358,7 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": {
         "mediaId": "18117213236118268",
@@ -4467,10 +4412,10 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-16T01:32:55.729Z"
+        "updatedAt": "2026-10-17T01:23:51.142Z"
       },
       "instagram": null
     },
@@ -4514,6 +4459,53 @@
         ]
       },
       "stats": {
+        "views": 6,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-10-17T01:23:51.142Z"
+      },
+      "instagram": null
+    },
+    {
+      "videoId": "LjKDHs9D9Rk",
+      "videoUrl": "https://youtube.com/shorts/LjKDHs9D9Rk",
+      "date": "2026-10-17",
+      "title": "【器具の違い】平底に替えると？ 湯だまりで濃さがそろう #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "カリタウェーブ",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 38,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "i08-cone-flat",
+        "pillar": "gear",
+        "topic": "湯だまりで濃さがそろう",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "tipProblems": [
+          "落ちが遅い時",
+          "軽すぎる時"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -4523,14 +4515,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-09-17",
-      "changes": [
-        "standard: 2 avg views (80 videos)",
-        "Day performance: Sat=10, Sun=3, Fri=2, Thu=1, Mon=1, Tue=1, Wed=1"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-09-18",
       "changes": [
@@ -5054,6 +5038,36 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 1 avg views (20 videos)",
         "Day performance: Sat=1, Mon=1, Wed=1, Thu=1, Fri=0, Sun=0, Tue=0"
+      ],
+      "recommendedTemplate": "brew-lesson"
+    },
+    {
+      "date": "2026-10-17",
+      "changes": [
+        "Coffee: 0.6x avg views → drop",
+        "コーヒー豆知識: 0.6x avg views → drop",
+        "スペシャルティコーヒー: 0.7x avg views → drop",
+        "カフェ: 0.6x avg views → drop",
+        "珈琲: 0.6x avg views → drop",
+        "CoffeeLovers: 0.6x avg views → drop",
+        "コーヒー好き: 0.6x avg views → drop",
+        "今日の一杯: 0.8x avg views → drop",
+        "コーヒーレシピ: 0.8x avg views → drop",
+        "V60: 1.5x avg views → boost",
+        "自家焙煎: 0.8x avg views → drop",
+        "コーヒー豆: 0.8x avg views → drop",
+        "おうちカフェ: 1.6x avg views → boost",
+        "OpenGroundCoffee: 0.8x avg views → drop",
+        "フレンチプレス: 0.5x avg views → drop",
+        "オリガミドリッパー: 0.5x avg views → drop",
+        "コーヒーの淹れ方: 2.0x avg views → boost",
+        "ハンドドリップ: 2.0x avg views → boost",
+        "コーヒーのある暮らし: 2.0x avg views → boost",
+        "抽出: 2.0x avg views → boost",
+        "standard: 0 avg views (52 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 1 avg views (21 videos)",
+        "Day performance: Sat=1, Mon=1, Wed=1, Thu=1, Fri=1, Sun=0, Tue=0"
       ],
       "recommendedTemplate": "brew-lesson"
     }
