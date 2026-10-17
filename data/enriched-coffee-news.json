@@ -1,48 +1,53 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i08-cone-flat",
-    "pillar": "gear",
-    "method": "kalita-wave",
+    "episode": "i09-press-time",
+    "pillar": "time",
+    "method": "french-press",
     "scene": "hot",
-    "word": "平底",
-    "ask": "に替えると？",
-    "hook": "円すいを平底に替える",
-    "topic": "湯だまりで濃さがそろう",
-    "why": "底が平らで湯が均一に粉を通る",
-    "core": "平底は湯だまりができ、濃さがそろう",
+    "word": "浸す時間",
+    "ask": "を延ばすと？",
+    "hook": "浸す時間を長くする",
+    "topic": "コクが増して重くなる",
+    "why": "浸す時間が長いほど成分が多く溶ける",
+    "core": "長く浸すほど、コクが増して重くなる",
     "motion": {
-      "type": "compare",
-      "shade": { "from": 45, "to": 60 },
+      "type": "liquid",
+      "shade": { "from": 55, "to": 80 },
       "meters": [
-        { "label": "甘味", "from": 40, "to": 60 },
-        { "label": "ムラ", "from": 60, "to": 30 }
+        { "label": "コク", "from": 45, "to": 75 },
+        { "label": "苦味", "from": 40, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "平底にする", "taste": "濃さがそろい、甘い" },
-      { "label": "円すいにする", "taste": "軽く、すっきり" }
+      { "label": "長くする", "taste": "コクが増して重い" },
+      { "label": "短くする", "taste": "軽く、すっきり" }
     ],
     "tips": [
-      { "problem": "落ちが遅い時", "fix": "挽き目を少し粗くする" },
-      { "problem": "軽すぎる時", "fix": "ゆっくり注ぐ" }
+      { "problem": "重すぎる時", "fix": "浸す時間を短くする" },
+      { "problem": "粉っぽい時", "fix": "上ずみだけを注ぐ" }
     ],
     "visual": {
-      "type": "flow",
-      "caption": "底の形で湯の通り方が変わる",
-      "brewers": [
-        { "shape": "cone", "label": "円すい", "note": "中心に速く集まる", "speed": "fast" },
-        { "shape": "flat", "label": "平底", "note": "平らに均一に落ちる", "speed": "slow" }
-      ]
+      "type": "graph",
+      "caption": "浸すほどコクが増す",
+      "xLabel": "浸す時間",
+      "yLabel": "コク",
+      "points": [
+        { "label": "短い", "value": 2 },
+        { "label": "ふつう", "value": 3 },
+        { "label": "長い", "value": 4 },
+        { "label": "長すぎ", "value": 5 }
+      ],
+      "mark": 2
     },
     "narration": {
-      "title": "円すいから平底のドリッパーに替えると、どうなる？湯だまりで、濃さがそろいます。",
-      "why": "底が平らだと、お湯が均一に粉を通るからです。",
-      "visual": "円すいは中心に速く集まり、平底は平らにゆっくり落ちます。",
-      "effect": "平底にすると、濃さがそろって甘く。円すいにすると、軽めですっきりになります。",
-      "tips": "落ちが遅ければ、挽き目を少し粗く。軽すぎれば、ゆっくり注ぎます。"
+      "title": "フレンチプレスで浸す時間を長くすると、どうなる？コクが増して、重い飲み心地になります。",
+      "why": "浸す時間が長いほど、成分が多く溶け出すからです。",
+      "visual": "浸すほど、コクのメーターがぐんと伸びます。",
+      "effect": "長くすると、コクが増して重く。短くすると、軽くすっきりになります。",
+      "tips": "重すぎれば、浸す時間を短くする。粉っぽければ、上ずみだけを注ぎます。"
     }
   }
 }
