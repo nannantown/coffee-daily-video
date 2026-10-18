@@ -27,6 +27,13 @@
       "attemptedAt": "2026-10-17T01:26:26.870Z",
       "postId": "6ad2cec48ac6cfe544258ef1",
       "verifiedAt": "2026-10-17T01:26:28.245Z"
+    },
+    "6ad038ce778b240e2f12264f:20261018": {
+      "fingerprint": "b56fcefce6e0524684f84734d785c69b4e4cf5f777e5c048a041c8f321679668",
+      "videoSha256": "401c4e2c29ebf693619dbcacacb6a1c6d705ea7dc6ba2495fba916680c1f8d7d",
+      "state": "creating",
+      "attemptId": "ed7e6b46-7286-41a0-88c8-1d3689144b3b",
+      "attemptedAt": "2026-10-18T01:20:58.095Z"
     }
   }
 }
