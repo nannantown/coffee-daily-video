@@ -1,53 +1,48 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i09-press-time",
-    "pillar": "time",
-    "method": "french-press",
+    "episode": "i10-clever",
+    "pillar": "gear",
+    "method": "clever",
     "scene": "hot",
-    "word": "浸す時間",
-    "ask": "を延ばすと？",
-    "hook": "浸す時間を長くする",
-    "topic": "コクが増して重くなる",
-    "why": "浸す時間が長いほど成分が多く溶ける",
-    "core": "長く浸すほど、コクが増して重くなる",
+    "word": "クレバー",
+    "ask": "で待つと？",
+    "hook": "しっかり待ってから落とす",
+    "topic": "甘みが後から出てくる",
+    "why": "酸が先、甘みはその後に溶け出す",
+    "core": "待つほど、酸の後に甘みが溶け出す",
     "motion": {
       "type": "liquid",
-      "shade": { "from": 55, "to": 80 },
+      "shade": { "from": 40, "to": 65 },
       "meters": [
-        { "label": "コク", "from": 45, "to": 75 },
-        { "label": "苦味", "from": 40, "to": 60 }
+        { "label": "酸味", "from": 65, "to": 45 },
+        { "label": "甘味", "from": 30, "to": 65 }
       ]
     },
     "effect": [
-      { "label": "長くする", "taste": "コクが増して重い" },
-      { "label": "短くする", "taste": "軽く、すっきり" }
+      { "label": "待つ", "taste": "甘みが出て丸い" },
+      { "label": "すぐ落とす", "taste": "酸が立ち、軽い" }
     ],
     "tips": [
-      { "problem": "重すぎる時", "fix": "浸す時間を短くする" },
-      { "problem": "粉っぽい時", "fix": "上ずみだけを注ぐ" }
+      { "problem": "重すぎる時", "fix": "待つ時間を短くする" },
+      { "problem": "酸っぱい時", "fix": "もう少し待ってから落とす" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "浸すほどコクが増す",
-      "xLabel": "浸す時間",
-      "yLabel": "コク",
-      "points": [
-        { "label": "短い", "value": 2 },
-        { "label": "ふつう", "value": 3 },
-        { "label": "長い", "value": 4 },
-        { "label": "長すぎ", "value": 5 }
-      ],
-      "mark": 2
+      "type": "flow",
+      "caption": "待ってから一気に落とす",
+      "brewers": [
+        { "shape": "immersion", "label": "浸して待つ", "note": "弁が閉じて湯がたまる" },
+        { "shape": "cone", "label": "落とす", "note": "紙で一気にこす", "speed": "fast" }
+      ]
     },
     "narration": {
-      "title": "フレンチプレスで浸す時間を長くすると、どうなる？コクが増して、重い飲み心地になります。",
-      "why": "浸す時間が長いほど、成分が多く溶け出すからです。",
-      "visual": "浸すほど、コクのメーターがぐんと伸びます。",
-      "effect": "長くすると、コクが増して重く。短くすると、軽くすっきりになります。",
-      "tips": "重すぎれば、浸す時間を短くする。粉っぽければ、上ずみだけを注ぎます。"
+      "title": "クレバーで、しっかり待ってから落とすとどうなる？甘みが後から出てきます。",
+      "why": "酸は先に、甘みはその後ゆっくり溶け出すからです。",
+      "visual": "弁を閉じて湯をためてから、紙で一気に落とすと甘みがついてきます。",
+      "effect": "待つと、甘みが出て丸い味に。すぐ落とすと、酸が立って軽い味になります。",
+      "tips": "重すぎる時は、待つ時間を短くする。酸っぱい時は、もう少し待ってから落とします。"
     }
   }
 }
