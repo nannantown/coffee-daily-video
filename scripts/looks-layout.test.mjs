@@ -21,6 +21,12 @@ test("the layout uses the theme's content bottom and clearance", () => {
   assert.equal(LOW_COLUMN, 1080 - MARGIN * 2 - 80);
   assert.equal(MARGIN + LOW_COLUMN, RIGHT_LIMIT);
   assert.equal(RIGHT_LIMIT, 904);
+  // the classic cards' column (SlideShell): contentTop..contentBottom inset by DRIFT_MAX, margin 80 + clearance 80
+  assert.match(theme, /contentTop: 340/);
+  assert.match(theme, /DRIFT_MAX = 8;/);
+  assert.match(theme, /margin: 80/);
+  assert.equal(CLASSIC.column, 1560 - 340 - 2 * 8);
+  assert.equal(CLASSIC.width, 1080 - (80 + 8) * 2 - 80);
 });
 
 test("every curriculum episode fits: text above the Reels UI, left of the action buttons, the reason always shown", () => {

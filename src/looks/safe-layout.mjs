@@ -177,6 +177,7 @@ export function endLayout({ heading, lines, next }) {
 // whole stack must fit that column or it runs past both ends.
 // ---------------------------------------------------------------------------
 
+// copied from src/cards/theme.ts (SPACE.contentTop 340, DRIFT_MAX 8, margin 80 + clearance 80); scripts/looks-layout.test.mjs keeps them in sync
 export const CLASSIC = { column: CONTENT_BOTTOM - 340 - 2 * 8, width: 824, captionGap: 64, captionSize: 52, captionWidth: 824 - 40, noteGap: 32, noteSize: 40 };
 /** Classic diagram heights: measured 2026-10-19 on the tallest content each type allows (flow 807, graph 724, scale 696, compare 652; compare + 42 for a 3-line result) + margin. */
 export const CLASSIC_DIAGRAM_HEIGHT = { flow: 817, graph: 734, scale: 706, compare: 704 };
