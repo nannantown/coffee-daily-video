@@ -1,48 +1,68 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i10-clever",
+    "episode": "i11-metal-filter",
     "pillar": "gear",
-    "method": "clever",
+    "method": "french-press",
     "scene": "hot",
-    "word": "クレバー",
-    "ask": "で待つと？",
-    "hook": "しっかり待ってから落とす",
-    "topic": "甘みが後から出てくる",
-    "why": "酸が先、甘みはその後に溶け出す",
-    "core": "待つほど、酸の後に甘みが溶け出す",
+    "word": "金属",
+    "ask": "フィルターだと？",
+    "hook": "金属フィルターで淹れる",
+    "topic": "コクが増して舌に厚い",
+    "why": "紙が吸う油分がそのまま入る",
+    "core": "紙が吸う油分が、そのままカップに入る",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 40, "to": 65 },
+      "type": "compare",
+      "shade": { "from": 55, "to": 70 },
       "meters": [
-        { "label": "酸味", "from": 65, "to": 45 },
-        { "label": "甘味", "from": 30, "to": 65 }
+        { "label": "コク", "from": 40, "to": 75 },
+        { "label": "すっきり", "from": 70, "to": 40 }
       ]
     },
     "effect": [
-      { "label": "待つ", "taste": "甘みが出て丸い" },
-      { "label": "すぐ落とす", "taste": "酸が立ち、軽い" }
+      { "label": "金属にする", "taste": "油分とコクが出る" },
+      { "label": "紙にする", "taste": "すっきり軽い" }
     ],
     "tips": [
-      { "problem": "重すぎる時", "fix": "待つ時間を短くする" },
-      { "problem": "酸っぱい時", "fix": "もう少し待ってから落とす" }
+      { "problem": "粉っぽい時", "fix": "最後の一口を残す" },
+      { "problem": "重すぎる時", "fix": "挽き目を少し粗くする" }
     ],
     "visual": {
-      "type": "flow",
-      "caption": "待ってから一気に落とす",
-      "brewers": [
-        { "shape": "immersion", "label": "浸して待つ", "note": "弁が閉じて湯がたまる" },
-        { "shape": "cone", "label": "落とす", "note": "紙で一気にこす", "speed": "fast" }
-      ]
+      "type": "compare",
+      "caption": "油分が通るとコクが出る",
+      "left": {
+        "label": "紙",
+        "result": "すっきり軽い",
+        "strength": 2
+      },
+      "right": {
+        "label": "金属",
+        "result": "油分とコク",
+        "strength": 4
+      },
+      "pick": "right"
+    },
+    "premise": {
+      "term": "浸漬式と透過式",
+      "say": "粉をお湯に浸すか、上から注いで通すか",
+      "visual": {
+        "type": "flow",
+        "caption": "フレンチプレスは浸漬式",
+        "brewers": [
+          { "shape": "immersion", "label": "浸漬式", "note": "浸して待つ" },
+          { "shape": "cone", "label": "透過式", "note": "注ぎ続けて通す" }
+        ]
+      }
     },
     "narration": {
-      "title": "クレバーで、しっかり待ってから落とすとどうなる？甘みが後から出てきます。",
-      "why": "酸は先に、甘みはその後ゆっくり溶け出すからです。",
-      "visual": "弁を閉じて湯をためてから、紙で一気に落とすと甘みがついてきます。",
-      "effect": "待つと、甘みが出て丸い味に。すぐ落とすと、酸が立って軽い味になります。",
-      "tips": "重すぎる時は、待つ時間を短くする。酸っぱい時は、もう少し待ってから落とします。"
+      "premise": "まず前提。淹れ方は大きく2つ。粉をお湯に浸して待つ浸漬式と、ドリッパーに注ぎ続けて通す透過式。フレンチプレスは浸漬式です。",
+      "title": "金属フィルターで淹れると、コクが増して舌に厚く残ります。",
+      "why": "紙が吸う油分が、そのままカップに入るからです。",
+      "visual": "紙はすっきり、金属は油分とコクが前に出ます。",
+      "effect": "金属にすると、油分とコクが出る。紙にすると、すっきり軽い。",
+      "tips": "粉っぽければ、最後の一口を残す。重すぎれば、挽き目を少し粗くします。"
     }
   }
 }
