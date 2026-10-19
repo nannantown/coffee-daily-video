@@ -595,13 +595,19 @@ export const DiagramBody: React.FC<{ v: LessonVisual; flowHeight?: number; graph
   }
 };
 
-export const LessonVisualView: React.FC<{ slide: LessonVisualSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+/** The diagram slide; the premise slide reuses it with a note line (term：say) under the caption. */
+export const LessonVisualView: React.FC<{ slide: Pick<LessonVisualSlide, "heading" | "visual">; page: string; index?: number; note?: string }> = ({ slide, page, index = 0, note }) => (
   <SlideShell label={slide.heading} right={page} center index={index}>
     <div style={{ paddingRight: SPACE.actionColumnClearance }}>
       <DiagramBody v={slide.visual} />
       <Reveal delay={30} style={{ marginTop: 64 }}>
         <AccentLine size={52}>{slide.visual.caption}</AccentLine>
       </Reveal>
+      {note ? (
+        <Reveal delay={40} style={{ marginTop: 32, fontSize: TYPE.body, fontWeight: 700, lineHeight: 1.4, ...PHRASE_BREAK }}>
+          {note}
+        </Reveal>
+      ) : null}
     </div>
   </SlideShell>
 );

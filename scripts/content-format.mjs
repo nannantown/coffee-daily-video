@@ -112,6 +112,10 @@ export const LIMITS = {
   meterLabel: 4, // 苦味 / 酸味 / すっきり
   tipProblem: 10,
   tipFix: 16,
+  // the premise slide (lesson.premise, owner request 2026-10-19): what a beginner
+  // has to know first, told right after the cover
+  premiseTerm: 14, // the slide's heading, as long as the cover's word + ask
+  premiseSay: 24, // one line under the diagram, where the reason goes on the diagram slide
   narrationTotal: 260, // IG Reels rejects > 60s videos
   // diagram slide (src/cards/Diagrams.tsx)
   visualCaption: 18,
@@ -337,7 +341,9 @@ export function toSpokenJa(text) {
     .replace(/(\d{1,2}):([0-5]\d)(?!\d)/g, (m) => speakTime(m))
     .replace(/(\d+(?:\.\d+)?)\s?℃/g, "$1度")
     .replace(/(\d+(?:\.\d+)?)\s?g(?![A-Za-z])/g, "$1グラム")
-    .replace(/(\d+(?:\.\d)?)h(?![A-Za-z])/g, "$1時間");
+    .replace(/(\d+(?:\.\d)?)h(?![A-Za-z])/g, "$1時間")
+    // readings the voice may get wrong (浸漬 = しんし, not しんせき)
+    .replace(/浸漬/g, "しんし");
 }
 export function jstDateParts(now = new Date()) {
   const fmt = new Intl.DateTimeFormat("ja-JP", {
@@ -401,6 +407,9 @@ function lessonTexts(lesson, prefix) {
     add(`${prefix}.tips[${i}].fix`, t?.fix);
   });
   for (const [label, v] of visualTexts(lesson.visual, `${prefix}.visual`)) add(label, v);
+  const premise = lesson.premise && typeof lesson.premise === "object" ? lesson.premise : {};
+  for (const k of ["term", "say"]) add(`${prefix}.premise.${k}`, premise[k]);
+  for (const [label, v] of visualTexts(premise.visual, `${prefix}.premise.visual`)) add(label, v);
   const nar = lesson.narration && typeof lesson.narration === "object" ? lesson.narration : {};
   // keys are untrusted too: quoted, so a key cannot carry a line break into the log
   for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration[${quote(k)}]`, v);
@@ -600,6 +609,7 @@ export function validateLesson(lesson, errors, prefix = "lesson") {
     }
   }
   validateVisual(lesson.visual, errors, `${prefix}.visual`);
+  validatePremise(lesson, episode, errors, prefix);
   if (!own(SCENES, lesson.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (lesson.method === "cold-brew" && lesson.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
   if (lesson.sources != null && !Array.isArray(lesson.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
@@ -650,6 +660,58 @@ export function validateLesson(lesson, errors, prefix = "lesson") {
   if (lesson.method === "cold-brew" && !texts.some(([, v]) => v.includes(COLD_BREW.fridgeWord))) {
     errors.push(`${prefix} must say "${COLD_BREW.fridgeWord}" for cold-brew (e.g. why: "冷蔵庫でゆっくり溶かす") — it steeps in the fridge`);
   }
+}
+
+/**
+ * The premise (owner request 2026-10-19: 「前提知識が必要となるようなものは、ちゃんと
+ * 前提知識もその動画で説明する」): what a beginner has to know before the episode
+ * makes sense — a brewer (クレバー), a principle (浸漬式と透過式), a word — told on
+ * its own slide right after the cover. An episode whose curriculum entry has a
+ * premise must keep it (same term), so neither the routine nor the fallback can
+ * drop it. `ref` points at an earlier episode that explains it at length; the
+ * video then tells the viewer to watch it (前回の動画 when it is the episode just before).
+ */
+function validatePremise(lesson, episode, errors, prefix) {
+  const p = lesson.premise;
+  const want = episode?.lesson?.premise;
+  if (p == null) {
+    if (want) errors.push(`${prefix}.premise is required for episode ${episode.id} — keep the series map's premise ${quote(want.term)} (a beginner needs it first)`);
+    return;
+  }
+  const at = `${prefix}.premise`;
+  if (typeof p !== "object" || Array.isArray(p)) {
+    errors.push(`${at} must be an object { term, say, visual, ref? }`);
+    return;
+  }
+  if (want) {
+    // the series map's premise is the explanation the owner asked for: the routine
+    // copies it as is, so it cannot be emptied while the heading stays
+    for (const k of ["term", "say"]) {
+      if (p[k] !== want[k]) errors.push(`${at}.${k} must stay ${quote(want[k])} for episode ${episode.id} (copy the draft's premise as is)`);
+    }
+    if (JSON.stringify(p.visual) !== JSON.stringify(want.visual)) errors.push(`${at}.visual must stay the draft's diagram for episode ${episode.id} (copy the draft's premise as is)`);
+    const wantNar = episode.lesson.narration?.premise;
+    const nar = lesson.narration?.premise;
+    if (wantNar && nar !== wantNar) errors.push(`${prefix}.narration.premise must stay the draft's ${quote(wantNar)} for episode ${episode.id}`);
+  }
+  checkLen(errors, `${at}.term`, p.term, LIMITS.premiseTerm);
+  checkLen(errors, `${at}.say`, p.say, LIMITS.premiseSay);
+  validateVisual(p.visual, errors, `${at}.visual`);
+  if (p.ref != null) {
+    const eps = CURRICULUM.episodes;
+    const refAt = eps.findIndex((e) => e.id === p.ref);
+    const selfAt = eps.findIndex((e) => e.id === lesson.episode);
+    if (refAt < 0 || selfAt < 0 || refAt >= selfAt) errors.push(`${at}.ref ${quote(p.ref)} must be an earlier episode of data/curriculum.json than ${quote(lesson.episode)}`);
+  }
+}
+
+/** Where to send a viewer who needs more than the premise slide: 前回 when ref is the episode just before. */
+export function premiseRef(lesson) {
+  const ref = episodeById(lesson?.premise?.ref);
+  if (!ref) return null;
+  const { no } = episodeNumber(ref.id);
+  const previous = followingEpisode(ref.id)?.id === lesson.episode;
+  return { no, previous, name: previous ? "前回の動画" : `第${no}回の動画`, title: `${ref.lesson.word}${ref.lesson.ask}` };
 }
 
 /**
@@ -790,6 +852,25 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
   const question = `${r.word}${r.ask}`;
   const [one, other] = r.effect;
 
+  const ref = premiseRef(r);
+  const premise = r.premise
+    ? [
+        // The premise: what a beginner must know first (validatePremise).
+        {
+          kind: "lesson-premise",
+          heading: "まず前提",
+          term: r.premise.term,
+          say: r.premise.say,
+          visual: structuredClone(r.premise.visual),
+          ref: ref ? `わからない時は${ref.name}「${ref.title}」へ` : "",
+          // the pointer to the longer explanation is always spoken, after the routine's own words
+          narration:
+            pick(nar.premise, `まず前提です。${r.premise.term}。${r.premise.say}。`) +
+            (ref ? `わからない時は、${ref.name}を見てください。` : ""),
+        },
+      ]
+    : [];
+
   const slides = [
     // Cover: one big word + the question, and what it does to the taste. It is
     // the grid thumbnail (IG takes frame 45), so it names the topic at a glance.
@@ -807,6 +888,7 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
       sceneLabel: SCENES[r.scene],
       narration: pick(nar.title, `${term ? `今日の用語は、${term}。` : ""}${question}${r.topic}。`),
     },
+    ...premise,
     // Why: the one change and the reason behind it.
     {
       kind: "lesson-why",
@@ -962,6 +1044,7 @@ function lessonBodyLines(data) {
   const visual = find("lesson-visual");
   const effect = find("lesson-effect");
   const tips = find("lesson-tips");
+  const premise = find("lesson-premise");
   const series = title.series ? [`シリーズ「${CURRICULUM.series}」${title.series}`] : [];
   const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
   return [
@@ -969,6 +1052,7 @@ function lessonBodyLines(data) {
     `【${title.heading}】${title.word}${title.ask}`,
     `→ ${title.topic}`,
     "",
+    ...(premise ? ["■ まず前提", `${premise.term}：${premise.say}`, `（${premise.visual.caption}）`, ...(premise.ref ? [premise.ref] : []), ""] : []),
     "■ なぜ変わる？",
     `${why.hook}と、${why.why}`,
     "",

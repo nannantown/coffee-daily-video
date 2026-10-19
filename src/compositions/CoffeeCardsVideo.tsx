@@ -20,6 +20,8 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
   switch (slide.kind) {
     case "lesson-title":
       return <LessonTitle slide={slide} index={index} />;
+    case "lesson-premise":
+      return <LessonVisualView slide={slide} note={`${slide.term}：${slide.say}`} page={page} index={index} />;
     case "lesson-visual":
       return <LessonVisualView slide={slide} page={page} index={index} />;
     case "lesson-why":

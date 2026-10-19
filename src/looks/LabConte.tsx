@@ -161,12 +161,13 @@ const Gauge: React.FC<{ v: Extract<LessonVisualSlide["visual"], { type: "scale" 
   );
 };
 
-export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlide }> = ({ ep, slide }) => {
+/** The diagram scene; the premise slide reuses it with its own heading (title) and line (note). */
+export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: Pick<LessonVisualSlide, "heading" | "visual">; title?: string; note?: string }> = ({ ep, slide, title, note = ep.why }) => {
   const v = slide.visual;
-  const L = visualLayout({ type: v.type, caption: v.caption, why: ep.why });
+  const L = visualLayout({ type: v.type, caption: v.caption, why: note });
   return (
     <LabFrame sprig={false}>
-      <LabHeading label={slide.heading} heading={`${ep.word}${ep.ask}`} accent={ep.accent} />
+      <LabHeading label={slide.heading} heading={title ?? `${ep.word}${ep.ask}`} accent={ep.accent} />
       {v.type === "scale" ? (
         <Gauge v={v} accent={ep.accent} />
       ) : (
@@ -188,7 +189,7 @@ export const LabVisualConte: React.FC<{ ep: LookEpisode; slide: LessonVisualSlid
       {/* the reason is always on screen (validation rejects content whose reason does not fit) */}
       <In at={80} style={{ top: L.bandTop, left: L.noteLeft, width: L.noteWidth }}>
         <div style={{ height: 2, background: RULE, marginBottom: 24 }} />
-        <div style={T(NOTE_SIZE, 500, GREY)}>{ep.why}</div>
+        <div style={T(NOTE_SIZE, 500, GREY)}>{note}</div>
       </In>
     </LabFrame>
   );
