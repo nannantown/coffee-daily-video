@@ -1,0 +1,37 @@
+name: Instagram publication safety tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'src/looks/**'
+      - 'data/instagram-post-receipts.json'
+      - 'data/curriculum.json'
+      - 'data/coffee-lineup.json'
+      - 'data/samples/**'
+      - 'docs/curriculum.md'
+      - '.github/workflows/*instagram*.yml'
+      - '.github/workflows/daily-video.yml'
+permissions:
+  contents: read
+jobs:
+  mock-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      NODE_OPTIONS: ""
+      NODE_DEBUG: ""
+      NODE_DEBUG_NATIVE: ""
+      DEBUG: ""
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Mock-only tests; no credentials or posting
+        run: >-
+          node --test scripts/instagram-publication.test.mjs
+          scripts/instagram-recovery.test.mjs scripts/instagram-insights.test.mjs
+          scripts/check-instagram-connection.test.mjs scripts/buffer-draft.test.mjs
+          scripts/buffer-draft-state.test.mjs scripts/content-format.test.mjs

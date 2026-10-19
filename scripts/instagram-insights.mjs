@@ -53,9 +53,9 @@ const MEDIA_PREDATES_BUSINESS_SUBCODE = 2108006;
 
 export class GraphError extends Error {
   constructor(error) {
-    super(`Graph API error: ${error.message} (code: ${error.code})`);
-    this.code = error.code;
-    this.subcode = error.error_subcode;
+    super("Instagram insights request rejected");
+    this.code = Number.isSafeInteger(error?.code) ? error.code : null;
+    this.subcode = Number.isSafeInteger(error?.error_subcode) ? error.error_subcode : null;
   }
 
   get isPermissionError() {
@@ -78,17 +78,28 @@ export function resolveBudgetMs(env = {}) {
 }
 
 export function createGraphClient(fetchImpl = fetch, opts = {}) {
-  const { base = GRAPH_API_BASE, deadline = Infinity, clock = Date.now } = opts;
+  const { deadline = Infinity, clock = Date.now } = opts;
   return async function graphGet(path, params = {}) {
     const remaining = deadline - clock();
     if (remaining <= 0) throw new BudgetExceededError();
-    const url = path.startsWith("http") ? new URL(path) : new URL(`${base}${path}`);
-    for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
-    const timeout = Math.max(1, Math.ceil(Math.min(REQUEST_TIMEOUT_MS, remaining)));
-    const res = await fetchImpl(url, { signal: AbortSignal.timeout(timeout) });
-    const data = await res.json();
-    if (data.error) throw new GraphError(data.error);
-    return data;
+    try {
+      if (typeof path !== "string" || !/^\/[A-Za-z0-9_]+(?:\/[A-Za-z0-9_]+)?$/u.test(path)) throw new Error();
+      const token = params.access_token;
+      if (typeof token !== "string" || !token.length || token.length > 8192 || /[\u0000-\u0020\u007f]/u.test(token)) throw new Error();
+      const url = new URL(`${GRAPH_API_BASE}${path}`);
+      for (const [k, v] of Object.entries(params)) if (k !== "access_token") url.searchParams.set(k, v);
+      const timeout = Math.max(1, Math.ceil(Math.min(REQUEST_TIMEOUT_MS, remaining)));
+      const res = await fetchImpl(url, { method: "GET", redirect: "error", cache: "no-store", signal: AbortSignal.timeout(timeout),
+        headers: { Authorization: `Bearer ${token}`, Accept: "application/json" } });
+      // Graph error codes are useful for deciding whether to stop; raw messages never escape.
+      const data = await res.json();
+      if (data?.error) throw new GraphError(data.error);
+      if (!res.ok || !data || typeof data !== "object") throw new Error();
+      return data;
+    } catch (error) {
+      if (error instanceof GraphError) throw error;
+      throw new Error("Instagram insights request failed");
+    }
   };
 }
 
@@ -131,14 +142,20 @@ export async function listReels(graphGet, igUserId, token, sinceDate) {
     limit: "50",
     access_token: token,
   });
+  const cursors = new Set();
   for (;;) {
     const items = page.data ?? [];
     reels.push(...items.filter((m) => m.media_product_type === "REELS"));
     const oldest = items.at(-1);
     const next = page.paging?.next;
     if (!next || !oldest || toJstDate(oldest.timestamp) < sinceDate) break;
-    // `next` already embeds the access token; do not re-add it.
-    page = await graphGet(next);
+    // Ignore the server's next URL: it may contain credentials or another host.
+    const after = page.paging?.cursors?.after;
+    if (typeof after !== "string" || !/^[A-Za-z0-9_+/=-]{1,4096}$/u.test(after) || cursors.has(after) || cursors.size >= 100) {
+      throw new Error("Instagram insights pagination rejected");
+    }
+    cursors.add(after);
+    page = await graphGet(`/${igUserId}/media`, { fields: MEDIA_FIELDS, limit: "50", after, access_token: token });
   }
   return reels;
 }
@@ -269,7 +286,7 @@ export async function updateInstagramStats(history, env, opts = {}) {
     access_token: userToken,
   });
   if (!page.access_token) {
-    throw new Error(`Could not derive Page Access Token for page ${FACEBOOK_PAGE_ID}`);
+    throw new Error("Instagram Page token unavailable");
   }
   const pageToken = page.access_token;
 
@@ -323,7 +340,7 @@ export async function updateInstagramStats(history, env, opts = {}) {
       transientStreak = 0;
     } catch (err) {
       failed++;
-      log(`  IG: insights failed for ${video.date} (${reel.id}): ${err.message}`);
+      log("  IG: insights request failed; raw exception suppressed.");
       if (err instanceof BudgetExceededError) {
         stopReason = "budget";
       } else if (err.isPermissionError) {
