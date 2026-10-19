@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { CURRICULUM, LIMITS, buildCardsData, fallbackLessonContent, validateDailyContent } from "./content-format.mjs";
-import { LOW_COLUMN, MARGIN, RIGHT_LIMIT, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
+import { CLASSIC, LOW_COLUMN, MARGIN, RIGHT_LIMIT, classicPremiseHeight, classicPremiseNote, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // Review 2026-09-26 (rounds 1-3): every text of the lab look sits where the
@@ -62,6 +62,21 @@ test("the longest content a routine may write still fits", () => {
       assert.deepEqual(layoutProblems(data, VESSELS), [], `max ${type}/${vtype}`);
     }
   }
+});
+
+test("the classic cards' premise slide is checked too: the curriculum's premises fit, a note that needs a 3rd line under the tallest flow does not", () => {
+  const withPremise = CURRICULUM.episodes.filter((e) => e.lesson.premise);
+  assert.ok(withPremise.length >= 3);
+  for (const ep of withPremise) {
+    const ps = built(ep).slides.find((x) => x.kind === "lesson-premise");
+    assert.ok(classicPremiseHeight({ type: ps.visual.type, caption: ps.visual.caption, note: classicPremiseNote(ps) }) <= CLASSIC.column, ep.id);
+  }
+  const data = built(withPremise[0]);
+  const ps = data.slides.find((x) => x.kind === "lesson-premise");
+  ps.visual = { ...ps.visual, caption: "あ".repeat(LIMITS.visualCaption) };
+  ps.term = "あ".repeat(LIMITS.premiseTerm);
+  ps.say = "あ".repeat(LIMITS.premiseSay);
+  assert.ok(layoutProblems(data, VESSELS).some((p) => p.startsWith("classic cards: premise slide")));
 });
 
 test("content that cannot fit is reported (validation then falls back instead of hiding text)", () => {
