@@ -622,3 +622,54 @@ test("the slide date is not a recipe number (the last gate must not block a post
   // but a number anywhere else still counts
   assert.equal(recipeNumberHits([["slides[1].why", "0.5"]]).length, 1);
 });
+
+// ---------------------------------------------------------------------------
+// The premise (owner request 2026-10-19): what a beginner must know first
+// ---------------------------------------------------------------------------
+
+test("an episode with a premise tells it right after the cover, in the video and the caption", () => {
+  const ep = episodeById("i11-metal-filter");
+  assert.equal(ep.lesson.premise.term, "浸漬式と透過式");
+  const content = fallbackLessonContent(ep, "2026-10-20");
+  assert.deepEqual(errorsOf(content), []);
+  const data = buildCardsData(content, {});
+  assert.deepEqual(data.slides.map((s) => s.kind), ["lesson-title", "lesson-premise", "lesson-why", "lesson-visual", "lesson-effect", "lesson-tips"]);
+  const premise = data.slides[1];
+  assert.equal(premise.heading, "まず前提");
+  assert.ok(premise.narration.includes("浸漬式") && premise.narration.includes("透過式"));
+  const caption = buildCardCaptions(data, "2026/10/20").instagram;
+  assert.ok(caption.includes("■ まず前提\n浸漬式と透過式："), caption);
+  // a lesson without a premise keeps the five scenes
+  assert.equal(buildCardsData(sample, {}).slides.some((s) => s.kind === "lesson-premise"), false);
+});
+
+test("the routine cannot drop or swap the series map's premise, and a premise must fit", () => {
+  const base = fallbackLessonContent(episodeById("i11-metal-filter"), "2026-10-20");
+  const bad = (edit) => {
+    const c = clone(base);
+    edit(c.lesson);
+    return errorsOf(c);
+  };
+  assert.ok(bad((l) => delete l.premise).some((e) => e.includes("lesson.premise is required")));
+  assert.ok(bad((l) => (l.premise.term = "フレンチプレス")).some((e) => e.includes("premise.term must stay")));
+  assert.ok(bad((l) => (l.premise.say = "あ".repeat(LIMITS.premiseSay + 1))).some((e) => e.includes("premise.say")));
+  assert.ok(bad((l) => (l.premise.visual.caption = "")).length > 0);
+  assert.ok(bad((l) => (l.premise.say = "お湯は九十度で注ぐ")).some((e) => e.includes("recipe number")));
+  assert.ok(bad((l) => (l.premise.say = "当店の豆で浸して待つ")).some((e) => e.includes("must not say")));
+  assert.ok(bad((l) => (l.premise.ref = "i12-soft-water")).some((e) => e.includes("must be an earlier episode")));
+});
+
+test("a premise explained at length elsewhere sends the viewer there: 前回 when it is the episode before", () => {
+  const withRef = (ref) => {
+    const c = fallbackLessonContent(episodeById("i11-metal-filter"), "2026-10-20");
+    c.lesson.premise.ref = ref;
+    delete c.lesson.narration; // the template premise line, so the pointer fits the narration budget
+    assert.deepEqual(errorsOf(c), []);
+    return buildCardsData(c, {}).slides[1];
+  };
+  const prev = withRef("i10-clever");
+  assert.ok(prev.narration.endsWith("わからない時は、前回の動画を見てください。"), prev.narration);
+  assert.equal(prev.ref, "わからない時は前回の動画「クレバーで待つと？」へ");
+  const older = withRef("b11-percolation-immersion");
+  assert.ok(older.narration.includes("第11回の動画を見てください"), older.narration);
+});

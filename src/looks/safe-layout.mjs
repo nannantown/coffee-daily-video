@@ -186,6 +186,8 @@ export function labLayout(data, vessels) {
   return {
     why: whyLayout({ heading: `${why.hook}と`, core: why.core, meters: why.motion.meters.length, box: v.box, maxScale: v.maxScale, labels }),
     visual: visualLayout({ type: s["lesson-visual"].visual.type, caption: s["lesson-visual"].visual.caption, why: why.why }),
+    // the premise slide is the diagram scene with its own heading and line (LabVisualConte)
+    premise: s["lesson-premise"] ? visualLayout({ type: s["lesson-premise"].visual.type, caption: s["lesson-premise"].visual.caption, why: s["lesson-premise"].say }) : null,
     effect: effectLayout(s["lesson-effect"].sides),
     tips: tipsLayout(s["lesson-tips"].tips),
     end: endLayout(data.ending),
@@ -214,6 +216,11 @@ export function layoutProblems(data, vessels) {
   const v = L.visual;
   box("diagram: caption", { top: v.captionTop, bottom: v.captionBottom, left: MARGIN, right: v.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
   box("diagram: reason (lesson.why)", { top: v.noteTop, bottom: v.noteBottom, left: v.noteLeft, right: v.noteLeft + v.noteWidth });
+  const p = L.premise;
+  if (p) {
+    box("premise: caption", { top: p.captionTop, bottom: p.captionBottom, left: MARGIN, right: p.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
+    box("premise: line (lesson.premise.say)", { top: p.noteTop, bottom: p.noteBottom, left: p.noteLeft, right: p.noteLeft + p.noteWidth });
+  }
   for (const [i, r] of L.effect.entries()) {
     const left = 60 + EFFECT.cup + 40;
     box(`both ways: row ${i}`, { top: r.top, bottom: r.bottom, left, right: left + r.width });

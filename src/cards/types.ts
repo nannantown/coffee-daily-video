@@ -100,8 +100,21 @@ export interface LessonVisualSlide {
   narration: string;
 }
 
+// What a beginner must know first (lesson.premise), right after the cover:
+// the diagram scene with the premise's own heading (term) and line (say).
+export interface LessonPremiseSlide {
+  kind: "lesson-premise";
+  heading: string;
+  term: string;
+  say: string;
+  visual: LessonVisual;
+  ref: string; // "わからない時は前回の動画「…」へ" or ""
+  narration: string;
+}
+
 export type CardSlide =
   | LessonTitleSlide
+  | LessonPremiseSlide
   | LessonVisualSlide
   | LessonWhySlide
   | LessonEffectSlide

@@ -187,6 +187,7 @@ export function lookEpisode(look: Look, slides: CardSlide[]): LookEpisode {
 const Scene: React.FC<{ look: Look; ep: LookEpisode; slide: CardSlide }> = ({ look, ep, slide }) => {
   if (look === "lab" && slide.kind !== "lesson-title") {
     // the lab look's storyboard scenes (src/looks/LabConte.tsx)
+    if (slide.kind === "lesson-premise") return <LabVisualConte ep={ep} slide={slide} title={slide.term} note={slide.say} />;
     if (slide.kind === "lesson-why") return <LabWhyConte ep={ep} />;
     if (slide.kind === "lesson-visual") return <LabVisualConte ep={ep} slide={slide} />;
     if (slide.kind === "lesson-effect") return <LabEffectConte ep={ep} />;
@@ -198,6 +199,8 @@ const Scene: React.FC<{ look: Look; ep: LookEpisode; slide: CardSlide }> = ({ lo
       return <S.cover ep={ep} />;
     case "lesson-why":
       return <S.why ep={ep} />;
+    case "lesson-premise":
+      return <VisualScene look={look} ep={ep} slide={{ kind: "lesson-visual", heading: `${slide.heading}｜${slide.term}`, visual: slide.visual, narration: slide.narration }} />;
     case "lesson-visual":
       return <VisualScene look={look} ep={ep} slide={slide} />;
     case "lesson-effect":

@@ -35,6 +35,8 @@ if (process.argv.includes("--json")) {
   console.log(`  理屈 (why): ${ep.lesson.why}`);
   console.log(`  抽出法: ${ep.lesson.method}${ep.fixedMethod ? "（固定。変えない）" : "（変えてよい）"}`);
   console.log(`  図解の型（案）: ${ep.lesson.visual.type}（${VISUAL_TYPES[ep.lesson.visual.type]}）`);
-  console.log(`  次回: ${next.lesson.word}${next.lesson.ask}`);
+  const premise = ep.lesson.premise;
+  console.log(`  前提 (premise.term, 外さない・変えない): ${premise ? `${premise.term} — ${premise.say}${premise.ref ? `（くわしくは ${premise.ref}）` : ""}` : "なし（手順 2 の 0.5 で点検）"}`);
+  console.log(`  次回: ${next.lesson.word}${next.lesson.ask}${next.lesson.premise ? `（前提: ${next.lesson.premise.term}）` : ""}`);
   console.log("  下書き: node scripts/next-episode.mjs --json");
 }
