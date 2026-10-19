@@ -341,7 +341,9 @@ export function toSpokenJa(text) {
     .replace(/(\d{1,2}):([0-5]\d)(?!\d)/g, (m) => speakTime(m))
     .replace(/(\d+(?:\.\d+)?)\s?℃/g, "$1度")
     .replace(/(\d+(?:\.\d+)?)\s?g(?![A-Za-z])/g, "$1グラム")
-    .replace(/(\d+(?:\.\d)?)h(?![A-Za-z])/g, "$1時間");
+    .replace(/(\d+(?:\.\d)?)h(?![A-Za-z])/g, "$1時間")
+    // readings the voice may get wrong (浸漬 = しんし, not しんせき)
+    .replace(/浸漬/g, "しんし");
 }
 export function jstDateParts(now = new Date()) {
   const fmt = new Intl.DateTimeFormat("ja-JP", {
@@ -681,7 +683,17 @@ function validatePremise(lesson, episode, errors, prefix) {
     errors.push(`${at} must be an object { term, say, visual, ref? }`);
     return;
   }
-  if (want && p.term !== want.term) errors.push(`${at}.term must stay ${quote(want.term)} for episode ${episode.id} (the series map fixes it)`);
+  if (want) {
+    // the series map's premise is the explanation the owner asked for: the routine
+    // copies it as is, so it cannot be emptied while the heading stays
+    for (const k of ["term", "say"]) {
+      if (p[k] !== want[k]) errors.push(`${at}.${k} must stay ${quote(want[k])} for episode ${episode.id} (copy the draft's premise as is)`);
+    }
+    if (JSON.stringify(p.visual) !== JSON.stringify(want.visual)) errors.push(`${at}.visual must stay the draft's diagram for episode ${episode.id} (copy the draft's premise as is)`);
+    const wantNar = episode.lesson.narration?.premise;
+    const nar = lesson.narration?.premise;
+    if (wantNar && nar !== wantNar) errors.push(`${prefix}.narration.premise must stay the draft's ${quote(wantNar)} for episode ${episode.id}`);
+  }
   checkLen(errors, `${at}.term`, p.term, LIMITS.premiseTerm);
   checkLen(errors, `${at}.say`, p.say, LIMITS.premiseSay);
   validateVisual(p.visual, errors, `${at}.visual`);

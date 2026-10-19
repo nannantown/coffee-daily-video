@@ -21,7 +21,7 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
     case "lesson-title":
       return <LessonTitle slide={slide} index={index} />;
     case "lesson-premise":
-      return <LessonVisualView slide={{ kind: "lesson-visual", heading: `${slide.heading}｜${slide.term}`, visual: slide.visual, narration: slide.narration }} page={page} index={index} />;
+      return <LessonVisualView slide={slide} note={`${slide.term}：${slide.say}`} page={page} index={index} />;
     case "lesson-visual":
       return <LessonVisualView slide={slide} page={page} index={index} />;
     case "lesson-why":

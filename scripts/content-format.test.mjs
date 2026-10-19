@@ -636,14 +636,15 @@ test("an episode with a premise tells it right after the cover, in the video and
   assert.deepEqual(data.slides.map((s) => s.kind), ["lesson-title", "lesson-premise", "lesson-why", "lesson-visual", "lesson-effect", "lesson-tips"]);
   const premise = data.slides[1];
   assert.equal(premise.heading, "まず前提");
-  assert.ok(premise.narration.includes("浸漬式") && premise.narration.includes("透過式"));
+  // spoken: 浸漬 is read しんし (toSpokenJa)
+  assert.ok(premise.narration.includes("しんし式") && premise.narration.includes("透過式"), premise.narration);
   const caption = buildCardCaptions(data, "2026/10/20").instagram;
   assert.ok(caption.includes("■ まず前提\n浸漬式と透過式："), caption);
   // a lesson without a premise keeps the five scenes
   assert.equal(buildCardsData(sample, {}).slides.some((s) => s.kind === "lesson-premise"), false);
 });
 
-test("the routine cannot drop or swap the series map's premise, and a premise must fit", () => {
+test("the routine cannot drop, empty or swap the series map's premise", () => {
   const base = fallbackLessonContent(episodeById("i11-metal-filter"), "2026-10-20");
   const bad = (edit) => {
     const c = clone(base);
@@ -652,24 +653,39 @@ test("the routine cannot drop or swap the series map's premise, and a premise mu
   };
   assert.ok(bad((l) => delete l.premise).some((e) => e.includes("lesson.premise is required")));
   assert.ok(bad((l) => (l.premise.term = "フレンチプレス")).some((e) => e.includes("premise.term must stay")));
-  assert.ok(bad((l) => (l.premise.say = "あ".repeat(LIMITS.premiseSay + 1))).some((e) => e.includes("premise.say")));
-  assert.ok(bad((l) => (l.premise.visual.caption = "")).length > 0);
-  assert.ok(bad((l) => (l.premise.say = "お湯は九十度で注ぐ")).some((e) => e.includes("recipe number")));
-  assert.ok(bad((l) => (l.premise.say = "当店の豆で浸して待つ")).some((e) => e.includes("must not say")));
-  assert.ok(bad((l) => (l.premise.ref = "i12-soft-water")).some((e) => e.includes("must be an earlier episode")));
+  // the heading kept but the explanation gone (adversarial review 2026-10-19)
+  assert.ok(bad((l) => (l.premise.say = "ここはあとで説明します")).some((e) => e.includes("premise.say must stay")));
+  assert.ok(bad((l) => (l.premise.visual = { type: "scale", caption: "目盛り", label: "湯温", zones: ["低め", "高め"], to: 50 })).some((e) => e.includes("premise.visual must stay")));
+  assert.ok(bad((l) => (l.narration.premise = "まず前提です。")).some((e) => e.includes("narration.premise must stay")));
+  assert.ok(bad((l) => delete l.narration).some((e) => e.includes("narration.premise must stay")));
+});
+
+// A premise the routine adds on its own (an episode whose map has none).
+const ownPremise = (premise) => {
+  const c = fallbackLessonContent(episodeById("i12-soft-water"), "2026-10-21");
+  c.lesson.premise = { term: "浸漬式と透過式", say: "粉をお湯に浸すか、上から注いで通すか", visual: clone(episodeById("i11-metal-filter").lesson.premise.visual), ...premise };
+  return c;
+};
+
+test("a premise the routine writes must fit and pass the same guards", () => {
+  assert.deepEqual(errorsOf(ownPremise({})), []);
+  const bad = (p) => errorsOf(ownPremise(p));
+  assert.ok(bad({ say: "あ".repeat(LIMITS.premiseSay + 1) }).some((e) => e.includes("premise.say")));
+  assert.ok(bad({ visual: { type: "flow", caption: "", brewers: [] } }).length > 0);
+  assert.ok(bad({ say: "お湯は九十度で注ぐ" }).some((e) => e.includes("recipe number")));
+  assert.ok(bad({ say: "当店の豆で浸して待つ" }).some((e) => e.includes("must not say")));
+  assert.ok(bad({ ref: "i13-iced-ratio" }).some((e) => e.includes("must be an earlier episode")));
 });
 
 test("a premise explained at length elsewhere sends the viewer there: 前回 when it is the episode before", () => {
   const withRef = (ref) => {
-    const c = fallbackLessonContent(episodeById("i11-metal-filter"), "2026-10-20");
-    c.lesson.premise.ref = ref;
-    delete c.lesson.narration; // the template premise line, so the pointer fits the narration budget
+    const c = ownPremise({ ref });
     assert.deepEqual(errorsOf(c), []);
     return buildCardsData(c, {}).slides[1];
   };
-  const prev = withRef("i10-clever");
+  const prev = withRef("i11-metal-filter");
   assert.ok(prev.narration.endsWith("わからない時は、前回の動画を見てください。"), prev.narration);
-  assert.equal(prev.ref, "わからない時は前回の動画「クレバーで待つと？」へ");
+  assert.equal(prev.ref, "わからない時は前回の動画「金属フィルターだと？」へ");
   const older = withRef("b11-percolation-immersion");
   assert.ok(older.narration.includes("第11回の動画を見てください"), older.narration);
 });
