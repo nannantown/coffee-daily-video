@@ -681,9 +681,10 @@ test("the YouTube title and the caption's first line never repeat the cover's wo
     assert.ok(instagram.split("\n").includes(`${head}${t.word}${t.ask}`), ep.id);
     if (repeats) dropped.push(ep.id);
   }
-  assert.deepEqual(dropped, ["b04-grind", "b06-temp", "i12-soft-water"]);
+  assert.deepEqual(dropped, ["b04-grind", "b06-temp"]);
   const title = (id) => buildCardCaptions(buildCardsData(fallbackLessonContent(episodeById(id), "2026-10-21"), {}), "2026/10/21").youtube.title;
-  assert.equal(title("i12-soft-water"), "水を軟水に？ 酸と甘みがはっきりする #Shorts");
+  // a script episode's cover only asks; the title still carries the answer (lesson.topic)
+  assert.equal(title("i12-soft-water"), "【水】硬水と軟水で味はどう変わる？ 軟水は酸味、硬水は苦み #Shorts");
   assert.equal(title("i11-metal-filter"), "【器具の違い】金属フィルターだと？ コクが増して舌に厚い #Shorts");
   assert.equal(title("a01-tds"), "【用語「TDS」】TDSってなに？ TDSが上がり濃く感じる #Shorts");
 });
@@ -717,28 +718,79 @@ test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a
   }
 });
 
-// 2026-10-21 (第25回 i12-soft-water): the premise 「軟水と硬水」 comes right after the cover,
-// in the evergreen draft and in a routine draft that copies it as is; dropping it fails.
-test("第25回 i12-soft-water (2026-10-21) airs with its premise 軟水と硬水 and passes validation", () => {
+// 2026-10-22 (第25回 i12-soft-water): the owner-approved script v2 (sns-hub
+// docs/operations/20261020-coffee-1021-soft-water-script-v2.json), scene by scene —
+// the cover asks only, then 前提 → 酸味を打ち消す成分 → 比べてみる → いつもの水 → the ending.
+const SOFT_WATER_V2 = [
+  { label: "まず前提", heading: "硬水と軟水", voice: "まず前提。水に溶けたカルシウムなどのミネラルの量が硬度。少ないと軟水、多いと硬水です。" },
+  { label: "コーヒーには、果物のような酸味もある", heading: "硬度の大きい水ほど", voice: "コーヒーには、果物のような酸味もあります。硬度の大きい水ほど、重曹のように酸を打ち消す成分も多く入っています。" },
+  { label: "", heading: "比べてみる", voice: "だから硬水だと、酸味が消える分、苦みが目立つ。軟水だと、すっきりした酸味が残ります。" },
+  { label: "", heading: "いつもの水はどっち？", voice: "日本の水道水は、多くの地域で軟水。海外の硬水のボトルで淹れ比べると、違いが分かります。" },
+];
+
+test("第25回 i12-soft-water (2026-10-22) airs as its approved script: the cover asks, then the script's scenes in order", () => {
   const ep = episodeById("i12-soft-water");
-  assert.equal(nextEpisode(aired(["2026-10-20", "i11-metal-filter"]), "2026-10-21").id, ep.id);
-  const evergreen = fallbackLessonContent(ep, "2026-10-21");
+  assert.equal(nextEpisode(aired(["2026-10-20", "i11-metal-filter"]), "2026-10-22").id, ep.id);
+  const evergreen = fallbackLessonContent(ep, "2026-10-22");
   assert.deepEqual(errorsOf(evergreen), []);
+  // the routine copies the draft (its own topic / why / tips only reach the caption) and still passes
   const routine = clone(evergreen);
   delete routine.fallback;
-  Object.assign(routine.lesson, { topic: "酸と甘みがくっきり出る", why: "硬水の成分が、酸味を打ち消しやすい" });
-  routine.lesson.narration = { ...routine.lesson.narration, title: "水を軟水にすると、酸と甘みがくっきり出ます。" };
+  Object.assign(routine.lesson, { topic: "軟水は酸味が残る", why: "硬水の成分が、酸味を打ち消す" });
+  routine.lesson.narration = { title: "ちがう読み上げ", why: "使われない" };
   assert.deepEqual(errorsOf(routine), []);
   for (const c of [evergreen, routine]) {
     const data = buildCardsData(c, {});
-    assert.equal(data.slides[1].kind, "lesson-premise");
-    assert.equal(data.slides[1].term, "軟水と硬水");
-    assert.equal(data.slides[1].visual.type, "scale");
+    assert.deepEqual(data.slides.map((s) => s.kind), ["lesson-title", "lesson-scene", "lesson-scene", "lesson-scene", "lesson-scene"]);
+    const [cover, ...scenes] = data.slides;
+    assert.equal(cover.topic, "", "the cover does not give the answer yet");
+    assert.equal(`${cover.word}${cover.ask}`, "硬水と軟水で味はどう変わる？");
+    assert.equal(cover.narration, "硬水と軟水で、コーヒーの味はどう変わる？");
+    assert.equal(cover.art, "glasses");
+    scenes.forEach((s, i) => {
+      assert.equal(s.label, SOFT_WATER_V2[i].label);
+      assert.equal(s.heading, SOFT_WATER_V2[i].heading);
+      assert.equal(s.narration, SOFT_WATER_V2[i].voice);
+    });
+    assert.deepEqual(scenes[2].body, [
+      { lead: "硬水で淹れる", result: "酸味が消える分、苦みが目立つ" },
+      { lead: "軟水で淹れる", result: "すっきりした酸味が残る" },
+    ]);
+    assert.equal(data.ending.heading, "次に淹れる時に、試してみよう");
+    assert.equal(data.ending.next, "氷で薄まらないアイスコーヒー");
+    assert.equal(data.ending.narration, "次に淹れる時に、試してみてください。次回は、氷で薄まらないアイスコーヒー。保存とフォローで、また明日。");
     assert.ok(narrationLength(data) <= LIMITS.narrationTotal);
+    // the caption follows the scenes, not the fixed why / tips
+    const { instagram } = buildCardCaptions(data, "2026/10/22");
+    assert.ok(instagram.includes("■ いつもの水はどっち？\n・日本の水道水 → 多くの地域で軟水"), instagram);
+    assert.ok(!instagram.includes("■ うまくいかない時"));
   }
+  // the routine cannot rewrite, drop or add a script
+  const edited = clone(routine);
+  edited.lesson.script.scenes[1].heading = "硬水は酸を消す";
+  assert.ok(errorsOf(edited).some((e) => e.includes("script must stay")));
   const dropped = clone(routine);
-  delete dropped.lesson.premise;
-  assert.ok(errorsOf(dropped).some((e) => e.includes("premise is required")));
+  delete dropped.lesson.script;
+  assert.ok(errorsOf(dropped).some((e) => e.includes("script is required")));
+  const other = fallbackLessonContent(episodeById("i13-iced-ratio"), "2026-10-23");
+  other.lesson.script = clone(ep.lesson.script);
+  assert.ok(errorsOf(other).some((e) => e.includes("script is only for")));
+});
+
+test("a script is checked like every other text: its drawings, lengths and words", () => {
+  const ep = episodeById("i12-soft-water");
+  // a changed script fails "must stay" and, on top, its own shape checks (what a series-map edit would hit)
+  const withScript = (mutate) => {
+    const c = fallbackLessonContent(ep, "2026-10-22");
+    mutate(c.lesson.script);
+    return errorsOf(c);
+  };
+  assert.deepEqual(withScript(() => {}), []);
+  assert.ok(withScript((s) => (s.scenes[0].art = "nope")).some((e) => e.includes("art must be one of")));
+  assert.ok(withScript((s) => (s.scenes[0].heading = "あ".repeat(LIMITS.sceneHeading + 1))).some((e) => e.includes("heading is")));
+  assert.ok(withScript((s) => (s.scenes[0].body = [])).some((e) => e.includes("body must have")));
+  assert.ok(withScript((s) => (s.scenes[3].body[2] = "お湯は九十度で注ぐ")).some((e) => e.includes("recipe number")));
+  assert.ok(withScript((s) => (s.scenes = s.scenes.slice(0, 1))).some((e) => e.includes("2-5 scenes")));
 });
 
 // A premise the routine adds on its own (an episode whose map has none).
@@ -766,7 +818,7 @@ test("a premise explained at length elsewhere sends the viewer there: 前回 whe
   };
   const prev = withRef("i12-soft-water");
   assert.ok(prev.narration.endsWith("わからない時は、前回の動画を見てください。"), prev.narration);
-  assert.equal(prev.ref, "わからない時は前回の動画「水を軟水に？」へ");
+  assert.equal(prev.ref, "わからない時は前回の動画「硬水と軟水で味はどう変わる？」へ");
   const older = withRef("b11-percolation-immersion");
   assert.ok(older.narration.includes("第11回の動画を見てください"), older.narration);
 });

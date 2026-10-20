@@ -65,5 +65,5 @@ if (errors.length > 0) {
 const data = buildCardsData(content, { dateDisplay: "" });
 const ep = episodeNumber(content.lesson.episode);
 console.log(
-  `OK: ${content.format} ${content.date} ${ep.level} 第${ep.no}回 ${PILLARS[content.lesson.pillar]}「${content.lesson.hook}」 図解 ${content.lesson.visual.type} — ${data.slides.length} slides + ending, narration ${narrationLength(data)}/${LIMITS.narrationTotal} chars`
+  `OK: ${content.format} ${content.date} ${ep.level} 第${ep.no}回 ${PILLARS[content.lesson.pillar]}「${content.lesson.hook}」 ${content.lesson.script ? `台本 ${content.lesson.script.scenes.length} 場面` : `図解 ${content.lesson.visual.type}`} —${data.slides.length} slides + ending, narration ${narrationLength(data)}/${LIMITS.narrationTotal} chars`
 );

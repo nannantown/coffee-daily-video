@@ -6,7 +6,7 @@ import { SCENE_ART } from "./safe-layout.mjs";
 
 /**
  * The drawings of a script episode's scenes (lesson.script, owner 2026-10-20),
- * redrawn in code from the Codex reference frames (docs/previews/ref/soft-water-*.png):
+ * redrawn in code from the Codex reference frames (docs/previews/ref/soft-water-*.jpg):
  * graphite lines roughened by a displacement filter, light hatching, one accent
  * colour. Each drawing is laid out on its own design size (SCENE_ART, the viewBox)
  * and the scene gives it a box (safe-layout.mjs sceneLayout). Labels inside a
