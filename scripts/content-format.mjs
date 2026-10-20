@@ -1037,6 +1037,16 @@ function hashtagsFor(data) {
   return [...new Set(tags.filter(Boolean))];
 }
 
+/**
+ * The cover's 【heading】 before word + ask, dropped when it would only repeat the
+ * word (【水】水を軟水に？ / 【湯温】湯温を下げると？ — owner 2026-10-20: 「水水」に見える).
+ */
+export function coverHeadingPrefix(t) {
+  const h = t.heading;
+  const w = t.word;
+  return h === w || h.startsWith(w) || w.startsWith(h) ? "" : `【${h}】`;
+}
+
 function lessonBodyLines(data) {
   const find = (kind) => data.slides.find((s) => s.kind === kind);
   const title = find("lesson-title");
@@ -1049,7 +1059,7 @@ function lessonBodyLines(data) {
   const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
   return [
     ...series,
-    `【${title.heading}】${title.word}${title.ask}`,
+    `${coverHeadingPrefix(title)}${title.word}${title.ask}`,
     `→ ${title.topic}`,
     "",
     ...(premise ? ["■ まず前提", `${premise.term}：${premise.say}`, `（${premise.visual.caption}）`, ...(premise.ref ? [premise.ref] : []), ""] : []),
@@ -1074,7 +1084,7 @@ export function buildCardCaptions(data, dateSlash) {
   const cta = growthCtaCaptionLines();
 
   const t = data.slides[0];
-  const title = youtubeTitle(`【${t.heading}】`, `${t.word}${t.ask}`, ` ${t.topic} #Shorts`);
+  const title = youtubeTitle(coverHeadingPrefix(t), `${t.word}${t.ask}`, ` ${t.topic} #Shorts`);
 
   const bodyWithTags = [...body, "", hashtags.join(" ")];
   const tail = ["", ...cta];

@@ -429,7 +429,8 @@ test("cards: cover, why, diagram, both ways, tips + CTA; audio sections mirror t
   assert.ok(narrationLength(template) <= LIMITS.narrationTotal);
 
   const captions = buildCardCaptions(data, "2026/09/23");
-  assert.equal(captions.youtube.title, `【湯温】湯温を下げると？ ${sample.lesson.topic} #Shorts`);
+  // the pillar 湯温 is the cover's word too: no 【湯温】 in front (coverHeadingPrefix)
+  assert.equal(captions.youtube.title, `湯温を下げると？ ${sample.lesson.topic} #Shorts`);
   assert.ok(captions.instagram.includes("・下げる → 苦味が引き、すっきり"));
 });
 
@@ -663,6 +664,29 @@ test("the routine cannot drop, empty or swap the series map's premise", () => {
 // 2026-10-20 (第24回 i11-metal-filter) is the episode the owner asked the premise for:
 // neither its evergreen draft nor a routine draft (premise copied as is, its own
 // wording elsewhere) may fail validation — the classic cards' premise check included.
+// Owner 2026-10-20: 「【水】水を軟水に？」 reads as 「水水」. The 【pillar】 goes only when
+// it does not repeat the cover's word — checked on every episode of the series map.
+test("the YouTube title and the caption's first line never repeat the cover's word after 【…】", () => {
+  const dropped = [];
+  for (const ep of CURRICULUM.episodes) {
+    const data = buildCardsData(fallbackLessonContent(ep, "2026-10-21"), {});
+    const t = data.slides[0];
+    const { youtube, instagram } = buildCardCaptions(data, "2026/10/21");
+    const repeats = t.heading === t.word || t.heading.startsWith(t.word) || t.word.startsWith(t.heading);
+    const head = repeats ? "" : `【${t.heading}】`;
+    assert.ok(youtube.title.startsWith(`${head}${t.word}${t.ask} `), `${ep.id}: ${youtube.title}`);
+    assert.ok(!youtube.title.startsWith(`【${t.word}】`), `${ep.id}: ${youtube.title}`);
+    assert.ok([...youtube.title].length <= 100, ep.id);
+    assert.ok(instagram.split("\n").includes(`${head}${t.word}${t.ask}`), ep.id);
+    if (repeats) dropped.push(ep.id);
+  }
+  assert.deepEqual(dropped, ["b04-grind", "b06-temp", "i12-soft-water"]);
+  const title = (id) => buildCardCaptions(buildCardsData(fallbackLessonContent(episodeById(id), "2026-10-21"), {}), "2026/10/21").youtube.title;
+  assert.equal(title("i12-soft-water"), "水を軟水に？ 酸と甘みがはっきりする #Shorts");
+  assert.equal(title("i11-metal-filter"), "【器具の違い】金属フィルターだと？ コクが増して舌に厚い #Shorts");
+  assert.equal(title("a01-tds"), "【用語「TDS」】TDSってなに？ TDSが上がり濃く感じる #Shorts");
+});
+
 test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a routine draft both pass", () => {
   const ep = episodeById("i11-metal-filter");
   const evergreen = fallbackLessonContent(ep, "2026-10-20");
@@ -692,9 +716,33 @@ test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a
   }
 });
 
+// 2026-10-21 (第25回 i12-soft-water): the premise 「軟水と硬水」 comes right after the cover,
+// in the evergreen draft and in a routine draft that copies it as is; dropping it fails.
+test("第25回 i12-soft-water (2026-10-21) airs with its premise 軟水と硬水 and passes validation", () => {
+  const ep = episodeById("i12-soft-water");
+  assert.equal(nextEpisode(aired(["2026-10-20", "i11-metal-filter"]), "2026-10-21").id, ep.id);
+  const evergreen = fallbackLessonContent(ep, "2026-10-21");
+  assert.deepEqual(errorsOf(evergreen), []);
+  const routine = clone(evergreen);
+  delete routine.fallback;
+  Object.assign(routine.lesson, { topic: "酸と甘みがくっきり出る", why: "硬水の成分が、酸味を打ち消しやすい" });
+  routine.lesson.narration = { ...routine.lesson.narration, title: "水を軟水にすると、酸と甘みがくっきり出ます。" };
+  assert.deepEqual(errorsOf(routine), []);
+  for (const c of [evergreen, routine]) {
+    const data = buildCardsData(c, {});
+    assert.equal(data.slides[1].kind, "lesson-premise");
+    assert.equal(data.slides[1].term, "軟水と硬水");
+    assert.equal(data.slides[1].visual.type, "scale");
+    assert.ok(narrationLength(data) <= LIMITS.narrationTotal);
+  }
+  const dropped = clone(routine);
+  delete dropped.lesson.premise;
+  assert.ok(errorsOf(dropped).some((e) => e.includes("premise is required")));
+});
+
 // A premise the routine adds on its own (an episode whose map has none).
 const ownPremise = (premise) => {
-  const c = fallbackLessonContent(episodeById("i12-soft-water"), "2026-10-21");
+  const c = fallbackLessonContent(episodeById("i13-iced-ratio"), "2026-10-22");
   c.lesson.premise = { term: "浸漬式と透過式", say: "粉をお湯に浸すか、上から注いで通すか", visual: clone(episodeById("i11-metal-filter").lesson.premise.visual), ...premise };
   return c;
 };
@@ -706,7 +754,7 @@ test("a premise the routine writes must fit and pass the same guards", () => {
   assert.ok(bad({ visual: { type: "flow", caption: "", brewers: [] } }).length > 0);
   assert.ok(bad({ say: "お湯は九十度で注ぐ" }).some((e) => e.includes("recipe number")));
   assert.ok(bad({ say: "当店の豆で浸して待つ" }).some((e) => e.includes("must not say")));
-  assert.ok(bad({ ref: "i13-iced-ratio" }).some((e) => e.includes("must be an earlier episode")));
+  assert.ok(bad({ ref: "i14-swirl" }).some((e) => e.includes("must be an earlier episode")));
 });
 
 test("a premise explained at length elsewhere sends the viewer there: 前回 when it is the episode before", () => {
@@ -715,9 +763,9 @@ test("a premise explained at length elsewhere sends the viewer there: 前回 whe
     assert.deepEqual(errorsOf(c), []);
     return buildCardsData(c, {}).slides[1];
   };
-  const prev = withRef("i11-metal-filter");
+  const prev = withRef("i12-soft-water");
   assert.ok(prev.narration.endsWith("わからない時は、前回の動画を見てください。"), prev.narration);
-  assert.equal(prev.ref, "わからない時は前回の動画「金属フィルターだと？」へ");
+  assert.equal(prev.ref, "わからない時は前回の動画「水を軟水に？」へ");
   const older = withRef("b11-percolation-immersion");
   assert.ok(older.narration.includes("第11回の動画を見てください"), older.narration);
 });
