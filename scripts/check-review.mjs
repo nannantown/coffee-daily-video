@@ -16,6 +16,7 @@ import { fileURLToPath } from "url";
 import { airDate } from "./content-format.mjs";
 import { scriptOf } from "./print-script.mjs";
 
+// The checker is the same in kawagutsu-zukan-video (sns-hub: one repo's fix is ported to the other).
 // A 初見の人 / B 編集者 / C 見出しと言葉 / D 事実確認 / E 絵 (owner 2026-10-20: four readers + the art reader)
 export const READERS = ["A", "B", "C", "D", "E"];
 export const MAX_ROUNDS = 10; // owner 2026-10-20: fix up to 10 times, then the evergreen draft airs
@@ -89,15 +90,18 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   }
   let log;
   let content = null;
+  let script;
   try {
     log = JSON.parse(readFileSync(logPath, "utf-8"));
-    const contentPath = join(rootDir, "data", "enriched-coffee-news.json");
-    if (log?.result === "pass") content = JSON.parse(readFileSync(contentPath, "utf-8"));
+    if (log?.result === "pass") {
+      content = JSON.parse(readFileSync(join(rootDir, "data", "enriched-coffee-news.json"), "utf-8"));
+      script = scriptOf(content, { art: true });
+    }
   } catch (err) {
-    console.error(`NG: cannot read: ${err.message}`);
+    console.error(`NG: cannot read the log or the content: ${err.message}`);
     process.exit(1);
   }
-  const errors = reviewErrors(log, { date, episode: content?.lesson?.episode, script: content ? scriptOf(content, { art: true }) : undefined });
+  const errors = reviewErrors(log, { date, episode: content?.lesson?.episode, script });
   if (errors.length) {
     console.error(`NG: ${errors.length} problem(s) in ${logPath}`);
     for (const x of errors) console.error(`  - ${x}`);

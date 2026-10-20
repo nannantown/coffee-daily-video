@@ -186,7 +186,7 @@ node scripts/pdca-summary.mjs
 
 #### 3.5 5 人で読む → 直す（必須・`docs/script-pipeline.md` ③④）
 
-`node scripts/print-script.mjs`（A〜D 用）と `node scripts/print-script.mjs --art`（E 用）で今日の原稿を場面ごとの台本に書き出し、**A 初見の人・B 編集者・C 見出しと言葉・D 事実確認・E 絵**の 5 人に読ませる。依頼文と渡すものは `docs/script-pipeline.md` のとおり（**Agent ツールが使えるなら 5 人を別のエージェントとして同じ応答で並べて起こす**。使えないなら自分で 1 人ずつ、依頼文と渡すものだけを見て読む）。指摘ごとに「直した／直さない／持ち越し」を決めて直し、書き出し直して 5 人にもう一度読ませる。**最後の周で持ち越し以外の重い指摘がゼロ**になるまで、**最大 10 周**。
+`node scripts/print-script.mjs`（A〜D 用）と `node scripts/print-script.mjs --art`（E 用）で今日の原稿を場面ごとの台本に書き出し、**A 初見の人・B 編集者・C 見出しと言葉・D 事実確認・E 絵**の 5 人に読ませる。依頼文と渡すものは `docs/script-pipeline.md` のとおり（**Agent ツールが使えるなら 5 人を別のエージェントとして同じ応答で並べて起こす**。使えないなら自分で 1 人ずつ、依頼文と渡すものだけを見て読む）。指摘ごとに「直した／直さない／持ち越し」を決めて直し、`node scripts/validate-content.mjs` が `OK:` なのを確かめてから、書き出し直して 5 人にもう一度読ませる。**最後の周で持ち越し以外の重い指摘がゼロ**になるまで、**最大 10 周**。
 
 - 毎周の台本（`--art` の出力）・指摘・直しを `data/reviews/$TODAY.json` に書く（形は `docs/script-pipeline.md`「記録」）
 - **台本の回**（下書きに `script` がある日）と、下書きから変えてはいけない欄（`word` / `ask` / `hook` / `premise`）・絵の描き方は、ルーチンが直さない — その指摘は `持ち越し：` にしてレポートの「戦略更新提案」に書く
