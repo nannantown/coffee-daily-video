@@ -314,7 +314,7 @@ export const LabSceneConte: React.FC<{ ep: LookEpisode; slide: LessonSceneSlide 
           </div>
         ) : slide.intro ? (
           // a sentence the heading follows on from: set like the body, not as a grey label
-          <div style={{ ...show(0), marginBottom: SCENE.labelGap, ...T(L.size, 500, INK) }}>{slide.intro}</div>
+          <div style={{ ...show(0), marginBottom: SCENE.labelGap, ...T(L.size, 500, INK), textWrap: "balance" }}>{slide.intro}</div>
         ) : null}
         <div style={{ ...show(4), marginBottom: SCENE.bodyGap }}>
           <span style={{ ...T(LAB_TYPE.head, 700, INK), borderBottom: `4px solid ${ep.accent}`, paddingBottom: 6 }}>{slide.heading}</span>

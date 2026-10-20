@@ -239,10 +239,10 @@ export const SCENE_ART = {
     texts: [
       { key: "hard-name", label: "硬水", cx: 250, cy: 44, size: 60 },
       { key: "soft-name", label: "軟水", cx: 760, cy: 44, size: 60 },
-      { key: "hard-acid", label: "酸味", cx: 55, cy: 390, size: 48 },
-      { key: "hard-bitter", label: "苦み", cx: 160, cy: 390, size: 48 },
-      { key: "soft-acid", label: "酸味", cx: 565, cy: 390, size: 48 },
-      { key: "soft-bitter", label: "苦み", cx: 670, cy: 390, size: 48 },
+      { key: "hard-acid", label: "酸味", cx: 50, cy: 390, size: 48 },
+      { key: "hard-bitter", label: "苦み", cx: 168, cy: 390, size: 48 },
+      { key: "soft-acid", label: "酸味", cx: 560, cy: 390, size: 48 },
+      { key: "soft-bitter", label: "苦み", cx: 678, cy: 390, size: 48 },
     ],
   },
   which: {
