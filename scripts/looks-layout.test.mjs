@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { CURRICULUM, LIMITS, buildCardsData, fallbackLessonContent, validateDailyContent } from "./content-format.mjs";
-import { CLASSIC, LOW_COLUMN, MARGIN, RIGHT_LIMIT, classicPremiseHeight, classicPremiseNote, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
+import { CLASSIC, LOW_COLUMN, MARGIN, RIGHT_LIMIT, SCENE, SCENE_ART, classicPremiseHeight, classicSceneHeight, classicPremiseNote, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // Review 2026-09-26 (rounds 1-3): every text of the lab look sits where the
@@ -33,6 +33,7 @@ test("every curriculum episode fits: text above the Reels UI, left of the action
   for (const ep of CURRICULUM.episodes) {
     const data = built(ep);
     assert.deepEqual(layoutProblems(data, VESSELS), [], ep.id);
+    if (ep.lesson.script) continue; // a script episode has its own scenes (tested below)
     const L = labLayout(data, VESSELS);
     assert.ok(L.visual.fits, `${ep.id}: the diagram's reason does not fit`);
     assert.ok(headingBottom(`${ep.lesson.hook}と`) < 700, `${ep.id}: heading runs three lines`);
@@ -40,7 +41,7 @@ test("every curriculum episode fits: text above the Reels UI, left of the action
 });
 
 test("cups follow right under the drawing: no gap between the cup names and the meters", () => {
-  for (const ep of CURRICULUM.episodes.filter((e) => e.lesson.motion.type === "compare")) {
+  for (const ep of CURRICULUM.episodes.filter((e) => e.lesson.motion.type === "compare" && !e.lesson.script)) {
     const w = labLayout(built(ep), VESSELS).why;
     const namesBottom = Math.max(...w.labels.map((b) => b.bottom));
     assert.ok(w.metersTop - namesBottom <= 60, `${ep.id}: ${Math.round(w.metersTop - namesBottom)}px between the cup names and the meters`);
@@ -92,4 +93,42 @@ test("content that cannot fit is reported (validation then falls back instead of
   // and validation carries the layout problems (the sample fits)
   const sample = JSON.parse(readFileSync(new URL("../data/samples/brew-lesson.sample.json", import.meta.url), "utf-8"));
   assert.deepEqual(validateDailyContent(sample).errors, []);
+});
+
+// Script scenes (lesson.script, 2026-10-20): the approved script's words above the
+// Reels UI, its drawing as large as the room allows; too much text is reported.
+test("script scenes fit: text above the UI and left of the action buttons, the drawing big enough, the classic fallback too", () => {
+  const scripted = CURRICULUM.episodes.filter((e) => e.lesson.script);
+  assert.ok(scripted.length >= 1);
+  for (const ep of scripted) {
+    const data = built(ep);
+    const L = labLayout(data, VESSELS);
+    assert.equal(L.scenes.length, ep.lesson.script.scenes.length);
+    for (const [i, sc] of L.scenes.entries()) {
+      assert.ok(sc.textBottom <= 1560, `${ep.id} scene ${i + 1}: text ends at ${sc.textBottom}`);
+      assert.ok(sc.items.every((b) => b.right <= RIGHT_LIMIT), `${ep.id} scene ${i + 1}`);
+      assert.ok(sc.art.top >= sc.textBottom + SCENE.artGap - 0.5, `${ep.id} scene ${i + 1}: the drawing runs into the text`);
+      assert.ok(sc.art.top + sc.art.height <= SCENE.artBottom + 0.5, `${ep.id} scene ${i + 1}: the drawing runs past ${SCENE.artBottom}`);
+      assert.ok(sc.art.height >= SCENE.artMinHeight, `${ep.id} scene ${i + 1}: drawing ${Math.round(sc.art.height)}px`);
+      assert.ok(sc.size >= 48, "body never below 48px (30pt+)");
+    }
+  }
+  // a word inside a drawing is checked where the drawing puts it (review 2026-10-20)
+  const word = SCENE_ART.minerals.texts[0];
+  const saved = { ...word };
+  try {
+    Object.assign(word, { cy: 690 });
+    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing")));
+    Object.assign(word, { cy: saved.cy, size: 30 });
+    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing is")));
+  } finally {
+    Object.assign(word, saved);
+  }
+  assert.deepEqual(layoutProblems(built(scripted[0]), VESSELS), []);
+  const data = built(scripted[0]);
+  const scene = data.slides.find((x) => x.kind === "lesson-scene");
+  scene.body = [0, 1, 2, 3].map(() => ({ lead: "あ".repeat(LIMITS.sceneLead), result: "あ".repeat(LIMITS.sceneResult) }));
+  const problems = layoutProblems(data, VESSELS);
+  assert.ok(problems.some((p) => p.startsWith("scene 1:")), problems.join("\n"));
+  assert.ok(classicSceneHeight(scene) > CLASSIC.column || problems.length > 0);
 });

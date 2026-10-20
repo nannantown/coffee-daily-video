@@ -3,7 +3,8 @@ import { AbsoluteFill } from "remotion";
 import { Atmosphere, Drift, useCutIn } from "./atmosphere";
 import { AccentLine, Brand, Pill, Reveal, SlideShell } from "./primitives";
 import { ACCENTS, CARD_SHADOW, COLORS, DRIFT_MAX, FONT_FAMILY, PHRASE_BREAK, SPACE, TYPE } from "./theme";
-import type { CtaEnding, LessonEffectSlide, LessonTipsSlide, LessonTitleSlide, LessonWhySlide } from "./types";
+import type { CtaEnding, LessonEffectSlide, LessonSceneSlide, LessonTipsSlide, LessonTitleSlide, LessonWhySlide } from "./types";
+import { CLASSIC_SCENE } from "../looks/safe-layout.mjs";
 
 // The cover: one big word + the question, and what it does to the taste. No
 // numbers (owner decision 2026-09-26) — the profile grid has to say what the
@@ -14,12 +15,15 @@ export const LessonTitle: React.FC<{ slide: LessonTitleSlide; index?: number }> 
       {slide.series ? <Pill accent={COLORS.caramel}>{slide.series}</Pill> : null}
     </Reveal>
     <Reveal delay={3}>
-      <div style={{ fontSize: 160, fontWeight: 900, lineHeight: 1.1, letterSpacing: "-2px" }}>{slide.word}</div>
+      {/* 160px fits 5 characters on the classic column; a 6-character word (硬水と軟水で) steps down so it stays one line */}
+      <div style={{ fontSize: [...slide.word].length > 5 ? 128 : 160, fontWeight: 900, lineHeight: 1.1, letterSpacing: "-2px" }}>{slide.word}</div>
       <div style={{ marginTop: 8, fontSize: TYPE.title, fontWeight: 800, lineHeight: 1.2 }}>{slide.ask}</div>
     </Reveal>
-    <Reveal delay={9} style={{ marginTop: 64 }}>
-      <AccentLine>{slide.topic}</AccentLine>
-    </Reveal>
+    {slide.topic ? (
+      <Reveal delay={9} style={{ marginTop: 64 }}>
+        <AccentLine>{slide.topic}</AccentLine>
+      </Reveal>
+    ) : null}
   </SlideShell>
 );
 
@@ -81,6 +85,32 @@ export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string; index?
               → {tip.fix}
             </div>
           </div>
+        </Reveal>
+      ))}
+    </div>
+  </SlideShell>
+);
+
+// A script scene (lesson.script) in the classic cards — the fallback renderer — the
+// same words, no drawing. Sizes: CLASSIC_SCENE (safe-layout.mjs classicSceneHeight checks the fit).
+export const LessonScene: React.FC<{ slide: LessonSceneSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
+  <SlideShell label="今日の抽出メモ" right={page} center index={index}>
+    <div style={{ display: "flex", flexDirection: "column", gap: CLASSIC_SCENE.gap, paddingRight: SPACE.actionColumnClearance }}>
+      {slide.label ? <div style={{ fontSize: CLASSIC_SCENE.labelSize, fontWeight: 700, color: COLORS.textMuted, lineHeight: 1.4, ...PHRASE_BREAK }}>{slide.label}</div> : null}
+      {slide.intro ? <div style={{ fontSize: CLASSIC_SCENE.bodySize, fontWeight: 700, lineHeight: 1.4, ...PHRASE_BREAK }}>{slide.intro}</div> : null}
+      <Reveal delay={3} style={{ fontSize: CLASSIC_SCENE.headSize, fontWeight: 900, lineHeight: 1.4, ...PHRASE_BREAK }}>
+        {slide.heading}
+      </Reveal>
+      {slide.body.map((item, i) => (
+        <Reveal key={i} delay={6 + i * 6} style={{ fontSize: CLASSIC_SCENE.bodySize, lineHeight: 1.4, ...PHRASE_BREAK }}>
+          {typeof item === "string" ? (
+            <div style={{ fontWeight: 700 }}>{item}</div>
+          ) : (
+            <>
+              <div style={{ fontWeight: 800 }}>{item.lead} →</div>
+              <div style={{ fontWeight: 700, color: COLORS.textSub }}>{item.result}</div>
+            </>
+          )}
         </Reveal>
       ))}
     </div>

@@ -35,7 +35,7 @@
 import { readFileSync } from "fs";
 import { scanBannedTerms } from "./brand-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
-import { layoutProblems } from "../src/looks/safe-layout.mjs";
+import { SCENE_ART, layoutProblems } from "../src/looks/safe-layout.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // The YouTube limits live in youtube-limits.mjs.
@@ -101,7 +101,7 @@ export const MOTION_TYPES = ["liquid", "meter", "compare", "dissolve"];
 // follows it (湯温 + を上げると？); everything else is one phrase per line.
 // Body text never goes below 30pt, so long strings must be shortened, not shrunk.
 export const LIMITS = {
-  word: 5, // the giant word on the cover: 湯温 / 挽き目 / TDS
+  word: 6, // the giant word on the cover: 湯温 / 挽き目 / TDS / 硬水と軟水で (6 × 128px fits the 894px cover line)
   ask: 9, // what follows it on the cover: を上げると？ / ってなに？
   hook: 16, // the one change, in words: お湯の温度を上げる
   topic: 14, // what it does to the taste, one line
@@ -116,6 +116,13 @@ export const LIMITS = {
   // has to know first, told right after the cover
   premiseTerm: 14, // the slide's heading, as long as the cover's word + ask
   premiseSay: 24, // one line under the diagram, where the reason goes on the diagram slide
+  // script scenes (lesson.script, owner 2026-10-20): what the approved script puts on screen
+  sceneLabel: 20, // the grey line above the heading
+  sceneHeading: 12, // the big heading (two lines at most)
+  sceneLine: 30, // one line of the body
+  sceneLead: 10, // a row's left side: 硬水で淹れる
+  sceneResult: 20, // a row's right side: 酸味が消える分、苦みが目立つ
+  sceneNarration: 80,
   narrationTotal: 260, // IG Reels rejects > 60s videos
   // diagram slide (src/cards/Diagrams.tsx)
   visualCaption: 18,
@@ -410,7 +417,9 @@ function lessonTexts(lesson, prefix) {
   const premise = lesson.premise && typeof lesson.premise === "object" ? lesson.premise : {};
   for (const k of ["term", "say"]) add(`${prefix}.premise.${k}`, premise[k]);
   for (const [label, v] of visualTexts(premise.visual, `${prefix}.premise.visual`)) add(label, v);
-  const nar = lesson.narration && typeof lesson.narration === "object" ? lesson.narration : {};
+  // the script's strings (the drawing names too: untrusted, so checked like any other text)
+  for (const [label, v] of visualTexts(lesson.script, `${prefix}.script`)) add(label, v);
+  const nar =lesson.narration && typeof lesson.narration === "object" ? lesson.narration : {};
   // keys are untrusted too: quoted, so a key cannot carry a line break into the log
   for (const [k, v] of Object.entries(nar)) add(`${prefix}.narration[${quote(k)}]`, v);
   return out;
@@ -615,6 +624,7 @@ export function validateLesson(lesson, errors, prefix = "lesson") {
   }
   validateVisual(lesson.visual, errors, `${prefix}.visual`);
   validatePremise(lesson, episode, errors, prefix);
+  validateScript(lesson, episode, errors, prefix);
   if (!own(SCENES, lesson.scene)) errors.push(`${prefix}.scene must be "hot" or "iced"`);
   if (lesson.method === "cold-brew" && lesson.scene !== "iced") errors.push(`${prefix}.scene must be "iced" for cold-brew`);
   if (lesson.sources != null && !Array.isArray(lesson.sources)) errors.push(`${prefix}.sources must be an array of URLs`);
@@ -717,6 +727,66 @@ export function premiseRef(lesson) {
   const { no } = episodeNumber(ref.id);
   const previous = followingEpisode(ref.id)?.id === lesson.episode;
   return { no, previous, name: previous ? "前回の動画" : `第${no}回の動画`, title: `${ref.lesson.word}${ref.lesson.ask}` };
+}
+
+/**
+ * The script (owner 2026-10-20, 「台本どおりの場面で作れるように」): an episode whose
+ * script the owner approved scene by scene carries it as `lesson.script` —
+ * { cover: { art, narration }, scenes: [{ label? | intro?, heading, body, art, narration }] }.
+ * The video is then the cover (the question only, no answer yet), these scenes in
+ * this order and the ending; the fixed why / diagram / both ways / tips scenes are
+ * not drawn. Only the series map writes a script, and the routine copies it as is
+ * (an approved script is not rewritten in the morning). `body` items are a line
+ * (string) or a row { lead, result } drawn "lead → result".
+ */
+function validateScript(lesson, episode, errors, prefix) {
+  const s = lesson.script;
+  const want = episode?.lesson?.script;
+  const at = `${prefix}.script`;
+  if (s == null) {
+    if (want) errors.push(`${at} is required for episode ${episode.id} — copy the draft's script as is (the owner approved it scene by scene)`);
+    return;
+  }
+  if (episode && !want) {
+    errors.push(`${at} is only for an episode whose script is in data/curriculum.json (${episode.id} has none) — remove it`);
+    return;
+  }
+  if (want && JSON.stringify(s) !== JSON.stringify(want)) errors.push(`${at} must stay the draft's script for episode ${episode.id} (copy it as is)`);
+  if (lesson.premise != null) errors.push(`${prefix}.premise cannot go with a script — the script tells the premise in its own scene`);
+  if (!s || typeof s !== "object" || Array.isArray(s) || !s.cover || typeof s.cover !== "object" || !Array.isArray(s.scenes)) {
+    errors.push(`${at} must be { cover: { art, narration }, scenes: [...] }`);
+    return;
+  }
+  const art = (label, v) => {
+    if (!own(SCENE_ART, v)) errors.push(`${label} must be one of ${Object.keys(SCENE_ART).join(", ")} (src/looks/SceneArt.tsx)`);
+  };
+  art(`${at}.cover.art`, s.cover.art);
+  checkLen(errors, `${at}.cover.narration`, s.cover.narration, LIMITS.sceneNarration);
+  if (s.scenes.length < 2 || s.scenes.length > 5) errors.push(`${at}.scenes must have 2-5 scenes (between the cover and the ending)`);
+  s.scenes.forEach((sc, i) => {
+    const p = `${at}.scenes[${i}]`;
+    if (!sc || typeof sc !== "object") {
+      errors.push(`${p} must be an object`);
+      return;
+    }
+    if (sc.label != null && sc.label !== "") checkLen(errors, `${p}.label`, sc.label, LIMITS.sceneLabel);
+    if (sc.intro != null && sc.intro !== "") checkLen(errors, `${p}.intro`, sc.intro, LIMITS.sceneLine);
+    if (sc.label && sc.intro) errors.push(`${p} has a label and an intro — the line above the heading is one or the other`);
+    checkLen(errors, `${p}.heading`, sc.heading, LIMITS.sceneHeading);
+    art(`${p}.art`, sc.art);
+    checkLen(errors, `${p}.narration`, sc.narration, LIMITS.sceneNarration);
+    if (!Array.isArray(sc.body) || sc.body.length < 1 || sc.body.length > 4) {
+      errors.push(`${p}.body must have 1-4 items (a line, or a row { lead, result })`);
+      return;
+    }
+    sc.body.forEach((item, j) => {
+      if (typeof item === "string") checkLen(errors, `${p}.body[${j}]`, item, LIMITS.sceneLine);
+      else if (item && typeof item === "object" && !Array.isArray(item)) {
+        checkLen(errors, `${p}.body[${j}].lead`, item.lead, LIMITS.sceneLead);
+        checkLen(errors, `${p}.body[${j}].result`, item.result, LIMITS.sceneResult);
+      } else errors.push(`${p}.body[${j}] must be a line or { lead, result }`);
+    });
+  });
 }
 
 /**
@@ -877,7 +947,7 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
       ]
     : [];
 
-  const slides = [
+  const fixed = [
     // Cover: one big word + the question, and what it does to the taste. It is
     // the grid thumbnail (IG takes frame 45), so it names the topic at a glance.
     {
@@ -930,6 +1000,21 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
       narration: pick(nar.tips, r.tips.slice(0, 2).map((t) => `${t.problem}は、${t.fix}。`).join("")),
     },
   ];
+  // An approved script (validateScript): the cover asks the question only, then its scenes in order.
+  const slides = r.script
+    ? [
+        { ...fixed[0], topic: "", art: r.script.cover.art, narration: r.script.cover.narration },
+        ...r.script.scenes.map((s) => ({
+          kind: "lesson-scene",
+          label: s.label ?? "",
+          intro: s.intro ?? "",
+          heading: s.heading,
+          body: structuredClone(s.body),
+          art: s.art,
+          narration: s.narration,
+        })),
+      ]
+    : fixed;
 
   const ending = {
     kind: "lesson-cta",
@@ -1065,6 +1150,24 @@ function lessonBodyLines(data) {
   const premise = find("lesson-premise");
   const series = title.series ? [`シリーズ「${CURRICULUM.series}」${title.series}`] : [];
   const next = data.ending?.next ? ["", `次回：${data.ending.next}`] : [];
+  const closing = "豆も道具も手持ちのもので大丈夫。1つだけ変えて、味の違いを比べてみてください。";
+  const scenes = data.slides.filter((s) => s.kind === "lesson-scene");
+  if (scenes.length) {
+    // a script episode: the caption follows its scenes (the cover leaves the answer to them)
+    return [
+      ...series,
+      `${coverHeadingPrefix(title)}${title.word}${title.ask}`,
+      `→ ${title.topic || data.lesson?.topic}`,
+      "",
+      ...scenes.flatMap((s) => [
+        ...(s.label || s.intro ? [`■ ${s.label || s.intro}`, s.heading] : [`■ ${s.heading}`]),
+        ...s.body.map((b) => (typeof b === "string" ? b : `・${b.lead} → ${b.result}`)),
+        "",
+      ]),
+      closing,
+      ...next,
+    ];
+  }
   return [
     ...series,
     `${coverHeadingPrefix(title)}${title.word}${title.ask}`,
@@ -1081,7 +1184,7 @@ function lessonBodyLines(data) {
     "■ うまくいかない時",
     ...tips.tips.map((t) => `・${t.problem} → ${t.fix}`),
     "",
-    "豆も道具も手持ちのもので大丈夫。1つだけ変えて、味の違いを比べてみてください。",
+    closing,
     ...next,
   ];
 }
@@ -1092,7 +1195,7 @@ export function buildCardCaptions(data, dateSlash) {
   const cta = growthCtaCaptionLines();
 
   const t = data.slides[0];
-  const title = youtubeTitle(coverHeadingPrefix(t), `${t.word}${t.ask}`, ` ${t.topic} #Shorts`);
+  const title = youtubeTitle(coverHeadingPrefix(t), `${t.word}${t.ask}`, ` ${t.topic || data.lesson?.topic} #Shorts`);
 
   const bodyWithTags = [...body, "", hashtags.join(" ")];
   const tail = ["", ...cta];

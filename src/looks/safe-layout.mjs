@@ -196,26 +196,163 @@ export function classicPremiseHeight({ type, caption, note }) {
 }
 
 // ---------------------------------------------------------------------------
+// script scenes (lesson.script, owner 2026-10-20: an episode told scene by scene
+// as its approved script says — LabConte.tsx LabSceneConte): grey label, the big
+// heading, the lines / "lead → result" rows, and the scene's drawing (SceneArt.tsx)
+// under the text, as big as the space left allows.
+// ---------------------------------------------------------------------------
+
+/**
+ * The drawings a script scene can carry (src/looks/SceneArt.tsx): their design size
+ * (viewBox) and every word drawn inside them (centre cx / cy and font size, in viewBox
+ * units). SceneArt.tsx draws those words from here, and layoutProblems maps them onto
+ * the screen with the drawing's box, so a word in a picture obeys the same rules as
+ * any text: above the Reels UI, left of the action buttons, 40px (30pt) or larger.
+ * The cover's big pale 水 is a picture (a watermark behind the glasses), not a word to read.
+ */
+export const SCENE_ART = {
+  glasses: { w: 1000, h: 820, texts: [] }, // the cover: two identical glasses before a big 水
+  minerals: {
+    w: 1000,
+    h: 560, // few vs many mineral grains (some marked Ca / Mg), each glass named under it
+    texts: [
+      { key: "soft-ca", label: "Ca", cx: 225, cy: 220, size: 52 },
+      { key: "hard-ca1", label: "Ca", cx: 660, cy: 160, size: 52 },
+      { key: "hard-mg", label: "Mg", cx: 805, cy: 215, size: 52 },
+      { key: "hard-ca2", label: "Ca", cx: 700, cy: 300, size: 52 },
+      { key: "soft-name", label: "軟水", cx: 265, cy: 500, size: 56 },
+      { key: "hard-name", label: "硬水", cx: 735, cy: 500, size: 56 },
+    ],
+  },
+  acid: {
+    w: 1000,
+    h: 640, // acid grains cancelled in hard water, a baking-soda pouch
+    texts: [
+      { key: "acid", label: "酸味", cx: 132, cy: 34, size: 44 },
+      { key: "base", label: "酸を打ち消す成分", cx: 484, cy: 34, size: 44 },
+      { key: "soda", label: "重曹", cx: 802, cy: 364, size: 56 },
+    ],
+  },
+  compare: {
+    w: 1000,
+    h: 660, // left 硬水: grains → dark cup, 酸味 low / 苦み high; right 軟水: light cup, 酸味 stays / 苦み low
+    texts: [
+      { key: "hard-name", label: "硬水", cx: 250, cy: 44, size: 60 },
+      { key: "soft-name", label: "軟水", cx: 760, cy: 44, size: 60 },
+      { key: "hard-acid", label: "酸味", cx: 50, cy: 390, size: 48 },
+      { key: "hard-bitter", label: "苦み", cx: 168, cy: 390, size: 48 },
+      { key: "soft-acid", label: "酸味", cx: 560, cy: 390, size: 48 },
+      { key: "soft-bitter", label: "苦み", cx: 678, cy: 390, size: 48 },
+    ],
+  },
+  which: {
+    w: 1000,
+    h: 540, // the tap's glass, two cups, an imported bottle's 硬度 label
+    texts: [{ key: "hardness", label: "硬度", cx: 865, cy: 295, size: 56 }],
+  },
+};
+/** One drawn word of SCENE_ART, found by key. */
+export const artText = (name, key) => SCENE_ART[name].texts.find((t) => t.key === key);
+/** A drawn word's box in viewBox units (CJK one em, ASCII 0.6 em; ± 6 for the grains' bob). */
+export function artTextBox(t) {
+  const w = [...t.label].reduce((n, c) => n + (c.charCodeAt(0) < 0x2e80 ? 0.6 : 1), 0) * t.size;
+  return { left: t.cx - w / 2, right: t.cx + w / 2, top: t.cy - t.size * 0.65 - 6, bottom: t.cy + t.size * 0.65 + 6 };
+}
+// The drawing sits centred between the text and y artBottom (its table line may reach under
+// the Reels caption), as big as the text above leaves room for.
+export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, resultGap: 4, sizes: [56, 48], artGap: 40, artBottom: 1720, artMaxWidth: 1000, artMinHeight: 380, artTextMin: 40 };
+
+/**
+ * Every text box of a script scene, top down, and the drawing's box under them.
+ * The boxes are upper bounds (lineCount rounds up), so validation never lets text
+ * run under the UI; the renderer flows the text from the top and centres the
+ * drawing in the room the upper bound leaves, so a line that wraps less only leaves more air.
+ */
+export function sceneLayout(scene) {
+  const fit = (size) => {
+    // the line above the heading: a grey label (まず前提), or an intro sentence set like the body
+    const above = scene.label ? { text: scene.label, size: SCENE.labelSize } : scene.intro ? { text: scene.intro, size } : null;
+    const aboveH = above ? textHeight(above.text, above.size, COLUMN) : 0;
+    const headTop = Math.max(HEADING.top, above ? HEADING.labelTop + aboveH + SCENE.labelGap : HEADING.top);
+    let y = headTop + textHeight(scene.heading, HEADING.size, COLUMN, 0.01) + 14 + SCENE.bodyGap;
+    const items = (scene.body ?? []).map((item) => {
+      const top = y;
+      const h =
+        typeof item === "string"
+          ? textHeight(item, size, LOW_COLUMN)
+          : textHeight(`${item.lead} →`, size, LOW_COLUMN) + SCENE.resultGap + textHeight(item.result, size, LOW_COLUMN);
+      y = top + h + SCENE.itemGap;
+      return { top, bottom: top + h, left: MARGIN, right: MARGIN + LOW_COLUMN };
+    });
+    const textBottom = items.length ? items[items.length - 1].bottom : y;
+    const a = SCENE_ART[scene.art] ?? { w: 1000, h: 700, texts: [] };
+    const artTop = textBottom + SCENE.artGap;
+    // the drawing may reach artBottom, but the words inside it must stay above CONTENT_BOTTOM
+    const wordsBottom = Math.max(0, ...(a.texts ?? []).map((t) => artTextBox(t).bottom));
+    const scale = Math.min(SCENE.artMaxWidth / a.w, (SCENE.artBottom - artTop) / a.h, wordsBottom ? (CONTENT_BOTTOM - artTop) / wordsBottom : Infinity);
+    const width = a.w * scale;
+    const height = a.h * scale;
+    // centred in the room between the text and artBottom, as far as its words allow
+    const slack = Math.max(0, Math.min((SCENE.artBottom - artTop - height) / 2, CONTENT_BOTTOM - artTop - wordsBottom * scale));
+    return {
+      size,
+      label: above ? { top: HEADING.labelTop, bottom: HEADING.labelTop + aboveH, left: MARGIN, right: MARGIN + COLUMN } : null,
+      heading: { top: headTop, bottom: headTop + textHeight(scene.heading, HEADING.size, COLUMN, 0.01), left: MARGIN, right: MARGIN + COLUMN },
+      items,
+      textBottom,
+      art: { top: artTop + slack, left: (1080 - width) / 2, width, height },
+    };
+  };
+  // the larger body size when the drawing still gets its room and its words stay 40px+, else the smaller one (never below 30pt)
+  const art = SCENE_ART[scene.art];
+  const ok = (L) => L.art.height >= SCENE.artMinHeight && L.textBottom <= CONTENT_BOTTOM && (art?.texts ?? []).every((t) => (t.size * L.art.width) / art.w >= SCENE.artTextMin);
+  const big = fit(SCENE.sizes[0]);
+  return ok(big) ? big : fit(SCENE.sizes[1]);
+}
+
+/** Classic cards (the fallback renderer): label, heading and the lines, centred in the content column; no drawing. */
+export const CLASSIC_SCENE = { labelSize: 40, headSize: 64, bodySize: 44, gap: 32 };
+export function classicSceneHeight(scene) {
+  const w = CLASSIC.width;
+  const lh = (s, size) => lineCount(s, size, w, 0) * Math.ceil(size * 1.4);
+  const above = scene.label || scene.intro;
+  let h = (above ? lh(above, scene.label ? CLASSIC_SCENE.labelSize : CLASSIC_SCENE.bodySize) + CLASSIC_SCENE.gap : 0) + lh(scene.heading, CLASSIC_SCENE.headSize);
+  for (const item of scene.body ?? []) {
+    h += CLASSIC_SCENE.gap + (typeof item === "string" ? lh(item, CLASSIC_SCENE.bodySize) : lh(`${item.lead} →`, CLASSIC_SCENE.bodySize) + lh(item.result, CLASSIC_SCENE.bodySize));
+  }
+  return h;
+}
+
+// ---------------------------------------------------------------------------
 // every scene of one episode, checked
 // ---------------------------------------------------------------------------
 
 export const RIGHT_LIMIT = 1080 - MARGIN - 80; // 904: text below LOW_Y ends here (action buttons)
 const withTo = (l) => (String(l).endsWith("と") ? l : `${l}と`);
 
-/** The lab look's text boxes for one built episode (content-format.mjs buildCardsData). */
+/**
+ * The lab look's text boxes for one built episode (content-format.mjs buildCardsData).
+ * A scene the episode does not have is null (a script episode has no why / diagram /
+ * both-ways / tips scenes, only its own `scenes`).
+ */
 export function labLayout(data, vessels) {
   const s = Object.fromEntries(data.slides.map((x) => [x.kind, x]));
   const why = s["lesson-why"];
-  const kind = why.motion.type === "compare" ? "cups" : why.motion.type === "dissolve" ? "dripper" : "server";
-  const v = vessels[kind];
-  const labels = kind === "cups" ? [withTo(why.sides[1].label), withTo(why.sides[0].label)] : null;
+  let whyBox = null;
+  if (why) {
+    const kind = why.motion.type === "compare" ? "cups" : why.motion.type === "dissolve" ? "dripper" : "server";
+    const v = vessels[kind];
+    const labels = kind === "cups" ? [withTo(why.sides[1].label), withTo(why.sides[0].label)] : null;
+    whyBox = whyLayout({ heading: `${why.hook}と`, core: why.core, meters: why.motion.meters.length, box: v.box, maxScale: v.maxScale, labels });
+  }
   return {
-    why: whyLayout({ heading: `${why.hook}と`, core: why.core, meters: why.motion.meters.length, box: v.box, maxScale: v.maxScale, labels }),
-    visual: visualLayout({ type: s["lesson-visual"].visual.type, caption: s["lesson-visual"].visual.caption, why: why.why }),
+    why: whyBox,
+    visual: s["lesson-visual"] ? visualLayout({ type: s["lesson-visual"].visual.type, caption: s["lesson-visual"].visual.caption, why: why?.why ?? "" }) : null,
     // the premise slide is the diagram scene with its own heading and line (LabVisualConte)
     premise: s["lesson-premise"] ? visualLayout({ type: s["lesson-premise"].visual.type, caption: s["lesson-premise"].visual.caption, why: s["lesson-premise"].say }) : null,
-    effect: effectLayout(s["lesson-effect"].sides),
-    tips: tipsLayout(s["lesson-tips"].tips),
+    effect: s["lesson-effect"] ? effectLayout(s["lesson-effect"].sides) : [],
+    tips: s["lesson-tips"] ? tipsLayout(s["lesson-tips"].tips) : [],
+    scenes: data.slides.filter((x) => x.kind === "lesson-scene").map(sceneLayout),
     end: endLayout(data.ending),
   };
 }
@@ -234,14 +371,18 @@ export function layoutProblems(data, vessels) {
     if (left < 0 || right > 1080 || !(top < bottom)) out.push(`${label} is outside the frame or empty`);
   };
   const w = L.why;
-  box("why: core line", { top: w.coreTop, bottom: w.coreBottom, left: w.coreLeft, right: w.coreRight });
-  box("why: meters", { top: w.metersTop, bottom: w.coreTop - WHY.ruleGap, left: MARGIN, right: w.coreRight });
-  for (const [i, b] of w.labels.entries()) box(`why: cup name ${i}`, b);
-  if (w.top < w.headTop) out.push(`why: the drawing (from y ${Math.round(w.top)}) runs into the heading`);
-  if (w.scale < 0.45) out.push(`why: the drawing would shrink to ${w.scale.toFixed(2)}`);
+  if (w) {
+    box("why: core line", { top: w.coreTop, bottom: w.coreBottom, left: w.coreLeft, right: w.coreRight });
+    box("why: meters", { top: w.metersTop, bottom: w.coreTop - WHY.ruleGap, left: MARGIN, right: w.coreRight });
+    for (const [i, b] of w.labels.entries()) box(`why: cup name ${i}`, b);
+    if (w.top < w.headTop) out.push(`why: the drawing (from y ${Math.round(w.top)}) runs into the heading`);
+    if (w.scale < 0.45) out.push(`why: the drawing would shrink to ${w.scale.toFixed(2)}`);
+  }
   const v = L.visual;
-  box("diagram: caption", { top: v.captionTop, bottom: v.captionBottom, left: MARGIN, right: v.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
-  box("diagram: reason (lesson.why)", { top: v.noteTop, bottom: v.noteBottom, left: v.noteLeft, right: v.noteLeft + v.noteWidth });
+  if (v) {
+    box("diagram: caption", { top: v.captionTop, bottom: v.captionBottom, left: MARGIN, right: v.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
+    box("diagram: reason (lesson.why)", { top: v.noteTop, bottom: v.noteBottom, left: v.noteLeft, right: v.noteLeft + v.noteWidth });
+  }
   const p = L.premise;
   if (p) {
     box("premise: caption", { top: p.captionTop, bottom: p.captionBottom, left: MARGIN, right: p.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
@@ -257,6 +398,23 @@ export function layoutProblems(data, vessels) {
   L.tips.forEach((r, i) => {
     box(`tips: ${i}`, { top: r.top, bottom: r.bottom, left: MARGIN, right: MARGIN + r.width + TIPS.gap + r.doodle });
     if (i > 0 && r.top < L.tips[i - 1].bottom + 10) out.push(`tips: ${i} overlaps the tip above`);
+  });
+  const scenes = data.slides.filter((x) => x.kind === "lesson-scene");
+  L.scenes.forEach((sc, i) => {
+    if (sc.label) box(`scene ${i + 1}: label`, sc.label);
+    box(`scene ${i + 1}: heading`, sc.heading);
+    sc.items.forEach((b, j) => box(`scene ${i + 1}: line ${j + 1}`, b));
+    if (sc.art.height < SCENE.artMinHeight) out.push(`scene ${i + 1}: the drawing would shrink to ${Math.round(sc.art.height)}px tall (min ${SCENE.artMinHeight})`);
+    // the words inside the drawing, where the drawing puts them on screen
+    const art = SCENE_ART[scenes[i].art];
+    const s = sc.art.width / (art?.w ?? 1);
+    for (const t of art?.texts ?? []) {
+      const b = artTextBox(t);
+      box(`scene ${i + 1}: 「${t.label}」 in the drawing`, { top: sc.art.top + b.top * s, bottom: sc.art.top + b.bottom * s, left: sc.art.left + b.left * s, right: sc.art.left + b.right * s });
+      if (t.size * s < SCENE.artTextMin) out.push(`scene ${i + 1}: 「${t.label}」 in the drawing is ${Math.round(t.size * s)}px (min ${SCENE.artTextMin})`);
+    }
+    const h = classicSceneHeight(scenes[i]);
+    if (h > CLASSIC.column) out.push(`classic cards: scene ${i + 1} is ${h}px tall (max ${CLASSIC.column})`);
   });
   box("ending: next", { top: L.end.nextTop, bottom: L.end.nextBottom, left: MARGIN, right: L.end.lowRight });
   box("ending: signature", { top: L.end.signatureTop, bottom: L.end.bottom, left: MARGIN, right: L.end.lowRight });
