@@ -49,6 +49,8 @@ test("fallback only after 10 rounds that still do not pass (owner 2026-10-20: fi
   assert.deepEqual(reviewErrors(log(stuck(10), "fallback"), ctx), []);
   assert.match(reviewErrors(log(stuck(3), "fallback"), ctx).join(), /keep fixing up to 10/);
   assert.match(reviewErrors(log(stuck(11), "fallback"), ctx).join(), /at most 10/);
+  // stopping before 10 rounds (the posting deadline) needs the reason written down
+  assert.deepEqual(reviewErrors({ ...log(stuck(3), "fallback"), reason: "締め切り 08:10 JST を過ぎた" }, ctx), []);
 });
 
 test("the air date is today before noon JST and tomorrow from noon (script routine at 23:00 the night before)", () => {

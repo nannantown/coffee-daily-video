@@ -6,7 +6,7 @@
 |---|---|
 | routine | 毎朝コーヒーの抽出知識を 1 本まとめ、ナレーションコンテンツを生成して GitHub にプッシュ |
 | trigger | `trig_01LwqqYsdw2VkHXqZZB24riT` |
-| cron | `0 14 * * *`（UTC）= **前の晩 23:00 JST**（2026-10-20 オーナー決定。それまでは `30 22 * * *` = 毎朝 07:30 JST。trigger の時刻は司令塔が切り替える。手順の日付は `scripts/air-date.mjs` の**放送日**なので、どちらの時刻に走っても翌朝 08:30 の回を書く） |
+| cron | `0 14 * * *`（UTC）= **前の晩 23:00 JST**（2026-10-20 オーナー決定。それまでは `30 22 * * *` = 毎朝 07:30 JST。trigger の時刻は司令塔が切り替える — **このファイルが main に入ってから**切り替える（先に切り替えると、古い手順が 23:00 にその日の日付で書いてしまう）。手順の日付は `scripts/air-date.mjs` の**放送日**なので、どちらの時刻に走っても翌朝 08:30 の回を書く） |
 | sources | `nannantown/coffee-daily-video` のみ（sns-hub は読めない） |
 | **反映状況** | 2026-09-14 18:04 JST に trigger を**起動文**へ切替済み。このファイルが main に入った**翌朝から自動で反映**（貼り替え不要） |
 
@@ -73,7 +73,7 @@ TODAY=$(node scripts/air-date.mjs); echo "$TODAY"   # 正午より前は今日�
 #### 1. PDCA
 
 ```bash
-node scripts/pdca-summary.mjs
+node scripts/pdca-summary.mjs --today=$(node scripts/air-date.mjs)   # 放送日の目で集計（23:00 に走っても前日のレポートを読み落とさない）
 ```
 
 出力全体（ジャンル試行の状態 / ジャンル判定 / 構造実験の提案 / 投稿証跡と観測期間 / 直近の投稿 / 集計 / ローテーション）を**そのまま** `docs/pdca/$TODAY.md` の先頭に貼り、その下に当日の所感を書く。前日の所感にある「公開済み」「比較できる」は投稿証跡の代わりにしない。
@@ -191,6 +191,7 @@ node scripts/pdca-summary.mjs
 - 毎周の台本（`--art` の出力）・指摘・直しを `data/reviews/$TODAY.json` に書く（形は `docs/script-pipeline.md`「記録」）
 - **台本の回**（下書きに `script` がある日）と、下書きから変えてはいけない欄（`word` / `ask` / `hook` / `premise`）・絵の描き方は、ルーチンが直さない — その指摘は `持ち越し：` にしてレポートの「戦略更新提案」に書く
 - **10 周しても通らない日**は `"result": "fallback"` にする。原稿は main に入れず（手順 5 が記録とレポートだけを入れる）、08:30 は今日の回の常備原稿で出る
+- **締め切り 08:10 JST**（23:00 に走れば関係ない。朝に走った日の保険。`TZ=Asia/Tokyo date +%H:%M` で毎周の前に見る）: 過ぎたら 10 周を待たずに止め、`"result": "fallback"` と `"reason": "締め切り 08:10 JST を過ぎた"` を書く
 - 終わったら `node scripts/check-review.mjs` が `OK:` を出すまで記録を直す。レポートに「レビュー: <周> 周で通過（readers: agents / self）／直した言葉／持ち越し」を 1〜3 行残す
 
 #### 4. 検証（必須）

@@ -6,7 +6,8 @@
  *   node scripts/check-review.mjs [--date=YYYY-MM-DD]   # default: the next air date (scripts/air-date.mjs)
  *
  * "OK: pass …"     — every reader passed, and the content file is exactly the script of the last round.
- * "OK: fallback …" — 10 rounds did not pass; the content is not committed and the evergreen draft airs.
+ * "OK: fallback …" — 10 rounds did not pass (or the run stopped early with a `reason`, e.g. the deadline);
+ *                    the content is not committed and the evergreen draft airs.
  * "NG: …"          — the log is missing, malformed, or does not match the content (exit 1).
  */
 
@@ -74,8 +75,10 @@ export function reviewErrors(log, { date, episode, script }) {
     if (log.episode !== episode) e.push(`episode "${log.episode}" is not the content's "${episode}"`);
     if (final && final.script !== script) e.push("the content is not the script of the last round (changed after the review) — read it again");
   } else if (log.result === "fallback") {
-    if (rounds.length !== MAX_ROUNDS) e.push(`result fallback after ${rounds.length} rounds — keep fixing up to ${MAX_ROUNDS}`);
-    if (final && !blocked.length) e.push("result fallback but the last round passed — commit it as a pass");
+    // stopping early (the posting deadline, the session ending) is allowed only with the reason written down
+    const early = typeof log.reason === "string" && log.reason.trim() !== "";
+    if (rounds.length !== MAX_ROUNDS && !early) e.push(`result fallback after ${rounds.length} rounds — keep fixing up to ${MAX_ROUNDS}, or write the reason for stopping early (e.g. the deadline)`);
+    if (final && !blocked.length && !early) e.push("result fallback but the last round passed — commit it as a pass");
   } else e.push('result must be "pass" or "fallback"');
   return e;
 }
@@ -108,5 +111,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     process.exit(1);
   }
   const findings = log.rounds.map((r) => READERS.map((w) => r.reviews[w].length).reduce((a, b) => a + b, 0));
-  console.log(`OK: ${log.result} ${date} ${log.episode} — ${log.rounds.length} round(s), findings per round ${findings.join(" → ")}, readers: ${log.readers}`);
+  const carriedHeavy = log.rounds.at(-1) ? READERS.flatMap((w) => log.rounds.at(-1).reviews[w]).filter((f) => f.severity === "重い" && !blocking(f)).length : 0;
+  console.log(
+    `OK: ${log.result} ${date} ${log.episode} — ${log.rounds.length} round(s), findings per round ${findings.join(" → ")}, heavy carried over to a human ${carriedHeavy}, readers: ${log.readers}${log.reason ? `, reason: ${log.reason}` : ""}`
+  );
 }
