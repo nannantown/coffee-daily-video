@@ -217,9 +217,9 @@ export const SCENE_ART = {
     h: 700, // few vs many mineral grains, some marked Ca / Mg
     texts: [
       { key: "soft-ca", label: "Ca", cx: 225, cy: 330, size: 52 },
-      { key: "hard-ca1", label: "Ca", cx: 665, cy: 300, size: 52 },
-      { key: "hard-mg", label: "Mg", cx: 795, cy: 360, size: 52 },
-      { key: "hard-ca2", label: "Ca", cx: 705, cy: 425, size: 52 },
+      { key: "hard-ca1", label: "Ca", cx: 660, cy: 290, size: 52 },
+      { key: "hard-mg", label: "Mg", cx: 805, cy: 345, size: 52 },
+      { key: "hard-ca2", label: "Ca", cx: 700, cy: 430, size: 52 },
     ],
   },
   acid: {
