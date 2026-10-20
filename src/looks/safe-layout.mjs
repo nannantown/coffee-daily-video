@@ -206,13 +206,20 @@ export function classicPremiseHeight({ type, caption, note }) {
 export const SCENE_ART = {
   glasses: { w: 1000, h: 820 }, // the cover: two identical glasses before a big 水
   minerals: { w: 1000, h: 700 }, // few vs many mineral grains
-  acid: { w: 1000, h: 720 }, // acid grains cancelled in hard water, a baking-soda pouch
-  compare: { w: 1000, h: 900 }, // hard water → dark cup, low acidity / soft → light cup, acidity stays
-  which: { w: 1000, h: 760 }, // the tap's glass and an imported bottle's 硬度 label, two cups
+  acid: { w: 1000, h: 640 }, // acid grains cancelled in hard water, a baking-soda pouch
+  compare: { w: 1000, h: 570 }, // hard water → dark cup, low acidity / soft → light cup, acidity stays
+  which: { w: 1000, h: 540 }, // the tap's glass, two cups, an imported bottle's 硬度 label
 };
-export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, resultGap: 4, sizes: [56, 48], artGap: 40, artBottom: 1880, artMaxWidth: 1000, artMinHeight: 420 };
+// The drawing sits centred between the text and y artBottom (its table line may reach under
+// the Reels caption), as big as the text above leaves room for.
+export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, resultGap: 4, sizes: [56, 48], artGap: 40, artBottom: 1720, artMaxWidth: 1000, artMinHeight: 380 };
 
-/** Every text box of a script scene, top down, and the drawing's box under them. */
+/**
+ * Every text box of a script scene, top down, and the drawing's box under them.
+ * The boxes are upper bounds (lineCount rounds up), so validation never lets text
+ * run under the UI; the renderer flows the text from the top and centres the
+ * drawing in the room the upper bound leaves, so a line that wraps less only leaves more air.
+ */
 export function sceneLayout(scene) {
   const fit = (size) => {
     const labelH = scene.label ? textHeight(scene.label, SCENE.labelSize, COLUMN) : 0;
@@ -238,7 +245,8 @@ export function sceneLayout(scene) {
       heading: { top: headTop, bottom: headTop + textHeight(scene.heading, HEADING.size, COLUMN, 0.01), left: MARGIN, right: MARGIN + COLUMN },
       items,
       textBottom,
-      art: { top: artTop, left: (1080 - width) / 2, width, height },
+      // centred in the room between the text and artBottom
+      art: { top: artTop + (SCENE.artBottom - artTop - height) / 2, left: (1080 - width) / 2, width, height },
     };
   };
   // the larger body size when the drawing still gets its room, else the smaller one (never below 30pt)

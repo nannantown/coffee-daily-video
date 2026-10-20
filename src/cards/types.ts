@@ -16,7 +16,8 @@ export interface LessonTitleSlide {
   date: string;
   word: string; // the big word on the cover: 湯温
   ask: string; // what follows it: を下げると？
-  topic: string; // what it does to the taste, one line
+  topic: string; // what it does to the taste, one line ("" on a script episode: the cover only asks)
+  art?: string; // a script episode's cover drawing (SCENE_ART) instead of the plate
   methodLabel: string;
   sceneLabel: string;
   narration: string;
@@ -112,13 +113,26 @@ export interface LessonPremiseSlide {
   narration: string;
 }
 
+// One scene of an approved script (lesson.script, owner 2026-10-20): a grey label,
+// the big heading, lines / "lead → result" rows and the scene's drawing (src/looks/SceneArt.tsx).
+export type SceneItem = string | { lead: string; result: string };
+export interface LessonSceneSlide {
+  kind: "lesson-scene";
+  label: string; // "" = none
+  heading: string;
+  body: SceneItem[];
+  art: string; // a key of SCENE_ART (src/looks/safe-layout.mjs)
+  narration: string;
+}
+
 export type CardSlide =
   | LessonTitleSlide
   | LessonPremiseSlide
   | LessonVisualSlide
   | LessonWhySlide
   | LessonEffectSlide
-  | LessonTipsSlide;
+  | LessonTipsSlide
+  | LessonSceneSlide;
 
 export interface CtaEnding {
   kind: "lesson-cta";

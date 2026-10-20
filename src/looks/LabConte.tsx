@@ -3,12 +3,13 @@ import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame } f
 import { DiagramBody } from "../cards/Diagrams";
 import { InkContext } from "../cards/ink";
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
-import type { CtaEnding, LessonMotion, LessonTipsSlide, LessonVisualSlide } from "../cards/types";
+import type { CtaEnding, LessonMotion, LessonSceneSlide, LessonTipsSlide, LessonVisualSlide } from "../cards/types";
 import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
+import { SceneArt } from "./SceneArt";
 import { subjectFor, withTo } from "./art";
-import { DIAGRAM_SIZE, DIAGRAM_TOP, GAUGE, SCALE_DOODLE, EFFECT, END, LOW_Y, NOTE_SIZE, TIPS, effectLayout, endLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
+import { COLUMN, DIAGRAM_SIZE, DIAGRAM_TOP, GAUGE, SCALE_DOODLE, EFFECT, END, LOW_COLUMN, LOW_Y, MARGIN, NOTE_SIZE, SCENE, TIPS, effectLayout, endLayout, sceneLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
 
 /**
  * The lab look (ラボノート, owner's pick 2026-09-26), every scene after the
@@ -287,6 +288,52 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
           {i < tips.length - 1 ? <div style={{ height: 2, background: RULE, marginTop: 20, width: 1080 - 96 * 2 }} /> : null}
         </In>
       ))}
+    </LabFrame>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// script scenes (lesson.script): the approved script's lines, then its drawing
+// ---------------------------------------------------------------------------
+
+export const LabSceneConte: React.FC<{ ep: LookEpisode; slide: LessonSceneSlide }> = ({ ep, slide }) => {
+  // sceneLayout gives upper bounds (validation); here the text flows from the top
+  const L = sceneLayout(slide);
+  const f = useCurrentFrame();
+  const show = (at: number): React.CSSProperties => {
+    const p = prog(f, at, at + 18);
+    return { opacity: p, transform: `translateY(${(1 - p) * 22}px)` };
+  };
+  return (
+    <LabFrame beans={false} sprig={false}>
+      <div style={{ position: "absolute", top: L.label ? L.label.top : L.heading.top, left: MARGIN, width: COLUMN }}>
+        {L.label ? (
+          <div style={{ ...show(0), marginBottom: SCENE.labelGap - 16 }}>
+            <div style={T(SCENE.labelSize, 500, GREY)}>{slide.label}</div>
+            <div style={{ height: 2, background: RULE, marginTop: 14, width: 560 }} />
+          </div>
+        ) : null}
+        <div style={{ ...show(4), marginBottom: SCENE.bodyGap }}>
+          <span style={{ ...T(LAB_TYPE.head, 700, INK), borderBottom: `4px solid ${ep.accent}`, paddingBottom: 6 }}>{slide.heading}</span>
+        </div>
+        {slide.body.map((item, i) => (
+          <div key={i} style={{ ...show(12 + i * 10), width: LOW_COLUMN, marginBottom: SCENE.itemGap }}>
+            {typeof item === "string" ? (
+              <div style={T(L.size, 500, INK)}>{item}</div>
+            ) : (
+              <>
+                <div style={T(L.size, 700, INK)}>
+                  {item.lead} <span style={{ color: ep.accent }}>→</span>
+                </div>
+                <div style={T(L.size, 500, INK, { marginTop: SCENE.resultGap })}>{item.result}</div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+      <In at={16} style={{ top: L.art.top, left: L.art.left }}>
+        <SceneArt name={slide.art} width={L.art.width} accent={ep.accent} />
+      </In>
     </LabFrame>
   );
 };

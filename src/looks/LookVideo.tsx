@@ -5,7 +5,7 @@ import { type Ink, InkContext } from "../cards/ink";
 import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps, CtaEnding, LessonTipsSlide, LessonVisualSlide } from "../cards/types";
 import { subjectFor, toneFor } from "./art";
-import { LabEffectConte, LabEndConte, LabTipsConte, LabVisualConte, LabWhyConte } from "./LabConte";
+import { LabEffectConte, LabEndConte, LabSceneConte, LabTipsConte, LabVisualConte, LabWhyConte } from "./LabConte";
 import { type Look, type LookEpisode, LOOK_SCENES, SIZE } from "./Looks";
 
 /**
@@ -181,10 +181,13 @@ export function lookEpisode(look: Look, slides: CardSlide[]): LookEpisode {
     effect: effect?.kind === "lesson-effect" ? effect.sides : [],
     ...tone,
     plate: `${look}-${subjectFor(title.episode)}.png`,
+    art: title.art,
   };
 }
 
 const Scene: React.FC<{ look: Look; ep: LookEpisode; slide: CardSlide }> = ({ look, ep, slide }) => {
+  // a script scene is drawn as a lab notebook page in every look (only lab airs)
+  if (slide.kind === "lesson-scene") return <LabSceneConte ep={ep} slide={slide} />;
   if (look === "lab" && slide.kind !== "lesson-title") {
     // the lab look's storyboard scenes (src/looks/LabConte.tsx)
     if (slide.kind === "lesson-premise") return <LabVisualConte ep={ep} slide={slide} title={slide.term} note={slide.say} />;

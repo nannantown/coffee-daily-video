@@ -4,6 +4,7 @@ import { FONT_FAMILY, PHRASE_BREAK } from "../cards/theme";
 import { DrawnPlate, Flow, MovingPhoto, Ripples, Steam, thermoFor, WhyChain } from "./Explain";
 import { MotionPicture } from "./Motion";
 import { PencilMotion } from "./PencilMotion";
+import { SceneArt } from "./SceneArt";
 import { withTo } from "./art";
 import type { LessonMotion } from "../cards/types";
 
@@ -44,6 +45,7 @@ export interface LookEpisode {
   field: string; // still: background
   deep: string; // still: text in a deeper shade of the same hue
   plate: string; // public/looks/<file>
+  art?: string; // a script episode's cover drawing (src/looks/SceneArt.tsx), drawn instead of the plate
 }
 
 export const SIZE = { word: 128, head: 64, body: 48, aux: 40 };
@@ -138,18 +140,27 @@ const LabHeader: React.FC<{ label: string }> = ({ label }) => (
 const LabCover: React.FC<{ ep: LookEpisode }> = ({ ep }) => (
   <AbsoluteFill style={{ background: PAPER }}>
     {/* moved down so tall drawings (a pour, a press) stay clear of the topic line */}
-    <AbsoluteFill style={{ transform: "translateY(110px)" }}>
-      <Plate ep={ep} reveal />
-    </AbsoluteFill>
+    {ep.art ? (
+      // a script episode: its own drawing under the question (no answer on the cover yet)
+      <In at={4} style={{ top: 720, left: 40 }}>
+        <SceneArt name={ep.art} width={1000} accent={ep.accent} />
+      </In>
+    ) : (
+      <AbsoluteFill style={{ transform: "translateY(110px)" }}>
+        <Plate ep={ep} reveal />
+      </AbsoluteFill>
+    )}
     <LabHeader label={`${ep.series}　・　抽出メモ`} />
     <In at={2} style={{ top: 372, left: 90, right: 96 }}>
       <div style={type("word", 700, INK)}>{ep.word}</div>
       <div style={type("head", 700, INK, { marginTop: 6 })}>{ep.ask}</div>
     </In>
-    <In at={8} style={{ top: 646, left: 96, width: 820 }}>
-      <div style={{ height: 2, background: ep.accent, opacity: 0.8 }} />
-      <div style={type("head", 500, ep.accent, { marginTop: 24 })}>{ep.topic}</div>
-    </In>
+    {ep.topic ? (
+      <In at={8} style={{ top: 646, left: 96, width: 820 }}>
+        <div style={{ height: 2, background: ep.accent, opacity: 0.8 }} />
+        <div style={type("head", 500, ep.accent, { marginTop: 24 })}>{ep.topic}</div>
+      </In>
+    ) : null}
     {/* the storyboard's little side note: the usual way ↓ today's way */}
     {ep.pillar === "temp" ? (
     <In at={16} style={{ top: 1000, left: 40, width: 200, textAlign: "center" }}>

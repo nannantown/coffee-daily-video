@@ -4,6 +4,7 @@ import {
   CtaSlide,
   LessonEffect,
   LessonWhy,
+  LessonScene,
   LessonTips,
   LessonTitle,
 } from "../cards/LessonSlides";
@@ -31,6 +32,8 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
       return <LessonEffect slide={slide} page={page} index={index} />;
     case "lesson-tips":
       return <LessonTips slide={slide} page={page} index={index} />;
+    case "lesson-scene":
+      return <LessonScene slide={slide} page={page} index={index} />;
     default:
       return null;
   }
