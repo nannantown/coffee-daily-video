@@ -2,7 +2,7 @@ import React from "react";
 import { Easing, interpolate, useCurrentFrame } from "remotion";
 import { FONT_FAMILY } from "../cards/theme";
 import { coffeeColor } from "./Motion";
-import { SCENE_ART } from "./safe-layout.mjs";
+import { SCENE_ART, artText, artTextBox } from "./safe-layout.mjs";
 
 /**
  * The drawings of a script episode's scenes (lesson.script, owner 2026-10-20),
@@ -65,9 +65,8 @@ const Glass: React.FC<{
   grains?: number;
   seed?: number;
   accent: string;
-  marks?: { label: string; x: number; y: number; color: string }[];
   appear?: number;
-}> = ({ id, cx, top, w, h, grains = 0, seed = 3, accent, marks = [], appear = 0 }) => {
+}> = ({ id, cx, top, w, h, grains = 0, seed = 3, accent, appear = 0 }) => {
   const f = useCurrentFrame();
   const wb = w * 0.84;
   const bottom = top + h;
@@ -94,14 +93,6 @@ const Glass: React.FC<{
         const r = 6 + c * 6;
         return <circle key={i} cx={x} cy={y + Math.sin(f / 18 + i) * 3} r={r} fill={accent} fillOpacity={0.35 + c * 0.3} stroke={INK} strokeWidth={1.5} strokeOpacity={0.7} />;
       })}
-      {marks.map((m) => (
-        <g key={`${m.label}-${m.x}`} transform={`translate(${cx + m.x} ${level + m.y + Math.sin(f / 22 + m.x) * 3})`}>
-          <circle r={34} fill={PAPER} stroke={m.color} strokeWidth={4} />
-          <text textAnchor="middle" dominantBaseline="central" fontSize={34} fontWeight={700} fill={m.color} fontFamily={FONT_FAMILY}>
-            {m.label}
-          </text>
-        </g>
-      ))}
     </g>
   );
 };
@@ -151,38 +142,53 @@ const Glasses: React.FC<ArtProps> = ({ id, accent }) => {
   );
 };
 
+/** A word drawn inside a picture, placed by SCENE_ART (safe-layout.mjs checks where it lands). */
+const Word: React.FC<{ name: keyof typeof SCENE_ART; k: string; fill: string; opacity?: number; dy?: number }> = ({ name, k, fill, opacity = 1, dy = 0 }) => {
+  const t = artText(name, k);
+  return (
+    <text x={t.cx} y={t.cy + dy} textAnchor="middle" dominantBaseline="central" fontSize={t.size} fontWeight={700} fill={fill} fontFamily={FONT_FAMILY} opacity={opacity}>
+      {t.label}
+    </text>
+  );
+};
+
 /** Few grains (soft) vs many grains (hard); a few grains carry the Ca / Mg mark. */
-const Minerals: React.FC<ArtProps> = ({ id, accent }) => (
-  <>
-    <Glass id={id} cx={265} top={150} w={330} h={470} grains={4} seed={11} accent={accent} marks={[{ label: "Ca", x: -40, y: 250, color: accent }]} />
-    <Glass
-      id={id}
-      cx={735}
-      top={150}
-      w={330}
-      h={470}
-      grains={46}
-      seed={29}
-      accent={accent}
-      appear={10}
-      marks={[
-        { label: "Ca", x: -70, y: 110, color: accent },
-        { label: "Mg", x: 60, y: 210, color: GREY },
-        { label: "Ca", x: -30, y: 320, color: accent },
-      ]}
-    />
-    <Table id={id} y={650} />
-  </>
-);
-/** A small legend: a grain and what it stands for. */
-const Key: React.FC<{ x: number; y: number; color: string; label: string; at: number }> = ({ x, y, color, label, at }) => {
+const Minerals: React.FC<ArtProps> = ({ id, accent }) => {
   const f = useCurrentFrame();
+  const marks: [string, string, number][] = [
+    ["soft-ca", accent, 0],
+    ["hard-ca1", accent, 10],
+    ["hard-mg", GREY, 10],
+    ["hard-ca2", accent, 10],
+  ];
+  return (
+    <>
+      <Glass id={id} cx={265} top={150} w={330} h={470} grains={4} seed={11} accent={accent} />
+      <Glass id={id} cx={735} top={150} w={330} h={470} grains={46} seed={29} accent={accent} appear={10} />
+      {marks.map(([k, color, at], i) => {
+        const t = artText("minerals", k);
+        const bob = Math.sin(f / 22 + i) * 3;
+        return (
+          <g key={k} opacity={prog(f, at + 8, at + 26)}>
+            <circle cx={t.cx} cy={t.cy + bob} r={t.size * 0.85} fill={PAPER} stroke={color} strokeWidth={4} />
+            <Word name="minerals" k={k} fill={color} dy={bob} />
+          </g>
+        );
+      })}
+      <Table id={id} y={650} />
+    </>
+  );
+};
+
+/** A legend entry: a grain, then the word it stands for (the word is placed by SCENE_ART). */
+const Key: React.FC<{ k: string; color: string; at: number }> = ({ k, color, at }) => {
+  const f = useCurrentFrame();
+  const t = artText("acid", k);
+  const b = artTextBox(t);
   return (
     <g opacity={prog(f, at, at + 16)}>
-      <circle cx={x + 18} cy={y} r={16} fill={color} fillOpacity={0.9} stroke={INK} strokeWidth={1.5} />
-      <text x={x + 48} y={y} dominantBaseline="central" fontSize={44} fontWeight={700} fill={INK} fontFamily={FONT_FAMILY}>
-        {label}
-      </text>
+      <circle cx={b.left - 28} cy={t.cy} r={16} fill={color} fillOpacity={0.9} stroke={INK} strokeWidth={1.5} />
+      <Word name="acid" k={k} fill={INK} />
     </g>
   );
 };
@@ -194,8 +200,8 @@ const Acid: React.FC<ArtProps> = ({ id, accent }) => {
   const cx = 340;
   return (
     <>
-      <Key x={40} y={34} color={AMBER} label="酸味" at={0} />
-      <Key x={260} y={34} color={accent} label="酸を打ち消す成分" at={6} />
+      <Key k="acid" color={AMBER} at={0} />
+      <Key k="base" color={accent} at={6} />
       <Glass id={id} cx={cx} top={130} w={440} h={420} accent={accent} />
       {pairs.map(([a, b], i) => {
         const x = cx + (a * 2 - 1) * 130;
@@ -217,41 +223,38 @@ const Acid: React.FC<ArtProps> = ({ id, accent }) => {
         <rect x={706} y={420} width={196} height={130} fill={`url(#${id}-hatch)`} opacity={0.4} />
         <path d="M630 568 q 40 -46 90 -40 q 40 -4 70 40 Z" fill="#FFFFFF" stroke={GREY} strokeWidth={2} />
       </g>
-      <text x={802} y={364} textAnchor="middle" dominantBaseline="central" fontSize={56} fontWeight={700} fill={INK} fontFamily={FONT_FAMILY} opacity={prog(f, 14, 32)}>
-        重曹
-      </text>
+      <Word name="acid" k="soda" fill={INK} opacity={prog(f, 14, 32)} />
       <Table id={id} y={576} />
     </>
   );
 };
 
-/** Hard water → a dark cup, the acidity bar low; soft water → a light cup, the bar stays high. */
+/** Hard water → a dark cup, the acidity meter low; soft water → a light cup, the meter stays high. */
 const Compare: React.FC<ArtProps> = ({ id, accent }) => {
   const f = useCurrentFrame();
-  const Half: React.FC<{ x0: number; grains: number; seed: number; shade: number; acid: number; at: number }> = ({ x0, grains, seed, shade, acid, at }) => {
+  const Half: React.FC<{ x0: number; k: string; grains: number; seed: number; shade: number; acid: number; at: number }> = ({ x0, k, grains, seed, shade, acid, at }) => {
     const p = interpolate(f, [at + 20, at + 60], [0.6, acid], { ...clamp, easing: ease });
+    const mx = artText("compare", k).cx; // the meter stands under its word, at the left of the half (clear of the action buttons)
     return (
       <g>
-        {/* the water, an arrow down to the cup it makes, and the cup's acidity meter beside it */}
-        <Glass id={id} cx={x0 + 170} top={30} w={200} h={220} grains={grains} seed={seed} accent={accent} appear={at} />
-        <path d={`M${x0 + 170} 268 L${x0 + 170} 318 M${x0 + 156} 304 L${x0 + 170} 320 L${x0 + 184} 304`} stroke={accent} strokeWidth={5} fill="none" strokeLinecap="round" opacity={prog(f, at + 8, at + 20)} />
-        <Mug id={id} cx={x0 + 160} top={350} w={220} h={170} shade={shade} appear={at + 10} />
-        <Table id={id} y={540} x0={x0 + 20} x1={x0 + 470} />
+        {/* the cup's acidity meter, then the water and an arrow down to the cup it makes */}
         <g opacity={prog(f, at + 16, at + 30)}>
-          <text x={x0 + 405} y={300} textAnchor="middle" dominantBaseline="central" fontSize={44} fontWeight={700} fill={INK} fontFamily={FONT_FAMILY}>
-            酸味
-          </text>
-          <rect x={x0 + 380} y={340 + 180 * (1 - p)} width={50} height={180 * p} fill={`url(#${id}-hatch-accent)`} />
-          <rect x={x0 + 380} y={340} width={50} height={180} fill="none" stroke={INK} strokeWidth={3} filter={`url(#${id}-rough)`} />
+          <Word name="compare" k={k} fill={INK} />
+          <rect x={mx - 25} y={340 + 180 * (1 - p)} width={50} height={180 * p} fill={`url(#${id}-hatch-accent)`} />
+          <rect x={mx - 25} y={340} width={50} height={180} fill="none" stroke={INK} strokeWidth={3} filter={`url(#${id}-rough)`} />
         </g>
+        <Glass id={id} cx={x0 + 290} top={30} w={200} h={220} grains={grains} seed={seed} accent={accent} appear={at} />
+        <path d={`M${x0 + 290} 268 L${x0 + 290} 318 M${x0 + 276} 304 L${x0 + 290} 320 L${x0 + 304} 304`} stroke={accent} strokeWidth={5} fill="none" strokeLinecap="round" opacity={prog(f, at + 8, at + 20)} />
+        <Mug id={id} cx={x0 + 280} top={350} w={210} h={170} shade={shade} appear={at + 10} />
+        <Table id={id} y={540} x0={x0 + 10} x1={x0 + 480} />
       </g>
     );
   };
   return (
     <>
       <path d="M500 30 L500 540" stroke={GREY} strokeWidth={2} opacity={0.4} />
-      <Half x0={0} grains={22} seed={5} shade={88} acid={0.18} at={0} />
-      <Half x0={510} grains={3} seed={17} shade={22} acid={0.88} at={8} />
+      <Half x0={0} k="hard-acid" grains={22} seed={5} shade={88} acid={0.18} at={0} />
+      <Half x0={510} k="soft-acid" grains={3} seed={17} shade={22} acid={0.88} at={8} />
     </>
   );
 };
@@ -260,6 +263,7 @@ const Compare: React.FC<ArtProps> = ({ id, accent }) => {
 const Which: React.FC<ArtProps> = ({ id, accent }) => {
   const f = useCurrentFrame();
   const stream = (f * 3) % 24;
+  const t = artText("which", "hardness");
   return (
     <>
       <g filter={`url(#${id}-rough)`} fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" opacity={prog(f, 0, 18)}>
@@ -276,13 +280,11 @@ const Which: React.FC<ArtProps> = ({ id, accent }) => {
       <g filter={`url(#${id}-rough)`} opacity={prog(f, 6, 26)}>
         <path d="M830 110 L830 70 L900 70 L900 110 Q960 140 960 200 L960 450 Q960 466 944 466 L786 466 Q770 466 770 450 L770 200 Q770 140 830 110 Z" fill="rgba(120,160,175,0.12)" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
         <rect x={824} y={46} width={82} height={28} rx={6} fill="#FBF9F4" stroke={INK} strokeWidth={3.5} />
-        <rect x={774} y={236} width={182} height={170} fill="#FBF9F4" stroke={GREY} strokeWidth={2.5} />
+        <rect x={774} y={200} width={182} height={180} fill="#FBF9F4" stroke={GREY} strokeWidth={2.5} />
       </g>
       <g opacity={prog(f, 20, 36)}>
-        <rect x={788} y={272} width={154} height={98} fill="none" stroke={accent} strokeWidth={6} rx={6} />
-        <text x={865} y={322} textAnchor="middle" dominantBaseline="central" fontSize={56} fontWeight={700} fill={accent} fontFamily={FONT_FAMILY}>
-          硬度
-        </text>
+        <rect x={t.cx - 77} y={t.cy - 49} width={154} height={98} fill="none" stroke={accent} strokeWidth={6} rx={6} />
+        <Word name="which" k="hardness" fill={accent} />
       </g>
       <Table id={id} y={474} />
     </>

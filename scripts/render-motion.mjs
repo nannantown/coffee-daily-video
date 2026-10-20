@@ -29,6 +29,10 @@ for (const spec of process.argv.slice(2)) {
   const data = buildCardsData(fallbackLessonContent(ep, "2026-09-27"), { dateDisplay: "" });
   const timeline = computeCardTimeline({}, data.slides.length);
   const whyIndex = data.slides.findIndex((s) => s.kind === "lesson-why");
+  if (whyIndex < 0) {
+    console.log(`${id}: no why scene (a script episode) — skipped`);
+    continue;
+  }
   timeline.slides[whyIndex] = Math.max(timeline.slides[whyIndex], WHY_SECONDS * 30);
   timeline.total = timeline.slides.reduce((a, b) => a + b, 0) + timeline.ending;
   const inputProps = { format: "brew-lesson", slides: data.slides, ending: data.ending, timeline, withAudio: false, look };

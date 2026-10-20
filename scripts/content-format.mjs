@@ -769,7 +769,7 @@ function validateScript(lesson, episode, errors, prefix) {
       errors.push(`${p} must be an object`);
       return;
     }
-    if (sc.label != null) checkLen(errors, `${p}.label`, sc.label, LIMITS.sceneLabel);
+    if (sc.label != null && sc.label !== "") checkLen(errors, `${p}.label`, sc.label, LIMITS.sceneLabel);
     checkLen(errors, `${p}.heading`, sc.heading, LIMITS.sceneHeading);
     art(`${p}.art`, sc.art);
     checkLen(errors, `${p}.narration`, sc.narration, LIMITS.sceneNarration);

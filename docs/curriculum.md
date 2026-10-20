@@ -54,11 +54,11 @@
 ## 台本の回（`lesson.script`。2026-10-20 オーナー依頼「台本どおりの場面で作れるように」）
 
 - オーナーが場面ごとに OK した台本は、回の `lesson.script` に入れる: `{ cover: { art, narration }, scenes: [{ label?, heading, body, art, narration }] }`。動画は**表紙（問いだけ。答えはまだ出さない）→ 台本の場面（2〜5 個）を順に → 締め**になり、決まった並び（なぜ変わる？・図解・味はこう変わる・うまくいかない時）は描かない
-- `body` の 1 項目は 1 行（文字列）か、`{ lead, result }`（「硬水で淹れる → 酸味が消える分、苦みが目立つ」の 2 段）。`art` は `src/looks/SceneArt.tsx` の絵の名前（`glasses` / `minerals` / `acid` / `compare` / `which`。一覧と大きさは `src/looks/safe-layout.mjs` の `SCENE_ART`）。絵は Codex の参考画像（`docs/previews/ref/soft-water-*.png`）をコードで描き直したもの。新しい台本の回で絵が要るときは、同じ手順で `SceneArt.tsx` に足す
+- `body` の 1 項目は 1 行（文字列）か、`{ lead, result }`（「硬水で淹れる → 酸味が消える分、苦みが目立つ」の 2 段）。`art` は `src/looks/SceneArt.tsx` の絵の名前（`glasses` / `minerals` / `acid` / `compare` / `which`。一覧と大きさは `src/looks/safe-layout.mjs` の `SCENE_ART`）。絵は Codex の参考画像（`docs/previews/ref/soft-water-*.jpg`）をコードで描き直したもの。新しい台本の回で絵が要るときは、同じ手順で `SceneArt.tsx` に足す
 - 朝ルーチンは `script` を**一字も変えずに写す**（検証が照合し、変えたり外したりすると常備原稿に差し替わる）。カリキュラムに `script` が無い回に、ルーチンが `script` を書くこともできない
 - `topic` / `why` / `effect` / `tips` は台本の回でも残す（YouTube のタイトル「…？ 軟水は酸味、硬水は苦み」と記録に使う）。キャプションの本文は台本の場面の文字から作る
 - 画面に入るかは `layoutProblems` が場面ごとに検査する（文字が Reels の UI の上・右のボタンの左に収まるか、絵が小さくなりすぎないか、classic のカードに入るか）
-- 第25回 `i12-soft-water` の台本は sns-hub `docs/operations/20261020-coffee-1021-soft-water-script-v2.json`（初見の人レビュー 3 回済み）。表紙の大きい一言は「硬水と軟水で」（6 字。`LIMITS.word` を 6 に）
+- 第25回（硬水と軟水）の台本は sns-hub `docs/operations/20261020-coffee-1021-soft-water-script-v2.json`（初見の人レビュー 3 回済み）。表紙の大きい一言は「硬水と軟水で」（6 字。`LIMITS.word` を 6 に）
 
 ## 図解の型（「なぜ変わる？」の次のスライド）
 

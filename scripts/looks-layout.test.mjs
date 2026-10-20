@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { CURRICULUM, LIMITS, buildCardsData, fallbackLessonContent, validateDailyContent } from "./content-format.mjs";
-import { CLASSIC, LOW_COLUMN, MARGIN, RIGHT_LIMIT, SCENE, classicPremiseHeight, classicSceneHeight, classicPremiseNote, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
+import { CLASSIC, LOW_COLUMN, MARGIN, RIGHT_LIMIT, SCENE, SCENE_ART, classicPremiseHeight, classicSceneHeight, classicPremiseNote, headingBottom, labLayout, layoutProblems } from "../src/looks/safe-layout.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // Review 2026-09-26 (rounds 1-3): every text of the lab look sits where the
@@ -113,6 +113,18 @@ test("script scenes fit: text above the UI and left of the action buttons, the d
       assert.ok(sc.size >= 48, "body never below 48px (30pt+)");
     }
   }
+  // a word inside a drawing is checked where the drawing puts it (review 2026-10-20)
+  const word = SCENE_ART.minerals.texts[0];
+  const saved = { ...word };
+  try {
+    Object.assign(word, { cy: 690 });
+    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing ends at y")));
+    Object.assign(word, { cy: saved.cy, size: 30 });
+    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing is")));
+  } finally {
+    Object.assign(word, saved);
+  }
+  assert.deepEqual(layoutProblems(built(scripted[0]), VESSELS), []);
   const data = built(scripted[0]);
   const scene = data.slides.find((x) => x.kind === "lesson-scene");
   scene.body = [0, 1, 2, 3].map(() => ({ lead: "あ".repeat(LIMITS.sceneLead), result: "あ".repeat(LIMITS.sceneResult) }));

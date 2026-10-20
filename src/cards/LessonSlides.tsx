@@ -94,7 +94,7 @@ export const LessonTips: React.FC<{ slide: LessonTipsSlide; page: string; index?
 // A script scene (lesson.script) in the classic cards — the fallback renderer — the
 // same words, no drawing. Sizes: CLASSIC_SCENE (safe-layout.mjs classicSceneHeight checks the fit).
 export const LessonScene: React.FC<{ slide: LessonSceneSlide; page: string; index?: number }> = ({ slide, page, index = 0 }) => (
-  <SlideShell label={slide.heading} right={page} center index={index}>
+  <SlideShell label="今日の抽出メモ" right={page} center index={index}>
     <div style={{ display: "flex", flexDirection: "column", gap: CLASSIC_SCENE.gap, paddingRight: SPACE.actionColumnClearance }}>
       {slide.label ? <div style={{ fontSize: CLASSIC_SCENE.labelSize, fontWeight: 700, color: COLORS.textMuted, lineHeight: 1.4, ...PHRASE_BREAK }}>{slide.label}</div> : null}
       <Reveal delay={3} style={{ fontSize: CLASSIC_SCENE.headSize, fontWeight: 900, lineHeight: 1.4, ...PHRASE_BREAK }}>

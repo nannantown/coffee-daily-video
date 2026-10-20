@@ -202,17 +202,59 @@ export function classicPremiseHeight({ type, caption, note }) {
 // under the text, as big as the space left allows.
 // ---------------------------------------------------------------------------
 
-/** The drawings a script scene can carry (src/looks/SceneArt.tsx), with their design size (viewBox). */
+/**
+ * The drawings a script scene can carry (src/looks/SceneArt.tsx): their design size
+ * (viewBox) and every word drawn inside them (centre cx / cy and font size, in viewBox
+ * units). SceneArt.tsx draws those words from here, and layoutProblems maps them onto
+ * the screen with the drawing's box, so a word in a picture obeys the same rules as
+ * any text: above the Reels UI, left of the action buttons, 40px (30pt) or larger.
+ * The cover's big pale 水 is a picture (a watermark behind the glasses), not a word to read.
+ */
 export const SCENE_ART = {
-  glasses: { w: 1000, h: 820 }, // the cover: two identical glasses before a big 水
-  minerals: { w: 1000, h: 700 }, // few vs many mineral grains
-  acid: { w: 1000, h: 640 }, // acid grains cancelled in hard water, a baking-soda pouch
-  compare: { w: 1000, h: 570 }, // hard water → dark cup, low acidity / soft → light cup, acidity stays
-  which: { w: 1000, h: 540 }, // the tap's glass, two cups, an imported bottle's 硬度 label
+  glasses: { w: 1000, h: 820, texts: [] }, // the cover: two identical glasses before a big 水
+  minerals: {
+    w: 1000,
+    h: 700, // few vs many mineral grains, some marked Ca / Mg
+    texts: [
+      { key: "soft-ca", label: "Ca", cx: 225, cy: 330, size: 52 },
+      { key: "hard-ca1", label: "Ca", cx: 665, cy: 300, size: 52 },
+      { key: "hard-mg", label: "Mg", cx: 795, cy: 360, size: 52 },
+      { key: "hard-ca2", label: "Ca", cx: 705, cy: 425, size: 52 },
+    ],
+  },
+  acid: {
+    w: 1000,
+    h: 640, // acid grains cancelled in hard water, a baking-soda pouch
+    texts: [
+      { key: "acid", label: "酸味", cx: 132, cy: 34, size: 44 },
+      { key: "base", label: "酸を打ち消す成分", cx: 484, cy: 34, size: 44 },
+      { key: "soda", label: "重曹", cx: 802, cy: 364, size: 56 },
+    ],
+  },
+  compare: {
+    w: 1000,
+    h: 570, // hard water → dark cup, acidity low / soft → light cup, acidity stays
+    texts: [
+      { key: "hard-acid", label: "酸味", cx: 60, cy: 300, size: 44 },
+      { key: "soft-acid", label: "酸味", cx: 570, cy: 300, size: 44 },
+    ],
+  },
+  which: {
+    w: 1000,
+    h: 540, // the tap's glass, two cups, an imported bottle's 硬度 label
+    texts: [{ key: "hardness", label: "硬度", cx: 865, cy: 295, size: 56 }],
+  },
 };
+/** One drawn word of SCENE_ART, found by key. */
+export const artText = (name, key) => SCENE_ART[name].texts.find((t) => t.key === key);
+/** A drawn word's box in viewBox units (CJK one em, ASCII 0.6 em; ± 6 for the grains' bob). */
+export function artTextBox(t) {
+  const w = [...t.label].reduce((n, c) => n + (c.charCodeAt(0) < 0x2e80 ? 0.6 : 1), 0) * t.size;
+  return { left: t.cx - w / 2, right: t.cx + w / 2, top: t.cy - t.size * 0.65 - 6, bottom: t.cy + t.size * 0.65 + 6 };
+}
 // The drawing sits centred between the text and y artBottom (its table line may reach under
 // the Reels caption), as big as the text above leaves room for.
-export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, resultGap: 4, sizes: [56, 48], artGap: 40, artBottom: 1720, artMaxWidth: 1000, artMinHeight: 380 };
+export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, resultGap: 4, sizes: [56, 48], artGap: 40, artBottom: 1720, artMaxWidth: 1000, artMinHeight: 380, artTextMin: 40 };
 
 /**
  * Every text box of a script scene, top down, and the drawing's box under them.
@@ -348,6 +390,14 @@ export function layoutProblems(data, vessels) {
     box(`scene ${i + 1}: heading`, sc.heading);
     sc.items.forEach((b, j) => box(`scene ${i + 1}: line ${j + 1}`, b));
     if (sc.art.height < SCENE.artMinHeight) out.push(`scene ${i + 1}: the drawing would shrink to ${Math.round(sc.art.height)}px tall (min ${SCENE.artMinHeight})`);
+    // the words inside the drawing, where the drawing puts them on screen
+    const art = SCENE_ART[scenes[i].art];
+    const s = sc.art.width / (art?.w ?? 1);
+    for (const t of art?.texts ?? []) {
+      const b = artTextBox(t);
+      box(`scene ${i + 1}: 「${t.label}」 in the drawing`, { top: sc.art.top + b.top * s, bottom: sc.art.top + b.bottom * s, left: sc.art.left + b.left * s, right: sc.art.left + b.right * s });
+      if (t.size * s < SCENE.artTextMin) out.push(`scene ${i + 1}: 「${t.label}」 in the drawing is ${Math.round(t.size * s)}px (min ${SCENE.artTextMin})`);
+    }
     const h = classicSceneHeight(scenes[i]);
     if (h > CLASSIC.column) out.push(`classic cards: scene ${i + 1} is ${h}px tall (max ${CLASSIC.column})`);
   });
