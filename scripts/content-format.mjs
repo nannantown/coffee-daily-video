@@ -370,6 +370,15 @@ export function jstDateParts(now = new Date()) {
   };
 }
 
+/**
+ * The date the script being written now airs (08:30 JST): today before noon JST, tomorrow from noon.
+ * The script routine moved from 07:30 to 23:00 the night before (owner 2026-10-20), and this holds for both.
+ */
+export function airDate(now = new Date()) {
+  const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Tokyo", hour: "2-digit", hourCycle: "h23" }).format(now));
+  return jstDateParts(hour >= 12 ? new Date(now.getTime() + 24 * 3600_000) : now).iso;
+}
+
 
 /** Every day is a brewing lesson — there is no second format. */
 export function expectedFormatFor(_isoDate) {

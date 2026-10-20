@@ -2,7 +2,9 @@
  * Validate the day's content JSON before the morning routine commits it.
  *
  * Usage:
- *   node scripts/validate-content.mjs                                   # data/enriched-coffee-news.json, date must be today (JST)
+ *   node scripts/validate-content.mjs                                   # data/enriched-coffee-news.json, date must be the next air date
+ *   node scripts/validate-content.mjs --date=2026-10-22                 # … or this date
+ * (the next air date is today before noon JST and tomorrow from noon — the routine writes at 23:00 the night before)
  *   node scripts/validate-content.mjs data/samples/brew-lesson.sample.json --no-date-check
  *
  * Besides the shape and the brewing numbers this runs the brand guard: a bean
@@ -26,7 +28,7 @@ import {
   validateDailyContent,
   buildCardsData,
   narrationLength,
-  jstDateParts,
+  airDate,
   LIMITS,
 } from "./content-format.mjs";
 
@@ -35,7 +37,7 @@ const args = process.argv.slice(2);
 const pathArg = args.find((a) => !a.startsWith("--"));
 const contentPath = resolve(pathArg || join(rootDir, "data", "enriched-coffee-news.json"));
 const skipDate = args.includes("--no-date-check");
-const today = jstDateParts().iso;
+const today = args.find((a) => a.startsWith("--date="))?.slice("--date=".length) || airDate();
 
 let content;
 try {
