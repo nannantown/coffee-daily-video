@@ -97,6 +97,7 @@ export const LessonScene: React.FC<{ slide: LessonSceneSlide; page: string; inde
   <SlideShell label="今日の抽出メモ" right={page} center index={index}>
     <div style={{ display: "flex", flexDirection: "column", gap: CLASSIC_SCENE.gap, paddingRight: SPACE.actionColumnClearance }}>
       {slide.label ? <div style={{ fontSize: CLASSIC_SCENE.labelSize, fontWeight: 700, color: COLORS.textMuted, lineHeight: 1.4, ...PHRASE_BREAK }}>{slide.label}</div> : null}
+      {slide.intro ? <div style={{ fontSize: CLASSIC_SCENE.bodySize, fontWeight: 700, lineHeight: 1.4, ...PHRASE_BREAK }}>{slide.intro}</div> : null}
       <Reveal delay={3} style={{ fontSize: CLASSIC_SCENE.headSize, fontWeight: 900, lineHeight: 1.4, ...PHRASE_BREAK }}>
         {slide.heading}
       </Reveal>

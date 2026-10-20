@@ -118,7 +118,7 @@ test("script scenes fit: text above the UI and left of the action buttons, the d
   const saved = { ...word };
   try {
     Object.assign(word, { cy: 690 });
-    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing ends at y")));
+    assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing")));
     Object.assign(word, { cy: saved.cy, size: 30 });
     assert.ok(layoutProblems(built(scripted[0]), VESSELS).some((p) => p.includes("「Ca」 in the drawing is")));
   } finally {

@@ -307,11 +307,14 @@ export const LabSceneConte: React.FC<{ ep: LookEpisode; slide: LessonSceneSlide 
   return (
     <LabFrame beans={false} sprig={false}>
       <div style={{ position: "absolute", top: L.label ? L.label.top : L.heading.top, left: MARGIN, width: COLUMN }}>
-        {L.label ? (
+        {slide.label ? (
           <div style={{ ...show(0), marginBottom: SCENE.labelGap - 16 }}>
             <div style={T(SCENE.labelSize, 500, GREY)}>{slide.label}</div>
             <div style={{ height: 2, background: RULE, marginTop: 14, width: 560 }} />
           </div>
+        ) : slide.intro ? (
+          // a sentence the heading follows on from: set like the body, not as a grey label
+          <div style={{ ...show(0), marginBottom: SCENE.labelGap, ...T(L.size, 500, INK) }}>{slide.intro}</div>
         ) : null}
         <div style={{ ...show(4), marginBottom: SCENE.bodyGap }}>
           <span style={{ ...T(LAB_TYPE.head, 700, INK), borderBottom: `4px solid ${ep.accent}`, paddingBottom: 6 }}>{slide.heading}</span>

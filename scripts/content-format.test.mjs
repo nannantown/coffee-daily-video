@@ -723,7 +723,7 @@ test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a
 // the cover asks only, then 前提 → 酸味を打ち消す成分 → 比べてみる → いつもの水 → the ending.
 const SOFT_WATER_V2 = [
   { label: "まず前提", heading: "硬水と軟水", voice: "まず前提。水に溶けたカルシウムなどのミネラルの量が硬度。少ないと軟水、多いと硬水です。" },
-  { label: "コーヒーには、果物のような酸味もある", heading: "硬度の大きい水ほど", voice: "コーヒーには、果物のような酸味もあります。硬度の大きい水ほど、重曹のように酸を打ち消す成分も多く入っています。" },
+  { label: "", intro: "コーヒーには、果物のような酸味もある", heading: "硬度の大きい水ほど", voice: "コーヒーには、果物のような酸味もあります。硬度の大きい水ほど、重曹のように酸を打ち消す成分も多く入っています。" },
   { label: "", heading: "比べてみる", voice: "だから硬水だと、酸味が消える分、苦みが目立つ。軟水だと、すっきりした酸味が残ります。" },
   { label: "", heading: "いつもの水はどっち？", voice: "日本の水道水は、多くの地域で軟水。海外の硬水のボトルで淹れ比べると、違いが分かります。" },
 ];
@@ -749,6 +749,7 @@ test("第25回 i12-soft-water (2026-10-22) airs as its approved script: the cove
     assert.equal(cover.art, "glasses");
     scenes.forEach((s, i) => {
       assert.equal(s.label, SOFT_WATER_V2[i].label);
+      assert.equal(s.intro, SOFT_WATER_V2[i].intro ?? "");
       assert.equal(s.heading, SOFT_WATER_V2[i].heading);
       assert.equal(s.narration, SOFT_WATER_V2[i].voice);
     });
@@ -791,6 +792,8 @@ test("a script is checked like every other text: its drawings, lengths and words
   assert.ok(withScript((s) => (s.scenes[0].body = [])).some((e) => e.includes("body must have")));
   assert.ok(withScript((s) => (s.scenes[3].body[2] = "お湯は九十度で注ぐ")).some((e) => e.includes("recipe number")));
   assert.ok(withScript((s) => (s.scenes = s.scenes.slice(0, 1))).some((e) => e.includes("2-5 scenes")));
+  assert.ok(withScript((s) => (s.scenes[1].intro = "あ".repeat(LIMITS.sceneLine + 1))).some((e) => e.includes("intro is")));
+  assert.ok(withScript((s) => (s.scenes[1].label = "まず前提")).some((e) => e.includes("a label and an intro")));
 });
 
 // A premise the routine adds on its own (an episode whose map has none).

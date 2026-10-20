@@ -41,6 +41,9 @@ const Defs: React.FC<{ id: string; accent: string }> = ({ id, accent }) => (
     <pattern id={`${id}-hatch`} width={10} height={10} patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
       <line x1={0} y1={0} x2={0} y2={10} stroke={GREY} strokeWidth={1.6} opacity={0.55} />
     </pattern>
+    <pattern id={`${id}-hatch-ink`} width={9} height={9} patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1={0} y1={0} x2={0} y2={9} stroke={GREY} strokeWidth={2.5} />
+    </pattern>
     <pattern id={`${id}-hatch-accent`} width={9} height={9} patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
       <line x1={0} y1={0} x2={0} y2={9} stroke={accent} strokeWidth={3} />
     </pattern>
@@ -152,7 +155,7 @@ const Word: React.FC<{ name: keyof typeof SCENE_ART; k: string; fill: string; op
   );
 };
 
-/** Few grains (soft) vs many grains (hard); a few grains carry the Ca / Mg mark. */
+/** Few grains (soft) vs many grains (hard); a few grains carry the Ca / Mg mark; each glass is named under it. */
 const Minerals: React.FC<ArtProps> = ({ id, accent }) => {
   const f = useCurrentFrame();
   const marks: [string, string, number][] = [
@@ -163,8 +166,8 @@ const Minerals: React.FC<ArtProps> = ({ id, accent }) => {
   ];
   return (
     <>
-      <Glass id={id} cx={265} top={150} w={330} h={470} grains={4} seed={11} accent={accent} />
-      <Glass id={id} cx={735} top={150} w={330} h={470} grains={46} seed={29} accent={accent} appear={10} />
+      <Glass id={id} cx={265} top={20} w={330} h={400} grains={4} seed={11} accent={accent} />
+      <Glass id={id} cx={735} top={20} w={330} h={400} grains={46} seed={29} accent={accent} appear={10} />
       {marks.map(([k, color, at], i) => {
         const t = artText("minerals", k);
         const bob = Math.sin(f / 22 + i) * 3;
@@ -175,7 +178,9 @@ const Minerals: React.FC<ArtProps> = ({ id, accent }) => {
           </g>
         );
       })}
-      <Table id={id} y={650} />
+      <Table id={id} y={445} />
+      <Word name="minerals" k="soft-name" fill={INK} opacity={prog(f, 4, 20)} />
+      <Word name="minerals" k="hard-name" fill={INK} opacity={prog(f, 14, 30)} />
     </>
   );
 };
@@ -229,32 +234,44 @@ const Acid: React.FC<ArtProps> = ({ id, accent }) => {
   );
 };
 
-/** Hard water → a dark cup, the acidity meter low; soft water → a light cup, the meter stays high. */
+/**
+ * Left 硬水: many grains → a dark cup; its 酸味 meter drops and its 苦み meter stands out.
+ * Right 軟水: few grains → a light cup; its 酸味 meter stays, its 苦み meter stays low.
+ */
 const Compare: React.FC<ArtProps> = ({ id, accent }) => {
   const f = useCurrentFrame();
-  const Half: React.FC<{ x0: number; k: string; grains: number; seed: number; shade: number; acid: number; at: number }> = ({ x0, k, grains, seed, shade, acid, at }) => {
-    const p = interpolate(f, [at + 20, at + 60], [0.6, acid], { ...clamp, easing: ease });
-    const mx = artText("compare", k).cx; // the meter stands under its word, at the left of the half (clear of the action buttons)
+  const Meter: React.FC<{ k: string; to: number; at: number; strong?: boolean }> = ({ k, to, at, strong }) => {
+    const p = interpolate(f, [at + 20, at + 60], [0.55, to], { ...clamp, easing: ease });
+    const t = artText("compare", k);
     return (
-      <g>
-        {/* the cup's acidity meter, then the water and an arrow down to the cup it makes */}
-        <g opacity={prog(f, at + 16, at + 30)}>
-          <Word name="compare" k={k} fill={INK} />
-          <rect x={mx - 25} y={340 + 180 * (1 - p)} width={50} height={180 * p} fill={`url(#${id}-hatch-accent)`} />
-          <rect x={mx - 25} y={340} width={50} height={180} fill="none" stroke={INK} strokeWidth={3} filter={`url(#${id}-rough)`} />
-        </g>
-        <Glass id={id} cx={x0 + 290} top={30} w={200} h={220} grains={grains} seed={seed} accent={accent} appear={at} />
-        <path d={`M${x0 + 290} 268 L${x0 + 290} 318 M${x0 + 276} 304 L${x0 + 290} 320 L${x0 + 304} 304`} stroke={accent} strokeWidth={5} fill="none" strokeLinecap="round" opacity={prog(f, at + 8, at + 20)} />
-        <Mug id={id} cx={x0 + 280} top={350} w={210} h={170} shade={shade} appear={at + 10} />
-        <Table id={id} y={540} x0={x0 + 10} x1={x0 + 480} />
+      <g opacity={prog(f, at + 16, at + 30)}>
+        <Word name="compare" k={k} fill={strong ? accent : INK} />
+        <rect x={t.cx - 25} y={430 + 180 * (1 - p)} width={50} height={180 * p} fill={`url(#${id}-hatch-${strong ? "accent" : "ink"})`} />
+        <rect x={t.cx - 25} y={430} width={50} height={180} fill="none" stroke={strong ? accent : INK} strokeWidth={strong ? 5 : 3} filter={`url(#${id}-rough)`} />
       </g>
     );
   };
+  const Half: React.FC<{ x0: number; name: string; grains: number; seed: number; shade: number; at: number; children: React.ReactNode }> = ({ x0, name, grains, seed, shade, at, children }) => (
+    <g>
+      <Word name="compare" k={name} fill={INK} opacity={prog(f, at, at + 16)} />
+      <Glass id={id} cx={x0 + 330} top={110} w={190} h={210} grains={grains} seed={seed} accent={accent} appear={at} />
+      <path d={`M${x0 + 330} 338 L${x0 + 330} 390 M${x0 + 316} 376 L${x0 + 330} 392 L${x0 + 344} 376`} stroke={accent} strokeWidth={5} fill="none" strokeLinecap="round" opacity={prog(f, at + 8, at + 20)} />
+      <Mug id={id} cx={x0 + 320} top={430} w={200} h={170} shade={shade} appear={at + 10} />
+      <Table id={id} y={630} x0={x0 + 10} x1={x0 + 480} />
+      {children}
+    </g>
+  );
   return (
     <>
-      <path d="M500 30 L500 540" stroke={GREY} strokeWidth={2} opacity={0.4} />
-      <Half x0={0} k="hard-acid" grains={22} seed={5} shade={88} acid={0.18} at={0} />
-      <Half x0={510} k="soft-acid" grains={3} seed={17} shade={22} acid={0.88} at={8} />
+      <path d="M500 20 L500 640" stroke={GREY} strokeWidth={2} opacity={0.4} />
+      <Half x0={0} name="hard-name" grains={22} seed={5} shade={88} at={0}>
+        <Meter k="hard-acid" to={0.18} at={0} />
+        <Meter k="hard-bitter" to={0.9} at={6} strong />
+      </Half>
+      <Half x0={510} name="soft-name" grains={3} seed={17} shade={22} at={8}>
+        <Meter k="soft-acid" to={0.88} at={8} strong />
+        <Meter k="soft-bitter" to={0.25} at={14} />
+      </Half>
     </>
   );
 };

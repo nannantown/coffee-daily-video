@@ -732,7 +732,7 @@ export function premiseRef(lesson) {
 /**
  * The script (owner 2026-10-20, 「台本どおりの場面で作れるように」): an episode whose
  * script the owner approved scene by scene carries it as `lesson.script` —
- * { cover: { art, narration }, scenes: [{ label?, heading, body, art, narration }] }.
+ * { cover: { art, narration }, scenes: [{ label? | intro?, heading, body, art, narration }] }.
  * The video is then the cover (the question only, no answer yet), these scenes in
  * this order and the ending; the fixed why / diagram / both ways / tips scenes are
  * not drawn. Only the series map writes a script, and the routine copies it as is
@@ -770,6 +770,8 @@ function validateScript(lesson, episode, errors, prefix) {
       return;
     }
     if (sc.label != null && sc.label !== "") checkLen(errors, `${p}.label`, sc.label, LIMITS.sceneLabel);
+    if (sc.intro != null && sc.intro !== "") checkLen(errors, `${p}.intro`, sc.intro, LIMITS.sceneLine);
+    if (sc.label && sc.intro) errors.push(`${p} has a label and an intro — the line above the heading is one or the other`);
     checkLen(errors, `${p}.heading`, sc.heading, LIMITS.sceneHeading);
     art(`${p}.art`, sc.art);
     checkLen(errors, `${p}.narration`, sc.narration, LIMITS.sceneNarration);
@@ -1005,6 +1007,7 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
         ...r.script.scenes.map((s) => ({
           kind: "lesson-scene",
           label: s.label ?? "",
+          intro: s.intro ?? "",
           heading: s.heading,
           body: structuredClone(s.body),
           art: s.art,
@@ -1157,7 +1160,7 @@ function lessonBodyLines(data) {
       `→ ${title.topic || data.lesson?.topic}`,
       "",
       ...scenes.flatMap((s) => [
-        ...(s.label ? [`■ ${s.label}`, s.heading] : [`■ ${s.heading}`]),
+        ...(s.label || s.intro ? [`■ ${s.label || s.intro}`, s.heading] : [`■ ${s.heading}`]),
         ...s.body.map((b) => (typeof b === "string" ? b : `・${b.lead} → ${b.result}`)),
         "",
       ]),

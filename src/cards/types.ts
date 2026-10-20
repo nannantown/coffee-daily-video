@@ -118,7 +118,8 @@ export interface LessonPremiseSlide {
 export type SceneItem = string | { lead: string; result: string };
 export interface LessonSceneSlide {
   kind: "lesson-scene";
-  label: string; // "" = none
+  label: string; // the grey line above the heading ("" = none)
+  intro: string; // or a sentence above the heading, set like the body ("" = none)
   heading: string;
   body: SceneItem[];
   art: string; // a key of SCENE_ART (src/looks/safe-layout.mjs)

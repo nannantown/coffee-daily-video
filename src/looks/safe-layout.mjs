@@ -214,12 +214,14 @@ export const SCENE_ART = {
   glasses: { w: 1000, h: 820, texts: [] }, // the cover: two identical glasses before a big 水
   minerals: {
     w: 1000,
-    h: 700, // few vs many mineral grains, some marked Ca / Mg
+    h: 560, // few vs many mineral grains (some marked Ca / Mg), each glass named under it
     texts: [
-      { key: "soft-ca", label: "Ca", cx: 225, cy: 330, size: 52 },
-      { key: "hard-ca1", label: "Ca", cx: 660, cy: 290, size: 52 },
-      { key: "hard-mg", label: "Mg", cx: 805, cy: 345, size: 52 },
-      { key: "hard-ca2", label: "Ca", cx: 700, cy: 430, size: 52 },
+      { key: "soft-ca", label: "Ca", cx: 225, cy: 220, size: 52 },
+      { key: "hard-ca1", label: "Ca", cx: 660, cy: 160, size: 52 },
+      { key: "hard-mg", label: "Mg", cx: 805, cy: 215, size: 52 },
+      { key: "hard-ca2", label: "Ca", cx: 700, cy: 300, size: 52 },
+      { key: "soft-name", label: "軟水", cx: 265, cy: 500, size: 56 },
+      { key: "hard-name", label: "硬水", cx: 735, cy: 500, size: 56 },
     ],
   },
   acid: {
@@ -233,10 +235,14 @@ export const SCENE_ART = {
   },
   compare: {
     w: 1000,
-    h: 570, // hard water → dark cup, acidity low / soft → light cup, acidity stays
+    h: 660, // left 硬水: grains → dark cup, 酸味 low / 苦み high; right 軟水: light cup, 酸味 stays / 苦み low
     texts: [
-      { key: "hard-acid", label: "酸味", cx: 60, cy: 300, size: 44 },
-      { key: "soft-acid", label: "酸味", cx: 570, cy: 300, size: 44 },
+      { key: "hard-name", label: "硬水", cx: 250, cy: 44, size: 60 },
+      { key: "soft-name", label: "軟水", cx: 760, cy: 44, size: 60 },
+      { key: "hard-acid", label: "酸味", cx: 55, cy: 390, size: 48 },
+      { key: "hard-bitter", label: "苦み", cx: 160, cy: 390, size: 48 },
+      { key: "soft-acid", label: "酸味", cx: 565, cy: 390, size: 48 },
+      { key: "soft-bitter", label: "苦み", cx: 670, cy: 390, size: 48 },
     ],
   },
   which: {
@@ -264,8 +270,10 @@ export const SCENE = { labelSize: 44, labelGap: 30, bodyGap: 44, itemGap: 28, re
  */
 export function sceneLayout(scene) {
   const fit = (size) => {
-    const labelH = scene.label ? textHeight(scene.label, SCENE.labelSize, COLUMN) : 0;
-    const headTop = Math.max(HEADING.top, scene.label ? HEADING.labelTop + labelH + SCENE.labelGap : HEADING.top);
+    // the line above the heading: a grey label (まず前提), or an intro sentence set like the body
+    const above = scene.label ? { text: scene.label, size: SCENE.labelSize } : scene.intro ? { text: scene.intro, size } : null;
+    const aboveH = above ? textHeight(above.text, above.size, COLUMN) : 0;
+    const headTop = Math.max(HEADING.top, above ? HEADING.labelTop + aboveH + SCENE.labelGap : HEADING.top);
     let y = headTop + textHeight(scene.heading, HEADING.size, COLUMN, 0.01) + 14 + SCENE.bodyGap;
     const items = (scene.body ?? []).map((item) => {
       const top = y;
@@ -277,23 +285,29 @@ export function sceneLayout(scene) {
       return { top, bottom: top + h, left: MARGIN, right: MARGIN + LOW_COLUMN };
     });
     const textBottom = items.length ? items[items.length - 1].bottom : y;
-    const a = SCENE_ART[scene.art] ?? { w: 1000, h: 700 };
+    const a = SCENE_ART[scene.art] ?? { w: 1000, h: 700, texts: [] };
     const artTop = textBottom + SCENE.artGap;
-    const width = Math.min(SCENE.artMaxWidth, ((SCENE.artBottom - artTop) * a.w) / a.h);
-    const height = (width * a.h) / a.w;
+    // the drawing may reach artBottom, but the words inside it must stay above CONTENT_BOTTOM
+    const wordsBottom = Math.max(0, ...(a.texts ?? []).map((t) => artTextBox(t).bottom));
+    const scale = Math.min(SCENE.artMaxWidth / a.w, (SCENE.artBottom - artTop) / a.h, wordsBottom ? (CONTENT_BOTTOM - artTop) / wordsBottom : Infinity);
+    const width = a.w * scale;
+    const height = a.h * scale;
+    // centred in the room between the text and artBottom, as far as its words allow
+    const slack = Math.max(0, Math.min((SCENE.artBottom - artTop - height) / 2, CONTENT_BOTTOM - artTop - wordsBottom * scale));
     return {
       size,
-      label: scene.label ? { top: HEADING.labelTop, bottom: HEADING.labelTop + labelH, left: MARGIN, right: MARGIN + COLUMN } : null,
+      label: above ? { top: HEADING.labelTop, bottom: HEADING.labelTop + aboveH, left: MARGIN, right: MARGIN + COLUMN } : null,
       heading: { top: headTop, bottom: headTop + textHeight(scene.heading, HEADING.size, COLUMN, 0.01), left: MARGIN, right: MARGIN + COLUMN },
       items,
       textBottom,
-      // centred in the room between the text and artBottom
-      art: { top: artTop + (SCENE.artBottom - artTop - height) / 2, left: (1080 - width) / 2, width, height },
+      art: { top: artTop + slack, left: (1080 - width) / 2, width, height },
     };
   };
-  // the larger body size when the drawing still gets its room, else the smaller one (never below 30pt)
+  // the larger body size when the drawing still gets its room and its words stay 40px+, else the smaller one (never below 30pt)
+  const art = SCENE_ART[scene.art];
+  const ok = (L) => L.art.height >= SCENE.artMinHeight && L.textBottom <= CONTENT_BOTTOM && (art?.texts ?? []).every((t) => (t.size * L.art.width) / art.w >= SCENE.artTextMin);
   const big = fit(SCENE.sizes[0]);
-  return big.art.height >= SCENE.artMinHeight && big.textBottom <= CONTENT_BOTTOM ? big : fit(SCENE.sizes[1]);
+  return ok(big) ? big : fit(SCENE.sizes[1]);
 }
 
 /** Classic cards (the fallback renderer): label, heading and the lines, centred in the content column; no drawing. */
@@ -301,7 +315,8 @@ export const CLASSIC_SCENE = { labelSize: 40, headSize: 64, bodySize: 44, gap: 3
 export function classicSceneHeight(scene) {
   const w = CLASSIC.width;
   const lh = (s, size) => lineCount(s, size, w, 0) * Math.ceil(size * 1.4);
-  let h = (scene.label ? lh(scene.label, CLASSIC_SCENE.labelSize) + CLASSIC_SCENE.gap : 0) + lh(scene.heading, CLASSIC_SCENE.headSize);
+  const above = scene.label || scene.intro;
+  let h = (above ? lh(above, scene.label ? CLASSIC_SCENE.labelSize : CLASSIC_SCENE.bodySize) + CLASSIC_SCENE.gap : 0) + lh(scene.heading, CLASSIC_SCENE.headSize);
   for (const item of scene.body ?? []) {
     h += CLASSIC_SCENE.gap + (typeof item === "string" ? lh(item, CLASSIC_SCENE.bodySize) : lh(`${item.lead} →`, CLASSIC_SCENE.bodySize) + lh(item.result, CLASSIC_SCENE.bodySize));
   }
