@@ -660,6 +660,38 @@ test("the routine cannot drop, empty or swap the series map's premise", () => {
   assert.ok(bad((l) => delete l.narration).some((e) => e.includes("narration.premise must stay")));
 });
 
+// 2026-10-20 (第24回 i11-metal-filter) is the episode the owner asked the premise for:
+// neither its evergreen draft nor a routine draft (premise copied as is, its own
+// wording elsewhere) may fail validation — the classic cards' premise check included.
+test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a routine draft both pass", () => {
+  const ep = episodeById("i11-metal-filter");
+  const evergreen = fallbackLessonContent(ep, "2026-10-20");
+  assert.deepEqual(errorsOf(evergreen), []);
+  const routine = clone(evergreen);
+  delete routine.fallback;
+  Object.assign(routine.lesson, {
+    topic: "コクが増し、舌に厚く残る",
+    why: "紙が吸う油分が、カップまで届く",
+    tips: [
+      { problem: "粉っぽい時", fix: "最後のひと口は残す" },
+      { problem: "重すぎる時", fix: "挽き目を少し粗くする" },
+      { problem: "濁りが嫌な時", fix: "紙のフィルターに戻す" },
+    ],
+  });
+  routine.lesson.narration = {
+    ...routine.lesson.narration,
+    title: "金属フィルターにすると、コクが増して舌に厚く残ります。",
+    why: "紙が吸っていた油分が、そのままカップまで届くからです。",
+  };
+  assert.equal(routine.lesson.narration.premise, ep.lesson.narration.premise);
+  assert.deepEqual(errorsOf(routine), []);
+  for (const c of [evergreen, routine]) {
+    const slides = buildCardsData(c, {}).slides;
+    assert.equal(slides[1].kind, "lesson-premise");
+    assert.equal(slides[1].term, "浸漬式と透過式");
+  }
+});
+
 // A premise the routine adds on its own (an episode whose map has none).
 const ownPremise = (premise) => {
   const c = fallbackLessonContent(episodeById("i12-soft-water"), "2026-10-21");

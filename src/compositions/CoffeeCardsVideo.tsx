@@ -11,6 +11,7 @@ import { LessonVisualView } from "../cards/Diagrams";
 import { COLORS } from "../cards/theme";
 import type { CardSlide, CoffeeCardsProps } from "../cards/types";
 import { LookVideo, PRODUCTION_LOOK } from "../looks/LookVideo";
+import { classicPremiseNote } from "../looks/safe-layout.mjs";
 
 const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = ({
   slide,
@@ -21,7 +22,7 @@ const SlideView: React.FC<{ slide: CardSlide; page: string; index: number }> = (
     case "lesson-title":
       return <LessonTitle slide={slide} index={index} />;
     case "lesson-premise":
-      return <LessonVisualView slide={slide} note={`${slide.term}：${slide.say}`} page={page} index={index} />;
+      return <LessonVisualView slide={slide} note={classicPremiseNote(slide)} page={page} index={index} />;
     case "lesson-visual":
       return <LessonVisualView slide={slide} page={page} index={index} />;
     case "lesson-why":

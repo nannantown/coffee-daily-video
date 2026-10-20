@@ -170,6 +170,32 @@ export function endLayout({ heading, lines, next }) {
 }
 
 // ---------------------------------------------------------------------------
+// classic cards' premise slide (src/cards/Diagrams.tsx LessonVisualView): the
+// fallback renderer when a plate is missing or the look fails (pipeline.mjs).
+// Diagram, caption and the `term：say` note are centred in the content column
+// (SlideShell: contentTop..contentBottom, inset by the drift budget), so the
+// whole stack must fit that column or it runs past both ends.
+// ---------------------------------------------------------------------------
+
+// copied from src/cards/theme.ts (SPACE.contentTop 340, DRIFT_MAX 8, margin 80 + clearance 80); scripts/looks-layout.test.mjs keeps them in sync
+export const CLASSIC = { column: CONTENT_BOTTOM - 340 - 2 * 8, width: 824, captionGap: 64, captionSize: 52, captionWidth: 824 - 40, noteGap: 32, noteSize: 40 };
+/** Classic diagram heights: measured 2026-10-19 on the tallest content each type allows (flow 807, graph 724, scale 696, compare 652; compare + 42 for a 3-line result) + margin. */
+export const CLASSIC_DIAGRAM_HEIGHT = { flow: 817, graph: 734, scale: 706, compare: 704 };
+/** The line under the premise diagram in the classic cards (CoffeeCardsVideo.tsx renders this exact string). */
+export const classicPremiseNote = (p) => `${p.term}：${p.say}`;
+/**
+ * Height of the classic premise stack, with the line heights the classic cards set (caption 1.35, note 1.4).
+ * Conservative like lineCount: the longest note (14 + 1 + 24 chars) renders in 2 lines, but phrase breaking
+ * may push it to a 3rd, which under the tallest flow overflows (measured 1155 + 56 > 1204) — validation then
+ * asks to shorten the premise.
+ */
+export function classicPremiseHeight({ type, caption, note }) {
+  const caps = lineCount(caption, CLASSIC.captionSize, CLASSIC.captionWidth, 0) * Math.ceil(CLASSIC.captionSize * 1.35);
+  const notes = lineCount(note, CLASSIC.noteSize, CLASSIC.width, 0) * Math.ceil(CLASSIC.noteSize * 1.4);
+  return CLASSIC_DIAGRAM_HEIGHT[type] + CLASSIC.captionGap + caps + CLASSIC.noteGap + notes;
+}
+
+// ---------------------------------------------------------------------------
 // every scene of one episode, checked
 // ---------------------------------------------------------------------------
 
@@ -220,6 +246,9 @@ export function layoutProblems(data, vessels) {
   if (p) {
     box("premise: caption", { top: p.captionTop, bottom: p.captionBottom, left: MARGIN, right: p.captionTop > LOW_Y ? MARGIN + LOW_COLUMN : MARGIN + COLUMN });
     box("premise: line (lesson.premise.say)", { top: p.noteTop, bottom: p.noteBottom, left: p.noteLeft, right: p.noteLeft + p.noteWidth });
+    const ps = data.slides.find((x) => x.kind === "lesson-premise");
+    const h = classicPremiseHeight({ type: ps.visual.type, caption: ps.visual.caption, note: classicPremiseNote(ps) });
+    if (h > CLASSIC.column) out.push(`classic cards: premise slide (diagram + caption + "term：say") is ${h}px tall (max ${CLASSIC.column})`);
   }
   for (const [i, r] of L.effect.entries()) {
     const left = 60 + EFFECT.cup + 40;

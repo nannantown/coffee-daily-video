@@ -1692,7 +1692,7 @@
           "say": "浸して待ち、最後に下から落とすドリッパー",
           "visual": {
             "type": "flow",
-            "caption": "クレバーは浸してから落とす",
+            "caption": "クレバーは浸漬式の仲間",
             "brewers": [
               {
                 "shape": "immersion",
