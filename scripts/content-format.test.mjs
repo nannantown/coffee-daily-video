@@ -25,6 +25,7 @@ import {
   expectedFormatFor,
   fallbackLessonContent,
   followingEpisode,
+  teaserOf,
   nextEpisode,
   growthCtaCaptionLines,
   kanjiNumber,
@@ -226,7 +227,7 @@ test("series: the cover numbers the episode, the CTA and caption announce the ne
   const { no, level } = episodeNumber(sample.lesson.episode);
   assert.equal(data.slides[0].series, `${level} 第${no}回`);
   const next = followingEpisode(sample.lesson.episode);
-  assert.equal(data.ending.next, `${next.lesson.word}${next.lesson.ask}`);
+  assert.equal(data.ending.next, teaserOf(next));
   assert.ok(data.ending.narration.includes("次回"));
   const captions = buildCardCaptions(data, "2026/09/23");
   assert.ok(captions.instagram.includes(`次回：${data.ending.next}`));
@@ -768,4 +769,17 @@ test("a premise explained at length elsewhere sends the viewer there: 前回 whe
   assert.equal(prev.ref, "わからない時は前回の動画「水を軟水に？」へ");
   const older = withRef("b11-percolation-immersion");
   assert.ok(older.narration.includes("第11回の動画を見てください"), older.narration);
+});
+
+test("the 次回 line reads at a glance: an episode's teaser replaces its cover question, and fits where the cover did", () => {
+  const before = buildCardsData(fallbackLessonContent(episodeById("i12-soft-water"), "2026-10-21"), {});
+  assert.equal(before.ending.next, "氷で薄まらないアイスコーヒー");
+  assert.ok(before.ending.narration.includes("次回は、氷で薄まらないアイスコーヒー。"), before.ending.narration);
+  for (const e of curriculum.episodes) {
+    if (e.teaser == null) continue;
+    assert.ok(typeof e.teaser === "string" && e.teaser.length > 0 && [...e.teaser].length <= LIMITS.word + LIMITS.ask, e.id);
+  }
+  // the ending's heading and its lines do not say the same thing twice (owner 2026-10-20)
+  assert.ok(!before.ending.heading.includes("保存"), before.ending.heading);
+  for (const l of before.ending.lines) assert.ok(!l.includes("試"), l);
 });

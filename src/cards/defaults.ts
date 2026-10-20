@@ -76,10 +76,10 @@ export const defaultCardsProps: CoffeeCardsProps = {
   ],
   ending: {
     kind: "lesson-cta",
-    heading: "保存して、次に淹れる時に試そう",
+    heading: "次に淹れる時に、試してみよう",
     topic: "苦味が引いて酸が立つ",
     lead: "毎朝ひとつ、味を動かすコツ",
-    lines: ["保存して、淹れる前に見返す", "フォローで、明日もひとつ持ち帰る"],
+    lines: ["保存すると、淹れる前に見返せる", "フォローで、明日もひとつ届く"],
     next: "早く止めるとどうなる？",
     narration: "",
   },

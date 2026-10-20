@@ -568,6 +568,11 @@ export function episodeNumber(id, curriculum = CURRICULUM) {
   return i < 0 ? null : { no: i + 1, level: LEVELS[curriculum.episodes[i].level] };
 }
 
+/** What the 次回 line shows for an episode: its teaser, else its cover question. */
+export function teaserOf(episode) {
+  return episode.teaser ?? `${episode.lesson.word}${episode.lesson.ask}`;
+}
+
 /** The episode after `id` in curriculum order (wraps to episode 1) — the CTA's "次回". */
 export function followingEpisode(id, curriculum = CURRICULUM) {
   const i = curriculum.episodes.findIndex((e) => e.id === id);
@@ -826,7 +831,8 @@ function pick(custom, fallback) {
 // ---------------------------------------------------------------------------
 
 export function growthCtaSlideLines() {
-  return ["保存して、淹れる前に見返す", "フォローで、明日もひとつ持ち帰る"];
+  // the heading already says "try it": these say what a save / a follow gets you (owner 2026-10-20: the two must not repeat each other)
+  return ["保存すると、淹れる前に見返せる", "フォローで、明日もひとつ届く"];
 }
 
 export function growthCtaCaptionLines() {
@@ -927,17 +933,19 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
 
   const ending = {
     kind: "lesson-cta",
-    heading: "保存して、次に淹れる時に試そう",
+    heading: "次に淹れる時に、試してみよう",
     topic: r.topic,
     lead: "毎朝ひとつ、味を動かすコツ",
     lines: growthCtaSlideLines(),
-    // The series teaser: tomorrow's cover question, so a follow has a reason.
-    next: next ? `${next.lesson.word}${next.lesson.ask}` : "",
+    // The series teaser, so a follow has a reason: the next episode's own
+    // teaser line when its cover alone does not read (owner 2026-10-20:
+    // 「氷の分だけ濃く？」 is not Japanese you understand at a glance), else its cover question.
+    next: next ? teaserOf(next) : "",
     narration: pick(
       nar.cta,
       next
-        ? `保存して、次に淹れる時に試してください。次回は、${next.term ? `用語、${next.term}` : next.lesson.hook}。フォローで明日も届きます。`
-        : "保存して、次に淹れる時に試してみてください。フォローすると、明日もひとつ持ち帰れます。"
+        ? `次に淹れる時に、試してみてください。次回は、${next.term ? `用語、${next.term}` : next.teaser ?? next.lesson.hook}。保存とフォローで、また明日。`
+        : "次に淹れる時に、試してみてください。保存とフォローで、また明日。"
     ),
   };
 
