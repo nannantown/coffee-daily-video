@@ -716,6 +716,30 @@ test("第24回 i11-metal-filter airs with its premise: the evergreen draft and a
   }
 });
 
+// 2026-10-21 (第25回 i12-soft-water): the premise 「軟水と硬水」 comes right after the cover,
+// in the evergreen draft and in a routine draft that copies it as is; dropping it fails.
+test("第25回 i12-soft-water (2026-10-21) airs with its premise 軟水と硬水 and passes validation", () => {
+  const ep = episodeById("i12-soft-water");
+  assert.equal(nextEpisode(aired(["2026-10-20", "i11-metal-filter"]), "2026-10-21").id, ep.id);
+  const evergreen = fallbackLessonContent(ep, "2026-10-21");
+  assert.deepEqual(errorsOf(evergreen), []);
+  const routine = clone(evergreen);
+  delete routine.fallback;
+  Object.assign(routine.lesson, { topic: "酸と甘みがくっきり出る", why: "硬水の成分が、酸味を打ち消しやすい" });
+  routine.lesson.narration = { ...routine.lesson.narration, title: "水を軟水にすると、酸と甘みがくっきり出ます。" };
+  assert.deepEqual(errorsOf(routine), []);
+  for (const c of [evergreen, routine]) {
+    const data = buildCardsData(c, {});
+    assert.equal(data.slides[1].kind, "lesson-premise");
+    assert.equal(data.slides[1].term, "軟水と硬水");
+    assert.equal(data.slides[1].visual.type, "scale");
+    assert.ok(narrationLength(data) <= LIMITS.narrationTotal);
+  }
+  const dropped = clone(routine);
+  delete dropped.lesson.premise;
+  assert.ok(errorsOf(dropped).some((e) => e.includes("premise is required")));
+});
+
 // A premise the routine adds on its own (an episode whose map has none).
 const ownPremise = (premise) => {
   const c = fallbackLessonContent(episodeById("i13-iced-ratio"), "2026-10-22");
