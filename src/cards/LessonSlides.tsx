@@ -15,7 +15,8 @@ export const LessonTitle: React.FC<{ slide: LessonTitleSlide; index?: number }> 
       {slide.series ? <Pill accent={COLORS.caramel}>{slide.series}</Pill> : null}
     </Reveal>
     <Reveal delay={3}>
-      <div style={{ fontSize: 160, fontWeight: 900, lineHeight: 1.1, letterSpacing: "-2px" }}>{slide.word}</div>
+      {/* 160px fits 5 characters on the classic column; a 6-character word (硬水と軟水で) steps down so it stays one line */}
+      <div style={{ fontSize: [...slide.word].length > 5 ? 128 : 160, fontWeight: 900, lineHeight: 1.1, letterSpacing: "-2px" }}>{slide.word}</div>
       <div style={{ marginTop: 8, fontSize: TYPE.title, fontWeight: 800, lineHeight: 1.2 }}>{slide.ask}</div>
     </Reveal>
     {slide.topic ? (
