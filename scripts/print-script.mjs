@@ -16,7 +16,7 @@ import { fileURLToPath } from "url";
 import { buildCardsData, episodeById, fallbackLessonContent, jstDateParts } from "./content-format.mjs";
 
 // fields that are not text a viewer reads
-const HIDDEN = new Set(["kind", "narration", "episode", "pillar", "date", "type", "shape", "pick", "motion", "strength", "from", "to"]);
+const HIDDEN = new Set(["kind", "narration", "art", "episode", "pillar", "date", "type", "shape", "pick", "motion", "strength", "from", "to"]);
 
 /** Every on-screen string of a slide, in field order. */
 export function screenText(slide) {
