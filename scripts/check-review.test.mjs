@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { reviewErrors, READERS, MAX_ROUNDS } from "./check-review.mjs";
+import { reviewErrors, READERS, MAX_ROUNDS, DEADLINE } from "./check-review.mjs";
 import { scriptOf } from "./print-script.mjs";
 import { airDate, episodeById, fallbackLessonContent } from "./content-format.mjs";
 
@@ -49,8 +49,23 @@ test("fallback only after 10 rounds that still do not pass (owner 2026-10-20: fi
   assert.deepEqual(reviewErrors(log(stuck(10), "fallback"), ctx), []);
   assert.match(reviewErrors(log(stuck(3), "fallback"), ctx).join(), /keep fixing up to 10/);
   assert.match(reviewErrors(log(stuck(11), "fallback"), ctx).join(), /at most 10/);
-  // stopping before 10 rounds (the posting deadline) needs the reason written down
-  assert.deepEqual(reviewErrors({ ...log(stuck(3), "fallback"), reason: "締め切り 08:10 JST を過ぎた" }, ctx), []);
+});
+
+test("stopping before 10 rounds counts only after the 08:10 JST deadline of the air date, with the reason written down", () => {
+  const stuck = [{ script: "第1稿", reviews: { ...none(), D: [heavy()] } }];
+  const early = { ...log(stuck, "fallback"), reason: "締め切り 08:10 JST を過ぎた" };
+  const at = (iso) => ({ ...ctx, now: new Date(iso) });
+  assert.equal(DEADLINE, "08:10");
+  assert.deepEqual(reviewErrors(early, at("2026-10-21T23:10:00Z")), []); // 08:10 JST on the air date
+  // the night before (23:00 routine) and 08:09 on the day are before the deadline: keep fixing
+  assert.match(reviewErrors(early, at("2026-10-21T14:30:00Z")).join(), /keep fixing up to 10/);
+  assert.match(reviewErrors(early, at("2026-10-21T23:09:00Z")).join(), /keep fixing up to 10/);
+  // past the deadline the reason is still needed
+  assert.match(reviewErrors(log(stuck, "fallback"), at("2026-10-22T00:00:00Z")).join(), /keep fixing up to 10/);
+  // a run cut short by the deadline need not have its fact memo; before the deadline it must
+  const noFacts = { ...early, facts: [] };
+  assert.deepEqual(reviewErrors(noFacts, at("2026-10-21T23:30:00Z")), []);
+  assert.match(reviewErrors(noFacts, at("2026-10-21T14:30:00Z")).join(), /fact memo/);
 });
 
 test("the air date is today before noon JST and tomorrow from noon (script routine at 23:00 the night before)", () => {
