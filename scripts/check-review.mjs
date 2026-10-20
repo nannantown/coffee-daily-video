@@ -6,7 +6,7 @@
  *   node scripts/check-review.mjs [--date=YYYY-MM-DD]   # default: the next air date (scripts/air-date.mjs)
  *
  * "OK: pass …"     — every reader passed, and the content file is exactly the script of the last round.
- * "OK: fallback …" — 10 rounds did not pass (or the run stopped early with a `reason`, e.g. the deadline);
+ * "OK: fallback …" — 10 rounds did not pass (or the run stopped early with a `reason` after the deadline);
  *                    the content is not committed and the evergreen draft airs.
  * "NG: …"          — the log is missing, malformed, or does not match the content (exit 1).
  */
@@ -20,6 +20,8 @@ import { scriptOf } from "./print-script.mjs";
 // The checker is the same in kawagutsu-zukan-video (sns-hub: one repo's fix is ported to the other).
 // A 初見の人 / B 編集者 / C 見出しと言葉 / D 事実確認 / E 絵 (owner 2026-10-20: four readers + the art reader)
 export const READERS = ["A", "B", "C", "D", "E"];
+/** Posting deadline (JST) on the log's date: only after it may a run stop before MAX_ROUNDS. */
+export const DEADLINE = "08:10";
 export const MAX_ROUNDS = 10; // owner 2026-10-20: fix up to 10 times, then the evergreen draft airs
 const SEVERITIES = ["重い", "軽い"];
 const FIX = /^(直した|直さない|持ち越し)[:：]\s*\S/;
@@ -30,15 +32,21 @@ export const blocking = (f) => f.severity === "重い" && !carried(f);
 /**
  * Every problem with a review log. `episode` and `script` are the day's content
  * (its episode id and scriptOf(content, { art: true })); both are only compared on a pass.
+ * `now` is when the check runs: an early fallback counts only once DEADLINE on `date` has passed.
  */
-export function reviewErrors(log, { date, episode, script }) {
+export function reviewErrors(log, { date, episode, script, now = new Date() }) {
   if (!log || typeof log !== "object" || Array.isArray(log)) return ["review log is not an object"];
   const e = [];
+  // stopping before MAX_ROUNDS needs the reason written down and is allowed only past the deadline (not a session ending early)
+  const early =
+    log.result === "fallback" && typeof log.reason === "string" && log.reason.trim() !== "" && now >= new Date(`${date}T${DEADLINE}:00+09:00`);
   if (log.date !== date) e.push(`date "${log.date}" is not ${date}`);
   if (typeof log.episode !== "string" || !log.episode) e.push("episode is empty");
   if (!["agents", "self"].includes(log.readers)) e.push('readers must be "agents" (sub-agents read) or "self" (no Agent tool: read in turn)');
-  if (!Array.isArray(log.facts) || log.facts.length === 0) e.push("facts: the fact memo (claim + https source) is empty");
-  else
+  // an early fallback airs the standing copy, so a run cut short by the deadline need not have its fact memo
+  if (!Array.isArray(log.facts) || log.facts.length === 0) {
+    if (!early) e.push("facts: the fact memo (claim + https source) is empty");
+  } else
     log.facts.forEach((f, i) => {
       if (typeof f?.claim !== "string" || !f.claim) e.push(`facts[${i}].claim is empty`);
       if (!/^https:\/\/\S+$/.test(f?.source ?? "")) e.push(`facts[${i}].source is not an https URL`);
@@ -75,9 +83,8 @@ export function reviewErrors(log, { date, episode, script }) {
     if (log.episode !== episode) e.push(`episode "${log.episode}" is not the content's "${episode}"`);
     if (final && final.script !== script) e.push("the content is not the script of the last round (changed after the review) — read it again");
   } else if (log.result === "fallback") {
-    // stopping early (the posting deadline, the session ending) is allowed only with the reason written down
-    const early = typeof log.reason === "string" && log.reason.trim() !== "";
-    if (rounds.length !== MAX_ROUNDS && !early) e.push(`result fallback after ${rounds.length} rounds — keep fixing up to ${MAX_ROUNDS}, or write the reason for stopping early (e.g. the deadline)`);
+    if (rounds.length !== MAX_ROUNDS && !early)
+      e.push(`result fallback after ${rounds.length} rounds — keep fixing up to ${MAX_ROUNDS} (stopping early needs a reason and is allowed only after ${DEADLINE} JST on ${date})`);
     if (final && !blocked.length && !early) e.push("result fallback but the last round passed — commit it as a pass");
   } else e.push('result must be "pass" or "fallback"');
   return e;
