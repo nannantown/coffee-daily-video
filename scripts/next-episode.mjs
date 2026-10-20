@@ -6,7 +6,7 @@
  * generate-data.mjs falls back to its evergreen lesson when the routine does not.
  *
  * Usage:
- *   node scripts/next-episode.mjs            # today (JST)
+ *   node scripts/next-episode.mjs            # the next air date (today before noon JST, tomorrow from noon)
  *   node scripts/next-episode.mjs --date=2026-09-26
  *   node scripts/next-episode.mjs --json     # the episode's evergreen lesson as the starting draft
  */
@@ -14,11 +14,11 @@
 import { existsSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { PILLARS, VISUAL_TYPES, episodeNumber, followingEpisode, jstDateParts, nextEpisode } from "./content-format.mjs";
+import { PILLARS, VISUAL_TYPES, episodeNumber, followingEpisode, airDate, nextEpisode } from "./content-format.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const historyPath = join(rootDir, "data", "performance-history.json");
-const date = process.argv.find((a) => a.startsWith("--date="))?.slice(7) || jstDateParts().iso;
+const date = process.argv.find((a) => a.startsWith("--date="))?.slice(7) || airDate();
 const history = existsSync(historyPath) ? JSON.parse(readFileSync(historyPath, "utf-8")) : { videos: [] };
 
 const ep = nextEpisode(history, date);
