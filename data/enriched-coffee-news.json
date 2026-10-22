@@ -1,129 +1,51 @@
 {
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "format": "brew-lesson",
   "lesson": {
-    "episode": "i12-soft-water",
-    "pillar": "water",
-    "method": "v60",
-    "scene": "hot",
-    "word": "硬水と軟水で",
-    "ask": "味はどう変わる？",
-    "hook": "硬水と軟水で淹れ比べる",
-    "topic": "軟水は酸味、硬水は苦み",
-    "why": "硬水の成分は酸味を打ち消す",
+    "episode": "i13-iced-ratio",
+    "pillar": "ratio",
+    "method": "aeropress",
+    "scene": "iced",
+    "word": "氷の分",
+    "ask": "だけ濃く？",
+    "hook": "氷の分だけ濃く淹れる",
+    "topic": "冷やしても薄まりにくい",
+    "why": "溶けた氷の重さが、薄める水の量になる",
+    "core": "お湯を氷の分だけ減らして、濃く淹れる",
+    "motion": {
+      "type": "liquid",
+      "shade": { "from": 85, "to": 55 },
+      "meters": [
+        { "label": "濃さ", "from": 85, "to": 55 },
+        { "label": "冷たさ", "from": 20, "to": 80 }
+      ]
+    },
     "effect": [
-      {
-        "label": "軟水にする",
-        "taste": "すっきりした酸味"
-      },
-      {
-        "label": "硬水にする",
-        "taste": "酸が消え、苦みが立つ"
-      }
+      { "label": "濃く淹れる", "taste": "冷えてもちょうど" },
+      { "label": "普通に淹れる", "taste": "氷で薄まる" }
     ],
     "tips": [
-      {
-        "problem": "違いが分からない時",
-        "fix": "海外の硬水と淹れ比べる"
-      },
-      {
-        "problem": "酸っぱすぎる時",
-        "fix": "硬度の高めな水で淹れる"
-      }
+      { "problem": "薄い時", "fix": "お湯を減らして濃くする" },
+      { "problem": "濃すぎる時", "fix": "お湯を少し増やす" }
     ],
-    "core": "硬水は酸味を消し、軟水は残す",
-    "motion": {
-      "type": "compare",
-      "shade": {
-        "from": 55,
-        "to": 50
-      },
-      "meters": [
-        {
-          "label": "酸味",
-          "from": 40,
-          "to": 65
-        },
-        {
-          "label": "甘味",
-          "from": 40,
-          "to": 60
-        }
-      ]
-    },
     "visual": {
       "type": "compare",
-      "caption": "水が変わると酸味が変わる",
-      "left": {
-        "label": "硬水",
-        "result": "苦みが目立つ",
-        "strength": 4
-      },
-      "right": {
-        "label": "軟水",
-        "result": "酸味が残る",
-        "strength": 2
-      },
+      "caption": "氷の分だけお湯を減らす",
+      "left": { "label": "いつも通り", "result": "氷で薄まる", "strength": 1 },
+      "right": { "label": "濃く淹れる", "result": "氷でちょうど", "strength": 3 },
       "pick": "right"
     },
-    "script": {
-      "cover": {
-        "art": "glasses",
-        "narration": "硬水と軟水で、コーヒーの味はどう変わる？"
-      },
-      "scenes": [
-        {
-          "label": "まず前提",
-          "heading": "硬水と軟水",
-          "body": [
-            "水には、カルシウムやマグネシウムなどのミネラルが溶けている",
-            "その量を「硬度」という",
-            "少ない＝軟水／多い＝硬水"
-          ],
-          "art": "minerals",
-          "narration": "まず前提。水に溶けたカルシウムなどのミネラルの量が硬度。少ないと軟水、多いと硬水です。"
-        },
-        {
-          "intro": "コーヒーには、果物のような酸味もある",
-          "heading": "硬度の大きい水ほど",
-          "body": [
-            "重曹のように酸を打ち消す成分も多い"
-          ],
-          "art": "acid",
-          "narration": "コーヒーには、果物のような酸味もあります。硬度の大きい水ほど、重曹のように酸を打ち消す成分も多く入っています。"
-        },
-        {
-          "heading": "比べてみる",
-          "body": [
-            {
-              "lead": "硬水で淹れる",
-              "result": "酸味が消える分、苦みが目立つ"
-            },
-            {
-              "lead": "軟水で淹れる",
-              "result": "すっきりした酸味が残る"
-            }
-          ],
-          "art": "compare",
-          "narration": "だから硬水だと、酸味が消える分、苦みが目立つ。軟水だと、すっきりした酸味が残ります。"
-        },
-        {
-          "heading": "いつもの水はどっち？",
-          "body": [
-            {
-              "lead": "日本の水道水",
-              "result": "多くの地域で軟水"
-            },
-            {
-              "lead": "海外の水のボトル",
-              "result": "硬水が多い（ラベルの「硬度」が大きい）"
-            },
-            "2 つで淹れ比べると、違いが分かる"
-          ],
-          "art": "which",
-          "narration": "日本の水道水は、多くの地域で軟水。海外の硬水のボトルで淹れ比べると、違いが分かります。"
-        }
-      ]
-    }
+    "narration": {
+      "title": "氷の分だけ濃く淹れると、どうなる？冷やしても、薄まりにくくなります。",
+      "why": "溶けた氷の重さが、薄める水の量になるからです。",
+      "visual": "氷の分だけお湯を減らすと、冷えてもちょうどです。",
+      "effect": "濃く淹れると、冷えてもちょうど。普通に淹れると、氷で薄まります。",
+      "tips": "薄ければ、お湯を減らす。濃すぎれば、お湯を少し増やします。"
+    },
+    "sources": [
+      "https://crema-coffee.com/brewing-guide-iced-coffee",
+      "https://bigislandcoffeeroasters.com/blogs/brewing-videos-guides/how-to-make-japanese-iced-coffee",
+      "https://library.sweetmarias.com/flash-brew-iced-coffee-for-the-impatient/"
+    ]
   }
 }
