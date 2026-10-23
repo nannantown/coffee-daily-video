@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "format": "brew-lesson",
+  "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i13-iced-ratio",
-    "pillar": "ratio",
-    "method": "aeropress",
-    "scene": "iced",
-    "word": "氷の分",
-    "ask": "だけ濃く？",
-    "hook": "氷の分だけ濃く淹れる",
-    "topic": "冷やしても薄まりにくい",
-    "why": "溶けた氷の重さが、薄める水の量になる",
-    "core": "お湯を氷の分だけ減らして、濃く淹れる",
+    "episode": "i14-swirl",
+    "pillar": "pour",
+    "method": "origami",
+    "scene": "hot",
+    "word": "回す",
+    "ask": "とどうなる？",
+    "hook": "最後にドリッパーを回す",
+    "topic": "粉が平らに整い味がそろう",
+    "why": "回すと壁の粉が集まり平らに整う",
+    "core": "湯が均等に通り、ムラが減る",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 85, "to": 55 },
+      "type": "meter",
+      "shade": { "from": 55, "to": 55 },
       "meters": [
-        { "label": "濃さ", "from": 85, "to": 55 },
-        { "label": "冷たさ", "from": 20, "to": 80 }
+        { "label": "ムラ", "from": 70, "to": 20 }
       ]
     },
     "effect": [
-      { "label": "濃く淹れる", "taste": "冷えてもちょうど" },
-      { "label": "普通に淹れる", "taste": "氷で薄まる" }
+      { "label": "回す", "taste": "ムラが減り、味がそろう" },
+      { "label": "回さない", "taste": "ムラが出やすい" }
     ],
     "tips": [
-      { "problem": "薄い時", "fix": "お湯を減らして濃くする" },
-      { "problem": "濃すぎる時", "fix": "お湯を少し増やす" }
+      { "problem": "ムラが出る時", "fix": "最後に軽く回す" },
+      { "problem": "壁に粉が残る時", "fix": "最後に軽く回す" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "氷の分だけお湯を減らす",
-      "left": { "label": "いつも通り", "result": "氷で薄まる", "strength": 1 },
-      "right": { "label": "濃く淹れる", "result": "氷でちょうど", "strength": 3 },
-      "pick": "right"
+      "type": "flow",
+      "caption": "回すと粉が平らになる",
+      "brewers": [
+        { "shape": "cone", "label": "回さない", "note": "粉が偏って残る", "bed": "uneven" },
+        { "shape": "cone", "label": "軽く回す", "note": "湯が均等に通る", "bed": "even" }
+      ]
     },
     "narration": {
-      "title": "氷の分だけ濃く淹れると、どうなる？冷やしても、薄まりにくくなります。",
-      "why": "溶けた氷の重さが、薄める水の量になるからです。",
-      "visual": "氷の分だけお湯を減らすと、冷えてもちょうどです。",
-      "effect": "濃く淹れると、冷えてもちょうど。普通に淹れると、氷で薄まります。",
-      "tips": "薄ければ、お湯を減らす。濃すぎれば、お湯を少し増やします。"
+      "title": "最後にドリッパーを軽く回すと、どうなる？粉が平らに整って、湯が均等に通りやすい。",
+      "why": "回すと、壁の粉が集まって平らに整うからです。",
+      "visual": "軽く回すと、粉が偏らずに平らになります。",
+      "effect": "軽く回すと、ムラが減って味がそろいやすい。回さなければ、偏りが残ってムラが出やすい。",
+      "tips": "ムラが出る時も、壁に粉が残る時も、最後に軽く回します。"
     },
     "sources": [
-      "https://crema-coffee.com/brewing-guide-iced-coffee",
-      "https://bigislandcoffeeroasters.com/blogs/brewing-videos-guides/how-to-make-japanese-iced-coffee",
-      "https://library.sweetmarias.com/flash-brew-iced-coffee-for-the-impatient/"
+      "https://www.baristamagazine.com/standing-shoulders-brewing-giant/",
+      "https://honestcoffeeguide.com/brew-recipes/tetsu-kasuya-4-6-method-lighter/"
     ]
   }
 }
