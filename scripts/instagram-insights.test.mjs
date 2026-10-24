@@ -1,5 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { randomUUID } from "node:crypto";
 import {
   toJstDate,
   missingScopes,
@@ -10,6 +11,8 @@ import {
   GraphError,
   resolveBudgetMs,
   orderForRefresh,
+  createGraphClient,
+  listReels,
 } from "./instagram-insights.mjs";
 
 test("toJstDate converts IG +0000 timestamps to the JST calendar date", () => {
@@ -83,12 +86,12 @@ const ENV = {
 };
 
 function fakeFetch(routes, calls = []) {
-  return async (url) => {
+  return async (url, init) => {
     calls.push(url);
     const key = url.pathname.replace("/v22.0", "");
     const handler = routes[key];
-    const body = typeof handler === "function" ? handler(url) : handler;
-    return { json: async () => body ?? { error: { message: `no route ${key}`, code: 100 } } };
+    const body = typeof handler === "function" ? handler(url, init) : handler;
+    return { ok: true, status: 200, json: async () => body ?? { error: { message: `no route ${key}`, code: 100 } } };
   };
 }
 
@@ -180,8 +183,8 @@ test("updateInstagramStats falls back to the user token when the page token is r
     "/ig1/media": {
       data: [{ id: "m10", media_product_type: "REELS", timestamp: "2026-09-09T23:30:00+0000" }],
     },
-    "/m10/insights": (url) =>
-      url.searchParams.get("access_token") === "page-token"
+    "/m10/insights": (url, init) =>
+      init.headers.Authorization === "Bearer page-token"
         ? { error: { message: "denied", code: 10 } }
         : { data: [{ name: "views", values: [{ value: 42 }] }] },
   });
@@ -208,7 +211,7 @@ test("listReels follows paging until the window is covered", async () => {
             }
           : {
               data: [{ id: "new", media_product_type: "REELS", timestamp: "2026-09-09T23:30:00+0000" }],
-              paging: { next: "https://graph.facebook.com/v22.0/ig1/media?after=c1" },
+              paging: { next: "https://untrusted.invalid/?access_token=mock-only", cursors: { after: "c1" } },
             },
       "/new/insights": { data: [{ name: "views", values: [{ value: 1 }] }] },
       "/old/insights": { data: [{ name: "views", values: [{ value: 2 }] }] },
@@ -404,4 +407,63 @@ test("when the budget runs out, recent entries are fetched before the backfill",
   assert.equal(history.videos[4].instagram.views, 7);
   assert.equal(history.videos[0].instagram.views, null);
   assert.equal(history.videos[0].instagram.mediaId, "m0", "backfill entries still get their mediaId");
+});
+
+test("insights credentials travel only in Authorization; responses and raw failures cannot become error messages", async () => {
+  const secret = `mock-only-${randomUUID()}`;
+  const client = createGraphClient(async (url, init) => {
+    assert.equal(url.origin, "https://graph.facebook.com");
+    assert.ok(!url.href.includes(secret) && !url.searchParams.has("access_token"));
+    assert.ok(init.headers.Authorization === `Bearer ${secret}`);
+    assert.equal(init.method, "GET"); assert.equal(init.redirect, "error"); assert.equal(init.cache, "no-store");
+    return { ok: true, json: async () => ({ data: [] }) };
+  });
+  assert.deepEqual(await client("/me/permissions", { access_token: secret }), { data: [] });
+  for (const fetchImpl of [
+    async () => { throw new Error(`https://invalid.example/?access_token=${secret}`); },
+    async () => ({ ok: true, json: async () => { throw new SyntaxError(secret); } }),
+    async () => ({ ok: false, json: async () => ({ error: { message: secret, code: secret, error_subcode: secret } }) }),
+    async () => ({ ok: false, status: 302, json: async () => ({ location: secret }) }),
+  ]) {
+    let caught;
+    try { await createGraphClient(fetchImpl)("/me/permissions", { access_token: secret }); } catch (error) { caught = error; }
+    assert.ok(caught instanceof Error);
+    assert.ok(!`${caught.message}${caught.stack}${caught.code}${caught.subcode}`.includes(secret));
+  }
+});
+
+test("insights never follow absolute URLs and reject missing or repeated pagination cursors", async () => {
+  let calls = 0;
+  const client = createGraphClient(async () => { calls++; assert.fail("absolute destination must not be fetched"); });
+  await assert.rejects(client("https://untrusted.invalid/?access_token=mock", { access_token: "mock-only" }), { message: "Instagram insights request failed" });
+  assert.equal(calls, 0);
+  for (const cursor of [undefined, "repeat"] ) {
+    const seen = [];
+    const graphGet = async (path, params) => {
+      seen.push({ path, params });
+      return { data: [{ id: "m1", media_product_type: "REELS", timestamp: "2026-10-20T00:00:00Z" }],
+        paging: { next: "https://untrusted.invalid/?access_token=mock", cursors: { after: cursor } } };
+    };
+    await assert.rejects(listReels(graphGet, "ig1", "mock-only", "2026-10-19"), { message: "Instagram insights pagination rejected" });
+    assert.equal(seen.length, cursor ? 2 : 1);
+    assert.ok(seen.every((c) => c.path === "/ig1/media" && c.params.access_token === "mock-only"));
+  }
+});
+
+test("per-media transport and Graph errors containing mock credentials never reach progress logs", async () => {
+  const secret = `mock-only-${randomUUID()}`;
+  for (const graphError of [true, false]) {
+    const logs = [];
+    const fetchImpl = fakeFetch({
+      "/me/permissions": PERMS_OK, "/page1": { access_token: "mock-page" },
+      "/ig1/media": { data: [{ id: "m10", media_product_type: "REELS", timestamp: "2026-09-09T23:30:00Z" }] },
+      "/m10/insights": () => {
+        if (graphError) return { error: { message: secret, code: 190, error_subcode: 1 } };
+        throw new Error(secret);
+      },
+    });
+    const result = await updateInstagramStats({ videos: [{ date: "2026-09-10" }] }, ENV,
+      { fetchImpl, now: new Date("2026-09-11T00:00:00Z"), log: (message) => logs.push(message) });
+    assert.equal(result.failed, 1); assert.ok(!logs.join("\n").includes(secret));
+  }
 });

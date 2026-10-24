@@ -4,70 +4,93 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: "GitHub Release tag containing the video asset (e.g., v20260425)"
+        description: "Exact release tag vYYYYMMDD; inspect first"
         required: true
       asset_name:
-        description: "Asset filename in the release (e.g., coffee-20260425.mp4)"
+        description: "Exact coffee-YYYYMMDD.mp4 in that release"
         required: true
-      regenerate_captions:
-        description: "Ignore the captions archived in the release and rebuild them from the repo's content JSON (only correct on the same JST day as the post)"
+      action:
+        type: choice
+        options: [inspect, retry, resume_before_publish, reconcile_published]
+        default: inspect
+        description: "Inspect first. Never retries an uncertain publish."
+      video_sha256:
+        description: "Video SHA-256 from inspect; required for every write action"
+      captions_sha256:
+        description: "Archived captions SHA-256 from inspect; required for every write action"
+      confirmed_unpublished:
         type: boolean
-        required: false
         default: false
+        description: "I checked this date was not posted; required for historical/legacy recovery"
+      published_media_id:
+        description: "Confirmed existing public media ID; reconcile_published only (never posts)"
+      regenerate_captions:
+        type: boolean
+        default: false
+        description: "Unsupported: true stops safely; exact archived captions are required"
 
 permissions:
   contents: read
+concurrency:
+  group: coffee-instagram-publication
+  cancel-in-progress: false
+
+env:
+  NODE_OPTIONS: ""
+  NODE_DEBUG: ""
+  NODE_DEBUG_NATIVE: ""
+  DEBUG: ""
+  RELEASE_TAG: ${{ inputs.release_tag }}
+  ASSET_NAME: ${{ inputs.asset_name }}
+  INSTAGRAM_RECOVERY_ACTION: ${{ inputs.action }}
+  CONFIRM_VIDEO_SHA256: ${{ inputs.video_sha256 }}
+  CONFIRM_CAPTIONS_SHA256: ${{ inputs.captions_sha256 }}
+  CONFIRMED_UNPUBLISHED: ${{ inputs.confirmed_unpublished }}
+  PUBLISHED_MEDIA_ID: ${{ inputs.published_media_id }}
+  REGENERATE_CAPTIONS: ${{ inputs.regenerate_captions }}
 
 jobs:
-  upload:
+  prepare:
+    if: github.repository == 'nannantown/coffee-daily-video' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 3
+    outputs:
+      plan: ${{ steps.plan.outputs.plan }}
+      write_required: ${{ steps.plan.outputs.write_required }}
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
-          cache: npm
-
-      - run: npm ci
-
-      - name: Download video asset
-        run: |
-          mkdir -p output
-          gh release download "${{ inputs.release_tag }}" \
-            -p "${{ inputs.asset_name }}" \
-            -D output/
-          ls -la "output/${{ inputs.asset_name }}"
+      - name: Inspect receipt and pin exact archived assets (GET only)
+        id: plan
+        run: node scripts/recover-instagram.mjs --prepare
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate captions
-        run: |
-          # Prefer the captions archived with the original post (an older
-          # date's recipe numbers must match its video); regenerate for releases
-          # created before the archive existed, or when asked to.
-          CAPTIONS_ASSET="${ASSET_NAME%.mp4}-captions.json"
-          if [ "$REGENERATE_CAPTIONS" != "true" ] && gh release download "$RELEASE_TAG" -p "$CAPTIONS_ASSET" -D output/ --clobber; then
-            cp "output/$CAPTIONS_ASSET" output/captions.json
-            echo "Using archived captions ($CAPTIONS_ASSET)"
-          else
-            node scripts/generate-data.mjs
-            node scripts/generate-caption.mjs
-          fi
-          # Brand guard: an archived caption may predate 2026-09-22 and name a
-          # coffee we sell. Never re-post that (owner decision 2026-09-22).
-          node scripts/check-published.mjs
+          GITHUB_TOKEN: ${{ github.token }}
+  recover:
+    needs: prepare
+    if: needs.prepare.outputs.write_required == 'true' && github.repository == 'nannantown/coffee-daily-video' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write # Only the durable publication receipt; no new Secrets or other grants.
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Recover Instagram only using pinned assets and durable claim
+        run: node scripts/recover-instagram.mjs
         env:
-          TZ: Asia/Tokyo
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_TAG: ${{ inputs.release_tag }}
-          ASSET_NAME: ${{ inputs.asset_name }}
-          REGENERATE_CAPTIONS: ${{ inputs.regenerate_captions }}
-
-      - name: Upload to Instagram (resumable)
-        run: node scripts/upload-instagram.mjs --file="output/${{ inputs.asset_name }}"
-        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INSTAGRAM_RECOVERY_PLAN: ${{ needs.prepare.outputs.plan }}
+          INSTAGRAM_RECEIPT_WRITE_ENABLED: "true"
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}

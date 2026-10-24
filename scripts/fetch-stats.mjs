@@ -218,7 +218,7 @@ async function fetchInstagramStats(history) {
     }
     if (strict && (result.updated === 0 || result.permissionDenied)) process.exitCode = 1;
   } catch (err) {
-    console.error(`  IG: failed to fetch insights: ${err.message}`);
+    console.error("  IG: failed to fetch insights; raw exception suppressed.");
     if (strict) process.exitCode = 1;
   }
 }
@@ -371,6 +371,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(`fetch-stats error: ${err.message}`);
+  console.error("fetch-stats error; raw exception suppressed.");
   // Non-blocking: don't exit with error code
 });

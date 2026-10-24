@@ -95,7 +95,7 @@ async function createGitHubRelease(videoPath, coverPath) {
     if (coverUrl) console.log(`  Cover URL:  ${coverUrl}`);
     return { videoUrl, coverUrl };
   } catch (err) {
-    console.error(`GitHub Release failed: ${err.message}`);
+    console.error("GitHub Release creation failed.");
     // Tag already exists — upload assets onto existing release (clobber).
     try {
       run(
@@ -106,7 +106,7 @@ async function createGitHubRelease(videoPath, coverPath) {
       if (coverUrl) console.log(`  Cover URL:  ${coverUrl}`);
       return { videoUrl, coverUrl };
     } catch (uploadErr) {
-      console.error(`Upload to existing release failed: ${uploadErr.message}`);
+      console.error("Existing Release upload failed.");
       return null;
     }
   }
@@ -128,7 +128,7 @@ async function uploadYouTube(videoPath) {
     });
     return true;
   } catch (err) {
-    console.error(`YouTube upload failed: ${err.message}`);
+    console.error("YouTube upload failed.");
     return false;
   }
 }
@@ -164,7 +164,7 @@ async function uploadInstagram(videoPath, coverUrl) {
     });
     return true;
   } catch (err) {
-    console.error(`Instagram upload failed: ${err.message}`);
+    console.error("Instagram upload did not complete; inspect its safe status and durable receipt before retrying.");
     return false;
   }
 }
@@ -234,6 +234,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("SNS posting failed:", err);
+  console.error("SNS posting failed; raw exception suppressed.");
   process.exit(1);
 });

@@ -45,7 +45,7 @@ function main() {
   try {
     igResult = readJSON(join(outputDir, "instagram-result.json"));
   } catch (err) {
-    console.error(`record-upload: unreadable instagram-result.json (${err.message}), instagram: null`);
+    console.error("record-upload: unreadable Instagram result; preserve existing publication record.");
   }
 
   // Calculate total duration
@@ -60,6 +60,15 @@ function main() {
   // Build video entry
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+  const history = readJSON(historyPath) || { schemaVersion: 1, videos: [], optimizationLog: [] };
+  const previousInstagram = history.videos.find((v) => v.date === dateStr)?.instagram;
+  const validMediaId = (id) => typeof id === "string" && /^[0-9]{5,25}$/.test(id);
+  const verifiedResult = igResult?.date === dateStr && validMediaId(igResult.mediaId);
+  const hasPrevious = validMediaId(previousInstagram?.mediaId);
+  if (hasPrevious && verifiedResult && previousInstagram.mediaId !== igResult.mediaId) {
+    console.error("record-upload: conflicting Instagram result; preserve existing publication record.");
+  }
 
   const entry = {
     videoId: uploadResult.videoId,
@@ -86,7 +95,7 @@ function main() {
       updatedAt: null,
     },
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
-    instagram: igResult?.mediaId
+    instagram: hasPrevious ? previousInstagram : verifiedResult
       ? {
           mediaId: igResult.mediaId,
           permalink: null,
@@ -100,12 +109,6 @@ function main() {
         }
       : null,
   };
-
-  // Load or initialize history
-  let history = readJSON(historyPath);
-  if (!history) {
-    history = { schemaVersion: 1, videos: [], optimizationLog: [] };
-  }
 
   // Avoid duplicates (same date)
   history.videos = history.videos.filter((v) => v.date !== dateStr);
@@ -128,4 +131,4 @@ function main() {
   console.log(`  History: ${history.videos.length} videos tracked`);
 }
 
-main();
+try { main(); } catch { console.error("record-upload: failed; raw exception suppressed."); process.exitCode = 1; }
