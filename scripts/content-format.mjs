@@ -34,6 +34,7 @@
 
 import { readFileSync } from "fs";
 import { scanBannedTerms } from "./brand-guard.mjs";
+import { experienceProblems } from "./experience-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 import { SCENE_ART, layoutProblems } from "../src/looks/safe-layout.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
@@ -863,6 +864,8 @@ export function validateDailyContent(content, { today, expectedEpisode } = {}) {
     for (const hit of scanBannedTerms(published)) {
       errors.push(`${hit.label} must not say ${JSON.stringify(hit.term)} — ${hit.why}: ${quote(hit.text)}`);
     }
+    // 実体験の語りは記録があるときだけ (owner 2026-10-24, docs/routine-prompt.md 文体ルール).
+    errors.push(...experienceProblems(content, { texts: published, evidence: content.evidence }));
   }
   return { errors, warnings };
 }
