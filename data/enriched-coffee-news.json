@@ -1,28 +1,28 @@
 {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
     "episode": "i14-swirl",
     "pillar": "pour",
-    "method": "origami",
+    "method": "chemex",
     "scene": "hot",
     "word": "回す",
     "ask": "とどうなる？",
     "hook": "最後にドリッパーを回す",
-    "topic": "粉が平らに整い味がそろう",
-    "why": "回すと壁の粉が集まり平らに整う",
-    "core": "湯が均等に通り、ムラが減る",
+    "topic": "粉が平らに整いムラが減る",
+    "why": "壁の粉が集まり粉の層が平らに整う",
+    "core": "粉の層が平らだと湯が通りやすい",
     "motion": {
       "type": "meter",
       "shade": { "from": 55, "to": 55 },
       "meters": [
-        { "label": "ムラ", "from": 70, "to": 20 }
+        { "label": "偏り", "from": 70, "to": 20 }
       ]
     },
     "effect": [
-      { "label": "回す", "taste": "ムラが減り、味がそろう" },
-      { "label": "回さない", "taste": "ムラが出やすい" }
+      { "label": "回す", "taste": "ムラが減りまとまる" },
+      { "label": "回さない", "taste": "薄さと濃さが残りやすい" }
     ],
     "tips": [
       { "problem": "ムラが出る時", "fix": "最後に軽く回す" },
@@ -30,22 +30,23 @@
     ],
     "visual": {
       "type": "flow",
-      "caption": "回すと粉が平らになる",
+      "caption": "整った層ほど湯が端まで届く",
       "brewers": [
-        { "shape": "cone", "label": "回さない", "note": "粉が偏って残る", "bed": "uneven" },
-        { "shape": "cone", "label": "軽く回す", "note": "湯が均等に通る", "bed": "even" }
+        { "shape": "cone", "label": "回さない", "note": "端まで湯が届かない", "bed": "uneven" },
+        { "shape": "cone", "label": "軽く回す", "note": "湯が端まで届く", "bed": "even" }
       ]
     },
     "narration": {
-      "title": "最後にドリッパーを軽く回すと、どうなる？粉が平らに整って、湯が均等に通りやすい。",
-      "why": "回すと、壁の粉が集まって平らに整うからです。",
-      "visual": "軽く回すと、粉が偏らずに平らになります。",
-      "effect": "軽く回すと、ムラが減って味がそろいやすい。回さなければ、偏りが残ってムラが出やすい。",
+      "title": "最後にドリッパーを軽く回すと、どうなるでしょうか？",
+      "why": "軽く回すと、壁の粉が真ん中に集まり、粉の層が平らに整います。",
+      "visual": "偏った層では、端が置き去りに。整った層は、全体に湯が通りやすい。",
+      "effect": "軽く回すと、ムラが減ってまとまります。回さないと、薄さと濃さが残りやすい。",
       "tips": "ムラが出る時も、壁に粉が残る時も、最後に軽く回します。"
     },
     "sources": [
       "https://www.baristamagazine.com/standing-shoulders-brewing-giant/",
-      "https://honestcoffeeguide.com/brew-recipes/tetsu-kasuya-4-6-method-lighter/"
+      "https://honestcoffeeguide.com/brew-recipes/tetsu-kasuya-4-6-method-lighter/",
+      "https://www.chemexcoffeemaker.com/pages/how-to-brew-with-the-chemex-coffeemaker"
     ]
   }
 }
