@@ -34,16 +34,18 @@ on:
       - '.recovery-trigger'
 
 permissions:
-  contents: write
+  contents: read
 
 # Keep a running publisher alive. Remote receipt SHA checks also guard separate
-# writers, old checkouts and interrupted runs before any Buffer mutation.
+# writers and interrupted runs before any Instagram publication.
 concurrency:
-  group: coffee-daily-video-${{ github.ref }}
+  group: coffee-instagram-${{ github.ref == 'refs/heads/main' && 'publication' || github.ref }}
   cancel-in-progress: false
 
 jobs:
   generate-video:
+    permissions:
+      contents: write # Existing Release/history writes and the durable Instagram receipt.
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -86,6 +88,10 @@ jobs:
             *) echo "args=" >> "$GITHUB_OUTPUT" ;;
           esac
 
+      - name: Record publication start boundary
+        id: instagram-start
+        run: echo "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
       - name: Run pipeline
         run: node scripts/pipeline.mjs ${{ steps.mode.outputs.args }}
         env:
@@ -96,10 +102,16 @@ jobs:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-          # Instagram
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          # Instagram: the existing contents:write grant is used only for the receipt.
+          INSTAGRAM_RECEIPT_WRITE_ENABLED: ${{ steps.mode.outputs.dry_run != 'true' && 'true' || 'false' }}
+          INSTAGRAM_PUBLICATION_STARTED_AT: ${{ steps.instagram-start.outputs.started_at }}
+          NODE_OPTIONS: ""
+          NODE_DEBUG: ""
+          NODE_DEBUG_NATIVE: ""
+          DEBUG: ""
+          INSTAGRAM_ACCESS_TOKEN: ${{ steps.mode.outputs.dry_run != 'true' && secrets.INSTAGRAM_ACCESS_TOKEN || '' }}
+          INSTAGRAM_USER_ID: ${{ steps.mode.outputs.dry_run != 'true' && secrets.INSTAGRAM_USER_ID || '' }}
+          FACEBOOK_PAGE_ID: ${{ steps.mode.outputs.dry_run != 'true' && secrets.FACEBOOK_PAGE_ID || '' }}
           # GitHub (auto-provided, used for Release creation)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Buffer: disabled unless explicitly enabled after review. Drafts only.
