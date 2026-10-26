@@ -36,6 +36,7 @@ import { readFileSync } from "fs";
 import { scanBannedTerms } from "./brand-guard.mjs";
 import { YT_DESCRIPTION_MAX_BYTES, youtubeSafe, youtubeTitle } from "./youtube-limits.mjs";
 import { SCENE_ART, layoutProblems } from "../src/looks/safe-layout.mjs";
+import { artProblems, tipArts } from "../src/looks/art-words.mjs";
 import { VESSELS } from "../src/looks/vessels-data.mjs";
 
 // The YouTube limits live in youtube-limits.mjs.
@@ -860,6 +861,8 @@ export function validateDailyContent(content, { today, expectedEpisode } = {}) {
     // (src/looks/safe-layout.mjs): content that cannot fit fails here, and the
     // day falls back to the evergreen lesson instead of hiding or clipping text.
     for (const p of layoutProblems(data, VESSELS)) errors.push(`does not fit the video — ${p}; shorten that text`);
+    // A drawing beside text must show what that text says (owner 2026-10-27).
+    for (const p of artProblems(data)) errors.push(`picture does not match its text — ${p}`);
     for (const hit of scanBannedTerms(published)) {
       errors.push(`${hit.label} must not say ${JSON.stringify(hit.term)} — ${hit.why}: ${quote(hit.text)}`);
     }
@@ -1005,7 +1008,8 @@ export function buildLessonSlides(content, { dateDisplay = "" } = {}) {
     {
       kind: "lesson-tips",
       heading: "うまくいかない時",
-      tips: r.tips.map((t) => ({ problem: t.problem, fix: t.fix })),
+      // each row's drawing comes from that row's own words (src/looks/art-words.mjs)
+      tips: r.tips.map((t, i, all) => ({ problem: t.problem, fix: t.fix, art: tipArts(all)[i] })),
       narration: pick(nar.tips, r.tips.slice(0, 2).map((t) => `${t.problem}は、${t.fix}。`).join("")),
     },
   ];

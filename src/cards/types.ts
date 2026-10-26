@@ -51,7 +51,8 @@ export interface LessonEffectSlide {
 export interface LessonTipsSlide {
   kind: "lesson-tips";
   heading: string;
-  tips: { problem: string; fix: string }[];
+  /** art: the plate drawn beside the row, picked from its words (src/looks/art-words.mjs) */
+  tips: { problem: string; fix: string; art?: string }[];
   narration: string;
 }
 

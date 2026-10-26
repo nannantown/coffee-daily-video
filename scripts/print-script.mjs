@@ -16,6 +16,10 @@ import { readFileSync } from "fs";
 import { join, dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { airDate, buildCardsData, episodeById, fallbackLessonContent } from "./content-format.mjs";
+import { episodeSubjects } from "./looks-plates.mjs";
+import { ART_WORDS, NEUTRAL_ART } from "../src/looks/art-words.mjs";
+
+const plate = (subject) => `${subject}（${ART_WORDS[subject]?.label ?? "?"}）`;
 
 // fields that are not text a viewer reads
 const HIDDEN = new Set(["kind", "narration", "art", "episode", "pillar", "date", "type", "shape", "pick", "motion", "strength", "from", "to"]);
@@ -35,8 +39,14 @@ export function screenText(slide) {
   return out;
 }
 
-/** What a scene draws: a SCENE_ART name, or the diagram / motion data the code draws it from. */
+/**
+ * What a scene draws: a SCENE_ART name, the diagram / motion data the code draws it from,
+ * the cover's plate (src/looks/art.ts) and, on the tips scene, each row's plate — so reader E
+ * sees every picture beside its text (owner 2026-10-27).
+ */
 export function artOf(slide) {
+  if (slide.kind === "lesson-tips") return slide.tips.map((t) => `「${t.problem} → ${t.fix}」の横に ${plate(t.art)}`).join(" / ");
+  if (slide.kind === "lesson-title" && !slide.art) return `表紙の絵 ${plate(episodeSubjects()[slide.episode] ?? NEUTRAL_ART)}`;
   const drawn = Object.fromEntries(["art", "visual", "motion"].filter((k) => slide[k]).map((k) => [k, slide[k]]));
   return Object.keys(drawn).length ? JSON.stringify(drawn) : "（絵なし）";
 }
