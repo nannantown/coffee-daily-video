@@ -1,52 +1,54 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-27",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i14-swirl",
-    "pillar": "pour",
-    "method": "chemex",
+    "episode": "a02-extraction-yield",
+    "pillar": "terms",
+    "method": "mug-steep",
     "scene": "hot",
-    "word": "回す",
-    "ask": "とどうなる？",
-    "hook": "最後にドリッパーを回す",
-    "topic": "粉が平らに整いムラが減る",
-    "why": "壁の粉が集まり粉の層が平らに整う",
-    "core": "粉の層が平らだと湯が通りやすい",
+    "word": "収率",
+    "ask": "ってなに？",
+    "hook": "挽き目を少し細かくする",
+    "topic": "収率が上がり甘みが出る",
+    "why": "収率は粉から溶け出した割合のこと",
+    "core": "溶け出す割合が上がると、甘みが出る",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 55, "to": 55 },
+      "type": "dissolve",
+      "shade": { "from": 45, "to": 65 },
       "meters": [
-        { "label": "偏り", "from": 70, "to": 20 }
+        { "label": "甘味", "from": 35, "to": 65 },
+        { "label": "酸味", "from": 65, "to": 45 }
       ]
     },
     "effect": [
-      { "label": "回す", "taste": "ムラが減りまとまる" },
-      { "label": "回さない", "taste": "薄さと濃さが残りやすい" }
+      { "label": "細かくする", "taste": "甘みが出る" },
+      { "label": "粗くする", "taste": "酸が立ち、軽い" }
     ],
     "tips": [
-      { "problem": "ムラが出る時", "fix": "最後に軽く回す" },
-      { "problem": "壁に粉が残る時", "fix": "最後に軽く回す" }
+      { "problem": "苦くなった時", "fix": "挽き目を少し戻す" },
+      { "problem": "酸っぱい時", "fix": "もう少し細かく" }
     ],
     "visual": {
-      "type": "flow",
-      "caption": "整った層ほど湯が端まで届く",
-      "brewers": [
-        { "shape": "cone", "label": "回さない", "note": "端まで湯が届かない", "bed": "uneven" },
-        { "shape": "cone", "label": "軽く回す", "note": "湯が端まで届く", "bed": "even" }
-      ]
+      "type": "scale",
+      "caption": "出す割合で甘みが変わる",
+      "label": "収率",
+      "zones": ["未抽出", "適正", "過抽出"],
+      "from": 30,
+      "to": 55
     },
     "narration": {
-      "title": "最後にドリッパーを軽く回すと、どうなるでしょうか？",
-      "why": "軽く回すと、壁の粉が真ん中に集まり、粉の層が平らに整います。",
-      "visual": "偏った層では、端が置き去りに。整った層は、全体に湯が通りやすい。",
-      "effect": "軽く回すと、ムラが減ってまとまります。回さないと、薄さと濃さが残りやすい。",
-      "tips": "ムラが出る時も、壁に粉が残る時も、最後に軽く回します。"
+      "title": "収率って、なに？まず、この言葉から見てみましょう。",
+      "why": "収率とは、粉から湯に溶け出した成分の割合のこと。細かいほど、よく溶けます。",
+      "visual": "低いと酸っぱく、ちょうどよいと甘く、高すぎると苦くなります。",
+      "effect": "細かくすると、収率が上がって甘みが出る。粗くすると、下がって酸が立ちます。",
+      "tips": "苦くなった時は、挽き目を少し戻す。酸っぱい時は、もう少し細かくします。"
     },
     "sources": [
-      "https://www.baristamagazine.com/standing-shoulders-brewing-giant/",
-      "https://honestcoffeeguide.com/brew-recipes/tetsu-kasuya-4-6-method-lighter/",
-      "https://www.chemexcoffeemaker.com/pages/how-to-brew-with-the-chemex-coffeemaker"
+      "https://en.wikipedia.org/wiki/Coffee_extraction",
+      "https://support.moccamaster.com/hc/en-us/articles/1500009409121-What-is-the-Golden-Cup-standard",
+      "https://arxiv.org/pdf/2206.12373",
+      "https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/how-grind-size-affects-taste-the-complete-guide-to-better-coffee-through-proper-grinding"
     ]
   }
 }
