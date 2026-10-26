@@ -44,11 +44,13 @@ export function screenText(slide) {
  * the cover's plate (src/looks/art.ts) and, on the tips scene, each row's plate — so reader E
  * sees every picture beside its text (owner 2026-10-27).
  */
-export function artOf(slide) {
+export function artOf(slide, episode = "") {
   if (slide.kind === "lesson-tips") return slide.tips.map((t) => `「${t.problem} → ${t.fix}」の横に ${plate(t.art)}`).join(" / ");
   if (slide.kind === "lesson-title" && !slide.art) return `表紙の絵 ${plate(episodeSubjects()[slide.episode] ?? NEUTRAL_ART)}`;
   const drawn = Object.fromEntries(["art", "visual", "motion"].filter((k) => slide[k]).map((k) => [k, slide[k]]));
-  return Object.keys(drawn).length ? JSON.stringify(drawn) : "（絵なし）";
+  // the scale gauge's lower band draws the episode's plate beside the reason (src/looks/LabConte.tsx)
+  const doodle = slide.visual?.type === "scale" ? ` ＋ 理由の横に ${plate(episodeSubjects()[episode] ?? NEUTRAL_ART)}` : "";
+  return Object.keys(drawn).length ? JSON.stringify(drawn) + doodle : "（絵なし）";
 }
 
 export function scriptOf(content, { art = false } = {}) {
@@ -56,7 +58,7 @@ export function scriptOf(content, { art = false } = {}) {
   const scenes = [...data.slides, data.ending];
   return scenes
     .map((s, i) =>
-      [`【場面 ${i + 1}】`, `画面: ${screenText(s).join(" / ")}`, `読み上げ: ${s.narration}`, ...(art ? [`絵: ${artOf(s)}`] : [])].join("\n")
+      [`【場面 ${i + 1}】`, `画面: ${screenText(s).join(" / ")}`, `読み上げ: ${s.narration}`, ...(art ? [`絵: ${artOf(s, data.slides[0].episode)}`] : [])].join("\n")
     )
     .join("\n\n");
 }

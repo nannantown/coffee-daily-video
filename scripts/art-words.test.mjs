@@ -38,7 +38,7 @@ test("the aired days now draw, on each tips row, a plate that row names — no g
     const data = buildCardsData(content, {});
     assert.deepEqual(artProblems(data), [], date);
     for (const t of tipsOf(data)) {
-      assert.equal(t.art === "grinder", /挽き|細かく|粗く/.test(t.fix + t.problem), `${date} 「${t.problem} → ${t.fix}」 draws ${t.art}`);
+      assert.equal(t.art === "grinder", /挽き目|細かく$/.test(t.fix), `${date} 「${t.problem} → ${t.fix}」 draws ${t.art}`);
     }
   }
   const swirl = fallbackLessonContent(episodeById("i14-swirl"), "2026-10-25");
@@ -61,8 +61,33 @@ test("a picture its text does not name is stopped; a row that names nothing gets
   assert.ok(artFits(NEUTRAL_ART, "なんでも"));
   assert.ok(!artFits("grinder", "お湯を少し増やす"));
   // the fix wins over the problem, and the row below passes over a plate already shown
-  assert.deepEqual(tipArts([{ problem: "薄い時", fix: "挽き目を細かくする" }, { problem: "落ちが遅い時", fix: "少し外側にも注ぐ" }]), ["grinder", "dripper-top"]);
+  assert.deepEqual(tipArts([{ problem: "薄い時", fix: "挽き目を細かくする" }, { problem: "落ちが遅い時", fix: "中心に細く注ぐ" }]), ["grinder", "dripper-top"]);
   assert.deepEqual(artCandidates("ゆっくり注いで時間を延ばす"), ["timer", "pour"]);
+});
+
+// Rows a word list could read in the wrong sense (adversarial review 2026-10-27), and the plate each must not get.
+const MISREADS = [
+  [["甘さが欲しい時", "ミルクを少し減らす"], "grinder"],
+  [["薄い時", "粉を少し足す"], "bypass"],
+  [["雑味が出る時", "低く静かに注ぐ"], "pour-high"],
+  [["忘れる時", "細かくメモする"], "grinder"],
+  [["長すぎる時", "時間を計る"], "scale"],
+  [["重い時", "円すいに替える"], "flat-dripper"],
+  [["濁る時", "混ぜるのを止める"], "drawdown"],
+  [["金属っぽい時", "紙のフィルターに戻す"], "metal-filter"],
+  [["高く注ぐと跳ねる", "ケトルを近づける"], "pour-high"],
+  [["落ちが遅い時", "少し外側にも注ぐ"], "dripper-top"],
+];
+
+test("a word read in another sense does not pick that plate", () => {
+  for (const [[problem, fix], not] of MISREADS) {
+    const [art] = tipArts([{ problem, fix }]);
+    assert.notEqual(art, not, `「${problem} → ${fix}」 draws ${art}`);
+  }
+  // and the senses that are meant still do
+  assert.deepEqual(tipArts([{ problem: "薄い時", fix: "粉を少し足す" }, { problem: "濃すぎる時", fix: "淹れた後にお湯を足す" }]), ["ratio", "bypass"]);
+  assert.deepEqual(tipArts([{ problem: "雑味が出る時", fix: "低く静かに注ぐ" }, { problem: "薄い時", fix: "少し高くから注ぐ" }]), ["pour", "pour-high"]);
+  assert.deepEqual(tipArts([{ problem: "まだ渋い時", fix: "もう少し早く止める" }, { problem: "酸っぱい時", fix: "もう少し細かく" }]), ["drawdown", "grinder"]);
 });
 
 test("every curriculum episode: its cover plate fits its own words, and its evergreen tips draw fitting plates", () => {

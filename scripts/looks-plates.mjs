@@ -9,6 +9,7 @@
 import { existsSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { ART_WORDS } from "../src/looks/art-words.mjs";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => readFileSync(join(rootDir, rel), "utf-8");
@@ -62,7 +63,9 @@ export const LOOK_ASSETS = {
 
 /** null = fine; otherwise the first file the look needs that is missing. */
 export function lookAssetProblem(look = productionLook()) {
-  for (const f of LOOK_ASSETS[look] ?? []) {
+  // the lab tips scene may draw any plate a row names (src/looks/art-words.mjs)
+  const plates = look === "lab" ? Object.keys(ART_WORDS).map((s) => `lab-${s}.png`) : [];
+  for (const f of [...(LOOK_ASSETS[look] ?? []), ...plates]) {
     const file = join(rootDir, "public", "looks", f);
     if (!existsSync(file)) return `missing look asset ${file}`;
   }

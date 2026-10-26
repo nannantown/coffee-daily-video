@@ -14,7 +14,7 @@ export const NEUTRAL_ART = "cup";
 export const ART_WORDS = {
   dial: { label: "手挽きミルの目盛り", words: /目盛り|ダイヤル|手前に戻す|少しずつ動か|少しだけ動か/ },
   sieve: { label: "茶こしで粉をふるう", words: /微粉|茶こし|ふるう|ふるっ|ふるい/ },
-  grinder: { label: "手挽きのミルと挽いた粉", words: /挽き|挽い|挽く|細かく|粗く|グラインダー|ミル/ },
+  grinder: { label: "手挽きのミルと挽いた粉", words: /挽き|挽い|挽く|(?:細かく|粗く)(?:挽|する|戻|$)|グラインダー|ミル(?!ク)/ },
   bloom: { label: "蒸らしで膨らむ粉", words: /蒸らし|膨ら|ふくら|ガス/ },
   "beans-dark": { label: "深煎りの豆とケトル", words: /深煎り/ },
   "beans-light": { label: "浅煎りの豆とケトル", words: /浅煎り/ },
@@ -22,14 +22,14 @@ export const ART_WORDS = {
   iced: { label: "氷の入ったアイスコーヒー", words: /氷|アイス/ },
   water: { label: "グラスの水とケトル", words: /硬水|軟水|硬度|水道水|浄水/ },
   "metal-filter": { label: "金属のフィルター", words: /金属|メタル/ },
-  "flat-dripper": { label: "平底のドリッパー", words: /平底|円すい/ },
+  "flat-dripper": { label: "平底のドリッパー", words: /平底/ },
   clever: { label: "マグに載せた浸漬式ドリッパー", words: /クレバー|浸して待つ|待ってから落と/ },
-  bypass: { label: "コーヒーにお湯を足す", words: /足し湯|足す|足し/ },
-  scale: { label: "はかりに載せたドリッパー", words: /量る|はかり|計量|目分量|計る/ },
-  ratio: { label: "粉のスプーンとケトル", words: /比率|お湯の量|粉の量|お湯を(?:少し)?(?:減ら|増や)|粉を(?:少し)?(?:減ら|増や)|濃く淹れ/ },
-  "pour-high": { label: "高くから細く注ぐ", words: /高さ|高く|低く/ },
-  "dripper-top": { label: "ドリッパーの粉の層の真ん中に注ぐ", words: /中心|外側|回す|回し|粉の層/ },
-  drawdown: { label: "ドリッパーから落ちる最後のしずく", words: /落とし切|落ちが|落とす|落ちる|止める|止め|最後の湯|残す量/ },
+  bypass: { label: "コーヒーにお湯を足す", words: /足し湯|お湯を(?:少し|少しずつ)?足|お湯で(?:割|薄め)|少しずつ足す/ },
+  scale: { label: "はかりに載せたドリッパー", words: /量る|はかり|計量|目分量|(?:粉|お湯|量)を計る/ },
+  ratio: { label: "粉のスプーンとケトル", words: /比率|お湯の量|粉の量|お湯を(?:少し)?(?:減ら|増や)|粉を(?:少し)?(?:減ら|増や|足)|豆を(?:少し)?(?:減ら|増や|足)|濃く淹れ/ },
+  "pour-high": { label: "高くから細く注ぐ", words: /高さ|高くから|高い位置/ },
+  "dripper-top": { label: "上から見たドリッパーの粉の層（真ん中に湯）", words: /中心|真ん中|回す|回し|粉の層/ },
+  drawdown: { label: "ドリッパーから落ちる最後のしずく", words: /落とし切|落ちが|落とす|落ちる|(?:早め|早く|途中)に?で?止め|抽出を(?:早めに)?止め|最後の湯|残す量/ },
   timer: { label: "砂時計と蒸らし中のドリッパー", words: /待つ|待って|時間/ },
   mug: { label: "マグで浸す粉とスプーン", words: /マグ|上ずみ/ },
   press: { label: "フレンチプレス", words: /浸漬|浸す|浸して|プレス/ },
@@ -49,20 +49,26 @@ export const artFits = (subject, text) => subject === NEUTRAL_ART || Boolean(ART
 
 /**
  * One plate per tips row, from that row's own words: what the fix names (the picture
- * shows what to do) or, when the fix names nothing, what the problem names; among those,
- * one the row above does not already show. A row that names none gets the neutral cup.
+ * shows what to do) or, when the fix names nothing, a symptom the problem names (never a
+ * tool from the problem: 「金属っぽい時 → 紙に戻す」 must not draw the metal filter); among
+ * those, one the row above does not already show. A row that names none gets the neutral cup.
  */
+const SYMPTOMS = ["cup-light", "cup", "drawdown", "bloom"];
 export function tipArts(tips) {
   const used = [];
   for (const t of tips) {
     const fix = artCandidates(t.fix);
-    const names = fix.length ? fix : artCandidates(t.problem);
+    const names = fix.length ? fix : artCandidates(t.problem).filter((s) => SYMPTOMS.includes(s));
     used.push(names.find((s) => !used.includes(s)) ?? names[0] ?? NEUTRAL_ART);
   }
   return used;
 }
 
-/** Every tips row whose plate its text does not name (empty = every picture fits its text). */
+/**
+ * Every tips row whose plate its text does not name, or that has no plate. This guards the
+ * build and the renderer (no fixed or stale picture reaches the video); whether a word was
+ * read in the right sense is reader E's look at `print-script.mjs --art` (docs/script-pipeline.md).
+ */
 export function artProblems(data) {
   const out = [];
   data.slides.forEach((s, i) => {
