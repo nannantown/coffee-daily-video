@@ -41,6 +41,8 @@ test("recordDecision: only YouTube-on-record + Instagram-missing goes", () => {
   assert.equal(recordDecision(history, "20261027", { auto: false }).go, true);
   assert.equal(recordDecision([{ date: "2026-10-26", instagram: null }], "20261026", { auto: false }).go, true);
   assert.equal(recordDecision(history, "20261025", { auto: false }).go, false);
+  assert.equal(recordDecision(history, "20261025", { auto: false, force: true }).go, true, "force: a hand-run past a wrong record");
+  assert.equal(recordDecision(history, "20261025", { force: true }).go, false, "force never applies to a scheduled run");
   // right after the daily run: an earlier slot waits, the last slot tries anyway
   assert.equal(recordDecision(history, "20261026", { final: false, minutesSinceDaily: 20 }).go, false);
   assert.equal(recordDecision(history, "20261026", { final: false, minutesSinceDaily: 50 }).go, true);

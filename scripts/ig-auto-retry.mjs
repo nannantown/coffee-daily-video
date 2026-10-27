@@ -14,6 +14,7 @@
  *       next slot; the last slot always tries). Unreadable record → exit 1.
  *       final=false only on the earlier scheduled slots: their failed upload is a
  *       warning (the next slot tries again); the last slot (and a hand-run) goes red.
+ *       --force=true (hand-runs only) skips the record, not the account check.
  *       EVENT_SCHEDULE = ${{ github.event.schedule }} (the cron line that fired).
  *   node scripts/ig-auto-retry.mjs check --file=<mp4> --captions=<json> --stamp=YYYYMMDD [--max-seconds=59.5]
  *     → $GITHUB_OUTPUT posted=true|false
@@ -66,9 +67,11 @@ export const dayStartUnix = (stamp) => Math.floor((Date.parse(`${isoDate(stamp)}
  * `auto` (a scheduled run) also needs YouTube on record — the order is an
  * Instagram-ONLY failure; a hand-run is left to the repo's own manual guards.
  */
-export function recordDecision(entries, stamp, { dailyRunning = false, auto = true, final = true, minutesSinceDaily = Infinity } = {}) {
+export function recordDecision(entries, stamp, { dailyRunning = false, auto = true, final = true, minutesSinceDaily = Infinity, force = false } = {}) {
   const date = isoDate(stamp);
   if (dailyRunning) return { go: false, reason: "daily-video.yml is still running — it may be posting right now. The next retry slot looks again." };
+  // A hand-run's force=true skips the record; `check` still refuses a caption already on Instagram.
+  if (force && !auto) return { go: true, reason: `${date}: force — the record is not consulted, the account check still runs.` };
   const entry = (entries || []).find((e) => e && e.date === date && !e.skip);
   if (!entry && !auto) return { go: true, reason: `${date} has no post on record — hand-run, posting.` };
   if (!entry) return { go: false, reason: `${date} has no post on record (daily run not done, a rest day, or YouTube failed too) — nothing for an Instagram-only retry.` };
@@ -154,7 +157,7 @@ function gate() {
   const minutesSinceDaily = lastDone ? (Date.now() - Date.parse(lastDone.updatedAt)) / 60_000 : Infinity;
   const final = isFinalAttempt(process.env.GITHUB_EVENT_NAME, process.env.EVENT_SCHEDULE, arg("last-slot"));
   const auto = process.env.GITHUB_EVENT_NAME === "schedule";
-  const { go, reason } = recordDecision(data.videos ?? data.aired, stamp, { dailyRunning, auto, final, minutesSinceDaily });
+  const { go, reason } = recordDecision(data.videos ?? data.aired, stamp, { dailyRunning, auto, final, minutesSinceDaily, force: arg("force") === "true" });
   console.log(reason);
   if (go) console.log(final ? "Last attempt: a failure turns this run red." : "Earlier slot: a failure is a warning, the next slot tries again.");
   output({ go, final, stamp, date: isoDate(stamp) });
