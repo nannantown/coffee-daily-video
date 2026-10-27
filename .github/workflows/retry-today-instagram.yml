@@ -103,12 +103,13 @@ jobs:
       - name: Fits a Reel, and not on Instagram yet?
         id: check
         if: steps.gate.outputs.go == 'true'
+        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           DATE: ${{ steps.gate.outputs.stamp }}
-        run: node scripts/ig-auto-retry.mjs check --file="output/coffee-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE"
+        run: node scripts/ig-auto-retry.mjs check --file="output/coffee-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE" --post-time=08:30
 
       - name: Upload to Instagram (resumable)
         id: upload
@@ -121,8 +122,8 @@ jobs:
         run: node scripts/upload-instagram.mjs --file="output/coffee-${{ steps.gate.outputs.stamp }}.mp4"
 
       - name: Not yet — the next slot tries again
-        if: steps.upload.outcome == 'failure'
-        run: echo "::warning title=Instagram retry::the upload failed again; a later retry slot tries the same video (the last slot turns red if it still fails)"
+        if: steps.check.outcome == 'failure' || steps.upload.outcome == 'failure'
+        run: echo "::warning title=Instagram retry::not on Instagram yet (see the failed step above); a later retry slot tries the same video (the last slot turns red if it still fails)"
 
       - name: Record the post
         # The media id reaches data/performance-history.json — the IG median and
