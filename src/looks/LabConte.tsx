@@ -8,6 +8,7 @@ import { coffeeColor } from "./Motion";
 import type { LookEpisode } from "./Looks";
 import { PaperGrain, PencilMotion } from "./PencilMotion";
 import { SceneArt } from "./SceneArt";
+import { NEUTRAL_ART } from "./art-words.mjs";
 import { subjectFor, withTo } from "./art";
 import { COLUMN, DIAGRAM_SIZE, DIAGRAM_TOP, GAUGE, SCALE_DOODLE, EFFECT, END, LOW_COLUMN, LOW_Y, MARGIN, NOTE_SIZE, SCENE, TIPS, effectLayout, endLayout, sceneLayout, tipsLayout, visualLayout } from "./safe-layout.mjs";
 
@@ -264,8 +265,6 @@ const Doodle: React.FC<{ subject: string; size: number }> = ({ subject, size }) 
 };
 
 export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }> = ({ ep, slide }) => {
-  const own = subjectFor(ep.id);
-  const doodles = [own, own === "grinder" ? "kettle" : "grinder", "cup"];
   const tips = slide.tips.slice(0, 3);
   const L = tipsLayout(tips);
   const f = useCurrentFrame();
@@ -283,7 +282,7 @@ export const LabTipsConte: React.FC<{ ep: LookEpisode; slide: LessonTipsSlide }>
               <div style={T(L[i].problemSize, 700, INK)}>{t.problem}</div>
               <div style={T(L[i].fixSize, 700, ep.accent, { marginTop: 10 })}>{t.fix}</div>
             </div>
-            <Doodle subject={doodles[i]} size={L[i].doodle} />
+            <Doodle subject={t.art ?? NEUTRAL_ART} size={L[i].doodle} />
           </div>
           {i < tips.length - 1 ? <div style={{ height: 2, background: RULE, marginTop: 20, width: 1080 - 96 * 2 }} /> : null}
         </In>
