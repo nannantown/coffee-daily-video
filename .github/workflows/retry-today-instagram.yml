@@ -1,17 +1,44 @@
-name: Retry Today's Instagram (push-triggered)
+name: Retry Today's Instagram
 
-# Triggered by the SNS Post Health Check routine pushing a sentinel file.
-# Defaults to today's JST date — assumes routine runs same JST day as the
-# release it's recovering. The existing workflow_dispatch path
-# (test-instagram-upload.yml) remains for manual recovery of older dates.
+# Re-post the day's Reel to Instagram only, from the exact video + captions the
+# daily run archived in Release v<YYYYMMDD> — nothing is re-rendered and
+# YouTube is never touched.
+#
+# Automatic (owner order 2026-10-27): after the 08:30 JST post, three slots
+# look again — 09:37 / 11:37 / 14:37 JST. A slot posts only when the day's
+# record has YouTube and no Instagram (scripts/ig-auto-retry.mjs gate), the
+# video fits a Reel and the account does not show the day yet (… check). An
+# earlier slot's failed upload is a warning (the next slot tries again); the
+# last slot's failure turns the run red.
+#
+# By hand: gh workflow run retry-today-instagram.yml [-f date=YYYYMMDD]
+# The health-check routine's push of .retry-ig-trigger still works (same path).
+# test-instagram-upload.yml stays for releases/assets this one does not cover.
 
 on:
+  schedule:
+    - cron: "37 0 * * *" # 09:37 JST
+    - cron: "37 2 * * *" # 11:37 JST
+    - cron: "37 5 * * *" # 14:37 JST — the last slot: a failure here is red
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "YYYYMMDD (empty = the latest 08:30 JST post)"
+        type: string
+        default: ""
   push:
+    branches: [main]
     paths:
       - .retry-ig-trigger
 
 permissions:
-  contents: read
+  contents: write # records the post in data/performance-history.json
+  actions: read # the gate lists daily-video.yml runs (unlisted scopes are none → 403)
+
+# One retry at a time: two queued retries must not both post the same Reel.
+concurrency:
+  group: coffee-retry-instagram
+  cancel-in-progress: false
 
 jobs:
   upload:
@@ -25,37 +52,43 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
-
-      - name: Resolve date
-        id: date
+      - name: Is this an Instagram-only failure? (record has YouTube, no Instagram)
+        id: gate
         env:
-          TZ: Asia/Tokyo
-        run: |
-          DATE=$(date +%Y%m%d)
-          echo "date=$DATE" >> $GITHUB_OUTPUT
-          echo "Using date: $DATE"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          INPUT_DATE: ${{ inputs.date }}
+        run: node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:30 --last-slot="37 5 * * *" ${INPUT_DATE:+"--date=$INPUT_DATE"}
+
+      - if: steps.gate.outputs.go == 'true'
+        run: npm ci
 
       - name: Download video asset from release
+        if: steps.gate.outputs.go == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.gate.outputs.stamp }}
         run: |
           mkdir -p output
-          DATE="${{ steps.date.outputs.date }}"
           gh release download "v${DATE}" -p "coffee-${DATE}.mp4" -D output/
 
-      - name: Generate captions
+      - name: Captions archived with the original post
+        if: steps.gate.outputs.go == 'true'
         env:
           TZ: Asia/Tokyo
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATE: ${{ steps.date.outputs.date }}
+          DATE: ${{ steps.gate.outputs.stamp }}
+          EVENT: ${{ github.event_name }}
         run: |
-          # Prefer the captions archived with the original post (the recipe
-          # numbers in the caption must match the video). Releases created
-          # before the archive existed fall back to regenerating.
+          # The caption must be the one the video went out with (the numbers in
+          # it match the video). Releases created before the archive existed
+          # fall back to regenerating — by hand only, never on a schedule.
           if gh release download "v${DATE}" -p "coffee-${DATE}-captions.json" -D output/ --clobber; then
             cp "output/coffee-${DATE}-captions.json" output/captions.json
             echo "Using archived captions from release v${DATE}"
+          elif [ "$EVENT" = schedule ]; then
+            echo "::error title=Instagram retry stopped::v${DATE} has no archived captions — not regenerating on a schedule"
+            exit 1
           else
             node scripts/generate-data.mjs
             node scripts/generate-caption.mjs
@@ -64,11 +97,51 @@ jobs:
           # coffee we sell. Never re-post that (owner decision 2026-09-22).
           node scripts/check-published.mjs
 
-      - name: Upload to Instagram (resumable)
+      - name: Fits a Reel, and not on Instagram yet?
+        id: check
+        if: steps.gate.outputs.go == 'true'
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          DATE: ${{ steps.gate.outputs.stamp }}
+        run: node scripts/ig-auto-retry.mjs check --file="output/coffee-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE"
+
+      - name: Upload to Instagram (resumable)
+        id: upload
+        if: steps.gate.outputs.go == 'true' && steps.check.outputs.posted == 'false'
+        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+        run: node scripts/upload-instagram.mjs --file="output/coffee-${{ steps.gate.outputs.stamp }}.mp4"
+
+      - name: Not yet — the next slot tries again
+        if: steps.upload.outcome == 'failure'
+        run: echo "::warning title=Instagram retry::the upload failed again; a later retry slot tries the same video (the last slot turns red if it still fails)"
+
+      - name: Record the post
+        # The media id reaches data/performance-history.json — the IG median and
+        # the saved-count that decide the genre trial read it from there.
+        if: always() && steps.gate.outputs.go == 'true' && hashFiles('output/instagram-result.json') != ''
+        env:
+          DATE: ${{ steps.gate.outputs.date }}
         run: |
-          DATE="${{ steps.date.outputs.date }}"
-          node scripts/upload-instagram.mjs --file="output/coffee-${DATE}.mp4"
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            if ! git fetch --no-tags origin main; then
+              echo "fetch attempt $i failed, retrying"; sleep $((i * 10)); continue
+            fi
+            git checkout -f -B main FETCH_HEAD
+            node scripts/record-instagram.mjs --date="$DATE"
+            git add data/performance-history.json
+            if git diff --staged --quiet; then echo "History unchanged, nothing to commit"; exit 0; fi
+            git commit -m "Record Instagram retry ${DATE} [skip ci]"
+            if git push origin main; then exit 0; fi
+            echo "push attempt $i failed, retrying"; sleep $((i * 10))
+          done
+          echo "::error title=Instagram retry::the post went out but the history could not be pushed — fetch-stats restores the media id later"
+          exit 1
