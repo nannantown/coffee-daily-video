@@ -9,7 +9,9 @@
  *   node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:00 --last-slot="7 5 * * *" [--date=YYYYMMDD]
  *     → $GITHUB_OUTPUT go=true|false, final=true|false, stamp=YYYYMMDD, date=YYYY-MM-DD
  *       go=true only when the day's live record (origin/main) has YouTube and no
- *       Instagram, and daily-video.yml is not running. Unreadable record → exit 1.
+ *       Instagram, daily-video.yml is not running, and it finished at least
+ *       MIN_GAP_MINUTES ago (an earlier slot right after it leaves the try to the
+ *       next slot; the last slot always tries). Unreadable record → exit 1.
  *       final=false only on the earlier scheduled slots: their failed upload is a
  *       warning (the next slot tries again); the last slot (and a hand-run) goes red.
  *       EVENT_SCHEDULE = ${{ github.event.schedule }} (the cron line that fired).
@@ -30,6 +32,9 @@ const JST_MS = 9 * 3600_000;
 
 /** Instagram refuses Reels over 60 s in practice (coffee 2026-09-16, kawagutsu 2026-10-21). */
 export const REELS_MAX_SECONDS = 59.5;
+
+/** Leave Instagram this long after the daily run's own 3 tries before trying again. */
+export const MIN_GAP_MINUTES = 45;
 
 /**
  * The day whose post a run retries: the latest daily post time (JST) at or before
@@ -61,7 +66,7 @@ export const dayStartUnix = (stamp) => Math.floor((Date.parse(`${isoDate(stamp)}
  * `auto` (a scheduled run) also needs YouTube on record — the order is an
  * Instagram-ONLY failure; a hand-run is left to the repo's own manual guards.
  */
-export function recordDecision(entries, stamp, { dailyRunning = false, auto = true } = {}) {
+export function recordDecision(entries, stamp, { dailyRunning = false, auto = true, final = true, minutesSinceDaily = Infinity } = {}) {
   const date = isoDate(stamp);
   if (dailyRunning) return { go: false, reason: "daily-video.yml is still running — it may be posting right now. The next retry slot looks again." };
   const entry = (entries || []).find((e) => e && e.date === date && !e.skip);
@@ -71,6 +76,9 @@ export function recordDecision(entries, stamp, { dailyRunning = false, auto = tr
   const instagram = typeof entry.instagram === "string" ? entry.instagram : entry.instagram?.mediaId;
   if (instagram) return { go: false, reason: `${date} is already on Instagram (${instagram}) — not posting twice.` };
   if (!youtube && auto) return { go: false, reason: `${date} has no YouTube post on record — not an Instagram-only failure, left to a person.` };
+  if (auto && !final && minutesSinceDaily < MIN_GAP_MINUTES) {
+    return { go: false, reason: `${date}: daily-video.yml finished ${Math.round(minutesSinceDaily)} min ago — giving Instagram time; the next slot tries.` };
+  }
   return { go: true, reason: `${date}: YouTube ${youtube ?? "(none)"} on record, Instagram not — retrying Instagram only.` };
 }
 
@@ -140,10 +148,13 @@ function gate() {
   // The live main, not this checkout: the daily run may have pushed its record after we started.
   sh("git", ["fetch", "--quiet", "origin", "main"]);
   const data = JSON.parse(sh("git", ["show", `origin/main:${records}`]));
-  const runs = JSON.parse(sh("gh", ["run", "list", "--workflow", "daily-video.yml", "--limit", "10", "--json", "status"]));
+  const runs = JSON.parse(sh("gh", ["run", "list", "--workflow", "daily-video.yml", "--limit", "10", "--json", "status,updatedAt"]));
   const dailyRunning = runs.some((r) => r.status !== "completed");
-  const { go, reason } = recordDecision(data.videos ?? data.aired, stamp, { dailyRunning, auto: process.env.GITHUB_EVENT_NAME === "schedule" });
+  const lastDone = runs.find((r) => r.status === "completed");
+  const minutesSinceDaily = lastDone ? (Date.now() - Date.parse(lastDone.updatedAt)) / 60_000 : Infinity;
   const final = isFinalAttempt(process.env.GITHUB_EVENT_NAME, process.env.EVENT_SCHEDULE, arg("last-slot"));
+  const auto = process.env.GITHUB_EVENT_NAME === "schedule";
+  const { go, reason } = recordDecision(data.videos ?? data.aired, stamp, { dailyRunning, auto, final, minutesSinceDaily });
   console.log(reason);
   if (go) console.log(final ? "Last attempt: a failure turns this run red." : "Earlier slot: a failure is a warning, the next slot tries again.");
   output({ go, final, stamp, date: isoDate(stamp) });

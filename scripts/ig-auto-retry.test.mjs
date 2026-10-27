@@ -41,6 +41,10 @@ test("recordDecision: only YouTube-on-record + Instagram-missing goes", () => {
   assert.equal(recordDecision(history, "20261027", { auto: false }).go, true);
   assert.equal(recordDecision([{ date: "2026-10-26", instagram: null }], "20261026", { auto: false }).go, true);
   assert.equal(recordDecision(history, "20261025", { auto: false }).go, false);
+  // right after the daily run: an earlier slot waits, the last slot tries anyway
+  assert.equal(recordDecision(history, "20261026", { final: false, minutesSinceDaily: 20 }).go, false);
+  assert.equal(recordDecision(history, "20261026", { final: false, minutesSinceDaily: 50 }).go, true);
+  assert.equal(recordDecision(history, "20261026", { final: true, minutesSinceDaily: 20 }).go, true);
   // kawagutsu aired.json shape
   const aired = [{ date: "2026-10-22", youtube: "yt" }, { date: "2026-10-21", youtube: "yt", instagram: "ig" }];
   assert.equal(recordDecision(aired, "20261022").go, true);
@@ -97,7 +101,7 @@ test("the retry workflow: scheduled slots, Instagram only, red only on the last 
   assert.ok(name, "a workflow runs ig-auto-retry.mjs gate");
   const yml = readFileSync(join(root, ".github/workflows", name), "utf-8");
   const crons = [...yml.matchAll(/- cron: "([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(crons.length >= 2, "at least two retry slots");
+  assert.ok(crons.length >= 3, "at least three retry slots");
   assert.equal(yml.match(/--last-slot="([^"]+)"/)[1], crons.at(-1), "--last-slot is the last cron line");
   assert.match(yml, /EVENT_SCHEDULE: \$\{\{ github\.event\.schedule \}\}/);
   assert.doesNotMatch(yml, /upload-youtube|YOUTUBE_/, "YouTube is never touched");

@@ -4,12 +4,14 @@ name: Retry Today's Instagram
 # daily run archived in Release v<YYYYMMDD> — nothing is re-rendered and
 # YouTube is never touched.
 #
-# Automatic (owner order 2026-10-27): after the 08:30 JST post, three slots
-# look again — 09:37 / 11:37 / 14:37 JST. A slot posts only when the day's
-# record has YouTube and no Instagram (scripts/ig-auto-retry.mjs gate), the
-# video fits a Reel and the account does not show the day yet (… check). An
-# earlier slot's failed upload is a warning (the next slot tries again); the
-# last slot's failure turns the run red.
+# Automatic (owner order 2026-10-27): four slots look again the same day —
+# 12:37 / 14:37 / 17:37 / 20:37 JST. GitHub starts the 08:30 run late
+# (10/17–10/26: 10:17–11:00 JST), so the slots sit after that. A slot posts only
+# when the day's record has YouTube and no Instagram, daily-video.yml finished
+# 45+ min ago (scripts/ig-auto-retry.mjs gate), the video fits a Reel and the
+# account does not show the day yet (… check). An earlier slot's failed upload
+# is a warning (the next slot tries again); the last slot always tries and its
+# failure turns the run red.
 #
 # By hand: gh workflow run retry-today-instagram.yml [-f date=YYYYMMDD]
 # The health-check routine's push of .retry-ig-trigger still works (same path).
@@ -17,9 +19,10 @@ name: Retry Today's Instagram
 
 on:
   schedule:
-    - cron: "37 0 * * *" # 09:37 JST
-    - cron: "37 2 * * *" # 11:37 JST
-    - cron: "37 5 * * *" # 14:37 JST — the last slot: a failure here is red
+    - cron: "37 3 * * *" # 12:37 JST
+    - cron: "37 5 * * *" # 14:37 JST
+    - cron: "37 8 * * *" # 17:37 JST
+    - cron: "37 11 * * *" # 20:37 JST — the last slot: a failure here is red
   workflow_dispatch:
     inputs:
       date:
@@ -58,7 +61,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           INPUT_DATE: ${{ inputs.date }}
-        run: node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:30 --last-slot="37 5 * * *" ${INPUT_DATE:+"--date=$INPUT_DATE"}
+        run: node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:30 --last-slot="37 11 * * *" ${INPUT_DATE:+"--date=$INPUT_DATE"}
 
       - if: steps.gate.outputs.go == 'true'
         run: npm ci
