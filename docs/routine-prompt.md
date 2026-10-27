@@ -204,6 +204,20 @@ node scripts/validate-content.mjs
 
 `OK:` が出るまで直す。`NG:` のまま commit しない（パイプラインが常備ネタ帳に差し替える）。`must not say` のエラーは禁止語（豆・産地・販促）が混ざっている合図なので、その語を消す。`tells it as our own experience, with no record` は実体験の語り（「淹れてみたら」「うちでは毎朝」など）の合図 — 文体ルールのとおり「〜になりやすい」「〜と言われます」に直す（この検査は他の検査が全部通ってから走るので、最後に出ることがある）。`is not today's episode` / `hook must stay` / `word must stay` は回を取り違えている合図 — `node scripts/next-episode.mjs` の回に合わせる。 `premise is required` / `premise.… must stay` は下書きの前提を外した・変えた合図 — 下書きの `premise` と `narration.premise` をそのまま戻す。 `script is required` / `script must stay` は台本の回で台本を外した・変えた合図 — 下書きの `script` をそのまま戻す。
 
+#### 4.5 読みの確認（必須・新しい難読語は読みを決めてから）
+
+声（Edge TTS）は漢字・英字の読みを自分で推し量り、ときどき間違える（2026-10-27 の実測: 浸漬 →「しんせき」、上ずみ →「じょうずみ」）。画面・キャプションは原稿の表記のまま、**声だけ**を `data/tts-readings.json`（`"表記": "よみ"`）で読み替える仕組みがある（`scripts/tts-reading.mjs`。音声を作る直前に効く）。
+
+```bash
+node scripts/tts-reading.mjs --data=data/enriched-coffee-news.json
+```
+
+- `*` の行が読み替わる行（`->` が声に渡る文）。最後に「声が自分で読みを決める語」（英字・2 字以上の漢字の語）が出る
+- その一覧のうち、**器具・メーカー・人の名前などの固有名詞、英字の語や略語、専門用語、読みが 2 通りある語（例: 市場・仮名）、数と助数詞（1杯・3投 など）** は、読みを決めて `data/tts-readings.json` に足す（読みはひらがな・カタカナだけ。迷ったら足す — 足しても画面・キャプションは変わらない）。ふだんの言葉は足さなくてよい
+- 辞書の読みが今日の文脈では違う（同じ表記で別の読み）ときは、その語を消さずに、もっと長い表記（例: 「仮名にして」）で足す（長い方が先に当たる）
+- 辞書を直したら `node --test scripts/tts-reading.test.mjs` が通るのを確かめる（JSON の書き損じ・かな以外の読み・長すぎる読みを見つける。壊れた辞書は声の読み替えが全部止まるだけで動画は出るが、直してから commit する）
+- 読みの決まっていない語を残したまま commit しない。足した語はレポートに 1 行（例「読み: 甲革=こうかく」）。10 周で通らず常備原稿で出る日も、足した読みは入れてよい（常備原稿にも効く）
+
 #### 5. main に反映（PR 経由で確実にマージ）
 
 この env では `git push origin main` が silent fail する（2026-04-19 以降に確認）。必ず session branch → PR → 即 squash merge。
@@ -238,7 +252,7 @@ fi
 BRANCH="routine-content-$TODAY"
 git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
 mkdir -p docs/pdca
-git add "docs/pdca/$TODAY.md" "$REVIEW"
+git add "docs/pdca/$TODAY.md" "$REVIEW" data/tts-readings.json
 [ "$FALLBACK" = "1" ] || git add "$CONTENT"
 [ "$FALLBACK" = "1" ] || git show ":$CONTENT" | grep -Eq "$DATE_RE" || { echo "FAIL: 今日の原稿がコミット対象に入っていない"; exit 1; }
 # "Content: 抽出メモ <episode> <柱>「<hook>」×<抽出法> [skip ci]"
