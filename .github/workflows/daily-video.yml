@@ -40,6 +40,7 @@ permissions:
 # writers, old checkouts and interrupted runs before any Buffer mutation.
 concurrency:
   group: coffee-daily-video-${{ github.ref }}
+  queue: max # shared with retry-today-instagram.yml: a waiting run is never cancelled by a third (GitHub's default would drop it silently)
   cancel-in-progress: false
 
 jobs:
