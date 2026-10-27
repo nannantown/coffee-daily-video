@@ -202,7 +202,7 @@ node scripts/pdca-summary.mjs --today=$(node scripts/air-date.mjs)   # 放送日
 node scripts/validate-content.mjs
 ```
 
-`OK:` が出るまで直す。`NG:` のまま commit しない（パイプラインが常備ネタ帳に差し替える）。`must not say` のエラーは禁止語（豆・産地・販促）が混ざっている合図なので、その語を消す。`is not today's episode` / `hook must stay` / `word must stay` は回を取り違えている合図 — `node scripts/next-episode.mjs` の回に合わせる。 `premise is required` / `premise.… must stay` は下書きの前提を外した・変えた合図 — 下書きの `premise` と `narration.premise` をそのまま戻す。 `script is required` / `script must stay` は台本の回で台本を外した・変えた合図 — 下書きの `script` をそのまま戻す。
+`OK:` が出るまで直す。`NG:` のまま commit しない（パイプラインが常備ネタ帳に差し替える）。`must not say` のエラーは禁止語（豆・産地・販促）が混ざっている合図なので、その語を消す。`tells it as our own experience, with no record` は実体験の語り（「淹れてみたら」「うちでは毎朝」など）の合図 — 文体ルールのとおり「〜になりやすい」「〜と言われます」に直す（この検査は他の検査が全部通ってから走るので、最後に出ることがある）。`is not today's episode` / `hook must stay` / `word must stay` は回を取り違えている合図 — `node scripts/next-episode.mjs` の回に合わせる。 `premise is required` / `premise.… must stay` は下書きの前提を外した・変えた合図 — 下書きの `premise` と `narration.premise` をそのまま戻す。 `script is required` / `script must stay` は台本の回で台本を外した・変えた合図 — 下書きの `script` をそのまま戻す。
 
 #### 5. main に反映（PR 経由で確実にマージ）
 
@@ -276,4 +276,5 @@ fi
 - 見出し・要約に `<` `>` を使わない（YouTube が拒否する。キャプション生成時にも全角へ置き換える）
 - テキスト欄（`word` / `ask` / `hook` / `topic` / `why` / `effect` / コツ / 図解 / ナレーション）に URL・ドメイン名（`〜.com` `〜.coffee` など）・`@`・`#`・改行・見えない文字・絵文字（☕️ などは見えない異体字セレクタを含む）を入れない（全角の `＠` `＃` も同じ。検証 NG）
 - **銘柄・産地・屋号・販促の言葉を書かない**（上の「いちばん大事な制約」。`must not say` のエラーで落ちる。何が許されているかも同じ節にある）
+- **実体験として語らない（オーナー決定 2026-10-24・検証で NG）**: 「使ってみた」「試してみたら〜だった」「試した結果」「実際に測ったら」「私は毎日こうしている」「僕もいつも〜しています」「愛用」のような**自分たちがやった話**は、その操作を実際にやった記録がリポにあるときだけ書く。記録が無ければ**機能紹介の言い方**にする（「〜になりやすい」「メーカー公式によると〜」「〜と言われます」）。視聴者への誘い（「試してみましょう」「やってみてください」）・事実や歴史（「1952年に作られました」）はよい。検証（`scripts/experience-guard.mjs`）は言い回しを見つけて、記録が無ければ `tells it as our own experience, with no record` で止める。 コーヒーでは「家で淹れてみたら」「飲み比べてみたら」「うちでは毎朝」「実際に測ったら」も同じ。味の変わり方は「〜になりやすい」「〜と言われます」「メーカー公式の推奨では〜」と書く。記録の置き場所と形: 証拠のファイル（実行ログ・出力のコピーは `.txt` / `.json`、出力のスクショは `.png`、実測値は `.json` / `.csv`。空は不可。個人情報・社外秘・鍵は写さない）を `data/evidence/<放送日>/` に置き、その回の JSON に `"evidence": [{ "claim": "<実体験を語る文の一部をそのまま>", "kind": "log" | "screenshot" | "measurement", "file": "data/evidence/<放送日>/…", "what": "何をしてどうなったか一言" }]` を足す。`claim` は実体験を語る文を**まるごと**そのまま写す（文の一部だけ・言い回しだけでは通らない）。ファイルは放送日のフォルダの本物のファイル（リンク不可。`log` は .txt / .json / .log / .md、`screenshot` は .png / .jpg / .webp、`measurement` は .json / .csv / .txt）。`evidence` を書けるのはその日の原稿だけで、**ネタ帳・常備原稿には実体験を書かない**（予備で出る日は記録が無いので止まる）。**朝・夜のルーチンは自分で操作した記録を残せない（触ってよいファイルも今のまま）ので、ふつうは実体験の語りを書かない**。記録つきで語りたい回は、人間が PR で記録と `evidence` を足す
 ````
