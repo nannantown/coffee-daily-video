@@ -9,9 +9,15 @@ name: Retry Today's Instagram
 # (10/17–10/26: 10:17–11:00 JST), so the slots sit after that. A slot posts only
 # when the day's record has YouTube and no Instagram, daily-video.yml finished
 # 45+ min ago (scripts/ig-auto-retry.mjs gate), the video fits a Reel and the
-# account does not show the day yet (… check). An earlier slot's failed upload
-# is a warning (the next slot tries again); the last slot always tries and its
-# failure turns the run red.
+# account does not show the day yet (… check). At most 3 automatic uploads per
+# day, and none after 2 ProcessingFailedErrors in a row (data/ig-auto-retry.json).
+# A failure an earlier slot can leave to the next is a note (the job has
+# continue-on-error); the last slot's failure is red, and so is anything no
+# later slot can fix (too long, no archived caption, another post on the
+# account, the day's tries spent) — at once.
+#
+# Switches (repo Variables, scheduled runs only): IG_AUTO_RETRY=off stops all
+# automatic retries; IG_AUTO_RETRY_SKIP=20261026,20261023 leaves those days alone.
 #
 # By hand: gh workflow run retry-today-instagram.yml [-f date=YYYYMMDD]
 # The health-check routine's push of .retry-ig-trigger still works (same path).
@@ -35,18 +41,23 @@ on:
       - .retry-ig-trigger
 
 permissions:
-  contents: write # records the post in data/performance-history.json
+  contents: write # records the post in data/performance-history.json, the tries in data/ig-auto-retry.json
   actions: read # the gate lists daily-video.yml runs (unlisted scopes are none → 403)
 
-# One retry at a time: two queued retries must not both post the same Reel.
+# The same lock as daily-video.yml: a retry and a daily post (or its re-run)
+# never run at once, so the second one sees what the first posted.
 concurrency:
-  group: coffee-retry-instagram
+  group: coffee-daily-video-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   upload:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # An earlier slot's failure is a note — the next slot tries again. The last slot (and a hand-run) goes red.
+    continue-on-error: ${{ github.event_name == 'schedule' && github.event.schedule != '37 11 * * *' }}
+    outputs:
+      stop: ${{ steps.gate.outputs.stop }}${{ steps.captions.outputs.stop }}${{ steps.check.outputs.stop }}${{ steps.mark.outputs.stop }}
     steps:
       - uses: actions/checkout@v4
 
@@ -61,6 +72,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           INPUT_DATE: ${{ inputs.date }}
+          IG_AUTO_RETRY: ${{ vars.IG_AUTO_RETRY }}
+          IG_AUTO_RETRY_SKIP: ${{ vars.IG_AUTO_RETRY_SKIP }}
         run: node scripts/ig-auto-retry.mjs gate --records=data/performance-history.json --post-time=08:30 --last-slot="37 11 * * *" ${INPUT_DATE:+"--date=$INPUT_DATE"}
 
       - if: steps.gate.outputs.go == 'true'
@@ -76,6 +89,7 @@ jobs:
           gh release download "v${DATE}" -p "coffee-${DATE}.mp4" -D output/
 
       - name: Captions archived with the original post
+        id: captions
         if: steps.gate.outputs.go == 'true'
         env:
           TZ: Asia/Tokyo
@@ -83,14 +97,17 @@ jobs:
           DATE: ${{ steps.gate.outputs.stamp }}
           EVENT: ${{ github.event_name }}
         run: |
+          set -euo pipefail
           # The caption must be the one the video went out with (the numbers in
           # it match the video). Releases created before the archive existed
           # fall back to regenerating — by hand only, never on a schedule.
-          if gh release download "v${DATE}" -p "coffee-${DATE}-captions.json" -D output/ --clobber; then
+          assets=$(gh release view "v${DATE}" --json assets -q '.assets[].name')
+          if grep -qx "coffee-${DATE}-captions.json" <<<"$assets"; then
+            gh release download "v${DATE}" -p "coffee-${DATE}-captions.json" -D output/ --clobber
             cp "output/coffee-${DATE}-captions.json" output/captions.json
             echo "Using archived captions from release v${DATE}"
           elif [ "$EVENT" = schedule ]; then
-            echo "::error title=Instagram retry stopped::v${DATE} has no archived captions — not regenerating on a schedule"
+            echo "stop=v${DATE} has no archived captions — not regenerating a caption on a schedule. Post by hand if needed." >> "$GITHUB_OUTPUT"
             exit 1
           else
             node scripts/generate-data.mjs
@@ -103,7 +120,6 @@ jobs:
       - name: Fits a Reel, and not on Instagram yet?
         id: check
         if: steps.gate.outputs.go == 'true'
-        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
@@ -111,19 +127,25 @@ jobs:
           DATE: ${{ steps.gate.outputs.stamp }}
         run: node scripts/ig-auto-retry.mjs check --file="output/coffee-${DATE}.mp4" --captions=output/captions.json --stamp="$DATE" --post-time=08:30
 
+      - name: Count this automatic attempt (before the upload — a crash still counts)
+        if: github.event_name == 'schedule' && steps.check.outputs.posted == 'false'
+        run: node scripts/ig-auto-retry.mjs mark --stamp="${{ steps.gate.outputs.stamp }}"
+
       - name: Upload to Instagram (resumable)
         id: upload
         if: steps.gate.outputs.go == 'true' && steps.check.outputs.posted == 'false'
-        continue-on-error: ${{ steps.gate.outputs.final != 'true' }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-        run: node scripts/upload-instagram.mjs --file="output/coffee-${{ steps.gate.outputs.stamp }}.mp4"
+        run: |
+          set -o pipefail
+          node scripts/upload-instagram.mjs --file="output/coffee-${{ steps.gate.outputs.stamp }}.mp4" 2>&1 | tee output/ig-upload.log
 
-      - name: Not yet — the next slot tries again
-        if: steps.check.outcome == 'failure' || steps.upload.outcome == 'failure'
-        run: echo "::warning title=Instagram retry::not on Instagram yet (see the failed step above); a later retry slot tries the same video (the last slot turns red if it still fails)"
+      - name: Remember why it failed (2 ProcessingFailedErrors in a row stop the day)
+        id: mark
+        if: failure() && steps.upload.outcome == 'failure' && github.event_name == 'schedule'
+        run: node scripts/ig-auto-retry.mjs mark --stamp="${{ steps.gate.outputs.stamp }}" --log=output/ig-upload.log
 
       - name: Record the post
         # The media id reaches data/performance-history.json — the IG median and
@@ -147,5 +169,23 @@ jobs:
             if git push origin main; then exit 0; fi
             echo "push attempt $i failed, retrying"; sleep $((i * 10))
           done
-          echo "::error title=Instagram retry::the post went out but the history could not be pushed — fetch-stats restores the media id later"
+          # On an earlier slot this is a note: the next slot finds the post on the account and records it.
+          echo "::error title=Instagram retry::the post went out but the history could not be pushed — the next slot (or fetch-stats) records it"
+          exit 1
+
+      - name: Not on Instagram yet — a later slot tries again
+        if: failure() && github.event_name == 'schedule' && github.event.schedule != '37 11 * * *'
+        run: echo "::warning title=Instagram retry::not on Instagram yet (see the failed step above); a later slot tries the same video unless the day's tries are spent"
+
+  # Red at once, on any slot: no later slot can fix these (too long, no archived
+  # caption, another post on the account, the day's automatic tries spent).
+  needs-a-person:
+    needs: upload
+    if: always() && needs.upload.outputs.stop != ''
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          STOP: ${{ needs.upload.outputs.stop }}
+        run: |
+          echo "::error title=Instagram retry stopped::$STOP"
           exit 1
