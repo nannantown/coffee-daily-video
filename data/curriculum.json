@@ -2390,6 +2390,11 @@
             "strength": 2
           },
           "pick": "right"
+        },
+        "narration": {
+          "title": "微粉って、なに？挽いた粉に混ざる、とても細かい粉のことです。",
+          "why": "細かすぎる粉は溶けやすく、渋みや濁りのもとになります。茶こしでふるうと減らせます。",
+          "visual": "微粉を減らすと、渋みが減って、澄んだ味になります。"
         }
       }
     },
@@ -2403,7 +2408,7 @@
         "word": "酸味と苦味",
         "ask": "が同時に？",
         "hook": "粉全体を均一に濡らす",
-        "topic": "ムラが減り甘くなる",
+        "topic": "ムラを直せば甘くなる",
         "why": "粉の層にムラがあると未抽出と過抽出が混ざる",
         "effect": [
           {
@@ -2417,12 +2422,12 @@
         ],
         "tips": [
           {
-            "problem": "まだ酸っぱい時",
-            "fix": "蒸らしで粉全体を濡らす"
+            "problem": "酸っぱくて苦い時",
+            "fix": "注ぐ前に粉の層を平らに"
           },
           {
-            "problem": "粉が壁に残る時",
-            "fix": "最後にドリッパーを回す"
+            "problem": "粉の山が偏る時",
+            "fix": "中心から円を描いて注ぐ"
           }
         ],
         "core": "全体が同じだけ溶けると、甘みが出る",
@@ -2637,8 +2642,8 @@
         "why": "速く落ちると溶ける前にお湯が抜ける",
         "effect": [
           {
-            "label": "遅く落ちる",
-            "taste": "苦く、重たい"
+            "label": "速さを整える",
+            "taste": "甘く、まとまる"
           },
           {
             "label": "速く落ちる",
@@ -2761,141 +2766,6 @@
       }
     },
     {
-      "id": "a12-weak",
-      "level": "advanced",
-      "lesson": {
-        "pillar": "trouble",
-        "method": "origami",
-        "scene": "hot",
-        "word": "薄い",
-        "ask": "時は？",
-        "hook": "薄い時は粉を増やす",
-        "topic": "コクと甘みが戻る",
-        "why": "溶けた成分が少ないと、水っぽく感じる",
-        "effect": [
-          {
-            "label": "粉を増やす",
-            "taste": "コクと甘みが出る"
-          },
-          {
-            "label": "粉を減らす",
-            "taste": "さらに薄く、軽い"
-          }
-        ],
-        "tips": [
-          {
-            "problem": "まだ薄い時",
-            "fix": "挽き目を少し細かくする"
-          },
-          {
-            "problem": "重くなった時",
-            "fix": "淹れた後にお湯を足す"
-          }
-        ],
-        "core": "粉を増やすと、溶ける成分が増える",
-        "motion": {
-          "type": "liquid",
-          "shade": {
-            "from": 30,
-            "to": 60
-          },
-          "meters": [
-            {
-              "label": "コク",
-              "from": 30,
-              "to": 60
-            }
-          ]
-        },
-        "visual": {
-          "type": "compare",
-          "caption": "粉を増やすと味が戻る",
-          "left": {
-            "label": "いつもの粉",
-            "result": "水っぽい",
-            "strength": 2
-          },
-          "right": {
-            "label": "粉を増やす",
-            "result": "コクと甘み",
-            "strength": 4
-          },
-          "pick": "right"
-        }
-      }
-    },
-    {
-      "id": "a13-strong-sour",
-      "level": "advanced",
-      "lesson": {
-        "pillar": "theory",
-        "method": "kalita-wave",
-        "scene": "hot",
-        "word": "濃いのに",
-        "ask": "酸っぱい？",
-        "hook": "粉を少し減らす",
-        "topic": "酸が引いて甘みが出る",
-        "why": "粉が多いと、お湯が足りず溶けきらない",
-        "effect": [
-          {
-            "label": "粉を減らす",
-            "taste": "甘く、なめらか"
-          },
-          {
-            "label": "粉を増やす",
-            "taste": "濃いのに酸っぱい"
-          }
-        ],
-        "tips": [
-          {
-            "problem": "薄くなった時",
-            "fix": "挽き目を少し細かくする"
-          },
-          {
-            "problem": "まだ酸っぱい時",
-            "fix": "お湯の温度を上げる"
-          }
-        ],
-        "core": "収率が上がると、酸の後ろの甘みが出る",
-        "motion": {
-          "type": "dissolve",
-          "shade": {
-            "from": 70,
-            "to": 60
-          },
-          "meters": [
-            {
-              "label": "甘味",
-              "from": 35,
-              "to": 60
-            },
-            {
-              "label": "酸味",
-              "from": 65,
-              "to": 40
-            }
-          ]
-        },
-        "visual": {
-          "type": "scale",
-          "caption": "粉を減らすと適正に近づく",
-          "label": "収率",
-          "zones": [
-            "未抽出",
-            "適正",
-            "過抽出"
-          ],
-          "from": 20,
-          "to": 45
-        },
-        "narration": {
-          "title": "濃いのに、酸っぱい。そんな時は、粉が多すぎるのかもしれません。",
-          "why": "粉が多いと、お湯が足りずに溶けきらない。濃さは出ても、溶け出す割合、収率は低いままです。",
-          "visual": "収率が低いと酸っぱく、適正に近づくと甘みが出ます。"
-        }
-      }
-    },
-    {
       "id": "a14-fresh-grind",
       "level": "advanced",
       "lesson": {
@@ -2954,6 +2824,141 @@
             "label": "挽きたて",
             "result": "香りが立つ",
             "strength": 3
+          },
+          "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a13-strong-sour",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "濃いのに",
+        "ask": "酸っぱい？",
+        "hook": "粉を少し減らす",
+        "topic": "酸が引いて甘みが出る",
+        "why": "お湯に対して粉が多すぎると溶けきらない",
+        "effect": [
+          {
+            "label": "粉を減らす",
+            "taste": "甘く、なめらか"
+          },
+          {
+            "label": "粉を増やす",
+            "taste": "濃いのに酸っぱい"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "薄くなった時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "お湯の温度を上げる"
+          }
+        ],
+        "core": "収率が上がると、酸の後ろの甘みが出る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 70,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 60
+            },
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 40
+            }
+          ]
+        },
+        "visual": {
+          "type": "scale",
+          "caption": "粉を減らすと適正に近づく",
+          "label": "収率",
+          "zones": [
+            "未抽出",
+            "適正",
+            "過抽出"
+          ],
+          "from": 20,
+          "to": 45
+        },
+        "narration": {
+          "title": "濃いのに、酸っぱい。そんな時は、粉が多すぎるのかもしれません。",
+          "why": "濃さはお湯の量で動きますが、お湯に対して粉が多すぎると、溶けきらない分が出ます。濃くても、溶け出す割合、収率は低いままです。",
+          "visual": "収率が低いと酸っぱく、適正に近づくと甘みが出ます。"
+        }
+      }
+    },
+    {
+      "id": "a12-weak",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "trouble",
+        "method": "origami",
+        "scene": "hot",
+        "word": "薄い",
+        "ask": "時は？",
+        "hook": "薄い時は粉を増やす",
+        "topic": "濃さとコクが戻る",
+        "why": "溶けた成分が少ないと、水っぽく感じる",
+        "effect": [
+          {
+            "label": "粉を増やす",
+            "taste": "濃く、コクが出る"
+          },
+          {
+            "label": "粉を減らす",
+            "taste": "さらに薄く、軽い"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "まだ薄い時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "重くなった時",
+            "fix": "淹れた後にお湯を足す"
+          }
+        ],
+        "core": "粉を増やすと、溶ける成分が増える",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 30,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "粉を増やすと味が戻る",
+          "left": {
+            "label": "いつもの粉",
+            "result": "水っぽい",
+            "strength": 2
+          },
+          "right": {
+            "label": "粉を増やす",
+            "result": "濃さとコク",
+            "strength": 4
           },
           "pick": "right"
         }
@@ -3348,7 +3353,7 @@
             "taste": "甘く、丸い"
           },
           {
-            "label": "冷たいまま",
+            "label": "温めない",
             "taste": "酸が立ち、軽い"
           }
         ],
