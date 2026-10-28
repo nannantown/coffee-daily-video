@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { contentRecord } from "./content-format.mjs";
+import { summarizeThumbnail } from "./ig-cover.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -85,6 +86,9 @@ function main() {
       comments: 0,
       updatedAt: null,
     },
+    // Whether YouTube took the Instagram cover as its thumbnail (ig-cover.mjs):
+    // "set" / "error:forbidden" (channel not allowed yet) / "skipped:…". Absent = not tried.
+    ...(uploadResult?.thumbnail ? { ytThumbnail: summarizeThumbnail(uploadResult.thumbnail) } : {}),
     // Metrics are filled by fetch-stats.mjs (IG insights lag up to 48h)
     instagram: igResult?.mediaId
       ? {

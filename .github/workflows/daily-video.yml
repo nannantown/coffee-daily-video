@@ -207,7 +207,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coffee-video-${{ github.run_number }}
-          path: output/coffee-*.mp4
+          path: |
+            output/coffee-*.mp4
+            output/youtube-thumbnail.jpg
           retention-days: 30
 
       - name: Upload verification artifact
