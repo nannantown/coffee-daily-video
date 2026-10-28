@@ -167,6 +167,25 @@ test("the curriculum: 30+ unique episodes, beginner → intermediate → advance
   }
 });
 
+test("theory episodes (owner 2026-10-28): every 2-3 days, ending at the taste, with their own narration", () => {
+  const eps = curriculum.episodes;
+  const at = eps.map((e, i) => (e.lesson.pillar === "theory" ? i : -1)).filter((i) => i >= 0);
+  assert.ok(at.length >= 6, `${at.length} theory episodes`);
+  // 2-3 a week: one or two other episodes between two theory ones
+  for (let k = 1; k < at.length; k++) {
+    const gap = at[k] - at[k - 1];
+    assert.ok(gap >= 2 && gap <= 3, `${eps[at[k]].id} comes ${gap} episodes after ${eps[at[k - 1]].id}`);
+  }
+  for (const i of at) {
+    const { id, term, lesson } = eps[i];
+    assert.equal(term, undefined, `${id}: a theory episode is not a term episode`);
+    // the answer is how the cup tastes, not the word restated (10/26 「TDSが上がり濃く感じる」 flopped)
+    assert.match(lesson.topic, /甘|苦|酸|渋|コク|香り|澄|すっきり|まろやか/, `${id}: topic names a taste`);
+    // a fallback morning reads these instead of the template (10/26 aired 「今日の用語は、TDS。…」)
+    for (const k of ["title", "why", "visual"]) assert.ok(lesson.narration?.[k], `${id}: narration.${k}`);
+  }
+});
+
 test("docs/curriculum.md lists every episode, in broadcast order", () => {
   const doc = readFileSync(join(rootDir, "docs", "curriculum.md"), "utf-8");
   let at = -1;

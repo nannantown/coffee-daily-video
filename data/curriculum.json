@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-26",
+  "updatedAt": "2026-10-28",
   "series": "味をコントロールする技術",
   "note": "シリーズ地図（カリキュラム）兼、常備ネタ帳。並び順がそのまま放送順で、初級 → 中級 → 上級。各回は「変えること 1 つ（lesson.hook）」と、表紙の大きい一言（lesson.word）＋問い（lesson.ask）、理由（why）、上げると / 下げると味がどう動くか（effect）を持つ。レシピの数字（g・ml・秒・℃・比率）は書かない（2026-09-26 オーナー決定。scripts/content-format.mjs の recipeNumberReason が弾く）。毎朝ルーチンは scripts/next-episode.mjs が出す『次の回』を作り、ルーチンが原稿を出せなかった朝は同じ回の lesson がそのまま出る（scripts/generate-data.mjs）。出た回の記録は data/performance-history.json の content.episode。解説は docs/curriculum.md。銘柄名・産地名・自社商品・販促の文言は入れない（scripts/brand-guard.mjs が機械的に弾く）。fixedMethod: true の回は、器具そのものが教える中身なので method を変えない。",
   "episodes": [
@@ -2394,6 +2394,85 @@
       }
     },
     {
+      "id": "a10-uneven",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "v60",
+        "scene": "hot",
+        "word": "酸味と苦味",
+        "ask": "が同時に？",
+        "hook": "粉全体を均一に濡らす",
+        "topic": "ムラが減り甘くなる",
+        "why": "粉の層にムラがあると未抽出と過抽出が混ざる",
+        "effect": [
+          {
+            "label": "行き渡らせる",
+            "taste": "甘くまとまる"
+          },
+          {
+            "label": "ムラがある",
+            "taste": "酸っぱくて苦い"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "蒸らしで粉全体を濡らす"
+          },
+          {
+            "problem": "粉が壁に残る時",
+            "fix": "最後にドリッパーを回す"
+          }
+        ],
+        "core": "全体が同じだけ溶けると、甘みが出る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 55,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 65
+            },
+            {
+              "label": "酸味",
+              "from": 60,
+              "to": 40
+            },
+            {
+              "label": "苦味",
+              "from": 60,
+              "to": 40
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "ムラが無いと甘くまとまる",
+          "left": {
+            "label": "ムラあり",
+            "result": "酸っぱくて苦い",
+            "strength": 3
+          },
+          "right": {
+            "label": "ムラなし",
+            "result": "甘くまとまる",
+            "strength": 3
+          },
+          "pick": "right"
+        },
+        "narration": {
+          "title": "酸っぱいのに、苦い。そんな一杯は、粉のムラが原因かもしれません。",
+          "why": "粉の層にムラがあると、お湯が通らない所は未抽出、通り道は過抽出。両方が一杯に混ざります。",
+          "visual": "全体に同じだけお湯が行き渡ると、甘くまとまります。"
+        }
+      }
+    },
+    {
       "id": "a06-drawdown",
       "level": "advanced",
       "lesson": {
@@ -2545,6 +2624,77 @@
       }
     },
     {
+      "id": "a11-flow-speed",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "v60",
+        "scene": "hot",
+        "word": "落ちる速さ",
+        "ask": "で味がわかる？",
+        "hook": "落ちきるまでの速さを見る",
+        "topic": "ちょうどの速さで甘くなる",
+        "why": "速く落ちると溶ける前にお湯が抜ける",
+        "effect": [
+          {
+            "label": "遅く落ちる",
+            "taste": "苦く、重たい"
+          },
+          {
+            "label": "速く落ちる",
+            "taste": "酸っぱく、薄い"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "速すぎる時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "遅すぎる時",
+            "fix": "挽き目を少し粗くする"
+          }
+        ],
+        "core": "落ちる速さが、溶けた量の目安になる",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 50,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "酸味",
+              "from": 60,
+              "to": 40
+            }
+          ]
+        },
+        "visual": {
+          "type": "scale",
+          "caption": "ちょうどの速さが甘い",
+          "label": "落ちる速さ",
+          "zones": [
+            "速い",
+            "ちょうど",
+            "遅い"
+          ],
+          "from": 20,
+          "to": 50
+        },
+        "narration": {
+          "title": "コーヒーが落ちる速さで、今日の味の行き先が分かります。",
+          "why": "速く落ちると、成分が溶ける前にお湯が抜けます。遅いと、苦い成分まで溶け出します。",
+          "visual": "速いと酸っぱく、ちょうどで甘く、遅いと苦くなります。"
+        }
+      }
+    },
+    {
       "id": "a08-light-roast-hot",
       "level": "advanced",
       "lesson": {
@@ -2611,6 +2761,512 @@
       }
     },
     {
+      "id": "a12-weak",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "trouble",
+        "method": "origami",
+        "scene": "hot",
+        "word": "薄い",
+        "ask": "時は？",
+        "hook": "薄い時は粉を増やす",
+        "topic": "コクと甘みが戻る",
+        "why": "溶けた成分が少ないと、水っぽく感じる",
+        "effect": [
+          {
+            "label": "粉を増やす",
+            "taste": "コクと甘みが出る"
+          },
+          {
+            "label": "粉を減らす",
+            "taste": "さらに薄く、軽い"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "まだ薄い時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "重くなった時",
+            "fix": "淹れた後にお湯を足す"
+          }
+        ],
+        "core": "粉を増やすと、溶ける成分が増える",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 30,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "コク",
+              "from": 30,
+              "to": 60
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "粉を増やすと味が戻る",
+          "left": {
+            "label": "いつもの粉",
+            "result": "水っぽい",
+            "strength": 2
+          },
+          "right": {
+            "label": "粉を増やす",
+            "result": "コクと甘み",
+            "strength": 4
+          },
+          "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a13-strong-sour",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "kalita-wave",
+        "scene": "hot",
+        "word": "濃いのに",
+        "ask": "酸っぱい？",
+        "hook": "粉を少し減らす",
+        "topic": "酸が引いて甘みが出る",
+        "why": "粉が多いと、お湯が足りず溶けきらない",
+        "effect": [
+          {
+            "label": "粉を減らす",
+            "taste": "甘く、なめらか"
+          },
+          {
+            "label": "粉を増やす",
+            "taste": "濃いのに酸っぱい"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "薄くなった時",
+            "fix": "挽き目を少し細かくする"
+          },
+          {
+            "problem": "まだ酸っぱい時",
+            "fix": "お湯の温度を上げる"
+          }
+        ],
+        "core": "収率が上がると、酸の後ろの甘みが出る",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 70,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 35,
+              "to": 60
+            },
+            {
+              "label": "酸味",
+              "from": 65,
+              "to": 40
+            }
+          ]
+        },
+        "visual": {
+          "type": "scale",
+          "caption": "粉を減らすと適正に近づく",
+          "label": "収率",
+          "zones": [
+            "未抽出",
+            "適正",
+            "過抽出"
+          ],
+          "from": 20,
+          "to": 45
+        },
+        "narration": {
+          "title": "濃いのに、酸っぱい。そんな時は、粉が多すぎるのかもしれません。",
+          "why": "粉が多いと、お湯が足りずに溶けきらない。濃さは出ても、溶け出す割合、収率は低いままです。",
+          "visual": "収率が低いと酸っぱく、適正に近づくと甘みが出ます。"
+        }
+      }
+    },
+    {
+      "id": "a14-fresh-grind",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "grind",
+        "method": "v60",
+        "scene": "hot",
+        "word": "挽きたて",
+        "ask": "で変わる？",
+        "hook": "淹れる直前に豆を挽く",
+        "topic": "香りが立ち甘く感じる",
+        "why": "挽いた粉は香りの成分がすぐ逃げていく",
+        "effect": [
+          {
+            "label": "直前に挽く",
+            "taste": "香りが立ち、甘い"
+          },
+          {
+            "label": "挽き置く",
+            "taste": "香りが弱く、平ら"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "香りが弱い時",
+            "fix": "挽いたらすぐ淹れる"
+          },
+          {
+            "problem": "挽く道具が無い時",
+            "fix": "粉は密閉して早めに使う"
+          }
+        ],
+        "core": "挽いた直後が、香りがいちばん多い",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 55,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "香り",
+              "from": 40,
+              "to": 75
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "挽きたては香りが立つ",
+          "left": {
+            "label": "挽き置き",
+            "result": "香りが弱い",
+            "strength": 3
+          },
+          "right": {
+            "label": "挽きたて",
+            "result": "香りが立つ",
+            "strength": 3
+          },
+          "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a15-stir",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "v60",
+        "scene": "hot",
+        "word": "かき混ぜる",
+        "ask": "とどうなる？",
+        "hook": "蒸らしの粉を軽く混ぜる",
+        "topic": "溶け残りが減り甘くなる",
+        "why": "動かすと粉の周りに新しいお湯が触れる",
+        "effect": [
+          {
+            "label": "混ぜる",
+            "taste": "甘く、厚みが出る"
+          },
+          {
+            "label": "混ぜない",
+            "taste": "軽く、すっきり"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "渋くなった時",
+            "fix": "混ぜる回数を減らす"
+          },
+          {
+            "problem": "落ちが遅い時",
+            "fix": "そっと混ぜるだけにする"
+          }
+        ],
+        "core": "混ぜると、粉がまんべんなく溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 50,
+            "to": 62
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "厚み",
+              "from": 40,
+              "to": 60
+            }
+          ]
+        },
+        "visual": {
+          "type": "graph",
+          "caption": "軽く混ぜると甘みが増す",
+          "xLabel": "混ぜ方",
+          "yLabel": "甘み",
+          "points": [
+            {
+              "label": "混ぜない",
+              "value": 2
+            },
+            {
+              "label": "軽く",
+              "value": 4
+            },
+            {
+              "label": "強く",
+              "value": 3
+            }
+          ],
+          "mark": 1
+        },
+        "narration": {
+          "title": "蒸らしの粉を、軽くかき混ぜると、どうなる？",
+          "why": "動かすと、粉の周りに新しいお湯が触れて、溶け残りが減ります。",
+          "visual": "軽く混ぜると甘みが増え、混ぜすぎると渋くなります。"
+        }
+      }
+    },
+    {
+      "id": "a16-rinse-paper",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "gear",
+        "method": "chemex",
+        "scene": "hot",
+        "word": "紙の湯通し",
+        "ask": "はいる？",
+        "hook": "紙を先にお湯ですすぐ",
+        "topic": "紙のにおいが消え澄む",
+        "why": "熱いお湯で紙のにおいを先に流しておく",
+        "effect": [
+          {
+            "label": "湯通しする",
+            "taste": "澄んで、すっきり"
+          },
+          {
+            "label": "しない",
+            "taste": "紙っぽさが残る"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "薄くなった時",
+            "fix": "湯通しの湯は先に捨てる"
+          },
+          {
+            "problem": "紙っぽい時",
+            "fix": "湯通しの湯を多めにする"
+          }
+        ],
+        "core": "紙のにおいを流すと、味が澄む",
+        "motion": {
+          "type": "liquid",
+          "shade": {
+            "from": 55,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "雑味",
+              "from": 50,
+              "to": 25
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "湯通しで紙のにおいが消える",
+          "left": {
+            "label": "そのまま",
+            "result": "紙っぽい",
+            "strength": 3
+          },
+          "right": {
+            "label": "湯通し",
+            "result": "澄んだ味",
+            "strength": 3
+          },
+          "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a17-filtered-water",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "water",
+        "method": "v60",
+        "scene": "hot",
+        "word": "浄水",
+        "ask": "で淹れると？",
+        "hook": "水道水を浄水に替える",
+        "topic": "においが消え香りが立つ",
+        "why": "水道水の塩素のにおいが香りを隠す",
+        "effect": [
+          {
+            "label": "浄水にする",
+            "taste": "香りがはっきり"
+          },
+          {
+            "label": "水道水にする",
+            "taste": "かすかに薬っぽい"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "浄水器が無い時",
+            "fix": "やかんで少し長めに沸かす"
+          },
+          {
+            "problem": "まだにおう時",
+            "fix": "ボトルの軟水で淹れる"
+          }
+        ],
+        "core": "塩素が抜けると、豆の香りが届く",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 50,
+            "to": 50
+          },
+          "meters": [
+            {
+              "label": "香り",
+              "from": 40,
+              "to": 70
+            },
+            {
+              "label": "雑味",
+              "from": 45,
+              "to": 25
+            }
+          ]
+        },
+        "visual": {
+          "type": "compare",
+          "caption": "浄水で香りがはっきりする",
+          "left": {
+            "label": "水道水",
+            "result": "薬っぽい",
+            "strength": 3
+          },
+          "right": {
+            "label": "浄水",
+            "result": "香りが立つ",
+            "strength": 3
+          },
+          "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a18-extraction-order",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "v60",
+        "scene": "hot",
+        "word": "溶ける順番",
+        "ask": "ってある？",
+        "hook": "甘みの所で抽出を止める",
+        "topic": "止めどきで甘さが決まる",
+        "why": "酸が先、甘みが次、苦味は最後に出やすい",
+        "effect": [
+          {
+            "label": "程よく止める",
+            "taste": "甘く、まとまる"
+          },
+          {
+            "label": "最後まで出す",
+            "taste": "苦味と渋みが出る"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "酸っぱい時",
+            "fix": "止めるのを少し遅くする"
+          },
+          {
+            "problem": "苦い時",
+            "fix": "最後の湯を落とし切らない"
+          }
+        ],
+        "core": "溶ける順番を知ると、止めどきが分かる",
+        "motion": {
+          "type": "meter",
+          "shade": {
+            "from": 50,
+            "to": 55
+          },
+          "meters": [
+            {
+              "label": "酸味",
+              "from": 70,
+              "to": 45
+            },
+            {
+              "label": "甘味",
+              "from": 30,
+              "to": 65
+            },
+            {
+              "label": "苦味",
+              "from": 20,
+              "to": 35
+            }
+          ]
+        },
+        "visual": {
+          "type": "graph",
+          "caption": "途中までは甘みが増える",
+          "xLabel": "落ちる順",
+          "yLabel": "甘み",
+          "points": [
+            {
+              "label": "最初",
+              "value": 2
+            },
+            {
+              "label": "中盤",
+              "value": 4
+            },
+            {
+              "label": "後半",
+              "value": 3
+            },
+            {
+              "label": "最後",
+              "value": 1
+            }
+          ],
+          "mark": 1,
+          "zones": [
+            "酸っぱい",
+            "甘い",
+            "苦い"
+          ]
+        },
+        "narration": {
+          "title": "コーヒーの成分には、溶ける順番があります。",
+          "why": "先に酸、次に甘み、最後に苦味や渋みが出やすい。どこで止めるかで、一杯の味が決まります。",
+          "visual": "途中までは甘みが増え、最後まで出し切ると苦味が勝ちます。"
+        }
+      }
+    },
+    {
       "id": "a09-one-change",
       "level": "advanced",
       "lesson": {
@@ -2671,6 +3327,77 @@
             "strength": 3
           },
           "pick": "right"
+        }
+      }
+    },
+    {
+      "id": "a19-preheat",
+      "level": "advanced",
+      "lesson": {
+        "pillar": "theory",
+        "method": "v60",
+        "scene": "hot",
+        "word": "器の予熱",
+        "ask": "をすると？",
+        "hook": "ドリッパーを温めておく",
+        "topic": "温度が保たれ甘くなる",
+        "why": "冷たい器がお湯の熱を奪い温度が下がる",
+        "effect": [
+          {
+            "label": "温めておく",
+            "taste": "甘く、丸い"
+          },
+          {
+            "label": "冷たいまま",
+            "taste": "酸が立ち、軽い"
+          }
+        ],
+        "tips": [
+          {
+            "problem": "酸っぱい時",
+            "fix": "サーバーとカップも温める"
+          },
+          {
+            "problem": "苦くなった時",
+            "fix": "お湯の温度を少し下げる"
+          }
+        ],
+        "core": "温度が下がらないと、甘みまで溶ける",
+        "motion": {
+          "type": "dissolve",
+          "shade": {
+            "from": 50,
+            "to": 60
+          },
+          "meters": [
+            {
+              "label": "甘味",
+              "from": 40,
+              "to": 65
+            },
+            {
+              "label": "酸味",
+              "from": 60,
+              "to": 45
+            }
+          ]
+        },
+        "visual": {
+          "type": "scale",
+          "caption": "温めると湯温が下がりにくい",
+          "label": "湯温",
+          "zones": [
+            "低め",
+            "ちょうど",
+            "高め"
+          ],
+          "from": 30,
+          "to": 55
+        },
+        "narration": {
+          "title": "ドリッパーを先に温めておくと、どうなる？",
+          "why": "冷たい器は、お湯の熱を奪います。粉の周りの温度が下がると、甘みが溶けきらず、酸が残ります。",
+          "visual": "温めておくと、湯温がちょうどの所にとどまります。"
         }
       }
     }
