@@ -1,59 +1,52 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a03-brew-chart",
-    "pillar": "terms",
-    "method": "paper-drip",
+    "episode": "a04-bypass",
+    "pillar": "ratio",
+    "method": "moka-pot",
     "scene": "hot",
-    "word": "濃さと収率",
-    "ask": "の違い？",
-    "hook": "お湯の量だけを動かす",
-    "topic": "濃さだけが変わる",
-    "why": "湯は飲み物を薄め、挽き目は溶ける量を変える",
-    "core": "挽き目は味の出方、お湯の量は濃さを動かす",
+    "word": "足し湯",
+    "ask": "で薄めると？",
+    "hook": "淹れた後にお湯を足す",
+    "topic": "苦味が和らぎ軽やかに",
+    "why": "溶けた味はそのまま、お湯だけ増えるから",
+    "core": "足すと、強さが和らいで飲みやすい",
     "motion": {
-      "type": "compare",
-      "shade": { "from": 45, "to": 70 },
+      "type": "liquid",
+      "shade": { "from": 75, "to": 50 },
       "meters": [
-        { "label": "濃さ", "from": 45, "to": 70 }
+        { "label": "強さ", "from": 75, "to": 50 }
       ]
     },
     "effect": [
-      { "label": "お湯を減らす", "taste": "ほぼそのままで濃く" },
-      { "label": "挽きを細かく", "taste": "程よく挽けば甘く丸く" }
+      { "label": "足す", "taste": "苦味が和らぎ軽やか" },
+      { "label": "足さない", "taste": "濃厚でしっかり" }
     ],
     "tips": [
-      { "problem": "濃くしたい時", "fix": "お湯を少し減らす" },
-      { "problem": "酸っぱい時", "fix": "挽き目を細かくする" },
-      { "problem": "苦い時", "fix": "挽き目を粗くする" }
+      { "problem": "足しすぎた時", "fix": "次は少しずつ足す" },
+      { "problem": "味がぼやける時", "fix": "粉を増やして淹れ直す" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "2つのつまみは役割が違う",
-      "left": {
-        "label": "お湯の量",
-        "result": "濃さが動く",
-        "strength": 4
-      },
-      "right": {
-        "label": "挽き目",
-        "result": "収率が動く",
-        "strength": 4
-      }
+      "type": "scale",
+      "caption": "足すと強さが和らぐ",
+      "label": "濃さ",
+      "zones": ["薄い", "ちょうど", "濃い"],
+      "from": 75,
+      "to": 50
     },
     "narration": {
-      "title": "濃さと収率って、どう違うのでしょう？",
-      "why": "お湯は飲み物を薄め、挽き目は豆から溶ける量を変えます。",
-      "visual": "お湯の量が濃さを、挽き目が味の出方、つまり収率を動かします。",
-      "effect": "お湯を減らすと、ほぼそのままで濃く。程よく挽けば、甘みが増え角が丸くなります。",
-      "tips": "濃くしたい時は、お湯を少し減らす。酸っぱい時は細かく、苦い時は粗くします。"
+      "title": "淹れた後にお湯を足すと、どうなるでしょう？",
+      "why": "溶け出した味はそのまま、お湯の量だけ増えるからです。",
+      "visual": "薄いと水っぽく、ちょうどで軽やかに、濃いとしっかりです。",
+      "effect": "足すと、苦味が和らぎ軽やかに。足さないと、濃厚でしっかり。",
+      "tips": "足しすぎたら、次は少しずつ。ぼやけたら、粉を増やして淹れ直し。"
     },
     "sources": [
+      "https://perfectdailygrind.com/2020/11/what-is-bypass-brewing/",
       "https://sca.coffee/research/coffee-brewing-chart",
-      "https://en.wikipedia.org/wiki/Coffee_extraction",
-      "https://perfectdailygrind.com/2021/02/what-is-coffee-extraction-yield-strength/"
+      "https://en.wikipedia.org/wiki/Caff%C3%A8_americano"
     ]
   }
 }

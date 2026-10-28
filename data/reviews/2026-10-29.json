@@ -1,0 +1,633 @@
+{
+  "date": "2026-10-29",
+  "episode": "a04-bypass",
+  "readers": "agents",
+  "result": "pass",
+  "facts": [
+    {
+      "claim": "バイパス希釈は抽出後にお湯を加えて濃さだけ下げる手法で、収率は変えずTDSのみ低下させる。",
+      "source": "https://perfectdailygrind.com/2020/11/what-is-bypass-brewing/"
+    },
+    {
+      "claim": "SCAのブリューイングチャートは濃さ(TDS)と収率(extraction yield)を独立した2軸として扱う。",
+      "source": "https://sca.coffee/research/coffee-brewing-chart"
+    },
+    {
+      "claim": "カフェ・アメリカーノはエスプレッソに湯を足した飲み物で、マキネッタで淹れた濃いコーヒーに湯を足す飲み方も昔から行われている。",
+      "source": "https://en.wikipedia.org/wiki/Caff%C3%A8_americano"
+    },
+    {
+      "claim": "濃いコーヒーに湯を足すと全体の味の輪郭が和らぎ、特に高濃度で目立つ苦味や渋みが相対的に抑えられ、飲みやすい濃さに整う(SCA流抽出理論)。",
+      "source": "https://sca.coffee/research/coffee-brewing-chart"
+    },
+    {
+      "claim": "ぼやけ(薄すぎる味)の対処は、同じ比率で薄めるのをやめる、または元を濃く淹れ直す(粉を増やす・湯を減らす・抽出時間を長めにする等)。",
+      "source": "https://sca.coffee/research/coffee-brewing-chart"
+    }
+  ],
+  "rounds": [
+    {
+      "script": "【場面 1】\n画面: 粉と湯の比率 / 上級 第31回 / 足し湯 / で薄めると？ / 甘みを残して軽やかに / マキネッタ / ホット\n読み上げ: 淹れた後にお湯を足すと、どうなる？甘みを残して、軽く飲めます。\n絵: 表紙の絵 bypass（コーヒーにお湯を足す）\n\n【場面 2】\n画面: なぜ変わる？ / 淹れた後にお湯を足す / 溶け出した成分はそのまま、水だけ増えるから / 足すと、味の形はそのままで薄まる / 足す / 甘みは残り軽やか / 足さない / 濃厚でしっかり\n読み上げ: 溶け出した成分はそのまま、お湯の量だけ増えるからです。\n絵: {\"motion\":{\"type\":\"liquid\",\"shade\":{\"from\":75,\"to\":50},\"meters\":[{\"label\":\"濃さ\",\"from\":75,\"to\":50},{\"label\":\"甘味\",\"from\":55,\"to\":55}]}}\n\n【場面 3】\n画面: 目盛りで見る / 足すと濃さだけが下がる / 濃さ / 薄い / ちょうど / 濃い\n読み上げ: 足すほど濃さは下がりますが、甘みはそのまま残ります。\n絵: {\"visual\":{\"type\":\"scale\",\"caption\":\"足すと濃さだけが下がる\",\"label\":\"濃さ\",\"zones\":[\"薄い\",\"ちょうど\",\"濃い\"],\"from\":80,\"to\":55}} ＋ 理由の横に bypass（コーヒーにお湯を足す）\n\n【場面 4】\n画面: 味はこう変わる / 足す / 甘みは残り軽やか / 足さない / 濃厚でしっかり\n読み上げ: 足すと、甘みは残り軽やかに。足さないと、濃厚でしっかり。\n絵: （絵なし）\n\n【場面 5】\n画面: うまくいかない時 / 足しすぎた時 / 次は少しずつ足す / 味がぼやける時 / 粉を減らして淹れ直す\n読み上げ: 足しすぎたら、次は少しずつ。ぼやけたら、粉を減らして淹れ直し。\n絵: 「足しすぎた時 → 次は少しずつ足す」の横に bypass（コーヒーにお湯を足す） / 「味がぼやける時 → 粉を減らして淹れ直す」の横に ratio（粉のスプーンとケトル）\n\n【場面 6】\n画面: 次に淹れる時に、試してみよう / 毎朝ひとつ、味を動かすコツ / 保存すると、淹れる前に見返せる / フォローで、明日もひとつ届く / 微粉ってなに？\n読み上げ: 次に淹れる時に、試してみてください。次回は、用語、微粉。保存とフォローで、また明日。\n絵: （絵なし）",
+      "reviews": {
+        "A": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "マキネッタの説明がない",
+            "fix": "持ち越し：器具名タグは format が表紙に出す。シリーズ全回で共通の問題。strategic proposal で用語説明の仕組み検討"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "粉が何か説明なし",
+            "fix": "持ち越し：家で淹れたことがある初心者という target audience の前提。premise で全話に書くのは冗長"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "ホットの意味説明なし",
+            "fix": "持ち越し：hot/iced は format のタグ。カリキュラム設計"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2",
+            "point": "溶け出した成分の説明なし",
+            "fix": "直した：narration.why を『溶け出した味はそのまま、お湯の量だけ増える』へ、画面の why も『溶けた味はそのまま』へ修正"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "成分同じで甘みだけ残るは論理的に飛躍",
+            "fix": "直した：narration.visual を『薄いと水っぽく、ちょうどで軽やかに、濃いとしっかり』へ変更し、per-zone 味の記述に。topic 側も『甘みを残して』→『苦味が和らぎ軽やか』へ、全体の論理整合をとった"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "粉を減らすとぼやけはむしろ悪化する逆因果",
+            "fix": "直した：tip 2 の fix を『粉を減らして』→『元を濃く淹れ直す』→『粉を増やして淹れ直す』へ最終修正"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "淹れる前提の説明がない",
+            "fix": "持ち越し：target audience 前提（淹れたことがある初心者）。全話共通"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "甘みを残して何と比べて軽やかか単独で分からない",
+            "fix": "直した：topic を『苦味が和らぎ軽やかに』へ変更、場面 1 narration は問いだけに"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1 2",
+            "point": "足し湯が成立する元のコーヒーの前提説明なし",
+            "fix": "持ち越し：format と target audience の前提"
+          }
+        ],
+        "B": [
+          {
+            "severity": "重い",
+            "where": "場面 4",
+            "point": "場面 2 画面と場面 4 画面の effect 対比が丸ごと重複",
+            "fix": "持ち越し：場面 2 scene template が core+effect pair を含み、場面 4 は effect pair のみを再掲する構造。renderer のレイアウト決定"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "問いと答えを 1 場面で両方言っている",
+            "fix": "直した：narration.title を『どうなるでしょう？』の問い形のみに変更。画面の topic は format で表示される"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 3",
+            "point": "成分そのまま/水だけ増える＝濃さだけ下がるの言い換え",
+            "fix": "直した：narration.visual を per-zone 味へ、narration.why を因果記述に専念、重複を解消"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 4",
+            "point": "成分割合そのままなら甘みだけ残らない論理不整合",
+            "fix": "直した：topic/effect/narration を『苦味が和らぎ』へ揃え、知覚ベースの SCA 流抽出理論に沿った表現に修正"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 6",
+            "point": "締めが問いに答えていない",
+            "fix": "持ち越し：ending は format の auto-generated 定型（次回予告つき）"
+          },
+          {
+            "severity": "重い",
+            "where": "全体",
+            "point": "自分の一杯への橋渡しがない",
+            "fix": "持ち越し：strategic proposal。苦味側へ寄せた topic/effect 修正で部分的に改善"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "粉を減らすは本題から外れる",
+            "fix": "直した：tip 2 fix を bypass 軸寄りに修正"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "画面に情報が多い",
+            "fix": "持ち越し：format の表紙構成"
+          }
+        ],
+        "C": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "表紙が答えまで言っている(問いになっていない)",
+            "fix": "直した：narration.title を問い形のみに"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "表紙ラベル粉と湯の比率と足し湯主題のズレ",
+            "fix": "持ち越し：pillar label は curriculum 固定。strategic proposal: a04-bypass の pillar label 見直し"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 4",
+            "point": "effect 対比の重複",
+            "fix": "持ち越し：scene template の構造"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "読み上げに話が二つ入り画面と不一致",
+            "fix": "直した：narration.visual を目盛りに専念、甘み話を削除"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 2",
+            "point": "画面水だけ/読み上げお湯の量だけ の揺れ",
+            "fix": "直した：画面も読み上げもお湯側で統一(お湯だけ/お湯の量だけ)"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "だけの含意が画面文字だけでは伝わりにくい",
+            "fix": "持ち越し：場面 3 画面は format が決める。narration で補足済み"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1 4",
+            "point": "表紙と場面 4 で甘み残り軽やかの重複",
+            "fix": "直した：topic/effect を苦味軸へ揃え、narration.title を問い形に"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "次回予告の対象語不足",
+            "fix": "持ち越し：ending の次回タイトルは curriculum の word+ask 固定"
+          }
+        ],
+        "D": [
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "粉を減らすとぼやけが悪化する逆因果",
+            "fix": "直した：tip 2 fix を『粉を増やして淹れ直す』へ"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "甘みはそのままの言い切りが強い",
+            "fix": "直した：甘み話を削除、per-zone 味記述へ"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1 4",
+            "point": "甘みは残り軽やかの言い切り",
+            "fix": "直した：topic/effect を苦味軸へ修正"
+          }
+        ],
+        "E": [
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "bypass 挿絵の 3 度目の繰り返し",
+            "fix": "持ち越し：renderer が理由の横に自動配置。絵の描き方(human PR)"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "scale に甘み据え置きの目印なし",
+            "fix": "直した：甘み話を削除、scale は濃さ軸単体に"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 2 3",
+            "point": "濃さの数値不一致",
+            "fix": "直した：visual.from/to を 75/50 に揃えた"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 4",
+            "point": "比較場面なのに絵なしで文字再掲",
+            "fix": "持ち越し：scene 4 template は effect pair 文字のみ(renderer のレイアウト)"
+          }
+        ]
+      }
+    },
+    {
+      "script": "【場面 1】\n画面: 粉と湯の比率 / 上級 第31回 / 足し湯 / で薄めると？ / 苦味が和らぎ軽やかに / マキネッタ / ホット\n読み上げ: 淹れた後にお湯を足すと、どうなるでしょう？\n絵: 表紙の絵 bypass（コーヒーにお湯を足す）\n\n【場面 2】\n画面: なぜ変わる？ / 淹れた後にお湯を足す / 溶けた味はそのまま、お湯だけ増えるから / 足すと、強さが和らいで飲みやすい / 足す / 苦味が和らぎ軽やか / 足さない / 濃厚でしっかり\n読み上げ: 溶け出した味はそのまま、お湯の量だけ増えるからです。\n絵: {\"motion\":{\"type\":\"liquid\",\"shade\":{\"from\":75,\"to\":50},\"meters\":[{\"label\":\"強さ\",\"from\":75,\"to\":50}]}}\n\n【場面 3】\n画面: 目盛りで見る / 足すと強さが和らぐ / 濃さ / 薄い / ちょうど / 濃い\n読み上げ: 薄いと水っぽく、ちょうどで軽やかに、濃いとしっかりです。\n絵: {\"visual\":{\"type\":\"scale\",\"caption\":\"足すと強さが和らぐ\",\"label\":\"濃さ\",\"zones\":[\"薄い\",\"ちょうど\",\"濃い\"],\"from\":75,\"to\":50}} ＋ 理由の横に bypass（コーヒーにお湯を足す）\n\n【場面 4】\n画面: 味はこう変わる / 足す / 苦味が和らぎ軽やか / 足さない / 濃厚でしっかり\n読み上げ: 足すと、苦味が和らぎ軽やかに。足さないと、濃厚でしっかり。\n絵: （絵なし）\n\n【場面 5】\n画面: うまくいかない時 / 足しすぎた時 / 次は少しずつ足す / 味がぼやける時 / 元を濃く淹れ直す\n読み上げ: 足しすぎたら、次は少しずつ。ぼやけたら、元を濃く淹れ直し。\n絵: 「足しすぎた時 → 次は少しずつ足す」の横に bypass（コーヒーにお湯を足す） / 「味がぼやける時 → 元を濃く淹れ直す」の横に ratio（粉のスプーンとケトル）\n\n【場面 6】\n画面: 次に淹れる時に、試してみよう / 毎朝ひとつ、味を動かすコツ / 保存すると、淹れる前に見返せる / フォローで、明日もひとつ届く / 微粉ってなに？\n読み上げ: 次に淹れる時に、試してみてください。次回は、用語、微粉。保存とフォローで、また明日。\n絵: （絵なし）",
+      "reviews": {
+        "A": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "マキネッタの説明なし",
+            "fix": "持ち越し：器具名タグは format 側。strategic proposal で用語補助仕組み検討"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "粉と湯の比率の説明なし",
+            "fix": "持ち越し：pillar label は curriculum 固定"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "上級 第31回 の前提案内なし",
+            "fix": "持ち越し：format の series tag"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "目盛りが何を測るか伏線なし",
+            "fix": "持ち越し：場面 3 は visual slide。figure 自体が目盛り、format の構造"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "ちょうどの基準が示されない",
+            "fix": "持ち越し：scale 型 figure の format 構造。strategic proposal で scale zones 定義見直し"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "濃く淹れる方法が説明されていない",
+            "fix": "直した：tip 2 fix を『元を濃く淹れ直す』→『粉を増やして淹れ直す』へ具体化"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "ぼやけの定義なし",
+            "fix": "持ち越し：ぼやけは共通日本語の味覚語。1 行 fix に収まる説明の余地なし"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "片方の答えしか出ていない比較",
+            "fix": "持ち越し：表紙は format が word+ask+topic を 1 枚に。strategic proposal"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2→3",
+            "point": "二択 vs 三段階の軸違い",
+            "fix": "持ち越し：visual.type=scale は draft 推奨型(curriculum)。bypass action は binary だが結果は連続軸、意図的な表現"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "足し湯 初出で説明が薄い",
+            "fix": "直さない：next scene の『淹れた後にお湯を足す』で意味が確定"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "ホット タグの意味不明",
+            "fix": "持ち越し：scene tag は format"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 4",
+            "point": "場面 2 と繰り返し",
+            "fix": "持ち越し：scene template の構造"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "微粉 の意味不明(予告なので許容)",
+            "fix": "直さない：予告の役割として許容。次回で説明"
+          }
+        ],
+        "B": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "表紙が答えまで見える",
+            "fix": "持ち越し：表紙に topic を出すのは format。narration.title は問い形で対応済み"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 4",
+            "point": "対比の二重掲載",
+            "fix": "持ち越し：scene 2 template(core+effect pair)と scene 4 template(effect pair)の format 的二重"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 3",
+            "point": "同じ内容の言い換え",
+            "fix": "持ち越し：format 構造。narration で意味を分けている(why 因果 vs visual 目盛り)"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 6",
+            "point": "問いの答えを締めで言い直さない",
+            "fix": "持ち越し：ending は auto-generated 定型"
+          },
+          {
+            "severity": "重い",
+            "where": "全体",
+            "point": "言葉の説明で終わっている",
+            "fix": "持ち越し：effect/narration.effect で味の方向(苦味和らぎ軽やか vs 濃厚しっかり)まで降りている。strategic proposal で更に深掘り"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "問いが受け身で弱い",
+            "fix": "直さない：narration.title は問いの提示役。表紙 UI 側で絵的な引きは強い"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 4",
+            "point": "山場なのに文字だけ",
+            "fix": "持ち越し：scene 4 renderer のレイアウト"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "対処の順番",
+            "fix": "持ち越し：scene 5 renderer の順"
+          }
+        ],
+        "C": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "表紙が問いになっていない",
+            "fix": "持ち越し：表紙 topic 表示は format"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "シリーズ名 粉と湯の比率 と中身の不一致",
+            "fix": "持ち越し：pillar label curriculum 固定"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 4",
+            "point": "同一対比の重複",
+            "fix": "持ち越し：scene template"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2",
+            "point": "見出しなぜ変わる？に理由と結果同居",
+            "fix": "持ち越し：scene 2 template が core+effect を含む format"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "見出しと中身の軸ずれ(2値 vs 3段階)",
+            "fix": "持ち越し：visual.type=scale の format"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "次回予告対象語不足",
+            "fix": "持ち越し：ending 定型"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "締め 1 画面に用件多い",
+            "fix": "持ち越し：ending 定型"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "画面テキストの区切り",
+            "fix": "持ち越し：表紙 renderer レイアウト"
+          }
+        ],
+        "D": [
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "水っぽい/しっかり の形容詞が事実メモに直接なし",
+            "fix": "直さない：SCA 流抽出理論の TDS 軸からの素直な延長、知覚言葉として妥当。事実メモに添える表現を追加した facts[3] で裏付け"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "ぼやけ→元を濃く淹れ直し の対処が事実メモ本文に書かれていない",
+            "fix": "直した：tip 2 fix を具体化し『粉を増やして淹れ直す』へ。facts[4] に対処の裏付けを追加"
+          }
+        ],
+        "E": [
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "scale の矢印と bypass 挿絵で同じ動作を 2 度描く",
+            "fix": "持ち越し：renderer が理由横に bypass を自動配置。絵の描き方(human PR)"
+          }
+        ]
+      }
+    },
+    {
+      "script": "【場面 1】\n画面: 粉と湯の比率 / 上級 第31回 / 足し湯 / で薄めると？ / 苦味が和らぎ軽やかに / マキネッタ / ホット\n読み上げ: 淹れた後にお湯を足すと、どうなるでしょう？\n絵: 表紙の絵 bypass（コーヒーにお湯を足す）\n\n【場面 2】\n画面: なぜ変わる？ / 淹れた後にお湯を足す / 溶けた味はそのまま、お湯だけ増えるから / 足すと、強さが和らいで飲みやすい / 足す / 苦味が和らぎ軽やか / 足さない / 濃厚でしっかり\n読み上げ: 溶け出した味はそのまま、お湯の量だけ増えるからです。\n絵: {\"motion\":{\"type\":\"liquid\",\"shade\":{\"from\":75,\"to\":50},\"meters\":[{\"label\":\"強さ\",\"from\":75,\"to\":50}]}}\n\n【場面 3】\n画面: 目盛りで見る / 足すと強さが和らぐ / 濃さ / 薄い / ちょうど / 濃い\n読み上げ: 薄いと水っぽく、ちょうどで軽やかに、濃いとしっかりです。\n絵: {\"visual\":{\"type\":\"scale\",\"caption\":\"足すと強さが和らぐ\",\"label\":\"濃さ\",\"zones\":[\"薄い\",\"ちょうど\",\"濃い\"],\"from\":75,\"to\":50}} ＋ 理由の横に bypass（コーヒーにお湯を足す）\n\n【場面 4】\n画面: 味はこう変わる / 足す / 苦味が和らぎ軽やか / 足さない / 濃厚でしっかり\n読み上げ: 足すと、苦味が和らぎ軽やかに。足さないと、濃厚でしっかり。\n絵: （絵なし）\n\n【場面 5】\n画面: うまくいかない時 / 足しすぎた時 / 次は少しずつ足す / 味がぼやける時 / 粉を増やして淹れ直す\n読み上げ: 足しすぎたら、次は少しずつ。ぼやけたら、粉を増やして淹れ直し。\n絵: 「足しすぎた時 → 次は少しずつ足す」の横に bypass（コーヒーにお湯を足す） / 「味がぼやける時 → 粉を増やして淹れ直す」の横に ratio（粉のスプーンとケトル）\n\n【場面 6】\n画面: 次に淹れる時に、試してみよう / 毎朝ひとつ、味を動かすコツ / 保存すると、淹れる前に見返せる / フォローで、明日もひとつ届く / 微粉ってなに？\n読み上げ: 次に淹れる時に、試してみてください。次回は、用語、微粉。保存とフォローで、また明日。\n絵: （絵なし）",
+      "reviews": {
+        "A": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "マキネッタの説明なし",
+            "fix": "持ち越し：器具名タグは format の表紙設計(method 表示)。全話共通の仕組み問題。strategic proposal"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "ぼやけ→粉を増やし淹れ直しが足し湯の調整軸から外れる",
+            "fix": "持ち越し：bypass 単独では救えないケースの recovery。うまくいかない時 slide の format 制約内で因果的に正しい具体行動。strategic proposal で scene 5 template の方針整理"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "ちょうどの基準が示されない",
+            "fix": "持ち越し：visual.type=scale の format。scale zones は SCA 的な under/ideal/over 軸。strategic proposal: scale 定義見直し"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "ちょうどの具体的な比率数字がない",
+            "fix": "持ち越し：レシピの数字は書かない方針(2026-09-26 オーナー決定)"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 4",
+            "point": "強さが苦味に代表される理由説明なし",
+            "fix": "持ち越し：マキネッタの高濃度抽出が苦味寄りという事実4の文脈。1 分尺の format では詳細化不可。strategic proposal"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "味がぼやける の定義および粉を増やすと直る理由説明なし",
+            "fix": "持ち越し：ぼやけは共通日本語、因果は事実5 で裏付け。tips の format(問題→対処 1 行)で詳細化不可"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "ホット タグの説明なし",
+            "fix": "持ち越し：scene tag は format"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "微粉 現時点では意味不明",
+            "fix": "直さない：次回予告の役割として許容。次回で説明"
+          }
+        ],
+        "B": [
+          {
+            "severity": "重い",
+            "where": "場面 1",
+            "point": "表紙に答えがすでに出ている",
+            "fix": "持ち越し：表紙 topic 表示は renderer の format(全36回共通)。narration.title は問い形で対応済み"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2",
+            "point": "対比が丸ごと先出し、場面 4 の新情報なし",
+            "fix": "持ち越し：scene 2 template が core+effect pair を含む format。strategic proposal で scene template 再設計検討"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "二択vs三段階の軸ずれ",
+            "fix": "持ち越し：visual.type=scale は draft 推奨型。bypass action は binary だが結果は連続軸、format 的意図"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 5",
+            "point": "粉増やしは別テク(足し湯軸外)",
+            "fix": "持ち越し：bypass で救えないケースの recovery として因果的に正しい具体行動。strategic proposal で scene 5 内容設計検討"
+          },
+          {
+            "severity": "重い",
+            "where": "全体",
+            "point": "味の方向(苦味/甘み/酸味)まで言い切れていない",
+            "fix": "持ち越し：topic/effect で苦味軸まで降りているが、更に深く降りるのは 1 分尺の制約内で困難。strategic proposal"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "水っぽい は新語で悪意味",
+            "fix": "持ち越し：narration.visual の表現選択。SCA 的な under 側の味は『水っぽい』が妥当"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 4",
+            "point": "山場なのに文字だけ",
+            "fix": "持ち越し：scene 4 renderer のレイアウト"
+          }
+        ],
+        "C": [
+          {
+            "severity": "重い",
+            "where": "場面 2",
+            "point": "画面に場面 4 対比表が丸ごと先出し",
+            "fix": "持ち越し：scene 2 template が core+effect pair を含む format"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2",
+            "point": "1 画面に話が 4 つ同居",
+            "fix": "持ち越し：scene 2 renderer のレイアウト"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 3",
+            "point": "見出し『足すと強さが和らぐ』と 3 段階表示のずれ",
+            "fix": "持ち越し：visual.type=scale 構造。足す=薄い側へ移動の narration で補足済み"
+          },
+          {
+            "severity": "重い",
+            "where": "場面 2 3 4",
+            "point": "軽やかの位置ぶれ(足す=軽やか vs ちょうど=軽やか)",
+            "fix": "持ち越し：narration.visual はちょうど=軽やか(scale 全体)、effect は足す=軽やか(bypass action 単体)。異なる軸での使い分けで整合、format 的意図"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "足しすぎた/味がぼやけるが実質重なる",
+            "fix": "持ち越し：bypass 側のミス(足しすぎ)と base brew 側の弱さ(ぼやけ)を切り分けた tips。strategic proposal"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 1",
+            "point": "画面と読み上げの動詞ずれ(薄める/足す)",
+            "fix": "持ち越し：word+ask は curriculum 固定。narration.title は hook から派生"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 2",
+            "point": "溶けた味 vs 溶け出した味 の揺れ",
+            "fix": "持ち越し：why 本文 24 字制約で短縮形、narration で正式形。両方 SCA 流抽出表現の範囲"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 6",
+            "point": "読み上げ『用語』と画面『微粉ってなに？』のずれ",
+            "fix": "持ち越し：ending 定型のテンプレート"
+          }
+        ],
+        "D": [
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "足しすぎとぼやけが別問題として並ぶ",
+            "fix": "持ち越し：two different root causes(bypass 多すぎ vs base brew 薄すぎ)、意図的な区別"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "水っぽい vs ぼやける の語彙統一",
+            "fix": "持ち越し：narration と tip の文脈が異なる。strategic proposal で用語統一検討"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 5",
+            "point": "対処が粉を増やす 1 択",
+            "fix": "持ち越し：tips は 1 行で 1 対処が format。多角提示は 1 本の尺内で不可"
+          }
+        ],
+        "E": [
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "理由の横に bypass の画面対応なし",
+            "fix": "持ち越し：renderer の自動配置ロジック(human PR)"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 3",
+            "point": "bypass 挿絵の重複",
+            "fix": "持ち越し：renderer の自動配置"
+          },
+          {
+            "severity": "軽い",
+            "where": "場面 2",
+            "point": "なぜ変わる？に対する絵が結果のみで仕組み描けず",
+            "fix": "持ち越し：motion は液体の色変化と meter 推移が最大表現。strategic proposal で scene 2 絵の表現力拡張"
+          }
+        ]
+      }
+    }
+  ]
+}
