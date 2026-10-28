@@ -103,6 +103,16 @@ export const EPISODE_SUBJECT: Record<string, Subject> = {
   "a07-pour-height": "pour-high",
   "a08-light-roast-hot": "beans-light",
   "a09-one-change": "notebook",
+  "a10-uneven": "dripper-top",
+  "a11-flow-speed": "drawdown",
+  "a12-weak": "cup-light",
+  "a13-strong-sour": "ratio",
+  "a14-fresh-grind": "grinder",
+  "a15-stir": "bloom",
+  "a16-rinse-paper": "kettle",
+  "a17-filtered-water": "water",
+  "a18-extraction-order": "pour",
+  "a19-preheat": "kettle",
 };
 
 export interface Tone {
@@ -121,6 +131,7 @@ const PILLAR_TONES: Record<string, Tone> = {
   trouble: { accent: "#A0584F", field: "#DDB9B2", deep: "#5C3530" },
   nogear: { accent: "#6F7B4A", field: "#C9CDB0", deep: "#434A2A" },
   water: { accent: "#3E6F80", field: "#B6CCD2", deep: "#2F4A52" },
+  theory: { accent: "#7A5A3A", field: "#D3C2AE", deep: "#4A3624" },
 };
 
 // Term episodes, in curriculum order, each its own colour (cycled; neighbours differ).

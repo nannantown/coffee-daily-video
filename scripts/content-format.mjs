@@ -78,6 +78,10 @@ export const PILLARS = {
   nogear: "器具がなくてもできる",
   water: "水",
   terms: "用語", // one word explained in its own episode (TDS, 抽出収率, 過抽出 …)
+  // why a cup tastes the way it does, carried through to "so your cup gets sweeter"
+  // (owner 2026-10-28: 「収率ってなに」 went viral → drip theory as a standing pillar,
+  // 2-3 episodes a week; docs/curriculum.md 「理論の柱」)
+  theory: "抽出の理屈",
 };
 
 /**
