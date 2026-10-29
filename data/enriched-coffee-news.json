@@ -1,52 +1,59 @@
 {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a04-bypass",
-    "pillar": "ratio",
-    "method": "moka-pot",
+    "episode": "a05-fines",
+    "pillar": "terms",
+    "method": "v60",
     "scene": "hot",
-    "word": "足し湯",
-    "ask": "で薄めると？",
-    "hook": "淹れた後にお湯を足す",
-    "topic": "苦味が和らぎ軽やかに",
-    "why": "溶けた味はそのまま、お湯だけ増えるから",
-    "core": "足すと、強さが和らいで飲みやすい",
+    "word": "微粉",
+    "ask": "ってなに？",
+    "hook": "挽いた粉を茶こしでふるう",
+    "topic": "渋みが抜けて甘くなる",
+    "why": "微粉は味が早く出て渋みのもとになる",
+    "core": "微粉を減らすと、渋みが抜けて甘くなる",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 75, "to": 50 },
+      "type": "dissolve",
+      "shade": { "from": 65, "to": 50 },
       "meters": [
-        { "label": "強さ", "from": 75, "to": 50 }
+        { "label": "渋み", "from": 70, "to": 25 },
+        { "label": "甘み", "from": 35, "to": 70 }
       ]
     },
     "effect": [
-      { "label": "足す", "taste": "苦味が和らぎ軽やか" },
-      { "label": "足さない", "taste": "濃厚でしっかり" }
+      { "label": "ふるう", "taste": "すっきり甘く広がる" },
+      { "label": "ふるわない", "taste": "渋みが強く出る" }
     ],
     "tips": [
-      { "problem": "足しすぎた時", "fix": "次は少しずつ足す" },
-      { "problem": "味がぼやける時", "fix": "粉を増やして淹れ直す" }
+      { "problem": "まだ渋い時", "fix": "もっと丁寧にふるう" },
+      { "problem": "湯が溜まる時", "fix": "次は粗めに挽く" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "足すと強さが和らぐ",
-      "label": "濃さ",
-      "zones": ["薄い", "ちょうど", "濃い"],
-      "from": 75,
-      "to": 50
+      "type": "compare",
+      "caption": "微粉を減らすと甘くなる",
+      "left": {
+        "label": "ふるわない",
+        "result": "渋みが強い",
+        "strength": 4
+      },
+      "right": {
+        "label": "ふるう",
+        "result": "すっきり甘く",
+        "strength": 2
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "淹れた後にお湯を足すと、どうなるでしょう？",
-      "why": "溶け出した味はそのまま、お湯の量だけ増えるからです。",
-      "visual": "薄いと水っぽく、ちょうどで軽やかに、濃いとしっかりです。",
-      "effect": "足すと、苦味が和らぎ軽やかに。足さないと、濃厚でしっかり。",
-      "tips": "足しすぎたら、次は少しずつ。ぼやけたら、粉を増やして淹れ直し。"
+      "title": "微粉って、なに？豆を挽くと出る、とても細かい粉のことです。",
+      "why": "微粉は味が早く出て、渋みのもとに。多いと湯も溜まります。茶こしでふるうと減らせます。",
+      "visual": "微粉を減らすと、渋みが抜けて、甘くなります。"
     },
     "sources": [
-      "https://perfectdailygrind.com/2020/11/what-is-bypass-brewing/",
-      "https://sca.coffee/research/coffee-brewing-chart",
-      "https://en.wikipedia.org/wiki/Caff%C3%A8_americano"
+      "https://baristahustle.com/lesson/p-2-04-grind",
+      "https://perfectdailygrind.com/2026/06/sifting-ground-coffee-filter-brewing/",
+      "https://www.nature.com/articles/s41598-024-55831-x",
+      "https://eightouncecoffee.ca/blogs/news/sifting-coffee-what-the-heck-is-that"
     ]
   }
 }
