@@ -2,63 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "z3Ubls2Cojo",
-      "videoUrl": "https://youtube.com/shorts/z3Ubls2Cojo",
-      "date": "2026-07-31",
-      "title": "【コーヒー豆知識】ブラジル・クーシュペ収穫が去年67.1%→今年58.3%に遅延、原因はミナス大雨、ICE在庫は前年比-64%｜2026/07/31 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 55,
-      "discovery": {
-        "method": "market-data",
-        "description": "Yahoo Finance / Barchart / Business Recorder / ESM Magazine / MarketScreener / Comunicaffe / Perfect Daily Grind (Coffee News Recap 7/24) をクロスチェックし、7/30 (水) 発表のブラジル最大コーヒー協同組合 Cooxupe (Minas Gerais 拠点) の 2026 収穫進捗を確定 (7/24 時点 58.3%、前週 47.3%、前年同時期 67.1% と大幅に遅れ)。原因はミナスジェライスへの週間 32.4mm・歴史平均比 2700% の記録的大雨で収穫中断。同時に ICE 指定倉庫のアラビカ在庫が 7/28 時点 289,759袋 (前週 328,759袋、前年同時期 800,326袋の 36% で -64%) と極めてタイト。前日 PDCA (7/30) の Fri 予定 `market-data` (週次市況枠定期化第 2 回) に従い、直近 2 日 (7/30 news-en, 7/29 official-src) を回避、前回 market-data (7/28 ICE 在庫単独) から 3 日空きで多様性ルール ✓。柱はコンテンツバランス上で ②産地 (Cooxupe = ブラジル産地の生産者団体データ、産地固有ニュース) に分類し、直近 14 日 15% と目標 25% 不足を補正。Primary『家で淹れる趣味層』にはスペシャルティ用マイクロロット供給遅延として実利化、USDA 7/22 発表の 2026/27 過去最高生産予想 (1.9 億袋) との『大局と目先のねじれ』を 1 本で提示。",
-        "sources": [
-          "https://finance.yahoo.com/markets/commodities/articles/arabica-coffee-tumbles-brazil-harvest-182608289.html",
-          "https://www.barchart.com/story/news/2363119/coffee-prices-pressured-by-brazil-coffee-harvest",
-          "https://www.brecorder.com/news/40432416/arabica-coffee-prices-rise",
-          "https://www.esmmagazine.com/supply-chain/brazils-2026-coffee-harvest-behind-last-years-pace-says-co-op-316086",
-          "https://www.marketscreener.com/quote/index/S-P-GSCI-COFFEE-INDEX-46869134/news/Brazil-s-Cooxupe-coffee-harvest-lags-previous-year-amid-rains-50275859/",
-          "https://www.comunicaffe.com/weather-and-quality-concerns-drive-high-arabica-volatility-cepea",
-          "https://perfectdailygrind.com/2026/07/coffee-news-recap-24-july-2026/"
-        ],
-        "query": "Cooxupe 58.3% Brazil coffee harvest July 24 2026 lagging 67.1%; ICE arabica certified stocks 289759 bags July 28 2026; Minas Gerais rain 2700% historical average",
-        "freshness_hours": 24
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-14T23:44:54.855Z"
-      },
-      "instagram": {
-        "mediaId": "17983386612048312",
-        "permalink": "https://www.instagram.com/reel/DbcCnpAEmrt/",
-        "views": 35,
-        "reach": 33,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "iGuHm0o30KU",
       "videoUrl": "https://youtube.com/shorts/iGuHm0o30KU",
       "date": "2026-08-02",
@@ -3904,10 +3847,10 @@
         ]
       },
       "stats": {
-        "views": 6,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": null
     },
@@ -3951,10 +3894,10 @@
         ]
       },
       "stats": {
-        "views": 5,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": null
     },
@@ -3998,10 +3941,10 @@
         ]
       },
       "stats": {
-        "views": 6,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": null
     },
@@ -4045,21 +3988,21 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18137947933725162",
         "permalink": "https://www.instagram.com/reel/DeqFWZzCSJy/",
-        "views": 4699,
-        "reach": 3860,
-        "likes": 56,
+        "views": 4765,
+        "reach": 3900,
+        "likes": 58,
         "comments": 0,
         "shares": 2,
-        "saved": 52,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "saved": 55,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4103,21 +4046,21 @@
         ]
       },
       "stats": {
-        "views": 10,
+        "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18109675814181820",
         "permalink": "https://www.instagram.com/reel/DestpKyjngY/",
-        "views": 3352,
-        "reach": 2765,
+        "views": 3388,
+        "reach": 2792,
         "likes": 37,
         "comments": 0,
         "shares": 1,
         "saved": 26,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4160,21 +4103,21 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18102659513376546",
         "permalink": "https://www.instagram.com/reel/Dex_mjHidyy/",
-        "views": 2818,
-        "reach": 2366,
+        "views": 2868,
+        "reach": 2408,
         "likes": 28,
         "comments": 0,
         "shares": 4,
-        "saved": 37,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "saved": 38,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4218,21 +4161,21 @@
         ]
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18373915309210215",
         "permalink": "https://www.instagram.com/reel/De0aNS2ionC/",
-        "views": 1652,
-        "reach": 1362,
+        "views": 1695,
+        "reach": 1398,
         "likes": 7,
         "comments": 0,
         "shares": 0,
         "saved": 6,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4275,21 +4218,21 @@
         ]
       },
       "stats": {
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "17911202172310543",
         "permalink": "https://www.instagram.com/reel/De5mzNFgT02/",
-        "views": 3181,
-        "reach": 2659,
+        "views": 3269,
+        "reach": 2730,
         "likes": 18,
         "comments": 0,
         "shares": 1,
-        "saved": 18,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "saved": 19,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4332,21 +4275,21 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 3,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18108926768617409",
         "permalink": "https://www.instagram.com/reel/De8GuVqgcl7/",
-        "views": 1074,
-        "reach": 823,
-        "likes": 14,
+        "views": 1152,
+        "reach": 884,
+        "likes": 15,
         "comments": 0,
         "shares": 1,
-        "saved": 20,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "saved": 21,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4391,18 +4334,18 @@
         "views": 8,
         "likes": 1,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18122062975822548",
         "permalink": "https://www.instagram.com/reel/De-ywbIgSoX/",
-        "views": 12673,
-        "reach": 10536,
-        "likes": 153,
-        "comments": 0,
-        "shares": 14,
-        "saved": 207,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "views": 14097,
+        "reach": 11484,
+        "likes": 169,
+        "comments": 2,
+        "shares": 15,
+        "saved": 243,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4446,21 +4389,21 @@
         ]
       },
       "stats": {
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "updatedAt": "2026-10-30T02:45:35.452Z"
       },
       "instagram": {
         "mediaId": "18112507928147186",
         "permalink": "https://www.instagram.com/reel/DfBXZPGAOmh/",
-        "views": 815,
-        "reach": 599,
-        "likes": 2,
+        "views": 934,
+        "reach": 687,
+        "likes": 4,
         "comments": 0,
         "shares": 0,
-        "saved": 12,
-        "updatedAt": "2026-10-29T02:36:19.982Z"
+        "saved": 14,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
       }
     },
     {
@@ -4503,47 +4446,74 @@
         ]
       },
       "stats": {
+        "views": 2,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-10-30T02:45:35.452Z"
+      },
+      "ytThumbnail": "set",
+      "instagram": {
+        "mediaId": "17939530179124564",
+        "permalink": "https://www.instagram.com/reel/DfD9BVckqyz/",
+        "views": 738,
+        "reach": 560,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "saved": 3,
+        "updatedAt": "2026-10-30T02:45:35.453Z"
+      }
+    },
+    {
+      "videoId": "1xUSLZGLKjM",
+      "videoUrl": "https://youtube.com/shorts/1xUSLZGLKjM",
+      "date": "2026-10-30",
+      "title": "【用語「微粉」】微粉ってなに？ 渋みが抜けて甘くなる #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "V60",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 40,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "a05-fines",
+        "pillar": "terms",
+        "topic": "渋みが抜けて甘くなる",
+        "method": "v60",
+        "scene": "hot",
+        "tipProblems": [
+          "まだ渋い時",
+          "湯が溜まる時"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
         "updatedAt": null
       },
       "ytThumbnail": "set",
-      "instagram": {
-        "mediaId": "17939530179124564",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
-      }
+      "instagram": null
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-01",
-      "changes": [
-        "今日の一杯: 0.7x avg views → drop",
-        "コーヒーレシピ: 0.7x avg views → drop",
-        "V60: 0.3x avg views → drop",
-        "自家焙煎: 0.7x avg views → drop",
-        "コーヒー豆: 0.7x avg views → drop",
-        "おうちカフェ: 0.5x avg views → drop",
-        "OpenGroundCoffee: 0.7x avg views → drop",
-        "コーヒーの淹れ方: 0.2x avg views → drop",
-        "ハンドドリップ: 0.2x avg views → drop",
-        "コーヒーのある暮らし: 0.2x avg views → drop",
-        "抽出: 0.2x avg views → drop",
-        "standard: 1 avg views (66 videos)",
-        "recipe: 1 avg views (8 videos)",
-        "brew-lesson: 0 avg views (6 videos)",
-        "Day performance: Sun=2, Thu=1, Fri=1, Sat=1, Mon=0, Tue=0, Wed=0"
-      ],
-      "recommendedTemplate": "standard"
-    },
     {
       "date": "2026-10-02",
       "changes": [
@@ -5277,6 +5247,39 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 3 avg views (31 videos)",
         "Day performance: Thu=2, Tue=2, Fri=1, Sun=1, Mon=1, Wed=1, Sat=1"
+      ],
+      "recommendedTemplate": "brew-lesson"
+    },
+    {
+      "date": "2026-10-30",
+      "changes": [
+        "Coffee: 0.3x avg views → drop",
+        "コーヒー豆知識: 0.3x avg views → drop",
+        "スペシャルティコーヒー: 0.3x avg views → drop",
+        "カフェ: 0.3x avg views → drop",
+        "珈琲: 0.3x avg views → drop",
+        "CoffeeLovers: 0.3x avg views → drop",
+        "コーヒー好き: 0.3x avg views → drop",
+        "今日の一杯: 0.3x avg views → drop",
+        "コーヒーレシピ: 0.3x avg views → drop",
+        "V60: 1.7x avg views → boost",
+        "自家焙煎: 0.3x avg views → drop",
+        "コーヒー豆: 0.3x avg views → drop",
+        "おうちカフェ: 1.7x avg views → boost",
+        "OpenGroundCoffee: 0.3x avg views → drop",
+        "カリタウェーブ: 1.7x avg views → boost",
+        "フレンチプレス: 2.8x avg views → boost",
+        "ケメックス: 0.7x avg views → drop",
+        "コーヒーの淹れ方: 2.1x avg views → boost",
+        "ハンドドリップ: 2.1x avg views → boost",
+        "エアロプレス: 1.8x avg views → boost",
+        "コーヒーのある暮らし: 2.1x avg views → boost",
+        "抽出: 2.1x avg views → boost",
+        "ペーパードリップ: 2.5x avg views → boost",
+        "standard: 0 avg views (41 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 3 avg views (32 videos)",
+        "Day performance: Sat=2, Tue=2, Thu=2, Fri=1, Sun=1, Mon=1, Wed=1"
       ],
       "recommendedTemplate": "brew-lesson"
     }
