@@ -1,59 +1,53 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-11-01",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a05-fines",
-    "pillar": "terms",
-    "method": "v60",
+    "episode": "a06-drawdown",
+    "pillar": "time",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "微粉",
-    "ask": "ってなに？",
-    "hook": "挽いた粉を茶こしでふるう",
-    "topic": "渋みが抜けて甘くなる",
-    "why": "微粉は味が早く出て渋みのもとになる",
-    "core": "微粉を減らすと、渋みが抜けて甘くなる",
-    "motion": {
-      "type": "dissolve",
-      "shade": { "from": 65, "to": 50 },
-      "meters": [
-        { "label": "渋み", "from": 70, "to": 25 },
-        { "label": "甘み", "from": 35, "to": 70 }
-      ]
-    },
+    "word": "最後の湯",
+    "ask": "を残すと？",
+    "hook": "最後の湯を落とし切らない",
+    "topic": "雑味が引いて澄む",
+    "why": "後半ほど過抽出が進み雑味が出る",
     "effect": [
-      { "label": "ふるう", "taste": "すっきり甘く広がる" },
-      { "label": "ふるわない", "taste": "渋みが強く出る" }
+      { "label": "残す", "taste": "甘く澄んで雑味が引く" },
+      { "label": "落とし切る", "taste": "濃いが雑味も出る" }
     ],
     "tips": [
-      { "problem": "まだ渋い時", "fix": "もっと丁寧にふるう" },
-      { "problem": "湯が溜まる時", "fix": "次は粗めに挽く" }
+      { "problem": "薄くなった時", "fix": "残す量を少なくする" },
+      { "problem": "渋い時", "fix": "もう少し早めに外す" }
     ],
+    "core": "最後の湯ほど雑味が強い",
+    "motion": {
+      "type": "meter",
+      "shade": { "from": 50, "to": 70 },
+      "meters": [
+        { "label": "時間", "from": 30, "to": 75 },
+        { "label": "雑味", "from": 30, "to": 65 }
+      ]
+    },
     "visual": {
-      "type": "compare",
-      "caption": "微粉を減らすと甘くなる",
-      "left": {
-        "label": "ふるわない",
-        "result": "渋みが強い",
-        "strength": 4
-      },
-      "right": {
-        "label": "ふるう",
-        "result": "すっきり甘く",
-        "strength": 2
-      },
-      "pick": "right"
+      "type": "scale",
+      "caption": "多めに残すほど雑味が引く",
+      "label": "残す量",
+      "zones": ["多め", "ふつう", "なし"],
+      "from": 55,
+      "to": 20
     },
     "narration": {
-      "title": "微粉って、なに？豆を挽くと出る、とても細かい粉のことです。",
-      "why": "微粉は味が早く出て、渋みのもとに。多いと湯も溜まります。茶こしでふるうと減らせます。",
-      "visual": "微粉を減らすと、渋みが抜けて、甘くなります。"
+      "title": "最後の湯を残すとどうなる？雑味が引いて、澄んだ味になります。",
+      "why": "後半は、接触時間が長引くほど、雑味の成分が強く出るからです。",
+      "visual": "多めに残すほど、雑味は引いて澄みます。",
+      "effect": "残すと、甘く澄んで雑味が引く。落とし切ると、濃いが雑味も出ます。",
+      "tips": "薄ければ、残す量を少なくする。渋ければ、もう少し早めに外します。"
     },
     "sources": [
-      "https://baristahustle.com/lesson/p-2-04-grind",
-      "https://perfectdailygrind.com/2026/06/sifting-ground-coffee-filter-brewing/",
-      "https://www.nature.com/articles/s41598-024-55831-x",
-      "https://eightouncecoffee.ca/blogs/news/sifting-coffee-what-the-heck-is-that"
+      "https://www.home-barista.com/brewing/chemex-brew-tastes-bitter-and-smells-off-t100314.html",
+      "https://majestycoffee.com/blogs/posts/why-is-my-pour-over-coffee-bitter",
+      "https://watchhouse.com/blogs/learn/kalita-wave-brew-guide"
     ]
   }
 }
