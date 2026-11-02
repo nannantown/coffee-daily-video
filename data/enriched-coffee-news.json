@@ -1,53 +1,50 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-03",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a06-drawdown",
-    "pillar": "time",
-    "method": "kalita-wave",
+    "episode": "a11-flow-speed",
+    "pillar": "theory",
+    "method": "paper-drip",
     "scene": "hot",
-    "word": "最後の湯",
-    "ask": "を残すと？",
-    "hook": "最後の湯を落とし切らない",
-    "topic": "雑味が引いて澄む",
-    "why": "後半ほど過抽出が進み雑味が出る",
+    "word": "落ちる速さ",
+    "ask": "で味がわかる？",
+    "hook": "落ちきるまでの速さを見る",
+    "topic": "酸っぱいか苦いかが分かる",
+    "why": "速く落ちると溶ける前にお湯が抜ける",
     "effect": [
-      { "label": "残す", "taste": "甘く澄んで雑味が引く" },
-      { "label": "落とし切る", "taste": "濃いが雑味も出る" }
+      { "label": "速く落ちる", "taste": "酸っぱく、薄い" },
+      { "label": "遅く落ちる", "taste": "苦く、重い" }
     ],
     "tips": [
-      { "problem": "薄くなった時", "fix": "残す量を少なくする" },
-      { "problem": "渋い時", "fix": "もう少し早めに外す" }
+      { "problem": "速すぎる時", "fix": "挽き目を少し細かくする" },
+      { "problem": "遅すぎる時", "fix": "挽き目を少し粗くする" }
     ],
-    "core": "最後の湯ほど雑味が強い",
+    "core": "落ちる速さが、溶けた量の目安になる",
     "motion": {
       "type": "meter",
-      "shade": { "from": 50, "to": 70 },
+      "shade": { "from": 50, "to": 60 },
       "meters": [
-        { "label": "時間", "from": 30, "to": 75 },
-        { "label": "雑味", "from": 30, "to": 65 }
+        { "label": "酸味", "from": 65, "to": 35 },
+        { "label": "苦味", "from": 25, "to": 70 }
       ]
     },
     "visual": {
       "type": "scale",
-      "caption": "多めに残すほど雑味が引く",
-      "label": "残す量",
-      "zones": ["多め", "ふつう", "なし"],
-      "from": 55,
-      "to": 20
+      "caption": "速いと酸っぱく、遅いと苦い",
+      "label": "落ちる速さ",
+      "zones": ["速い", "ちょうど", "遅い"],
+      "from": 20,
+      "to": 50
     },
     "narration": {
-      "title": "最後の湯を残すとどうなる？雑味が引いて、澄んだ味になります。",
-      "why": "後半は、接触時間が長引くほど、雑味の成分が強く出るからです。",
-      "visual": "多めに残すほど、雑味は引いて澄みます。",
-      "effect": "残すと、甘く澄んで雑味が引く。落とし切ると、濃いが雑味も出ます。",
-      "tips": "薄ければ、残す量を少なくする。渋ければ、もう少し早めに外します。"
+      "title": "コーヒーが落ちる速さで、今日の味の行き先が見えてきます。",
+      "why": "速いと酸味が先に出て、薄い酸っぱさに。遅いと、苦味の成分まで溶け出します。",
+      "visual": "速いと酸っぱく、遅いと苦く、ちょうどだと味がまとまります。"
     },
     "sources": [
-      "https://www.home-barista.com/brewing/chemex-brew-tastes-bitter-and-smells-off-t100314.html",
-      "https://majestycoffee.com/blogs/posts/why-is-my-pour-over-coffee-bitter",
-      "https://watchhouse.com/blogs/learn/kalita-wave-brew-guide"
+      "https://majestycoffee.com/blogs/posts/why-is-my-pour-over-coffee-sour",
+      "https://www.seattlecoffeegear.com/blogs/learning-center/how-to-dial-in-pour-over"
     ]
   }
 }
