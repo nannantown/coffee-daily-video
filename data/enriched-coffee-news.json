@@ -1,50 +1,53 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a11-flow-speed",
-    "pillar": "theory",
-    "method": "paper-drip",
+    "episode": "a08-light-roast-hot",
+    "pillar": "temp",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "落ちる速さ",
-    "ask": "で味がわかる？",
-    "hook": "落ちきるまでの速さを見る",
-    "topic": "酸っぱいか苦いかが分かる",
-    "why": "速く落ちると溶ける前にお湯が抜ける",
-    "effect": [
-      { "label": "速く落ちる", "taste": "酸っぱく、薄い" },
-      { "label": "遅く落ちる", "taste": "苦く、重い" }
-    ],
-    "tips": [
-      { "problem": "速すぎる時", "fix": "挽き目を少し細かくする" },
-      { "problem": "遅すぎる時", "fix": "挽き目を少し粗くする" }
-    ],
-    "core": "落ちる速さが、溶けた量の目安になる",
+    "word": "浅煎り",
+    "ask": "は熱めで？",
+    "hook": "浅煎りは湯温を高めに",
+    "topic": "酸が甘く丸くなる",
+    "why": "浅煎りは豆が硬めで、熱で成分が溶けます",
+    "core": "浅煎りは、熱いお湯で甘みが溶けやすい",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 50, "to": 60 },
+      "type": "liquid",
+      "shade": { "from": 35, "to": 55 },
       "meters": [
-        { "label": "酸味", "from": 65, "to": 35 },
-        { "label": "苦味", "from": 25, "to": 70 }
+        { "label": "酸味", "from": 75, "to": 55 },
+        { "label": "甘味", "from": 30, "to": 60 }
       ]
     },
+    "effect": [
+      { "label": "高めにする", "taste": "酸が丸く、甘くなる" },
+      { "label": "低めにする", "taste": "酸っぱく、薄くなる" }
+    ],
+    "tips": [
+      { "problem": "苦くなった時", "fix": "温度を少し下げる" },
+      { "problem": "まだ酸っぱい時", "fix": "挽き目を少し細かくする" }
+    ],
     "visual": {
       "type": "scale",
-      "caption": "速いと酸っぱく、遅いと苦い",
-      "label": "落ちる速さ",
-      "zones": ["速い", "ちょうど", "遅い"],
-      "from": 20,
-      "to": 50
+      "caption": "低めだと酸っぱく、高めで甘く",
+      "label": "湯温",
+      "zones": ["低め", "ふつう", "高め"],
+      "from": 55,
+      "to": 85
     },
     "narration": {
-      "title": "コーヒーが落ちる速さで、今日の味の行き先が見えてきます。",
-      "why": "速いと酸味が先に出て、薄い酸っぱさに。遅いと、苦味の成分まで溶け出します。",
-      "visual": "速いと酸っぱく、遅いと苦く、ちょうどだと味がまとまります。"
+      "title": "浅煎りの豆は、お湯を熱めにして淹れると、酸が甘く丸くなります。",
+      "why": "浅煎りは豆が硬めで、熱の力で成分がよく溶け出すからです。",
+      "visual": "浅煎りは高めが目安。自分の一杯の位置を見てみましょう。",
+      "effect": "高めにすると、酸が丸く甘く。低めにすると、酸っぱく薄くなりやすいです。",
+      "tips": "苦くなったら、温度を少し下げる。まだ酸っぱければ、挽き目を少し細かくします。"
     },
     "sources": [
-      "https://majestycoffee.com/blogs/posts/why-is-my-pour-over-coffee-sour",
-      "https://www.seattlecoffeegear.com/blogs/learning-center/how-to-dial-in-pour-over"
+      "https://www.tastingtable.com/1312594/brewing-temperature-difference-dark-light-roast-coffee",
+      "https://www.thewaytocoffee.com/brew-temperature-for-light-roast-coffee/",
+      "https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/why-brewing-temperature-changes-coffee-flavor"
     ]
   }
 }
