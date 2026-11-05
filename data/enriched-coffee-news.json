@@ -1,52 +1,62 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a14-fresh-grind",
-    "pillar": "grind",
-    "method": "french-press",
+    "episode": "a13-strong-sour",
+    "pillar": "theory",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "挽きたて",
-    "ask": "で変わる？",
-    "hook": "淹れる直前に豆を挽く",
-    "topic": "香りが立ち甘く感じる",
-    "why": "挽いた粉は香りの成分がすぐ逃げていく",
-    "core": "挽いた直後は、香りが多く残っている",
+    "word": "濃いのに",
+    "ask": "酸っぱい？",
+    "hook": "粉を少し減らす",
+    "topic": "酸が引いて甘みが出る",
+    "why": "お湯に対して粉が多すぎると溶けきらない",
+    "core": "収率が上がると、酸の後ろの甘みが出る",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 55, "to": 55 },
+      "type": "dissolve",
+      "shade": { "from": 70, "to": 60 },
       "meters": [
-        { "label": "香り", "from": 75, "to": 40 }
+        { "label": "甘味", "from": 35, "to": 60 },
+        { "label": "酸味", "from": 65, "to": 40 }
       ]
     },
     "effect": [
-      { "label": "直前に挽く", "taste": "甘みを感じやすい" },
-      { "label": "挽き置く", "taste": "平らで薄い印象" }
+      { "label": "粉を減らす", "taste": "甘く、なめらか" },
+      { "label": "粉を増やす", "taste": "濃いのに酸っぱい" }
     ],
     "tips": [
-      { "problem": "香りが弱い時", "fix": "挽いたらすぐ淹れる" },
-      { "problem": "挽く道具が無い時", "fix": "粉は密閉して早めに使う" }
+      { "problem": "薄くなった時", "fix": "挽き目を少し細かくする" },
+      { "problem": "まだ酸っぱい時", "fix": "お湯の温度を上げる" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "挽きたては香りが立つ",
-      "left": { "label": "挽き置き", "result": "香りが弱い", "strength": 2 },
-      "right": { "label": "挽きたて", "result": "香りが立つ", "strength": 4 },
-      "pick": "right"
+      "type": "scale",
+      "caption": "粉を減らすと適正に近づく",
+      "label": "収率",
+      "zones": ["未抽出", "適正", "過抽出"],
+      "from": 20,
+      "to": 45
     },
     "narration": {
-      "title": "挽きたてで、何が変わる？香りが立って、甘く感じやすくなります。",
-      "why": "挽いた粉は香りの成分がすぐ逃げ、甘さを感じにくくなるからです。",
-      "visual": "挽きたては香りが立ち、挽いて時間が経つと香りが抜けやすいです。",
-      "effect": "直前に挽くと、甘みを感じやすい。香りが抜けると、平らで薄い印象に。",
-      "tips": "香りが弱ければ、挽いたらすぐ淹れる。道具が無ければ、粉は密閉して早めに使います。"
+      "title": "濃いのに酸っぱい。そんな時は、粉が多すぎるのかもしれません。",
+      "why": "濃さはお湯の量で動きますが、粉が多すぎると、溶けきらない分が出ます。濃くても、溶け出す割合、収率は低いままです。",
+      "visual": "収率が低いと酸っぱく、適正に近づくと甘みが出ます。",
+      "effect": "粉を減らすと、甘くなめらか。増やすと、濃いのに酸っぱくなります。",
+      "tips": "薄ければ、挽き目を少し細かく。まだ酸っぱければ、お湯の温度を上げます。"
     },
     "sources": [
-      "https://sca.coffee/sca-news/coffee-decoded-9-fresh-coffee",
-      "https://sca.coffee/sca-news/2012/02/15/what-is-the-shelf-life-of-roasted-coffee-a-literature-review-on-coffee-staling",
-      "https://sca.coffee/sca-news/25-magazine/issue-4/preserving-freshness-race-time-25-magazine-issue-4",
-      "https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/the-science-of-coffee-aroma-why-smell-matters-more-than-taste"
+      "https://sca.coffee/sca-news/read/coffee-brewing-handbook",
+      "https://www.baristahustle.com/blog/the-coffee-compass/"
     ]
+  },
+  "discovery": {
+    "method": "official-src",
+    "description": "SCA の抽出ハンドブックと Barista Hustle のコンパス図で、収率と濃度（TDS）の関係を確認。『濃いのに酸っぱい』は TDS 高・収率低の象限に入り、粉を減らすことで同じ湯量なら収率が上がり甘みが出る対処が定番",
+    "sources": [
+      "https://sca.coffee/sca-news/read/coffee-brewing-handbook",
+      "https://www.baristahustle.com/blog/the-coffee-compass/"
+    ],
+    "query": "SCA brewing control chart under-extracted strong sour",
+    "freshness_hours": 24
   }
 }
