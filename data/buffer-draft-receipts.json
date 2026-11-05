@@ -184,9 +184,11 @@
     "6ad038ce778b240e2f12264f:20261106": {
       "fingerprint": "bf46ed37a6c730a920caccc38cf3a46c76850eb427c2101ebf29ca2eee223c16",
       "videoSha256": "d1b46bc6e20d10e24d2195b9817b856eac119f5c3ac6bba777b82fdbf9ab4742",
-      "state": "creating",
+      "state": "draft",
       "attemptId": "3ff2d96e-3305-45ef-8e66-b2bdc59b4d3c",
-      "attemptedAt": "2026-11-05T23:34:26.017Z"
+      "attemptedAt": "2026-11-05T23:34:26.017Z",
+      "postId": "6aed1283dbada656bedde2fb",
+      "verifiedAt": "2026-11-05T23:34:27.963Z"
     }
   }
 }
