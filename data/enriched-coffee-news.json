@@ -1,62 +1,69 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a13-strong-sour",
-    "pillar": "theory",
-    "method": "kalita-wave",
+    "episode": "a12-weak",
+    "pillar": "trouble",
+    "method": "origami",
     "scene": "hot",
-    "word": "濃いのに",
-    "ask": "酸っぱい？",
-    "hook": "粉を少し減らす",
-    "topic": "酸が引いて甘みが出る",
-    "why": "お湯に対して粉が多すぎると溶けきらない",
-    "core": "収率が上がると、酸の後ろの甘みが出る",
+    "word": "薄い",
+    "ask": "時は？",
+    "hook": "薄い時は粉を増やす",
+    "topic": "濃さとコクが戻る",
+    "why": "溶けた成分が少ないと、水っぽく感じる",
+    "core": "粉を増やすと、溶ける成分が増える",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 70, "to": 60 },
+      "type": "liquid",
+      "shade": { "from": 30, "to": 60 },
       "meters": [
-        { "label": "甘味", "from": 35, "to": 60 },
-        { "label": "酸味", "from": 65, "to": 40 }
+        { "label": "コク", "from": 30, "to": 60 },
+        { "label": "濃さ", "from": 25, "to": 55 }
       ]
     },
     "effect": [
-      { "label": "粉を減らす", "taste": "甘く、なめらか" },
-      { "label": "粉を増やす", "taste": "濃いのに酸っぱい" }
+      { "label": "粉を増やす", "taste": "濃く、コクが出る" },
+      { "label": "粉を減らす", "taste": "さらに薄く、軽い" }
     ],
     "tips": [
-      { "problem": "薄くなった時", "fix": "挽き目を少し細かくする" },
-      { "problem": "まだ酸っぱい時", "fix": "お湯の温度を上げる" }
+      { "problem": "酸っぱくなった時", "fix": "挽き目を少し細かくする" },
+      { "problem": "重くなった時", "fix": "淹れた後にお湯を足す" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "粉を減らすと適正に近づく",
-      "label": "収率",
-      "zones": ["未抽出", "適正", "過抽出"],
-      "from": 20,
-      "to": 45
+      "type": "compare",
+      "caption": "粉を増やすと味が戻る",
+      "left": {
+        "label": "いつもの粉",
+        "result": "水っぽい",
+        "strength": 2
+      },
+      "right": {
+        "label": "粉を増やす",
+        "result": "濃さとコク",
+        "strength": 4
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "濃いのに酸っぱい。そんな時は、粉が多すぎるのかもしれません。",
-      "why": "濃さはお湯の量で動きますが、粉が多すぎると、溶けきらない分が出ます。濃くても、溶け出す割合、収率は低いままです。",
-      "visual": "収率が低いと酸っぱく、適正に近づくと甘みが出ます。",
-      "effect": "粉を減らすと、甘くなめらか。増やすと、濃いのに酸っぱくなります。",
-      "tips": "薄ければ、挽き目を少し細かく。まだ酸っぱければ、お湯の温度を上げます。"
+      "title": "薄い時は、粉を少し増やしましょう。濃さとコクが戻ります。",
+      "why": "溶けた成分が少ないと、水っぽく感じます。粉が多いほど、溶ける成分も多くなります。",
+      "visual": "いつもと同じ湯量でも、粉を増やせば濃さとコクが戻ります。",
+      "effect": "粉を増やすと、濃くコクが出ます。減らすと、さらに薄く軽くなります。",
+      "tips": "酸っぱくなれば挽き目を少し細かく。重くなれば、淹れた後にお湯を足します。"
     },
     "sources": [
-      "https://sca.coffee/sca-news/read/coffee-brewing-handbook",
+      "https://sca.coffee/research/measurement-of-coffee",
       "https://www.baristahustle.com/blog/the-coffee-compass/"
     ]
   },
   "discovery": {
     "method": "official-src",
-    "description": "SCA の抽出ハンドブックと Barista Hustle のコンパス図で、収率と濃度（TDS）の関係を確認。『濃いのに酸っぱい』は TDS 高・収率低の象限に入り、粉を減らすことで同じ湯量なら収率が上がり甘みが出る対処が定番",
+    "description": "SCA Measurement of Coffee と Barista Hustle のコーヒー・コンパスで、薄い（TDS 低・収率低の象限）への対処を確認。同じ湯量でも粉を増やせば TDS と収率がともに上がり、濃さとコクが戻る定番の直し方",
     "sources": [
-      "https://sca.coffee/sca-news/read/coffee-brewing-handbook",
+      "https://sca.coffee/research/measurement-of-coffee",
       "https://www.baristahustle.com/blog/the-coffee-compass/"
     ],
-    "query": "SCA brewing control chart under-extracted strong sour",
+    "query": "SCA brewing control chart under-extracted weak coffee increase dose",
     "freshness_hours": 24
   }
 }
