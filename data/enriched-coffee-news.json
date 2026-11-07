@@ -1,69 +1,75 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a12-weak",
-    "pillar": "trouble",
-    "method": "origami",
+    "episode": "a15-stir",
+    "pillar": "theory",
+    "method": "chemex",
     "scene": "hot",
-    "word": "薄い",
-    "ask": "時は？",
-    "hook": "薄い時は粉を増やす",
-    "topic": "濃さとコクが戻る",
-    "why": "溶けた成分が少ないと、水っぽく感じる",
-    "core": "粉を増やすと、溶ける成分が増える",
+    "word": "かき混ぜる",
+    "ask": "とどうなる？",
+    "hook": "蒸らしの粉を軽く混ぜる",
+    "topic": "コクと厚みが出る",
+    "why": "動かすと粉全体にお湯が触れる",
+    "core": "混ぜるとお湯が粉全体に行き渡る",
+    "premise": {
+      "term": "蒸らし",
+      "say": "お湯を少し注いで粉を湿らせる最初の手順",
+      "visual": {
+        "type": "flow",
+        "caption": "少しの湯で粉を湿らせる",
+        "brewers": [
+          {
+            "shape": "cone",
+            "label": "蒸らし",
+            "note": "少しの湯でひと呼吸",
+            "speed": "slow",
+            "bed": "even"
+          }
+        ]
+      },
+      "ref": "b08-bloom"
+    },
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 30, "to": 60 },
+      "type": "dissolve",
+      "shade": { "from": 50, "to": 62 },
       "meters": [
-        { "label": "コク", "from": 30, "to": 60 },
-        { "label": "濃さ", "from": 25, "to": 55 }
+        { "label": "コク", "from": 40, "to": 65 },
+        { "label": "厚み", "from": 40, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "粉を増やす", "taste": "濃く、コクが出る" },
-      { "label": "粉を減らす", "taste": "さらに薄く、軽い" }
+      { "label": "混ぜる", "taste": "コクと厚みが出る" },
+      { "label": "混ぜない", "taste": "軽く、すっきり" }
     ],
     "tips": [
-      { "problem": "酸っぱくなった時", "fix": "挽き目を少し細かくする" },
-      { "problem": "重くなった時", "fix": "淹れた後にお湯を足す" }
+      { "problem": "渋くなった時", "fix": "混ぜる回数を減らす" },
+      { "problem": "お湯の落ちが遅い時", "fix": "混ぜる強さを弱める" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "粉を増やすと味が戻る",
-      "left": {
-        "label": "いつもの粉",
-        "result": "水っぽい",
-        "strength": 2
-      },
-      "right": {
-        "label": "粉を増やす",
-        "result": "濃さとコク",
-        "strength": 4
-      },
-      "pick": "right"
+      "type": "graph",
+      "caption": "軽く混ぜるのがちょうどいい",
+      "xLabel": "混ぜ方",
+      "yLabel": "バランス",
+      "points": [
+        { "label": "混ぜない", "value": 2 },
+        { "label": "軽く", "value": 4 },
+        { "label": "強く", "value": 3 }
+      ],
+      "mark": 1
     },
     "narration": {
-      "title": "薄い時は、粉を少し増やしましょう。濃さとコクが戻ります。",
-      "why": "溶けた成分が少ないと、水っぽく感じます。粉が多いほど、溶ける成分も多くなります。",
-      "visual": "いつもと同じ湯量でも、粉を増やせば濃さとコクが戻ります。",
-      "effect": "粉を増やすと、濃くコクが出ます。減らすと、さらに薄く軽くなります。",
-      "tips": "酸っぱくなれば挽き目を少し細かく。重くなれば、淹れた後にお湯を足します。"
+      "title": "蒸らしの粉を、軽くかき混ぜると、どうなる？",
+      "why": "動かすと、お湯が粉全体に触れます。",
+      "visual": "混ぜないとあっさり、軽く混ぜるとコクが出て、強く混ぜると渋みが出やすい。",
+      "effect": "混ぜると、コクと厚みが出ます。混ぜないと、軽くすっきりします。",
+      "tips": "渋ければ混ぜる回数を減らし、落ちが遅ければ強さを弱めます。"
     },
     "sources": [
+      "https://www.baristahustle.com/blog/the-rao-spin/",
       "https://sca.coffee/research/measurement-of-coffee",
-      "https://www.baristahustle.com/blog/the-coffee-compass/"
+      "https://perfectdailygrind.com/2020/12/what-is-the-rao-spin-pour-over-coffee-brewing-technique/"
     ]
-  },
-  "discovery": {
-    "method": "official-src",
-    "description": "SCA Measurement of Coffee と Barista Hustle のコーヒー・コンパスで、薄い（TDS 低・収率低の象限）への対処を確認。同じ湯量でも粉を増やせば TDS と収率がともに上がり、濃さとコクが戻る定番の直し方",
-    "sources": [
-      "https://sca.coffee/research/measurement-of-coffee",
-      "https://www.baristahustle.com/blog/the-coffee-compass/"
-    ],
-    "query": "SCA brewing control chart under-extracted weak coffee increase dose",
-    "freshness_hours": 24
   }
 }
