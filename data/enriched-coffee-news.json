@@ -1,75 +1,49 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a15-stir",
-    "pillar": "theory",
-    "method": "chemex",
+    "episode": "a16-rinse-paper",
+    "pillar": "gear",
+    "method": "paper-drip",
     "scene": "hot",
-    "word": "かき混ぜる",
-    "ask": "とどうなる？",
-    "hook": "蒸らしの粉を軽く混ぜる",
-    "topic": "コクと厚みが出る",
-    "why": "動かすと粉全体にお湯が触れる",
-    "core": "混ぜるとお湯が粉全体に行き渡る",
-    "premise": {
-      "term": "蒸らし",
-      "say": "お湯を少し注いで粉を湿らせる最初の手順",
-      "visual": {
-        "type": "flow",
-        "caption": "少しの湯で粉を湿らせる",
-        "brewers": [
-          {
-            "shape": "cone",
-            "label": "蒸らし",
-            "note": "少しの湯でひと呼吸",
-            "speed": "slow",
-            "bed": "even"
-          }
-        ]
-      },
-      "ref": "b08-bloom"
-    },
+    "word": "紙の湯通し",
+    "ask": "はいる？",
+    "hook": "紙を先にお湯ですすぐ",
+    "topic": "紙のにおいが消え澄む",
+    "why": "熱いお湯で紙のにおいを先に流しておく",
+    "core": "紙のにおいを流すと、味が澄む",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 50, "to": 62 },
-      "meters": [
-        { "label": "コク", "from": 40, "to": 65 },
-        { "label": "厚み", "from": 40, "to": 60 }
-      ]
+      "type": "liquid",
+      "shade": { "from": 55, "to": 50 },
+      "meters": [{ "label": "雑味", "from": 50, "to": 25 }]
     },
     "effect": [
-      { "label": "混ぜる", "taste": "コクと厚みが出る" },
-      { "label": "混ぜない", "taste": "軽く、すっきり" }
+      { "label": "湯通しする", "taste": "澄んで、すっきり" },
+      { "label": "しない", "taste": "紙っぽさが残る" }
     ],
     "tips": [
-      { "problem": "渋くなった時", "fix": "混ぜる回数を減らす" },
-      { "problem": "お湯の落ちが遅い時", "fix": "混ぜる強さを弱める" }
+      { "problem": "湯通しの湯を残した時", "fix": "次は先に全部捨てる" },
+      { "problem": "紙っぽさが残る時", "fix": "お湯を熱くして通す" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "軽く混ぜるのがちょうどいい",
-      "xLabel": "混ぜ方",
-      "yLabel": "バランス",
-      "points": [
-        { "label": "混ぜない", "value": 2 },
-        { "label": "軽く", "value": 4 },
-        { "label": "強く", "value": 3 }
-      ],
-      "mark": 1
+      "type": "compare",
+      "caption": "湯通しで紙のにおいが消える",
+      "left": { "label": "そのまま", "result": "紙っぽい", "strength": 4 },
+      "right": { "label": "湯通し", "result": "澄んだ味", "strength": 3 },
+      "pick": "right"
     },
     "narration": {
-      "title": "蒸らしの粉を、軽くかき混ぜると、どうなる？",
-      "why": "動かすと、お湯が粉全体に触れます。",
-      "visual": "混ぜないとあっさり、軽く混ぜるとコクが出て、強く混ぜると渋みが出やすい。",
-      "effect": "混ぜると、コクと厚みが出ます。混ぜないと、軽くすっきりします。",
-      "tips": "渋ければ混ぜる回数を減らし、落ちが遅ければ強さを弱めます。"
+      "title": "紙を先にお湯ですすぐと、どうなる？",
+      "why": "紙には、わずかなにおいが残りやすく、熱いお湯で先に通して流せるからです。",
+      "visual": "そのままだと紙っぽさが残りやすく、湯通しすると澄みやすいと言われます。",
+      "effect": "湯通しをすると後味まで澄み、しないと紙っぽさが鼻先にわずかに残りやすくなります。",
+      "tips": "湯通しの湯を残した時は、次は先に全部捨てます。紙っぽさが残る時は、お湯を熱くして通します。"
     },
     "sources": [
-      "https://www.baristahustle.com/blog/the-rao-spin/",
+      "https://www.chemexcoffeemaker.com/pages/brewing-instructions",
       "https://sca.coffee/research/measurement-of-coffee",
-      "https://perfectdailygrind.com/2020/12/what-is-the-rao-spin-pour-over-coffee-brewing-technique/"
+      "https://perfectdailygrind.com/2020/03/should-you-rinse-pre-wet-paper-filters-when-brewing/"
     ]
   }
 }
