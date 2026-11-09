@@ -1,49 +1,53 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a16-rinse-paper",
-    "pillar": "gear",
-    "method": "paper-drip",
+    "episode": "a17-filtered-water",
+    "pillar": "water",
+    "method": "french-press",
     "scene": "hot",
-    "word": "紙の湯通し",
-    "ask": "はいる？",
-    "hook": "紙を先にお湯ですすぐ",
-    "topic": "紙のにおいが消え澄む",
-    "why": "熱いお湯で紙のにおいを先に流しておく",
-    "core": "紙のにおいを流すと、味が澄む",
+    "word": "浄水",
+    "ask": "で淹れると？",
+    "hook": "水道水を浄水に替える",
+    "topic": "後味が澄み香りが立つ",
+    "why": "消毒用の塩素が香りと味を鈍らせる",
+    "core": "塩素が抜けると薬っぽさが消え、香りが届きやすい",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 55, "to": 50 },
-      "meters": [{ "label": "雑味", "from": 50, "to": 25 }]
+      "type": "meter",
+      "shade": { "from": 50, "to": 50 },
+      "meters": [
+        { "label": "香り", "from": 40, "to": 70 },
+        { "label": "薬っぽさ", "from": 45, "to": 25 }
+      ]
     },
     "effect": [
-      { "label": "湯通しする", "taste": "澄んで、すっきり" },
-      { "label": "しない", "taste": "紙っぽさが残る" }
+      { "label": "浄水にする", "taste": "後味まで澄みやすい" },
+      { "label": "水道水にする", "taste": "薬っぽさが残りやすい" }
     ],
     "tips": [
-      { "problem": "湯通しの湯を残した時", "fix": "次は先に全部捨てる" },
-      { "problem": "紙っぽさが残る時", "fix": "お湯を熱くして通す" }
+      { "problem": "浄水器が無い時", "fix": "熱いまま少し長く沸かす" },
+      { "problem": "まだにおう時", "fix": "ボトルの水に替える" }
     ],
     "visual": {
       "type": "compare",
-      "caption": "湯通しで紙のにおいが消える",
-      "left": { "label": "そのまま", "result": "紙っぽい", "strength": 4 },
-      "right": { "label": "湯通し", "result": "澄んだ味", "strength": 3 },
+      "caption": "浄水で後味が澄みやすい",
+      "left": { "label": "水道水", "result": "薬っぽさ残る", "strength": 3 },
+      "right": { "label": "浄水", "result": "後味が澄む", "strength": 2 },
       "pick": "right"
     },
     "narration": {
-      "title": "紙を先にお湯ですすぐと、どうなる？",
-      "why": "紙には、わずかなにおいが残りやすく、熱いお湯で先に通して流せるからです。",
-      "visual": "そのままだと紙っぽさが残りやすく、湯通しすると澄みやすいと言われます。",
-      "effect": "湯通しをすると後味まで澄み、しないと紙っぽさが鼻先にわずかに残りやすくなります。",
-      "tips": "湯通しの湯を残した時は、次は先に全部捨てます。紙っぽさが残る時は、お湯を熱くして通します。"
+      "title": "水道水を浄水に替えると？後味が澄み、豆の香りが立ちやすくなります。",
+      "why": "水道水のわずかな塩素が、豆の香りと味を鈍らせやすいからです。",
+      "visual": "水道水だと薬っぽさが残りやすく、浄水にすると後味が澄みやすいと言われます。",
+      "effect": "浄水にすると後味が澄みやすく、水道水だと薬っぽさが残りやすくなります。",
+      "tips": "浄水器が無ければ、熱いまま少し長く沸かす。まだにおう時は、ボトルの水に替えます。"
     },
     "sources": [
-      "https://www.chemexcoffeemaker.com/pages/brewing-instructions",
-      "https://sca.coffee/research/measurement-of-coffee",
-      "https://perfectdailygrind.com/2020/03/should-you-rinse-pre-wet-paper-filters-when-brewing/"
+      "https://cdn.shopify.com/s/files/1/0561/9102/5336/files/water-standards.pdf",
+      "https://www.waterworks.metro.tokyo.lg.jp/documents/d/waterworks/kurashi-r6-05",
+      "https://www.env.go.jp/content/000219116.pdf",
+      "https://www.ampac1.com/blog/does-boiling-water-remove-chlorine/"
     ]
   }
 }
