@@ -1,53 +1,60 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a17-filtered-water",
-    "pillar": "water",
-    "method": "french-press",
+    "episode": "a18-extraction-order",
+    "pillar": "theory",
+    "method": "clever",
     "scene": "hot",
-    "word": "浄水",
-    "ask": "で淹れると？",
-    "hook": "水道水を浄水に替える",
-    "topic": "後味が澄み香りが立つ",
-    "why": "消毒用の塩素が香りと味を鈍らせる",
-    "core": "塩素が抜けると薬っぽさが消え、香りが届きやすい",
+    "word": "溶ける順番",
+    "ask": "ってある？",
+    "hook": "甘みの所で抽出を止める",
+    "topic": "止めどきで甘さが決まる",
+    "why": "酸が先、甘みが次、苦味は最後に出やすい",
+    "core": "溶ける順番を知ると、止めどきが分かる",
     "motion": {
       "type": "meter",
-      "shade": { "from": 50, "to": 50 },
+      "shade": { "from": 50, "to": 55 },
       "meters": [
-        { "label": "香り", "from": 40, "to": 70 },
-        { "label": "薬っぽさ", "from": 45, "to": 25 }
+        { "label": "酸味", "from": 70, "to": 45 },
+        { "label": "甘味", "from": 30, "to": 65 },
+        { "label": "苦味", "from": 20, "to": 35 }
       ]
     },
     "effect": [
-      { "label": "浄水にする", "taste": "後味まで澄みやすい" },
-      { "label": "水道水にする", "taste": "薬っぽさが残りやすい" }
+      { "label": "程よく止める", "taste": "甘く、まとまる" },
+      { "label": "最後まで出す", "taste": "苦味と渋みが出る" }
     ],
     "tips": [
-      { "problem": "浄水器が無い時", "fix": "熱いまま少し長く沸かす" },
-      { "problem": "まだにおう時", "fix": "ボトルの水に替える" }
+      { "problem": "酸っぱい時", "fix": "少し長めに待つ" },
+      { "problem": "苦い時", "fix": "甘いうちに落とす" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "浄水で後味が澄みやすい",
-      "left": { "label": "水道水", "result": "薬っぽさ残る", "strength": 3 },
-      "right": { "label": "浄水", "result": "後味が澄む", "strength": 2 },
-      "pick": "right"
+      "type": "graph",
+      "caption": "途中は甘みが出やすい",
+      "xLabel": "落ちる順",
+      "yLabel": "甘み",
+      "points": [
+        { "label": "最初", "value": 2 },
+        { "label": "中盤", "value": 4 },
+        { "label": "後半", "value": 3 },
+        { "label": "最後", "value": 1 }
+      ],
+      "mark": 1,
+      "zones": ["酸っぱい", "甘い", "苦い"]
     },
     "narration": {
-      "title": "水道水を浄水に替えると？後味が澄み、豆の香りが立ちやすくなります。",
-      "why": "水道水のわずかな塩素が、豆の香りと味を鈍らせやすいからです。",
-      "visual": "水道水だと薬っぽさが残りやすく、浄水にすると後味が澄みやすいと言われます。",
-      "effect": "浄水にすると後味が澄みやすく、水道水だと薬っぽさが残りやすくなります。",
-      "tips": "浄水器が無ければ、熱いまま少し長く沸かす。まだにおう時は、ボトルの水に替えます。"
+      "title": "コーヒーの成分には、溶ける順番があります。",
+      "why": "先に酸、次に甘み、最後に苦味や渋みが出やすい。どこで止めるかで、一杯の味が変わります。",
+      "visual": "途中は甘みが出やすく、最後まで出し切ると苦味が勝ちやすい。",
+      "effect": "程よく止めれば甘くまとまり、最後まで出すと苦味と渋みが出ます。",
+      "tips": "酸っぱければ少し長めに待ち、苦ければ甘いうちに落とします。"
     },
     "sources": [
-      "https://cdn.shopify.com/s/files/1/0561/9102/5336/files/water-standards.pdf",
-      "https://www.waterworks.metro.tokyo.lg.jp/documents/d/waterworks/kurashi-r6-05",
-      "https://www.env.go.jp/content/000219116.pdf",
-      "https://www.ampac1.com/blog/does-boiling-water-remove-chlorine/"
+      "https://methodicalcoffee.com/blogs/coffee-culture/what-is-coffee-extraction-how-to-brew-better-coffee-at-home",
+      "https://clivecoffee.com/blogs/learn/how-coffee-extraction-works",
+      "https://field-guides.vercel.app/pour-over/solubility-and-what-dissolves.html"
     ]
   }
 }
