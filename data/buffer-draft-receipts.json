@@ -238,9 +238,11 @@
     "6ad038ce778b240e2f12264f:20261112": {
       "fingerprint": "f23560cd1c70fde9bf79c3b923a9d196f724daa72ab08763cad223d3320034d8",
       "videoSha256": "d6b973a2a744635382f61e01d2ff1e16f2af16dee1bab5cf2a3b579b4896109c",
-      "state": "creating",
+      "state": "draft",
       "attemptId": "a2add6f3-8278-4041-b099-5aab82ba1f9e",
-      "attemptedAt": "2026-11-11T23:34:25.453Z"
+      "attemptedAt": "2026-11-11T23:34:25.453Z",
+      "postId": "6af4fb828a1a2f52b50d22a1",
+      "verifiedAt": "2026-11-11T23:34:27.188Z"
     }
   }
 }
