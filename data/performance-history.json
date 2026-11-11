@@ -2,62 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "5h5nKrH1Tlk",
-      "videoUrl": "https://youtube.com/shorts/5h5nKrH1Tlk",
-      "date": "2026-08-12",
-      "title": "【コーヒー豆知識】ICEアラビカ認証在庫が244,172袋・2年半ぶりの低水準、8/7先物9月限+4.3%へ 豊作予想もブラジル出荷遅く品薄扱い｜2026/08/12 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "知識",
-        "知識",
-        "知識"
-      ],
-      "durationSeconds": 56,
-      "discovery": {
-        "method": "market-data",
-        "description": "平日=ニュース中心 & news-en が 8/10-8/11 と 2 日連続だったため多様性ルールで today は連続禁止。①市況ニュース (25%目標) を補強すべく市場データ pillar に切替。8/7 (金) ICE 認証アラビカ在庫が 244,172 袋 = 2 年半ぶりの低水準に落ち、同日先物 9 月限 (KCU26) は +4.3% 335.55 セント/ポンド急騰。8/11 (月) は下院に転じ -0.97% で戻したが、認証在庫トレンド自体は 2.5 年ぶり水準で継続。Conab は 2026/27 収穫を 66.2M 袋 (+17.1%YoY, 過去最高)、USDA は 71.9M 袋 予想と『史上最大級の豊作』を打ち出しているのに、実物 (physical) の輸出が 7/15 時点で 64% (5 年平均 70%、昨年 77%) と遅れ、木の上の豆と船に載る豆の間で認証在庫だけが細っている『帳簿豊作/実物品薄』のパラドックスが本日のフック。日本の趣味層 (Primary) にとっては『秋以降にアラビカが安くなる』予想を店頭価格が裏切る背景説明として実用性が高い。過去 14 日トピック (リベリカ復活 / One&Done / Panama Geisha / FairTrade / India-UK CETA / Rabobank×El Niño / Cooxupé / Nestlé / FoNC / ICE 在庫←7/28 数値だが今回は 8/7 の更新値) と重複なし (7/28 の ICE 在庫は robusta / stock-arabica の相場変動フレーム、今回は certified stock 2.5yr low + 収穫パラドックスの新フレーム)。",
-        "sources": [
-          "https://tradingeconomics.com/commodity/coffee",
-          "https://www.barchart.com/story/news/3761197/arabica-coffee-prices-undercut-as-brazil-harvest-expected-to-accelerate",
-          "https://www.cocoaintel.com/arabica-coffee-rebounds-sharply-as-tight-stocks-and-delayed-brazilian-harvest-support-prices-31-july-2026/",
-          "https://www.riotimesonline.com/brazil-coffee-2026-value-trap-record-harvest-explainer/",
-          "https://www.gcrmag.com/brazil-on-track-for-record-coffee-harvest-in-2026/",
-          "https://coffeegeography.com/2026/06/06/usda-brazils-2026-27-outlook-coffee-harvest-poised-for-record-rebound-but-el-nino-clouds-horizon/"
-        ],
-        "query": "ICE certified arabica stocks 244172 bags August 7 2026 2.5 year low; September arabica futures KCU26 close August 11 2026; Brazil 2026/27 harvest 64% complete Conab USDA record 71.9M bags value trap paradox",
-        "freshness_hours": 120
-      },
-      "stats": {
-        "views": 4,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-25T23:50:19.942Z"
-      },
-      "instagram": {
-        "mediaId": "18090599894393206",
-        "permalink": "https://www.instagram.com/reel/Db611aEDbal/",
-        "views": 36,
-        "reach": 36,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "-VFwo-QLWzY",
       "videoUrl": "https://youtube.com/shorts/-VFwo-QLWzY",
       "date": "2026-08-13",
@@ -4003,18 +3947,18 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "instagram": {
         "mediaId": "18112507928147186",
         "permalink": "https://www.instagram.com/reel/DfBXZPGAOmh/",
-        "views": 1811,
-        "reach": 1331,
+        "views": 1835,
+        "reach": 1351,
         "likes": 11,
         "comments": 0,
         "shares": 0,
         "saved": 26,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4060,19 +4004,19 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17939530179124564",
         "permalink": "https://www.instagram.com/reel/DfD9BVckqyz/",
-        "views": 1645,
-        "reach": 1249,
+        "views": 1696,
+        "reach": 1290,
         "likes": 7,
         "comments": 0,
         "shares": 0,
         "saved": 4,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4118,19 +4062,19 @@
         "views": 0,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17988964877881706",
         "permalink": "https://www.instagram.com/reel/DfHXA51j33s/",
-        "views": 1793,
-        "reach": 1314,
+        "views": 1841,
+        "reach": 1349,
         "likes": 14,
         "comments": 0,
         "shares": 0,
         "saved": 11,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4176,19 +4120,19 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18133612741668623",
         "permalink": "https://www.instagram.com/reel/DfJGviFAHDW/",
-        "views": 1993,
-        "reach": 1503,
+        "views": 2040,
+        "reach": 1539,
         "likes": 16,
         "comments": 0,
         "shares": 0,
         "saved": 12,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4234,19 +4178,19 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18106678202345437",
         "permalink": "https://www.instagram.com/reel/DfLqFZkjAuR/",
-        "views": 3557,
-        "reach": 2847,
-        "likes": 29,
+        "views": 3609,
+        "reach": 2884,
+        "likes": 30,
         "comments": 0,
         "shares": 0,
         "saved": 30,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4292,19 +4236,19 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18118590523807909",
         "permalink": "https://www.instagram.com/reel/DfOia6HjjbH/",
-        "views": 4862,
-        "reach": 3873,
-        "likes": 59,
+        "views": 4953,
+        "reach": 3975,
+        "likes": 60,
         "comments": 0,
         "shares": 1,
-        "saved": 80,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "saved": 81,
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4350,19 +4294,19 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17973713010187159",
         "permalink": "https://www.instagram.com/reel/DfQf2ohgjtd/",
-        "views": 4338,
-        "reach": 3488,
-        "likes": 60,
+        "views": 4409,
+        "reach": 3532,
+        "likes": 61,
         "comments": 0,
         "shares": 0,
-        "saved": 54,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "saved": 57,
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4408,19 +4352,19 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18186507217424235",
         "permalink": "https://www.instagram.com/reel/DfTEqDYih1Q/",
-        "views": 33912,
-        "reach": 28497,
-        "likes": 429,
+        "views": 34564,
+        "reach": 29051,
+        "likes": 441,
         "comments": 10,
-        "shares": 24,
-        "saved": 600,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "shares": 25,
+        "saved": 611,
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4466,19 +4410,19 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17940084054400365",
         "permalink": "https://www.instagram.com/reel/DfVpds_AuL9/",
-        "views": 1352,
-        "reach": 956,
-        "likes": 18,
+        "views": 1404,
+        "reach": 996,
+        "likes": 20,
         "comments": 0,
         "shares": 2,
         "saved": 7,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4524,19 +4468,19 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18117009752112454",
         "permalink": "https://www.instagram.com/reel/DfYONmeCdde/",
-        "views": 4641,
-        "reach": 3720,
-        "likes": 54,
+        "views": 4725,
+        "reach": 3795,
+        "likes": 55,
         "comments": 0,
         "shares": 3,
-        "saved": 57,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "saved": 59,
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4582,19 +4526,19 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18456174856192882",
         "permalink": "https://www.instagram.com/reel/DfazBfCDgtZ/",
-        "views": 1041,
-        "reach": 724,
-        "likes": 13,
+        "views": 1100,
+        "reach": 769,
+        "likes": 14,
         "comments": 0,
         "shares": 0,
         "saved": 5,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4641,19 +4585,19 @@
         "views": 9,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18019140581952630",
         "permalink": "https://www.instagram.com/reel/DfdX3IfgDLv/",
-        "views": 8726,
-        "reach": 6829,
-        "likes": 84,
+        "views": 8882,
+        "reach": 6942,
+        "likes": 86,
         "comments": 4,
         "shares": 3,
         "saved": 79,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4696,22 +4640,22 @@
         ]
       },
       "stats": {
-        "views": 5,
+        "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18029180285696372",
         "permalink": "https://www.instagram.com/reel/Dff8ohFD8wb/",
-        "views": 2061,
-        "reach": 1684,
-        "likes": 13,
+        "views": 2154,
+        "reach": 1735,
+        "likes": 15,
         "comments": 0,
         "shares": 0,
         "saved": 8,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4757,19 +4701,19 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.277Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18117882752023294",
         "permalink": "https://www.instagram.com/reel/DfihY5HiX0O/",
-        "views": 1314,
-        "reach": 958,
-        "likes": 15,
+        "views": 1424,
+        "reach": 1028,
+        "likes": 19,
         "comments": 0,
         "shares": 0,
         "saved": 3,
-        "updatedAt": "2026-11-10T23:31:27.764Z"
+        "updatedAt": "2026-11-11T23:31:25.278Z"
       }
     },
     {
@@ -4812,6 +4756,64 @@
         ]
       },
       "stats": {
+        "views": 7,
+        "likes": 0,
+        "comments": 0,
+        "updatedAt": "2026-11-11T23:31:25.277Z"
+      },
+      "ytThumbnail": "set",
+      "instagram": {
+        "mediaId": "18342083203278861",
+        "permalink": "https://www.instagram.com/reel/DflGLpYiqYh/",
+        "views": 4675,
+        "reach": 3654,
+        "likes": 56,
+        "comments": 0,
+        "shares": 2,
+        "saved": 63,
+        "updatedAt": "2026-11-11T23:31:25.278Z"
+      }
+    },
+    {
+      "videoId": "rlhdq0wzj-I",
+      "videoUrl": "https://youtube.com/shorts/rlhdq0wzj-I",
+      "date": "2026-11-12",
+      "title": "【味の直し方】ひとつだけ変えると？ 好みの味にたどり着く #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "エアロプレス",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 40,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "a09-one-change",
+        "pillar": "trouble",
+        "topic": "好みの味にたどり着く",
+        "method": "aeropress",
+        "scene": "hot",
+        "tipProblems": [
+          "迷った時",
+          "忘れそうな時"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
@@ -4819,7 +4821,7 @@
       },
       "ytThumbnail": "set",
       "instagram": {
-        "mediaId": "18342083203278861",
+        "mediaId": "17996416023047911",
         "permalink": null,
         "views": null,
         "reach": null,
@@ -4832,26 +4834,6 @@
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-14",
-      "changes": [
-        "V60: 1.7x avg views → boost",
-        "おうちカフェ: 1.3x avg views → boost",
-        "カリタウェーブ: 1.5x avg views → boost",
-        "フレンチプレス: 0.0x avg views → drop",
-        "クレバードリッパー: 0.0x avg views → drop",
-        "ケメックス: 1.4x avg views → boost",
-        "コーヒーの淹れ方: 1.5x avg views → boost",
-        "ハンドドリップ: 1.5x avg views → boost",
-        "コーヒーのある暮らし: 1.5x avg views → boost",
-        "抽出: 1.5x avg views → boost",
-        "standard: 0 avg views (56 videos)",
-        "recipe: 1 avg views (8 videos)",
-        "brew-lesson: 1 avg views (18 videos)",
-        "Day performance: Wed=1, Thu=1, Sat=1, Mon=1, Tue=0, Fri=0, Sun=0"
-      ],
-      "recommendedTemplate": "brew-lesson"
-    },
     {
       "date": "2026-10-15",
       "changes": [
@@ -5776,6 +5758,37 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 4 avg views (44 videos)",
         "Day performance: Tue=3, Thu=3, Sat=3, Wed=2, Fri=2, Mon=2, Sun=1"
+      ],
+      "recommendedTemplate": "brew-lesson"
+    },
+    {
+      "date": "2026-11-11",
+      "changes": [
+        "Coffee: 0.2x avg views → drop",
+        "コーヒー豆知識: 0.2x avg views → drop",
+        "スペシャルティコーヒー: 0.2x avg views → drop",
+        "カフェ: 0.2x avg views → drop",
+        "珈琲: 0.2x avg views → drop",
+        "CoffeeLovers: 0.2x avg views → drop",
+        "コーヒー好き: 0.2x avg views → drop",
+        "今日の一杯: 0.2x avg views → drop",
+        "コーヒーレシピ: 0.2x avg views → drop",
+        "V60: 1.6x avg views → boost",
+        "自家焙煎: 0.2x avg views → drop",
+        "コーヒー豆: 0.2x avg views → drop",
+        "おうちカフェ: 1.5x avg views → boost",
+        "OpenGroundCoffee: 0.2x avg views → drop",
+        "カリタウェーブ: 1.3x avg views → boost",
+        "フレンチプレス: 1.4x avg views → boost",
+        "コーヒーの淹れ方: 1.7x avg views → boost",
+        "ハンドドリップ: 1.7x avg views → boost",
+        "コーヒーのある暮らし: 1.7x avg views → boost",
+        "抽出: 1.7x avg views → boost",
+        "ペーパードリップ: 2.2x avg views → boost",
+        "standard: 1 avg views (33 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 4 avg views (45 videos)",
+        "Day performance: Thu=3, Sat=3, Tue=3, Wed=2, Fri=2, Mon=2, Sun=1"
       ],
       "recommendedTemplate": "brew-lesson"
     }
