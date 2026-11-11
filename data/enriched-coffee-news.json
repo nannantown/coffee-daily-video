@@ -1,60 +1,58 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a18-extraction-order",
-    "pillar": "theory",
-    "method": "clever",
+    "episode": "a09-one-change",
+    "pillar": "trouble",
+    "method": "aeropress",
     "scene": "hot",
-    "word": "溶ける順番",
-    "ask": "ってある？",
-    "hook": "甘みの所で抽出を止める",
-    "topic": "止めどきで甘さが決まる",
-    "why": "酸が先、甘みが次、苦味は最後に出やすい",
-    "core": "溶ける順番を知ると、止めどきが分かる",
+    "word": "ひとつだけ",
+    "ask": "変えると？",
+    "hook": "1回に1つだけ変える",
+    "topic": "好みの味にたどり着く",
+    "why": "同時に変えると原因が分からない",
+    "core": "1つずつ変えると、何が効いたか分かる",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 50, "to": 55 },
+      "type": "compare",
+      "shade": { "from": 40, "to": 70 },
       "meters": [
-        { "label": "酸味", "from": 70, "to": 45 },
-        { "label": "甘味", "from": 30, "to": 65 },
-        { "label": "苦味", "from": 20, "to": 35 }
+        { "label": "迷い", "from": 75, "to": 20 }
       ]
     },
     "effect": [
-      { "label": "程よく止める", "taste": "甘く、まとまる" },
-      { "label": "最後まで出す", "taste": "苦味と渋みが出る" }
+      { "label": "1つ変える", "taste": "違いがはっきり分かる" },
+      { "label": "全部変える", "taste": "何が効いたか迷う" }
     ],
     "tips": [
-      { "problem": "酸っぱい時", "fix": "少し長めに待つ" },
-      { "problem": "苦い時", "fix": "甘いうちに落とす" }
+      { "problem": "迷った時", "fix": "まず挽き目から変える" },
+      { "problem": "忘れそうな時", "fix": "変えた所をメモする" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "途中は甘みが出やすい",
-      "xLabel": "落ちる順",
-      "yLabel": "甘み",
-      "points": [
-        { "label": "最初", "value": 2 },
-        { "label": "中盤", "value": 4 },
-        { "label": "後半", "value": 3 },
-        { "label": "最後", "value": 1 }
-      ],
-      "mark": 1,
-      "zones": ["酸っぱい", "甘い", "苦い"]
+      "type": "compare",
+      "caption": "1つずつなら原因が追える",
+      "left": {
+        "label": "全部変える",
+        "result": "原因が混ざる",
+        "strength": 3
+      },
+      "right": {
+        "label": "1つ変える",
+        "result": "原因が見える",
+        "strength": 3
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "コーヒーの成分には、溶ける順番があります。",
-      "why": "先に酸、次に甘み、最後に苦味や渋みが出やすい。どこで止めるかで、一杯の味が変わります。",
-      "visual": "途中は甘みが出やすく、最後まで出し切ると苦味が勝ちやすい。",
-      "effect": "程よく止めれば甘くまとまり、最後まで出すと苦味と渋みが出ます。",
-      "tips": "酸っぱければ少し長めに待ち、苦ければ甘いうちに落とします。"
+      "title": "湯温や挽き目を1つだけ変えると、どうなる？味の変化が追いやすくなります。",
+      "why": "2つ同時に変えると、どれが効いたか切り分けられないからです。",
+      "visual": "1つずつ試すと、味の変化が原因とつながります。",
+      "effect": "挽き目は、粗いと酸、中間で甘み、細かいと苦味。湯温は、低いと酸、高いと苦味に寄ります。",
+      "tips": "迷ったら、味が動かしやすい挽き目を少しずつ。変えた所と気づきをメモします。"
     },
     "sources": [
-      "https://methodicalcoffee.com/blogs/coffee-culture/what-is-coffee-extraction-how-to-brew-better-coffee-at-home",
-      "https://clivecoffee.com/blogs/learn/how-coffee-extraction-works",
-      "https://field-guides.vercel.app/pour-over/solubility-and-what-dissolves.html"
+      "https://blog.bluebottlecoffee.com/posts/dialing-in-the-grind",
+      "https://field-guides.vercel.app/pour-over/dialing-in-grind-size.html"
     ]
   }
 }
