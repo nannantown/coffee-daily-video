@@ -243,6 +243,13 @@
       "attemptedAt": "2026-11-11T23:34:25.453Z",
       "postId": "6af4fb828a1a2f52b50d22a1",
       "verifiedAt": "2026-11-11T23:34:27.188Z"
+    },
+    "6ad038ce778b240e2f12264f:20261113": {
+      "fingerprint": "9bfb2350a88b620668fa08bdc3ae943317ab58f50c2993181bbf3b9d81e55d9a",
+      "videoSha256": "c0ced47450a336b13f61f9b3518cb031bafd08cc75d106740cfb98486c1d4707",
+      "state": "creating",
+      "attemptId": "cdea344c-fcda-42ba-bd12-7f903a03024e",
+      "attemptedAt": "2026-11-12T23:36:25.181Z"
     }
   }
 }
