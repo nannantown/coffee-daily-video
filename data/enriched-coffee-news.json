@@ -1,58 +1,53 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a09-one-change",
-    "pillar": "trouble",
-    "method": "aeropress",
+    "episode": "a19-preheat",
+    "pillar": "theory",
+    "method": "origami",
     "scene": "hot",
-    "word": "ひとつだけ",
-    "ask": "変えると？",
-    "hook": "1回に1つだけ変える",
-    "topic": "好みの味にたどり着く",
-    "why": "同時に変えると原因が分からない",
-    "core": "1つずつ変えると、何が効いたか分かる",
+    "word": "器の予熱",
+    "ask": "をすると？",
+    "hook": "ドリッパーを温めておく",
+    "topic": "甘さが出てまとまる",
+    "why": "冷たい器がお湯の熱を奪い温度が下がる",
+    "core": "温度が保たれ、甘さが出てそろう",
     "motion": {
-      "type": "compare",
-      "shade": { "from": 40, "to": 70 },
+      "type": "dissolve",
+      "shade": { "from": 50, "to": 65 },
       "meters": [
-        { "label": "迷い", "from": 75, "to": 20 }
+        { "label": "酸味", "from": 65, "to": 40 },
+        { "label": "甘み", "from": 35, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "1つ変える", "taste": "違いがはっきり分かる" },
-      { "label": "全部変える", "taste": "何が効いたか迷う" }
+      { "label": "温めておく", "taste": "甘くまとまる" },
+      { "label": "温めない", "taste": "酸っぱく軽い味" }
     ],
     "tips": [
-      { "problem": "迷った時", "fix": "まず挽き目から変える" },
-      { "problem": "忘れそうな時", "fix": "変えた所をメモする" }
+      { "problem": "酸っぱい時", "fix": "サーバーも温める" },
+      { "problem": "苦くなった時", "fix": "お湯の温度を少し下げる" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "1つずつなら原因が追える",
-      "left": {
-        "label": "全部変える",
-        "result": "原因が混ざる",
-        "strength": 3
-      },
-      "right": {
-        "label": "1つ変える",
-        "result": "原因が見える",
-        "strength": 3
-      },
-      "pick": "right"
+      "type": "scale",
+      "caption": "温めると甘く、冷えると酸へ",
+      "label": "湯温",
+      "zones": ["酸っぱい", "ちょうど", "苦い"],
+      "from": 30,
+      "to": 55
     },
     "narration": {
-      "title": "湯温や挽き目を1つだけ変えると、どうなる？味の変化が追いやすくなります。",
-      "why": "2つ同時に変えると、どれが効いたか切り分けられないからです。",
-      "visual": "1つずつ試すと、味の変化が原因とつながります。",
-      "effect": "挽き目は、粗いと酸、中間で甘み、細かいと苦味。湯温は、低いと酸、高いと苦味に寄ります。",
-      "tips": "迷ったら、味が動かしやすい挽き目を少しずつ。変えた所と気づきをメモします。"
+      "title": "ドリッパーを先に温めておくと、甘さがまとまって酸っぱさが出にくくなります。",
+      "why": "冷たい器がお湯の熱を奪い、粉の周りの温度が下がると、酸が立ちやすくなります。",
+      "visual": "器が冷たいと酸側へ、熱すぎれば苦い側へ。温めておくと、ちょうどの所に。",
+      "effect": "温めておくと、甘くまとまる。温めないと、酸っぱく軽い味に。",
+      "tips": "酸っぱければ、サーバーも温める。苦くなったら、お湯を少し下げる。"
     },
     "sources": [
-      "https://blog.bluebottlecoffee.com/posts/dialing-in-the-grind",
-      "https://field-guides.vercel.app/pour-over/dialing-in-grind-size.html"
+      "https://www.baristahustle.com/blog/the-importance-of-preheating-your-brewer/",
+      "https://perfectdailygrind.com/2022/02/why-should-you-preheat-your-coffee-brewer/",
+      "https://sca.coffee/sca-news/read/scaa-releases-new-standards-for-brewed-coffee"
     ]
   }
 }
