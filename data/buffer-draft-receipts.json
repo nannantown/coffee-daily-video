@@ -256,9 +256,11 @@
     "6ad038ce778b240e2f12264f:20261114": {
       "fingerprint": "3d4101dfb334038daf6c9ddf77dd71ceca044d6b18635d7dd0a6edf994d4d523",
       "videoSha256": "a7e93b90cce024367a05bd67adb205817276f65cacdd226658e3573c6d50b07b",
-      "state": "creating",
+      "state": "draft",
       "attemptId": "273ed587-d4f4-4482-8cdf-5db0535ff721",
-      "attemptedAt": "2026-11-13T23:36:55.866Z"
+      "attemptedAt": "2026-11-13T23:36:55.866Z",
+      "postId": "6af79f19d16af15d4dddf5a7",
+      "verifiedAt": "2026-11-13T23:36:57.579Z"
     }
   }
 }
