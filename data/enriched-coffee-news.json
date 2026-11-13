@@ -1,53 +1,53 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "a19-preheat",
-    "pillar": "theory",
-    "method": "origami",
+    "episode": "b01-extraction",
+    "pillar": "terms",
+    "method": "v60",
     "scene": "hot",
-    "word": "器の予熱",
-    "ask": "をすると？",
-    "hook": "ドリッパーを温めておく",
-    "topic": "甘さが出てまとまる",
-    "why": "冷たい器がお湯の熱を奪い温度が下がる",
-    "core": "温度が保たれ、甘さが出てそろう",
+    "word": "抽出",
+    "ask": "ってなに？",
+    "hook": "抽出時間を延ばす",
+    "topic": "濃くなり苦味が出る",
+    "why": "長いほど粉から成分が多く溶け出す",
+    "core": "時間を延ばすほど、濃く苦味寄りに",
     "motion": {
       "type": "dissolve",
-      "shade": { "from": 50, "to": 65 },
+      "shade": { "from": 35, "to": 70 },
       "meters": [
-        { "label": "酸味", "from": 65, "to": 40 },
-        { "label": "甘み", "from": 35, "to": 60 }
+        { "label": "濃さ", "from": 35, "to": 70 },
+        { "label": "苦味", "from": 25, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "温めておく", "taste": "甘くまとまる" },
-      { "label": "温めない", "taste": "酸っぱく軽い味" }
+      { "label": "延ばす", "taste": "苦味が出て濃く" },
+      { "label": "縮める", "taste": "酸が立ち軽く" }
     ],
     "tips": [
-      { "problem": "酸っぱい時", "fix": "サーバーも温める" },
-      { "problem": "苦くなった時", "fix": "お湯の温度を少し下げる" }
+      { "problem": "酸っぱい時", "fix": "ゆっくり注いで時間を延ばす" },
+      { "problem": "苦い時", "fix": "早めに落とし切る" }
     ],
     "visual": {
       "type": "scale",
-      "caption": "温めると甘く、冷えると酸へ",
-      "label": "湯温",
-      "zones": ["酸っぱい", "ちょうど", "苦い"],
+      "caption": "短いと酸、長いと苦くなる",
+      "label": "抽出時間",
+      "zones": ["酸寄り", "甘み", "苦寄り"],
       "from": 30,
-      "to": 55
+      "to": 70
     },
     "narration": {
-      "title": "ドリッパーを先に温めておくと、甘さがまとまって酸っぱさが出にくくなります。",
-      "why": "冷たい器がお湯の熱を奪い、粉の周りの温度が下がると、酸が立ちやすくなります。",
-      "visual": "器が冷たいと酸側へ、熱すぎれば苦い側へ。温めておくと、ちょうどの所に。",
-      "effect": "温めておくと、甘くまとまる。温めないと、酸っぱく軽い味に。",
-      "tips": "酸っぱければ、サーバーも温める。苦くなったら、お湯を少し下げる。"
+      "title": "抽出ってなに？お湯に粉の成分が溶け出すことです。",
+      "why": "長くなるほど、粉の成分が多く溶け出すからです。",
+      "visual": "短いほど酸、ちょうどで甘み、長いほど苦くなります。",
+      "effect": "延ばすと、苦味が出て濃く。縮めると、酸が立ち軽くなります。",
+      "tips": "酸っぱい一杯は短すぎ、ゆっくり注いで延ばす。苦い一杯は長すぎ、早めに落とし切ります。"
     },
     "sources": [
-      "https://www.baristahustle.com/blog/the-importance-of-preheating-your-brewer/",
-      "https://perfectdailygrind.com/2022/02/why-should-you-preheat-your-coffee-brewer/",
-      "https://sca.coffee/sca-news/read/scaa-releases-new-standards-for-brewed-coffee"
+      "https://www.baristahustle.com/blog/an-introduction-to-coffee-extraction/",
+      "https://sca.coffee/research/coffee-brewing-handbook",
+      "https://perfectdailygrind.com/2020/09/understanding-coffee-extraction-a-beginners-guide/"
     ]
   }
 }
