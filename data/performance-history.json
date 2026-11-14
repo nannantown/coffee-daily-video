@@ -4808,7 +4808,17 @@
         "updatedAt": null
       },
       "ytThumbnail": "set",
-      "instagram": null
+      "instagram": {
+        "mediaId": "17972783525962342",
+        "permalink": null,
+        "views": null,
+        "reach": null,
+        "likes": null,
+        "comments": null,
+        "shares": null,
+        "saved": null,
+        "updatedAt": null
+      }
     }
   ],
   "optimizationLog": [
