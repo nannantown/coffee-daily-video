@@ -1,53 +1,56 @@
 {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b01-extraction",
-    "pillar": "terms",
-    "method": "v60",
+    "episode": "b02-measure",
+    "pillar": "ratio",
+    "method": "paper-drip",
     "scene": "hot",
-    "word": "抽出",
-    "ask": "ってなに？",
-    "hook": "抽出時間を延ばす",
-    "topic": "濃くなり苦味が出る",
-    "why": "長いほど粉から成分が多く溶け出す",
-    "core": "時間を延ばすほど、濃く苦味寄りに",
+    "word": "計量",
+    "ask": "で味がそろう？",
+    "hook": "目分量をやめて量る",
+    "topic": "毎回同じ味に近づく",
+    "why": "粉と湯のブレは、味のブレにつながる",
+    "core": "量ると、毎回同じ濃さに近づく",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 35, "to": 70 },
+      "type": "compare",
+      "shade": { "from": 50, "to": 50 },
       "meters": [
-        { "label": "濃さ", "from": 35, "to": 70 },
-        { "label": "苦味", "from": 25, "to": 60 }
+        { "label": "ブレ", "from": 80, "to": 20 },
+        { "label": "再現性", "from": 30, "to": 75 }
       ]
     },
     "effect": [
-      { "label": "延ばす", "taste": "苦味が出て濃く" },
-      { "label": "縮める", "taste": "酸が立ち軽く" }
+      { "label": "量る", "taste": "毎回同じ濃さに近づく" },
+      { "label": "目分量", "taste": "日ごとに濃さがぶれる" }
     ],
     "tips": [
-      { "problem": "酸っぱい時", "fix": "ゆっくり注いで時間を延ばす" },
-      { "problem": "苦い時", "fix": "早めに落とし切る" }
+      { "problem": "毎回味が違う時", "fix": "粉もお湯もはかりで量る" },
+      { "problem": "さらに揃えたい", "fix": "使った量をメモする" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "短いと酸、長いと苦くなる",
-      "label": "抽出時間",
-      "zones": ["酸寄り", "甘み", "苦寄り"],
-      "from": 30,
-      "to": 70
+      "type": "graph",
+      "caption": "量ると日々のブレが減る",
+      "xLabel": "淹れ方",
+      "yLabel": "ブレ",
+      "points": [
+        { "label": "目分量", "value": 5 },
+        { "label": "量る", "value": 1 }
+      ],
+      "mark": 1
     },
     "narration": {
-      "title": "抽出ってなに？お湯に粉の成分が溶け出すことです。",
-      "why": "長くなるほど、粉の成分が多く溶け出すからです。",
-      "visual": "短いほど酸、ちょうどで甘み、長いほど苦くなります。",
-      "effect": "延ばすと、苦味が出て濃く。縮めると、酸が立ち軽くなります。",
-      "tips": "酸っぱい一杯は短すぎ、ゆっくり注いで延ばす。苦い一杯は長すぎ、早めに落とし切ります。"
+      "title": "はかりで粉と湯を量ると、毎回同じ味に近づきます。",
+      "why": "量のブレは、味のブレにつながるからです。",
+      "visual": "目分量はブレやすく、量るとそろいやすくなります。",
+      "effect": "量ると、毎回同じ濃さに近づく。目分量は、日によって濃くも薄くもなります。",
+      "tips": "味がぶれるなら、粉もお湯もはかりで量る。使った量をメモすると、さらに揃います。"
     },
     "sources": [
-      "https://www.baristahustle.com/blog/an-introduction-to-coffee-extraction/",
-      "https://sca.coffee/research/coffee-brewing-handbook",
-      "https://perfectdailygrind.com/2020/09/understanding-coffee-extraction-a-beginners-guide/"
+      "https://seelaz.com/blogs/barista-academy/sca-brewing-control-chart",
+      "https://methodicalcoffee.com/blogs/coffee-culture/coffee-to-water-ratio-the-ultimate-guide-to-brewing-ratios",
+      "https://sca.coffee/research/coffee-brewing-handbook"
     ]
   }
 }
