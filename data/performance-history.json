@@ -2,64 +2,6 @@
   "schemaVersion": 1,
   "videos": [
     {
-      "videoId": "NuF5xllz7IA",
-      "videoUrl": "https://youtube.com/shorts/NuF5xllz7IA",
-      "date": "2026-08-15",
-      "title": "【コーヒー豆知識】夏の豆を守る科学・家庭冷凍庫で香りが約16倍長持ち、ペンシルベニア州立大の実験で証明｜2026/08/15 #Shorts",
-      "titleTemplate": "standard",
-      "hashtags": [
-        "コーヒー",
-        "Coffee",
-        "コーヒー豆知識",
-        "スペシャルティコーヒー",
-        "カフェ",
-        "珈琲",
-        "CoffeeLovers",
-        "コーヒー好き",
-        "Shorts"
-      ],
-      "languages": [],
-      "projects": [
-        "産地",
-        "産地",
-        "産地"
-      ],
-      "durationSeconds": 54,
-      "discovery": {
-        "method": "expert-blog",
-        "description": "土曜=エバーグリーン深掘り枠で、今週の相場ショック連発 (8/13 コロンビア M7.4 地震・8/14 ベトナム農家渡し 10 万ドン目前・8/05 Fairtrade 洗いアラビカ最低価格+11%) と自然接続する Primary 家淹れ層向け実用 TIP『相場高騰の今、買い増した豆を夏の高温多湿で痛める前に守る科学』を、Cotter & Hopfer (Penn State) 2018 年 Beverages 誌査読論文 + Barista Hustle『A Year in the Deep Freeze』+ Perfect Daily Grind 2025-09『Are we still freezing coffee?』の 3 系統エビデンスで組み立てる expert-blog。核心ハードナンバー 3 点: (a) 2018 年ペン州大 Cotter & Hopfer が 9 週間冷凍 vs 常温を消費者官能評価 + GC-MS で比較、深煎りは常温で香り成分損失が顕著、冷凍で明確に保持と結論、(b) 化学のアレニウス則 (温度 10℃ 低下で反応速度が約半分)、家庭冷凍庫 -18℃ は常温 20℃ 比で ΔT=38℃ = 約 (0.5)^3.8 ≈ 1/13.9 ≒ 約 16 倍長持ちの計算、(c) 単回冷凍 (single dose)・小分け密閉・凍ったまま挽く運用が Barista Hustle 検証で安定再現。Method 選定理由: 8/14 market-data / 8/13 news-en の連続違反回避、8/09 expert-blog から 6 日空き、直近 expert-blog 連続不振 (8/01 Hoffmann 0v・8/09 Lance Hedrick 0v・7/17 Lance Hedrick 0v) の共通問題『有名人名を並べたが具体行動接続が薄い』を、勝ちテンプレ『査読データ × 家で今すぐ試せる TIP』(5/23 UC Davis 水温 83v・5/16 差額 77v・6/07 焙煎度別ピーク日 10v) に軸戻しする改善型テスト投入。Pillar は ④焙煎士の一次情報 (直近 14 日 14% → 21%、目標 15% 帯へ回復) を主軸、③業界・ビジネスの過剰是正も兼ね、①市況ニュース (直近 50% 過剰) からの明示的スイッチ。日本の 8 月中旬は最高気温 32-35℃・湿度 70-80% で豆の劣化速度が最大化する季節性ピーク、Primary 家淹れ層の『買った豆を夏に痛めた』経験記憶を直撃。freshness_hours=336 (エバーグリーンだが、PDG 2025-09『Are we still freezing coffee?』を英語圏最新まとめとして採用、原論文は 2018 年でも 7 年後の 2025 年に PDG が再訪する実務トピックの回復基調で継続関心確立)。",
-        "sources": [
-          "https://perfectdailygrind.com/2025/09/freezing-roasted-coffee-best-practices/",
-          "https://www.mdpi.com/2306-5710/4/3/68/htm",
-          "https://doi.org/10.3390/beverages4030068",
-          "https://www.semanticscholar.org/paper/The-Effects-of-Storage-Temperature-on-the-Aroma-of-Cotter-Hopfer/694653f3a0440724daba8adeb40ab71a2d9ee702",
-          "https://www.psu.edu/news/research/story/wake-and-smell-coffee-research-shows-freezing-beans-can-preserve-aroma",
-          "https://www.baristahustle.com/a-year-in-the-deep-freeze/",
-          "https://thebasicbarista.com/blogs/topics/freezing-coffee-beans-barista-basics",
-          "https://www.worldcoffeeportal.com/interview/cool-beans-james-hoffmanns-quest-for-perfect-cold-coffee/"
-        ],
-        "query": "freezing coffee beans science Penn State Cotter Hopfer 2018 Beverages nine weeks arabica aroma dark roast; Barista Hustle deep freeze single dose 2024 2025; Perfect Daily Grind freezing roasted coffee 2025 best practices; Arrhenius 10 degrees rule reaction rate coffee staling home freezer -18",
-        "freshness_hours": 336
-      },
-      "stats": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "updatedAt": "2026-08-28T06:59:19.278Z"
-      },
-      "instagram": {
-        "mediaId": "18089349173219481",
-        "permalink": "https://www.instagram.com/reel/DcChvQfDEfV/",
-        "views": 10,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "saved": 0,
-        "updatedAt": "2026-09-13T02:46:14.726Z"
-      }
-    },
-    {
       "videoId": "cqCQ_hJio9M",
       "videoUrl": "https://youtube.com/shorts/cqCQ_hJio9M",
       "date": "2026-08-16",
@@ -4002,19 +3944,19 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18133612741668623",
         "permalink": "https://www.instagram.com/reel/DfJGviFAHDW/",
-        "views": 2117,
-        "reach": 1582,
+        "views": 2129,
+        "reach": 1586,
         "likes": 16,
         "comments": 0,
         "shares": 0,
         "saved": 12,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4060,19 +4002,19 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18106678202345437",
         "permalink": "https://www.instagram.com/reel/DfLqFZkjAuR/",
-        "views": 3679,
-        "reach": 2929,
+        "views": 3720,
+        "reach": 2946,
         "likes": 31,
         "comments": 0,
         "shares": 0,
         "saved": 30,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4118,19 +4060,19 @@
         "views": 10,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18118590523807909",
         "permalink": "https://www.instagram.com/reel/DfOia6HjjbH/",
-        "views": 5062,
-        "reach": 4053,
-        "likes": 62,
+        "views": 5135,
+        "reach": 4105,
+        "likes": 63,
         "comments": 0,
         "shares": 1,
         "saved": 82,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4173,22 +4115,22 @@
         ]
       },
       "stats": {
-        "views": 7,
+        "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17973713010187159",
         "permalink": "https://www.instagram.com/reel/DfQf2ohgjtd/",
-        "views": 4522,
-        "reach": 3601,
+        "views": 4560,
+        "reach": 3636,
         "likes": 61,
         "comments": 0,
         "shares": 0,
-        "saved": 57,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 59,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4234,19 +4176,19 @@
         "views": 4,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18186507217424235",
         "permalink": "https://www.instagram.com/reel/DfTEqDYih1Q/",
-        "views": 35434,
-        "reach": 29798,
-        "likes": 458,
+        "views": 35887,
+        "reach": 30188,
+        "likes": 466,
         "comments": 10,
         "shares": 25,
-        "saved": 626,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 637,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4292,19 +4234,19 @@
         "views": 2,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17940084054400365",
         "permalink": "https://www.instagram.com/reel/DfVpds_AuL9/",
-        "views": 1473,
-        "reach": 1049,
-        "likes": 20,
+        "views": 1510,
+        "reach": 1071,
+        "likes": 21,
         "comments": 0,
         "shares": 2,
         "saved": 7,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4350,19 +4292,19 @@
         "views": 6,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18117009752112454",
         "permalink": "https://www.instagram.com/reel/DfYONmeCdde/",
-        "views": 4837,
-        "reach": 3887,
-        "likes": 55,
+        "views": 4876,
+        "reach": 3920,
+        "likes": 56,
         "comments": 0,
         "shares": 3,
-        "saved": 59,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 60,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4405,22 +4347,22 @@
         ]
       },
       "stats": {
-        "views": 10,
+        "views": 11,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18456174856192882",
         "permalink": "https://www.instagram.com/reel/DfazBfCDgtZ/",
-        "views": 1195,
-        "reach": 841,
-        "likes": 15,
+        "views": 1233,
+        "reach": 867,
+        "likes": 17,
         "comments": 0,
         "shares": 0,
-        "saved": 5,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 6,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4464,22 +4406,22 @@
         ]
       },
       "stats": {
-        "views": 10,
+        "views": 12,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18019140581952630",
         "permalink": "https://www.instagram.com/reel/DfdX3IfgDLv/",
-        "views": 9152,
-        "reach": 7187,
-        "likes": 88,
+        "views": 9279,
+        "reach": 7272,
+        "likes": 89,
         "comments": 4,
         "shares": 3,
-        "saved": 81,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 83,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4525,19 +4467,19 @@
         "views": 8,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18029180285696372",
         "permalink": "https://www.instagram.com/reel/Dff8ohFD8wb/",
-        "views": 2279,
-        "reach": 1828,
+        "views": 2331,
+        "reach": 1865,
         "likes": 15,
         "comments": 0,
         "shares": 0,
         "saved": 8,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4580,22 +4522,22 @@
         ]
       },
       "stats": {
-        "views": 2,
+        "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18117882752023294",
         "permalink": "https://www.instagram.com/reel/DfihY5HiX0O/",
-        "views": 1573,
-        "reach": 1134,
-        "likes": 19,
+        "views": 1637,
+        "reach": 1178,
+        "likes": 20,
         "comments": 0,
         "shares": 0,
         "saved": 3,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4641,19 +4583,19 @@
         "views": 7,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "18342083203278861",
         "permalink": "https://www.instagram.com/reel/DflGLpYiqYh/",
-        "views": 6569,
-        "reach": 5328,
-        "likes": 81,
+        "views": 6853,
+        "reach": 5585,
+        "likes": 86,
         "comments": 0,
-        "shares": 3,
-        "saved": 102,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "shares": 4,
+        "saved": 106,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4699,19 +4641,19 @@
         "views": 1,
         "likes": 0,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": {
         "mediaId": "17996416023047911",
         "permalink": "https://www.instagram.com/reel/Dfnq-9lpZf8/",
-        "views": 887,
-        "reach": 619,
-        "likes": 5,
+        "views": 947,
+        "reach": 662,
+        "likes": 7,
         "comments": 0,
         "shares": 0,
-        "saved": 5,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "saved": 7,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
       }
     },
     {
@@ -4754,10 +4696,10 @@
         ]
       },
       "stats": {
-        "views": 898,
-        "likes": 5,
+        "views": 912,
+        "likes": 6,
         "comments": 0,
-        "updatedAt": "2026-11-13T23:31:42.462Z"
+        "updatedAt": "2026-11-14T23:31:08.613Z"
       },
       "ytThumbnail": "set",
       "instagram": null
@@ -4802,56 +4744,74 @@
         ]
       },
       "stats": {
+        "views": 906,
+        "likes": 5,
+        "comments": 0,
+        "updatedAt": "2026-11-14T23:31:08.613Z"
+      },
+      "ytThumbnail": "set",
+      "instagram": {
+        "mediaId": "17972783525962342",
+        "permalink": "https://www.instagram.com/reel/DfteOu-jCTY/",
+        "views": 1143,
+        "reach": 844,
+        "likes": 16,
+        "comments": 0,
+        "shares": 0,
+        "saved": 5,
+        "updatedAt": "2026-11-14T23:31:08.614Z"
+      }
+    },
+    {
+      "videoId": "n2NBawyWVbg",
+      "videoUrl": "https://youtube.com/shorts/n2NBawyWVbg",
+      "date": "2026-11-15",
+      "title": "【粉と湯の比率】計量で味がそろう？ 毎回同じ味に近づく #Shorts",
+      "titleTemplate": "brew-lesson",
+      "hashtags": [
+        "コーヒーの淹れ方",
+        "ハンドドリップ",
+        "ペーパードリップ",
+        "おうちカフェ",
+        "コーヒーのある暮らし",
+        "抽出",
+        "コーヒー",
+        "Shorts"
+      ],
+      "languages": [],
+      "projects": [
+        "lesson-title",
+        "lesson-why",
+        "lesson-visual",
+        "lesson-effect",
+        "lesson-tips"
+      ],
+      "durationSeconds": 35,
+      "content": {
+        "format": "brew-lesson",
+        "trial": "coffee-trial-2-brew-basics",
+        "fallback": false,
+        "episode": "b02-measure",
+        "pillar": "ratio",
+        "topic": "毎回同じ味に近づく",
+        "method": "paper-drip",
+        "scene": "hot",
+        "tipProblems": [
+          "毎回味が違う時",
+          "さらに揃えたい"
+        ]
+      },
+      "stats": {
         "views": 0,
         "likes": 0,
         "comments": 0,
         "updatedAt": null
       },
       "ytThumbnail": "set",
-      "instagram": {
-        "mediaId": "17972783525962342",
-        "permalink": null,
-        "views": null,
-        "reach": null,
-        "likes": null,
-        "comments": null,
-        "shares": null,
-        "saved": null,
-        "updatedAt": null
-      }
+      "instagram": null
     }
   ],
   "optimizationLog": [
-    {
-      "date": "2026-10-17",
-      "changes": [
-        "Coffee: 0.6x avg views → drop",
-        "コーヒー豆知識: 0.6x avg views → drop",
-        "スペシャルティコーヒー: 0.7x avg views → drop",
-        "カフェ: 0.6x avg views → drop",
-        "珈琲: 0.6x avg views → drop",
-        "CoffeeLovers: 0.6x avg views → drop",
-        "コーヒー好き: 0.6x avg views → drop",
-        "今日の一杯: 0.8x avg views → drop",
-        "コーヒーレシピ: 0.8x avg views → drop",
-        "V60: 1.5x avg views → boost",
-        "自家焙煎: 0.8x avg views → drop",
-        "コーヒー豆: 0.8x avg views → drop",
-        "おうちカフェ: 1.6x avg views → boost",
-        "OpenGroundCoffee: 0.8x avg views → drop",
-        "フレンチプレス: 0.5x avg views → drop",
-        "オリガミドリッパー: 0.5x avg views → drop",
-        "コーヒーの淹れ方: 2.0x avg views → boost",
-        "ハンドドリップ: 2.0x avg views → boost",
-        "コーヒーのある暮らし: 2.0x avg views → boost",
-        "抽出: 2.0x avg views → boost",
-        "standard: 0 avg views (52 videos)",
-        "recipe: 1 avg views (8 videos)",
-        "brew-lesson: 1 avg views (21 videos)",
-        "Day performance: Sat=1, Mon=1, Wed=1, Thu=1, Fri=1, Sun=0, Tue=0"
-      ],
-      "recommendedTemplate": "brew-lesson"
-    },
     {
       "date": "2026-10-18",
       "changes": [
@@ -5795,6 +5755,41 @@
         "recipe: 1 avg views (8 videos)",
         "brew-lesson: 23 avg views (47 videos)",
         "Day performance: Fri=66, Sat=3, Tue=3, Thu=3, Mon=2, Wed=2, Sun=1"
+      ],
+      "recommendedTemplate": "brew-lesson"
+    },
+    {
+      "date": "2026-11-14",
+      "changes": [
+        "Coffee: 0.0x avg views → drop",
+        "コーヒー豆知識: 0.0x avg views → drop",
+        "スペシャルティコーヒー: 0.0x avg views → drop",
+        "カフェ: 0.0x avg views → drop",
+        "珈琲: 0.0x avg views → drop",
+        "CoffeeLovers: 0.0x avg views → drop",
+        "コーヒー好き: 0.0x avg views → drop",
+        "今日の一杯: 0.0x avg views → drop",
+        "コーヒーレシピ: 0.0x avg views → drop",
+        "V60: 3.4x avg views → boost",
+        "自家焙煎: 0.0x avg views → drop",
+        "コーヒー豆: 0.0x avg views → drop",
+        "おうちカフェ: 1.5x avg views → boost",
+        "OpenGroundCoffee: 0.0x avg views → drop",
+        "カリタウェーブ: 0.1x avg views → drop",
+        "フレンチプレス: 0.1x avg views → drop",
+        "オリガミドリッパー: 6.6x avg views → boost",
+        "クレバードリッパー: 0.1x avg views → drop",
+        "ケメックス: 0.1x avg views → drop",
+        "コーヒーの淹れ方: 1.8x avg views → boost",
+        "ハンドドリップ: 1.8x avg views → boost",
+        "エアロプレス: 0.1x avg views → drop",
+        "コーヒーのある暮らし: 1.8x avg views → boost",
+        "抽出: 1.8x avg views → boost",
+        "ペーパードリップ: 0.2x avg views → drop",
+        "standard: 0 avg views (30 videos)",
+        "recipe: 1 avg views (8 videos)",
+        "brew-lesson: 42 avg views (48 videos)",
+        "Day performance: Sat=79, Fri=72, Tue=3, Thu=3, Sun=2, Mon=2, Wed=2"
       ],
       "recommendedTemplate": "brew-lesson"
     }
