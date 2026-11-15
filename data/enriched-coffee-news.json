@@ -1,56 +1,53 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b02-measure",
-    "pillar": "ratio",
-    "method": "paper-drip",
+    "episode": "b03-ratio",
+    "pillar": "terms",
+    "method": "v60",
     "scene": "hot",
-    "word": "計量",
-    "ask": "で味がそろう？",
-    "hook": "目分量をやめて量る",
-    "topic": "毎回同じ味に近づく",
-    "why": "粉と湯のブレは、味のブレにつながる",
-    "core": "量ると、毎回同じ濃さに近づく",
+    "word": "比率",
+    "ask": "ってなに？",
+    "hook": "お湯を少し減らす",
+    "topic": "同じ粉でも濃くなる",
+    "why": "比率＝粉に対するお湯の量のこと",
+    "core": "お湯を減らすと、同じ粉でも濃くなる",
     "motion": {
-      "type": "compare",
-      "shade": { "from": 50, "to": 50 },
+      "type": "liquid",
+      "shade": { "from": 40, "to": 70 },
       "meters": [
-        { "label": "ブレ", "from": 80, "to": 20 },
-        { "label": "再現性", "from": 30, "to": 75 }
+        { "label": "濃さ", "from": 40, "to": 70 },
+        { "label": "コク", "from": 40, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "量る", "taste": "毎回同じ濃さに近づく" },
-      { "label": "目分量", "taste": "日ごとに濃さがぶれる" }
+      { "label": "減らす", "taste": "苦味とコクが立つ" },
+      { "label": "増やす", "taste": "酸が澄み軽やか" }
     ],
     "tips": [
-      { "problem": "毎回味が違う時", "fix": "粉もお湯もはかりで量る" },
-      { "problem": "さらに揃えたい", "fix": "使った量をメモする" }
+      { "problem": "薄い時", "fix": "お湯を少し減らす" },
+      { "problem": "濃すぎる時", "fix": "お湯を少し足す" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "量ると日々のブレが減る",
-      "xLabel": "淹れ方",
-      "yLabel": "ブレ",
-      "points": [
-        { "label": "目分量", "value": 5 },
-        { "label": "量る", "value": 1 }
-      ],
-      "mark": 1
+      "type": "scale",
+      "caption": "お湯を減らすと濃くなる",
+      "label": "濃さ",
+      "zones": ["薄い", "ちょうど", "濃い"],
+      "from": 45,
+      "to": 70
     },
     "narration": {
-      "title": "はかりで粉と湯を量ると、毎回同じ味に近づきます。",
-      "why": "量のブレは、味のブレにつながるからです。",
-      "visual": "目分量はブレやすく、量るとそろいやすくなります。",
-      "effect": "量ると、毎回同じ濃さに近づく。目分量は、日によって濃くも薄くもなります。",
-      "tips": "味がぶれるなら、粉もお湯もはかりで量る。使った量をメモすると、さらに揃います。"
+      "title": "比率って、粉に対するお湯の量のこと。少し変えるだけで、味が動きます。",
+      "why": "粉から出る味の量はそのまま。お湯を減らすと濃く、増やすと軽く感じます。",
+      "visual": "左の薄いは酸が澄み軽やか。右の濃いは苦味やコクがしっかり出ます。",
+      "effect": "お湯を減らせば濃く、増やせば軽やかに。好みで動かせます。",
+      "tips": "薄い時は、お湯を少し減らす。濃すぎる時は、お湯を少し足します。"
     },
     "sources": [
-      "https://seelaz.com/blogs/barista-academy/sca-brewing-control-chart",
       "https://methodicalcoffee.com/blogs/coffee-culture/coffee-to-water-ratio-the-ultimate-guide-to-brewing-ratios",
-      "https://sca.coffee/research/coffee-brewing-handbook"
+      "https://sca.coffee/research/coffee-brewing-handbook",
+      "https://prima-coffee.com/learn/article/coffee-basics/intermediate-brewing-principles/intermediate-brewing"
     ]
   }
 }
