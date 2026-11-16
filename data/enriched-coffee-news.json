@@ -1,53 +1,60 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b03-ratio",
-    "pillar": "terms",
-    "method": "v60",
+    "episode": "b04-grind",
+    "pillar": "grind",
+    "method": "moka-pot",
     "scene": "hot",
-    "word": "比率",
-    "ask": "ってなに？",
-    "hook": "お湯を少し減らす",
-    "topic": "同じ粉でも濃くなる",
-    "why": "比率＝粉に対するお湯の量のこと",
-    "core": "お湯を減らすと、同じ粉でも濃くなる",
+    "word": "挽き目",
+    "ask": "を細かくすると？",
+    "hook": "挽き目を細かくする",
+    "topic": "濃さとコクが増える",
+    "why": "細かいほど、お湯に触れる面が増える",
+    "core": "細かいほど、成分が早く溶け出す",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 40, "to": 70 },
+      "type": "dissolve",
+      "shade": { "from": 35, "to": 70 },
       "meters": [
-        { "label": "濃さ", "from": 40, "to": 70 },
-        { "label": "コク", "from": 40, "to": 60 }
+        { "label": "苦味", "from": 30, "to": 60 },
+        { "label": "酸味", "from": 60, "to": 40 }
       ]
     },
     "effect": [
-      { "label": "減らす", "taste": "苦味とコクが立つ" },
-      { "label": "増やす", "taste": "酸が澄み軽やか" }
+      { "label": "細かくする", "taste": "濃くてコクが出る" },
+      { "label": "粗くする", "taste": "軽くてすっきり" }
     ],
     "tips": [
-      { "problem": "薄い時", "fix": "お湯を少し減らす" },
-      { "problem": "濃すぎる時", "fix": "お湯を少し足す" }
+      { "problem": "薄い時", "fix": "挽き目を少し細かくする" },
+      { "problem": "苦すぎる時", "fix": "挽き目を少し粗くする" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "お湯を減らすと濃くなる",
-      "label": "濃さ",
-      "zones": ["薄い", "ちょうど", "濃い"],
-      "from": 45,
-      "to": 70
+      "type": "compare",
+      "caption": "細かいほど濃く出る",
+      "left": {
+        "label": "粗い",
+        "result": "軽くすっきり",
+        "strength": 2
+      },
+      "right": {
+        "label": "細かい",
+        "result": "濃くてコク",
+        "strength": 4
+      },
+      "pick": "right"
     },
     "narration": {
-      "title": "比率って、粉に対するお湯の量のこと。少し変えるだけで、味が動きます。",
-      "why": "粉から出る味の量はそのまま。お湯を減らすと濃く、増やすと軽く感じます。",
-      "visual": "左の薄いは酸が澄み軽やか。右の濃いは苦味やコクがしっかり出ます。",
-      "effect": "お湯を減らせば濃く、増やせば軽やかに。好みで動かせます。",
-      "tips": "薄い時は、お湯を少し減らす。濃すぎる時は、お湯を少し足します。"
+      "title": "挽き目を細かくすると、どうなる？濃さとコクが増えます。",
+      "why": "細かいほど、お湯に触れる面が増えて、成分が早く溶け出すからです。",
+      "visual": "粗いと軽くすっきり、細かいと濃くコクが出ます。",
+      "effect": "細かくすると濃くてコクが出ます。粗くすると軽くてすっきり。",
+      "tips": "薄ければ挽き目を少し細かく、苦すぎれば少し粗くします。"
     },
     "sources": [
-      "https://methodicalcoffee.com/blogs/coffee-culture/coffee-to-water-ratio-the-ultimate-guide-to-brewing-ratios",
       "https://sca.coffee/research/coffee-brewing-handbook",
-      "https://prima-coffee.com/learn/article/coffee-basics/intermediate-brewing-principles/intermediate-brewing"
+      "https://www.baristahustle.com/blog/the-effects-of-grind-size-on-extraction/",
+      "https://perfectdailygrind.com/2020/05/why-is-grind-size-so-important-in-coffee/"
     ]
   }
 }
