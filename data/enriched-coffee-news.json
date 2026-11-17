@@ -1,60 +1,53 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b04-grind",
+    "episode": "b05-grinder-dial",
     "pillar": "grind",
-    "method": "moka-pot",
+    "method": "mug-steep",
     "scene": "hot",
-    "word": "挽き目",
-    "ask": "を細かくすると？",
-    "hook": "挽き目を細かくする",
-    "topic": "濃さとコクが増える",
-    "why": "細かいほど、お湯に触れる面が増える",
-    "core": "細かいほど、成分が早く溶け出す",
+    "word": "目盛り",
+    "ask": "は少しずつ？",
+    "hook": "目盛りを少しずつ動かす",
+    "topic": "味の変化を追える",
+    "why": "一度に大きく動かすと原因が分からない",
+    "core": "少しずつ動かすと、味の変化を追える",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 35, "to": 70 },
+      "type": "meter",
+      "shade": { "from": 50, "to": 56 },
       "meters": [
-        { "label": "苦味", "from": 30, "to": 60 },
-        { "label": "酸味", "from": 60, "to": 40 }
+        { "label": "苦味", "from": 45, "to": 55 },
+        { "label": "酸味", "from": 55, "to": 45 }
       ]
     },
     "effect": [
-      { "label": "細かくする", "taste": "濃くてコクが出る" },
-      { "label": "粗くする", "taste": "軽くてすっきり" }
+      { "label": "少し動かす", "taste": "違いを追いやすい" },
+      { "label": "大きく動かす", "taste": "どこが良いか迷う" }
     ],
     "tips": [
-      { "problem": "薄い時", "fix": "挽き目を少し細かくする" },
-      { "problem": "苦すぎる時", "fix": "挽き目を少し粗くする" }
+      { "problem": "行き過ぎた時", "fix": "一つ手前に戻す" },
+      { "problem": "変化が無い時", "fix": "もう少しだけ動かす" }
     ],
     "visual": {
-      "type": "compare",
-      "caption": "細かいほど濃く出る",
-      "left": {
-        "label": "粗い",
-        "result": "軽くすっきり",
-        "strength": 2
-      },
-      "right": {
-        "label": "細かい",
-        "result": "濃くてコク",
-        "strength": 4
-      },
-      "pick": "right"
+      "type": "scale",
+      "caption": "少しずつ動かして比べる",
+      "label": "挽き目",
+      "zones": ["細かい", "中くらい", "粗い"],
+      "from": 50,
+      "to": 60
     },
     "narration": {
-      "title": "挽き目を細かくすると、どうなる？濃さとコクが増えます。",
-      "why": "細かいほど、お湯に触れる面が増えて、成分が早く溶け出すからです。",
-      "visual": "粗いと軽くすっきり、細かいと濃くコクが出ます。",
-      "effect": "細かくすると濃くてコクが出ます。粗くすると軽くてすっきり。",
-      "tips": "薄ければ挽き目を少し細かく、苦すぎれば少し粗くします。"
+      "title": "目盛りを少しずつ動かすと、どうなる？味の変化を追えます。",
+      "why": "大きく動かすと、変わった原因を切り分けにくくなるからです。",
+      "visual": "少しずつ動かして、細かい方と粗い方を比べます。",
+      "effect": "少し動かすと違いが追いやすく、大きく動かすと迷いやすいです。",
+      "tips": "行き過ぎた時は一つ手前に戻し、変化が無い時はもう少し動かします。"
     },
     "sources": [
-      "https://sca.coffee/research/coffee-brewing-handbook",
-      "https://www.baristahustle.com/blog/the-effects-of-grind-size-on-extraction/",
-      "https://perfectdailygrind.com/2020/05/why-is-grind-size-so-important-in-coffee/"
+      "https://www.baristahustle.com/blog/dialing-in-your-coffee-grinder/",
+      "https://perfectdailygrind.com/2020/05/why-is-grind-size-so-important-in-coffee/",
+      "https://sca.coffee/research/coffee-brewing-handbook"
     ]
   }
 }
