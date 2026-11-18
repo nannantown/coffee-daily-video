@@ -1,53 +1,66 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b05-grinder-dial",
-    "pillar": "grind",
-    "method": "mug-steep",
+    "episode": "b06-temp",
+    "pillar": "temp",
+    "method": "clever",
     "scene": "hot",
-    "word": "目盛り",
-    "ask": "は少しずつ？",
-    "hook": "目盛りを少しずつ動かす",
-    "topic": "味の変化を追える",
-    "why": "一度に大きく動かすと原因が分からない",
-    "core": "少しずつ動かすと、味の変化を追える",
+    "word": "湯温",
+    "ask": "を下げると？",
+    "hook": "お湯の温度を下げる",
+    "topic": "苦味が引き甘く感じる",
+    "why": "熱いほど苦味の成分がよく溶ける",
+    "core": "温度を下げると、苦味の成分が溶けにくくなる",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 50, "to": 56 },
+      "type": "liquid",
+      "shade": { "from": 70, "to": 50 },
       "meters": [
-        { "label": "苦味", "from": 45, "to": 55 },
-        { "label": "酸味", "from": 55, "to": 45 }
+        { "label": "苦味", "from": 70, "to": 40 },
+        { "label": "酸味", "from": 40, "to": 55 },
+        { "label": "甘味", "from": 50, "to": 65 }
       ]
     },
+    "premise": {
+      "term": "クレバー",
+      "say": "浸して最後にすとんと落とすドリッパー",
+      "visual": {
+        "type": "flow",
+        "caption": "浸して、最後に落とす",
+        "brewers": [
+          { "shape": "immersion", "label": "クレバー", "note": "浸してから落とす" }
+        ]
+      }
+    },
     "effect": [
-      { "label": "少し動かす", "taste": "違いを追いやすい" },
-      { "label": "大きく動かす", "taste": "どこが良いか迷う" }
+      { "label": "下げる", "taste": "甘さが前に出てすっきり" },
+      { "label": "上げる", "taste": "苦味がはっきり出る" }
     ],
     "tips": [
-      { "problem": "行き過ぎた時", "fix": "一つ手前に戻す" },
-      { "problem": "変化が無い時", "fix": "もう少しだけ動かす" }
+      { "problem": "酸っぱい時", "fix": "温度を少し戻す" },
+      { "problem": "まだ苦い時", "fix": "さらに湯温を下げる" }
     ],
     "visual": {
       "type": "scale",
-      "caption": "少しずつ動かして比べる",
-      "label": "挽き目",
-      "zones": ["細かい", "中くらい", "粗い"],
-      "from": 50,
-      "to": 60
+      "caption": "下げるほど苦味が控えめ",
+      "label": "湯温",
+      "zones": ["低め", "ふつう", "高め"],
+      "from": 55,
+      "to": 20
     },
     "narration": {
-      "title": "目盛りを少しずつ動かすと、どうなる？味の変化を追えます。",
-      "why": "大きく動かすと、変わった原因を切り分けにくくなるからです。",
-      "visual": "少しずつ動かして、細かい方と粗い方を比べます。",
-      "effect": "少し動かすと違いが追いやすく、大きく動かすと迷いやすいです。",
-      "tips": "行き過ぎた時は一つ手前に戻し、変化が無い時はもう少し動かします。"
+      "premise": "まず前提です。クレバーは、浸して最後にすとんと落とすドリッパーです。",
+      "title": "お湯の温度を下げると、どうなる？苦味が引き、甘く感じます。",
+      "why": "熱いほど、苦味の成分がよく溶けるからです。",
+      "visual": "温度を下げるほど、苦味は控えめになります。",
+      "effect": "下げると、甘さが前に出てすっきり。上げると、苦味がはっきり出ます。",
+      "tips": "酸っぱければ、温度を少し戻す。苦ければ、さらに下げます。"
     },
     "sources": [
-      "https://www.baristahustle.com/blog/dialing-in-your-coffee-grinder/",
-      "https://perfectdailygrind.com/2020/05/why-is-grind-size-so-important-in-coffee/",
-      "https://sca.coffee/research/coffee-brewing-handbook"
+      "https://wonderstate.com/blogs/wonderstate/why-i-brew-with-lower-water-temperatures-and-you-should-too",
+      "https://europeancoffeetrip.com/what-makes-coffee-taste-bitter/",
+      "https://dailycoffeenews.com/2020/10/05/new-coffee-brewing-study-challenges-water-temperature-norms"
     ]
   }
 }
