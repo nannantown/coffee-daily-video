@@ -1,57 +1,65 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b07-stop-early",
-    "pillar": "time",
-    "method": "paper-drip",
+    "episode": "b08-bloom",
+    "pillar": "terms",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "早く止める",
-    "ask": "とどうなる？",
-    "hook": "抽出を早めに止める",
-    "topic": "甘みが残りすっきり",
-    "why": "甘みは中ごろ、渋みは終わりに出やすい",
-    "core": "早く止めると、終わりの渋みが入りにくい",
+    "word": "蒸らし",
+    "ask": "ってなに？",
+    "hook": "最初に少しの湯で蒸らす",
+    "topic": "味がまとまる",
+    "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
+    "core": "蒸らすと、湯が全体にしみて均一に溶ける",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 55, "to": 70 },
+      "type": "meter",
+      "shade": { "from": 40, "to": 60 },
       "meters": [
-        { "label": "甘味", "from": 10, "to": 60 },
-        { "label": "渋み", "from": 10, "to": 75 }
+        { "label": "ムラ", "from": 70, "to": 25 },
+        { "label": "まとまり", "from": 30, "to": 70 }
       ]
     },
     "effect": [
-      { "label": "早く止める", "taste": "甘みが残りすっきり" },
-      { "label": "そのまま待つ", "taste": "濃いが渋みも出やすい" }
+      { "label": "蒸らす", "taste": "味のばらつきが減る" },
+      { "label": "蒸らさない", "taste": "酸と苦がばらつく" }
     ],
     "tips": [
-      { "problem": "薄くなった時", "fix": "もう少し長めに待つ" },
-      { "problem": "まだ渋い時", "fix": "もう少し早く止める" }
+      { "problem": "むらが出る時", "fix": "湯を全体にそっと注ぐ" },
+      { "problem": "粉が浮く時", "fix": "中心からうずで注ぐ" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "終わりぎわほど渋みが増える",
-      "xLabel": "抽出時間",
-      "yLabel": "渋み",
-      "points": [
-        { "label": "はじめ", "value": 1 },
-        { "label": "手前", "value": 2 },
-        { "label": "おわり", "value": 4 }
-      ],
-      "mark": 2
+      "type": "flow",
+      "caption": "蒸らすと湯が全体にしみる",
+      "brewers": [
+        {
+          "shape": "flat",
+          "label": "蒸らしなし",
+          "note": "湯が素通りする",
+          "speed": "fast",
+          "bed": "uneven"
+        },
+        {
+          "shape": "flat",
+          "label": "蒸らす",
+          "note": "湯がしみ込む",
+          "speed": "slow",
+          "bed": "even"
+        }
+      ]
     },
     "narration": {
-      "title": "抽出を早めに止めると、どうなる？甘みが残り、すっきりします。",
-      "why": "甘みは中ごろに、渋みは終わりに溶け出しやすいからです。",
-      "visual": "渋みは終わりで強く増えます。だから手前で止めるのが目安です。",
-      "effect": "早く止めると、甘みが残りすっきり。そのまま待つと、濃いが渋みも出やすくなります。",
-      "tips": "薄ければ、もう少し長めに待ちます。まだ渋ければ、もう少し早く止めましょう。"
+      "title": "蒸らしってなに？焙煎で粉にたまった炭酸ガスを、最初の湯で逃がすこと。",
+      "why": "焙煎直後の粉はガスを含み、湯をはじいてむらになりやすいんです。",
+      "visual": "蒸らすと、ガスが出て粉が膨らみ、お湯がしみ込みます。",
+      "effect": "だから、蒸らすと一杯の味のばらつきが減る。蒸らさないと、同じ一杯の中で酸や苦が偏りやすいです。",
+      "tips": "むらが出る時は、湯を全体にそっと注ぐ。粉が浮く時は、中心からうずで注ぎましょう。"
     },
     "sources": [
-      "https://completehomebarista.com/faqs/brewing-methods/pour-over/when-is-pour-over-done/",
-      "https://shop.mistobox.com/blogs/learn/the-science-of-brewing-coffee",
-      "https://field-guides.vercel.app/pour-over/under-extraction-and-over-extraction.html"
+      "https://perfectdailygrind.com/2020/05/why-do-we-bloom-coffee-when-brewing/",
+      "https://www.baristahustle.com/blog/bloom-ratio-and-bloom-time/",
+      "https://www.scottrao.com/blog/2019/9/8/coffee-brewing-the-bloom"
     ]
   }
 }
