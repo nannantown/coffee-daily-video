@@ -1,65 +1,64 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b08-bloom",
-    "pillar": "terms",
-    "method": "kalita-wave",
+    "episode": "b09-pour-slow",
+    "pillar": "pour",
+    "method": "origami",
     "scene": "hot",
-    "word": "蒸らし",
-    "ask": "ってなに？",
-    "hook": "最初に少しの湯で蒸らす",
-    "topic": "味がまとまる",
-    "why": "蒸らし＝少しの湯で粉のガスを抜くこと",
-    "core": "蒸らすと、湯が全体にしみて均一に溶ける",
+    "word": "注ぐ速さ",
+    "ask": "をゆっくりに？",
+    "hook": "細くゆっくり注ぐ",
+    "topic": "甘く、濃くなる",
+    "why": "湯のとどまりが短いと酸、長いと甘みが出る",
+    "core": "速さひとつで味を動かせる",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 40, "to": 60 },
+      "type": "liquid",
+      "shade": { "from": 40, "to": 65 },
       "meters": [
-        { "label": "ムラ", "from": 70, "to": 25 },
-        { "label": "まとまり", "from": 30, "to": 70 }
+        { "label": "濃さ", "from": 40, "to": 65 },
+        { "label": "甘味", "from": 40, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "蒸らす", "taste": "味のばらつきが減る" },
-      { "label": "蒸らさない", "taste": "酸と苦がばらつく" }
+      { "label": "ゆっくり注ぐ", "taste": "甘く、濃くなる" },
+      { "label": "速く注ぐ", "taste": "軽く、酸っぱくなる" }
     ],
     "tips": [
-      { "problem": "むらが出る時", "fix": "湯を全体にそっと注ぐ" },
-      { "problem": "粉が浮く時", "fix": "中心からうずで注ぐ" }
+      { "problem": "酸っぱい時", "fix": "少しゆっくり注ぐ" },
+      { "problem": "濃すぎる時", "fix": "少し速く注ぐ" }
     ],
     "visual": {
       "type": "flow",
-      "caption": "蒸らすと湯が全体にしみる",
+      "caption": "ゆっくり注ぐと湯がとどまる",
       "brewers": [
         {
-          "shape": "flat",
-          "label": "蒸らしなし",
-          "note": "湯が素通りする",
-          "speed": "fast",
-          "bed": "uneven"
+          "shape": "cone",
+          "label": "細くゆっくり",
+          "note": "湯がとどまる",
+          "speed": "slow"
         },
         {
-          "shape": "flat",
-          "label": "蒸らす",
-          "note": "湯がしみ込む",
-          "speed": "slow",
-          "bed": "even"
+          "shape": "cone",
+          "label": "太く速く",
+          "note": "湯が速く抜ける",
+          "speed": "fast"
         }
       ]
     },
     "narration": {
-      "title": "蒸らしってなに？焙煎で粉にたまった炭酸ガスを、最初の湯で逃がすこと。",
-      "why": "焙煎直後の粉はガスを含み、湯をはじいてむらになりやすいんです。",
-      "visual": "蒸らすと、ガスが出て粉が膨らみ、お湯がしみ込みます。",
-      "effect": "だから、蒸らすと一杯の味のばらつきが減る。蒸らさないと、同じ一杯の中で酸や苦が偏りやすいです。",
-      "tips": "むらが出る時は、湯を全体にそっと注ぐ。粉が浮く時は、中心からうずで注ぎましょう。"
+      "title": "注ぐ速さをゆっくりにすると、どうなる？甘く、濃くなります。",
+      "why": "湯のとどまりが短いと酸、長いと甘みが出るからです。",
+      "visual": "ゆっくり注ぐと、湯が粉にとどまって抜けが遅くなります。",
+      "effect": "ゆっくり注ぐと、甘く濃くなります。速く注ぐと、軽く酸っぱくなります。",
+      "tips": "酸っぱければ、少しゆっくり注ぎます。濃すぎれば、少し速く注ぎます。"
     },
     "sources": [
-      "https://perfectdailygrind.com/2020/05/why-do-we-bloom-coffee-when-brewing/",
-      "https://www.baristahustle.com/blog/bloom-ratio-and-bloom-time/",
-      "https://www.scottrao.com/blog/2019/9/8/coffee-brewing-the-bloom"
+      "https://blog.bluebottlecoffee.com/posts/brew-theory-extraction-strength-and-finding-the-sweet-spot-for-pour-over-coffee",
+      "https://baristamagazine.com/achieving-the-perfect-pourover-part-four-brew-time",
+      "https://clivecoffee.com/blogs/learn/the-science-of-brewing-coffee",
+      "https://handground.com/grind/47-tips-to-make-pour-over-coffee-like-a-barista"
     ]
   }
 }
