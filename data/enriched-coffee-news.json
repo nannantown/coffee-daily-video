@@ -1,64 +1,48 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-25",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b09-pour-slow",
-    "pillar": "pour",
-    "method": "origami",
+    "episode": "b12-sour",
+    "pillar": "trouble",
+    "method": "chemex",
     "scene": "hot",
-    "word": "注ぐ速さ",
-    "ask": "をゆっくりに？",
-    "hook": "細くゆっくり注ぐ",
-    "topic": "甘く、濃くなる",
-    "why": "湯のとどまりが短いと酸、長いと甘みが出る",
-    "core": "速さひとつで味を動かせる",
+    "word": "酸っぱい",
+    "ask": "時は？",
+    "hook": "酸っぱい時は湯温を上げる",
+    "topic": "酸が丸くなり甘みが出る",
+    "why": "酸は早く、甘みは後から溶け出す",
+    "core": "温度を上げると、後から出る甘みまで溶ける",
     "motion": {
       "type": "liquid",
-      "shade": { "from": 40, "to": 65 },
+      "shade": { "from": 45, "to": 65 },
       "meters": [
-        { "label": "濃さ", "from": 40, "to": 65 },
-        { "label": "甘味", "from": 40, "to": 60 }
+        { "label": "酸味", "from": 75, "to": 50 },
+        { "label": "甘味", "from": 35, "to": 65 }
       ]
     },
     "effect": [
-      { "label": "ゆっくり注ぐ", "taste": "甘く、濃くなる" },
-      { "label": "速く注ぐ", "taste": "軽く、酸っぱくなる" }
+      { "label": "上げる", "taste": "酸が丸く、甘くなる" },
+      { "label": "下げる", "taste": "酸が強く、軽くなる" }
     ],
     "tips": [
-      { "problem": "酸っぱい時", "fix": "少しゆっくり注ぐ" },
-      { "problem": "濃すぎる時", "fix": "少し速く注ぐ" }
+      { "problem": "まだ酸っぱい時", "fix": "湯温をもう少し上げる" },
+      { "problem": "上げすぎた時", "fix": "湯温を少し戻す" }
     ],
     "visual": {
-      "type": "flow",
-      "caption": "ゆっくり注ぐと湯がとどまる",
-      "brewers": [
-        {
-          "shape": "cone",
-          "label": "細くゆっくり",
-          "note": "湯がとどまる",
-          "speed": "slow"
-        },
-        {
-          "shape": "cone",
-          "label": "太く速く",
-          "note": "湯が速く抜ける",
-          "speed": "fast"
-        }
-      ]
+      "type": "scale",
+      "caption": "行きすぎると苦い側",
+      "label": "湯温",
+      "zones": ["酸っぱい", "ちょうど", "苦い"],
+      "from": 25,
+      "to": 55
     },
     "narration": {
-      "title": "注ぐ速さをゆっくりにすると、どうなる？甘く、濃くなります。",
-      "why": "湯のとどまりが短いと酸、長いと甘みが出るからです。",
-      "visual": "ゆっくり注ぐと、湯が粉にとどまって抜けが遅くなります。",
-      "effect": "ゆっくり注ぐと、甘く濃くなります。速く注ぐと、軽く酸っぱくなります。",
-      "tips": "酸っぱければ、少しゆっくり注ぎます。濃すぎれば、少し速く注ぎます。"
-    },
-    "sources": [
-      "https://blog.bluebottlecoffee.com/posts/brew-theory-extraction-strength-and-finding-the-sweet-spot-for-pour-over-coffee",
-      "https://baristamagazine.com/achieving-the-perfect-pourover-part-four-brew-time",
-      "https://clivecoffee.com/blogs/learn/the-science-of-brewing-coffee",
-      "https://handground.com/grind/47-tips-to-make-pour-over-coffee-like-a-barista"
-    ]
+      "title": "酸っぱい時はどうしましょう？今日は湯温を少し上げてみます。",
+      "why": "酸は早く、甘みは後から溶け出すからです。",
+      "visual": "酸っぱい側からは、上げるほどちょうどに。行きすぎると苦い側へ。",
+      "effect": "上げると、酸が丸く甘くなる。下げると、酸が強く軽くなります。",
+      "tips": "まだ酸っぱければ、湯温をもう少し上げる。上げすぎたら、湯温を少し戻します。"
+    }
   }
 }
