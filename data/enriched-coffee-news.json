@@ -1,48 +1,53 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b12-sour",
+    "episode": "b13-bitter",
     "pillar": "trouble",
-    "method": "chemex",
+    "method": "paper-drip",
     "scene": "hot",
-    "word": "酸っぱい",
+    "word": "苦い",
     "ask": "時は？",
-    "hook": "酸っぱい時は湯温を上げる",
-    "topic": "酸が丸くなり甘みが出る",
-    "why": "酸は早く、甘みは後から溶け出す",
-    "core": "温度を上げると、後から出る甘みまで溶ける",
+    "hook": "苦い時は挽き目を粗くする",
+    "topic": "苦味を抑えられる",
+    "why": "表面積が少ないほど溶けにくい",
+    "core": "粗くすれば苦味は抑えられる",
     "motion": {
-      "type": "liquid",
-      "shade": { "from": 45, "to": 65 },
+      "type": "dissolve",
+      "shade": { "from": 75, "to": 55 },
       "meters": [
-        { "label": "酸味", "from": 75, "to": 50 },
-        { "label": "甘味", "from": 35, "to": 65 }
+        { "label": "苦味", "from": 75, "to": 45 },
+        { "label": "重さ", "from": 70, "to": 35 }
       ]
     },
     "effect": [
-      { "label": "上げる", "taste": "酸が丸く、甘くなる" },
-      { "label": "下げる", "taste": "酸が強く、軽くなる" }
+      { "label": "粗くする", "taste": "すっきり、軽くなる" },
+      { "label": "細かくする", "taste": "苦く、重くなる" }
     ],
     "tips": [
-      { "problem": "まだ酸っぱい時", "fix": "湯温をもう少し上げる" },
-      { "problem": "上げすぎた時", "fix": "湯温を少し戻す" }
+      { "problem": "薄くなった時", "fix": "少しだけ細かく戻す" },
+      { "problem": "まだ苦い時", "fix": "さらに少し粗くする" }
     ],
     "visual": {
       "type": "scale",
-      "caption": "行きすぎると苦い側",
-      "label": "湯温",
-      "zones": ["酸っぱい", "ちょうど", "苦い"],
-      "from": 25,
+      "caption": "苦い側から、ちょうどへ",
+      "label": "挽き目",
+      "zones": ["苦い", "ちょうど", "薄い"],
+      "from": 20,
       "to": 55
     },
     "narration": {
-      "title": "酸っぱい時はどうしましょう？今日は湯温を少し上げてみます。",
-      "why": "酸は早く、甘みは後から溶け出すからです。",
-      "visual": "酸っぱい側からは、上げるほどちょうどに。行きすぎると苦い側へ。",
-      "effect": "上げると、酸が丸く甘くなる。下げると、酸が強く軽くなります。",
-      "tips": "まだ酸っぱければ、湯温をもう少し上げる。上げすぎたら、湯温を少し戻します。"
-    }
+      "title": "苦い時は、どうしましょう？挽き目を動かすと、変わります。",
+      "why": "挽き目が粗いほど表面積が減り、苦味も溶けにくくなるからです。",
+      "visual": "苦い側から、粗くするほどちょうどに近づきます。ただし粗すぎると、薄い側へ。",
+      "effect": "粗くすると、すっきり軽くなります。細かくすると、苦く重くなります。",
+      "tips": "薄くなったら、少しだけ細かく戻します。まだ苦ければ、さらに少し粗くします。"
+    },
+    "sources": [
+      "https://www.baristamagazine.com/achieving-the-perfect-pourover-part-ii-grind-size/",
+      "https://clivecoffee.com/blogs/learn/the-science-of-brewing-coffee",
+      "https://blog.bluebottlecoffee.com/posts/dialing-in-the-grind"
+    ]
   }
 }
