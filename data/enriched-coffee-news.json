@@ -1,53 +1,57 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "b13-bitter",
-    "pillar": "trouble",
-    "method": "paper-drip",
+    "episode": "i01-underextraction",
+    "pillar": "terms",
+    "method": "aeropress",
     "scene": "hot",
-    "word": "苦い",
-    "ask": "時は？",
-    "hook": "苦い時は挽き目を粗くする",
-    "topic": "苦味を抑えられる",
-    "why": "表面積が少ないほど溶けにくい",
-    "core": "粗くすれば苦味は抑えられる",
+    "word": "未抽出",
+    "ask": "ってなに？",
+    "hook": "抽出時間を少し延ばす",
+    "topic": "酸っぱく薄い味",
+    "why": "お湯に触れる時間が短いから",
+    "core": "短すぎると、甘みが出る前に終わる",
     "motion": {
       "type": "dissolve",
-      "shade": { "from": 75, "to": 55 },
+      "shade": { "from": 30, "to": 55 },
       "meters": [
-        { "label": "苦味", "from": 75, "to": 45 },
-        { "label": "重さ", "from": 70, "to": 35 }
+        { "label": "甘味", "from": 25, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "粗くする", "taste": "すっきり、軽くなる" },
-      { "label": "細かくする", "taste": "苦く、重くなる" }
+      { "label": "延ばす", "taste": "酸が引き、甘みが出る" },
+      { "label": "縮める", "taste": "酸っぱく、薄くなる" }
     ],
     "tips": [
-      { "problem": "薄くなった時", "fix": "少しだけ細かく戻す" },
-      { "problem": "まだ苦い時", "fix": "さらに少し粗くする" }
+      { "problem": "延ばしても酸っぱい", "fix": "挽き目を細かくする" },
+      { "problem": "まだ薄い時", "fix": "お湯の温度を上げる" }
     ],
     "visual": {
-      "type": "scale",
-      "caption": "苦い側から、ちょうどへ",
-      "label": "挽き目",
-      "zones": ["苦い", "ちょうど", "薄い"],
-      "from": 20,
-      "to": 55
+      "type": "graph",
+      "caption": "短いと酸、ちょうどで甘、長いと苦",
+      "xLabel": "抽出時間",
+      "yLabel": "成分の出方",
+      "points": [
+        { "label": "短い", "value": 1 },
+        { "label": "ちょうど", "value": 3 },
+        { "label": "長い", "value": 4 }
+      ],
+      "mark": 1,
+      "zones": ["未抽出", "適正", "過抽出"]
     },
     "narration": {
-      "title": "苦い時は、どうしましょう？挽き目を動かすと、変わります。",
-      "why": "挽き目が粗いほど表面積が減り、苦味も溶けにくくなるからです。",
-      "visual": "苦い側から、粗くするほどちょうどに近づきます。ただし粗すぎると、薄い側へ。",
-      "effect": "粗くすると、すっきり軽くなります。細かくすると、苦く重くなります。",
-      "tips": "薄くなったら、少しだけ細かく戻します。まだ苦ければ、さらに少し粗くします。"
+      "title": "未抽出ってなに？酸っぱく薄い、成分が出きる前に止まった味です。",
+      "why": "お湯に触れる時間が短いと、甘みが出きらず、酸が目立つからです。",
+      "visual": "短いと酸っぱく、ちょうどで甘く、長いと苦くなります。",
+      "effect": "延ばすと、酸味が引いて甘みが出ます。縮めると、酸っぱく薄くなります。",
+      "tips": "延ばしても酸っぱければ、挽き目も細かく。それでも薄ければ、お湯を高めに。"
     },
     "sources": [
-      "https://www.baristamagazine.com/achieving-the-perfect-pourover-part-ii-grind-size/",
-      "https://clivecoffee.com/blogs/learn/the-science-of-brewing-coffee",
-      "https://blog.bluebottlecoffee.com/posts/dialing-in-the-grind"
+      "https://sca.coffee/sca-news/25/issue-13/towards-a-new-brewing-chart",
+      "https://ratiocoffee.com/blogs/coffee-guides/how-to-spot-an-under-extracted-coffee-without-fancy-tools",
+      "https://www.seattlecoffeegear.com/blogs/learning-center/how-to-dial-in-aeropress"
     ]
   }
 }
