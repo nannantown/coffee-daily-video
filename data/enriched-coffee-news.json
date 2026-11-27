@@ -1,57 +1,59 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i01-underextraction",
+    "episode": "i02-overextraction",
     "pillar": "terms",
-    "method": "aeropress",
+    "method": "v60",
     "scene": "hot",
-    "word": "未抽出",
+    "word": "過抽出",
     "ask": "ってなに？",
-    "hook": "抽出時間を少し延ばす",
-    "topic": "酸っぱく薄い味",
-    "why": "お湯に触れる時間が短いから",
-    "core": "短すぎると、甘みが出る前に終わる",
+    "hook": "早めに落とし切る",
+    "topic": "渋みと雑味が目立つ味",
+    "why": "出しすぎて雑味まで溶けた状態",
+    "core": "長すぎると、渋みや雑味まで溶け出す",
     "motion": {
-      "type": "dissolve",
-      "shade": { "from": 30, "to": 55 },
+      "type": "meter",
+      "shade": { "from": 50, "to": 85 },
       "meters": [
-        { "label": "甘味", "from": 25, "to": 60 }
+        { "label": "渋み", "from": 20, "to": 85 },
+        { "label": "雑味", "from": 30, "to": 80 },
+        { "label": "甘味", "from": 60, "to": 30 }
       ]
     },
     "effect": [
-      { "label": "延ばす", "taste": "酸が引き、甘みが出る" },
-      { "label": "縮める", "taste": "酸っぱく、薄くなる" }
+      { "label": "早く切る", "taste": "渋みが引きすっきり" },
+      { "label": "長く待つ", "taste": "渋みと雑味が立つ" }
     ],
     "tips": [
-      { "problem": "延ばしても酸っぱい", "fix": "挽き目を細かくする" },
-      { "problem": "まだ薄い時", "fix": "お湯の温度を上げる" }
+      { "problem": "渋い時", "fix": "少し早めに止める" },
+      { "problem": "雑味が立つ時", "fix": "湯温を少し下げる" }
     ],
     "visual": {
       "type": "graph",
-      "caption": "短いと酸、ちょうどで甘、長いと苦",
+      "caption": "長すぎると渋み・雑味が立つ",
       "xLabel": "抽出時間",
-      "yLabel": "成分の出方",
+      "yLabel": "渋み・雑味",
       "points": [
         { "label": "短い", "value": 1 },
-        { "label": "ちょうど", "value": 3 },
-        { "label": "長い", "value": 4 }
+        { "label": "ふつう", "value": 2 },
+        { "label": "長い", "value": 3 },
+        { "label": "長すぎ", "value": 5 }
       ],
-      "mark": 1,
-      "zones": ["未抽出", "適正", "過抽出"]
+      "mark": 2,
+      "zones": ["適正", "過抽出"]
     },
     "narration": {
-      "title": "未抽出ってなに？酸っぱく薄い、成分が出きる前に止まった味です。",
-      "why": "お湯に触れる時間が短いと、甘みが出きらず、酸が目立つからです。",
-      "visual": "短いと酸っぱく、ちょうどで甘く、長いと苦くなります。",
-      "effect": "延ばすと、酸味が引いて甘みが出ます。縮めると、酸っぱく薄くなります。",
-      "tips": "延ばしても酸っぱければ、挽き目も細かく。それでも薄ければ、お湯を高めに。"
+      "title": "過抽出ってなに？淹れる時間が長すぎて、渋みと雑味が目立つ味。",
+      "why": "お湯が粉に長く触れるほど、渋みや雑味まで溶け出すからです。",
+      "visual": "長すぎるほど、渋みや雑味が立ちます。",
+      "effect": "早く切ると、渋みが引いてすっきり。長く待つと、渋みと雑味が立ちます。",
+      "tips": "渋ければ、少し早めに止める。雑味が立つなら、湯温を少し下げます。"
     },
     "sources": [
-      "https://sca.coffee/sca-news/25/issue-13/towards-a-new-brewing-chart",
-      "https://ratiocoffee.com/blogs/coffee-guides/how-to-spot-an-under-extracted-coffee-without-fancy-tools",
-      "https://www.seattlecoffeegear.com/blogs/learning-center/how-to-dial-in-aeropress"
+      "https://sca.coffee/research/coffee-brewing-handbook",
+      "https://perfectdailygrind.com/2020/05/over-extraction-under-extraction-coffee-brewing/"
     ]
   }
 }
