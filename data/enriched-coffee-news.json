@@ -1,58 +1,54 @@
 {
-  "date": "2026-11-28",
+  "date": "2026-11-29",
   "format": "brew-lesson",
   "trial": "coffee-trial-2-brew-basics",
   "lesson": {
-    "episode": "i02-overextraction",
-    "pillar": "terms",
-    "method": "v60",
+    "episode": "i03-dark-roast-temp",
+    "pillar": "temp",
+    "method": "kalita-wave",
     "scene": "hot",
-    "word": "過抽出",
-    "ask": "ってなに？",
-    "hook": "早めに落とし切る",
-    "topic": "渋みと雑味が目立つ味",
-    "why": "出しすぎて雑味まで溶けた状態",
-    "core": "長すぎると、渋みや雑味まで溶け出す",
+    "word": "深煎り",
+    "ask": "はぬるめ？",
+    "hook": "深煎りは湯温を低めに",
+    "topic": "甘く、まろやかに",
+    "why": "深煎りは苦味の成分が溶けやすい",
+    "core": "深煎りは熱いほど、苦味が強く出る",
     "motion": {
-      "type": "meter",
-      "shade": { "from": 50, "to": 85 },
+      "type": "liquid",
+      "shade": { "from": 80, "to": 65 },
       "meters": [
-        { "label": "渋み", "from": 20, "to": 85 },
-        { "label": "雑味", "from": 30, "to": 80 },
-        { "label": "甘味", "from": 60, "to": 30 }
+        { "label": "苦味", "from": 80, "to": 50 },
+        { "label": "甘味", "from": 35, "to": 60 }
       ]
     },
     "effect": [
-      { "label": "早く切る", "taste": "渋みが引きすっきり" },
-      { "label": "長く待つ", "taste": "渋みと雑味が立つ" }
+      { "label": "低めにする", "taste": "甘くまろやかに" },
+      { "label": "熱くする", "taste": "焦げた苦味が出る" }
     ],
     "tips": [
-      { "problem": "渋い時", "fix": "少し早めに止める" },
-      { "problem": "雑味が立つ時", "fix": "湯温を少し下げる" }
+      { "problem": "味が薄い時", "fix": "温度を少し上げる" },
+      { "problem": "まだ苦い時", "fix": "挽き目を少し粗くする" }
     ],
     "visual": {
-      "type": "graph",
-      "caption": "長すぎると渋み・雑味が立つ",
-      "xLabel": "抽出時間",
-      "yLabel": "渋み・雑味",
-      "points": [
-        { "label": "短い", "value": 1 },
-        { "label": "ふつう", "value": 2 },
-        { "label": "長い", "value": 3 },
-        { "label": "長すぎ", "value": 5 }
-      ],
-      "mark": 2,
-      "zones": ["適正", "過抽出"]
+      "type": "scale",
+      "caption": "低めで甘み、高めで苦味",
+      "label": "湯温",
+      "zones": ["低め", "ふつう", "高め"],
+      "from": 60,
+      "to": 25
     },
     "narration": {
-      "title": "過抽出ってなに？淹れる時間が長すぎて、渋みと雑味が目立つ味。",
-      "why": "お湯が粉に長く触れるほど、渋みや雑味まで溶け出すからです。",
-      "visual": "長すぎるほど、渋みや雑味が立ちます。",
-      "effect": "早く切ると、渋みが引いてすっきり。長く待つと、渋みと雑味が立ちます。",
-      "tips": "渋ければ、少し早めに止める。雑味が立つなら、湯温を少し下げます。"
+      "title": "深煎りを低めの温度で淹れると、どうなる？甘く、まろやかになります。",
+      "why": "深煎りは苦味の成分がよく溶けるからです。",
+      "visual": "低めで甘みが残り、高めで苦味が立ちます。",
+      "effect": "低めにすると、甘くまろやか。熱くすると、焦げた苦味が出ます。",
+      "tips": "薄ければ、温度を少し上げる。まだ苦ければ、挽き目も粗くします。"
     },
     "sources": [
-      "https://sca.coffee/research/coffee-brewing-handbook",
+      "https://sca.coffee/sca-news/25/issue-15/how-hot-is-hot-enough-brew-temperature-sensory-profile-and-consumer-acceptance-of-brewed-coffee-5dj5b",
+      "https://perfectdailygrind.com/2019/10/how-to-adjust-your-brewing-recipe-for-coffee-roast-level/",
+      "https://perfectdailygrind.com/2026/03/temperature-filter-coffee-changes-flavour-aroma/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9407127",
       "https://perfectdailygrind.com/2020/05/over-extraction-under-extraction-coffee-brewing/"
     ]
   }
